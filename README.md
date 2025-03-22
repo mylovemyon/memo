@@ -5,4 +5,5 @@
 - msfvenom <- yet
 - nc <- yet
 - nmap
+- smbclient <- yet
 - wfuzz <- yet
