@@ -1,3 +1,7 @@
+- hydra <- yet
+- har <- yet
+- metasploit <- yet
+- msfvenom <- yet
+- nc <- yet
 - nmap
-- wfuzz
-- 
+- wfuzz <- yet
