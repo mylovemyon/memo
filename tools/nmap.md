@@ -130,7 +130,7 @@ https://nmap.org/book/man-target-specification.html
 ## HOST DISCOVERY
 https://nmap.org/book/man-host-discovery.html  
 おすすめオプション
-- `-sn`  
+- `-Pn`  
 ターゲットに対するポートスキャンの前に生存確認のため、ICMP echo reequest、ポート80へのTCP ACK、ポート443へのTCP SYN、ICMP Timestamp queryの４つが送信される。これらを無効したいときに便利
 
 
