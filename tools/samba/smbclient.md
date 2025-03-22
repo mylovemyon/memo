@@ -1,4 +1,5 @@
 https://www.samba.org/samba/docs/current/man-html/smbclient.1.html
+## Usage
 ```
 Usage: smbclient [OPTIONS] service <password>
   -M, --message=HOST                           Send message
@@ -55,4 +56,14 @@ Deprecated legacy options:
 
 Version options:
   -V, --version
+```
+
+
+## -N
+Anonymousログインで使用
+```sh
+└──╼ [★]$ smbclient //10.129.52.172/IPC$ -N
+Anonymous login successful
+Try "help" to get a list of possible commands.
+smb: \>
 ```
