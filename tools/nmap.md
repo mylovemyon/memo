@@ -188,3 +188,7 @@ https://nmap.org/book/man-output.html
   実行結果を通常出力
 - `--stats-every 数値`  
   指定した間隔ごとにステータスメッセージを表示
+
+
+## MISC
+https://nmap.org/book/man-misc-options.html
