@@ -125,7 +125,20 @@ https://nmap.org/book/man-target-specification.html
 
 
 ## HOST DISCOVERY
-https://nmap.org/book/man-host-discovery.html
+https://nmap.org/book/man-host-discovery.html  
 おすすめオプション
 - `-sn`  
 ターゲットに対するポートスキャンの前に生存確認のため、ICMP echo reequest、ポート80へのTCP ACK、ポート443へのTCP SYN、ICMP Timestamp queryの４つが送信される。これらを無効したいときに便利
+
+
+## SCAN TECHNIQUES
+https://nmap.org/book/man-port-scanning-basics.html  
+https://nmap.org/book/man-port-scanning-techniques.html  
+デフォルトでTCPポートを1000個スキャンする
+
+
+## PORT SPECIFICATION AND SCAN ORDER
+https://nmap.org/book/man-port-specification.html
+おすすめオプション
+- `--top-ports 数値`
+  よく使われるポートをN個ポートスキャン
