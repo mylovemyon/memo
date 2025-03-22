@@ -1,3 +1,6 @@
+https://github.com/nmap/nmap  
+https://nmap.org/book/toc.html  
+
 ## Options Summary
 ```
 Nmap 7.94SVN ( https://nmap.org )
@@ -138,7 +141,48 @@ https://nmap.org/book/man-port-scanning-techniques.html
 
 
 ## PORT SPECIFICATION AND SCAN ORDER
-https://nmap.org/book/man-port-specification.html
+https://nmap.org/book/man-port-specification.html  
 おすすめオプション
 - `--top-ports 数値`
   よく使われるポートをN個ポートスキャン
+
+
+## SERVICE/VERSION DETECTION
+https://nmap.org/book/man-version-detection.html  
+おすすめオプション
+- `--version-all`  
+  `-sV`オプションより詳細にバージョン検出できる
+
+
+## SCRIPT SCAN
+https://nmap.org/book/man-nse.html  
+https://nmap.org/book/nse.html  
+https://nmap.org/nsedoc/scripts
+
+
+## OS DETECTION
+https://nmap.org/book/man-os-detection.html  
+ターゲットが仮想・コンテナかされていたりすると、ホストOSを検出したりするので信頼性は低い
+
+
+## TIMING AND PERFORMANCE
+https://nmap.org/book/man-performance.html
+おすすめオプション
+- `--max-retries 0`  
+  デフォルトでは再送信は１回なので、０回にし高速化
+
+
+## FIREWALL/IDS EVASION AND SPOOFING
+https://nmap.org/book/man-bypass-firewalls-ids.html  
+おすすめオプション
+- `-e イーサネット名`  
+  送信元イーサネットを指定
+
+
+## OUTPUT
+https://nmap.org/book/man-output.html
+おすすめオプション
+- `--reason`  
+  ホストまたはポートの状態を決定したタイプを表示
+- `-oN 出力ファイル名`  
+  実行結果を通常出力
