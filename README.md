@@ -1,5 +1,7 @@
 - coreutils
   - mkfifo <- yet
+- samba
+  - smbclient <- yet
 - ftp <-yet
 - hydra <- yet
 - har <- yet
@@ -7,5 +9,4 @@
 - msfvenom <- yet
 - nc <- yet
 - nmap
-- smbclient <- yet
 - wfuzz <- yet
