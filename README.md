@@ -4,7 +4,7 @@
   - smbclient <- yet
 - ftp <-yet
 - hydra <- yet
-- har <- yet
+- jar <- yet
 - metasploit <- yet
 - msfvenom <- yet
 - nc <- yet
