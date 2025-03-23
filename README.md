@@ -1,3 +1,5 @@
+- coreutils
+  - mkfifo <- yet
 - ftp <-yet
 - hydra <- yet
 - har <- yet
