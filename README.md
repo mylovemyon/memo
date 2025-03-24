@@ -10,5 +10,5 @@
 - msfvenom <- yet
 - nc <- yet
 - nmap
-- patator <- yet
+- patator
 - wfuzz <- yet
