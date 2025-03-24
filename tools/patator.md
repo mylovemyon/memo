@@ -44,7 +44,7 @@ Available modules:
 ```
 
 
-##
+## Global options
 ```
 Global options:
   --version             show program's version number and exit
@@ -131,4 +131,44 @@ For example, to encode every password in base64:
 ... host=10.0.0.1 user=admin password=_@@_FILE0_@@_ -e _@@_:b64
 
 Please read the README inside for more examples and usage information.
+```
+
+
+## http_fuzz
+```
+Usage: http_fuzz <module-options ...> [global-options ...]
+
+Examples:
+  http_fuzz url=http://10.0.0.1/FILE0 0=paths.txt -x ignore:code=404 -x ignore,retry:code=500
+  http_fuzz url=http://10.0.0.1/manager/html user_pass=COMBO00:COMBO01 0=combos.txt -x ignore:code=401
+  http_fuzz url=http://10.0.0.1/phpmyadmin/index.php method=POST body='pma_username=root&pma_password=FILE0&server=1&lang=en' 0=passwords.txt follow=1 accept_cookie=1 -x ignore:fgrep='Cannot log in to the MySQL server'
+
+Module options:
+  url           : target url (scheme://host[:port]/path?query)
+  body          : body data
+  header        : use custom headers
+  method        : method to use [GET|POST|HEAD|...]
+  raw_request   : load request from file
+  scheme        : scheme [http|https]
+  auto_urlencode: automatically perform URL-encoding [1|0]
+  pathasis      : retain sequences of /../ or /./ [0|1]
+  user_pass     : username and password for HTTP authentication (user:pass)
+  auth_type     : type of HTTP authentication [basic | digest | ntlm]
+  follow        : follow any Location redirect [0|1]
+  max_follow    : redirection limit [5]
+  accept_cookie : save received cookies to issue them in future requests [0|1]
+  proxy         : proxy to use (host:port)
+  proxy_type    : proxy type [http|socks4|socks4a|socks5]
+  resolve       : hostname to IP address resolution to use (hostname:IP)
+  ssl_cert      : client SSL certificate file (cert+key in PEM format)
+  timeout_tcp   : seconds to wait for a TCP handshake [10]
+  timeout       : seconds to wait for a HTTP response [20]
+  before_urls   : comma-separated URLs to query before the main request
+  before_header : use a custom header in the before_urls request
+  before_egrep  : extract data from the before_urls response to place in the main request
+  after_urls    : comma-separated URLs to query after the main request
+  max_mem       : store no more than N bytes of request+response data in memory [-1 (unlimited)]
+  persistent    : use persistent connections [1|0] 
+
+ERROR: wrong usage. Please read the README inside for more information.
 ```
