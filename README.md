@@ -9,4 +9,5 @@
 - msfvenom <- yet
 - nc <- yet
 - nmap
+- patator <- yet
 - wfuzz <- yet
