@@ -1,4 +1,5 @@
 https://github.com/lanjelot/patator
+## Usage
 ```
 Patator 1.1.0 (https://github.com/lanjelot/patator) with Python-3.13.2
 Usage: patator.py module --help
@@ -40,4 +41,94 @@ Available modules:
   + umbraco_crack : Crack Umbraco HMAC-SHA1 password hashes
   + tcp_fuzz      : Fuzz TCP services
   + dummy_test    : Testing module
+```
+
+
+##
+```
+Global options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+
+  Execution:
+    -x arg              actions and conditions, see Syntax below
+    --start=N           start from offset N in the product of all payload sets
+    --stop=N            stop at offset N
+    --resume=r1[,rN]*   resume previous run
+    -e arg              encode everything between two tags, see Syntax below
+    -C str              delimiter string in combo files (default is ':')
+    -X str              delimiter string in conditions (default is ',')
+    --allow-ignore-failures
+                        failures cannot be ignored with -x (this is by design
+                        to avoid false negatives) this option overrides this
+                        safeguard
+    -y                  automatically answer yes for all questions
+
+  Optimization:
+    --rate-limit=N      wait N seconds between each attempt (default is 0)
+    --timeout=N         wait N seconds for a response before retrying payload
+                        (default is 0)
+    --max-retries=N     skip payload after N retries (default is 4) (-1 for
+                        unlimited)
+    -t N, --threads=N   number of threads (default is 10)
+    --groups=GROUPS     default is to iterate over the cartesian product of
+                        all payload sets, use this option to iterate over sets
+                        simultaneously instead (aka pitchfork), see syntax
+                        inside (default is '0,1..n')
+
+  Logging:
+    -l DIR              save output and response data into DIR
+    -L SFX              automatically save into DIR/yyyy-mm-dd/hh:mm:ss_SFX
+                        (DIR defaults to '/tmp/patator')
+    -R FILE             save output to FILE
+    --csv=FILE          save CSV results to FILE
+    --xml=FILE          save XML results to FILE
+    --hits=FILE         save found candidates to FILE
+
+  Debugging:
+    -d, --debug         enable debug messages
+    --auto-progress=N   automatically display progress every N seconds
+
+Syntax:
+ -x actions:conditions
+
+    actions    := action[,action]*
+    action     := "ignore" | "retry" | "skip" | "free" | "quit" | "reset"
+    conditions := condition=value[,condition=value]*
+    condition  := "code" | "size" | "time" | "mesg" | "fgrep" | "egrep" | "clen"
+
+    ignore      : do not report
+    retry       : try payload again
+    skip        : stop testing the same keyword value
+    free        : stop testing the same option value
+    quit        : terminate execution now
+    reset       : close current connection in order to reconnect next time
+
+    code        : match status code
+    size        : match size (N or N-M or N- or -N)
+    time        : match time (N or N-M or N- or -N)
+    mesg        : match message
+    fgrep       : search for string in mesg
+    egrep       : search for regex in mesg
+    clen        : match Content-Length header (N or N-M or N- or -N)
+
+For example, to ignore all redirects to the home page:
+... -x ignore:code=302,fgrep='Location: /home.html'
+
+ -e tag:encoding
+
+    tag        := any unique string (eg. T@G or _@@_ or ...)
+    encoding   := "hex" | "unhex" | "b64" | "md5" | "sha1" | "url"
+
+    hex         : encode in hexadecimal
+    unhex       : decode from hexadecimal
+    b64         : encode in base64
+    md5         : hash in md5
+    sha1        : hash in sha1
+    url         : url encode
+
+For example, to encode every password in base64:
+... host=10.0.0.1 user=admin password=_@@_FILE0_@@_ -e _@@_:b64
+
+Please read the README inside for more examples and usage information.
 ```
