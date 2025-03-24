@@ -1,5 +1,6 @@
 - coreutils
   - mkfifo <- yet
+- docker
 - samba
   - smbclient <- yet
 - ftp <-yet
