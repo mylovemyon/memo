@@ -1,7 +1,7 @@
 https://github.com/nmap/nmap  
 https://nmap.org/book/toc.html  
 
-## Options Summary
+## Usage
 ```
 Nmap 7.94SVN ( https://nmap.org )
 Usage: nmap [Scan Type(s)] [Options] {target specification}
