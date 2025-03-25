@@ -2043,3 +2043,47 @@ Framework Architectures [--arch <value>]
     x86_64
     zarch
 ```
+
+
+## platform
+```
+Framework Platforms [--platform <value>]
+========================================
+
+    Name
+    ----
+    aix
+    android
+    apple_ios
+    arista
+    brocade
+    bsd
+    bsdi
+    cisco
+    firefox
+    freebsd
+    hardware
+    hpux
+    irix
+    java
+    javascript
+    juniper
+    linux
+    mainframe
+    mikrotik
+    multi
+    netbsd
+    netware
+    nodejs
+    openbsd
+    osx
+    php
+    python
+    r
+    ruby
+    solaris
+    unifi
+    unix
+    unknown
+    windows
+```
