@@ -4,7 +4,7 @@
 - samba
   - smbclient <- yet
 - ftp <-yet
-- hydra <- yet
+- hydra
 - jar <- yet
 - metasploit <- yet
 - msfvenom <- yet
