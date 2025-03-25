@@ -1,3 +1,4 @@
+https://github.com/rapid7/metasploit-framework
 ## Usage
 ```
 Usage: msfconsole [options]
