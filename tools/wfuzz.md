@@ -84,3 +84,33 @@ Options:
         --filter <filter>         : Show/hide responses using the specified filter expression (Use BBB for taking values from baseline)
         --prefilter <filter>      : Filter items before fuzzing using the specified expression. Repeat for concatenating filters.
 ```
+
+
+## payloads
+```
+Available payloads:
+
+  Name            | Summary                                                                           
+------------------------------------------------------------------------------------------------------
+  buffer_overflow | Returns a string using the following pattern A * given number.                    
+  hexrand         | Returns random hex numbers from the given range.                                  
+  shodanp         | Returns URLs of a given Shodan API search (needs api key).                        
+  range           | Returns each number of the given range.                                           
+  burplog         | Returns fuzz results from a Burp log.                                             
+  autorize        | Returns fuzz results' from autorize.                                              
+  bing            | Returns URL results of a given bing API search (needs api key).                   
+  ipnet           | Returns list of IP addresses of a network.                                        
+  stdin           | Returns each item read from stdin.                                                
+  burpstate       | Returns fuzz results from a Burp state.                                           
+  names           | Returns possible usernames by mixing the given words, separated by -, using know  
+                  | n typical constructions.                                                          
+  hexrange        | Returns each hex number of the given hex range.                                   
+  wfuzzp          | Returns fuzz results' URL from a previous stored wfuzz session.                   
+  iprange         | Returns list of IP addresses of a given IP range.                                 
+  dirwalk         | Returns filename's recursively from a local directory.                            
+  file            | Returns each word from a file.                                                    
+  burpitem        | This payload loads request/response from items saved from Burpsuite.              
+  list            | Returns each element of the given word list separated by -.                       
+  guitab          | This payload reads requests from a tab in the GUI                                 
+  permutation     | Returns permutations of the given charset and length.
+```
