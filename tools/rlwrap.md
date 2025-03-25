@@ -1,3 +1,4 @@
+https://github.com/hanslub42/rlwrap
 ## Usage
 ```
 Usage: rlwrap [options] command ...
