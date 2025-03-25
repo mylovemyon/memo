@@ -1,3 +1,4 @@
+https://github.com/vanhauser-thc/thc-hydra
 ##  options
 ```
 Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
