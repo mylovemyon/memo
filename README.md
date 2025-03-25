@@ -12,4 +12,5 @@
 - nc <- yet
 - nmap
 - patator
+- rlwrap
 - wfuzz
