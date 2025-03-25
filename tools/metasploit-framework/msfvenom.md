@@ -1998,3 +1998,48 @@ Framework Encryption Formats [--encrypt <value>]
     rc4
     xor
 ```
+
+
+## arch
+```
+Framework Architectures [--arch <value>]
+========================================
+
+    Name
+    ----
+    aarch64
+    armbe
+    armle
+    cbea
+    cbea64
+    cmd
+    dalvik
+    firefox
+    java
+    loongarch64
+    mips
+    mips64
+    mips64le
+    mipsbe
+    mipsle
+    nodejs
+    php
+    ppc
+    ppc64
+    ppc64le
+    ppce500v2
+    python
+    r
+    riscv32be
+    riscv32le
+    riscv64be
+    riscv64le
+    ruby
+    sparc
+    sparc64
+    tty
+    x64
+    x86
+    x86_64
+    zarch
+```
