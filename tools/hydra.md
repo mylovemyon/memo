@@ -61,3 +61,22 @@ Examples:
   hydra -l admin -p password ftp://[192.168.0.0/24]/
   hydra -L logins.txt -P pws.txt -M targets.txt ssh
 ```
+
+
+## http-get
+```
+Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-03-24 22:09:38
+
+Help for module http-get:
+============================================================================
+Module http-get requires the page to authenticate.
+The following parameters are optional:
+ (a|A)=auth-type   specify authentication mechanism to use: BASIC, NTLM or MD5
+ (h|H)=My-Hdr\: foo   to send a user defined HTTP header with each request
+ (F|S)=check for text in the HTTP reply. S= means if this text is found, a
+       valid account has been found, F= means if this string is present the
+       combination is invalid. Note: this must be the last option supplied.
+For example:  "/secret" or "http://bla.com/foo/bar:H=Cookie\: sessid=aaaa" or "https://test.com:8080/members:A=NTLM"
+```
