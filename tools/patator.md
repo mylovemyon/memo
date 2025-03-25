@@ -1,6 +1,6 @@
 https://github.com/lanjelot/patator
 ## Usage
-```
+```sh
 Patator 1.1.0 (https://github.com/lanjelot/patator) with Python-3.13.2
 Usage: patator.py module --help
 
@@ -45,7 +45,7 @@ Available modules:
 
 
 ## Global options
-```
+```sh
 Global options:
   --version             show program's version number and exit
   -h, --help            show this help message and exit
@@ -135,7 +135,7 @@ Please read the README inside for more examples and usage information.
 
 
 ## http_fuzz
-```
+```sh
 Usage: http_fuzz <module-options ...> [global-options ...]
 
 Examples:
@@ -173,6 +173,6 @@ Module options:
 ERROR: wrong usage. Please read the README inside for more information.
 ```
 examples
-```
+```sh
 sudo docker run -it --rm -v $PWD/SecLists/Passwords:/mnt patator http_fuzz url=http://10.129.136.9:8080/manager/html user_pass=COMBO00:COMBO01 0=/mnt/Default-Credentials/tomcat-betterdefaultpasslist.txt -x ignore:code=401 -x ignore:code=403 auth_type=basic
 ```
