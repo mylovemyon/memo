@@ -11,4 +11,4 @@
 - nc <- yet
 - nmap
 - patator
-- wfuzz <- yet
+- wfuzz
