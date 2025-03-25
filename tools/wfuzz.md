@@ -1,3 +1,5 @@
+https://github.com/xmendez/wfuzz
+## Usage
 ```
 ********************************************************
 * Wfuzz 3.1.0 - The Web Fuzzer                         *
