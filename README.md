@@ -1,14 +1,14 @@
 - coreutils
   - mkfifo <- yet
 - docker
+- metasploit-framework
+  - msfconsole
+  - msfvenom
 - samba
   - smbclient <- yet
 - ftp <-yet
 - hydra
 - jar <- yet
-- metasploit-framework
-  - msfconsole
-  - msfvenom
 - nc <- yet
 - nmap
 - patator
