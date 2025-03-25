@@ -5,11 +5,11 @@
   - msfconsole
   - msfvenom
 - samba
-  - smbclient <- yet
+  - smbclient
 - ftp <-yet
 - hydra
 - jar <- yet
-- nc <- yet
+- nc
 - nmap
 - patator
 - rlwrap
