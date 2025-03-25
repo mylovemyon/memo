@@ -31,3 +31,17 @@ Options:
     -t, --timeout         <second>   The number of seconds to wait when reading the payload from STDIN (default 30, 0 to disable)
     -h, --help                       Show this message
 ```
+
+
+## encrypt
+```
+Framework Encryption Formats [--encrypt <value>]
+================================================
+
+    Name
+    ----
+    aes256
+    base64
+    rc4
+    xor
+```
