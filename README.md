@@ -6,8 +6,9 @@
 - ftp <-yet
 - hydra
 - jar <- yet
-- metasploit <- yet
-- msfvenom <- yet
+- metasploit-framework
+  - msfconsole
+  - msfvenom
 - nc <- yet
 - nmap
 - patator
