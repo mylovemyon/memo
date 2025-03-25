@@ -1,6 +1,6 @@
 https://github.com/lanjelot/patator
 ## Usage
-```sh
+```
 Patator 1.1.0 (https://github.com/lanjelot/patator) with Python-3.13.2
 Usage: patator.py module --help
 
@@ -45,7 +45,7 @@ Available modules:
 
 
 ## Global options
-```sh
+```
 Global options:
   --version             show program's version number and exit
   -h, --help            show this help message and exit
@@ -135,7 +135,7 @@ Please read the README inside for more examples and usage information.
 
 
 ## http_fuzz
-```sh
+```
 Usage: http_fuzz <module-options ...> [global-options ...]
 
 Examples:
