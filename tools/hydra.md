@@ -80,3 +80,8 @@ The following parameters are optional:
        combination is invalid. Note: this must be the last option supplied.
 For example:  "/secret" or "http://bla.com/foo/bar:H=Cookie\: sessid=aaaa" or "https://test.com:8080/members:A=NTLM"
 ```
+examples
+- basic認証のパスワードリスト攻撃
+  ```
+hydra -C /home/kali/htb/SecLists/Passwords/Default-Credentials/tomcat-betterdefaultpasslist.txt http-get://10.129.136.9:8080/manager/html:A=basic
+  ```
