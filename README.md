@@ -1,9 +1,12 @@
 - coreutils
-  - mkfifo <- yet
+  - mkfifo
+  - nohup
 - docker
 - metasploit-framework
   - msfconsole
   - msfvenom
+- pypa
+    - pip
 - samba
   - smbclient
 - ftp <-yet
