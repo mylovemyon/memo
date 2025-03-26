@@ -7,6 +7,7 @@
   - msfvenom
 - pypa
     - pip
+    - pipenv
 - samba
   - smbclient
 - ftp <-yet
