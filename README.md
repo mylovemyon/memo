@@ -12,6 +12,7 @@
     - pipenv
 - samba
   - smbclient
+- 7z
 - ftp <-yet
 - hydra
 - jar <- yet
