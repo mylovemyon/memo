@@ -1,5 +1,6 @@
 - docker
 - gnu
+  - grep
   - mkfifo
   - nohup
 - info-zip
