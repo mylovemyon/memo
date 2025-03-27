@@ -2,6 +2,8 @@
   - mkfifo
   - nohup
 - docker
+- info-zip
+  - unzip
 - metasploit-framework
   - msfconsole
   - msfvenom
