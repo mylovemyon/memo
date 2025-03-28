@@ -3,6 +3,8 @@
   - coreutils
     - mkfifo
     - nohup
+  - util-linux
+    - utmpdump
   - grep
 - info-zip
   - unzip
