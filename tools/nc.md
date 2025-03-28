@@ -1,4 +1,5 @@
 https://manpages.debian.org/testing/netcat-traditional/nc.1.en.html
+## options
 ```
 [v1.10-47]
 connect to somewhere:	nc [-options] hostname port[s] [ports] ... 
