@@ -1,11 +1,9 @@
 - docker
 - gnu
-  - coreutils
-    - mkfifo
-    - nohup
-  - util-linux
-    - utmpdump
   - grep
+  - mkfifo
+  - nohup
+  - utmpdump
 - info-zip
   - unzip
 - metasploit-framework
