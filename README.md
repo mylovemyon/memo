@@ -1,6 +1,7 @@
 - docker
 - gnu
   - grep
+  - locate
   - mkfifo
   - nohup
   - utmpdump
