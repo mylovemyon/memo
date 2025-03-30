@@ -13,6 +13,8 @@
 - pypa
     - pip
     - pipenv
+- python
+  - wes.py
 - samba
   - smbclient
 - 7z
