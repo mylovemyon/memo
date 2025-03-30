@@ -225,3 +225,66 @@ Target a block from a resolved domain name:
 
     set RHOSTS www.example.test/24
 ```
+
+
+## search
+```
+Usage: search [<options>] [<keywords>:<value>]
+
+Prepending a value with '-' will exclude any matching results.
+If no options or keywords are provided, cached results are displayed.
+
+
+OPTIONS:
+
+    -h, --help                      Help banner
+    -I, --ignore                    Ignore the command if the only match has the same name as the search
+    -o, --output <filename>         Send output to a file in csv format
+    -r, --sort-descending <column>  Reverse the order of search results to descending order
+    -S, --filter <filter>           Regex pattern used to filter search results
+    -s, --sort-ascending <column>   Sort search results by the specified column in ascending order
+    -u, --use                       Use module if there is one result
+
+Keywords:
+  adapter          :  Modules with a matching adater reference name
+  aka              :  Modules with a matching AKA (also-known-as) name
+  author           :  Modules written by this author
+  arch             :  Modules affecting this architecture
+  bid              :  Modules with a matching Bugtraq ID
+  osvdb            :  Modules with a matching OSVDB ID
+  cve              :  Modules with a matching CVE ID
+  edb              :  Modules with a matching Exploit-DB ID
+  check            :  Modules that support the 'check' method
+  date             :  Modules with a matching disclosure date
+  description      :  Modules with a matching description
+  fullname         :  Modules with a matching full name
+  mod_time         :  Modules with a matching modification date
+  name             :  Modules with a matching descriptive name
+  path             :  Modules with a matching path
+  platform         :  Modules affecting this platform
+  port             :  Modules with a matching port
+  rank             :  Modules with a matching rank (Can be descriptive (ex: 'good') or numeric with comparison operators (ex: 'gte400'))
+  ref              :  Modules with a matching ref
+  reference        :  Modules with a matching reference
+  session_type     :  Modules with a matching session type (SMB, MySQL, Meterpreter, etc)
+  stage            :  Modules with a matching stage reference name
+  stager           :  Modules with a matching stager reference name
+  target           :  Modules affecting this target
+  type             :  Modules of a specific type (exploit, payload, auxiliary, encoder, evasion, post, or nop)
+  action           :  Modules with a matching action name or description
+
+Supported search columns:
+  rank             :  Sort modules by their exploitability rank
+  date             :  Sort modules by their disclosure date. Alias for disclosure_date
+  disclosure_date  :  Sort modules by their disclosure date
+  name             :  Sort modules by their name
+  type             :  Sort modules by their type
+  check            :  Sort modules by whether or not they have a check method
+  action           :  Sort modules by whether or not they have actions
+
+Examples:
+  search cve:2009 type:exploit
+  search cve:2009 type:exploit platform:-linux
+  search cve:2009 -s name
+  search type:exploit -s type -r
+```
