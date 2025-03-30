@@ -18,7 +18,7 @@
 - 7z
 - ftp
 - hydra
-- jar <- yet
+- jar
 - nc
 - nmap
 - patator
