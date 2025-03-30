@@ -16,7 +16,7 @@
 - samba
   - smbclient
 - 7z
-- ftp <-yet
+- ftp
 - hydra
 - jar <- yet
 - nc
