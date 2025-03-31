@@ -19,6 +19,8 @@
   - wes.py
 - samba
   - smbclient
+- windows
+  - where
 - 7z
 - ftp
 - hydra
