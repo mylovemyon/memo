@@ -4,6 +4,7 @@
   - locate
   - mkfifo
   - nohup
+  - tee
   - utmpdump
 - info-zip
   - unzip
