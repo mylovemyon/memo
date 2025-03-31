@@ -30,4 +30,5 @@
 - nmap
 - patator
 - rlwrap
+- searchsploit
 - wfuzz
