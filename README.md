@@ -20,6 +20,7 @@
 - samba
   - smbclient
 - windows
+  - certutil
   - where
 - 7z
 - ftp
