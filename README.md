@@ -7,6 +7,7 @@
   - nohup
   - tee
   - utmpdump
+  - xargs
 - info-zip
   - unzip
 - metasploit-framework
