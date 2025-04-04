@@ -30,6 +30,7 @@
 - nc
 - nmap
 - patator
+- potato
 - rlwrap
 - searchsploit
 - wfuzz
