@@ -8,3 +8,7 @@ https://foxglovesecurity.com/2016/09/26/rotten-potato-privilege-escalation-from-
   .Net Framework 4.0.30319が必要
 - [RottenPotatoNG](https://github.com/breenmachine/RottenPotatoNG)  
   Metasploit用っぽい
+
+
+## Juicy Potato
+https://github.com/ohpe/juicy-potato
