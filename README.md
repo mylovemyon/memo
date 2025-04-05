@@ -10,7 +10,8 @@
   - xargs
 - info-zip
   - unzip
-- metasploit-framework
+- metasploit
+  - meterpreter
   - msfconsole
   - msfvenom
 - pypa
