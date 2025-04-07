@@ -30,6 +30,7 @@
 - hydra
 - jar
 - nc
+- nishang
 - nmap
 - patator
 - potato
