@@ -6,6 +6,7 @@
   - mkfifo
   - nohup
   - tee
+  - updatedb
   - utmpdump
   - xargs
 - info-zip
