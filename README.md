@@ -20,8 +20,6 @@
 - pypa
     - pip
     - pipenv
-- python
-  - wes.py
 - samba
   - smbclient
 - windows
@@ -37,4 +35,5 @@
 - potato
 - rlwrap
 - searchsploit
+- wes.py
 - wfuzz
