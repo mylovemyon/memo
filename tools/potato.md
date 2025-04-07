@@ -4,7 +4,7 @@ https://hideandsec.sh/books/windows-sNL/page/in-the-potato-family-i-want-them-al
 ## Rotten Potato
 https://foxglovesecurity.com/2016/09/26/rotten-potato-privilege-escalation-from-service-accounts-to-system/
 
-- [RottenPotato](https://github.com/foxglovesec/RottenPotato/blob/master/README.md)  
+- [RottenPotato](https://github.com/foxglovesec/RottenPotato/tree/master)  
   .Net Framework 4.0.30319が必要
 - [RottenPotatoNG](https://github.com/breenmachine/RottenPotatoNG)  
   Metasploit用っぽい
