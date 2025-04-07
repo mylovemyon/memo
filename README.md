@@ -10,7 +10,7 @@
   - utmpdump
   - xargs
 - impacket
-  - smbserver.py
+  - smbserver
 - info-zip
   - unzip
 - metasploit
@@ -35,5 +35,5 @@
 - potato
 - rlwrap
 - searchsploit
-- wes.py
+- wes
 - wfuzz
