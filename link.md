@@ -1,0 +1,2 @@
+- [windows-kernel-exploits](https://github.com/SecWiki/windows-kernel-exploits/tree/master)
+- [WindowsExploits](https://github.com/abatchy17/WindowsExploits)
