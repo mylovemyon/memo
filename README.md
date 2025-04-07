@@ -9,6 +9,8 @@
   - updatedb
   - utmpdump
   - xargs
+- impacket
+  - smbserver.py
 - info-zip
   - unzip
 - metasploit
