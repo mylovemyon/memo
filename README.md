@@ -35,5 +35,3 @@
 - rlwrap
 - searchsploit
 - wfuzz
-
-https://atmarkit.itmedia.co.jp/fwin2k/vista_feature/08uac02/08uac02_01.html
