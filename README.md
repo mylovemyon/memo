@@ -1,6 +1,7 @@
 - docker
   - run
 - gnu
+  - curl
   - grep
   - locate
   - mkfifo
@@ -38,5 +39,6 @@
 - potato
 - rlwrap
 - searchsploit
+- watson
 - wes
 - wfuzz
