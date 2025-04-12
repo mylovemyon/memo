@@ -17,6 +17,8 @@
   - meterpreter
   - msfconsole
   - msfvenom
+- peas
+  - winpeas
 - pypa
     - pip
     - pipenv
