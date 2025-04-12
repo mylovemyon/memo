@@ -20,9 +20,11 @@
   - msfvenom
 - peas
   - winpeas
-- pypa
+- python
+  - pypa
     - pip
     - pipenv
+  - python2.7
 - samba
   - smbclient
 - windows
