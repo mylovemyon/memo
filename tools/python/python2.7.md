@@ -1,3 +1,4 @@
+https://www.kali.org/docs/general-use/using-eol-python-versions/
 ```
 usage: python2.7 [option] ... [-c cmd | -m mod | file | -] [arg] ...
 Options and arguments (and corresponding environment variables):
