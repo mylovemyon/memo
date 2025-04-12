@@ -30,6 +30,7 @@
   - where
 - 7z
 - ftp
+- git
 - hydra
 - jar
 - nc
