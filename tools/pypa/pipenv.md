@@ -1,4 +1,5 @@
-https://github.com/pypa/pipenv
+https://github.com/pypa/pipenv  
+https://zenn.dev/nekoallergy/articles/py-env-pipenv01
 ## Usage
 ```
 Usage: pipenv [OPTIONS] COMMAND [ARGS]...
