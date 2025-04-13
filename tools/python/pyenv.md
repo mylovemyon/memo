@@ -42,6 +42,26 @@ For full documentation, see: https://github.com/pyenv/pyenv#readme
 ```
 
 
+## global
+```
+Usage: pyenv global <version> <version2> <..>
+
+Sets the global Python version(s). You can override the global version at
+any time by setting a directory-specific version with `pyenv local'
+or by setting the `PYENV_VERSION' environment variable.
+
+<version> can be specified multiple times and should be a version
+tag known to pyenv.  The special version string `system' will use
+your default system Python.  Run `pyenv versions' for a list of
+available Python versions.
+
+Example: To enable the python2.7 and python3.7 shims to find their
+         respective executables you could set both versions with:
+
+'pyenv global 3.7.0 2.7.15'
+```
+
+
 ## install
 ```
 Usage: pyenv install [-f] [-kvp] <version>...
@@ -70,7 +90,6 @@ compilation, see: https://github.com/pyenv/pyenv#readme
 
 ## local
 ```
-└─$ pyenv help local
 Usage: pyenv local [-f|--force] [<version> [...]]
        pyenv local --unset
 
