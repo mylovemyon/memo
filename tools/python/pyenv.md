@@ -66,3 +66,24 @@ For detailed information on installing Python versions with
 python-build, including a list of environment variables for adjusting
 compilation, see: https://github.com/pyenv/pyenv#readme
 ```
+
+
+## shell
+```
+Usage: pyenv shell <version>...
+       pyenv shell -
+       pyenv shell --unset
+
+Sets a shell-specific Python version by setting the `PYENV_VERSION'
+environment variable in your shell. This version overrides local
+application-specific versions and the global version.
+
+<version> should be a string matching a Python version known to pyenv.
+The special version string `system' will use your default system Python.
+Run `pyenv versions' for a list of available Python versions.
+
+When `-` is passed instead of the version string, the previously set
+version will be restored. With `--unset`, the `PYENV_VERSION`
+environment variable gets unset, restoring the environment to the
+state before the first `pyenv shell` call.
+```
