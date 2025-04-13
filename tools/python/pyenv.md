@@ -1,3 +1,4 @@
+## Usage
 ```
 Usage: pyenv <command> [<args>]
 
@@ -37,4 +38,30 @@ Some useful pyenv commands are:
 
 See `pyenv help <command>' for information on a specific command.
 For full documentation, see: https://github.com/pyenv/pyenv#readme
+```
+
+
+## install
+```
+Usage: pyenv install [-f] [-kvp] <version>...
+       pyenv install [-f] [-kvp] <definition-file>
+       pyenv install -l|--list
+       pyenv install --version
+
+  -l/--list          List all available versions
+  -f/--force         Install even if the version appears to be installed already
+  -s/--skip-existing Skip if the version appears to be installed already
+
+  python-build options:
+
+  -k/--keep          Keep source tree in $PYENV_BUILD_ROOT after installation
+                     (defaults to $PYENV_ROOT/sources)
+  -p/--patch         Apply a patch from stdin before building
+  -v/--verbose       Verbose mode: print compilation status to stdout
+  --version          Show version of python-build
+  -g/--debug         Build a debug version
+
+For detailed information on installing Python versions with
+python-build, including a list of environment variables for adjusting
+compilation, see: https://github.com/pyenv/pyenv#readme
 ```
