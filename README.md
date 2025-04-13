@@ -24,8 +24,9 @@
   - pypa
     - pip
     - pipenv
-  - uv
+  - pyenv
   - python2.7
+  - uv
 - samba
   - smbclient
 - windows
