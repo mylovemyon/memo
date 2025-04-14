@@ -1,5 +1,6 @@
 https://github.com/pypa/pipenv  
-https://zenn.dev/nekoallergy/articles/py-env-pipenv01
+
+Python3.xのみ対応っぽい
 ## Usage
 ```
 Usage: pipenv [OPTIONS] COMMAND [ARGS]...
