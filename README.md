@@ -23,6 +23,8 @@
 - python
   - pypa
     - pip
+  - 2to3-2.7
+  - black
   - uv
 - samba
   - smbclient
