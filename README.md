@@ -24,7 +24,6 @@
   - pypa
     - pip
     - pipenv
-  - pyenv
   - uv
 - samba
   - smbclient
