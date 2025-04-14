@@ -23,7 +23,6 @@
 - python
   - pypa
     - pip
-    - pipenv
   - uv
 - samba
   - smbclient
