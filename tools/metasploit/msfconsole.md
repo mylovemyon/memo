@@ -35,189 +35,195 @@ Console options:
 
 
 ## Commands
-windows-meterpreter
 ```
 Core Commands
 =============
 
-    Command                   Description
-    -------                   -----------
-    ?                         Help menu
-    background                Backgrounds the current session
-    bg                        Alias for background
-    bgkill                    Kills a background meterpreter script
-    bglist                    Lists running background scripts
-    bgrun                     Executes a meterpreter script as a background thread
-    channel                   Displays information or control active channels
-    close                     Closes a channel
-    detach                    Detach the meterpreter session (for http/https)
-    disable_unicode_encoding  Disables encoding of unicode strings
-    enable_unicode_encoding   Enables encoding of unicode strings
-    exit                      Terminate the meterpreter session
-    get_timeouts              Get the current session timeout values
-    guid                      Get the session GUID
-    help                      Help menu
-    info                      Displays information about a Post module
-    irb                       Open an interactive Ruby shell on the current session
-    load                      Load one or more meterpreter extensions
-    machine_id                Get the MSF ID of the machine attached to the session
-    migrate                   Migrate the server to another process
-    pivot                     Manage pivot listeners
-    pry                       Open the Pry debugger on the current session
-    quit                      Terminate the meterpreter session
-    read                      Reads data from a channel
-    resource                  Run the commands stored in a file
-    run                       Executes a meterpreter script or Post module
-    secure                    (Re)Negotiate TLV packet encryption on the session
-    sessions                  Quickly switch to another session
-    set_timeouts              Set the current session timeout values
-    sleep                     Force Meterpreter to go quiet, then re-establish session
-    ssl_verify                Modify the SSL certificate verification setting
-    transport                 Manage the transport mechanisms
-    use                       Deprecated alias for "load"
-    uuid                      Get the UUID for the current session
-    write                     Writes data to a channel
+    Command           Description
+    -------           -----------
+    ?                 Help menu
+    banner            Display an awesome metasploit banner
+    cd                Change the current working directory
+    color             Toggle color
+    connect           Communicate with a host
+    debug             Display information useful for debugging
+    exit              Exit the console
+    features          Display the list of not yet released features that can be opted in to
+    get               Gets the value of a context-specific variable
+    getg              Gets the value of a global variable
+    grep              Grep the output of another command
+    help              Help menu
+    history           Show command history
+    load              Load a framework plugin
+    quit              Exit the console
+    repeat            Repeat a list of commands
+    route             Route traffic through a session
+    save              Saves the active datastores
+    sessions          Dump session listings and display information about sessions
+    set               Sets a context-specific variable to a value
+    setg              Sets a global variable to a value
+    sleep             Do nothing for the specified number of seconds
+    spool             Write console output into a file as well the screen
+    threads           View and manipulate background threads
+    tips              Show a list of useful productivity tips
+    unload            Unload a framework plugin
+    unset             Unsets one or more context-specific variables
+    unsetg            Unsets one or more global variables
+    version           Show the framework and console library version numbers
 
 
-Stdapi: File system Commands
-============================
+Module Commands
+===============
 
-    Command                   Description
-    -------                   -----------
-    cat                       Read the contents of a file to the screen
-    cd                        Change directory
-    checksum                  Retrieve the checksum of a file
-    cp                        Copy source to destination
-    del                       Delete the specified file
-    dir                       List files (alias for ls)
-    download                  Download a file or directory
-    edit                      Edit a file
-    getlwd                    Print local working directory (alias for lpwd)
-    getwd                     Print working directory
-    lcat                      Read the contents of a local file to the screen
-    lcd                       Change local working directory
-    ldir                      List local files (alias for lls)
-    lls                       List local files
-    lmkdir                    Create new directory on local machine
-    lpwd                      Print local working directory
-    ls                        List files
-    mkdir                     Make directory
-    mv                        Move source to destination
-    pwd                       Print working directory
-    rm                        Delete the specified file
-    rmdir                     Remove directory
-    search                    Search for files
-    show_mount                List all mount points/logical drives
-    upload                    Upload a file or directory
+    Command           Description
+    -------           -----------
+    advanced          Displays advanced options for one or more modules
+    back              Move back from the current context
+    clearm            Clear the module stack
+    favorite          Add module(s) to the list of favorite modules
+    favorites         Print the list of favorite modules (alias for `show favorites`)
+    info              Displays information about one or more modules
+    listm             List the module stack
+    loadpath          Searches for and loads modules from a path
+    options           Displays global options or for one or more modules
+    popm              Pops the latest module off the stack and makes it active
+    previous          Sets the previously loaded module as the current module
+    pushm             Pushes the active or list of modules onto the module stack
+    reload_all        Reloads all modules from all defined module paths
+    search            Searches module names and descriptions
+    show              Displays modules of a given type, or all modules
+    use               Interact with a module by name or search term/index
 
 
-Stdapi: Networking Commands
-===========================
+Job Commands
+============
 
-    Command                   Description
-    -------                   -----------
-    arp                       Display the host ARP cache
-    getproxy                  Display the current proxy configuration
-    ifconfig                  Display interfaces
-    ipconfig                  Display interfaces
-    netstat                   Display the network connections
-    portfwd                   Forward a local port to a remote service
-    resolve                   Resolve a set of host names on the target
-    route                     View and modify the routing table
+    Command           Description
+    -------           -----------
+    handler           Start a payload handler as job
+    jobs              Displays and manages jobs
+    kill              Kill a job
+    rename_job        Rename a job
 
 
-Stdapi: System Commands
-=======================
-
-    Command                   Description
-    -------                   -----------
-    clearev                   Clear the event log
-    drop_token                Relinquishes any active impersonation token.
-    execute                   Execute a command
-    getenv                    Get one or more environment variable values
-    getpid                    Get the current process identifier
-    getprivs                  Attempt to enable all privileges available to the current process
-    getsid                    Get the SID of the user that the server is running as
-    getuid                    Get the user that the server is running as
-    kill                      Terminate a process
-    localtime                 Displays the target system local date and time
-    pgrep                     Filter processes by name
-    pkill                     Terminate processes by name
-    ps                        List running processes
-    reboot                    Reboots the remote computer
-    reg                       Modify and interact with the remote registry
-    rev2self                  Calls RevertToSelf() on the remote machine
-    shell                     Drop into a system command shell
-    shutdown                  Shuts down the remote computer
-    steal_token               Attempts to steal an impersonation token from the target process
-    suspend                   Suspends or resumes a list of processes
-    sysinfo                   Gets information about the remote system, such as OS
-
-
-Stdapi: User interface Commands
-===============================
-
-    Command                   Description
-    -------                   -----------
-    enumdesktops              List all accessible desktops and window stations
-    getdesktop                Get the current meterpreter desktop
-    idletime                  Returns the number of seconds the remote user has been idle
-    keyboard_send             Send keystrokes
-    keyevent                  Send key events
-    keyscan_dump              Dump the keystroke buffer
-    keyscan_start             Start capturing keystrokes
-    keyscan_stop              Stop capturing keystrokes
-    mouse                     Send mouse events
-    screenshare               Watch the remote user desktop in real time
-    screenshot                Grab a screenshot of the interactive desktop
-    setdesktop                Change the meterpreters current desktop
-    uictl                     Control some of the user interface components
-
-
-Stdapi: Webcam Commands
-=======================
-
-    Command                   Description
-    -------                   -----------
-    record_mic                Record audio from the default microphone for X seconds
-    webcam_chat               Start a video chat
-    webcam_list               List webcams
-    webcam_snap               Take a snapshot from the specified webcam
-    webcam_stream             Play a video stream from the specified webcam
-
-
-Stdapi: Audio Output Commands
-=============================
-
-    Command                   Description
-    -------                   -----------
-    play                      play a waveform audio file (.wav) on the target system
-
-
-Priv: Elevate Commands
-======================
-
-    Command                   Description
-    -------                   -----------
-    getsystem                 Attempt to elevate your privilege to that of local system.
-
-
-Priv: Password database Commands
-================================
-
-    Command                   Description
-    -------                   -----------
-    hashdump                  Dumps the contents of the SAM database
-
-
-Priv: Timestomp Commands
+Resource Script Commands
 ========================
 
-    Command                   Description
-    -------                   -----------
-    timestomp                 Manipulate file MACE attributes
+    Command           Description
+    -------           -----------
+    makerc            Save commands entered since start to a file
+    resource          Run the commands stored in a file
+
+
+Database Backend Commands
+=========================
+
+    Command           Description
+    -------           -----------
+    analyze           Analyze database information about a specific address or address range
+    db_connect        Connect to an existing data service
+    db_disconnect     Disconnect from the current data service
+    db_export         Export a file containing the contents of the database
+    db_import         Import a scan result file (filetype will be auto-detected)
+    db_nmap           Executes nmap and records the output automatically
+    db_rebuild_cache  Rebuilds the database-stored module cache (deprecated)
+    db_remove         Remove the saved data service entry
+    db_save           Save the current data service connection as the default to reconnect on startup
+    db_stats          Show statistics for the database
+    db_status         Show the current data service status
+    hosts             List all hosts in the database
+    klist             List Kerberos tickets in the database
+    loot              List all loot in the database
+    notes             List all notes in the database
+    services          List all services in the database
+    vulns             List all vulnerabilities in the database
+    workspace         Switch between database workspaces
+
+
+Credentials Backend Commands
+============================
+
+    Command           Description
+    -------           -----------
+    creds             List all credentials in the database
+
+
+Developer Commands
+==================
+
+    Command           Description
+    -------           -----------
+    edit              Edit the current module or a file with the preferred editor
+    irb               Open an interactive Ruby shell in the current context
+    log               Display framework.log paged to the end if possible
+    pry               Open the Pry debugger on the current module or Framework
+    reload_lib        Reload Ruby library files from specified paths
+    time              Time how long it takes to run a particular command
+
+
+DNS Commands
+============
+
+    Command           Description
+    -------           -----------
+    dns               Manage Metasploit's DNS resolving behaviour
 
 For more info on a specific command, use <command> -h or help <command>.
+
+
+msfconsole
+==========
+
+`msfconsole` is the primary interface to Metasploit Framework. There is quite a
+lot that needs go here, please be patient and keep an eye on this space!
+
+Building ranges and lists
+-------------------------
+
+Many commands and options that take a list of things can use ranges to avoid
+having to manually list each desired thing. All ranges are inclusive.
+
+### Ranges of IDs
+
+Commands that take a list of IDs can use ranges to help. Individual IDs must be
+separated by a `,` (no space allowed) and ranges can be expressed with either
+`-` or `..`.
+
+### Ranges of IPs
+
+There are several ways to specify ranges of IP addresses that can be mixed
+together. The first way is a list of IPs separated by just a ` ` (ASCII space),
+with an optional `,`. The next way is two complete IP addresses in the form of
+`BEGINNING_ADDRESS-END_ADDRESS` like `127.0.1.44-127.0.2.33`. CIDR
+specifications may also be used, however the whole address must be given to
+Metasploit like `127.0.0.0/8` and not `127/8`, contrary to the RFC.
+Additionally, a netmask can be used in conjunction with a domain name to
+dynamically resolve which block to target. All these methods work for both IPv4
+and IPv6 addresses. IPv4 addresses can also be specified with special octet
+ranges from the [NMAP target
+specification](https://nmap.org/book/man-target-specification.html)
+
+### Examples
+
+Terminate the first sessions:
+
+    sessions -k 1
+
+Stop some extra running jobs:
+
+    jobs -k 2-6,7,8,11..15
+
+Check a set of IP addresses:
+
+    check 127.168.0.0/16, 127.0.0-2.1-4,15 127.0.0.255
+
+Target a set of IPv6 hosts:
+
+    set RHOSTS fe80::3990:0000/110, ::1-::f0f0
+
+Target a block from a resolved domain name:
+
+    set RHOSTS www.example.test/24
 ```
 
 
