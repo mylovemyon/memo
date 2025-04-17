@@ -1,4 +1,5 @@
 https://github.com/rapid7/metasploit-payloads/tree/master/c/meterpreter
+## Core Commands
 ```
 Core Commands
 =============
@@ -181,4 +182,30 @@ Priv: Timestomp Commands
     timestomp                 Manipulate file MACE attributes
 
 For more info on a specific command, use <command> -h or help <command>.
+```
+
+
+## reg
+```
+Usage: reg [command] [options]
+Interact with the target machine's registry.
+
+OPTIONS:
+
+    -d   The data to store in the registry value.
+    -h   Help menu.
+    -k   The registry key path (E.g. HKLM\Software\Foo).
+    -r   The remote machine name to connect to (with current process credentials
+    -t   The registry value type (E.g. REG_SZ).
+    -v   The registry value name (E.g. Stuff).
+    -w   Set KEY_WOW64 flag, valid values [32|64].
+COMMANDS:
+
+    enumkey     Enumerate the supplied registry key [-k <key>]
+    createkey   Create the supplied registry key  [-k <key>]
+    deletekey   Delete the supplied registry key  [-k <key>]
+    queryclass  Queries the class of the supplied key [-k <key>]
+    setval      Set a registry value [-k <key> -v <val> -d <data>]. Use a binary blob to set binary data with REG_BINARY type (e.g. setval -d ef4ba278)
+    deleteval   Delete the supplied registry value [-k <key> -v <val>]
+    queryval    Queries the data contents of a value [-k <key> -v <val>]
 ```
