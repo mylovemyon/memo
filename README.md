@@ -30,6 +30,7 @@
   - smbclient
 - windows
   - certutil
+  - dir
   - where
 - 7z
 - ftp
