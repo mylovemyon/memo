@@ -3,12 +3,14 @@
 - gnu
   - curl
   - grep
+  - iconv
   - locate
   - mkfifo
   - nohup
   - tee
   - updatedb
   - utmpdump
+  - wget2
   - xargs
 - impacket
   - psexec
