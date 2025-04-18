@@ -11,6 +11,7 @@
   - utmpdump
   - xargs
 - impacket
+  - psexec
   - smbserver
 - info-zip
   - unzip
