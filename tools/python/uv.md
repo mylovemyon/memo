@@ -1,5 +1,6 @@
 https://github.com/astral-sh/uv  
-python3.xのみ対応っぽい
+python3.xのみ対応っぽい  
+各コマンドは、「Cache options」「Global options」は共通
 ## Usage
 ```
 Usage: uv [OPTIONS] <COMMAND>
@@ -84,25 +85,6 @@ Python options:
       --managed-python       Require use of uv-managed Python versions [env: UV_MANAGED_PYTHON=]
       --no-managed-python    Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
       --no-python-downloads  Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-
-Cache options:
-  -n, --no-cache               Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation [env: UV_NO_CACHE=]
-      --cache-dir <CACHE_DIR>  Path to the cache directory [env: UV_CACHE_DIR=]
-
-Global options:
-  -q, --quiet...                                   Use quiet output
-  -v, --verbose...                                 Use verbose output
-      --color <COLOR_CHOICE>                       Control the use of color in output [possible values: auto, always, never]
-      --native-tls                                 Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
-      --offline                                    Disable network access [env: UV_OFFLINE=]
-      --allow-insecure-host <ALLOW_INSECURE_HOST>  Allow insecure connections to a host [env: UV_INSECURE_HOST=]
-      --no-progress                                Hide all progress outputs [env: UV_NO_PROGRESS=]
-      --directory <DIRECTORY>                      Change to the given directory prior to running the command
-      --project <PROJECT>                          Run the command within the given project directory [env: UV_PROJECT=]
-      --config-file <CONFIG_FILE>                  The path to a `uv.toml` file to use for configuration [env: UV_CONFIG_FILE=]
-      --no-config                                  Avoid discovering configuration files (`pyproject.toml`, `uv.toml`) [env: UV_NO_CONFIG=]
-  -h, --help                                       Display the concise help for this command
-  -V, --version                                    Display the uv version
 ```
 
 
@@ -120,29 +102,10 @@ Commands:
   dir        Show the uv Python installation directory
   uninstall  Uninstall Python versions
 
-Cache options:
-  -n, --no-cache               Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation [env: UV_NO_CACHE=]
-      --cache-dir <CACHE_DIR>  Path to the cache directory [env: UV_CACHE_DIR=]
-
 Python options:
       --managed-python       Require use of uv-managed Python versions [env: UV_MANAGED_PYTHON=]
       --no-managed-python    Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
       --no-python-downloads  Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-
-Global options:
-  -q, --quiet...                                   Use quiet output
-  -v, --verbose...                                 Use verbose output
-      --color <COLOR_CHOICE>                       Control the use of color in output [possible values: auto, always, never]
-      --native-tls                                 Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
-      --offline                                    Disable network access [env: UV_OFFLINE=]
-      --allow-insecure-host <ALLOW_INSECURE_HOST>  Allow insecure connections to a host [env: UV_INSECURE_HOST=]
-      --no-progress                                Hide all progress outputs [env: UV_NO_PROGRESS=]
-      --directory <DIRECTORY>                      Change to the given directory prior to running the command
-      --project <PROJECT>                          Run the command within the given project directory [env: UV_PROJECT=]
-      --config-file <CONFIG_FILE>                  The path to a `uv.toml` file to use for configuration [env: UV_CONFIG_FILE=]
-      --no-config                                  Avoid discovering configuration files (`pyproject.toml`, `uv.toml`) [env: UV_NO_CONFIG=]
-  -h, --help                                       Display the concise help for this command
-  -V, --version                                    Display the uv version
 ```
 ### list
 ```
