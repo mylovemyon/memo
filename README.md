@@ -33,6 +33,7 @@
   - certutil
   - dir
   - fc
+  - secedit
   - where
 - 7z
 - ftp
