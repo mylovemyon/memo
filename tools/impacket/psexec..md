@@ -45,6 +45,7 @@ connection:
 
 
 ## psexec に必要な設定とは
+https://learn.microsoft.com/ja-jp/answers/questions/2196929/psexec?page=1#answer-1965974  
 インストール直後のWindowsServer2016にポートスキャン  
 DefenderFirewallはPublic
 ```sh
