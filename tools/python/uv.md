@@ -1,5 +1,5 @@
 https://github.com/astral-sh/uv  
-python3.xのみ対応っぽい  
+https://qiita.com/gomi1994/items/ce92af2386cdd94c6fc3  
 各コマンドは、「Cache options」「Global options」は共通
 ## Usage
 ```
