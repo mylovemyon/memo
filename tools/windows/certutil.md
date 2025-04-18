@@ -1,3 +1,4 @@
+https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/certutil
 ```
 Verbs:
   -dump             -- Dump configuration information or file
