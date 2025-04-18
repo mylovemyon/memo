@@ -44,9 +44,48 @@ connection:
 ```
 
 
-## psexec とは
-WindowsServer2016のデフォルトの現在のセキュリティ構成を確認
+## psexec に必要な設定とは
+インストール直後のWindowsServer2016にポートスキャン  
+DefenderFirewallはPublic
+```sh
+└─$ nmap -n -Pn --top-ports=1000 192.168.0.50 
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-04-17 19:58 EDT
+Nmap scan report for 192.168.0.50
+Host is up (0.00042s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+5985/tcp open  wsman
+MAC Address: 00:15:5D:14:8F:61 (Microsoft)
+
+Nmap done: 1 IP address (1 host up) scanned in 13.20 seconds
 ```
+DefenderFirewallの「File and Printer Sharing (SMB-In)」を追加で有効にすると、445番が開いた
+```sh
+└─$ nmap -n -Pn --top-ports=1000 192.168.0.50
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-04-17 20:02 EDT
+Nmap scan report for 192.168.0.50
+Host is up (0.00038s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+445/tcp  open  microsoft-ds
+5985/tcp open  wsman
+MAC Address: 00:15:5D:14:8F:61 (Microsoft)
+
+Nmap done: 1 IP address (1 host up) scanned in 4.70 seconds
+```
+administratosグループに「kali」ユーザを追加して、psexec実行！もちろん動作せず
+```sh
+└─$ impacket-psexec 'kali:!QAZ2wsx@192.168.0.50'
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Requesting shares on 192.168.0.50.....
+[-] share 'ADMIN$' is not writable.
+[-] share 'C$' is not writable.
+```
+WindowsServer2016のデフォルトの現在のセキュリティ構成を`secedit`で確認  
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System の LocalAccountTokenFilterPolicy が１に設定されていれば、PSEXECは刺さる。  
+が、デフォルトではそのレジストリ値は設定されていない。  
+```sh
 C:\Users\Administrator>secedit /export /cfg a.ini
 
 The task has completed successfully.
@@ -176,3 +215,53 @@ SeDelegateSessionUserImpersonatePrivilege = *S-1-5-32-544
 signature="$CHICAGO$"
 Revision=1
 ```
+初めのポートスキャンでは5985番ポート（WinRM）が開いてることを確認  
+WinRMはデフォルトで動いているが、必要な設定をしないとWinRMログインはできない  
+ここで必要な設定を実行（この設定だけではまだWinRMログインはできない）  
+どうやら「LocalAccountTokenFilterPolicy」の設定がされた模様
+```sh
+PS C:\Users\Administrator> winrm quickconfig
+WinRM service is already running on this machine.
+WinRM is not set up to allow remote access to this machine for management.
+The following changes must be made:
+
+Configure LocalAccountTokenFilterPolicy to grant administrative rights remotely to local users.
+
+Make these changes [y/n]? y
+
+WinRM has been updated for remote management.
+
+Configured LocalAccountTokenFilterPolicy to grant administrative rights remotely to local users.
+```
+新しい設定が追加されたので、レジストリも変更されているでしょう
+がしかし、先程の設定と変化はない模様
+```sh
+C:\Users\Administrator>secedit /export /cfg b.ini
+
+The task has completed successfully.
+See log %windir%\security\logs\scesrv.log for detail info.
+
+C:\Users\Administrator>fc a.ini b.ini
+Comparing files a.ini and B.INI
+FC: no differences encountered
+```
+PSEXECはささりました
+```sh
+└─$ impacket-psexec 'kali:!QAZ2wsx@192.168.137.50'
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Requesting shares on 192.168.137.50.....
+[*] Found writable share ADMIN$
+[*] Uploading file rVIustvl.exe
+[*] Opening SVCManager on 192.168.137.50.....
+[*] Creating service ljnC on 192.168.137.50.....
+[*] Starting service ljnC.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 10.0.14393]
+(c) 2016 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32> 
+```
+
+結論
+WinRMの設定がされていれば、PSEXECはささる感じ？
