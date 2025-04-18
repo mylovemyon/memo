@@ -144,3 +144,89 @@ Global options:
   -h, --help                                       Display the concise help for this command
   -V, --version                                    Display the uv version
 ```
+### list
+```
+List the available Python installations
+
+Usage: uv python list [OPTIONS] [REQUEST]
+
+Arguments:
+  [REQUEST]  A Python request to filter by
+
+Options:
+      --all-versions                   List all Python versions, including old patch versions
+      --all-platforms                  List Python downloads for all platforms
+      --all-arches                     List Python downloads for all architectures
+      --only-installed                 Only show installed Python versions, exclude available downloads
+      --only-downloads                 Only show Python downloads, exclude installed distributions
+      --show-urls                      Show the URLs of available Python downloads
+      --output-format <OUTPUT_FORMAT>  Select the output format [default: text] [possible values: text, json]
+```
+### install
+```
+Download and install Python versions
+
+Usage: uv python install [OPTIONS] [TARGETS]...
+
+Arguments:
+  [TARGETS]...  The Python version(s) to install [env: UV_PYTHON=]
+
+Options:
+  -i, --install-dir <INSTALL_DIR>  The directory to store the Python installation in [env: UV_PYTHON_INSTALL_DIR=]
+      --mirror <MIRROR>            Set the URL to use as the source for downloading Python installations [env: UV_PYTHON_INSTALL_MIRROR=]
+      --pypy-mirror <PYPY_MIRROR>  Set the URL to use as the source for downloading PyPy installations [env: UV_PYPY_INSTALL_MIRROR=]
+  -r, --reinstall                  Reinstall the requested Python version, if it's already installed
+  -f, --force                      Replace existing Python executables during installation
+      --default                    Use as the default Python version
+```
+### find
+```
+Search for a Python installation
+
+Usage: uv python find [OPTIONS] [REQUEST]
+
+Arguments:
+  [REQUEST]  The Python request
+
+Options:
+      --no-project       Avoid discovering a project or workspace
+      --system           Only find system Python interpreters [env: UV_SYSTEM_PYTHON=]
+      --script <SCRIPT>  Find the environment for a Python script, rather than the current project
+      --show-version     Show the Python version that would be used instead of the path to the interpreter
+```
+### pin
+```
+Pin to a specific Python version
+
+Usage: uv python pin [OPTIONS] [REQUEST]
+
+Arguments:
+  [REQUEST]  The Python version request
+
+Options:
+      --resolved    Write the resolved Python interpreter path instead of the request
+      --no-project  Avoid validating the Python pin is compatible with the project or workspace
+      --global      Update the global Python version pin
+```
+### dir
+```
+Show the uv Python installation directory
+
+Usage: uv python dir [OPTIONS]
+
+Options:
+      --bin  Show the directory into which `uv python` will install Python executables.
+```
+### uninstall
+```
+Uninstall Python versions
+
+Usage: uv python uninstall [OPTIONS] <TARGETS>...
+
+Arguments:
+  <TARGETS>...  The Python version(s) to uninstall
+
+Options:
+  -i, --install-dir <INSTALL_DIR>  The directory where the Python was installed [env: UV_PYTHON_INSTALL_DIR=]
+      --all                        Uninstall all managed Python versions
+```
