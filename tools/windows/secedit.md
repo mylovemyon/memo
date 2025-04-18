@@ -1,0 +1,5 @@
+```
+The syntax of this command is:
+
+secedit [/configure | /analyze | /import | /export | /validate | /generaterollback]
+```
