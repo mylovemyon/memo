@@ -233,7 +233,7 @@ WinRM has been updated for remote management.
 
 Configured LocalAccountTokenFilterPolicy to grant administrative rights remotely to local users.
 ```
-新しい設定が追加されたので、レジストリも変更されているでしょう
+新しい設定が追加されたので、レジストリも変更されているでしょう  
 がしかし、先程の設定と変化はない模様
 ```sh
 C:\Users\Administrator>secedit /export /cfg b.ini
@@ -263,5 +263,5 @@ Microsoft Windows [Version 10.0.14393]
 C:\Windows\system32> 
 ```
 
-結論
+結論  
 WinRMの設定がされていれば、PSEXECはささる感じ？
