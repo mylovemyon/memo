@@ -32,6 +32,7 @@
 - windows
   - certutil
   - dir
+  - fc
   - where
 - 7z
 - ftp
