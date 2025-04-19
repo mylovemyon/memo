@@ -1,7 +1,7 @@
 https://sploitus.com/  
 https://github.com/abatchy17/WindowsExploits  
 https://github.com/SecWiki/windows-kernel-exploits  
-https://github.com/jivoi/pentest/tree/master
+https://github.com/jivoi/pentest
 
 https://github.com/nomi-sec/PoC-in-GitHub  
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#powershell
