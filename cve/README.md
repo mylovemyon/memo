@@ -4,7 +4,8 @@ https://github.com/SecWiki/windows-kernel-exploits
 https://github.com/jivoi/pentest
 
 https://github.com/nomi-sec/PoC-in-GitHub  
-https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#powershell
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#powershell  
+https://www.cleancss.com/router-default/
 
 - ms08-067  
   https://github.com/andyacer/ms08_067  
