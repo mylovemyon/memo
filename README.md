@@ -49,6 +49,8 @@
 - potato
 - rlwrap
 - searchsploit
+- systemctl
+- tshark
 - watson
 - wes
 - wfuzz
