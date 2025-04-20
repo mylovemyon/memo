@@ -1,3 +1,4 @@
+## Usage
 ```
 Usage: /usr/bin/ndiff [option] FILE1 FILE2
 Compare two Nmap XML files and display a list of their differences.
