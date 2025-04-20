@@ -2089,7 +2089,28 @@ Framework Platforms [--platform <value>]
 ```
 
 
-## いろいろ
-windows/x64/shell_reverse_tcp 
+## おためし
+### windows/x64/shell_reverse_tcp
+通信は非暗号
 ```
+└─$ tshark -i tun0 -f 'tcp port 5555' -Y tcp -T fields -e data.data > a.txt    
+Capturing on 'tun0'
+5 ^C
 
+                                                                                                                                                                                                                                            
+└─$ xxd -r -ps a.txt 
+whoami
+whoami
+nt authority\system
+
+C:\Windows\system32> 
+```
+### windows/x64/encrypted_shell_reverse_tcp
+ncではうまく通信できない
+```
+0964ffb7f82bc0ac
+�G�ZB��%q��)�^@n�����\6E'%��4U�O�#U^oY,/
+�G�ZB��%q��)�^@n�����\6E'%��4U�O�#U^oY,/
+�G�ZB��%q��)�^@n�����\6E'%��4U�O�#U^oY,/
+                                        7M��i��5��L;�O�r½I��6D��T�O��I�_Γ�*�_g��&R8&R���D�����y�98
+```
