@@ -114,8 +114,3 @@ Available payloads:
   guitab          | This payload reads requests from a tab in the GUI                                 
   permutation     | Returns permutations of the given charset and length.
 ```
-examples
-- basic認証にパスワードリスト攻撃
-  ```
-  wfuzz -c -w SecLists/Passwords/Default-Credentials/tomcat-betterdefaultpasslist.txt --basic FUZZ --sc 200 http://10.129.136.9:8080/manager/html
-  ```
