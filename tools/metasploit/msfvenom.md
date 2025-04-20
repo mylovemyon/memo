@@ -2087,3 +2087,9 @@ Framework Platforms [--platform <value>]
     unknown
     windows
 ```
+
+
+## いろいろ
+windows/x64/shell_reverse_tcp 
+```
+
