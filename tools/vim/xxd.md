@@ -1,3 +1,4 @@
+## Usage
 ```
 Usage:
        xxd [options] [infile [outfile]]
