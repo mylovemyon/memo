@@ -22,6 +22,7 @@
   - msfconsole
   - msfvenom
 - nmap
+  - ncrack
   - ndiff
   - nmap
   - nping
