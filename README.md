@@ -22,7 +22,8 @@
   - msfconsole
   - msfvenom
 - nmap
-  -nmap
+  - ndiff
+  - nmap
   - nping
 - peas
   - winpeas
