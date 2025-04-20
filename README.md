@@ -31,6 +31,8 @@
   - uv
 - samba
   - smbclient
+- vim
+  - xxd
 - windows
   - certutil
   - dir
