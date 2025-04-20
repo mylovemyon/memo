@@ -2118,7 +2118,7 @@ listening on [any] 5555 ...
                                         7M��i��5��L;�O�r½I��6D��T�O��I�_Γ�*�_g��&R8&R���D�����y�98
 ```
 
-###　windows/x64/powershell_reverse_tcp_ssl
+### windows/x64/powershell_reverse_tcp_ssl
 ncでは暗号化通信を扱えない
 ```
 └─$ rlwrap nc -lnvp 5555 
