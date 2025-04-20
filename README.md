@@ -21,6 +21,9 @@
   - meterpreter
   - msfconsole
   - msfvenom
+- nmap
+  -nmap
+  - nping
 - peas
   - winpeas
 - python
@@ -46,7 +49,6 @@
 - jar
 - nc
 - nishang
-- nmap
 - patator
 - potato
 - rlwrap
