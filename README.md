@@ -48,6 +48,7 @@
 - 7z
 - ftp
 - git
+- gobuster
 - hydra
 - jar
 - nc
