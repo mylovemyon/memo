@@ -10,6 +10,7 @@
   - tee
   - updatedb
   - utmpdump
+  - wget
   - wget2
   - xargs
 - impacket
