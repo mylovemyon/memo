@@ -7,6 +7,7 @@
   - locate
   - mkfifo
   - nohup
+  - script
   - tee
   - updatedb
   - utmpdump
