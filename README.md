@@ -9,6 +9,7 @@
   - nohup
   - script
   - tee
+  - tty
   - updatedb
   - utmpdump
   - wget
