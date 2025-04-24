@@ -65,3 +65,5 @@
 - watson
 - wes
 - wfuzz
+
+https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/#spawn-tty-shell
