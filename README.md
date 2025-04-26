@@ -58,6 +58,7 @@
 - nishang
 - patator
 - potato
+- pspy
 - rlwrap
 - searchsploit
 - systemctl
