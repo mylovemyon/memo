@@ -49,6 +49,7 @@
   - secedit
   - where
 - 7z
+- ffuf
 - ftp
 - git
 - gobuster
