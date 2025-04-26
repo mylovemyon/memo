@@ -71,10 +71,11 @@ https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-che
 
 web
 ```
-dirb
-dirsearch
-ffuf
-feroxbuster
-amass
-nikto
+gobuster go 11.5K
+ffuf go 14K
+amass go 13K
+feroxbuster Rust 6.5K
+dirb c 400
+dirsearch python 13K
+nikto perl 9K
 ```
