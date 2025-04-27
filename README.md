@@ -62,6 +62,7 @@
 - potato
 - pspy
 - rlwrap
+- rustscan
 - searchsploit
 - systemctl
 - tshark
