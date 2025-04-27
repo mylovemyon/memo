@@ -1,5 +1,6 @@
 https://github.com/abatchy17/WindowsExploits  
 https://github.com/SecWiki/windows-kernel-exploits  
+https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/tree/main/bin-sploits?ref_type=heads
 
 https://sploitus.com/  
 https://github.com/jivoi/pentest  
