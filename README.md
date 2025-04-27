@@ -8,6 +8,7 @@
   - mkfifo
   - nohup
   - script
+  - stty
   - tee
   - tty
   - updatedb
