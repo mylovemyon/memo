@@ -1,11 +1,9 @@
-https://sploitus.com/  
 https://github.com/abatchy17/WindowsExploits  
 https://github.com/SecWiki/windows-kernel-exploits  
-https://github.com/jivoi/pentest
 
+https://sploitus.com/  
+https://github.com/jivoi/pentest  
 https://github.com/nomi-sec/PoC-in-GitHub  
-https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#powershell  
-https://www.cleancss.com/router-default/
 
 - ms08-067  
   https://github.com/andyacer/ms08_067  
@@ -19,5 +17,7 @@ https://www.cleancss.com/router-default/
 - ms17-010  
   https://github.com/helviojunior/MS17-010
 
-webshell
-- https://github.com/Arrexel/phpbash
+
+https://www.cleancss.com/router-default  
+https://github.com/Arrexel/phpbash  
+https://github.com/nickola/web-console
