@@ -1,4 +1,3 @@
-https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/systeminfo
 ```
 SYSTEMINFO [/S system [/U username [/P [password]]]] [/FO format] [/NH]
 
