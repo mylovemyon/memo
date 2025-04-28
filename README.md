@@ -2,6 +2,7 @@
   - run
 - gnu
   - cat
+  - chmod
   - curl
   - find
   - grep
