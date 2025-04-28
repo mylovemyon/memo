@@ -5,7 +5,6 @@
   - grep
   - iconv
   - id
-  - locate
   - mkfifo
   - nohup
   - script
@@ -61,6 +60,7 @@
 - nc
 - nishang
 - patator
+- plocate
 - potato
 - pspy
 - rlwrap
