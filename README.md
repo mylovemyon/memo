@@ -1,6 +1,7 @@
 - docker
   - run
 - gnu
+  - cat
   - curl
   - grep
   - iconv
