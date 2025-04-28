@@ -1,3 +1,4 @@
+https://github.com/danielmiessler/SecLists
 ```
 /usr/share/seclists
 ├── Discovery
