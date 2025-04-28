@@ -1,3 +1,4 @@
+https://github.com/ffuf/ffuf
 ## Usage
 ```
 Fuzz Faster U Fool - v2.1.0-dev
