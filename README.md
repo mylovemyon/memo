@@ -56,6 +56,7 @@
   - systeminfo
   - type
   - where
+  - whoami
 - 7z
 - busybox
 - ffuf
