@@ -70,6 +70,7 @@
 - rlwrap
 - rustscan
 - searchsploit
+- sudo
 - systemctl
 - tshark
 - watson
