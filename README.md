@@ -74,6 +74,7 @@
 - rlwrap
 - rustscan
 - searchsploit
+- seclists
 - sudo
 - systemctl
 - tshark
