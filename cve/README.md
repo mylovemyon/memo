@@ -21,4 +21,5 @@ https://github.com/nomi-sec/PoC-in-GitHub
 
 https://www.cleancss.com/router-default  
 https://github.com/Arrexel/phpbash  
-https://github.com/nickola/web-console
+https://github.com/nickola/web-console  
+https://github.com/t3l3machus/hoaxshell
