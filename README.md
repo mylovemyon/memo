@@ -8,6 +8,7 @@
   - mkfifo
   - nohup
   - script
+  - sort
   - stty
   - tee
   - tty
