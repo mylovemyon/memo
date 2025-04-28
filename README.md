@@ -6,6 +6,7 @@
   - grep
   - iconv
   - id
+  - ls
   - mkfifo
   - nohup
   - script
