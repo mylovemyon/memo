@@ -1,4 +1,3 @@
-https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/fc
 ```
 Compares two files or sets of files and displays the differences between
 them
