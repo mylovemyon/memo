@@ -54,6 +54,7 @@
   - fc
   - secedit
   - systeminfo
+  - type
   - where
 - 7z
 - busybox
