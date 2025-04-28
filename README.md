@@ -3,6 +3,7 @@
 - gnu
   - cat
   - curl
+  - find
   - grep
   - iconv
   - id
