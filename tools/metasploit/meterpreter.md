@@ -1,5 +1,5 @@
 https://github.com/rapid7/metasploit-payloads/tree/master/c/meterpreter
-# windows
+# windows/meterpreter/reverse_tcp
 ## Core Commands
 ```
 Core Commands
