@@ -53,6 +53,7 @@
   - dir
   - fc
   - secedit
+  - systeminfo
   - where
 - 7z
 - busybox
