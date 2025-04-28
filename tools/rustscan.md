@@ -1,3 +1,4 @@
+https://github.com/bee-san/RustScan
 ## USAGE
 ```
 rustscan 2.4.1
