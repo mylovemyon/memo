@@ -55,6 +55,7 @@
   - secedit
   - where
 - 7z
+- busybox
 - ffuf
 - ftp
 - git
