@@ -4,6 +4,7 @@
   - curl
   - grep
   - iconv
+  - id
   - locate
   - mkfifo
   - nohup
