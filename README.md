@@ -60,6 +60,7 @@
   - whoami
 - 7z
 - busybox
+- commix
 - ffuf
 - ftp
 - git
