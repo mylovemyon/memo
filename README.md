@@ -16,6 +16,7 @@
   - stty
   - tee
   - tty
+  - uniq
   - updatedb
   - utmpdump
   - wget
