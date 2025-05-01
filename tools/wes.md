@@ -1,6 +1,7 @@
 https://github.com/bitsadmin/wesng
 
 ## Usage
+python3.13 wes.py systeminfo.txt -e -i 'Elevation of Privilege'
 ```
 usage: wes.py [-u] [--definitions [DEFINITIONS]] [-p INSTALLEDPATCH [INSTALLEDPATCH ...]] [-d] [-e] [--hide HIDDENVULN [HIDDENVULN ...]] [-i IMPACTS [IMPACTS ...]] [-s SEVERITIES [SEVERITIES ...]] [-o [OUTPUTFILE]] [--muc-lookup]
               [--os [OPERATING_SYSTEM]] [-c] [-h] [--update-wes]
