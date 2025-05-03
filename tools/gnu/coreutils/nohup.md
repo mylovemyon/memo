@@ -28,7 +28,7 @@ Full documentation <https://www.gnu.org/software/coreutils/nohup>
 or available locally via: info '(coreutils) nohup invocation'
 ```
 
-## Usage
+## man
 ```
 NOHUP(1)                                                                                                       User Commands                                                                                                       NOHUP(1)
 
