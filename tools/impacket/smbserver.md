@@ -1,4 +1,3 @@
-https://github.com/fortra/impacket/blob/master/examples/smbserver.py
 ## usage
 ```
 Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
