@@ -1,3 +1,4 @@
+## Usage
 ```
 Usage: mkfifo [OPTION]... NAME...
 Create named pipes (FIFOs) with the given NAMEs.
