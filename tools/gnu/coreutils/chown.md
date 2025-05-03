@@ -51,7 +51,7 @@ Full documentation <https://www.gnu.org/software/coreutils/chown>
 or available locally via: info '(coreutils) chown invocation'
 ```
 
-## man
+## man 1
 ```
 CHOWN(1)                                                                                                       User Commands                                                                                                       CHOWN(1)
 
