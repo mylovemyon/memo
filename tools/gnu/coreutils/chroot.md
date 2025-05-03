@@ -23,7 +23,7 @@ Full documentation <https://www.gnu.org/software/coreutils/chroot>
 or available locally via: info '(coreutils) chroot invocation'
 ```
 
-## man
+## man 1
 ```
 CHROOT(8)                                                                                                      User Commands                                                                                                      CHROOT(8)
 
@@ -81,3 +81,5 @@ SEE ALSO
 
 GNU coreutils 9.5                                                                                               October 2024                                                                                                      CHROOT(8)
 ```
+
+## man 2
