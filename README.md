@@ -1,27 +1,31 @@
 - docker
   - run
 - gnu
-  - cat
-  - chmod
+  - coreutils
+    - cat
+    - chmod
+    - id
+    - ls
+    - mkfifo
+    - nohup
+    - sort
+    - stty
+    - tee
+    - tty
+    - uniq
+  - findutils
+    - find
+    - locate
+    - updatedb
+    - xargs
+  - util-linux
+    - script
+    - utmpdump
   - curl
-  - find
   - grep
   - iconv
-  - id
-  - ls
-  - mkfifo
-  - nohup
-  - script
-  - sort
-  - stty
-  - tee
-  - tty
-  - uniq
-  - updatedb
-  - utmpdump
   - wget
   - wget2
-  - xargs
 - impacket
   - psexec
   - smbserver
