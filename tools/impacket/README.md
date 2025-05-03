@@ -1,11 +1,65 @@
 https://github.com/fortra/impacket
 ```
-Completing external command
-impacket-addcomputer      impacket-DumpNTLMInfo     impacket-Get-GPPPassword  impacket-goldenPac        impacket-mssqlclient      impacket-ping             impacket-registry-read    impacket-smbclient        impacket-ticketer       
-impacket-atexec           impacket-esentutl         impacket-GetLAPSPassword  impacket-karmaSMB         impacket-mssqlinstance    impacket-ping6            impacket-rpcdump          impacket-smbexec          impacket-tstool         
-impacket-changepasswd     impacket-exchanger        impacket-GetNPUsers       impacket-keylistattack    impacket-net              impacket-psexec           impacket-rpcmap           impacket-smbserver        impacket-wmiexec        
-impacket-dacledit         impacket-findDelegation   impacket-getPac           impacket-lookupsid        impacket-netview          impacket-raiseChild       impacket-sambaPipe        impacket-sniff            impacket-wmipersist     
-impacket-dcomexec         impacket-GetADComputers   impacket-getST            impacket-machine_role     impacket-ntfs-read        impacket-rbcd             impacket-samrdump         impacket-sniffer          impacket-wmiquery       
-impacket-describeTicket   impacket-GetADUsers       impacket-getTGT           impacket-mimikatz         impacket-ntlmrelayx       impacket-rdp_check        impacket-secretsdump      impacket-split                                    
-impacket-dpapi            impacket-getArch          impacket-GetUserSPNs      impacket-mqtt_check       impacket-owneredit        impacket-reg              impacket-services         impacket-ticketConverter
+├── addcomputer.py
+├── atexec.py
+├── changepasswd.py
+├── dacledit.py
+├── dcomexec.py
+├── describeTicket.py
+├── dpapi.py
+├── DumpNTLMInfo.py
+├── esentutl.py
+├── exchanger.py
+├── findDelegation.py
+├── GetADComputers.py
+├── GetADUsers.py
+├── getArch.py
+├── Get-GPPPassword.py
+├── GetLAPSPassword.py
+├── GetNPUsers.py
+├── getPac.py
+├── getST.py
+├── getTGT.py
+├── GetUserSPNs.py
+├── goldenPac.py
+├── karmaSMB.py
+├── keylistattack.py
+├── kintercept.py
+├── lookupsid.py
+├── machine_role.py
+├── mimikatz.py
+├── mqtt_check.py
+├── mssqlclient.py
+├── mssqlinstance.py
+├── net.py
+├── netview.py
+├── ntfs-read.py
+├── ntlmrelayx.py
+├── owneredit.py
+├── ping6.py
+├── ping.py
+├── psexec.py
+├── raiseChild.py
+├── rbcd.py
+├── rdp_check.py
+├── registry-read.py
+├── reg.py
+├── rpcdump.py
+├── rpcmap.py
+├── sambaPipe.py
+├── samrdump.py
+├── secretsdump.py
+├── services.py
+├── smbclient.py
+├── smbexec.py
+├── smbserver.py
+├── sniffer.py
+├── sniff.py
+├── split.py
+├── ticketConverter.py
+├── ticketer.py
+├── tstool.py
+├── wmiexec.py
+├── wmipersist.py
+└── wmiquery.py
 ```
