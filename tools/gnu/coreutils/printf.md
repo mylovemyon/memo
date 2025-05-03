@@ -1,4 +1,4 @@
-## Options
+## help
 ```
 printf: printf [-v var] format [arguments]
     Formats and prints ARGUMENTS under control of the FORMAT.
