@@ -13,6 +13,11 @@
     - tee
     - tty
     - uniq
+  - diffutils
+    - cmp
+    - diff
+    - diff3
+    - sdiff
   - findutils
     - find
     - locate
