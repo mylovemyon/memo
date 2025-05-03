@@ -64,7 +64,7 @@ SEE ALSO
 GNU coreutils 9.5                                                                                               October 2024                                                                                                       RMDIR(1)
 ```
 
-## man2
+## man 2
 ```
 rmdir(2)                                                                                                    System Calls Manual                                                                                                    rmdir(2)
 
