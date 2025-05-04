@@ -37,7 +37,7 @@
 - samba
   - smbclient
 - vim
-  - xxd
+  - vim / xxd
 - windows
   - certutil
   - dir
