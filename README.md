@@ -10,7 +10,7 @@
   - util-linux
     - script
     - utmpdump
-  - bash / curl / grep / iconv / wget / wget2
+  - bash / curl / grep / wget / wget2
 - impacket
   - psexec
   - smbserver
@@ -55,6 +55,7 @@
 - git
 - gobuster
 - hydra
+- iconv
 - jar
 - nc
 - nishang
