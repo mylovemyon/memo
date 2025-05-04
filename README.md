@@ -6,7 +6,7 @@
   - diffutils
     - cmp / diff / diff3 / sdiff
   - findutils
-    - find / locate / updatedb / xargs
+    - find / xargs
   - util-linux
     - script
     - utmpdump
