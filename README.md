@@ -10,11 +10,7 @@
   - util-linux
     - script
     - utmpdump
-  - curl
-  - grep
-  - iconv
-  - wget
-  - wget2
+  - bash / curl / grep / iconv / wget / wget2
 - impacket
   - psexec
   - smbserver
