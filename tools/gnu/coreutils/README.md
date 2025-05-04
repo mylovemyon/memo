@@ -1,3 +1,4 @@
+https://www.gnu.org/software/coreutils/
 ## apt
 ```
 └─$ apt show coreutils       
