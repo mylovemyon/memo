@@ -373,3 +373,35 @@ BUGS
 
                                                                                                                 2024 Aug 12                                                                                                          VIM(1)
 ```
+
+## apt
+```
+└─$ apt show vim    
+Package: vim
+Version: 2:9.1.1230-1
+Priority: optional
+Section: editors
+Maintainer: Debian Vim Maintainers <team+vim@tracker.debian.org>
+Installed-Size: 4,024 kB
+Provides: editor
+Depends: vim-common (= 2:9.1.1230-1), vim-runtime (= 2:9.1.1230-1), libacl1 (>= 2.2.23), libc6 (>= 2.38), libgpm2 (>= 1.20.7), libselinux1 (>= 3.1~), libsodium23 (>= 1.0.14), libtinfo6 (>= 6)
+Suggests: ctags, vim-doc, vim-scripts
+Homepage: https://www.vim.org/
+Tag: devel::editor, implemented-in::c, interface::commandline,
+ interface::text-mode, role::program, scope::application,
+ uitoolkit::ncurses, use::editing, works-with::text, works-with::unicode
+Download-Size: 1,670 kB
+APT-Manual-Installed: no
+APT-Sources: http://http.kali.org/kali kali-rolling/main amd64 Packages
+Description: Vi IMproved - enhanced vi editor
+ Vim is an almost compatible version of the UNIX editor Vi.
+ .
+ Many new features have been added: multi level undo, syntax
+ highlighting, command line history, on-line help, filename
+ completion, block operations, folding, Unicode support, etc.
+ .
+ This package contains a version of vim compiled with a rather
+ standard set of features.  This package does not provide a GUI
+ version of Vim.  See the other vim-* packages if you need more
+ (or less).
+```
