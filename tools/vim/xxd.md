@@ -248,3 +248,23 @@ AUTHOR
 
 Manual page for xxd                                                                                               May 2024                                                                                                           XXD(1)
 ```
+
+## apt
+```
+└─$ apt show xxd    
+Package: xxd
+Version: 2:9.1.1230-1
+Priority: optional
+Section: editors
+Source: vim
+Maintainer: Debian Vim Maintainers <team+vim@tracker.debian.org>
+Installed-Size: 158 kB
+Depends: libc6 (>= 2.34)
+Homepage: https://www.vim.org/
+Download-Size: 98.7 kB
+APT-Manual-Installed: no
+APT-Sources: http://http.kali.org/kali kali-rolling/main amd64 Packages
+Description: tool to make (or reverse) a hex dump
+ xxd creates a hex dump of a given file or standard input.  It can also convert
+ a hex dump back to its original binary form.
+```
