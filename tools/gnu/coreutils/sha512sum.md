@@ -1,6 +1,5 @@
 ## Usage
 ```
-└─$ sha512sum --help  
 Usage: sha512sum [OPTION]... [FILE]...
 Print or check SHA512 (512-bit) checksums.
 
