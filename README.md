@@ -51,7 +51,6 @@
 - busybox
 - commix
 - ffuf
-- ftp
 - git
 - gobuster
 - hydra
@@ -69,6 +68,7 @@
 - seclists
 - sudo
 - systemctl
+- tnftp
 - tshark
 - watson
 - wes
