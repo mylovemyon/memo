@@ -1,3 +1,4 @@
+vim.basic
 ## Usage
 ```
 VIM - Vi IMproved 9.1 (2024 Jan 02, compiled Mar 25 2025 00:59:06)
