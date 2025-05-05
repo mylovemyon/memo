@@ -1,4 +1,5 @@
-https://www.gnu.org/software/gsrc/package-list.html
+https://www.gnu.org/software/gsrc/package-list.html  
+https://www.gnu.org/manual/blurbs.html
 
 ## acct
 - https://packages.debian.org/bookworm/amd64/acct/filelist
