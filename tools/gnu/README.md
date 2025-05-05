@@ -1,5 +1,10 @@
 https://www.gnu.org/software/gsrc/package-list.html
 
+## acct
+- https://packages.debian.org/bookworm/amd64/acct/filelist
+- https://manpages.debian.org/bookworm/acct/index.html
+- ac / accton / dump-acct / dump-utmp / lastcomm / sa
+
 ## bash
 - https://packages.debian.org/bookworm/amd64/bash/filelist
 - https://manpages.debian.org/bookworm/bash/index.html
