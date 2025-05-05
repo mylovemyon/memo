@@ -11,7 +11,7 @@
   - findutils
     - find / xargs
   - grep
-    egrep / fgrep / grep / rgrep
+    - egrep / fgrep / grep / rgrep
   - util-linux
     - script
     - utmpdump
