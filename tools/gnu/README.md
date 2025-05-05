@@ -76,7 +76,10 @@ Description: GNU core utilities
 ```
 
 # diffutils
+https://manpages.debian.org/bookworm/diffutils/index.html  
 https://packages.debian.org/bookworm/amd64/diffutils/filelist
+### file
+cmp / diff / diff3 / sdiff
 ### apt
 ```
 Package: diffutils
