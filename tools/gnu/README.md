@@ -2,6 +2,8 @@ https://www.gnu.org/software/gsrc/package-list.html
 # bash
 https://manpages.debian.org/bookworm/bash/index.html  
 https://packages.debian.org/bookworm/amd64/bash/filelist
+### file
+bash-builtins / bash / bashbug / clear_console / rbash
 ### apt
 ```
 Package: bash
