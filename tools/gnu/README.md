@@ -242,3 +242,30 @@ Description: command line tool for transferring data with URL syntax
  NTLM, Negotiate, kerberos...), file transfer resume, proxy tunneling and a
  busload of other useful tricks.
 ```
+
+# sed
+- https://packages.debian.org/bookworm/amd64/sed/filelist
+- https://manpages.debian.org/bookworm/sed/index.html
+- sed
+```
+Package: sed
+Version: 4.9-2
+Priority: required
+Essential: yes
+Section: utils
+Maintainer: Clint Adams <clint@debian.org>
+Installed-Size: 1,011 kB
+Pre-Depends: libacl1 (>= 2.2.23), libc6 (>= 2.34), libselinux1 (>= 3.1~)
+Homepage: https://www.gnu.org/software/sed/
+Tag: implemented-in::c, interface::commandline, role::program,
+ scope::utility, suite::gnu, use::editing, works-with::file,
+ works-with::text
+Download-Size: 329 kB
+APT-Manual-Installed: yes
+APT-Sources: http://http.kali.org/kali kali-rolling/main amd64 Packages
+Description: GNU stream editor for filtering/transforming text
+ sed reads the specified files or the standard input if no
+ files are specified, makes editing changes according to a
+ list of commands, and writes the results to the standard
+ output.
+```
