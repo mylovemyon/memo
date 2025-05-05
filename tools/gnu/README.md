@@ -209,6 +209,40 @@ Description: GNU grep, egrep and fgrep
  than Unix grep or egrep. (Regular expressions containing backreferencing
  will run more slowly, however.)
 ```
+
+# util-linux
+- https://packages.debian.org/bookworm/amd64/util-linux/filelist
+- https://manpages.debian.org/bookworm/util-linux/index.html
+- addpart / agetty / blkdiscard / blkid / blkzone / blockdev / chcpu / chmem / choom / chrt / ctrlaltdel / delpart / dmesg / fallocate / findfs / findmnt / flock / fsck / fsck.cramfs / fsck.minix / fsfreeze / fstrim / getopt / getty / hardlink / i386 / ionice / ipcmk / ipcrm / ipcs / isosize / last / lastb / ldattach / linux32 / linux64 / lsblk / lscpu / lsipc / lslocks / lslogins / lsmem / lsns / mcookie / mesg / mkfs / mkfs.bfs / mkfs.cramfs / mkfs.minix / mkswap / more / mountpoint / namei / nsenter / partx / pivot_root / prlimit / readprofile / rename.ul / resizepart / rev / rtcwake / runuser / setarch / setpriv / setsid / setterm / su / sulogin / swaplabel / switch_root / taskset / uclampset / unshare / utmpdump / wdctl / whereis / wipefs / x86_64 / zramctl
+```
+Package: util-linux
+Version: 2.40.4-5
+Priority: required
+Essential: yes
+Section: utils
+Maintainer: util-linux packagers <util-linux@packages.debian.org>
+Installed-Size: 4,917 kB
+Provides: hardlink
+Pre-Depends: libpam-modules, libpam-runtime, libblkid1 (= 2.40.4-5), libc6 (>= 2.38), libcap-ng0 (>= 0.7.9), libcrypt1 (>= 1:4.1.0), libmount1 (= 2.40.4-5), libpam0g (>= 0.99.7.1), libselinux1 (>= 3.1~), libsmartcols1 (= 2.40.4-5), lib>
+Recommends: sensible-utils
+Suggests: dosfstools, kbd, util-linux-extra, util-linux-locales, wtmpdb
+Conflicts: hardlink
+Replaces: hardlink
+Homepage: https://github.com/util-linux/util-linux
+Tag: admin::configuring, admin::filesystem, admin::hardware,
+ implemented-in::c, interface::commandline, interface::text-mode,
+ role::program, scope::utility, uitoolkit::ncurses
+Download-Size: 1,205 kB
+APT-Manual-Installed: yes
+APT-Sources: http://http.kali.org/kali kali-rolling/main amd64 Packages
+Description: miscellaneous system utilities
+ This package contains a number of important utilities, most of which
+ are oriented towards maintenance of your system. Some of the more
+ important utilities included in this package allow you to view kernel
+ messages, create new filesystems, view block device information,
+ interface with real time clock, etc.
+```
+
 # curl
 - https://packages.debian.org/bookworm/amd64/curl/filelist
 - https://manpages.debian.org/bookworm/curl/index.html
