@@ -1,7 +1,6 @@
 https://manpages.debian.org/bookworm/coreutils/index.html
 ## apt
 ```
-└─$ apt show coreutils       
 Package: coreutils
 Version: 9.5-1+b1
 Priority: required
