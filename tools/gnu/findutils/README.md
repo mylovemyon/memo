@@ -1,7 +1,6 @@
 https://manpages.debian.org/bookworm/findutils/index.html
 ## apt
-```
-└─$ apt show findutils                            
+```          
 Package: findutils
 Version: 4.10.0-3
 Priority: required
