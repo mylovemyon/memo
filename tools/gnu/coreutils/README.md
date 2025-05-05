@@ -1,4 +1,4 @@
-https://manpages.debian.org/bookworm/coreutils/index.html
+https://packages.debian.org/bookworm/amd64/coreutils/filelist
 ## apt
 ```
 Package: coreutils
