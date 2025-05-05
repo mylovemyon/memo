@@ -1,4 +1,4 @@
-http://www.gnu.org/software/findutils/
+https://manpages.debian.org/bookworm/findutils/index.html
 ## apt
 ```
 └─$ apt show findutils                            
