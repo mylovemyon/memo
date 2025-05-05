@@ -11,7 +11,7 @@
   - findutils
     - find / xargs
   - gawk
-    - awk / gawk / nawk
+    - gawk / gawkbug
   - grep
     - egrep / fgrep / grep / rgrep
   - util-linux
