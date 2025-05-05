@@ -1,7 +1,6 @@
 https://manpages.debian.org/bookworm/diffutils/index.html
 ## apt
 ```
-└─$ apt show diffutils
 Package: diffutils
 Version: 1:3.10-3
 Priority: required
