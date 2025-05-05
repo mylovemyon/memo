@@ -22,6 +22,8 @@
   - psexec / smbserver
 - info-zip
   - unzip
+- manpages
+  - iconv
 - metasploit
   - meterpreter
   - msfconsole
@@ -59,7 +61,6 @@
 - git
 - gobuster
 - hydra
-- iconv
 - jar
 - nc
 - nishang
