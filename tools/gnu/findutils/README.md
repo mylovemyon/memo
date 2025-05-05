@@ -1,4 +1,4 @@
-https://manpages.debian.org/bookworm/findutils/index.html
+https://packages.debian.org/bookworm/amd64/findutils/filelist
 ## apt
 ```          
 Package: findutils
