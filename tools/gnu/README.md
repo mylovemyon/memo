@@ -177,7 +177,6 @@ Description: GNU awk, a pattern scanning and processing language
 - https://packages.debian.org/bookworm/amd64/grep/filelist
 - https://manpages.debian.org/bookworm/grep/index.html
 - egrep / fgrep / grep / rgrep
-## apt
 ```
 Package: grep
 Version: 3.11-4
