@@ -5365,7 +5365,6 @@ curl 8.13.0                                                                     
 
 ## apt
 ```
-└─$ apt show curl
 Package: curl
 Version: 8.13.0-1
 Priority: optional
