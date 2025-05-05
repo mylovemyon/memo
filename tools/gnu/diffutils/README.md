@@ -1,4 +1,4 @@
-http://www.gnu.org/software/diffutils/diffutils.html/
+https://manpages.debian.org/bookworm/diffutils/index.html
 ## apt
 ```
 └─$ apt show diffutils
