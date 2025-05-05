@@ -10,10 +10,12 @@
     - cmp / diff / diff3 / sdiff
   - findutils
     - find / xargs
+  - grep
+    egrep / fgrep / grep / rgrep
   - util-linux
     - script
     - utmpdump
-  - curl / grep / wget / wget2
+  - curl / wget / wget2
 - impacket
   - psexec
   - smbserver
