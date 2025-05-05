@@ -1,4 +1,4 @@
-https://www.gnu.org/software/coreutils/
+https://manpages.debian.org/bookworm/coreutils/index.html
 ## apt
 ```
 └─$ apt show coreutils       
