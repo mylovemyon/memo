@@ -209,3 +209,36 @@ Description: GNU grep, egrep and fgrep
  than Unix grep or egrep. (Regular expressions containing backreferencing
  will run more slowly, however.)
 ```
+# curl
+- https://packages.debian.org/bookworm/amd64/curl/filelist
+- https://manpages.debian.org/bookworm/curl/index.html
+- curl
+```
+Package: curl
+Version: 8.13.0-1
+Priority: optional
+Section: web
+Maintainer: Debian Curl Maintainers <team+curl@tracker.debian.org>
+Installed-Size: 509 kB
+Depends: libc6 (>= 2.34), libcurl3t64-gnutls (= 8.13.0-1), zlib1g (>= 1:1.1.4)
+Homepage: https://curl.se/
+Tag: implemented-in::c, interface::commandline, network::client,
+ protocol::ftp, protocol::gopher, protocol::http, protocol::imap,
+ protocol::ipv6, protocol::kerberos, protocol::ldap, protocol::pop3,
+ protocol::sftp, protocol::smtp, protocol::ssh, protocol::ssl,
+ protocol::telnet, protocol::tftp, role::program, scope::utility,
+ use::downloading, use::synchronizing, use::transmission,
+ works-with::file, works-with::mail
+Download-Size: 269 kB
+APT-Manual-Installed: no
+APT-Sources: http://http.kali.org/kali kali-rolling/main amd64 Packages
+Description: command line tool for transferring data with URL syntax
+ curl is a command line tool for transferring data with URL syntax, supporting
+ DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3,
+ POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
+ .
+ curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form
+ based upload, proxies, cookies, user+password authentication (Basic, Digest,
+ NTLM, Negotiate, kerberos...), file transfer resume, proxy tunneling and a
+ busload of other useful tricks.
+```
