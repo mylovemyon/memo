@@ -1,4 +1,4 @@
-https://manpages.debian.org/bookworm/gawk/index.html
+https://packages.debian.org/bookworm/amd64/gawk/filelist
 ## apt
 ```
 Package: gawk
