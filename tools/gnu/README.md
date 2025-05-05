@@ -1,11 +1,9 @@
 https://www.gnu.org/software/gsrc/package-list.html
 
 # bash
-https://packages.debian.org/bookworm/amd64/bash/filelist  
-https://manpages.debian.org/bookworm/bash/index.html
-### file
-bash-builtins / bash / bashbug / clear_console / rbash
-### apt
+- https://packages.debian.org/bookworm/amd64/bash/filelist
+- https://manpages.debian.org/bookworm/bash/index.html
+- bash-builtins / bash / bashbug / clear_console / rbash
 ```
 Package: bash
 Version: 5.2.37-2
@@ -38,11 +36,9 @@ Description: GNU Bourne Again SHell
 ```
 
 # coreutils
-https://packages.debian.org/bookworm/amd64/coreutils/filelist  
-https://manpages.debian.org/bookworm/coreutils/index.html
-### file
-arch / b2sum / base32 / base64 / basename / basenc / cat / chcon / chgrp / chmod / chown / chroot / cksum / comm / cp / csplit / cut / date / dd / df / dir / dircolors / dirname / du / echo / env / expand / expr / factor / false / fmt / fold / groups / head / hostid / id / install / join / link / ln / logname / ls / md5sum / md5sum.textutils / mkdir / mkfifo / mknod / mktemp / mv / nice / nl / nohup / nproc / numfmt / od / paste / pathchk / pinky / pr / printenv / printf / ptx / pwd / readlink / realpath / rm / rmdir / runcon / seq / sha1sum / sha224sum / sha256sum / sha384sum / sha512sum / shred / shuf / sleep / sort / split / stat / stdbuf / stty / sum / sync / tac / tail / tee / test / timeout / touch / tr / true / truncate / tsort / tty / uname / unexpand / uniq / unlink / users / vdir / wc / who / whoami / yes
-### apt
+- https://packages.debian.org/bookworm/amd64/coreutils/filelist
+- https://manpages.debian.org/bookworm/coreutils/index.html
+- arch / b2sum / base32 / base64 / basename / basenc / cat / chcon / chgrp / chmod / chown / chroot / cksum / comm / cp / csplit / cut / date / dd / df / dir / dircolors / dirname / du / echo / env / expand / expr / factor / false / fmt / fold / groups / head / hostid / id / install / join / link / ln / logname / ls / md5sum / md5sum.textutils / mkdir / mkfifo / mknod / mktemp / mv / nice / nl / nohup / nproc / numfmt / od / paste / pathchk / pinky / pr / printenv / printf / ptx / pwd / readlink / realpath / rm / rmdir / runcon / seq / sha1sum / sha224sum / sha256sum / sha384sum / sha512sum / shred / shuf / sleep / sort / split / stat / stdbuf / stty / sum / sync / tac / tail / tee / test / timeout / touch / tr / true / truncate / tsort / tty / uname / unexpand / uniq / unlink / users / vdir / wc / who / whoami / yes
 ```
 Package: coreutils
 Version: 9.5-1+b1
@@ -76,11 +72,9 @@ Description: GNU core utilities
 ```
 
 # diffutils
-https://packages.debian.org/bookworm/amd64/diffutils/filelist  
-https://manpages.debian.org/bookworm/diffutils/index.html
-### file
-cmp / diff / diff3 / sdiff
-### apt
+- https://packages.debian.org/bookworm/amd64/diffutils/filelist
+- https://manpages.debian.org/bookworm/diffutils/index.html
+- cmp / diff / diff3 / sdiff
 ```
 Package: diffutils
 Version: 1:3.10-3
@@ -118,11 +112,9 @@ Description: File comparison utilities
 ```
 
 # findutils
-https://packages.debian.org/bookworm/amd64/findutils/filelist  
-https://manpages.debian.org/bookworm/findutils/index.html
-### file
-find / xargs
-### apt
+- https://packages.debian.org/bookworm/amd64/findutils/filelist
+- https://manpages.debian.org/bookworm/findutils/index.html
+- find / xargs
 ```          
 Package: findutils
 Version: 4.10.0-3
@@ -147,11 +139,9 @@ Description: utilities for finding files--find, xargs
 ```
 
 # gawk
-https://packages.debian.org/bookworm/amd64/gawk/filelist  
-https://manpages.debian.org/bookworm/gawk/index.html
-### file
-gawk / gawkbug
-### apt
+- https://packages.debian.org/bookworm/amd64/gawk/filelist
+- https://manpages.debian.org/bookworm/gawk/index.html
+- gawk / gawkbug  
 ```
 Package: gawk
 Version: 1:5.2.1-2+b1
