@@ -56,6 +56,7 @@
 - busybox
 - commix
 - ffuf
+- file
 - git
 - gobuster
 - hydra
