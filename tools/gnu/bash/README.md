@@ -1,4 +1,4 @@
-https://manpages.debian.org/bookworm/bash/index.html
+https://packages.debian.org/bookworm/amd64/bash/filelist
 ## apt
 ```
 Package: bash
