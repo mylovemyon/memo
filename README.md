@@ -17,7 +17,7 @@
   - util-linux
     - script
     - utmpdump
-  - curl / wget / wget2
+  - curl / sed / wget / wget2
 - impacket
   - psexec
   - smbserver
