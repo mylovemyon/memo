@@ -41,6 +41,12 @@ https://www.gnu.org/manual/blurbs.html
 - https://manpages.debian.org/bookworm/util-linux/index.html
 - addpart / agetty / blkdiscard / blkid / blkzone / blockdev / chcpu / chmem / choom / chrt / ctrlaltdel / delpart / dmesg / fallocate / findfs / findmnt / flock / fsck / fsck.cramfs / fsck.minix / fsfreeze / fstrim / getopt / getty / hardlink / i386 / ionice / ipcmk / ipcrm / ipcs / isosize / last / lastb / ldattach / linux32 / linux64 / lsblk / lscpu / lsipc / lslocks / lslogins / lsmem / lsns / mcookie / mesg / mkfs / mkfs.bfs / mkfs.cramfs / mkfs.minix / mkswap / more / mountpoint / namei / nsenter / partx / pivot_root / prlimit / readprofile / rename.ul / resizepart / rev / rtcwake / runuser / setarch / setpriv / setsid / setterm / su / sulogin / swaplabel / switch_root / taskset / uclampset / unshare / utmpdump / wdctl / whereis / wipefs / x86_64 / zramctl
 
+
+## barcode
+- https://packages.debian.org/bookworm/amd64/barcode/filelist
+- https://manpages.debian.org/bookworm/barcode/index.html
+- barcode / sample
+
 ## curl
 - https://packages.debian.org/bookworm/amd64/curl/filelist
 - https://manpages.debian.org/bookworm/curl/index.html
