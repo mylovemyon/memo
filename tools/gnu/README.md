@@ -11,6 +11,11 @@ https://www.gnu.org/manual/blurbs.html
 - https://manpages.debian.org/bookworm/bash/index.html
 - bash-builtins / bash / bashbug / clear_console / rbash
 
+## binutils
+- https://packages.debian.org/bookworm/amd64/binutils/filelist
+- https://manpages.debian.org/bookworm/binutils-common/index.html
+- a
+
 ## coreutils
 - https://packages.debian.org/bookworm/amd64/coreutils/filelist
 - https://manpages.debian.org/bookworm/coreutils/index.html
