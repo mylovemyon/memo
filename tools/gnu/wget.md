@@ -1432,3 +1432,42 @@ COPYRIGHT
 
 GNU Wget 1.25.0                                                                                                  2025-03-08                                                                                                         WGET(1)
 ```
+
+## apt
+```
+Package: wget
+Version: 1.25.0-2
+Priority: standard
+Section: web
+Maintainer: Noël Köthe <noel@debian.org>
+Installed-Size: 3,875 kB
+Depends: libc6 (>= 2.38), libgnutls30t64 (>= 3.8.1), libidn2-0 (>= 0.6), libnettle8t64, libpcre2-8-0 (>= 10.22), libpsl5t64 (>= 0.16.0), libuuid1 (>= 2.16), zlib1g (>= 1:1.1.4)
+Recommends: ca-certificates
+Conflicts: wget-ssl
+Homepage: https://www.gnu.org/software/wget/
+Tag: implemented-in::c, interface::commandline, network::client,
+ protocol::ftp, protocol::http, protocol::ssl, role::program,
+ suite::gnu, use::downloading, works-with::file
+Download-Size: 984 kB
+APT-Manual-Installed: yes
+APT-Sources: http://http.kali.org/kali kali-rolling/main amd64 Packages
+Description: retrieves files from the web
+ Wget is a network utility to retrieve files from the web
+ using HTTP(S) and FTP, the two most widely used internet
+ protocols. It works non-interactively, so it will work in
+ the background, after having logged off. The program supports
+ recursive retrieval of web-authoring pages as well as FTP
+ sites -- you can use Wget to make mirrors of archives and
+ home pages or to travel the web like a WWW robot.
+ .
+ Wget works particularly well with slow or unstable connections
+ by continuing to retrieve a document until the document is fully
+ downloaded. Re-getting files from where it left off works on
+ servers (both HTTP and FTP) that support it. Both HTTP and FTP
+ retrievals can be time stamped, so Wget can see if the remote
+ file has changed since the last retrieval and automatically
+ retrieve the new version if it has.
+ .
+ Wget supports proxy servers; this can lighten the network load,
+ speed up retrieval, and provide access behind firewal
+```
