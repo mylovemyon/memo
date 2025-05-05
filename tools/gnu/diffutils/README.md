@@ -1,4 +1,4 @@
-https://manpages.debian.org/bookworm/diffutils/index.html
+https://packages.debian.org/bookworm/amd64/diffutils/filelist
 ## apt
 ```
 Package: diffutils
