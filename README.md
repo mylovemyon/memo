@@ -10,6 +10,8 @@
     - cmp / diff / diff3 / sdiff
   - findutils
     - find / xargs
+  - gawk
+    - awk / gawk / nawk
   - grep
     - egrep / fgrep / grep / rgrep
   - util-linux
