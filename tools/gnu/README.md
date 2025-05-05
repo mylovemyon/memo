@@ -1,6 +1,8 @@
 https://www.gnu.org/software/gsrc/package-list.html
 
-## [coreutils](https://packages.debian.org/bookworm/amd64/coreutils/filelist)
+## coreutils
+https://packages.debian.org/bookworm/amd64/coreutils/filelist  
+https://manpages.debian.org/bookworm/coreutils/index.html
 ```
 Package: coreutils
 Version: 9.5-1+b1
