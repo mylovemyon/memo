@@ -1,7 +1,6 @@
 https://manpages.debian.org/bookworm/bash/index.html
 ## apt
 ```
-└─$ apt show bash
 Package: bash
 Version: 5.2.37-2
 Priority: required
