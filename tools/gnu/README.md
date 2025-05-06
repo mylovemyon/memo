@@ -14,7 +14,7 @@ https://www.gnu.org/manual/blurbs.html
 ## binutils
 - https://packages.debian.org/bookworm/amd64/binutils/filelist
 - https://manpages.debian.org/bookworm/binutils-common/index.html
-- a
+- addr2line / ar / as / c++filt / dwp / elfedit / gold / gp-archive / gp-collect-app / gp-display-html / gp-display-src / gp-display-text / gprof / gprofng / ld / ld.bfd / ld.gold / nm / objcopy / objdump / ranlib / readelf / size / strings / strip
 
 ## coreutils
 - https://packages.debian.org/bookworm/amd64/coreutils/filelist
