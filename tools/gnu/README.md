@@ -97,9 +97,15 @@ https://tracker.debian.org/pkg/emacs
 - diffpp / enscript / mkafmmap / over / sliceprint / states
 
 ## findutils
-- https://packages.debian.org/bookworm/amd64/findutils/filelist
-- https://manpages.debian.org/bookworm/findutils/index.html
+https://tracker.debian.org/pkg/findutils
+### findutils
+- https://packages.debian.org/sid/amd64/findutils/filelist
+- https://manpages.debian.org/unstable/findutils/index.html
 - find / xargs
+### locate
+- https://packages.debian.org/sid/amd64/locate/filelist
+- https://manpages.debian.org/unstable/locate/index.html
+- locate.findutils / updatedb.findutils
 
 ## gawk
 - https://packages.debian.org/bookworm/amd64/gawk/filelist
