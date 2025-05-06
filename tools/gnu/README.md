@@ -124,6 +124,12 @@ https://tracker.debian.org/pkg/gcc-defaults
 - https://manpages.debian.org/unstable/gcc-x86-64-linux-gnu/index.html
 - x86_64-linux-gnu-gcc / x86_64-linux-gnu-gcc-ar / x86_64-linux-gnu-gcc-nm / x86_64-linux-gnu-gcc-ranlib / x86_64-linux-gnu-gcov / x86_64-linux-gnu-gcov-dump / x86_64-linux-gnu-gcov-tool / x86_64-linux-gnu-lto-dump  
   (すべて gcc-14-x86-64-linux-gnu へのリンク)
+### g++ 
+- https://packages.debian.org/sid/amd64/g++/filelist
+- g++ (/usr/bin/x86_64-linux-gnu-g++-14 へのリンク)
+### g++-x86-64-linux-gnu
+- https://packages.debian.org/sid/amd64/g++-x86-64-linux-gnu/filelist
+- x86_64-linux-gnu-g++ (/usr/bin/x86_64-linux-gnu-g++-14 へのリンク)
 
 ## gcc-14
 https://tracker.debian.org/pkg/gcc-14
@@ -146,14 +152,6 @@ https://tracker.debian.org/pkg/gcc-14
 - https://packages.debian.org/bookworm/amd64/grep/filelist
 - https://manpages.debian.org/bookworm/grep/index.html
 - egrep / fgrep / grep / rgrep
-
-## g++ 
-- https://packages.debian.org/bookworm/amd64/g++/filelist
-- g++ (/usr/bin/x86_64-linux-gnu-g++-14 へのリンク)
-
-## g++-x86-64-linux-gnu
-- https://packages.debian.org/bookworm/arm64/g++-x86-64-linux-gnu/filelist
-- x86_64-linux-gnu-g++ (/usr/bin/x86_64-linux-gnu-g++-14 へのリンク)
 
 ## g++-14
 - https://packages.debian.org/trixie/amd64/g++-14/filelist
