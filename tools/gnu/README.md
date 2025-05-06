@@ -52,6 +52,11 @@ https://www.gnu.org/manual/blurbs.html
 - https://manpages.debian.org/bookworm/barcode/index.html
 - barcode / sample
 
+## cflow
+- https://packages.debian.org/bookworm/amd64/cflow/filelist
+- https://manpages.debian.org/bookworm/cflow/index.html
+- cflow
+
 ## curl
 - https://packages.debian.org/bookworm/amd64/curl/filelist
 - https://manpages.debian.org/bookworm/curl/index.html
