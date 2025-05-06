@@ -81,6 +81,11 @@ https://www.gnu.org/manual/blurbs.html
 - https://manpages.debian.org/bookworm/gawk/index.html
 - gawk / gawkbug  
 
+## gcc
+- https://packages.debian.org/bookworm/amd64/gcc/filelist
+- https://manpages.debian.org/bookworm/gcc/index.html
+- c89-gcc / c89 / c99-gcc / c99 / gcc-ar / gcc-nm / gcc-ranlib / x86_64-linux-gnu-gcc-ar / x86_64-linux-gnu-gcc-nm / x86_64-linux-gnu-gcc-ranlib
+
 ## gddrescue
 - https://packages.debian.org/bookworm/amd64/gddrescue/filelist
 - https://manpages.debian.org/bookworm/gddrescue/index.html
