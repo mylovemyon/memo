@@ -28,14 +28,18 @@ https://www.gnu.org/manual/blurbs.html
 ### binutils-x86-64-linux-gnu
 - https://packages.debian.org/sid/amd64/binutils-x86-64-linux-gnu/filelist
 - https://manpages.debian.org/unstable/binutils-x86-64-linux-gnu/index.html
-- x86_64-linux-gnu-addr2line  / x86_64-linux-gnu-ar  / x86_64-linux-gnu-as  / x86_64-linux-gnu-c++filt  / x86_64-linux-gnu-elfedit  / x86_64-linux-gnu-gprof  / x86_64-linux-gnu-ld  / x86_64-linux-gnu-ld.bfd  / x86_64-linux-gnu-nm  / x86_64-linux-gnu-objcopy  / x86_64-linux-gnu-objdump  / x86_64-linux-gnu-ranlib  / x86_64-linux-gnu-readelf  / x86_64-linux-gnu-size  / x86_64-linux-gnu-strings  / x86_64-linux-gnu-strip
+- x86_64-linux-gnu-addr2line / x86_64-linux-gnu-ar / x86_64-linux-gnu-as / x86_64-linux-gnu-c++filt / x86_64-linux-gnu-elfedit / x86_64-linux-gnu-gprof / x86_64-linux-gnu-ld / x86_64-linux-gnu-ld.bfd / x86_64-linux-gnu-nm / x86_64-linux-gnu-objcopy / x86_64-linux-gnu-objdump / x86_64-linux-gnu-ranlib / x86_64-linux-gnu-readelf / x86_64-linux-gnu-size / x86_64-linux-gnu-strings / x86_64-linux-gnu-strip
 
 ## binutils-mingw-w64
 https://tracker.debian.org/pkg/binutils-mingw-w64
 ### binutils-mingw-w64-x86-64
 - https://packages.debian.org/sid/amd64/binutils-mingw-w64-x86-64/filelist
 - https://manpages.debian.org/unstable/binutils-mingw-w64-x86-64/index.html
-- x86_64-w64-mingw32-addr2line  / x86_64-w64-mingw32-ar  / x86_64-w64-mingw32-as  / x86_64-w64-mingw32-c++filt  / x86_64-w64-mingw32-dlltool  / x86_64-w64-mingw32-dllwrap  / x86_64-w64-mingw32-elfedit  / x86_64-w64-mingw32-gprof  / x86_64-w64-mingw32-ld  / x86_64-w64-mingw32-ld.bfd  / x86_64-w64-mingw32-nm  / x86_64-w64-mingw32-objcopy  / x86_64-w64-mingw32-objdump  / x86_64-w64-mingw32-ranlib  / x86_64-w64-mingw32-readelf  / x86_64-w64-mingw32-size  / x86_64-w64-mingw32-strings  / x86_64-w64-mingw32-strip  / x86_64-w64-mingw32-windmc  / x86_64-w64-mingw32-windres
+- x86_64-w64-mingw32-addr2line / x86_64-w64-mingw32-ar / x86_64-w64-mingw32-as / x86_64-w64-mingw32-c++filt / x86_64-w64-mingw32-dlltool / x86_64-w64-mingw32-dllwrap / x86_64-w64-mingw32-elfedit / x86_64-w64-mingw32-gprof / x86_64-w64-mingw32-ld / x86_64-w64-mingw32-ld.bfd / x86_64-w64-mingw32-nm / x86_64-w64-mingw32-objcopy / x86_64-w64-mingw32-objdump / x86_64-w64-mingw32-ranlib / x86_64-w64-mingw32-readelf / x86_64-w64-mingw32-size / x86_64-w64-mingw32-strings / x86_64-w64-mingw32-strip / x86_64-w64-mingw32-windmc / x86_64-w64-mingw32-windres
+### binutils-mingw-w64-i686
+- https://packages.debian.org/sid/amd64/binutils-mingw-w64-i686/filelist
+- https://manpages.debian.org/unstable/binutils-mingw-w64-i686/index.html
+- i686-w64-mingw32-addr2line / i686-w64-mingw32-ar / i686-w64-mingw32-as / i686-w64-mingw32-c++filt / i686-w64-mingw32-dlltool / i686-w64-mingw32-dllwrap / i686-w64-mingw32-elfedit / i686-w64-mingw32-gprof / i686-w64-mingw32-ld / i686-w64-mingw32-ld.bfd / i686-w64-mingw32-nm / i686-w64-mingw32-objcopy / i686-w64-mingw32-objdump / i686-w64-mingw32-ranlib / i686-w64-mingw32-readelf / i686-w64-mingw32-size / i686-w64-mingw32-strings / i686-w64-mingw32-strip / i686-w64-mingw32-windmc / i686-w64-mingw32-windres
 
 ## cflow
 - https://tracker.debian.org/pkg/cflow
