@@ -52,7 +52,7 @@ https://www.gnu.org/manual/blurbs.html
 - cmp / diff / diff3 / sdiff
 
 ## direvent
-- https://packages.debian.org/bookworm/amd64/direvent/filelist
+- https://packages.debian.org/sid/amd64/direvent/filelist
 - https://manpages.debian.org/bookworm/direvent/index.html
 - direvent
 
