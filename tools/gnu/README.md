@@ -91,6 +91,10 @@ https://www.gnu.org/manual/blurbs.html
 - https://manpages.debian.org/bookworm/grep/index.html
 - egrep / fgrep / grep / rgrep
 
+## g++-14-x86-64-linux-gnu
+- https://packages.debian.org/trixie/amd64/g++-14-x86-64-linux-gnu/filelist
+- x86_64-linux-gnu-g++-14
+
 ## sed
 - https://packages.debian.org/bookworm/amd64/sed/filelist
 - https://manpages.debian.org/bookworm/sed/index.html
