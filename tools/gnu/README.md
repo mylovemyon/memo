@@ -108,8 +108,9 @@ https://tracker.debian.org/pkg/findutils
 - locate.findutils / updatedb.findutils
 
 ## gawk
-- https://packages.debian.org/bookworm/amd64/gawk/filelist
-- https://manpages.debian.org/bookworm/gawk/index.html
+- https://tracker.debian.org/pkg/gawk
+- https://packages.debian.org/sid/amd64/gawk/filelist
+- https://manpages.debian.org/unstable/gawk/index.html
 - gawk / gawkbug  
 
 ## gcc
