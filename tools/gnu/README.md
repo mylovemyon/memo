@@ -61,6 +61,11 @@ https://www.gnu.org/manual/blurbs.html
 - https://manpages.debian.org/bookworm/emacs-gtk/index.html
 - emacs
 
+## enscript
+- https://packages.debian.org/bookworm/amd64/enscript/filelist
+- https://manpages.debian.org/bookworm/enscript/index.html
+- diffpp / enscript / mkafmmap / over / sliceprint / states
+
 ## findutils
 - https://packages.debian.org/bookworm/amd64/findutils/filelist
 - https://manpages.debian.org/bookworm/findutils/index.html
