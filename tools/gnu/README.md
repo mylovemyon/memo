@@ -113,22 +113,27 @@ https://tracker.debian.org/pkg/findutils
 - https://manpages.debian.org/unstable/gawk/index.html
 - gawk / gawkbug  
 
-## gcc
-- https://packages.debian.org/bookworm/amd64/gcc/filelist
-- https://manpages.debian.org/bookworm/gcc/index.html
+## gcc-defaults
+https://tracker.debian.org/pkg/gcc-defaults
+### gcc
+- https://packages.debian.org/sid/amd64/gcc/filelist
+- https://manpages.debian.org/unstable/gcc/index.html
 - c89-gcc / c89 / c99-gcc / c99 / gcc-ar / gcc-nm / gcc-ranlib / x86_64-linux-gnu-gcc-ar / x86_64-linux-gnu-gcc-nm / x86_64-linux-gnu-gcc-ranlib
-
-## gcc-x86-64-linux-gnu 
-- https://packages.debian.org/bookworm/arm64/gcc-x86-64-linux-gnu/filelist
-- https://manpages.debian.org/bookworm/gcc-x86-64-linux-gnu/index.html
+### gcc-x86-64-linux-gnu 
+- https://packages.debian.org/sid/amd64/gcc-x86-64-linux-gnu/filelist
+- https://manpages.debian.org/unstable/gcc-x86-64-linux-gnu/index.html
 - x86_64-linux-gnu-gcc / x86_64-linux-gnu-gcc-ar / x86_64-linux-gnu-gcc-nm / x86_64-linux-gnu-gcc-ranlib / x86_64-linux-gnu-gcov / x86_64-linux-gnu-gcov-dump / x86_64-linux-gnu-gcov-tool / x86_64-linux-gnu-lto-dump  
   (すべて gcc-14-x86-64-linux-gnu へのリンク)
 
-## gcc-14-x86-64-linux-gnu
-- https://packages.debian.org/trixie/amd64/gcc-14-x86-64-linux-gnu/filelist
--  x86_64-linux-gnu-gcc-14  / x86_64-linux-gnu-gcc-ar-14  / x86_64-linux-gnu-gcc-nm-14  / x86_64-linux-gnu-gcc-ranlib-14  / x86_64-linux-gnu-gcov-14  / x86_64-linux-gnu-gcov-dump-14  / x86_64-linux-gnu-gcov-tool-14  / x86_64-linux-gnu-lto-dump-14
+## gcc-14
+https://tracker.debian.org/pkg/gcc-14
+### gcc-14-x86-64-linux-gnu
+- https://packages.debian.org/sid/amd64/gcc-14-x86-64-linux-gnu/filelist
+- https://manpages.debian.org/unstable/gcc-14-x86-64-linux-gnu/index.html
+- x86_64-linux-gnu-gcc-14  / x86_64-linux-gnu-gcc-ar-14  / x86_64-linux-gnu-gcc-nm-14  / x86_64-linux-gnu-gcc-ranlib-14  / x86_64-linux-gnu-gcov-14  / x86_64-linux-gnu-gcov-dump-14  / x86_64-linux-gnu-gcov-tool-14  / x86_64-linux-gnu-lto-dump-14
 
-## gcc-mingw-w64-x86-64-win32
+## gcc-mingw-w64
+### gcc-mingw-w64-x86-64-win32
 - https://packages.debian.org/bookworm/amd64/gcc-mingw-w64-x86-64-win32/filelist
 - x86_64-w64-mingw32-cpp-win32  / x86_64-w64-mingw32-gcc-12-win32  / x86_64-w64-mingw32-gcc-ar-win32  / x86_64-w64-mingw32-gcc-nm-win32  / x86_64-w64-mingw32-gcc-ranlib-win32  / x86_64-w64-mingw32-gcc-win32  / x86_64-w64-mingw32-gcov-dump-win32  / x86_64-w64-mingw32-gcov-tool-win32  / x86_64-w64-mingw32-gcov-win32 / x86_64-w64-mingw32-lto-dump-win32
 
