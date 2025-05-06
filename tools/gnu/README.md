@@ -89,7 +89,8 @@ https://www.gnu.org/manual/blurbs.html
 ## gcc-x86-64-linux-gnu 
 - https://packages.debian.org/bookworm/arm64/gcc-x86-64-linux-gnu/filelist
 - https://manpages.debian.org/bookworm/gcc-x86-64-linux-gnu/index.html
-- x86_64-linux-gnu-gcc / x86_64-linux-gnu-gcc-ar / x86_64-linux-gnu-gcc-nm / x86_64-linux-gnu-gcc-ranlib / x86_64-linux-gnu-gcov / x86_64-linux-gnu-gcov-dump / x86_64-linux-gnu-gcov-tool / x86_64-linux-gnu-lto-dump
+- x86_64-linux-gnu-gcc / x86_64-linux-gnu-gcc-ar / x86_64-linux-gnu-gcc-nm / x86_64-linux-gnu-gcc-ranlib / x86_64-linux-gnu-gcov / x86_64-linux-gnu-gcov-dump / x86_64-linux-gnu-gcov-tool / x86_64-linux-gnu-lto-dump  
+  (すべて gcc-14-x86-64-linux-gnu へのリンク)
 
 ## gddrescue
 - https://packages.debian.org/bookworm/amd64/gddrescue/filelist
