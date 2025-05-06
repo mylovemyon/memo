@@ -98,7 +98,7 @@ https://www.gnu.org/manual/blurbs.html
 
 ## gcc-mingw-w64-x86-64-win32
 - https://packages.debian.org/bookworm/amd64/gcc-mingw-w64-x86-64-win32/filelist
-- x86_64-w64-mingw32-cpp-win32  / x86_64-w64-mingw32-gcc-12-win32  / x86_64-w64-mingw32-gcc-ar-win32  / x86_64-w64-mingw32-gcc-nm-win32  / x86_64-w64-mingw32-gcc-ranlib-win32  / x86_64-w64-mingw32-gcc-win32  / x86_64-w64-mingw32-gcov-dump-win32  / x86_64-w64-mingw32-gcov-tool-win32  / x86_64-w64-mingw32-gcov-win32
+- x86_64-w64-mingw32-cpp-win32  / x86_64-w64-mingw32-gcc-12-win32  / x86_64-w64-mingw32-gcc-ar-win32  / x86_64-w64-mingw32-gcc-nm-win32  / x86_64-w64-mingw32-gcc-ranlib-win32  / x86_64-w64-mingw32-gcc-win32  / x86_64-w64-mingw32-gcov-dump-win32  / x86_64-w64-mingw32-gcov-tool-win32  / x86_64-w64-mingw32-gcov-win32 / x86_64-w64-mingw32-lto-dump-win32
 
 ## gddrescue
 - https://packages.debian.org/bookworm/amd64/gddrescue/filelist
