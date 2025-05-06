@@ -124,7 +124,7 @@ https://tracker.debian.org/pkg/gcc-defaults
 ### gcc
 - https://packages.debian.org/sid/amd64/gcc/filelist
 - https://manpages.debian.org/unstable/gcc/index.html
-- c89-gcc  / c99-gcc  / gcc  / gcc-ar  / gcc-nm  / gcc-ranlib  / gcov  / gcov-dump  / gcov-tool  / lto-dump
+- c89-gcc  / c99-gcc  / gcc  / gcc-ar  / gcc-nm  / gcc-ranlib  / gcov  / gcov-dump  / gcov-tool  / lto-dump (すべて gcc-14-x86-64-linux-gnu-*-14 へのリンク)
 ### gcc-x86-64-linux-gnu 
 - https://packages.debian.org/sid/amd64/gcc-x86-64-linux-gnu/filelist
 - https://manpages.debian.org/unstable/gcc-x86-64-linux-gnu/index.html
