@@ -57,9 +57,9 @@ https://www.gnu.org/manual/blurbs.html
 - direvent
 
 ## emacs-gtk 
-- https://packages.debian.org/ja/bookworm/amd64/emacs-gtk/filelist
+- https://packages.debian.org/ja/sid/amd64/emacs-gtk/filelist
 - https://manpages.debian.org/bookworm/emacs-gtk/index.html
-- emacs
+- emacs-gtk / emacsclient.emacs
 
 ## enscript
 - https://packages.debian.org/bookworm/amd64/enscript/filelist
