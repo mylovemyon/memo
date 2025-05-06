@@ -95,6 +95,9 @@ https://www.gnu.org/manual/blurbs.html
 - https://packages.debian.org/bookworm/amd64/g++/filelist
 - g++ (/usr/bin/x86_64-linux-gnu-g++-14　へのリンク)
 
+## g++-x86-64-linux-gnu
+- https://packages.debian.org/bookworm/arm64/g++-x86-64-linux-gnu/filelist
+
 ## g++-14
 - https://packages.debian.org/trixie/amd64/g++-14/filelist
 - g++-14 (/usr/bin/x86_64-linux-gnu-g++-14　へのリンク)
@@ -102,9 +105,6 @@ https://www.gnu.org/manual/blurbs.html
 ## g++-14-x86-64-linux-gnu
 - https://packages.debian.org/trixie/amd64/g++-14-x86-64-linux-gnu/filelist
 - x86_64-linux-gnu-g++-14
-
-## g++-x86-64-linux-gnu
-- https://packages.debian.org/bookworm/arm64/g++-x86-64-linux-gnu/filelist
 
 ## sed
 - https://packages.debian.org/bookworm/amd64/sed/filelist
