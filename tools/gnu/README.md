@@ -20,7 +20,7 @@ https://www.gnu.org/manual/blurbs.html
 - bash-builtins / bash / bashbug / clear_console / rbash
 
 ## binutils
-- https://tracker.debian.org/pkg/binutils
+https://tracker.debian.org/pkg/binutils
 ### binutils
 - https://packages.debian.org/sid/amd64/binutils/filelist
 - https://manpages.debian.org/unstable/binutils/index.html
@@ -44,59 +44,57 @@ https://tracker.debian.org/pkg/binutils-mingw-w64
 ## cflow
 - https://tracker.debian.org/pkg/cflow
 - https://packages.debian.org/sid/amd64/cflow/filelist
-- https://manpages.debian.org/bookworm/cflow/index.html
+- https://manpages.debian.org/unstable/cflow/index.html
 - cflow
 
 ## coreutils
 - https://tracker.debian.org/pkg/coreutils
 - https://packages.debian.org/sid/amd64/coreutils/filelist
-- https://manpages.debian.org/bookworm/coreutils/index.html
+- https://manpages.debian.org/unstable/coreutils/index.html
 - arch / b2sum / base32 / base64 / basename / basenc / cat / chcon / chgrp / chmod / chown / chroot / cksum / comm / cp / csplit / cut / date / dd / df / dir / dircolors / dirname / du / echo / env / expand / expr / factor / false / fmt / fold / groups / head / hostid / id / install / join / link / ln / logname / ls / md5sum / mkdir / mkfifo / mknod / mktemp / mv / nice / nl / nohup / nproc / numfmt / od / paste / pathchk / pinky / pr / printenv / printf / ptx / pwd / readlink / realpath / rm / rmdir / runcon / seq / sha1sum / sha224sum / sha256sum / sha384sum / sha512sum / shred / shuf / sleep / sort / split / stat / stdbuf / stty / sum / sync / tac / tail / tee / test / timeout / touch / tr / true / truncate / tsort / tty / uname / unexpand / uniq / unlink / users / vdir / wc / who / whoami / yes
 
 ## cpio
 - https://tracker.debian.org/pkg/cpio
 - https://packages.debian.org/sid/amd64/cpio/filelist
-- https://manpages.debian.org/bookworm/cpio/index.html
+- https://manpages.debian.org/unstable/cpio/index.html
 - cpio / mt-gnu
 
 ## curl
 - https://tracker.debian.org/pkg/curl
 - https://packages.debian.org/sid/amd64/curl/filelist
-- https://manpages.debian.org/bookworm/curl/index.html
+- https://manpages.debian.org/unstable/curl/index.html
 - curl / wcurl
 
 ## datamash
+- https://tracker.debian.org/pkg/datamash
 - https://packages.debian.org/sid/amd64/datamash/filelist
-- https://manpages.debian.org/bookworm/datamash/index.html
+- https://manpages.debian.org/unstable/datamash/index.html
 - datamash / decorate
 
 ## diffutils
 - https://tracker.debian.org/pkg/diffutils
 - https://packages.debian.org/sid/amd64/diffutils/filelist
-- https://manpages.debian.org/bookworm/diffutils/index.html
+- https://manpages.debian.org/unstable/diffutils/index.html
 - cmp / diff / diff3 / sdiff
 
 ## direvent
 - https://tracker.debian.org/pkg/direvent
 - https://packages.debian.org/sid/amd64/direvent/filelist
-- https://manpages.debian.org/bookworm/direvent/index.html
+- https://manpages.debian.org/unstable/direvent/index.html
 - direvent
 
-## emacs-gtk
-- https://tracker.debian.org/pkg/emacs
+## emacs
+https://tracker.debian.org/pkg/emacs
+### emacs-gtk
 - https://packages.debian.org/ja/sid/amd64/emacs-gtk/filelist
-- https://manpages.debian.org/bookworm/emacs-gtk/index.html
+- https://manpages.debian.org/unstable/emacs-gtk/index.html
 - emacs-gtk / emacsclient.emacs
 
 ## enscript
-- https://packages.debian.org/bookworm/amd64/enscript/filelist
-- https://manpages.debian.org/bookworm/enscript/index.html
+- https://tracker.debian.org/pkg/enscript
+- https://packages.debian.org/sid/amd64/enscript/filelist
+- https://manpages.debian.org/unstable/enscript/index.html
 - diffpp / enscript / mkafmmap / over / sliceprint / states
-
-## fdisk
-- https://packages.debian.org/bookworm/amd64/fdisk/filelist
-- https://manpages.debian.org/bookworm/fdisk/index.html
-- cfdisk / fdisk / sfdisk
 
 ## findutils
 - https://packages.debian.org/bookworm/amd64/findutils/filelist
@@ -159,9 +157,14 @@ https://tracker.debian.org/pkg/binutils-mingw-w64
 - sed
 
 ## util-linux
+### util-linux
 - https://packages.debian.org/bookworm/amd64/util-linux/filelist
 - https://manpages.debian.org/bookworm/util-linux/index.html
 - addpart / agetty / blkdiscard / blkid / blkzone / blockdev / chcpu / chmem / choom / chrt / ctrlaltdel / delpart / dmesg / fallocate / findfs / findmnt / flock / fsck / fsck.cramfs / fsck.minix / fsfreeze / fstrim / getopt / getty / hardlink / i386 / ionice / ipcmk / ipcrm / ipcs / isosize / last / lastb / ldattach / linux32 / linux64 / lsblk / lscpu / lsipc / lslocks / lslogins / lsmem / lsns / mcookie / mesg / mkfs / mkfs.bfs / mkfs.cramfs / mkfs.minix / mkswap / more / mountpoint / namei / nsenter / partx / pivot_root / prlimit / readprofile / rename.ul / resizepart / rev / rtcwake / runuser / setarch / setpriv / setsid / setterm / su / sulogin / swaplabel / switch_root / taskset / uclampset / unshare / utmpdump / wdctl / whereis / wipefs / x86_64 / zramctl
+### fdisk
+- https://packages.debian.org/bookworm/amd64/fdisk/filelist
+- https://manpages.debian.org/bookworm/fdisk/index.html
+- cfdisk / fdisk / sfdisk
 
 ## wget
 - https://packages.debian.org/bookworm/amd64/wget/filelist
