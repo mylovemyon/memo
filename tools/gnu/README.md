@@ -96,6 +96,10 @@ https://www.gnu.org/manual/blurbs.html
 - https://packages.debian.org/trixie/amd64/gcc-14-x86-64-linux-gnu/filelist
 -  x86_64-linux-gnu-gcc-14  / x86_64-linux-gnu-gcc-ar-14  / x86_64-linux-gnu-gcc-nm-14  / x86_64-linux-gnu-gcc-ranlib-14  / x86_64-linux-gnu-gcov-14  / x86_64-linux-gnu-gcov-dump-14  / x86_64-linux-gnu-gcov-tool-14  / x86_64-linux-gnu-lto-dump-14
 
+## gcc-mingw-w64-x86-64-win32
+- https://packages.debian.org/bookworm/amd64/gcc-mingw-w64-x86-64-win32/filelist
+- x86_64-w64-mingw32-cpp-win32  / x86_64-w64-mingw32-gcc-12-win32  / x86_64-w64-mingw32-gcc-ar-win32  / x86_64-w64-mingw32-gcc-nm-win32  / x86_64-w64-mingw32-gcc-ranlib-win32  / x86_64-w64-mingw32-gcc-win32  / x86_64-w64-mingw32-gcov-dump-win32  / x86_64-w64-mingw32-gcov-tool-win32  / x86_64-w64-mingw32-gcov-win32
+
 ## gddrescue
 - https://packages.debian.org/bookworm/amd64/gddrescue/filelist
 - https://manpages.debian.org/bookworm/gddrescue/index.html
