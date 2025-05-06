@@ -93,7 +93,7 @@ https://www.gnu.org/manual/blurbs.html
 
 ## g++ 
 - https://packages.debian.org/bookworm/amd64/g++/filelist
-- g++
+- g++ (/usr/bin/x86_64-linux-gnu-g++-14　へのリンク)
 
 ## g++-14-x86-64-linux-gnu
 - https://packages.debian.org/trixie/amd64/g++-14-x86-64-linux-gnu/filelist
