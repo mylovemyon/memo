@@ -7,7 +7,7 @@ https://www.gnu.org/manual/blurbs.html
 - ac / accton / dump-acct / dump-utmp / lastcomm / sa
 
 ## barcode
-- https://packages.debian.org/bookworm/amd64/barcode/filelist
+- https://packages.debian.org/sid/amd64/barcode/filelist
 - https://manpages.debian.org/bookworm/barcode/index.html
 - barcode / sample
 
