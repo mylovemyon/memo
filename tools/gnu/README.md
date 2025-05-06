@@ -42,7 +42,7 @@ https://www.gnu.org/manual/blurbs.html
 - curl / wcurl
 
 ## datamash
-- https://packages.debian.org/bookworm/amd64/datamash/filelist
+- https://packages.debian.org/sid/amd64/datamash/filelist
 - https://manpages.debian.org/bookworm/datamash/index.html
 - datamash / decorate
 
