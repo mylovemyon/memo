@@ -86,6 +86,11 @@ https://www.gnu.org/manual/blurbs.html
 - https://manpages.debian.org/bookworm/gcc/index.html
 - c89-gcc / c89 / c99-gcc / c99 / gcc-ar / gcc-nm / gcc-ranlib / x86_64-linux-gnu-gcc-ar / x86_64-linux-gnu-gcc-nm / x86_64-linux-gnu-gcc-ranlib
 
+## gcc-x86-64-linux-gnu 
+- https://packages.debian.org/bookworm/arm64/gcc-x86-64-linux-gnu/filelist
+- https://manpages.debian.org/bookworm/gcc-x86-64-linux-gnu/index.html
+- x86_64-linux-gnu-gcc / x86_64-linux-gnu-gcc-ar / x86_64-linux-gnu-gcc-nm / x86_64-linux-gnu-gcc-ranlib / x86_64-linux-gnu-gcov / x86_64-linux-gnu-gcov-dump / x86_64-linux-gnu-gcov-tool / x86_64-linux-gnu-lto-dump
+
 ## gddrescue
 - https://packages.debian.org/bookworm/amd64/gddrescue/filelist
 - https://manpages.debian.org/bookworm/gddrescue/index.html
