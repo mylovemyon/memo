@@ -2,7 +2,7 @@ https://www.gnu.org/software/gsrc/package-list.html
 https://www.gnu.org/manual/blurbs.html
 
 ## acct
-- https://packages.debian.org/bookworm/amd64/acct/filelist
+- https://packages.debian.org/trixie/amd64/acct/filelist
 - https://manpages.debian.org/bookworm/acct/index.html
 - ac / accton / dump-acct / dump-utmp / lastcomm / sa
 
