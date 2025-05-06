@@ -66,6 +66,11 @@ https://www.gnu.org/manual/blurbs.html
 - https://manpages.debian.org/bookworm/enscript/index.html
 - diffpp / enscript / mkafmmap / over / sliceprint / states
 
+## fdisk
+- https://packages.debian.org/bookworm/amd64/fdisk/filelist
+- https://manpages.debian.org/bookworm/fdisk/index.html
+- cfdisk / fdisk / sfdisk
+
 ## findutils
 - https://packages.debian.org/bookworm/amd64/findutils/filelist
 - https://manpages.debian.org/bookworm/findutils/index.html
