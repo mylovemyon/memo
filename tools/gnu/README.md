@@ -39,7 +39,7 @@ https://www.gnu.org/manual/blurbs.html
 ## curl
 - https://packages.debian.org/sid/amd64/curl/filelist
 - https://manpages.debian.org/bookworm/curl/index.html
-- curl
+- curl / wcurl
 
 ## datamash
 - https://packages.debian.org/bookworm/amd64/datamash/filelist
