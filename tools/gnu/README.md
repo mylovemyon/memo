@@ -22,7 +22,7 @@ https://www.gnu.org/manual/blurbs.html
 - addr2line / ar / as / c++filt / elfedit / gp-archive / gp-collect-app / gp-display-html / gp-display-src / gp-display-text / gprof / gprofng / gprofng-archive / gprofng-collect-app / gprofng-display-html / gprofng-display-src / gprofng-display-text / ld / ld.bfd / nm / objcopy / objdump / ranlib / readelf / size / strings / strip
 
 ## cflow
-- https://packages.debian.org/bookworm/amd64/cflow/filelist
+- https://packages.debian.org/sid/amd64/cflow/filelist
 - https://manpages.debian.org/bookworm/cflow/index.html
 - cflow
 
