@@ -47,7 +47,7 @@ https://www.gnu.org/manual/blurbs.html
 - datamash / decorate
 
 ## diffutils
-- https://packages.debian.org/bookworm/amd64/diffutils/filelist
+- https://packages.debian.org/sid/amd64/diffutils/filelist
 - https://manpages.debian.org/bookworm/diffutils/index.html
 - cmp / diff / diff3 / sdiff
 
