@@ -124,7 +124,7 @@ https://tracker.debian.org/pkg/gcc-defaults
 ### gcc
 - https://packages.debian.org/sid/amd64/gcc/filelist
 - https://manpages.debian.org/unstable/gcc/index.html
-- c89-gcc / c89 / c99-gcc / c99 / gcc-ar / gcc-nm / gcc-ranlib / x86_64-linux-gnu-gcc-ar / x86_64-linux-gnu-gcc-nm / x86_64-linux-gnu-gcc-ranlib
+- c89-gcc  / c99-gcc  / gcc  / gcc-ar  / gcc-nm  / gcc-ranlib  / gcov  / gcov-dump  / gcov-tool  / lto-dump
 ### gcc-x86-64-linux-gnu 
 - https://packages.debian.org/sid/amd64/gcc-x86-64-linux-gnu/filelist
 - https://manpages.debian.org/unstable/gcc-x86-64-linux-gnu/index.html
