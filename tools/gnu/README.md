@@ -61,6 +61,11 @@ https://www.gnu.org/manual/blurbs.html
 - https://manpages.debian.org/bookworm/gawk/index.html
 - gawk / gawkbug  
 
+## gddrescue
+- https://packages.debian.org/bookworm/amd64/gddrescue/filelist
+- https://manpages.debian.org/bookworm/gddrescue/index.html
+- ddrescue / drescuelog
+
 ## grep
 - https://packages.debian.org/bookworm/amd64/grep/filelist
 - https://manpages.debian.org/bookworm/grep/index.html
