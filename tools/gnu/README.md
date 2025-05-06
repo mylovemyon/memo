@@ -37,7 +37,7 @@ https://www.gnu.org/manual/blurbs.html
 - cpio / mt-gnu
 
 ## curl
-- https://packages.debian.org/bookworm/amd64/curl/filelist
+- https://packages.debian.org/sid/amd64/curl/filelist
 - https://manpages.debian.org/bookworm/curl/index.html
 - curl
 
