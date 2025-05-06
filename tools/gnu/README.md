@@ -17,9 +17,9 @@ https://www.gnu.org/manual/blurbs.html
 - bash-builtins / bash / bashbug / clear_console / rbash
 
 ## binutils
-- https://packages.debian.org/bookworm/amd64/binutils/filelist
+- https://packages.debian.org/sid/amd64/binutils/filelist
 - https://manpages.debian.org/bookworm/binutils-common/index.html
-- addr2line / ar / as / c++filt / dwp / elfedit / gold / gp-archive / gp-collect-app / gp-display-html / gp-display-src / gp-display-text / gprof / gprofng / ld / ld.bfd / ld.gold / nm / objcopy / objdump / ranlib / readelf / size / strings / strip
+- addr2line / ar / as / c++filt / elfedit / gp-archive / gp-collect-app / gp-display-html / gp-display-src / gp-display-text / gprof / gprofng / gprofng-archive / gprofng-collect-app / gprofng-display-html / gprofng-display-src / gprofng-display-text / ld / ld.bfd / nm / objcopy / objdump / ranlib / readelf / size / strings / strip
 
 ## cflow
 - https://packages.debian.org/bookworm/amd64/cflow/filelist
