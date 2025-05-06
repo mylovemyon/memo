@@ -117,28 +117,40 @@ https://tracker.debian.org/pkg/findutils
 https://tracker.debian.org/pkg/gcc-defaults
 ### cpp
 - https://packages.debian.org/sid/amd64/cpp/filelist
-- cpp (cpp-14 へのリンク)
+- cpp（ cpp-14 へのリンク）
 ### cpp-x86-64-linux-gnu
 - https://packages.debian.org/sid/amd64/cpp-x86-64-linux-gnu/filelist
-- x86_64-linux-gnu-cpp (x86_64-linux-gnu-cpp-14 へのリンク)
+- x86_64-linux-gnu-cpp（ x86_64-linux-gnu-cpp-14 へのリンク）
 ### gcc
 - https://packages.debian.org/sid/amd64/gcc/filelist
 - https://manpages.debian.org/unstable/gcc/index.html
-- c89-gcc  / c99-gcc  / gcc  / gcc-ar  / gcc-nm  / gcc-ranlib  / gcov  / gcov-dump  / gcov-tool  / lto-dump (すべて gcc-14-x86-64-linux-gnu-*-14 へのリンク)
+- c89-gcc  / c99-gcc  / gcc  / gcc-ar  / gcc-nm  / gcc-ranlib  / gcov  / gcov-dump  / gcov-tool  / lto-dump  
+  （すべて x86_64-linux-gnu-gcc-*-14 へのリンク）
 ### gcc-x86-64-linux-gnu 
 - https://packages.debian.org/sid/amd64/gcc-x86-64-linux-gnu/filelist
 - https://manpages.debian.org/unstable/gcc-x86-64-linux-gnu/index.html
 - x86_64-linux-gnu-gcc / x86_64-linux-gnu-gcc-ar / x86_64-linux-gnu-gcc-nm / x86_64-linux-gnu-gcc-ranlib / x86_64-linux-gnu-gcov / x86_64-linux-gnu-gcov-dump / x86_64-linux-gnu-gcov-tool / x86_64-linux-gnu-lto-dump  
-  (すべて gcc-14-x86-64-linux-gnu-*-14 へのリンク)
+  （すべて x86_64-linux-gnu-gcc-*-14 へのリンク）
 ### g++ 
 - https://packages.debian.org/sid/amd64/g++/filelist
-- g++ (g++-14 へのリンク)
+- g++（ g++-14 へのリンク）
 ### g++-x86-64-linux-gnu
 - https://packages.debian.org/sid/amd64/g++-x86-64-linux-gnu/filelist
-- x86_64-linux-gnu-g++ (x86_64-linux-gnu-g++-14 へのリンク)
+- x86_64-linux-gnu-g++（ x86_64-linux-gnu-g++-14 へのリンク）
 
 ## gcc-14
 https://tracker.debian.org/pkg/gcc-14
+### cpp-14
+- https://packages.debian.org/sid/amd64/cpp-14/filelist
+- cpp-14
+### cpp-14-x86-64-linux-gnu
+- https://packages.debian.org/sid/amd64/cpp-14-x86-64-linux-gnu/filelist
+- x86_64-linux-gnu-cpp-14
+### gcc-14
+- https://packages.debian.org/sid/amd64/gcc-14/filelist
+- https://manpages.debian.org/unstable/gcc-14/index.html
+- gcc-14 / gcc-ar-14 / gcc-nm-14 / gcc-ranlib-14 / gcov-14 / gcov-dump-14 / gcov-tool-14 / lto-dump-14  
+  （すべて x86_64-linux-gnu-gcc-*-14 へのリンク）
 ### gcc-14-x86-64-linux-gnu
 - https://packages.debian.org/sid/amd64/gcc-14-x86-64-linux-gnu/filelist
 - https://manpages.debian.org/unstable/gcc-14-x86-64-linux-gnu/index.html
