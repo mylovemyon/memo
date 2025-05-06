@@ -12,7 +12,7 @@ https://www.gnu.org/manual/blurbs.html
 - barcode / sample
 
 ## bash
-- https://packages.debian.org/bookworm/amd64/bash/filelist
+- https://packages.debian.org/sid/amd64/bash/filelist
 - https://manpages.debian.org/bookworm/bash/index.html
 - bash-builtins / bash / bashbug / clear_console / rbash
 
