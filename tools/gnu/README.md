@@ -51,6 +51,11 @@ https://www.gnu.org/manual/blurbs.html
 - https://manpages.debian.org/bookworm/diffutils/index.html
 - cmp / diff / diff3 / sdiff
 
+## direvent
+- https://packages.debian.org/bookworm/amd64/direvent/filelist
+- https://manpages.debian.org/bookworm/direvent/index.html
+- direvent
+
 ## findutils
 - https://packages.debian.org/bookworm/amd64/findutils/filelist
 - https://manpages.debian.org/bookworm/findutils/index.html
