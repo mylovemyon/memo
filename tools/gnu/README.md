@@ -178,29 +178,41 @@ https://tracker.debian.org/pkg/gcc-mingw-w64
 - i686-w64-mingw32-c++-win32 / i686-w64-mingw32-g++-win32
 
 ## gddrescue
-- https://packages.debian.org/bookworm/amd64/gddrescue/filelist
-- https://manpages.debian.org/bookworm/gddrescue/index.html
+- https://tracker.debian.org/pkg/gddrescue
+- https://packages.debian.org/sid/amd64/gddrescue/filelist
+- https://manpages.debian.org/unstable/gddrescue/index.html
 - ddrescue / drescuelog
 
 ## grep
-- https://packages.debian.org/bookworm/amd64/grep/filelist
-- https://manpages.debian.org/bookworm/grep/index.html
+- https://tracker.debian.org/pkg/grep
+- https://packages.debian.org/sid/amd64/grep/filelist
+- https://manpages.debian.org/unstable/grep/index.html
 - egrep / fgrep / grep / rgrep
 
 ## sed
-- https://packages.debian.org/bookworm/amd64/sed/filelist
-- https://manpages.debian.org/bookworm/sed/index.html
+- https://tracker.debian.org/pkg/sed
+- https://packages.debian.org/sid/amd64/sed/filelist
+- https://manpages.debian.org/unstable/sed/index.html
 - sed
 
 ## util-linux
-### util-linux
-- https://packages.debian.org/bookworm/amd64/util-linux/filelist
-- https://manpages.debian.org/bookworm/util-linux/index.html
-- addpart / agetty / blkdiscard / blkid / blkzone / blockdev / chcpu / chmem / choom / chrt / ctrlaltdel / delpart / dmesg / fallocate / findfs / findmnt / flock / fsck / fsck.cramfs / fsck.minix / fsfreeze / fstrim / getopt / getty / hardlink / i386 / ionice / ipcmk / ipcrm / ipcs / isosize / last / lastb / ldattach / linux32 / linux64 / lsblk / lscpu / lsipc / lslocks / lslogins / lsmem / lsns / mcookie / mesg / mkfs / mkfs.bfs / mkfs.cramfs / mkfs.minix / mkswap / more / mountpoint / namei / nsenter / partx / pivot_root / prlimit / readprofile / rename.ul / resizepart / rev / rtcwake / runuser / setarch / setpriv / setsid / setterm / su / sulogin / swaplabel / switch_root / taskset / uclampset / unshare / utmpdump / wdctl / whereis / wipefs / x86_64 / zramctl
+https://tracker.debian.org/pkg/util-linux
+### bsdextrautils
+- https://packages.debian.org/sid/amd64/bsdextrautils/filelist
+- https://manpages.debian.org/unstable/bsdextrautils/index.html
+- col / colcrt / colrm / column / hd / hexdump / look / ul
+### bsdutils 
+- https://packages.debian.org/sid/amd64/bsdutils/filelist
+- https://packages.debian.org/sid/amd64/bsdutils/filelist
+- logger / renice / script / scriptlive / scriptreplay / wall
 ### fdisk
-- https://packages.debian.org/bookworm/amd64/fdisk/filelist
-- https://manpages.debian.org/bookworm/fdisk/index.html
+- https://packages.debian.org/sid/amd64/fdisk/filelist
+- https://manpages.debian.org/unstable/fdisk/index.html
 - cfdisk / fdisk / sfdisk
+### util-linux
+- https://packages.debian.org/sid/amd64/util-linux/filelist
+- https://manpages.debian.org/unstable/util-linux/index.html
+- agetty / blkdiscard / blkid / blkzone / blockdev / chcpu / chmem / choom / chrt / dmesg / fallocate / findfs / findmnt / flock / fsck / fsfreeze / fstrim / getopt / getty / hardlink / i386 / ionice / ipcmk / ipcrm / ipcs / isosize / ldattach / linux32 / linux64 / lsblk / lscpu / lsipc / lslocks / lslogins / lsmem / lsns / mcookie / mkfs / mkswap / more / mountpoint / namei / nsenter / partx / pivot_root / prlimit / readprofile / rename.ul / rev / rtcwake / runuser / setarch / setpriv / setsid / setterm / su / sulogin / swaplabel / switch_root / taskset / uclampset / unshare / wdctl / whereis / wipefs / x86_64 / zramctl
 
 ## wget
 - https://packages.debian.org/bookworm/amd64/wget/filelist
