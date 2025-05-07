@@ -201,6 +201,10 @@ https://tracker.debian.org/pkg/gdb
 
 ## gnupg2
 https://tracker.debian.org/pkg/gnupg2
+### dirmngr 
+- https://packages.debian.org/sid/amd64/dirmngr/filelist
+- https://manpages.debian.org/unstable/dirmngr/index.html
+- dirmngr / dirmngr-client
 ### gnupg-utils 
 - https://packages.debian.org/sid/amd64/gnupg-utils/filelist
 - https://manpages.debian.org/unstable/gnupg-utils/index.html
