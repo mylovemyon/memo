@@ -167,9 +167,15 @@ https://tracker.debian.org/pkg/gcc-mingw-w64
 ### gcc-mingw-w64-x86-64-win32
 - https://packages.debian.org/sid/amd64/gcc-mingw-w64-x86-64-win32/filelistt
 - x86_64-w64-mingw32-cpp-win32 / x86_64-w64-mingw32-gcc-14-win32 / x86_64-w64-mingw32-gcc-ar-win32 / x86_64-w64-mingw32-gcc-nm-win32 / x86_64-w64-mingw32-gcc-ranlib-win32 / x86_64-w64-mingw32-gcc-win32 / x86_64-w64-mingw32-gcov-dump-win32 / x86_64-w64-mingw32-gcov-tool-win32 / x86_64-w64-mingw32-gcov-win32 / x86_64-w64-mingw32-lto-dump-win32
+### gcc-mingw-w64-i686-win32
+- https://packages.debian.org/sid/amd64/gcc-mingw-w64-i686-win32/filelist
+- i686-w64-mingw32-cpp-win32 / i686-w64-mingw32-gcc-14-win32 / i686-w64-mingw32-gcc-ar-win32 / i686-w64-mingw32-gcc-nm-win32 / i686-w64-mingw32-gcc-ranlib-win32 / i686-w64-mingw32-gcc-win32 / i686-w64-mingw32-gcov-dump-win32 / i686-w64-mingw32-gcov-tool-win32 / i686-w64-mingw32-gcov-win32 / i686-w64-mingw32-lto-dump-win32
 ### g++-mingw-w64-x86-64-win32
 - https://packages.debian.org/sid/amd64/g++-mingw-w64-x86-64-win32/filelist
 - x86_64-w64-mingw32-c++-win32 / x86_64-w64-mingw32-g++-win32
+### gcc-mingw-w64-i686-win32
+- https://packages.debian.org/sid/amd64/g++-mingw-w64-i686-win32/filelist
+- i686-w64-mingw32-c++-win32 i686-w64-mingw32-g++-win32
 
 ## gddrescue
 - https://packages.debian.org/bookworm/amd64/gddrescue/filelist
