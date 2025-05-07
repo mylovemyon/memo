@@ -183,11 +183,20 @@ https://tracker.debian.org/pkg/gcc-mingw-w64
 - https://manpages.debian.org/unstable/gddrescue/index.html
 - ddrescue / drescuelog
 
+## gdb
+https://tracker.debian.org/pkg/gdb
+### gdb
+- https://packages.debian.org/sid/amd64/gdb/filelist
+- https://manpages.debian.org/unstable/gdb/index.html
+- gcore / gdb / gdb-add-index / gdbtui / gstack
+
 ## grep
 - https://tracker.debian.org/pkg/grep
 - https://packages.debian.org/sid/amd64/grep/filelist
 - https://manpages.debian.org/unstable/grep/index.html
 - egrep / fgrep / grep / rgrep
+
+
 
 ## sed
 - https://tracker.debian.org/pkg/sed
