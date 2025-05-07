@@ -213,6 +213,10 @@ https://tracker.debian.org/pkg/gnupg2
 - https://packages.debian.org/sid/amd64/gpg/filelist
 - https://manpages.debian.org/unstable/gpg/index.html
 - gpg
+### gpg-agent
+- https://packages.debian.org/sid/amd64/gpg-agent/filelist
+- https://manpages.debian.org/unstable/gpg-agent/index.html
+- gpg-agent
 
 ## gnushogi
 - https://tracker.debian.org/pkg/gnushogi
