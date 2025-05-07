@@ -175,7 +175,7 @@ https://tracker.debian.org/pkg/gcc-mingw-w64
 - x86_64-w64-mingw32-c++-win32 / x86_64-w64-mingw32-g++-win32
 ### gcc-mingw-w64-i686-win32
 - https://packages.debian.org/sid/amd64/g++-mingw-w64-i686-win32/filelist
-- i686-w64-mingw32-c++-win32 i686-w64-mingw32-g++-win32
+- i686-w64-mingw32-c++-win32 / i686-w64-mingw32-g++-win32
 
 ## gddrescue
 - https://packages.debian.org/bookworm/amd64/gddrescue/filelist
