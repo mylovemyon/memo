@@ -217,6 +217,10 @@ https://tracker.debian.org/pkg/gnupg2
 - https://packages.debian.org/sid/amd64/gpg-agent/filelist
 - https://manpages.debian.org/unstable/gpg-agent/index.html
 - gpg-agent
+### gpg-wks-client 
+- https://packages.debian.org/sid/amd64/gpg-wks-client/filelist
+- https://manpages.debian.org/unstable/gpg-wks-client/index.html
+- gpg-wks-client
 
 ## gnushogi
 - https://tracker.debian.org/pkg/gnushogi
