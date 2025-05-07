@@ -300,6 +300,13 @@ https://tracker.debian.org/pkg/mtools
 - https://manpages.debian.org/unstable/mtools/index.html
 - amuFormat.sh / lz / mattrib / mbadblocks / mcat / mcd / mcheck / mcomp / mcopy / mdel / mdeltree / mdir / mdoctorfat / mdu / mformat / minfo / mkmanifest / mlabel / mmd / mmount / mmove / mpartition / mrd / mren / mshortname / mshowfat / mtools / mtoolstest / mtype / mxtar / mzip / tgz / uz
 
+## nano
+https://tracker.debian.org/pkg/nano
+### nano
+- https://packages.debian.org/sid/amd64/nano/filelist
+- https://manpages.debian.org/unstable/nano/index.html
+- nano / rnano
+
 ## sed
 - https://tracker.debian.org/pkg/sed
 - https://packages.debian.org/sid/amd64/sed/filelist
