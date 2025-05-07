@@ -14,7 +14,7 @@ https://www.gnu.org/manual/blurbs.html
 - barcode / sample
 
 ## bash
-- https://tracker.debian.org/pkg/bash
+https://tracker.debian.org/pkg/bash
 ### bash
 - https://packages.debian.org/sid/amd64/bash/filelist
 - https://manpages.debian.org/unstable/bash/index.html
@@ -246,6 +246,29 @@ https://tracker.debian.org/pkg/gnupg2
 - https://packages.debian.org/sid/amd64/gzip/filelist
 - https://manpages.debian.org/unstable/gzip/index.html
 - gunzip / gzexe / gzip / uncompress / zcat / zcmp / zdiff / zegrep / zfgrep / zforce / zgrep / zless / zmore / znew
+
+## inetutils
+https://tracker.debian.org/pkg/inetutils
+### inetutils-ftp
+- https://packages.debian.org/sid/amd64/inetutils-ftp/filelist
+- https://manpages.debian.org/unstable/inetutils-ftp/index.html
+- inetutils-ftp
+### inetutils-ping
+- https://packages.debian.org/sid/amd64/inetutils-ping/filelist
+- https://manpages.debian.org/unstable/inetutils-ping/index.html
+- ping / ping6
+### inetutils-telnet
+- https://packages.debian.org/sid/amd64/inetutils-telnet/filelist
+- https://manpages.debian.org/unstable/inetutils-telnet/index.html
+- netutils-telnet
+### inetutils-tools 
+- https://packages.debian.org/sid/amd64/inetutils-tools/filelist
+- https://manpages.debian.org/unstable/inetutils-tools/index.html
+- inetutils-dnsdomainname / inetutils-hostname / inetutils-ifconfig / inetutils-logger
+### inetutils-traceroute 
+- https://packages.debian.org/sid/amd64/inetutils-traceroute/filelist
+- https://manpages.debian.org/unstable/inetutils-traceroute/index.html
+- inetutils-traceroute
 
 ## sed
 - https://tracker.debian.org/pkg/sed
