@@ -156,16 +156,20 @@ https://tracker.debian.org/pkg/gcc-14
 - https://manpages.debian.org/unstable/gcc-14-x86-64-linux-gnu/index.html
 - x86_64-linux-gnu-gcc-14  / x86_64-linux-gnu-gcc-ar-14  / x86_64-linux-gnu-gcc-nm-14  / x86_64-linux-gnu-gcc-ranlib-14  / x86_64-linux-gnu-gcov-14  / x86_64-linux-gnu-gcov-dump-14  / x86_64-linux-gnu-gcov-tool-14  / x86_64-linux-gnu-lto-dump-14
 ### g++-14
-- https://packages.debian.org/trixie/amd64/g++-14/filelist
+- https://packages.debian.org/sid/amd64/g++-14/filelist
 - g++-14 (x86_64-linux-gnu-g++-14 へのリンク)
 ### g++-14-x86-64-linux-gnu
-- https://packages.debian.org/trixie/amd64/g++-14-x86-64-linux-gnu/filelist
+- https://packages.debian.org/sid/amd64/g++-14-x86-64-linux-gnu/filelist
 - x86_64-linux-gnu-g++-14
 
 ## gcc-mingw-w64
+https://tracker.debian.org/pkg/gcc-mingw-w64
 ### gcc-mingw-w64-x86-64-win32
-- https://packages.debian.org/bookworm/amd64/gcc-mingw-w64-x86-64-win32/filelist
-- x86_64-w64-mingw32-cpp-win32  / x86_64-w64-mingw32-gcc-12-win32  / x86_64-w64-mingw32-gcc-ar-win32  / x86_64-w64-mingw32-gcc-nm-win32  / x86_64-w64-mingw32-gcc-ranlib-win32  / x86_64-w64-mingw32-gcc-win32  / x86_64-w64-mingw32-gcov-dump-win32  / x86_64-w64-mingw32-gcov-tool-win32  / x86_64-w64-mingw32-gcov-win32 / x86_64-w64-mingw32-lto-dump-win32
+- https://packages.debian.org/sid/amd64/gcc-mingw-w64-x86-64-win32/filelistt
+- x86_64-w64-mingw32-cpp-win32 / x86_64-w64-mingw32-gcc-14-win32 / x86_64-w64-mingw32-gcc-ar-win32 / x86_64-w64-mingw32-gcc-nm-win32 / x86_64-w64-mingw32-gcc-ranlib-win32 / x86_64-w64-mingw32-gcc-win32 / x86_64-w64-mingw32-gcov-dump-win32 / x86_64-w64-mingw32-gcov-tool-win32 / x86_64-w64-mingw32-gcov-win32 / x86_64-w64-mingw32-lto-dump-win32
+### g++-mingw-w64-x86-64-win32
+- https://packages.debian.org/sid/amd64/g++-mingw-w64-x86-64-win32/filelist
+- x86_64-w64-mingw32-c++-win32 / x86_64-w64-mingw32-g++-win32
 
 ## gddrescue
 - https://packages.debian.org/bookworm/amd64/gddrescue/filelist
