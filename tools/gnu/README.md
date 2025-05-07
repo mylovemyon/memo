@@ -229,6 +229,10 @@ https://tracker.debian.org/pkg/util-linux
 - https://packages.debian.org/sid/amd64/util-linux/filelist
 - https://manpages.debian.org/unstable/util-linux/index.html
 - agetty / blkdiscard / blkid / blkzone / blockdev / chcpu / chmem / choom / chrt / dmesg / fallocate / findfs / findmnt / flock / fsck / fsfreeze / fstrim / getopt / getty / hardlink / i386 / ionice / ipcmk / ipcrm / ipcs / isosize / ldattach / linux32 / linux64 / lsblk / lscpu / lsipc / lslocks / lslogins / lsmem / lsns / mcookie / mkfs / mkswap / more / mountpoint / namei / nsenter / partx / pivot_root / prlimit / readprofile / rename.ul / rev / rtcwake / runuser / setarch / setpriv / setsid / setterm / su / sulogin / swaplabel / switch_root / taskset / uclampset / unshare / wdctl / whereis / wipefs / x86_64 / zramctl
+### util-linux-extra
+- https://packages.debian.org/sid/amd64/util-linux-extra/filelist
+- https://manpages.debian.org/unstable/util-linux-extra/index.html
+- bits / blkpr / coresched / ctrlaltdel / enosys / exch / fadvise / fincore / fsck.cramfs / fsck.minix / hwclock / lsfd / lsirq / mkfs.bfs / mkfs.cramfs / mkfs.minix / pipesz / resizepart / waitpid
 
 ## wget
 - https://packages.debian.org/bookworm/amd64/wget/filelist
