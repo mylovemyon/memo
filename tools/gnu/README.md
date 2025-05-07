@@ -203,12 +203,28 @@ https://tracker.debian.org/pkg/util-linux
 - col / colcrt / colrm / column / hd / hexdump / look / ul
 ### bsdutils 
 - https://packages.debian.org/sid/amd64/bsdutils/filelist
-- https://packages.debian.org/sid/amd64/bsdutils/filelist
+- https://manpages.debian.org/unstable/bsdutils/index.html
 - logger / renice / script / scriptlive / scriptreplay / wall
+### eject
+- https://packages.debian.org/sid/amd64/eject/filelist
+- https://manpages.debian.org/unstable/eject/index.html
+- eject
 ### fdisk
 - https://packages.debian.org/sid/amd64/fdisk/filelist
 - https://manpages.debian.org/unstable/fdisk/index.html
 - cfdisk / fdisk / sfdisk
+### login
+- https://packages.debian.org/sid/amd64/login/filelist
+- https://manpages.debian.org/unstable/login/index.html
+- login / newgrp / nologin / sg
+### mount
+- https://packages.debian.org/sid/amd64/mount/filelist
+- https://manpages.debian.org/unstable/mount/index.html
+- mount / losetup / swapoff / swapon / umount
+### rfkill
+- https://packages.debian.org/sid/amd64/rfkill/filelist
+- https://manpages.debian.org/unstable/rfkill/index.html
+- rfkill
 ### util-linux
 - https://packages.debian.org/sid/amd64/util-linux/filelist
 - https://manpages.debian.org/unstable/util-linux/index.html
