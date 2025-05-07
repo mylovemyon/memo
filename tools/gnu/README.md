@@ -195,6 +195,7 @@ https://tracker.debian.org/pkg/gdb
 
 ## gnujump
 - https://tracker.debian.org/pkg/gnujump
+- https://packages.debian.org/sid/amd64/gnujump/filelist
 - https://manpages.debian.org/unstable/gnujump/index.html
 - gnujump（ゲーム💛）
 
@@ -210,7 +211,11 @@ https://tracker.debian.org/pkg/gdb
 - https://manpages.debian.org/unstable/grep/index.html
 - egrep / fgrep / grep / rgrep
 
-
+## gzip
+- https://tracker.debian.org/pkg/gzip
+- https://packages.debian.org/sid/amd64/gzip/filelist
+- https://manpages.debian.org/unstable/gzip/index.html
+- gunzip / gzexe / gzip / uncompress / zcat / zcmp / zdiff / zegrep / zfgrep / zforce / zgrep / zless / zmore / znew
 
 ## sed
 - https://tracker.debian.org/pkg/sed
