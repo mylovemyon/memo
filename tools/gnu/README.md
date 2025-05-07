@@ -270,6 +270,36 @@ https://tracker.debian.org/pkg/inetutils
 - https://manpages.debian.org/unstable/inetutils-traceroute/index.html
 - inetutils-traceroute
 
+## less
+- https://tracker.debian.org/pkg/less
+- https://packages.debian.org/sid/amd64/less/filelist
+- https://manpages.debian.org/unstable/less/index.html
+- less / lessecho / lessfile / lesskey / lesspipe
+
+## macchanger
+- https://tracker.debian.org/pkg/macchanger
+- https://packages.debian.org/sid/amd64/macchanger/filelist
+- https://manpages.debian.org/unstable/macchanger/index.html
+- macchanger
+
+## make-dfsg
+https://tracker.debian.org/pkg/make-dfsg
+### make
+- https://packages.debian.org/sid/amd64/make/filelist
+- https://manpages.debian.org/unstable/make/index.html
+- gmake / make
+
+## mtools
+https://tracker.debian.org/pkg/mtools
+### floppyd
+- https://packages.debian.org/sid/amd64/floppyd/filelist
+- https://manpages.debian.org/unstable/floppyd/index.html
+- floppyd / floppyd_installtest
+### mtools
+- https://packages.debian.org/sid/amd64/mtools/filelist
+- https://manpages.debian.org/unstable/mtools/index.html
+- amuFormat.sh / lz / mattrib / mbadblocks / mcat / mcd / mcheck / mcomp / mcopy / mdel / mdeltree / mdir / mdoctorfat / mdu / mformat / minfo / mkmanifest / mlabel / mmd / mmount / mmove / mpartition / mrd / mren / mshortname / mshowfat / mtools / mtoolstest / mtype / mxtar / mzip / tgz / uz
+
 ## sed
 - https://tracker.debian.org/pkg/sed
 - https://packages.debian.org/sid/amd64/sed/filelist
