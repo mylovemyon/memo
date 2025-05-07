@@ -260,7 +260,7 @@ https://tracker.debian.org/pkg/inetutils
 ### inetutils-telnet
 - https://packages.debian.org/sid/amd64/inetutils-telnet/filelist
 - https://manpages.debian.org/unstable/inetutils-telnet/index.html
-- netutils-telnet
+- inetutils-telnet
 ### inetutils-tools 
 - https://packages.debian.org/sid/amd64/inetutils-tools/filelist
 - https://manpages.debian.org/unstable/inetutils-tools/index.html
