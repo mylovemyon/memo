@@ -15,9 +15,12 @@ https://www.gnu.org/manual/blurbs.html
 
 ## bash
 - https://tracker.debian.org/pkg/bash
+### bash
 - https://packages.debian.org/sid/amd64/bash/filelist
 - https://manpages.debian.org/unstable/bash/index.html
-- bash-builtins / bash / bashbug / clear_console / rbash
+- bash / bashbug / clear_console / rbash
+### bash-builtins
+- https://manpages.debian.org/unstable/bash/bash-builtins.7.en.html
 
 ## binutils
 https://tracker.debian.org/pkg/binutils
@@ -177,18 +180,29 @@ https://tracker.debian.org/pkg/gcc-mingw-w64
 - https://packages.debian.org/sid/amd64/g++-mingw-w64-i686-win32/filelist
 - i686-w64-mingw32-c++-win32 / i686-w64-mingw32-g++-win32
 
-## gddrescue
-- https://tracker.debian.org/pkg/gddrescue
-- https://packages.debian.org/sid/amd64/gddrescue/filelist
-- https://manpages.debian.org/unstable/gddrescue/index.html
-- ddrescue / drescuelog
-
 ## gdb
 https://tracker.debian.org/pkg/gdb
 ### gdb
 - https://packages.debian.org/sid/amd64/gdb/filelist
 - https://manpages.debian.org/unstable/gdb/index.html
 - gcore / gdb / gdb-add-index / gdbtui / gstack
+
+## gddrescue
+- https://tracker.debian.org/pkg/gddrescue
+- https://packages.debian.org/sid/amd64/gddrescue/filelist
+- https://manpages.debian.org/unstable/gddrescue/index.html
+- ddrescue / drescuelog
+
+## gnujump
+- https://tracker.debian.org/pkg/gnujump
+- https://manpages.debian.org/unstable/gnujump/index.html
+- gnujump（ゲーム💛）
+
+## gnushogi
+- https://tracker.debian.org/pkg/gnushogi
+- https://packages.debian.org/sid/amd64/gnushogi/filelist
+- https://manpages.debian.org/unstable/gnushogi/index.html
+- gnushogi（ゲーム💛）
 
 ## grep
 - https://tracker.debian.org/pkg/grep
