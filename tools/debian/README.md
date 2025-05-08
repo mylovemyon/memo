@@ -136,6 +136,18 @@ https://tracker.debian.org/pkg/shadow
 - chage / chfn / chgpasswd / chpasswd / chsh / expiry / gpasswd / groupadd / groupdel / groupmod / grpck / grpconv / grpunconv / newusers / passwd / pwck / pwconv / pwunconv / shadowconfig / useradd / userdel / usermod / vigr / vipw
 
 
+## sysvinit
+https://tracker.debian.org/pkg/sysvinit
+### sysvinit-core
+- https://packages.debian.org/sid/amd64/sysvinit-core/filelist
+- https://manpages.debian.org/unstable/sysvinit-core/index.html
+- halt / init / poweroff / reboot / runlevel / shutdown / telinit
+### sysvinit-utils
+- https://packages.debian.org/sid/amd64/sysvinit-utils/filelist
+- https://manpages.debian.org/unstable/sysvinit-utils/index.html
+- fstab-decode / killall5 / pidof
+
+
 ## unzip
 - https://tracker.debian.org/pkg/unzip
 - https://packages.debian.org/sid/amd64/unzip/filelist
