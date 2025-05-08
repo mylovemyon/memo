@@ -155,6 +155,30 @@ https://tracker.debian.org/pkg/sysvinit
 - funzip / unzip / unzipsfx / zipgrep / zipinfo
 
 
+## vim
+https://tracker.debian.org/pkg/vim
+### vim
+- https://packages.debian.org/sid/amd64/vim/filelist
+- https://manpages.debian.org/unstable/vim/index.html
+- vim.basic
+### vim-common 
+- https://packages.debian.org/sid/all/vim-common/filelist
+- https://manpages.debian.org/unstable/vim-common/index.html
+- helpztags
+### vim-runtime
+- https://packages.debian.org/sid/all/vim-runtime/filelist
+- https://manpages.debian.org/unstable/vim-runtime/index.html
+- vimtutor
+### vim-tiny
+- https://packages.debian.org/sid/amd64/vim-tiny/filelist
+- https://manpages.debian.org/unstable/vim-tiny/index.html
+- vim.tiny
+### xxd
+- https://packages.debian.org/sid/amd64/xxd/filelist
+- https://manpages.debian.org/unstable/xxd/index.html
+- xxd
+
+
 ## zip
 - https://tracker.debian.org/pkg/zip
 - https://packages.debian.org/sid/amd64/zip/filelist
