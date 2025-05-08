@@ -39,6 +39,13 @@ https://tracker.debian.org/pkg/docker.io
 - docker-compose
 
 
+## file
+- https://tracker.debian.org/pkg/file
+- https://packages.debian.org/sid/amd64/file/filelist
+- https://manpages.debian.org/unstable/file/index.html
+- file
+
+
 ## glibc
 https://tracker.debian.org/pkg/glibc
 ### libc-bin
