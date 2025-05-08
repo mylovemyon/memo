@@ -88,6 +88,12 @@ https://tracker.debian.org/pkg/glibc
 - gobuster
 
 
+## hydra
+- https://packages.debian.org/sid/amd64/hydra/filelist
+- https://manpages.debian.org/unstable/hydra/index.html
+- dpl4hydra / hydra / hydra-wizard / pw-inspector
+
+
 ## manpages-ja
 - https://tracker.debian.org/pkg/manpages-ja
 - https://packages.debian.org/sid/all/manpages-ja/filelist
