@@ -328,15 +328,47 @@ https://tracker.debian.org/pkg/ncurses
 
 ## patch
 - https://tracker.debian.org/pkg/patch
-- https://packages.debian.org/unstable/patch
+- https://packages.debian.org/sid/amd64/patch/filelist
 - https://manpages.debian.org/unstable/patch/index.html
 - patch
+
+## screen
+- https://tracker.debian.org/pkg/screen
+- https://packages.debian.org/sid/amd64/screen/filelist
+- https://manpages.debian.org/unstable/screen/index.html
+- screen
 
 ## sed
 - https://tracker.debian.org/pkg/sed
 - https://packages.debian.org/sid/amd64/sed/filelist
 - https://manpages.debian.org/unstable/sed/index.html
 - sed
+
+## source-highlight
+- https://tracker.debian.org/pkg/source-highlight
+- https://packages.debian.org/sid/amd64/source-highlight/filelist
+- https://manpages.debian.org/unstable/source-highlight/index.html
+- check-regexp / source-highlight / source-highlight-settings
+
+## stow
+- https://tracker.debian.org/pkg/stow
+- https://packages.debian.org/sid/all/stow/filelist
+- https://manpages.debian.org/unstable/stow/index.html
+- chkstow / stow
+
+## tar
+https://tracker.debian.org/pkg/tar
+### tar
+- https://packages.debian.org/sid/amd64/tar/filelist
+- https://manpages.debian.org/unstable/tar/index.html
+- tar / rmt-tar / tarcat
+
+## texinfo
+https://tracker.debian.org/pkg/texinfo
+### info
+- https://packages.debian.org/sid/amd64/info/filelist
+- https://manpages.debian.org/unstable/info/index.html
+- info
 
 ## util-linux
 https://tracker.debian.org/pkg/util-linux
@@ -376,6 +408,12 @@ https://tracker.debian.org/pkg/util-linux
 - https://packages.debian.org/sid/amd64/util-linux-extra/filelist
 - https://manpages.debian.org/unstable/util-linux-extra/index.html
 - bits / blkpr / coresched / ctrlaltdel / enosys / exch / fadvise / fincore / fsck.cramfs / fsck.minix / hwclock / lsfd / lsirq / mkfs.bfs / mkfs.cramfs / mkfs.minix / pipesz / resizepart / waitpid
+
+## wdiff
+- https://tracker.debian.org/pkg/wdiff
+- https://packages.debian.org/sid/amd64/wdiff/filelist
+- https://manpages.debian.org/unstable/wdm/index.html
+- wdiff
 
 ## wget
 - https://packages.debian.org/bookworm/amd64/wget/filelist
