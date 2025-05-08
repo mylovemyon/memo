@@ -100,6 +100,30 @@ https://tracker.debian.org/pkg/python3.13
 - python3.13
 
 
+## samba
+https://tracker.debian.org/pkg/samba
+### python3-samba
+- https://packages.debian.org/sid/amd64/python3-samba/filelist
+- https://manpages.debian.org/unstable/python3-samba/index.html
+- samba-tool / samba-gpupdate
+### samba-ad-dc
+- https://packages.debian.org/sid/amd64/samba-ad-dc/filelist
+- https://manpages.debian.org/unstable/samba-ad-dc/index.html
+- samba / samba_dnsupdate / samba_kcc / samba_spnupdate / samba_upgradedns
+### samba-common-bin
+- https://packages.debian.org/sid/amd64/samba-common-bin/filelist
+- https://manpages.debian.org/unstable/samba-common-bin/index.html
+- dbwrap_tool / net / nmblookup / samba-log-parser / samba-regedit / smbcontrol / smbpasswd / testparm / winexe
+### smbclient
+- https://packages.debian.org/sid/amd64/smbclient/filelist
+- https://manpages.debian.org/unstable/smbclient/index.html
+- cifsdd / mdsearch / rpcclient / smbcacls / smbclient / smbcquotas / smbget / smbspool / smbtar / smbtree
+### tdb-tools
+- https://packages.debian.org/sid/amd64/tdb-tools/filelist
+- https://manpages.debian.org/unstable/tdb-tools/index.html
+- tdbbackup.tdbtools / tdbdump / tdbrestore / tdbtool
+
+
 ## shadow
 https://tracker.debian.org/pkg/shadow
 ### passwd
