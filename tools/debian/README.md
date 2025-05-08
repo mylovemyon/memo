@@ -20,6 +20,10 @@ https://tracker.debian.org/pkg/glibc
 - https://packages.debian.org/sid/amd64/libc-bin/filelist
 - https://manpages.debian.org/unstable/libc-bin/index.html
 - getconf / getent / iconv / iconvconfig / ldconfig / ldd / ld.so / locale / localedef / pldd / tzselect / zdump / zic
+### libc-devtools
+- https://packages.debian.org/sid/amd64/libc-devtools/filelist
+- https://manpages.debian.org/unstable/libc-devtools/index.html
+- memusage / memusagestat / mtrace / sotruss / sprof
 ### locales
 - https://packages.debian.org/sid/all/locales/filelist
 - https://manpages.debian.org/unstable/locales/index.html
