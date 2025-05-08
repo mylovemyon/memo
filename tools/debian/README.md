@@ -4,6 +4,7 @@
 - https://manpages.debian.org/unstable/black/index.html
 - black
 
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
@@ -14,11 +15,13 @@ https://tracker.debian.org/pkg/docker.io
 - https://packages.debian.org/sid/amd64/docker-cli/filelist
 - docker
 
+
 ## docker-compose
 - https://tracker.debian.org/pkg/docker-compose
 - https://packages.debian.org/sid/amd64/docker-compose/filelist
 - https://manpages.debian.org/unstable/docker-compose/index.html
 - docker-compose
+
 
 ## glibc
 https://tracker.debian.org/pkg/glibc
@@ -35,16 +38,35 @@ https://tracker.debian.org/pkg/glibc
 - https://manpages.debian.org/unstable/locales/index.html
 - locale-gen / update-locale / validlocale
 
+
 ## manpages-ja
 - https://tracker.debian.org/pkg/manpages-ja
 - https://packages.debian.org/sid/all/manpages-ja/filelist
 - https://manpages.debian.org/unstable/manpages-ja/index.html
+
 
 ## procps
 - https://tracker.debian.org/pkg/procps
 - https://packages.debian.org/sid/amd64/procps/filelist
 - https://manpages.debian.org/unstable/procps/index.html
 - free / kill / pgrep / pidwait / pkill / pmap / ps / pwdx / skill / slabtop / snice / sysctl / tload / top / uptime / vmstat / w / watch
+
+
+## python-pip
+https://tracker.debian.org/pkg/python-pip
+### python3-pip
+- https://packages.debian.org/sid/all/python3-pip/filelist
+- https://manpages.debian.org/unstable/python3-pip/index.html
+- pip / pip3
+
+
+## python-virtualenv
+https://tracker.debian.org/pkg/python-virtualenv
+### python3-virtualenv
+- https://packages.debian.org/sid/all/python3-virtualenv/filelist
+- https://manpages.debian.org/unstable/python3-virtualenv/index.html
+- virtualenv
+
 
 ## python2.7
 https://tracker.debian.org/pkg/python2.7
@@ -61,6 +83,7 @@ https://tracker.debian.org/pkg/python2.7
 - https://manpages.debian.org/bullseye/python2.7-minimal/index.html
 - python2.7
 
+
 ## python3.13
 https://tracker.debian.org/pkg/python3.13
 ### python3.13
@@ -76,6 +99,7 @@ https://tracker.debian.org/pkg/python3.13
 - https://manpages.debian.org/unstable/python3.13-minimal/index.html
 - python3.13
 
+
 ## shadow
 https://tracker.debian.org/pkg/shadow
 ### passwd
@@ -83,11 +107,13 @@ https://tracker.debian.org/pkg/shadow
 - https://manpages.debian.org/unstable/passwd/index.html
 - chage / chfn / chgpasswd / chpasswd / chsh / expiry / gpasswd / groupadd / groupdel / groupmod / grpck / grpconv / grpunconv / newusers / passwd / pwck / pwconv / pwunconv / shadowconfig / useradd / userdel / usermod / vigr / vipw
 
+
 ## unzip
 - https://tracker.debian.org/pkg/unzip
 - https://packages.debian.org/sid/amd64/unzip/filelist
 - https://manpages.debian.org/unstable/unzip/index.html
 - funzip / unzip / unzipsfx / zipgrep / zipinfo
+
 
 ## zip
 - https://tracker.debian.org/pkg/zip
