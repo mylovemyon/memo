@@ -20,3 +20,15 @@ https://tracker.debian.org/pkg/shadow
 - https://packages.debian.org/sid/amd64/passwd/filelist
 - https://manpages.debian.org/unstable/passwd/index.html
 - chage / chfn / chgpasswd / chpasswd / chsh / expiry / gpasswd / groupadd / groupdel / groupmod / grpck / grpconv / grpunconv / newusers / passwd / pwck / pwconv / pwunconv / shadowconfig / useradd / userdel / usermod / vigr / vipw
+
+## unzip
+- https://tracker.debian.org/pkg/unzip
+- https://packages.debian.org/sid/amd64/unzip/filelist
+- https://manpages.debian.org/unstable/unzip/index.html
+- funzip / unzip / unzipsfx / zipgrep / zipinfo
+
+## zip
+- https://tracker.debian.org/pkg/zip
+- https://packages.debian.org/sid/amd64/zip/filelist
+- https://manpages.debian.org/unstable/zip/index.html
+- zip / zipcloak / zipnote / zipsplit
