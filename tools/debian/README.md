@@ -29,6 +29,11 @@ https://tracker.debian.org/pkg/glibc
 - https://manpages.debian.org/unstable/locales/index.html
 - locale-gen / update-locale / validlocale
 
+## manpages-ja
+- https://tracker.debian.org/pkg/manpages-ja
+- https://packages.debian.org/sid/all/manpages-ja/filelist
+- https://manpages.debian.org/unstable/manpages-ja/index.html
+
 ## shadow
 https://tracker.debian.org/pkg/shadow
 ### passwd
