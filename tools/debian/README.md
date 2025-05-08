@@ -81,6 +81,13 @@ https://tracker.debian.org/pkg/glibc
 - locale-gen / update-locale / validlocale
 
 
+## gobuster
+- https://tracker.debian.org/pkg/gobuster
+- https://packages.debian.org/sid/amd64/gobuster/filelist
+- https://manpages.debian.org/unstable/gobuster/index.html
+- gobuster
+
+
 ## manpages-ja
 - https://tracker.debian.org/pkg/manpages-ja
 - https://packages.debian.org/sid/all/manpages-ja/filelist
