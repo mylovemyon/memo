@@ -39,6 +39,13 @@ https://tracker.debian.org/pkg/docker.io
 - docker-compose
 
 
+## ffuf
+- https://tracker.debian.org/pkg/ffuf
+- https://packages.debian.org/sid/amd64/ffuf/filelist
+- https://manpages.debian.org/unstable/ffuf/ffuf.1.en.html
+- ffuf
+
+
 ## file
 - https://tracker.debian.org/pkg/file
 - https://packages.debian.org/sid/amd64/file/filelist
