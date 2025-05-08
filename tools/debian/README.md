@@ -14,6 +14,17 @@ https://tracker.debian.org/pkg/docker.io
 - https://manpages.debian.org/unstable/docker-compose/index.html
 - docker-compose
 
+## glibc
+https://tracker.debian.org/pkg/glibc
+### libc-bin
+- https://packages.debian.org/sid/amd64/libc-bin/filelist
+- https://manpages.debian.org/unstable/libc-bin/index.html
+- getconf / getent / iconv / iconvconfig / ldconfig / ldd / ld.so / locale / localedef / pldd / tzselect / zdump / zic
+### locales
+- https://packages.debian.org/sid/all/locales/filelist
+- https://manpages.debian.org/unstable/locales/index.html
+- locale-gen / update-locale / validlocale
+
 ## shadow
 https://tracker.debian.org/pkg/shadow
 ### passwd
