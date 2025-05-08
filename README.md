@@ -26,7 +26,6 @@
 - nishang
 - potato
 - pspy
-- rlwrap
 - rustscan
 - searchsploit
 - seclists
