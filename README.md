@@ -22,7 +22,6 @@
   - where
   - whoami
 - commix
-- hydra
 - jar
 - nc
 - nishang
