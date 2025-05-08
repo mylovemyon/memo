@@ -23,7 +23,6 @@
   - whoami
 - commix
 - jar
-- nc
 - nishang
 - patator
 - plocate
