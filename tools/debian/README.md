@@ -101,6 +101,14 @@ https://tracker.debian.org/pkg/glibc
 - https://manpages.debian.org/unstable/manpages-ja/index.html
 
 
+## netcat
+https://tracker.debian.org/pkg/netcat
+### netcat-traditional
+- https://packages.debian.org/sid/amd64/netcat-traditional/filelist
+- https://manpages.debian.org/unstable/netcat-traditional/index.html
+- nc.traditional
+
+
 ## procps
 - https://tracker.debian.org/pkg/procps
 - https://packages.debian.org/sid/amd64/procps/filelist
