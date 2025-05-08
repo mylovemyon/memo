@@ -53,6 +53,18 @@ https://tracker.debian.org/pkg/docker.io
 - file
 
 
+## git
+https://tracker.debian.org/pkg/git
+### git
+- https://packages.debian.org/unstable/git
+- https://packages.debian.org/sid/amd64/git/filelist
+- git / scalar
+### gitk
+- https://packages.debian.org/sid/all/gitk/filelist
+- https://manpages.debian.org/unstable/gitk/index.html
+- gitk
+
+
 ## glibc
 https://tracker.debian.org/pkg/glibc
 ### libc-bin
