@@ -15,7 +15,6 @@
 - python
   - pypa
     - pip
-  - 2to3-2.7
   - uv
 - samba
   - smbclient
