@@ -22,7 +22,6 @@
   - where
   - whoami
 - commix
-- ffuf
 - git
 - gobuster
 - hydra
