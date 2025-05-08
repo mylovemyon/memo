@@ -21,7 +21,6 @@
   - type
   - where
   - whoami
-- busybox
 - commix
 - ffuf
 - file
