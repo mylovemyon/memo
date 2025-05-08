@@ -29,7 +29,6 @@
 - rustscan
 - searchsploit
 - seclists
-- sudo
 - systemctl
 - tnftp
 - tshark
