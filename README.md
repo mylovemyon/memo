@@ -24,7 +24,6 @@
 - commix
 - jar
 - nishang
-- plocate
 - potato
 - pspy
 - rlwrap
