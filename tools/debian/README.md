@@ -1,3 +1,9 @@
+## black
+- https://tracker.debian.org/pkg/black
+- https://packages.debian.org/sid/amd64/black/filelist
+- https://manpages.debian.org/unstable/black/index.html
+- black
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
@@ -39,6 +45,21 @@ https://tracker.debian.org/pkg/glibc
 - https://packages.debian.org/sid/amd64/procps/filelist
 - https://manpages.debian.org/unstable/procps/index.html
 - free / kill / pgrep / pidwait / pkill / pmap / ps / pwdx / skill / slabtop / snice / sysctl / tload / top / uptime / vmstat / w / watch
+
+## python3.13
+https://tracker.debian.org/pkg/python3.13
+### python3.13
+- https://packages.debian.org/sid/amd64/python3.13/filelist
+- https://manpages.debian.org/unstable/python3.13/index.html
+- pdb3.13 / pydoc3.13 / pygettext3.13
+### python3.13-dev 
+- https://packages.debian.org/sid/amd64/python3.13-dev/filelist
+- https://manpages.debian.org/unstable/python3.13-dev/index.html
+- python3.13-config
+### python3.13-minimal
+- https://packages.debian.org/sid/amd64/python3.13-minimal/filelist
+- https://manpages.debian.org/unstable/python3.13-minimal/index.html
+- python3.13
 
 ## shadow
 https://tracker.debian.org/pkg/shadow
