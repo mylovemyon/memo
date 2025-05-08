@@ -1,9 +1,18 @@
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
-https://manpages.debian.org/unstable/docker.io/index.html
+### docker.io
+- https://packages.debian.org/sid/amd64/docker.io/filelist
+- https://manpages.debian.org/unstable/docker.io/index.html
+- docker-init / docker-proxy / dockerd
 ### docker-cli
 - https://packages.debian.org/sid/amd64/docker-cli/filelist
 - docker
+
+## docker-compose
+- https://tracker.debian.org/pkg/docker-compose
+- https://packages.debian.org/sid/amd64/docker-compose/filelist
+- https://manpages.debian.org/unstable/docker-compose/index.html
+- docker-compose
 
 ## shadow
 https://tracker.debian.org/pkg/shadow
