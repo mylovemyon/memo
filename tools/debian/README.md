@@ -221,6 +221,14 @@ https://tracker.debian.org/pkg/shadow
 - chage / chfn / chgpasswd / chpasswd / chsh / expiry / gpasswd / groupadd / groupdel / groupmod / grpck / grpconv / grpunconv / newusers / passwd / pwck / pwconv / pwunconv / shadowconfig / useradd / userdel / usermod / vigr / vipw
 
 
+## sudo
+https://tracker.debian.org/pkg/sudo
+### sudo
+- https://packages.debian.org/sid/amd64/sudo/filelist
+- https://manpages.debian.org/unstable/sudo/index.html
+- cvtsudoers / sudo / sudoedit / sudo_logsrvd / sudoreplay / sudo_sendlog / visudo
+
+
 ## sysvinit
 https://tracker.debian.org/pkg/sysvinit
 ### sysvinit-core
