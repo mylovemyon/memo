@@ -12,8 +12,6 @@
   - winpeas
 - python
   - uv
-- vim
-  - vim / xxd
 - windows
   - certutil
   - dir
