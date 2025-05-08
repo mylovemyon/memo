@@ -116,6 +116,13 @@ https://tracker.debian.org/pkg/netcat
 - patator
 
 
+## plocate
+- https://tracker.debian.org/pkg/plocate
+- https://packages.debian.org/sid/amd64/plocate/filelist
+- https://manpages.debian.org/unstable/plocate/index.html
+- plocate / plocate-build / updatedb.plocate
+
+
 ## procps
 - https://tracker.debian.org/pkg/procps
 - https://packages.debian.org/sid/amd64/procps/filelist
