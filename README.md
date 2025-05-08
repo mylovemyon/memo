@@ -1,10 +1,7 @@
-- docker
-  - run
+- debian
 - gnu
 - impacket
   - psexec / smbserver
-- info-zip
-  - unzip
 - manpages
   - iconv
 - metasploit
@@ -64,7 +61,6 @@
 - wfuzz
 
 https://pkg.kali.org/  
-https://manpages.debian.org/contents-bookworm.html  
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/#spawn-tty-shell
 
 web
