@@ -14,8 +14,6 @@
   - winpeas
 - python
   - uv
-- samba
-  - smbclient
 - vim
   - vim / xxd
 - windows
