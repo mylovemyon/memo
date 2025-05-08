@@ -307,6 +307,13 @@ https://tracker.debian.org/pkg/nano
 - https://manpages.debian.org/unstable/nano/index.html
 - nano / rnano
 
+## ncurses
+https://tracker.debian.org/pkg/ncurses
+### ncurses-bin
+- https://packages.debian.org/sid/arm64/ncurses-bin/filelist
+- https://manpages.debian.org/unstable/ncurses-bin/index.html
+- captoinfo / clear / infocmp / infotocap / reset / tabs / tic / toe / tput / tset
+
 ## sed
 - https://tracker.debian.org/pkg/sed
 - https://packages.debian.org/sid/amd64/sed/filelist
