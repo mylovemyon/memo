@@ -10,8 +10,6 @@
   - msfvenom
 - nmap
   - ncat / ncrack / ndiff / nmap / nping
-- procps
-  - free / kill / pgrep / pidwait / pkill / pmap / ps / pwdx / skill / slabtop / snice / sysctl / tload / top / uptime / vmstat / w / watch
 - peas
   - winpeas
 - python
