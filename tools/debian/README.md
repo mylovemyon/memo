@@ -46,6 +46,21 @@ https://tracker.debian.org/pkg/glibc
 - https://manpages.debian.org/unstable/procps/index.html
 - free / kill / pgrep / pidwait / pkill / pmap / ps / pwdx / skill / slabtop / snice / sysctl / tload / top / uptime / vmstat / w / watch
 
+## python2.7
+https://tracker.debian.org/pkg/python2.7
+### python2.7
+- https://packages.debian.org/bullseye/python2.7
+- https://manpages.debian.org/bullseye/python2.7/index.html
+- 2to3-2.7 / pdb2.7 / pydoc2.7 / pygettext2.7
+### python2.7-dev
+- https://packages.debian.org/bullseye/amd64/python2.7-dev/filelist
+- https://manpages.debian.org/bullseye/python2.7-dev/index.html
+- python2.7-config
+### python2.7-minimal 
+- https://packages.debian.org/bullseye/amd64/python2.7-minimal/filelist
+- https://manpages.debian.org/bullseye/python2.7-minimal/index.html
+- python2.7
+
 ## python3.13
 https://tracker.debian.org/pkg/python3.13
 ### python3.13
