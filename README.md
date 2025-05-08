@@ -13,8 +13,6 @@
 - peas
   - winpeas
 - python
-  - pypa
-    - pip
   - uv
 - samba
   - smbclient
