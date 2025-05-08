@@ -22,7 +22,6 @@
   - where
   - whoami
 - commix
-- gobuster
 - hydra
 - jar
 - nc
