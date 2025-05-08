@@ -24,7 +24,6 @@
 - commix
 - jar
 - nishang
-- patator
 - plocate
 - potato
 - pspy
