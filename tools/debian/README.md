@@ -89,6 +89,7 @@ https://tracker.debian.org/pkg/glibc
 
 
 ## hydra
+- https://tracker.debian.org/pkg/hydra
 - https://packages.debian.org/sid/amd64/hydra/filelist
 - https://manpages.debian.org/unstable/hydra/index.html
 - dpl4hydra / hydra / hydra-wizard / pw-inspector
