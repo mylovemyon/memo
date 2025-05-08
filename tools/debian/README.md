@@ -109,6 +109,13 @@ https://tracker.debian.org/pkg/netcat
 - nc.traditional
 
 
+## patator 
+- https://tracker.debian.org/pkg/patator
+- https://packages.debian.org/sid/all/patator/filelist
+- https://manpages.debian.org/unstable/patator/index.html
+- patator
+
+
 ## procps
 - https://tracker.debian.org/pkg/procps
 - https://packages.debian.org/sid/amd64/procps/filelist
