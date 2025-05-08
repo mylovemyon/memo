@@ -412,7 +412,7 @@ https://tracker.debian.org/pkg/util-linux
 ## wdiff
 - https://tracker.debian.org/pkg/wdiff
 - https://packages.debian.org/sid/amd64/wdiff/filelist
-- https://manpages.debian.org/unstable/wdm/index.html
+- https://manpages.debian.org/unstable/wdiff/index.html
 - wdiff
 
 ## wget
