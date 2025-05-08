@@ -34,6 +34,12 @@ https://tracker.debian.org/pkg/glibc
 - https://packages.debian.org/sid/all/manpages-ja/filelist
 - https://manpages.debian.org/unstable/manpages-ja/index.html
 
+## procps
+- https://tracker.debian.org/pkg/procps
+- https://packages.debian.org/sid/amd64/procps/filelist
+- https://manpages.debian.org/unstable/procps/index.html
+- free / kill / pgrep / pidwait / pkill / pmap / ps / pwdx / skill / slabtop / snice / sysctl / tload / top / uptime / vmstat / w / watch
+
 ## shadow
 https://tracker.debian.org/pkg/shadow
 ### passwd
