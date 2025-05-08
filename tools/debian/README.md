@@ -1,3 +1,11 @@
+## 7zip
+https://tracker.debian.org/pkg/7zip
+### 7zip
+- https://packages.debian.org/sid/amd64/7zip/filelist
+- https://manpages.debian.org/unstable/7zip/index.html
+- 7z / 7za / 7zr / p7zip
+
+
 ## black
 - https://tracker.debian.org/pkg/black
 - https://packages.debian.org/sid/amd64/black/filelist
