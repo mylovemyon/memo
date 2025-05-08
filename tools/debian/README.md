@@ -56,8 +56,8 @@ https://tracker.debian.org/pkg/docker.io
 ## git
 https://tracker.debian.org/pkg/git
 ### git
-- https://packages.debian.org/unstable/git
 - https://packages.debian.org/sid/amd64/git/filelist
+- https://manpages.debian.org/unstable/git-man/index.html
 - git / scalar
 ### gitk
 - https://packages.debian.org/sid/all/gitk/filelist
