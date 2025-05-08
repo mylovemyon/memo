@@ -122,6 +122,10 @@ https://tracker.debian.org/pkg/samba
 - https://packages.debian.org/sid/amd64/tdb-tools/filelist
 - https://manpages.debian.org/unstable/tdb-tools/index.html
 - tdbbackup.tdbtools / tdbdump / tdbrestore / tdbtool
+### winbind
+- https://packages.debian.org/sid/amd64/winbind/filelist
+- https://manpages.debian.org/unstable/winbind/index.html
+- ntlm_auth / wbinfo / winbindd
 
 
 ## shadow
