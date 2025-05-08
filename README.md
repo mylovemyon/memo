@@ -23,7 +23,6 @@
   - whoami
 - commix
 - ffuf
-- file
 - git
 - gobuster
 - hydra
