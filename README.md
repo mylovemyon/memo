@@ -2,8 +2,6 @@
 - gnu
 - impacket
   - psexec / smbserver
-- manpages
-  - iconv
 - metasploit
   - meterpreter
   - msfconsole
