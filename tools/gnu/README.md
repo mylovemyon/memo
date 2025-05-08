@@ -314,6 +314,24 @@ https://tracker.debian.org/pkg/ncurses
 - https://manpages.debian.org/unstable/ncurses-bin/index.html
 - captoinfo / clear / infocmp / infotocap / reset / tabs / tic / toe / tput / tset
 
+## parallel
+- https://tracker.debian.org/pkg/parallel
+- https://packages.debian.org/sid/all/parallel/filelist
+- https://manpages.debian.org/unstable/parallel/index.html
+- / env_parallel / env_parallel.bash / env_parallel.csh / env_parallel.dash / env_parallel.fish / env_parallel.ksh / env_parallel.mksh / env_parallel.sh / env_parallel.tcsh / env_parallel.zsh / niceload / parallel / parcat / parset / parsort / sem / sql
+
+## parted
+- https://tracker.debian.org/pkg/parted
+- https://packages.debian.org/sid/amd64/parted/filelist
+- https://manpages.debian.org/unstable/parted/index.html
+- parted / partprobe
+
+## patch
+- https://tracker.debian.org/pkg/patch
+- https://packages.debian.org/unstable/patch
+- https://manpages.debian.org/unstable/patch/index.html
+- patch
+
 ## sed
 - https://tracker.debian.org/pkg/sed
 - https://packages.debian.org/sid/amd64/sed/filelist
