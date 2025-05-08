@@ -178,6 +178,13 @@ https://tracker.debian.org/pkg/python3.13
 - python3.13
 
 
+## rlwrap
+- https://tracker.debian.org/pkg/rlwrap
+- https://packages.debian.org/sid/amd64/rlwrap/filelist
+- https://manpages.debian.org/unstable/rlwrap/index.html
+- rlwrap
+
+
 ## samba
 https://tracker.debian.org/pkg/samba
 ### python3-samba
