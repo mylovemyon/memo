@@ -29,7 +29,6 @@
 - rustscan
 - searchsploit
 - seclists
-- systemctl
 - tnftp
 - tshark
 - watson
