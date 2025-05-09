@@ -33,7 +33,8 @@
 - watson
 - wes
 - wfuzz
-
+- init-system-helpers
+- 
 https://pkg.kali.org/  
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/#spawn-tty-shell
 
