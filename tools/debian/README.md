@@ -253,6 +253,13 @@ https://tracker.debian.org/pkg/sysvinit
 - fstab-decode / killall5 / pidof
 
 
+## tnftp
+- https://tracker.debian.org/pkg/tnftp
+- https://packages.debian.org/sid/amd64/tnftp/filelist
+- https://manpages.debian.org/unstable/tnftp/index.html
+- tnftp
+
+
 ## unzip
 - https://tracker.debian.org/pkg/unzip
 - https://packages.debian.org/sid/amd64/unzip/filelist
