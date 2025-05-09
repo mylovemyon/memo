@@ -229,6 +229,18 @@ https://tracker.debian.org/pkg/sudo
 - cvtsudoers / sudo / sudoedit / sudo_logsrvd / sudoreplay / sudo_sendlog / visudo
 
 
+## systemd
+https://tracker.debian.org/pkg/systemd
+### systemd
+- https://packages.debian.org/sid/amd64/systemd/filelist
+- https://manpages.debian.org/unstable/systemd/index.html
+- busctl / hostnamectl / journalctl / kernel-install / localectl / loginctl / networkctl / run0 / systemctl / systemd-ac-power / systemd-analyze / systemd-ask-password / systemd-cat / systemd-cgls / systemd-cgtop / systemd-confext / systemd-creds / systemd-delta / systemd-detect-virt / systemd-escape / systemd-firstboot / systemd-id128 / systemd-inhibit / systemd-machine-id-setup / systemd-mount / systemd-notify / systemd-path / systemd-run / systemd-socket-activate / systemd-stdio-bridge / systemd-sysext / systemd-sysusers / systemd-tmpfiles / systemd-tty-ask-password-agent / systemd-umount / systemd-vpick / timedatectl / varlinkctl
+### systemd-sysv
+- https://packages.debian.org/sid/amd64/systemd-sysv/filelist
+- https://manpages.debian.org/unstable/systemd-sysv/index.html
+- halt / init / poweroff / reboot / runlevel / shutdown / telinit
+
+
 ## sysvinit
 https://tracker.debian.org/pkg/sysvinit
 ### sysvinit-core
