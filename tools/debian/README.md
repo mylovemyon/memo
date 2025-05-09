@@ -130,6 +130,13 @@ https://tracker.debian.org/pkg/netcat
 - free / kill / pgrep / pidwait / pkill / pmap / ps / pwdx / skill / slabtop / snice / sysctl / tload / top / uptime / vmstat / w / watch
 
 
+## psmisc
+- https://tracker.debian.org/pkg/psmisc
+- https://packages.debian.org/sid/amd64/psmisc/filelist
+- https://manpages.debian.org/unstable/psmisc/index.html
+- fuser / killall / peekfd / prtstat / pslog / pstree / pstree.x11
+
+
 ## python-pip
 https://tracker.debian.org/pkg/python-pip
 ### python3-pip
