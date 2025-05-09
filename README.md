@@ -29,7 +29,6 @@
 - rustscan
 - searchsploit
 - seclists
-- tnftp
 - tshark
 - watson
 - wes
