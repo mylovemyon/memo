@@ -48,6 +48,25 @@ https://tracker.debian.org/pkg/apache2
 - ab / checkgid / fcgistarter / htcacheclean / htdbm / htdigest / htpasswd / logresolve / rotatelogs / check_forensic / httxt2dbm / split-logfile
 
 
+## apparmor
+- https://tracker.debian.org/pkg/apparmor
+- https://packages.debian.org/sid/amd64/apparmor/filelist
+- https://manpages.debian.org/unstable/apparmor/index.html
+- aa-enabled / aa-exec / aa-features-abi / aa-load / aa-remove-unknown / aa-status / aa-teardown / apparmor_parser / apparmor_status
+
+
+## apt
+https://tracker.debian.org/pkg/apt
+### apt
+- https://packages.debian.org/sid/amd64/apt/filelist
+- https://manpages.debian.org/unstable/apt/index.html
+- apt / apt-cache / apt-cdrom / apt-config / apt-get / apt-mark
+### apt-utils 
+- https://packages.debian.org/sid/amd64/apt-utils/filelist
+- https://manpages.debian.org/unstable/apt-utils/index.html
+- apt-extracttemplates / apt-ftparchive / apt-sortpkgs
+
+
 ## black
 - https://tracker.debian.org/pkg/black
 - https://packages.debian.org/sid/amd64/black/filelist
