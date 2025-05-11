@@ -210,6 +210,19 @@ https://tracker.debian.org/pkg/busybox
 - https://manpages.debian.org/unstable/bzip2/index.html
 - bunzip2 / bzcat / bzcmp / bzdiff / bzegrep / bzexe / bzfgrep / bzgrep / bzip2 / bzip2recover / bzless / bzmore
 
+
+## ca-certificates
+- https://tracker.debian.org/pkg/ca-certificates
+- https://packages.debian.org/sid/all/ca-certificates/filelist
+- https://manpages.debian.org/unstable/ca-certificates/index.html
+- update-ca-certificates
+
+
+## ca-certificates-java
+- https://tracker.debian.org/pkg/ca-certificates-java
+- https://packages.debian.org/sid/all/ca-certificates-java/filelist
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
