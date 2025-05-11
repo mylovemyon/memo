@@ -107,6 +107,17 @@ https://tracker.debian.org/pkg/atftp
 - attr / getfattr / setfattr
 
 
+## avahi
+https://tracker.debian.org/pkg/avahi
+### avahi-daemon
+- https://packages.debian.org/sid/amd64/avahi-daemon/filelist
+- https://manpages.debian.org/unstable/avahi-daemon/index.html
+- avahi-daemon
+### avahi-utils
+- https://packages.debian.org/sid/amd64/avahi-utils/filelist
+- https://manpages.debian.org/unstable/avahi-utils/index.html
+- avahi-browse / avahi-browse-domains / avahi-publish / avahi-publish-address / avahi-publish-service / avahi-resolve / avahi-resolve-address / avahi-resolve-host-name / avahi-set-host-name
+
 ## black
 - https://tracker.debian.org/pkg/black
 - https://packages.debian.org/sid/amd64/black/filelist
