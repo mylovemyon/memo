@@ -150,6 +150,13 @@ https://tracker.debian.org/pkg/bind9
 - host
 
 
+## binwalk
+- https://tracker.debian.org/pkg/binwalk
+- https://packages.debian.org/sid/all/binwalk/filelist
+- https://manpages.debian.org/unstable/binwalk/index.html
+- binwalk
+
+
 ## black
 - https://tracker.debian.org/pkg/black
 - https://packages.debian.org/sid/amd64/black/filelist
