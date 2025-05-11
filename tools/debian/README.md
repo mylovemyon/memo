@@ -223,6 +223,20 @@ https://tracker.debian.org/pkg/busybox
 - https://packages.debian.org/sid/all/ca-certificates-java/filelist
 
 
+## cadaver
+- https://tracker.debian.org/pkg/cadaver
+- https://packages.debian.org/sid/amd64/cadaver/filelist
+- https://manpages.debian.org/unstable/cadaver/index.html
+- cadaver
+
+
+## catfish
+- https://tracker.debian.org/pkg/catfish
+- https://packages.debian.org/sid/all/catfish/filelist
+- https://manpages.debian.org/unstable/catfish/index.html
+- catfish
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
