@@ -118,6 +118,19 @@ https://tracker.debian.org/pkg/avahi
 - https://manpages.debian.org/unstable/avahi-utils/index.html
 - avahi-browse / avahi-browse-domains / avahi-publish / avahi-publish-address / avahi-publish-service / avahi-resolve / avahi-resolve-address / avahi-resolve-host-name / avahi-set-host-name
 
+
+## axel
+- https://tracker.debian.org/pkg/axel
+- https://packages.debian.org/sid/amd64/axel/filelist
+- https://manpages.debian.org/unstable/axel/index.html
+- axel
+
+
+## base-files
+- https://tracker.debian.org/pkg/base-files
+- https://packages.debian.org/sid/amd64/base-files/filelist
+
+
 ## black
 - https://tracker.debian.org/pkg/black
 - https://packages.debian.org/sid/amd64/black/filelist
