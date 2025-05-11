@@ -93,6 +93,20 @@ https://tracker.debian.org/pkg/atftp
 - atftpd / in.tftpd
 
 
+## atril
+- https://tracker.debian.org/pkg/atril
+- https://packages.debian.org/sid/amd64/atril/filelist
+- https://manpages.debian.org/unstable/atril/index.html
+- atril / atril-previewer / atril-thumbnailer
+
+
+## attr
+- https://tracker.debian.org/pkg/attr
+- https://packages.debian.org/sid/amd64/attr/filelist
+- https://manpages.debian.org/unstable/attr/index.html
+- attr / getfattr / setfattr
+
+
 ## black
 - https://tracker.debian.org/pkg/black
 - https://packages.debian.org/sid/amd64/black/filelist
