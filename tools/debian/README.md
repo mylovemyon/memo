@@ -190,6 +190,12 @@ https://tracker.debian.org/pkg/bluez
 - bwrap
 
 
+## bully
+- https://tracker.debian.org/pkg/bully
+- https://packages.debian.org/sid/amd64/bully/filelist
+- bully
+
+
 ## busybox
 https://tracker.debian.org/pkg/busybox
 ### busybox
@@ -197,6 +203,12 @@ https://tracker.debian.org/pkg/busybox
 - https://manpages.debian.org/unstable/busybox/index.html
 - busybox
 
+
+## bzip2
+- https://tracker.debian.org/pkg/bzip2
+- https://packages.debian.org/sid/amd64/bzip2/filelist
+- https://manpages.debian.org/unstable/bzip2/index.html
+- bunzip2 / bzcat / bzcmp / bzdiff / bzegrep / bzexe / bzfgrep / bzgrep / bzip2 / bzip2recover / bzless / bzmore
 
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
