@@ -131,6 +131,25 @@ https://tracker.debian.org/pkg/avahi
 - https://packages.debian.org/sid/amd64/base-files/filelist
 
 
+## base-passed
+- https://tracker.debian.org/pkg/base-passwd
+- https://packages.debian.org/sid/amd64/base-passwd/filelist
+- https://manpages.debian.org/unstable/base-passwd/index.html
+- update-passwd
+
+
+## bind9
+https://tracker.debian.org/pkg/bind9
+### bind9-dnsutils
+- https://packages.debian.org/sid/amd64/bind9-dnsutils/filelist
+- https://manpages.debian.org/unstable/bind9-dnsutils/index.html
+- delv / dig / dnstap-read / mdig / nslookup / nsupdate
+### bind9-host 
+- https://packages.debian.org/sid/amd64/bind9-host/filelist
+- https://manpages.debian.org/unstable/bind9-host/index.html
+- host
+
+
 ## black
 - https://tracker.debian.org/pkg/black
 - https://packages.debian.org/sid/amd64/black/filelist
@@ -276,6 +295,14 @@ https://tracker.debian.org/pkg/netcat
 - https://packages.debian.org/sid/amd64/psmisc/filelist
 - https://manpages.debian.org/unstable/psmisc/index.html
 - fuser / killall / peekfd / prtstat / pslog / pstree / pstree.x11
+
+
+## python-base58
+https://tracker.debian.org/pkg/python-base58
+### base58
+- https://packages.debian.org/sid/all/base58/filelist
+- https://manpages.debian.org/unstable/base58/index.html
+- base58
 
 
 ## python-pip
