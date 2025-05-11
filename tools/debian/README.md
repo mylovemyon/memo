@@ -252,6 +252,14 @@ https://tracker.debian.org/pkg/sudo
 - cvtsudoers / sudo / sudoedit / sudo_logsrvd / sudoreplay / sudo_sendlog / visudo
 
 
+## sysstat
+https://tracker.debian.org/pkg/sysstat
+### sysstat
+- https://packages.debian.org/sid/amd64/sysstat/filelist
+- https://manpages.debian.org/unstable/sysstat/index.html
+- cifsiostat / iostat / mpstat / pidstat / sadf / sar.sysstat / tapestat
+
+
 ## systemd
 https://tracker.debian.org/pkg/systemd
 ### systemd
