@@ -39,6 +39,22 @@ https://tracker.debian.org/pkg/docker.io
 - docker-compose
 
 
+## e2fsprogs
+https://tracker.debian.org/pkg/e2fsprogs
+### comerr-dev
+- https://packages.debian.org/sid/amd64/comerr-dev/filelist
+- https://manpages.debian.org/unstable/comerr-dev/index.html
+- compile_et
+### e2fsprogs
+- https://packages.debian.org/sid/amd64/e2fsprogs/filelist
+- https://manpages.debian.org/unstable/e2fsprogs/index.html
+- chattr / lsatt / badblocks / debugfs / dumpe2fs / e2freefrag / e2fsck / e2image / e2label / e2mmpstatus / e2scrub / e2scrub_all / e2undo / e4crypt / e4defrag / filefrag / fsck.ext2 / fsck.ext3 / fsck.ext4 / mke2fs / mkfs.ext2 / mkfs.ext3 / mkfs.ext4 / mklost+found / resize2fs / tune2fs
+### logsave
+- https://packages.debian.org/sid/amd64/logsave/filelist
+- https://manpages.debian.org/unstable/logsave/index.html
+- logsave
+
+
 ## ffuf
 - https://tracker.debian.org/pkg/ffuf
 - https://packages.debian.org/sid/amd64/ffuf/filelist
