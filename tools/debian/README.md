@@ -164,6 +164,25 @@ https://tracker.debian.org/pkg/bind9
 - black
 
 
+## blueman
+- https://tracker.debian.org/pkg/blueman
+- https://packages.debian.org/sid/amd64/blueman/filelist
+- https://manpages.debian.org/unstable/blueman/index.html
+- blueman-adapters / blueman-applet / blueman-manager / blueman-sendto / blueman-services / blueman-tray
+
+
+## bluez
+https://tracker.debian.org/pkg/bluez
+### bluez 
+- https://packages.debian.org/sid/amd64/bluez/filelist
+- https://manpages.debian.org/unstable/bluez/index.html
+- bluemoon / bluetoothctl / bluetoothd / btattach / btmgmt / btmon / ciptool / gatttool / hciattach / hciconfig / hcitool / hex2hcd / l2ping / l2test / mpris-proxy / obexctl / rctest / rfcomm / sdptool
+### bluez-hcidump
+- https://packages.debian.org/sid/amd64/bluez-hcidump/filelist
+- https://manpages.debian.org/unstable/bluez-hcidump/index.html
+- hcidump
+
+
 ## busybox
 https://tracker.debian.org/pkg/busybox
 ### busybox
