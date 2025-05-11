@@ -32,6 +32,22 @@ https://tracker.debian.org/pkg/aircrack-ng
 - airgraph-ng / airodump-join
 
 
+## apache2
+https://tracker.debian.org/pkg/apache2
+### apache2
+- https://packages.debian.org/sid/amd64/apache2/filelist
+- https://manpages.debian.org/unstable/apache2/index.html
+- a2disconf / a2dismod / a2dissite / a2enconf / a2enmod / a2ensite / a2query / apache2ctl / apachectl
+### apache2-bin
+- https://packages.debian.org/sid/amd64/apache2-bin/filelist
+- https://manpages.debian.org/unstable/apache2-bin/index.html
+- apache2
+### apache2-utils 
+- https://packages.debian.org/sid/amd64/apache2-utils/filelist
+- https://manpages.debian.org/unstable/apache2-utils/index.html
+- ab / checkgid / fcgistarter / htcacheclean / htdbm / htdigest / htpasswd / logresolve / rotatelogs / check_forensic / httxt2dbm / split-logfile
+
+
 ## black
 - https://tracker.debian.org/pkg/black
 - https://packages.debian.org/sid/amd64/black/filelist
