@@ -8,6 +8,13 @@ https://www.gnu.org/manual/blurbs.html
 - ac / accton / dump-acct / dump-utmp / lastcomm / sa
 
 
+## aspell
+- https://tracker.debian.org/pkg/aspell
+- https://packages.debian.org/sid/amd64/aspell/filelist
+- https://manpages.debian.org/unstable/aspell/index.html
+- aspell / aspell-import / precat / preunzip / prezip / prezip-bin / run-with-aspell  / word-list-compress
+
+
 ## barcode
 - https://tracker.debian.org/pkg/barcode
 - https://packages.debian.org/sid/amd64/barcode/filelist
