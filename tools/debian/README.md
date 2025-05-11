@@ -183,6 +183,13 @@ https://tracker.debian.org/pkg/bluez
 - hcidump
 
 
+## bubblewrap
+- https://tracker.debian.org/pkg/bubblewrap
+- https://packages.debian.org/sid/amd64/bubblewrap/filelist
+- https://manpages.debian.org/unstable/bubblewrap/index.html
+- bwrap
+
+
 ## busybox
 https://tracker.debian.org/pkg/busybox
 ### busybox
