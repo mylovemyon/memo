@@ -6,6 +6,32 @@ https://tracker.debian.org/pkg/7zip
 - 7z / 7za / 7zr / p7zip
 
 
+## acl
+- https://tracker.debian.org/pkg/acl
+- https://packages.debian.org/sid/amd64/acl/filelist
+- https://manpages.debian.org/unstable/acl/index.html
+- chacl / getfacl / setfacl
+
+
+## adduser
+- https://tracker.debian.org/pkg/adduser
+- https://packages.debian.org/sid/all/adduser/filelist
+- https://manpages.debian.org/unstable/adduser/index.html
+- addgroup / adduser / delgroup / deluser
+
+
+## aircrack-ng
+https://tracker.debian.org/pkg/aircrack-ng
+### aircrack-ng
+- https://packages.debian.org/sid/amd64/aircrack-ng/filelist
+- https://manpages.debian.org/unstable/aircrack-ng/index.html
+- aircrack-ng / airdecap-ng / airdecloak-ng / airolib-ng / besside-ng-crawler / buddy-ng / dcrack / ivstools / kstats / makeivs-ng / packetforge-ng / wpaclean
+### airgraph-ng 
+- https://packages.debian.org/sid/all/airgraph-ng/filelist
+- https://manpages.debian.org/unstable/airgraph-ng/index.html
+- airgraph-ng / airodump-join
+
+
 ## black
 - https://tracker.debian.org/pkg/black
 - https://packages.debian.org/sid/amd64/black/filelist
