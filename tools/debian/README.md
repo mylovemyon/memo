@@ -67,6 +67,32 @@ https://tracker.debian.org/pkg/apt
 - apt-extracttemplates / apt-ftparchive / apt-sortpkgs
 
 
+## arp-scan
+- https://tracker.debian.org/pkg/arp-scan
+- https://packages.debian.org/sid/amd64/arp-scan/filelist
+- https://manpages.debian.org/unstable/arp-scan/index.html
+- arp-fingerprint / arp-scan / get-iab / get-oui
+
+
+## arping
+- https://tracker.debian.org/pkg/arping
+- https://packages.debian.org/sid/amd64/arping/filelist
+- https://manpages.debian.org/unstable/arping/index.html
+- arping
+
+
+## atftp
+https://tracker.debian.org/pkg/atftp
+### atftp
+- https://packages.debian.org/sid/amd64/atftp/filelist
+- https://manpages.debian.org/unstable/atftp/index.html
+- atftp
+### atftpd
+- https://packages.debian.org/sid/amd64/atftpd/filelist
+- https://manpages.debian.org/unstable/atftpd/index.html
+- atftpd / in.tftpd
+
+
 ## black
 - https://tracker.debian.org/pkg/black
 - https://packages.debian.org/sid/amd64/black/filelist
