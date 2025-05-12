@@ -403,6 +403,48 @@ https://tracker.debian.org/pkg/glibc
 - lli
 
 
+## llvm-toolchain-19
+https://tracker.debian.org/pkg/llvm-toolchain-19
+### clang-19 
+- https://packages.debian.org/sid/amd64/clang-19/filelist
+- https://manpages.debian.org/unstable/clang-19/index.html
+- asan_symbolize-19 / clang++-19 / clang-19 / clang-cpp-19
+### clang-format-19 
+- https://packages.debian.org/sid/amd64/clang-format-19/filelist
+- https://manpages.debian.org/unstable/clang-format-19/index.html
+- clang-format-19 / clang-format-diff-19 / git-clang-format-19
+### clang-tidy-19
+- https://packages.debian.org/sid/amd64/clang-tidy-19/filelist
+- https://manpages.debian.org/unstable/clang-tidy-19/index.html
+- clang-tidy-19 / clang-tidy-diff-19.py / run-clang-tidy-19 / run-clang-tidy-19.py
+### clang-tools-19
+- https://packages.debian.org/sid/amd64/clang-tools-19/filelist
+- https://manpages.debian.org/unstable/clang-tools-19/index.html
+- amdgpu-arch-19 / analyze-build-19 / c-index-test-19 / clang-apply-replacements-19 / clang-change-namespace-19 / clang-check-19 / clang-cl-19 / clang-doc-19 / clang-extdef-mapping-19 / clang-include-cleaner-19 / clang-include-fixer-19 / clang-installapi-19 / clang-linker-wrapper-19 / clang-move-19 / clang-nvlink-wrapper-19 / clang-offload-bundler-19 / clang-offload-packager-19 / clang-pseudo-19 / clang-query-19 / clang-refactor-19 / clang-rename-19 / clang-reorder-fields-19 / clang-repl-19 / clang-scan-deps-19 / clang-tblgen-19 / diagtool-19 / find-all-symbols-19 / hmaptool-19 / hwasan_symbolize-19 / intercept-build-19 / modularize-19 / nvptx-arch-19 / pp-trace-19 / sancov-19 / scan-build-19 / scan-build-py-19 / scan-view-19
+### clangd-19
+- https://packages.debian.org/sid/amd64/clangd-19/filelist
+- https://manpages.debian.org/unstable/clangd-19/index.html
+- clangd-19
+### lld-19 
+- https://packages.debian.org/sid/amd64/lld-19/filelist
+- https://manpages.debian.org/unstable/lld-19/index.html
+- ld.lld-19 / ld64.lld-19 / lld-19 / lld-link-19 / wasm-ld-19
+### lldb-19
+- https://packages.debian.org/sid/amd64/lldb-19/filelist
+- https://manpages.debian.org/unstable/lldb-19/index.html
+- lldb-19 / lldb-argdumper-19 / lldb-dap-19 / lldb-instr-19 / lldb-server-19
+### llvm-19
+- https://packages.debian.org/sid/amd64/llvm-19/filelist
+- https://manpages.debian.org/unstable/llvm-19/index.html
+- bugpoint-19 / dsymutil-19 / llc-19 / llvm-PerfectShuffle-19 / llvm-addr2line-19 / llvm-ar-19 / llvm-as-19 / llvm-bcanalyzer-19 / llvm-bitcode-strip-19 / llvm-c-test-19 / llvm-cat-19 / llvm-cfi-verify-19 / llvm-config-19 / llvm-cov-19 / llvm-cvtres-19 / llvm-cxxdump-19 / llvm-cxxfilt-19 / llvm-cxxmap-19 / llvm-debuginfo-analyzer-19 / llvm-debuginfod-19 / llvm-debuginfod-find-19 / llvm-diff-19 / llvm-dis-19 / llvm-dlltool-19 / llvm-dwarfdump-19 / llvm-dwarfutil-19 / llvm-dwp-19 / llvm-exegesis-19 / llvm-extract-19 / llvm-gsymutil-19 / llvm-ifs-19 / llvm-install-name-tool-19 / llvm-jitlink-19 / llvm-jitlink-executor-19 / llvm-lib-19 / llvm-libtool-darwin-19 / llvm-link-19 / llvm-lipo-19 / llvm-lto-19 / llvm-lto2-19 / llvm-mc-19 / llvm-mca-19 / llvm-ml-19 / llvm-modextract-19 / llvm-mt-19 / llvm-nm-19 / llvm-objcopy-19 / llvm-objdump-19 / llvm-opt-report-19 / llvm-otool-19 / llvm-pdbutil-19 / llvm-profdata-19 / llvm-profgen-19 / llvm-ranlib-19 / llvm-rc-19 / llvm-readelf-19 / llvm-readobj-19 / llvm-readtapi-19 / llvm-reduce-19 / llvm-remarkutil-19 / llvm-rtdyld-19 / llvm-sim-19 / llvm-size-19 / llvm-split-19 / llvm-stress-19 / llvm-strings-19 / llvm-strip-19 / llvm-symbolizer-19 / llvm-tblgen-19 / llvm-tli-checker-19 / llvm-undname-19 / llvm-windres-19 / llvm-xray-19 / obj2yaml-19 / opt-19 / reduce-chunk-list-19 / sanstats-19 / verify-uselistorder-19 / yaml2obj-19
+### llvm-19-runtime
+- https://packages.debian.org/sid/amd64/llvm-19-runtime/filelist
+- https://manpages.debian.org/unstable/llvm-19-runtime/index.html
+- lli-19 / lli-child-target-19
+### llvm-19-tools
+- https://packages.debian.org/sid/amd64/llvm-19-tools/filelist
+- FileCheck-19 / UnicodeNameMappingGenerator-19 / count-19 / not-19 / split-file-19 / yaml-bench-19
+
 
 ## manpages-ja
 - https://tracker.debian.org/pkg/manpages-ja
