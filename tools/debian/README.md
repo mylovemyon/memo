@@ -273,6 +273,13 @@ https://tracker.debian.org/pkg/chromium
 - cifscreds / cifs.idmap / cifs.upcall / getcifsacl / mount.cifs / mount.smb3 / setcifsacl / smb2-quota / smbinfo
 
 
+## colord
+- https://tracker.debian.org/pkg/colord
+- https://packages.debian.org/sid/amd64/colord/filelist
+- https://manpages.debian.org/unstable/colord/index.html
+- cd-create-profile / cd-fix-profile / cd-iccdump / cd-it8 / colormgr
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
