@@ -280,6 +280,14 @@ https://tracker.debian.org/pkg/chromium
 - cd-create-profile / cd-fix-profile / cd-iccdump / cd-it8 / colormgr
 
 
+## console-setup
+- https://tracker.debian.org/pkg/console-setup
+- https://packages.debian.org/sid/all/console-setup/filelist
+- https://manpages.debian.org/unstable/console-setup/index.html
+- ckbcomp / setupcon
+
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
