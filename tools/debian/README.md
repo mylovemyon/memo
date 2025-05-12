@@ -363,6 +363,47 @@ https://tracker.debian.org/pkg/glibc
 - dpl4hydra / hydra / hydra-wizard / pw-inspector
 
 
+## llvm-defaults
+- https://tracker.debian.org/pkg/llvm-defaults
+### clang
+- https://packages.debian.org/sid/amd64/clang/filelist
+- https://manpages.debian.org/unstable/clang/index.html
+- asan_symbolize / clang / clang++
+### clang-format
+- https://packages.debian.org/sid/amd64/clang-format/filelist
+- https://manpages.debian.org/unstable/clang-format/index.html
+- clang-format / clang-format-diff / git-clang-format
+### clang-tidy
+- https://packages.debian.org/sid/amd64/clang-tidy/filelist
+- https://manpages.debian.org/unstable/clang-tidy/index.html
+- clang-tidy / clang-tidy-diff / run-clang-tidy
+### clang-tools
+- https://packages.debian.org/sid/amd64/clang-tools/filelist
+- https://manpages.debian.org/unstable/clang-tools/index.html
+- c-index-test / clang-apply-replacements / clang-check / clang-query / sancov / scan-build / scan-build-py / scan-view
+### clangd
+- https://packages.debian.org/sid/amd64/clangd/filelist
+- https://manpages.debian.org/unstable/clangd/index.html
+- clangd
+### lld
+- https://packages.debian.org/sid/amd64/lld/filelist
+- https://manpages.debian.org/unstable/lld/index.html
+- ld.lld / lld / lld-link / wasm-ld
+### lldb
+- https://packages.debian.org/sid/amd64/lldb/filelist
+- https://manpages.debian.org/unstable/lldb/index.html
+- lldb / lldb-argdumper / lldb-server
+### llvm
+- https://packages.debian.org/sid/amd64/llvm/filelist
+- https://manpages.debian.org/unstable/llvm/index.html
+- bugpoint / dsymutil / llc / llvm-PerfectShuffle / llvm-addr2line / llvm-ar / llvm-as / llvm-bcanalyzer / llvm-c-test / llvm-cat / llvm-cfi-verify / llvm-config / llvm-cov / llvm-cvtres / llvm-cxxdump / llvm-cxxfilt / llvm-diff / llvm-dis / llvm-dlltool / llvm-dwarfdump / llvm-dwp / llvm-exegesis / llvm-extract / llvm-lib / llvm-link / llvm-lto / llvm-lto2 / llvm-mc / llvm-mca / llvm-modextract / llvm-mt / llvm-nm / llvm-objcopy / llvm-objdump / llvm-opt-report / llvm-pdbutil / llvm-profdata / llvm-ranlib / llvm-rc / llvm-readelf / llvm-readobj / llvm-reduce / llvm-rtdyld / llvm-size / llvm-split / llvm-stress / llvm-strings / llvm-strip / llvm-symbolizer / llvm-tblgen / llvm-undname / llvm-xray / obj2yaml / opt / sanstats / verify-uselistorder / yaml2obj
+### llvm-runtime
+- https://packages.debian.org/sid/amd64/llvm-runtime/filelist
+- https://manpages.debian.org/unstable/llvm-runtime/index.html
+- lli
+
+
+
 ## manpages-ja
 - https://tracker.debian.org/pkg/manpages-ja
 - https://packages.debian.org/sid/all/manpages-ja/filelist
