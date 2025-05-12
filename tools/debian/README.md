@@ -237,6 +237,42 @@ https://tracker.debian.org/pkg/busybox
 - catfish
 
 
+## cewl
+- https://tracker.debian.org/pkg/cewl
+- https://packages.debian.org/sid/all/cewl/filelist
+- https://manpages.debian.org/unstable/cewl/index.html
+- cewl / fab-cewl
+
+
+## chrrytree
+- https://tracker.debian.org/pkg/cherrytree
+- https://packages.debian.org/sid/amd64/cherrytree/filelist
+- https://manpages.debian.org/unstable/cherrytree/index.html
+- cherrytree
+
+
+## chntpw
+- https://tracker.debian.org/pkg/chntpw
+- https://packages.debian.org/sid/amd64/chntpw/filelist
+- https://manpages.debian.org/unstable/chntpw/index.html
+- chntpw / reged / sampasswd / samunlock / samusrgrp
+
+
+## chromium
+https://tracker.debian.org/pkg/chromium
+### chromium 
+- https://packages.debian.org/sid/amd64/chromium/filelist
+- https://manpages.debian.org/unstable/chromium/index.html
+- chromium
+
+
+## cifs-utils
+- https://tracker.debian.org/pkg/cifs-utils
+- https://packages.debian.org/sid/amd64/cifs-utils/filelist
+- https://manpages.debian.org/unstable/cifs-utils/index.html
+- cifscreds / cifs.idmap / cifs.upcall / getcifsacl / mount.cifs / mount.smb3 / setcifsacl / smb2-quota / smbinfo
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
