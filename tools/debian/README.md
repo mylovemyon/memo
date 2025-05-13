@@ -437,7 +437,8 @@ https://tracker.debian.org/pkg/dconf
 
 
 ## dhcpcd
-- https://tracker.debian.org/pkg/dhcpcd
+https://tracker.debian.org/pkg/dhcpcd
+### dhcpcd-base
 - https://packages.debian.org/sid/amd64/dhcpcd-base/filelist
 - https://manpages.debian.org/unstable/dhcpcd-base/index.html
 - dhcpcd
@@ -448,6 +449,30 @@ https://tracker.debian.org/pkg/dconf
 - https://packages.debian.org/sid/all/dictionaries-common/filelist
 - https://manpages.debian.org/unstable/dictionaries-common/index.html
 - aspell-autobuildhash / ispell-autobuildhash / ispell-wrapper / remove-default-ispell / remove-default-wordlist / select-default-ispell / select-default-iwrap / select-default-wordlist / update-default-aspell / update-default-ispell / update-default-wordlist / update-dictcommon-aspell / update-dictcommon-hunspell
+
+
+## dirb
+- https://tracker.debian.org/pkg/dirb
+- https://packages.debian.org/sid/amd64/dirb/filelist
+- https://manpages.debian.org/unstable/dirb/index.html
+- dirb / dirb-gendict / html2dic
+
+
+## dirsearch
+- https://tracker.debian.org/pkg/dirsearch
+- https://packages.debian.org/sid/all/dirsearch/filelist
+- https://manpages.debian.org/unstable/dirsearch/index.html
+- dirsearch
+
+
+## dmidecode
+- https://tracker.debian.org/pkg/dmidecode
+- https://packages.debian.org/sid/amd64/dmidecode/filelist
+- https://manpages.debian.org/unstable/dmidecode/index.html
+- biosdecode / dmidecode / ownership / vpddecode
+
+
+
 
 
 ## docker.io
