@@ -514,6 +514,13 @@ https://tracker.debian.org/pkg/glibc
 - dpl4hydra / hydra / hydra-wizard / pw-inspector
 
 
+## java-common
+- https://tracker.debian.org/pkg/java-common
+- https://packages.debian.org/sid/all/java-common/filelist
+- https://manpages.debian.org/unstable/java-common/index.html
+- update-java-alternatives
+
+
 ## llvm-defaults
 - https://tracker.debian.org/pkg/llvm-defaults
 ### clang
