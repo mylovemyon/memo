@@ -390,6 +390,13 @@ https://tracker.debian.org/pkg/dbus
 - dbus-launch
 
 
+## dconf
+https://tracker.debian.org/pkg/dconf
+### dconf-cli
+- https://packages.debian.org/sid/amd64/dconf-cli/filelist
+- https://manpages.debian.org/unstable/dconf-cli/index.html
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
