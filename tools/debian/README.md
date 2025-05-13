@@ -310,6 +310,30 @@ https://tracker.debian.org/pkg/cracklib2
 - cracklib-check / cracklib-format / cracklib-packer / cracklib-unpacker / create-cracklib-dict / update-cracklib
 
 
+## creddump7
+- https://tracker.debian.org/pkg/creddump7
+- https://packages.debian.org/sid/all/creddump7/filelist
+- creddump7
+
+
+## criu
+https://tracker.debian.org/pkg/criu
+### criu
+- https://packages.debian.org/sid/amd64/criu/filelist
+- https://manpages.debian.org/unstable/criu/index.html
+- compel / criu
+### python3-pycriu
+- https://packages.debian.org/sid/all/python3-pycriu/filelist
+- crit / criu-ns
+
+
+## cron
+- https://tracker.debian.org/pkg/cron
+- https://packages.debian.org/sid/amd64/cron/filelist
+- https://manpages.debian.org/unstable/cron/index.html
+- crontab / cron
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
