@@ -91,3 +91,26 @@ https://search.censys.io
 - https://dnsdumpster.com
 
 ## Lab 8: Perform Network Footprinting
+### Task 1: Locate the Network Range
+https://www.arin.net/about/welcome/region
+### Task 2: Perform Network Tracerouting in Windows and Linux Machines
+`traceroute`
+- http://www.visualroute.com
+- https://www.solarwinds.com
+
+## Lab 9: Perform Footprinting using Various Footprinting Tools
+### Task 1: Footprinting a Target using Recon-ng
+`recon-ng`(`recon/domains-hosts/brute_hosts`,`recon/hosts-hosts/reverse_resolve`,`recon/domains-contacts/whois_pocs`,`recon/domains-hosts/hackertarget`,`reporting/html`)
+### Task 2: Footprinting a Target using Maltego
+`Maltego`
+### Task 3: Footprinting a Target using OSRFramework
+`OSRFramework`(`domainfy`,`searchfy`)
+### Task 4: Footprinting a Target using FOCA
+`FOCA`
+### Task 5: Footprinting a Target using BillCipher
+`python3 billcipher.py`
+### Task 6: Footprinting a Target using OSINT Framework
+- https://osintframework.com/
+- https://github.com/s0md3v/ReconDog
+- https://github.com/Moham3dRiahi/Th3inspector
+- https://github.com/evyatarmeged/Raccoon
