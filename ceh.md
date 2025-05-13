@@ -167,9 +167,9 @@ nmap
   -F : FIN flag / -P : PUSH flag / -U : URG flag
 - `hping3 --scan 0-100 -S [Target IP Address]`  
   -S:  SYN flag
-- `hping3 -1 [Target IP Address] -p 80 -c 5`
+- `hping3 -1 [Target IP Address] -p 80 -c 5`  
   -1 : ICMP ping scan
-- `hping3 -2 [Target IP Address] -p 80 -c 5`
+- `hping3 -2 [Target IP Address] -p 80 -c 5`  
   -2 : UDP scan
 
 ## Lab 3: Perform OS Discovery
@@ -189,3 +189,24 @@ nmap
 - `nmap --script smb-os-discovery.nse`
 ### Task 3: Perform OS Discovery using Unicornscan
 - `unicornscan [Target IP Address] -Iv`
+
+## Lab 4: Scan beyond IDS and Firewall
+### Task 1: Scan beyond IDS/Firewall using various Evasion Techniques
+nmap
+- `-f` : Packet Fragmentation
+- `-g` or `--source-port` : Source Port Manipulation
+- `-mtu` : specifies MTU
+- `-D RND:` : IP address decoy
+- `--spoof-mac 0` : MAC address spoofing
+### Task 2: Create Custom Packets using Colasoft Packet Builder to Scan beyond the IDS/Firewall
+- `Colasoft Packet Builder`
+### Task 3: Create Custom UDP and TCP Packets using Hping3 to Scan beyond the IDS/Firewall
+- `hping3 [Target IP Address] --udp --rand-source --data 500`
+- `hping3 [Target IP Address] --flood`  
+  --flood : performs the TCP flooding
+
+## Lab 5: Perform Network Scanning using Various Scanning Tools
+### Task 1: Scan a Target Network using Metasploit
+- `auxiliary/scanner/portscan/syn`
+- `auxiliary/scanner/portscan/tcp`
+- `auxiliary/scanner/smb/smb_version`
