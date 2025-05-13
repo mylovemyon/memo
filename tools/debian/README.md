@@ -367,6 +367,29 @@ https://tracker.debian.org/pkg/cryptsetup
 - cutycapt
 
 
+## dash
+- https://tracker.debian.org/pkg/dash
+- https://packages.debian.org/sid/amd64/dash/filelist
+- https://manpages.debian.org/unstable/dash/index.html
+- dash / sh
+
+
+## dbus
+https://tracker.debian.org/pkg/dbus
+### dbus-bin
+- https://packages.debian.org/sid/amd64/dbus-bin/filelist
+- https://manpages.debian.org/unstable/dbus-bin/index.html
+- dbus-cleanup-sockets / dbus-monitor / dbus-send / dbus-update-activation-environment / dbus-uuidgen
+### dbus-daemon
+- https://packages.debian.org/sid/amd64/dbus-daemon/filelist
+- https://manpages.debian.org/unstable/dbus-daemon/index.html
+- dbus-daemon / dbus-run-session
+### dbus-x11
+- https://packages.debian.org/sid/amd64/dbus-x11/filelist
+- https://manpages.debian.org/unstable/dbus-x11/index.html
+- dbus-launch
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
