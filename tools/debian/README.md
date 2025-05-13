@@ -472,6 +472,11 @@ https://tracker.debian.org/pkg/dhcpcd
 - biosdecode / dmidecode / ownership / vpddecode
 
 
+## dmitry
+- https://tracker.debian.org/pkg/dmitry
+- https://packages.debian.org/sid/amd64/dmitry/filelist
+- https://manpages.debian.org/unstable/dmitry/index.html
+- dmitry
 
 
 
@@ -653,6 +658,18 @@ https://tracker.debian.org/pkg/llvm-toolchain-19
 ### llvm-19-tools
 - https://packages.debian.org/sid/amd64/llvm-19-tools/filelist
 - FileCheck-19 / UnicodeNameMappingGenerator-19 / count-19 / not-19 / split-file-19 / yaml-bench-19
+
+
+## lvm2
+https://tracker.debian.org/pkg/lvm2
+### dmsetup
+- https://packages.debian.org/sid/amd64/dmsetup/filelist
+- https://manpages.debian.org/unstable/dmsetup/index.html
+- blkdeactivate / dmsetup / dmstats
+### lvm2
+- https://packages.debian.org/sid/amd64/lvm2/filelist
+- https://manpages.debian.org/unstable/lvm2/index.html
+- fsadm / lvchange / lvconvert / lvcreate / lvdisplay / lvextend / lvm / lvmconfig / lvmdiskscan / lvmdump / lvmpolld / lvmsadc / lvmsar / lvreduce / lvremove / lvrename / lvresize / lvs / lvscan / pvchange / pvck / pvcreate / pvdisplay / pvmove / pvremove / pvresize / pvs / pvscan / vgcfgbackup / vgcfgrestore / vgchange / vgck / vgconvert / vgcreate / vgdisplay / vgexport / vgextend / vgimport / vgimportclone / vgmerge / vgmknodes / vgreduce / vgremove / vgrename / vgs / vgscan / vgsplit
 
 
 ## manpages-ja
