@@ -173,3 +173,19 @@ nmap
   -2 : UDP scan
 
 ## Lab 3: Perform OS Discovery
+### Task 1: Identify the Target System's OS with Time-to-Live (TTL) and TCP Window Sizes using Wireshark
+| Operating System | Time To Live | TCP Windows Size |
+-|-|-
+| linux         | 64  | 5840 |
+| FreeBSD       | 64  | 65535 |
+| OpenBSD       | 255 | 16384 |
+| Windows       | 128 | 65535 bytes to 1 Gigabyte |
+| Cisco Routers | 255 | 4128 |
+| Solaris       | 255 | 8760 |
+| AIX           | 255 | 16384 |
+### Task 2: Perform OS Discovery using Nmap Script Engine (NSE)
+- `nmap -A`
+- `nmap -O`
+- `nmap --script smb-os-discovery.nse`
+### Task 3: Perform OS Discovery using Unicornscan
+- `unicornscan [Target IP Address] -Iv`
