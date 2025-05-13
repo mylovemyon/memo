@@ -1,4 +1,4 @@
-# Footprinting and Reconnaissance
+# Module 02: Footprinting and Reconnaissance
 ## Lab 1: Perform Footprinting Through Search Engines
 ### Task 1: Gather Information using Advanced Google Hacking Techniques
 - cache / allinurl /  inurl / allintitle / inanchor / allinanchor / link / related / info / location
@@ -114,3 +114,62 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
 - https://github.com/s0md3v/ReconDog
 - https://github.com/Moham3dRiahi/Th3inspector
 - https://github.com/evyatarmeged/Raccoon
+
+
+
+# Module 03: Scanning Networks
+## Lab 1: Perform Host Discovery
+### Task 1: Perform Host Discovery using Nmap
+nmap
+- `-PR` : ARP ping scan
+- `-PU` : UDP ping scan
+- `-PE` : ICMP ECHO ping scan
+- `-PP` : ICMP timestamp ping scan
+- `-PM` : ICMP Address Mask Ping Scan
+- `-PS` : TCP SYN Ping Scan
+- `-PA` : TCP ACK Ping Scan
+- `-PO` : P Protocol Ping Scan
+### Task 2: Perform Host Discovery using Angry IP Scanner
+- `Angry IP Scanner`
+- https://www.solarwinds.com
+- https://www.netscantools.com
+- https://www.colasoft.com
+- http://www.pingtester.net
+- https://www.manageengine.com
+
+## Lab 2: Perform Port and Service Discovery
+### Task 1: Perform Port and Service Discovery using MegaPing
+- `MegaPing`
+### Task 2: Perform Port and Service Discovery using NetScanTools Pro
+- `NetScanTools Pro`
+### Task 3: Perform Port Scanning using sx Tool
+- `sx arp`
+- `sx tcp`
+- `sx udp`
+### Task 4: Explore Various Network Scanning Techniques using Nmap
+nmap
+- `-sT` : TCP connect/full open scan
+- `-sS` : stealth scan/TCP half-open scan
+- `-sX` : Xmas scan
+- `-sM` : TCP Maimon scan
+- `-sA` : ACK flag probe scan
+- `-sN` : Null scan
+- `-sl` : IDLE/IPID Header Scan
+- `-sY` : SCTP INIT Scan
+- `-sZ` : SCTP COOKIE ECHO Scan
+- `-A` : Enable all advanced/aggressive options
+### Task 5: Explore Various Network Scanning Techniques using Hping3
+- `hping3 -A [Target IP Address] -p 80 -c 5`  
+  -A : ACK flag
+- `hping3 -8 0-100 -S [Target IP Address] -V`  
+  -8 : scan mode
+- `hping3 -F -P -U [Target IP Address] -p 80 -c 5`
+  -F : FIN flag / -P : PUSH flag / -U : URG flag
+- `hping3 --scan 0-100 -S [Target IP Address]`  
+  -S:  SYN flag
+- `hping3 -1 [Target IP Address] -p 80 -c 5`
+  -1 : ICMP ping scan
+- `hping3 -2 [Target IP Address] -p 80 -c 5`
+  -2 : UDP scan
+
+## Lab 3: Perform OS Discovery
