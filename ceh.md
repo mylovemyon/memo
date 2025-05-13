@@ -1,0 +1,43 @@
+# Footprinting and Reconnaissance
+## Lab 1: Perform Footprinting Through Search Engines
+### Task 1: Gather Information using Advanced Google Hacking Techniques
+cache allinurl inurl allintitle inanchor allinanchor link related info location
+### Task 2: Gather Information from Video Search Engine
+- https://mattw.io/youtube-metadata/
+- You can use other video search engines such as Google videos (https://www.google.com/videohp), Yahoo videos (https://in.video.search.yahoo.com), etc.; video analysis tools such as EZGif (https://ezgif.com), VideoReverser.com (https://www.videoreverser.com) etc.; and reverse image search tools such as TinEye Reverse Image Search (https://tineye.com), Yahoo Image Search (https://images.search.yahoo.com), etc. to gather crucial information about the target organization.
+### Task 3: Gather Information from FTP Search Engines
+https://www.searchftps.net/ 
+### Task 4: Gather Information from IoT Search Engines
+https://www.shodan.io/
+
+## Lab 2: Perform Footprinting Through Web Services
+### Task 1: Find the Company's Domains and Sub-domains using Netcraft
+- https://www.netcraft.com
+- https://pentest-tools.com
+### Task 2: Gather Personal Information using PeekYou Online People Search Service
+- https://www.peekyou.com
+- https://www.spokeo.com
+- https://pipl.com
+- https://www.intelius.com
+- https://www.beenverified.com
+### Task 3: Gather an Email List using theHarvester
+`theHarvester -d microsoft.com -l 200 -b baidu`
+### Task 4: Gather Information using Deep and Dark Web Searching
+Tor Browser
+- The Hidden Wiki is an onion site that works as a Wikipedia service of hidden websites. (http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki)
+- FakeID is an onion site for creating fake passports (http://ymvhtqya23wqpez63gyc3ke4svju3mqsby2awnhd3bk2e65izt7baqad.onion)
+- Cardshop is an onion site that sells cards with good balances (http://s57divisqlcjtsyutxjz2ww77vlbwpxgodtijcsrgsuts4js5hnxkhqd.onion)
+
+You can also use tools such as ExoneraTor (https://metrics.torproject.org), OnionLand Search engine (https://onionlandsearchengine.com), etc. to perform deep and dark web browsing.
+### Task 5: Determine Target OS Through Passive Footprinting
+https://search.censys.io
+
+## Lab 3: Perform Footprinting Through Social Networking Sites
+### Task 1: Gather Employees' Information from LinkedIn using theHarvester
+`theHarvester -d eccouncil -l 200 -b linkedin`
+### Task 2: Gather Personal Information from Various Social Networking Sites using Sherlock
+`sherlock "satya nadella"`
+- https://www.social-searcher.com
+- https://github.com/wishihab/userrecon
+
+## Lab 4: Perform Website Footprinting
