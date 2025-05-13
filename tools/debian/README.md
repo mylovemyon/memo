@@ -509,6 +509,13 @@ https://tracker.debian.org/pkg/dnsmasq
 - dhcp_lease_time / dhcp_release / dhcp_release6
 
 
+## dnsrecon
+- https://tracker.debian.org/pkg/dnsrecon
+- https://packages.debian.org/sid/all/dnsrecon/filelist
+- https://manpages.debian.org/unstable/dnsrecon/index.html
+- dnsrecon
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
@@ -525,6 +532,20 @@ https://tracker.debian.org/pkg/docker.io
 - https://packages.debian.org/sid/amd64/docker-compose/filelist
 - https://manpages.debian.org/unstable/docker-compose/index.html
 - docker-compose
+
+
+## dos2unix
+- https://tracker.debian.org/pkg/dos2unix
+- https://packages.debian.org/sid/amd64/dos2unix/filelist
+- https://manpages.debian.org/unstable/dos2unix/index.html
+- dos2unix / mac2unix / unix2dos / unix2mac
+
+
+## dosfstools
+- https://tracker.debian.org/pkg/dosfstools
+- https://packages.debian.org/sid/amd64/dosfstools/filelist
+- https://manpages.debian.org/unstable/dosfstools/index.html
+- dosfsck / dosfslabel / fatlabel / fsck.fat / fsck.msdos / fsck.vfat / mkdosfs / mkfs.fat / mkfs.msdos / mkfs.vfat
 
 
 ## e2fsprogs
