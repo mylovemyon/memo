@@ -294,14 +294,6 @@ https://tracker.debian.org/pkg/chromium
 - containerd  / containerd-shim / containerd-shim-runc-v1 / containerd-shim-runc-v2 / ctr
 
 
-## coreboot
-https://tracker.debian.org/pkg/coreboot
-### coreboot-utils
-- https://packages.debian.org/sid/amd64/coreboot-utils/filelist
-- https://manpages.debian.org/unstable/coreboot-utils/index.html
-- bucts / cbfs-compression-tool / cbfstool / cbmem / ectool / elogtool / fmaptool / ifdtool / ifittool / ifwitool / intelmetool / inteltool / intelvbttool / msrtool / nvramtool / pmh7tool / rmodtool / superiotool
-
-
 ## cracklib2
 https://tracker.debian.org/pkg/cracklib2
 ### cracklib-runtime
