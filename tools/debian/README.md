@@ -395,6 +395,7 @@ https://tracker.debian.org/pkg/dconf
 ### dconf-cli
 - https://packages.debian.org/sid/amd64/dconf-cli/filelist
 - https://manpages.debian.org/unstable/dconf-cli/index.html
+- dconf
 
 
 ## dcraw
@@ -411,6 +412,16 @@ https://tracker.debian.org/pkg/dconf
 - debconf / debconf-apt-progress / debconf-communicate / debconf-copydb / debconf-escape / debconf-set-selections / debconf-show / dpkg-preconfigure / dpkg-reconfigure
 
 
+## debian-archive-keyring
+- https://tracker.debian.org/pkg/debian-archive-keyring
+- https://packages.debian.org/sid/all/debian-archive-keyring/filelist
+
+
+## debianutils
+- https://tracker.debian.org/pkg/debianutils
+- https://packages.debian.org/sid/amd64/debianutils/filelist
+- https://manpages.debian.org/unstable/debianutils/index.html
+- add-shell / installkernel / ischroot / remove-shell / run-parts / savelog / tempfile / update-shells / which.debianutils / 
 
 
 ## docker.io
