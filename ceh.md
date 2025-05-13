@@ -4,7 +4,11 @@
 cache allinurl inurl allintitle inanchor allinanchor link related info location
 ### Task 2: Gather Information from Video Search Engine
 - https://mattw.io/youtube-metadata/
-- You can use other video search engines such as Google videos (https://www.google.com/videohp), Yahoo videos (https://in.video.search.yahoo.com), etc.; video analysis tools such as EZGif (https://ezgif.com), VideoReverser.com (https://www.videoreverser.com) etc.; and reverse image search tools such as TinEye Reverse Image Search (https://tineye.com), Yahoo Image Search (https://images.search.yahoo.com), etc. to gather crucial information about the target organization.
+- You can use other video search engines such as Google videos (https://www.google.com/videohp)
+- Yahoo videos (https://in.video.search.yahoo.com)
+- video analysis tools such as EZGif (https://ezgif.com), VideoReverser.com (https://www.videoreverser.com)
+- and reverse image search tools such as TinEye Reverse Image Search (https://tineye.com)
+- Yahoo Image Search (https://images.search.yahoo.com)
 ### Task 3: Gather Information from FTP Search Engines
 https://www.searchftps.net/ 
 ### Task 4: Gather Information from IoT Search Engines
@@ -41,3 +45,49 @@ https://search.censys.io
 - https://github.com/wishihab/userrecon
 
 ## Lab 4: Perform Website Footprinting
+### Task 1: Gather Information About a Target Website using Ping Command Line Utility
+`ping`
+### Task 2: Gather Information about a Target Website using Photon
+`python3 photon.py -u http://www.certifiedhacker.com`
+### Task 3: Gather Information About a Target Website using Central Ops
+- https://centralops.net
+- https://website.informer.com
+### Task 4: Extract a Company's Data using Web Data Extractor
+`Web Data Extractor`
+- https://www.parsehub.com
+- https://www.spiderfoot.net
+### Task 5: Mirror a Target Website using HTTrack Web Site Copier
+`HTTrack Web Site Copier`
+- https://www.cyotek.com
+### Task 6: Gather Information About a Target Website using GRecon
+`python3 grecon.py`
+### Task 7: Gather a Wordlist from the Target Website using CeWL
+`cewl -w wordlist.txt -d 2 -m 5 https://www.certifiedhacker.com`
+
+## Lab 5: Perform Email Footprinting
+### Task 1: Gather Information about a Target by Tracing Emails using eMailTrackerPro
+`eMailTrackerPro`
+- https://mailtrack.io
+- https://github.com/robertswin/Infoga
+
+## Lab 6: Perform Whois Footprinting
+### Task 1: Perform Whois Lookup using DomainTools
+- http://whois.domaintools.com
+- https://www.tamos.com
+- http://www.sabsoft.com
+
+## Lab 7: Perform DNS Footprinting
+### Task 1: Gather DNS Information using nslookup Command Line Utility and Online Tool
+`nslookup`
+- http://www.kloth.net/services/nslookup.php
+- https://dnsdumpster.com
+- https://network-tools.com
+### Task 2: Perform Reverse DNS Lookup using Reverse IP Domain Check and DNSRecon
+`./dnsrecon.py -r 162.241.216.0-162.241.216.255`
+- https://www.yougetsignal.com
+### Task 3: Gather Information of Subdomain and DNS Records using SecurityTrails
+- https://securitytrails.com/
+- https://dnschecker.org
+- https://dnsdumpster.com
+
+## Lab 8: Perform Network Footprinting
