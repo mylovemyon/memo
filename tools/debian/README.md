@@ -397,6 +397,22 @@ https://tracker.debian.org/pkg/dconf
 - https://manpages.debian.org/unstable/dconf-cli/index.html
 
 
+## dcraw
+- https://tracker.debian.org/pkg/dcraw
+- https://packages.debian.org/sid/amd64/dcraw/filelist
+- https://manpages.debian.org/unstable/dcraw/index.html
+- dccleancrw / dcfujigreen / dcfujiturn / dcfujiturn16 / dcparse / dcraw
+
+
+## debconf
+- https://tracker.debian.org/pkg/debconf
+- https://packages.debian.org/sid/all/debconf/filelist
+- https://manpages.debian.org/unstable/debconf/index.html
+- debconf / debconf-apt-progress / debconf-communicate / debconf-copydb / debconf-escape / debconf-set-selections / debconf-show / dpkg-preconfigure / dpkg-reconfigure
+
+
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
