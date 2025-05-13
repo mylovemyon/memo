@@ -334,6 +334,25 @@ https://tracker.debian.org/pkg/criu
 - crontab / cron
 
 
+## crunch
+- https://tracker.debian.org/pkg/crunch
+- https://packages.debian.org/sid/amd64/crunch/filelist
+- https://manpages.debian.org/unstable/crunch/index.html
+- crunch
+
+
+## cryptsetup
+https://tracker.debian.org/pkg/cryptsetup
+### cryptsetup
+- https://packages.debian.org/sid/amd64/cryptsetup/filelist
+- https://manpages.debian.org/unstable/cryptsetup/index.html
+- cryptdisks_start / cryptdisks_stop / luksformat
+### cryptsetup-bin
+- https://packages.debian.org/sid/amd64/cryptsetup-bin/filelist
+- https://manpages.debian.org/unstable/cryptsetup-bin/index.html
+- cryptsetup / integritysetup / veritysetup
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
