@@ -353,6 +353,20 @@ https://tracker.debian.org/pkg/cryptsetup
 - cryptsetup / integritysetup / veritysetup
 
 
+## curlftpfs
+- https://tracker.debian.org/pkg/curlftpfs
+- https://packages.debian.org/sid/amd64/curlftpfs/filelist
+- https://manpages.debian.org/unstable/curlftpfs/index.html
+- curlftpfs
+
+
+## cutycapt
+- https://tracker.debian.org/pkg/cutycapt
+- https://packages.debian.org/sid/amd64/cutycapt/filelist
+- https://manpages.debian.org/unstable/cutycapt/index.html
+- cutycapt
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
