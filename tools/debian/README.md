@@ -443,6 +443,13 @@ https://tracker.debian.org/pkg/dconf
 - dhcpcd
 
 
+## dictionaries-common
+- https://tracker.debian.org/pkg/dictionaries-common
+- https://packages.debian.org/sid/all/dictionaries-common/filelist
+- https://manpages.debian.org/unstable/dictionaries-common/index.html
+- aspell-autobuildhash / ispell-autobuildhash / ispell-wrapper / remove-default-ispell / remove-default-wordlist / select-default-ispell / select-default-iwrap / select-default-wordlist / update-default-aspell / update-default-ispell / update-default-wordlist / update-dictcommon-aspell / update-dictcommon-hunspell
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
