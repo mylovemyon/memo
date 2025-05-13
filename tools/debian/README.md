@@ -471,6 +471,43 @@ https://tracker.debian.org/pkg/dhcpcd
 - dmitry
 
 
+## dns-root-data
+- https://tracker.debian.org/pkg/dns-root-data
+- https://packages.debian.org/sid/all/dns-root-data/filelist
+
+
+## dns2tcp
+- https://tracker.debian.org/pkg/dns2tcp
+- https://packages.debian.org/sid/amd64/dns2tcp/filelist
+- https://manpages.debian.org/unstable/dns2tcp/index.html
+- dns2tcpc / dns2tcpd
+
+
+## dnsenum
+- https://tracker.debian.org/pkg/dnsenum
+- https://packages.debian.org/sid/all/dnsenum/filelist
+- https://manpages.debian.org/unstable/dnsenum/index.html
+- dnsenum
+
+
+## dnsmap
+- https://tracker.debian.org/pkg/dnsmap
+- https://packages.debian.org/sid/amd64/dnsmap/filelist
+- https://manpages.debian.org/unstable/dnsmap/index.html
+- dnsmap / dnsmap-bulk
+
+
+## dnsmasq
+https://tracker.debian.org/pkg/dnsmasq
+### dnsmasq-base
+- https://packages.debian.org/sid/amd64/dnsmasq-base/filelist
+- https://manpages.debian.org/unstable/dnsmasq-base/index.html
+- dnsmasq
+### dnsmasq-utils
+- https://packages.debian.org/sid/amd64/dnsmasq-utils/filelist
+- https://manpages.debian.org/unstable/dnsmasq-utils/index.html
+- dhcp_lease_time / dhcp_release / dhcp_release6
+
 
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
@@ -654,6 +691,10 @@ https://tracker.debian.org/pkg/llvm-toolchain-19
 
 ## lvm2
 https://tracker.debian.org/pkg/lvm2
+### dmeventd
+- https://packages.debian.org/sid/amd64/dmeventd/filelist
+- https://manpages.debian.org/unstable/dmeventd/index.html
+- dmeventd
 ### dmsetup
 - https://packages.debian.org/sid/amd64/dmsetup/filelist
 - https://manpages.debian.org/unstable/dmsetup/index.html
@@ -662,6 +703,10 @@ https://tracker.debian.org/pkg/lvm2
 - https://packages.debian.org/sid/amd64/lvm2/filelist
 - https://manpages.debian.org/unstable/lvm2/index.html
 - fsadm / lvchange / lvconvert / lvcreate / lvdisplay / lvextend / lvm / lvmconfig / lvmdiskscan / lvmdump / lvmpolld / lvmsadc / lvmsar / lvreduce / lvremove / lvrename / lvresize / lvs / lvscan / pvchange / pvck / pvcreate / pvdisplay / pvmove / pvremove / pvresize / pvs / pvscan / vgcfgbackup / vgcfgrestore / vgchange / vgck / vgconvert / vgcreate / vgdisplay / vgexport / vgextend / vgimport / vgimportclone / vgmerge / vgmknodes / vgreduce / vgremove / vgrename / vgs / vgscan / vgsplit
+### lvm2-lockd
+- https://packages.debian.org/sid/amd64/lvm2-lockd/filelist
+- https://manpages.debian.org/unstable/lvm2-lockd/index.html
+- lvmlockctl / lvmlockd
 
 
 ## manpages-ja
