@@ -424,6 +424,25 @@ https://tracker.debian.org/pkg/dconf
 - add-shell / installkernel / ischroot / remove-shell / run-parts / savelog / tempfile / update-shells / which.debianutils / 
 
 
+## desktop-base
+- https://tracker.debian.org/pkg/desktop-base
+- https://packages.debian.org/sid/all/desktop-base/filelist
+
+
+## desktop-file-utils
+- https://tracker.debian.org/pkg/desktop-file-utils
+- https://packages.debian.org/sid/amd64/desktop-file-utils/filelist
+- https://manpages.debian.org/unstable/desktop-file-utils/index.html
+- desktop-file-edit / desktop-file-install / desktop-file-validate / update-desktop-database
+
+
+## dhcpcd
+- https://tracker.debian.org/pkg/dhcpcd
+- https://packages.debian.org/sid/amd64/dhcpcd-base/filelist
+- https://manpages.debian.org/unstable/dhcpcd-base/index.html
+- dhcpcd
+
+
 ## docker.io
 https://tracker.debian.org/pkg/docker.io  
 ### docker.io
