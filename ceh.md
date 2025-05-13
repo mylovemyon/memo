@@ -1,7 +1,7 @@
 # Footprinting and Reconnaissance
 ## Lab 1: Perform Footprinting Through Search Engines
 ### Task 1: Gather Information using Advanced Google Hacking Techniques
-cache allinurl inurl allintitle inanchor allinanchor link related info location
+- cache / allinurl /  inurl / allintitle / inanchor / allinanchor / link / related / info / location
 ### Task 2: Gather Information from Video Search Engine
 - https://mattw.io/youtube-metadata/
 - You can use other video search engines such as Google videos (https://www.google.com/videohp)
@@ -10,9 +10,9 @@ cache allinurl inurl allintitle inanchor allinanchor link related info location
 - and reverse image search tools such as TinEye Reverse Image Search (https://tineye.com)
 - Yahoo Image Search (https://images.search.yahoo.com)
 ### Task 3: Gather Information from FTP Search Engines
-https://www.searchftps.net/ 
+- https://www.searchftps.net/ 
 ### Task 4: Gather Information from IoT Search Engines
-https://www.shodan.io/
+- https://www.shodan.io/
 
 ## Lab 2: Perform Footprinting Through Web Services
 ### Task 1: Find the Company's Domains and Sub-domains using Netcraft
@@ -25,7 +25,7 @@ https://www.shodan.io/
 - https://www.intelius.com
 - https://www.beenverified.com
 ### Task 3: Gather an Email List using theHarvester
-`theHarvester -d microsoft.com -l 200 -b baidu`
+- `theHarvester -d microsoft.com -l 200 -b baidu`
 ### Task 4: Gather Information using Deep and Dark Web Searching
 Tor Browser
 - The Hidden Wiki is an onion site that works as a Wikipedia service of hidden websites. (http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki)
@@ -34,39 +34,39 @@ Tor Browser
 
 You can also use tools such as ExoneraTor (https://metrics.torproject.org), OnionLand Search engine (https://onionlandsearchengine.com), etc. to perform deep and dark web browsing.
 ### Task 5: Determine Target OS Through Passive Footprinting
-https://search.censys.io
+- https://search.censys.io
 
 ## Lab 3: Perform Footprinting Through Social Networking Sites
 ### Task 1: Gather Employees' Information from LinkedIn using theHarvester
-`theHarvester -d eccouncil -l 200 -b linkedin`
+- `theHarvester -d eccouncil -l 200 -b linkedin`
 ### Task 2: Gather Personal Information from Various Social Networking Sites using Sherlock
-`sherlock "satya nadella"`
+- `sherlock "satya nadella"`
 - https://www.social-searcher.com
 - https://github.com/wishihab/userrecon
 
 ## Lab 4: Perform Website Footprinting
 ### Task 1: Gather Information About a Target Website using Ping Command Line Utility
-`ping`
+- `ping`
 ### Task 2: Gather Information about a Target Website using Photon
-`python3 photon.py -u http://www.certifiedhacker.com`
+- `python3 photon.py -u http://www.certifiedhacker.com`
 ### Task 3: Gather Information About a Target Website using Central Ops
 - https://centralops.net
 - https://website.informer.com
 ### Task 4: Extract a Company's Data using Web Data Extractor
-`Web Data Extractor`
+- `Web Data Extractor`
 - https://www.parsehub.com
 - https://www.spiderfoot.net
 ### Task 5: Mirror a Target Website using HTTrack Web Site Copier
-`HTTrack Web Site Copier`
+- `HTTrack Web Site Copier`
 - https://www.cyotek.com
 ### Task 6: Gather Information About a Target Website using GRecon
-`python3 grecon.py`
+- `python3 grecon.py`
 ### Task 7: Gather a Wordlist from the Target Website using CeWL
-`cewl -w wordlist.txt -d 2 -m 5 https://www.certifiedhacker.com`
+- `cewl -w wordlist.txt -d 2 -m 5 https://www.certifiedhacker.com`
 
 ## Lab 5: Perform Email Footprinting
 ### Task 1: Gather Information about a Target by Tracing Emails using eMailTrackerPro
-`eMailTrackerPro`
+- `eMailTrackerPro`
 - https://mailtrack.io
 - https://github.com/robertswin/Infoga
 
@@ -78,12 +78,12 @@ https://search.censys.io
 
 ## Lab 7: Perform DNS Footprinting
 ### Task 1: Gather DNS Information using nslookup Command Line Utility and Online Tool
-`nslookup`
+- `nslookup`
 - http://www.kloth.net/services/nslookup.php
 - https://dnsdumpster.com
 - https://network-tools.com
 ### Task 2: Perform Reverse DNS Lookup using Reverse IP Domain Check and DNSRecon
-`./dnsrecon.py -r 162.241.216.0-162.241.216.255`
+- `./dnsrecon.py -r 162.241.216.0-162.241.216.255`
 - https://www.yougetsignal.com
 ### Task 3: Gather Information of Subdomain and DNS Records using SecurityTrails
 - https://securitytrails.com/
@@ -92,23 +92,23 @@ https://search.censys.io
 
 ## Lab 8: Perform Network Footprinting
 ### Task 1: Locate the Network Range
-https://www.arin.net/about/welcome/region
+- https://www.arin.net/about/welcome/region
 ### Task 2: Perform Network Tracerouting in Windows and Linux Machines
-`traceroute`
+- `traceroute`
 - http://www.visualroute.com
 - https://www.solarwinds.com
 
 ## Lab 9: Perform Footprinting using Various Footprinting Tools
 ### Task 1: Footprinting a Target using Recon-ng
-`recon-ng`(`recon/domains-hosts/brute_hosts`,`recon/hosts-hosts/reverse_resolve`,`recon/domains-contacts/whois_pocs`,`recon/domains-hosts/hackertarget`,`reporting/html`)
+- `recon-ng`(`recon/domains-hosts/brute_hosts`,`recon/hosts-hosts/reverse_resolve`,`recon/domains-contacts/whois_pocs`,`recon/domains-hosts/hackertarget`,`reporting/html`)
 ### Task 2: Footprinting a Target using Maltego
-`Maltego`
+- `Maltego`
 ### Task 3: Footprinting a Target using OSRFramework
-`OSRFramework`(`domainfy`,`searchfy`)
+- `OSRFramework`(`domainfy`,`searchfy`)
 ### Task 4: Footprinting a Target using FOCA
-`FOCA`
+- `FOCA`
 ### Task 5: Footprinting a Target using BillCipher
-`python3 billcipher.py`
+- `python3 billcipher.py`
 ### Task 6: Footprinting a Target using OSINT Framework
 - https://osintframework.com/
 - https://github.com/s0md3v/ReconDog
