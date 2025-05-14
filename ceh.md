@@ -318,3 +318,24 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
 - `enum4linux -u martin -p apple -P [Target IP Address]`
 - `enum4linux -u martin -p apple -G [Target IP Address]`
 - `enum4linux -u martin -p apple -S [Target IP Address]`
+
+
+
+## Module 05: Vulnerability Analysis
+### Lab 1: Perform Vulnerability Research with Vulnerability Scoring Systems and Databases
+#### Task 1: Perform Vulnerability Research in Common Weakness Enumeration (CWE)
+- https://cwe.mitre.org/
+- CWE Top 25
+#### Task 2: Perform Vulnerability Research in Common Vulnerabilities and Exposures (CVE)
+- https://cve.mitre.org/
+#### Task 3: Perform Vulnerability Research in National Vulnerability Database (NVD)
+- https://nvd.nist.gov/
+
+### Lab 2: Perform Vulnerability Assessment using Various Vulnerability Assessment Tools
+#### Task 1: Perform Vulnerability Analysis using OpenVAS
+- `OpenVAS`
+#### Task 2: Perform Vulnerability Scanning using Nessus
+- `Nessus`
+#### Task 3: Perform Web Servers and Applications Vulnerability Scanning using CGI Scanner Nikto
+- `nikto -h (Target Website) -Tuning x`
+- `nikto -h (Target Website) -Cgidirs all`
