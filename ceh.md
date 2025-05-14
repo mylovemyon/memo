@@ -120,22 +120,21 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
 # Module 03: Scanning Networks
 ## Lab 1: Perform Host Discovery
 ### Task 1: Perform Host Discovery using Nmap
-nmap
-- `-PR` : ARP ping scan
-- `-PU` : UDP ping scan
-- `-PE` : ICMP ECHO ping scan
-- `-PP` : ICMP timestamp ping scan
-- `-PM` : ICMP Address Mask Ping Scan
-- `-PS` : TCP SYN Ping Scan
-- `-PA` : TCP ACK Ping Scan
-- `-PO` : P Protocol Ping Scan
+- `nmap -sn -PR [Target IP Address]`
+- `nmap -sn -PU [Target IP Address]`
+- `nmap -sn -PE [Target IP Address]`
+- `nmap -sn -PP [Target IP Address]`
+- `nmap -sn -PM [target IP address]`
+- `nmap -sn -PS [target IP address]`
+- `nmap -sn -PA [target IP address]`
+- `nmap -sn -PO [target IP address]`
 ### Task 2: Perform Host Discovery using Angry IP Scanner
 - `Angry IP Scanner`
-- https://www.solarwinds.com
-- https://www.netscantools.com
-- https://www.colasoft.com
-- http://www.pingtester.net
-- https://www.manageengine.com
+- [SolarWinds Engineer's Toolset](https://www.solarwinds.com)
+- [NetScanTools Pro](https://www.netscantools.com)
+- [Colasoft Ping Tool](https://www.colasoft.com)
+- [Visual Ping Tester](http://www.pingtester.net)
+- [OpUtils](https://www.manageengine.com)
 
 ## Lab 2: Perform Port and Service Discovery
 ### Task 1: Perform Port and Service Discovery using MegaPing
@@ -143,34 +142,30 @@ nmap
 ### Task 2: Perform Port and Service Discovery using NetScanTools Pro
 - `NetScanTools Pro`
 ### Task 3: Perform Port Scanning using sx Tool
-- `sx arp`
-- `sx tcp`
-- `sx udp`
+- `sx arp [Target subnet] --json | tee arp.cache`
+- `cat arp.cache | sx tcp -p 1-65535 [Target IP address]`
+- `cat arp.cache | sx udp --json -p [Target Port] 10.10.1.11`
 ### Task 4: Explore Various Network Scanning Techniques using Nmap
 nmap
-- `-sT` : TCP connect/full open scan
-- `-sS` : stealth scan/TCP half-open scan
-- `-sX` : Xmas scan
-- `-sM` : TCP Maimon scan
-- `-sA` : ACK flag probe scan
-- `-sN` : Null scan
-- `-sl` : IDLE/IPID Header Scan
-- `-sY` : SCTP INIT Scan
-- `-sZ` : SCTP COOKIE ECHO Scan
-- `-A` : Enable all advanced/aggressive options
+- `nmap -sT -v [Target IP Address]`
+- `nmap -sS -v [Target IP Address]`
+- `nmap -sX -v [Target IP Address]`
+- `nmap -sM -v [Target IP Address]`
+- `nmap -sA -v [Target IP Address]`
+- `nmap -sU -v [Target IP Address]`
+- `nmap -sN -v [target IP address`
+- `nmap -sI -v [target IP address]`
+- `nmap -sY -v [target IP address]`
+- `nmap -sZ -v [target IP address`
+- `nmap -sV [Target IP Address]`
+- `nmap -A [Target Subnet]`
 ### Task 5: Explore Various Network Scanning Techniques using Hping3
-- `hping3 -A [Target IP Address] -p 80 -c 5`  
-  -A : ACK flag
-- `hping3 -8 0-100 -S [Target IP Address] -V`  
-  -8 : scan mode
+- `hping3 -A [Target IP Address] -p 80 -c 5`
+- `hping3 -8 0-100 -S [Target IP Address] -V`
 - `hping3 -F -P -U [Target IP Address] -p 80 -c 5`
-  -F : FIN flag / -P : PUSH flag / -U : URG flag
-- `hping3 --scan 0-100 -S [Target IP Address]`  
-  -S:  SYN flag
-- `hping3 -1 [Target IP Address] -p 80 -c 5`  
-  -1 : ICMP ping scan
+- `hping3 --scan 0-100 -S [Target IP Address]`
+- `hping3 -1 [Target IP Address] -p 80 -c 5`
 - `hping3 -2 [Target IP Address] -p 80 -c 5`  
-  -2 : UDP scan
 
 ## Lab 3: Perform OS Discovery
 ### Task 1: Identify the Target System's OS with Time-to-Live (TTL) and TCP Window Sizes using Wireshark
@@ -184,26 +179,28 @@ nmap
 | Solaris       | 255 | 8760 |
 | AIX           | 255 | 16384 |
 ### Task 2: Perform OS Discovery using Nmap Script Engine (NSE)
-- `nmap -A`
-- `nmap -O`
-- `nmap --script smb-os-discovery.nse`
+- `nmap -A [Target IP Address]`
+- `nmap -O  [Target IP Address]`
+- `nmap --script smb-os-discovery.nse [Target IP Address]`
 ### Task 3: Perform OS Discovery using Unicornscan
 - `unicornscan [Target IP Address] -Iv`
 
 ## Lab 4: Scan beyond IDS and Firewall
 ### Task 1: Scan beyond IDS/Firewall using various Evasion Techniques
 nmap
-- `-f` : Packet Fragmentation
-- `-g` or `--source-port` : Source Port Manipulation
-- `-mtu` : specifies MTU
-- `-D RND:` : IP address decoy
-- `--spoof-mac 0` : MAC address spoofing
+- `nmap -f [Target IP Address]`
+- `nmap -g 80 [Target IP Address]`
+- `nmap -mtu 8 [Target IP Address]`
+- `nmap -D RND:10 [Target IP Address]`
+- `nmap -sT -Pn --spoof-mac 0 [Target IP Address]`
 ### Task 2: Create Custom Packets using Colasoft Packet Builder to Scan beyond the IDS/Firewall
 - `Colasoft Packet Builder`
 ### Task 3: Create Custom UDP and TCP Packets using Hping3 to Scan beyond the IDS/Firewall
 - `hping3 [Target IP Address] --udp --rand-source --data 500`
+- `hping3 -S [Target IP Address] -p 80 -c 5`
 - `hping3 [Target IP Address] --flood`  
-  --flood : performs the TCP flooding
+- [NetScanTools Pro](https://www.netscantools.com)
+- [Colasoft packet builder](https://www.colasoft.com)
 
 ## Lab 5: Perform Network Scanning using Various Scanning Tools
 ### Task 1: Scan a Target Network using Metasploit
