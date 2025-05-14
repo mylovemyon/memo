@@ -80,36 +80,48 @@
 ### Lab 5: Perform Email Footprinting
 #### Task 1: Gather Information about a Target by Tracing Emails using eMailTrackerPro
 - `eMailTrackerPro`
-- https://mailtrack.io
-- https://github.com/robertswin/Infoga
+- [Infoga](https://github.com/robertswin/Infoga)
+- [Mailtrack](https://mailtrack.io)
 
 ### Lab 6: Perform Whois Footprinting
 #### Task 1: Perform Whois Lookup using DomainTools
 - http://whois.domaintools.com
-- https://www.tamos.com
-- http://www.sabsoft.com
+- [SmartWhois](https://www.tamos.com)
+- [Batch IP Converter](http://www.sabsoft.com)
 
 ### Lab 7: Perform DNS Footprinting
 #### Task 1: Gather DNS Information using nslookup Command Line Utility and Online Tool
-- `nslookup`
+- ```cmd
+  nslookup
+  set type=a
+  www.certifiedhacker.com
+  set type=cname
+  certifiedhacker.com
+  ```
 - http://www.kloth.net/services/nslookup.php
-- https://dnsdumpster.com
-- https://network-tools.com
+- [DNSdumpster](https://dnsdumpster.com)
+- [DNS Records](https://network-tools.com)
 #### Task 2: Perform Reverse DNS Lookup using Reverse IP Domain Check and DNSRecon
-- `./dnsrecon.py -r 162.241.216.0-162.241.216.255`
 - https://www.yougetsignal.com
+- `./dnsrecon.py -r 162.241.216.0-162.241.216.255`
 #### Task 3: Gather Information of Subdomain and DNS Records using SecurityTrails
 - https://securitytrails.com/
-- https://dnschecker.org
-- https://dnsdumpster.com
+- [DNSChecker](https://dnschecker.org)
+- [DNSdumpster](https://dnsdumpster.com)
 
 ### Lab 8: Perform Network Footprinting
 #### Task 1: Locate the Network Range
 - https://www.arin.net/about/welcome/region
 #### Task 2: Perform Network Tracerouting in Windows and Linux Machines
-- `traceroute`
-- http://www.visualroute.com
-- https://www.solarwinds.com
+- ```cmd
+  tracert www.certifiedhacker.com
+  tracert -h 5 www.certifiedhacker.com
+  ```
+  ```sh
+  traceroute www.certifiedhacker.com
+  ```
+- [VisualRoute](http://www.visualroute.com)
+- [Traceroute NG](https://www.solarwinds.com)
 
 ### Lab 9: Perform Footprinting using Various Footprinting Tools
 #### Task 1: Footprinting a Target using Recon-ng
@@ -117,16 +129,20 @@
 #### Task 2: Footprinting a Target using Maltego
 - `Maltego`
 #### Task 3: Footprinting a Target using OSRFramework
-- `OSRFramework`(`domainfy`,`searchfy`)
+- `OSRFramework`
+  ```sh
+  domainfy -n [Domain Name] -t all
+  searchfy -q "target user name or profile name"
+  ```
 #### Task 4: Footprinting a Target using FOCA
 - `FOCA`
 #### Task 5: Footprinting a Target using BillCipher
 - `python3 billcipher.py`
 #### Task 6: Footprinting a Target using OSINT Framework
 - https://osintframework.com/
-- https://github.com/s0md3v/ReconDog
-- https://github.com/Moham3dRiahi/Th3inspector
-- https://github.com/evyatarmeged/Raccoon
+- [Recon-Dog](https://github.com/s0md3v/ReconDog)
+- [Th3Inspecto](https://github.com/Moham3dRiahi/Th3inspector)
+- [Raccoon](https://github.com/evyatarmeged/Raccoon)
 
 
 
