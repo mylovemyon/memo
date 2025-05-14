@@ -146,7 +146,6 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
 - `cat arp.cache | sx tcp -p 1-65535 [Target IP address]`
 - `cat arp.cache | sx udp --json -p [Target Port] 10.10.1.11`
 ### Task 4: Explore Various Network Scanning Techniques using Nmap
-nmap
 - `nmap -sT -v [Target IP Address]`
 - `nmap -sS -v [Target IP Address]`
 - `nmap -sX -v [Target IP Address]`
@@ -187,7 +186,6 @@ nmap
 
 ## Lab 4: Scan beyond IDS and Firewall
 ### Task 1: Scan beyond IDS/Firewall using various Evasion Techniques
-nmap
 - `nmap -f [Target IP Address]`
 - `nmap -g 80 [Target IP Address]`
 - `nmap -mtu 8 [Target IP Address]`
