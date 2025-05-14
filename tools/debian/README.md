@@ -564,6 +564,28 @@ https://tracker.debian.org/pkg/dpkg
 - select
 
 
+## dracut
+https://tracker.debian.org/pkg/dracut
+### dracut-core
+- https://packages.debian.org/sid/amd64/dracut-core/filelist
+- https://manpages.debian.org/unstable/dracut-core/index.html
+- dracut / dracut-catimages / lsinitrd
+
+
+## dsniff
+- https://tracker.debian.org/pkg/dsniff
+- https://packages.debian.org/sid/amd64/dsniff/filelist
+- https://manpages.debian.org/unstable/dsniff/index.html
+- arpspoof / dnsspoof / dsniff / filesnarf / macof / mailsnarf / msgsnarf / sshmitm / sshow / tcpkill / tcpnice / urlsnarf / webmitm / webspy
+
+
+## dvisvgm
+- https://tracker.debian.org/pkg/dvisvgm
+- https://packages.debian.org/sid/amd64/dvisvgm/filelist
+- https://manpages.debian.org/unstable/dvisvgm/index.html
+- dvisvgm
+
+
 ## e2fsprogs
 https://tracker.debian.org/pkg/e2fsprogs
 ### comerr-dev
