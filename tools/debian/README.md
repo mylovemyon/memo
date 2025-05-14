@@ -548,6 +548,22 @@ https://tracker.debian.org/pkg/docker.io
 - dosfsck / dosfslabel / fatlabel / fsck.fat / fsck.msdos / fsck.vfat / mkdosfs / mkfs.fat / mkfs.msdos / mkfs.vfat
 
 
+## dpkg
+https://tracker.debian.org/pkg/dpkg
+### dpkg
+- https://packages.debian.org/sid/amd64/dpkg/filelist
+- https://manpages.debian.org/unstable/dpkg/index.html
+- dpkg / dpkg-deb / dpkg-divert / dpkg-maintscript-helper / dpkg-query / dpkg-realpath / dpkg-split / dpkg-statoverride / dpkg-trigger / start-stop-daemon / update-alternatives
+### dpkg-dev
+- https://packages.debian.org/sid/all/dpkg-dev/filelist
+- https://manpages.debian.org/unstable/dpkg-dev/index.html
+- dpkg-architecture / dpkg-buildapi / dpkg-buildflags / dpkg-buildpackage / dpkg-buildtree / dpkg-checkbuilddeps / dpkg-distaddfile / dpkg-genbuildinfo / dpkg-genchanges / dpkg-gencontrol / dpkg-gensymbols / dpkg-mergechangelogs / dpkg-name / dpkg-parsechangelog / dpkg-scanpackages / dpkg-scansources / dpkg-shlibdeps / dpkg-source / dpkg-vendor
+### dselect
+- https://packages.debian.org/sid/amd64/dselect/filelist
+- https://manpages.debian.org/unstable/dselect/index.html
+- select
+
+
 ## e2fsprogs
 https://tracker.debian.org/pkg/e2fsprogs
 ### comerr-dev
