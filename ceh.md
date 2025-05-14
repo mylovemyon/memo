@@ -118,8 +118,8 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
 
 
 # Module 03: Scanning Networks
-## Lab 1: Perform Host Discovery
-### Task 1: Perform Host Discovery using Nmap
+### Lab 1: Perform Host Discovery
+#### Task 1: Perform Host Discovery using Nmap
 - `nmap -sn -PR [Target IP Address]`
 - `nmap -sn -PU [Target IP Address]`
 - `nmap -sn -PE [Target IP Address]`
@@ -128,7 +128,7 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
 - `nmap -sn -PS [target IP address]`
 - `nmap -sn -PA [target IP address]`
 - `nmap -sn -PO [target IP address]`
-### Task 2: Perform Host Discovery using Angry IP Scanner
+#### Task 2: Perform Host Discovery using Angry IP Scanner
 - `Angry IP Scanner`
 - [SolarWinds Engineer's Toolset](https://www.solarwinds.com)
 - [NetScanTools Pro](https://www.netscantools.com)
@@ -136,16 +136,16 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
 - [Visual Ping Tester](http://www.pingtester.net)
 - [OpUtils](https://www.manageengine.com)
 
-## Lab 2: Perform Port and Service Discovery
-### Task 1: Perform Port and Service Discovery using MegaPing
+### Lab 2: Perform Port and Service Discovery
+#### Task 1: Perform Port and Service Discovery using MegaPing
 - `MegaPing`
-### Task 2: Perform Port and Service Discovery using NetScanTools Pro
+#### Task 2: Perform Port and Service Discovery using NetScanTools Pro
 - `NetScanTools Pro`
-### Task 3: Perform Port Scanning using sx Tool
+#### Task 3: Perform Port Scanning using sx Tool
 - `sx arp [Target subnet] --json | tee arp.cache`
 - `cat arp.cache | sx tcp -p 1-65535 [Target IP address]`
 - `cat arp.cache | sx udp --json -p [Target Port] 10.10.1.11`
-### Task 4: Explore Various Network Scanning Techniques using Nmap
+#### Task 4: Explore Various Network Scanning Techniques using Nmap
 - `nmap -sT -v [Target IP Address]`
 - `nmap -sS -v [Target IP Address]`
 - `nmap -sX -v [Target IP Address]`
@@ -158,7 +158,7 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
 - `nmap -sZ -v [target IP address`
 - `nmap -sV [Target IP Address]`
 - `nmap -A [Target Subnet]`
-### Task 5: Explore Various Network Scanning Techniques using Hping3
+#### Task 5: Explore Various Network Scanning Techniques using Hping3
 - `hping3 -A [Target IP Address] -p 80 -c 5`
 - `hping3 -8 0-100 -S [Target IP Address] -V`
 - `hping3 -F -P -U [Target IP Address] -p 80 -c 5`
@@ -166,8 +166,8 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
 - `hping3 -1 [Target IP Address] -p 80 -c 5`
 - `hping3 -2 [Target IP Address] -p 80 -c 5`  
 
-## Lab 3: Perform OS Discovery
-### Task 1: Identify the Target System's OS with Time-to-Live (TTL) and TCP Window Sizes using Wireshark
+### Lab 3: Perform OS Discovery
+#### Task 1: Identify the Target System's OS with Time-to-Live (TTL) and TCP Window Sizes using Wireshark
 | Operating System | Time To Live | TCP Windows Size |
 -|-|-
 | linux         | 64  | 5840 |
@@ -177,31 +177,31 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
 | Cisco Routers | 255 | 4128 |
 | Solaris       | 255 | 8760 |
 | AIX           | 255 | 16384 |
-### Task 2: Perform OS Discovery using Nmap Script Engine (NSE)
+#### Task 2: Perform OS Discovery using Nmap Script Engine (NSE)
 - `nmap -A [Target IP Address]`
 - `nmap -O  [Target IP Address]`
 - `nmap --script smb-os-discovery.nse [Target IP Address]`
-### Task 3: Perform OS Discovery using Unicornscan
+#### Task 3: Perform OS Discovery using Unicornscan
 - `unicornscan [Target IP Address] -Iv`
 
-## Lab 4: Scan beyond IDS and Firewall
-### Task 1: Scan beyond IDS/Firewall using various Evasion Techniques
+### Lab 4: Scan beyond IDS and Firewall
+#### Task 1: Scan beyond IDS/Firewall using various Evasion Techniques
 - `nmap -f [Target IP Address]`
 - `nmap -g 80 [Target IP Address]`
 - `nmap -mtu 8 [Target IP Address]`
 - `nmap -D RND:10 [Target IP Address]`
 - `nmap -sT -Pn --spoof-mac 0 [Target IP Address]`
-### Task 2: Create Custom Packets using Colasoft Packet Builder to Scan beyond the IDS/Firewall
+#### Task 2: Create Custom Packets using Colasoft Packet Builder to Scan beyond the IDS/Firewall
 - `Colasoft Packet Builder`
-### Task 3: Create Custom UDP and TCP Packets using Hping3 to Scan beyond the IDS/Firewall
+#### Task 3: Create Custom UDP and TCP Packets using Hping3 to Scan beyond the IDS/Firewall
 - `hping3 [Target IP Address] --udp --rand-source --data 500`
 - `hping3 -S [Target IP Address] -p 80 -c 5`
 - `hping3 [Target IP Address] --flood`  
 - [NetScanTools Pro](https://www.netscantools.com)
 - [Colasoft packet builder](https://www.colasoft.com)
 
-## Lab 5: Perform Network Scanning using Various Scanning Tools
-### Task 1: Scan a Target Network using Metasploit
+### Lab 5: Perform Network Scanning using Various Scanning Tools
+#### Task 1: Scan a Target Network using Metasploit
 - `auxiliary/scanner/portscan/syn`
 - `auxiliary/scanner/portscan/tcp`
 - `auxiliary/scanner/smb/smb_version`
@@ -209,45 +209,45 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
 
 
 # Module 04: Enumeration
-## Lab 1: Perform NetBIOS Enumeration
-### Task 1: Perform NetBIOS Enumeration using Windows Command-Line Utilities
+### Lab 1: Perform NetBIOS Enumeration
+#### Task 1: Perform NetBIOS Enumeration using Windows Command-Line Utilities
 - `nbtstat -a`
 - `nbtstat -c`
-### Task 2: Perform NetBIOS Enumeration using NetBIOS Enumerator
+#### Task 2: Perform NetBIOS Enumeration using NetBIOS Enumerator
 - `NetBIOS Enumerator`
-### Task 3: Perform NetBIOS Enumeration using an NSE Script
+#### Task 3: Perform NetBIOS Enumeration using an NSE Script
 - `nmap -sV --script nbstat.nse  [Target IP Address]`
 - [Global Network Inventory](http://www.magnetosoft.com)
 - [Advanced IP Scanner](https://www.advanced-ip-scanner.com)
 - [Hyena](https://www.systemtools.com)
 - [Nsauditor Network Security Auditor(](https://www.nsauditor.com)
 
-## Lab 2: Perform SNMP Enumeration
-### Task 1: Perform SNMP Enumeration using snmp-check
+### Lab 2: Perform SNMP Enumeration
+#### Task 1: Perform SNMP Enumeration using snmp-check
 - `snmp-check [Target IP Address]`
-### Task 2: Perform SNMP Enumeration using SoftPerfect Network Scanner
+#### Task 2: Perform SNMP Enumeration using SoftPerfect Network Scanner
 - `SoftPerfect Network Scanner`
 - [Network Performance Monitor](https://www.solarwinds.com)
 - [OpUtils](https://www.manageengine.com)
 - [PRTG Network Monitor](https://www.paessler.com)
 - [Engineer's Toolset](https://www.solarwinds.com)
-### Task 3: Perform SNMP Enumeration using SnmpWalk
+#### Task 3: Perform SNMP Enumeration using SnmpWalk
 - `snmpwalk -v1 -c public [target IP]`
 - `snmpwalk -v2c -c public [Target IP Address]`
-### Task 4: Perform SNMP Enumeration using Nmap
+#### Task 4: Perform SNMP Enumeration using Nmap
 - `nmap -sU -p 161 --script=snmp-sysdescr [target IP Address]`
 - `nmap -sU -p 161 --script=snmp-processes [target IP Address]`
 - `nmap -sU -p 161 --script=snmp-win32-software [target IP Address]`
 - `nmap -sU -p 161 --script=snmp-interfaces [target IP Address]`
 
-## Lab 3: Perform LDAP Enumeration
-### Task 1: Perform LDAP Enumeration using Active Directory Explorer (AD Explorer)
+### Lab 3: Perform LDAP Enumeration
+#### Task 1: Perform LDAP Enumeration using Active Directory Explorer (AD Explorer)
 - `Active Directory Explorer`
 - [Softerra LDAP Administrator](https://www.ldapadministrator.com)
 - [LDAP Admin Tool](https://www.ldapsoft.com)
 - [LDAP Account Manager](https://www.ldap-account-manager.org)
 - [LDAP Search](https://securityxploded.com)
-### Task 2: Perform LDAP Enumeration using Python and Nmap
+#### Task 2: Perform LDAP Enumeration using Python and Nmap
 - `nmap -p 389 --script ldap-brute --script-args ldap.base='"cn=users,dc=CEH,dc=com"' [Target IP Address]`
 - ```python3
   import ldap3
@@ -263,18 +263,18 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
   connection.entries
   # dump the entire LDAP information if result of connection.search is true
   ```
-### Task 3: Perform LDAP Enumeration using ldapsearch
+#### Task 3: Perform LDAP Enumeration using ldapsearch
 - `ldapsearch -h [Target IP Address] -x -s base namingcontexts`
 - `ldapsearch -h [Target IP Address] -x -b "DC=CEH,DC=com"`
 - `ldapsearch -x -h [Target IP Address] -b "DC=CEH,DC=com" "objectclass=*"`
 
-## Lab 4: Perform NFS Enumeration
-### Task 1: Perform NFS Enumeration using RPCScan and SuperEnum
+### Lab 4: Perform NFS Enumeration
+#### Task 1: Perform NFS Enumeration using RPCScan and SuperEnum
 - `./superenum`
 - `python3 rpc-scan.py [Target IP address] --rpc`
 
-## Lab 5: Perform DNS Enumeration
-### Task 1: Perform DNS Enumeration using Zone Transfer
+### Lab 5: Perform DNS Enumeration
+#### Task 1: Perform DNS Enumeration using Zone Transfer
 - `dig ns [Target Domain]`
 - `dig @[[NameServer]] [[Target Domain]] axfr`
 - ```cmd
@@ -283,35 +283,35 @@ You can also use tools such as ExoneraTor (https://metrics.torproject.org), Onio
   [Target Domain]`
   ls -d [Name Server]
   ```
-### Task 2: Perform DNS Enumeration using DNSSEC Zone Walking
+#### Task 2: Perform DNS Enumeration using DNSSEC Zone Walking
 - `./dnsrecon.py -d [Target domain] -z`
 - [LDNS](https://www.nlnetlabs.nl)
 - [nsec3map](https://github.com/anonion0/nsec3map)
 - [nsec3walker](https://dnscurve.org)
 - [DNSwalk](https://github.com/davebarr/dnswalk)
-### Task 3: Perform DNS Enumeration using Nmap
+#### Task 3: Perform DNS Enumeration using Nmap
 - `nmap --script=broadcast-dns-service-discovery [Target Domain]`
 - `nmap -T4 -p 53 --script dns-brute [Target Domain]`
 - `nmap --script dns-srv-enum --script-args "dns-srv-enum.domain='[Target Domain]'"`
 
-## Lab 6: Perform SMTP Enumeration
-### Task 1: Perform SMTP Enumeration using Nmap
+### Lab 6: Perform SMTP Enumeration
+#### Task 1: Perform SMTP Enumeration using Nmap
 - `nmap -p 25 --script=smtp-enum-users [Target IP Address]`
 - `nmap -p 25 --script=smtp-open-relay [Target IP Address]`
 - `nmap -p 25 --script=smtp-commands [Target IP Address]`
 
-## Lab 7: Perform RPC, SMB, and FTP Enumeration
-### Task 1: Perform SMB and RPC Enumeration using NetScanTools Pro
+### Lab 7: Perform RPC, SMB, and FTP Enumeration
+#### Task 1: Perform SMB and RPC Enumeration using NetScanTools Pro
 - `NetScanTools Pro`
-### Task 2: Perform RPC, SMB, and FTP Enumeration using Nmap
+#### Task 2: Perform RPC, SMB, and FTP Enumeration using Nmap
 - `nmap -T4 -A [Target IP Address]`
 
-## Lab 8: Perform Enumeration using Various Enumeration Tools
-### Task 1: Enumerate Information using Global Network Inventory
+### Lab 8: Perform Enumeration using Various Enumeration Tools
+#### Task 1: Enumerate Information using Global Network Inventory
 - `Global Network Inventory`
-### Task 2: Enumerate Network Resources using Advanced IP Scanner
+#### Task 2: Enumerate Network Resources using Advanced IP Scanner
 - `Advanced IP Scanner`
-### Task 3: Enumerate Information from Windows and Samba Hosts using Enum4linux
+#### Task 3: Enumerate Information from Windows and Samba Hosts using Enum4linux
 - `enum4linux -u martin -p apple -n [Target IP Address]`
 - `enum4linux -u martin -p apple -U [Target IP Address]`
 - `enum4linux -u martin -p apple -o [Target IP Address]`
