@@ -277,3 +277,49 @@ nmap
 ### Task 1: Perform NFS Enumeration using RPCScan and SuperEnum
 - `./superenum`
 - `python3 rpc-scan.py [Target IP address] --rpc`
+
+## Lab 5: Perform DNS Enumeration
+### Task 1: Perform DNS Enumeration using Zone Transfer
+- `dig ns [Target Domain]`
+- `dig @[[NameServer]] [[Target Domain]] axfr`
+- ```cmd
+  nslookup
+  set querytype=soa
+  [Target Domain]`
+  ls -d [Name Server]
+  ```
+### Task 2: Perform DNS Enumeration using DNSSEC Zone Walking
+- `./dnsrecon.py -d [Target domain] -z`
+- [LDNS](https://www.nlnetlabs.nl)
+- [nsec3map](https://github.com/anonion0/nsec3map)
+- [nsec3walker](https://dnscurve.org)
+- [DNSwalk](https://github.com/davebarr/dnswalk)
+### Task 3: Perform DNS Enumeration using Nmap
+- `nmap --script=broadcast-dns-service-discovery [Target Domain]`
+- `nmap -T4 -p 53 --script dns-brute [Target Domain]`
+- `nmap --script dns-srv-enum --script-args "dns-srv-enum.domain='[Target Domain]'"`
+
+## Lab 6: Perform SMTP Enumeration
+### Task 1: Perform SMTP Enumeration using Nmap
+- `nmap -p 25 --script=smtp-enum-users [Target IP Address]`
+- `nmap -p 25 --script=smtp-open-relay [Target IP Address]`
+- `nmap -p 25 --script=smtp-commands [Target IP Address]`
+
+## Lab 7: Perform RPC, SMB, and FTP Enumeration
+### Task 1: Perform SMB and RPC Enumeration using NetScanTools Pro
+- `NetScanTools Pro`
+### Task 2: Perform RPC, SMB, and FTP Enumeration using Nmap
+- `nmap -T4 -A [Target IP Address]`
+
+## Lab 8: Perform Enumeration using Various Enumeration Tools
+### Task 1: Enumerate Information using Global Network Inventory
+- `Global Network Inventory`
+### Task 2: Enumerate Network Resources using Advanced IP Scanner
+- `Advanced IP Scanner`
+### Task 3: Enumerate Information from Windows and Samba Hosts using Enum4linux
+- `enum4linux -u martin -p apple -n [Target IP Address]`
+- `enum4linux -u martin -p apple -U [Target IP Address]`
+- `enum4linux -u martin -p apple -o [Target IP Address]`
+- `enum4linux -u martin -p apple -P [Target IP Address]`
+- `enum4linux -u martin -p apple -G [Target IP Address]`
+- `enum4linux -u martin -p apple -S [Target IP Address]`
