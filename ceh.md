@@ -213,4 +213,67 @@ nmap
 
 
 
-## Module 04: Enumeration
+# Module 04: Enumeration
+## Lab 1: Perform NetBIOS Enumeration
+### Task 1: Perform NetBIOS Enumeration using Windows Command-Line Utilities
+- `nbtstat -a`
+- `nbtstat -c`
+### Task 2: Perform NetBIOS Enumeration using NetBIOS Enumerator
+- `NetBIOS Enumerator`
+### Task 3: Perform NetBIOS Enumeration using an NSE Script
+- `nmap -sV --script nbstat.nse  [Target IP Address]`
+- [Global Network Inventory](http://www.magnetosoft.com)
+- [Advanced IP Scanner](https://www.advanced-ip-scanner.com)
+- [Hyena](https://www.systemtools.com)
+- [Nsauditor Network Security Auditor(](https://www.nsauditor.com)
+
+## Lab 2: Perform SNMP Enumeration
+### Task 1: Perform SNMP Enumeration using snmp-check
+- `snmp-check [Target IP Address]`
+### Task 2: Perform SNMP Enumeration using SoftPerfect Network Scanner
+- `SoftPerfect Network Scanner`
+- [Network Performance Monitor](https://www.solarwinds.com)
+- [OpUtils](https://www.manageengine.com)
+- [PRTG Network Monitor](https://www.paessler.com)
+- [Engineer's Toolset](https://www.solarwinds.com)
+### Task 3: Perform SNMP Enumeration using SnmpWalk
+- `snmpwalk -v1 -c public [target IP]`
+- `snmpwalk -v2c -c public [Target IP Address]`
+### Task 4: Perform SNMP Enumeration using Nmap
+- `nmap -sU -p 161 --script=snmp-sysdescr [target IP Address]`
+- `nmap -sU -p 161 --script=snmp-processes [target IP Address]`
+- `nmap -sU -p 161 --script=snmp-win32-software [target IP Address]`
+- `nmap -sU -p 161 --script=snmp-interfaces [target IP Address]`
+
+## Lab 3: Perform LDAP Enumeration
+### Task 1: Perform LDAP Enumeration using Active Directory Explorer (AD Explorer)
+- `Active Directory Explorer`
+- [Softerra LDAP Administrator](https://www.ldapadministrator.com)
+- [LDAP Admin Tool](https://www.ldapsoft.com)
+- [LDAP Account Manager](https://www.ldap-account-manager.org)
+- [LDAP Search](https://securityxploded.com)
+### Task 2: Perform LDAP Enumeration using Python and Nmap
+- `nmap -p 389 --script ldap-brute --script-args ldap.base='"cn=users,dc=CEH,dc=com"' [Target IP Address]`
+- ```python3
+  import ldap3
+  server=ldap3.Server('[Target IP Address]', get_info=ldap3.ALL,port=[Target Port])
+  connection=ldap3.Connection(server)
+  connection.bind()
+  server.info
+  # can gather information such as naming context or domain name
+  connection.search(search_base='DC=CEH,DC=com', search_filter='(&(objectclass=*))', search_scope='SUBTREE', attributes='*')
+  connection.entries
+  # retrieve all the directory objects if result of connection.search is true
+  connection.search(search_base='DC=CEH,DC=com', search_filter='(&(objectclass=person))', search_scope='SUBTREE', attributes='userpassword')
+  connection.entries
+  # dump the entire LDAP information if result of connection.search is true
+  ```
+### Task 3: Perform LDAP Enumeration using ldapsearch
+- `ldapsearch -h [Target IP Address] -x -s base namingcontexts`
+- `ldapsearch -h [Target IP Address] -x -b "DC=CEH,DC=com"`
+- `ldapsearch -x -h [Target IP Address] -b "DC=CEH,DC=com" "objectclass=*"`
+
+## Lab 4: Perform NFS Enumeration
+### Task 1: Perform NFS Enumeration using RPCScan and SuperEnum
+- `./superenum`
+- `python3 rpc-scan.py [Target IP address] --rpc`
