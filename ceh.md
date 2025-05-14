@@ -1,67 +1,80 @@
 ## Module 02: Footprinting and Reconnaissance
 ### Lab 1: Perform Footprinting Through Search Engines
 #### Task 1: Gather Information using Advanced Google Hacking Techniques
+- `intitle:login site:eccouncil.org`
+- `EC-Council filetype:pdf ceh`
 - cache / allinurl /  inurl / allintitle / inanchor / allinanchor / link / related / info / location
 #### Task 2: Gather Information from Video Search Engine
 - https://mattw.io/youtube-metadata/
-- You can use other video search engines such as Google videos (https://www.google.com/videohp)
-- Yahoo videos (https://in.video.search.yahoo.com)
-- video analysis tools such as EZGif (https://ezgif.com), VideoReverser.com (https://www.videoreverser.com)
-- and reverse image search tools such as TinEye Reverse Image Search (https://tineye.com)
-- Yahoo Image Search (https://images.search.yahoo.com)
+- [Google videos](https://www.google.com/videohp)
+- [Yahoo videos](https://in.video.search.yahoo.com)
+- [EZGif](https://ezgif.com)
+- [VideoReverser.com](https://www.videoreverser.com)
+- [TinEye Reverse Image Search](https://tineye.com)
+- [Yahoo Image Search](https://images.search.yahoo.com)
 #### Task 3: Gather Information from FTP Search Engines
-- https://www.searchftps.net/ 
+- https://www.searchftps.net/
+- [FreewareWeb FTP File Search](https://www.freewareweb.com)
 #### Task 4: Gather Information from IoT Search Engines
 - https://www.shodan.io/
+- [Censys](https://censys.io)
 
 ### Lab 2: Perform Footprinting Through Web Services
 #### Task 1: Find the Company's Domains and Sub-domains using Netcraft
 - https://www.netcraft.com
-- https://pentest-tools.com
+- [Sublist3r](https://github.com/aboul3la/Sublist3r)
+- [Pentest-Tools Find Subdomains](https://pentest-tools.com)
 #### Task 2: Gather Personal Information using PeekYou Online People Search Service
 - https://www.peekyou.com
-- https://www.spokeo.com
-- https://pipl.com
-- https://www.intelius.com
-- https://www.beenverified.com
+- [Spokeo](https://www.spokeo.com)
+- [pipl](https://pipl.com)
+- [Intelius](https://www.intelius.com)
+- [BeenVerified](https://www.beenverified.com)
 #### Task 3: Gather an Email List using theHarvester
 - `theHarvester -d microsoft.com -l 200 -b baidu`
 #### Task 4: Gather Information using Deep and Dark Web Searching
-Tor Browser
-- The Hidden Wiki is an onion site that works as a Wikipedia service of hidden websites. (http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki)
-- FakeID is an onion site for creating fake passports (http://ymvhtqya23wqpez63gyc3ke4svju3mqsby2awnhd3bk2e65izt7baqad.onion)
-- Cardshop is an onion site that sells cards with good balances (http://s57divisqlcjtsyutxjz2ww77vlbwpxgodtijcsrgsuts4js5hnxkhqd.onion)
-
-You can also use tools such as ExoneraTor (https://metrics.torproject.org), OnionLand Search engine (https://onionlandsearchengine.com), etc. to perform deep and dark web browsing.
+- `Tor Browser`
+- [The Hidden Wiki](http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki) is an onion site that works as a Wikipedia service of hidden websites.
+- [FakeID](http://ymvhtqya23wqpez63gyc3ke4svju3mqsby2awnhd3bk2e65izt7baqad.onion) is an onion site for creating fake passports
+- [Cardshop](http://s57divisqlcjtsyutxjz2ww77vlbwpxgodtijcsrgsuts4js5hnxkhqd.onion) is an onion site that sells cards with good balances
+- [ExoneraTor](https://metrics.torproject.org)
+- [OnionLand Search engine](https://onionlandsearchengine.com)
 #### Task 5: Determine Target OS Through Passive Footprinting
 - https://search.censys.io
+- [Netcraft](https://www.netcraft.com)
+- [Shodan](https://www.shodan.io)
 
 ### Lab 3: Perform Footprinting Through Social Networking Sites
 #### Task 1: Gather Employees' Information from LinkedIn using theHarvester
 - `theHarvester -d eccouncil -l 200 -b linkedin`
 #### Task 2: Gather Personal Information from Various Social Networking Sites using Sherlock
 - `sherlock "satya nadella"`
-- https://www.social-searcher.com
-- https://github.com/wishihab/userrecon
+- [Social Searcher](https://www.social-searcher.com)
+- [UserRecon](https://github.com/wishihab/userrecon)
 
 ### Lab 4: Perform Website Footprinting
 #### Task 1: Gather Information About a Target Website using Ping Command Line Utility
-- `ping`
+- `ping www.certifiedhacker.com`
+- `ping www.certifiedhacker.com -i 4 -n 1`
 #### Task 2: Gather Information about a Target Website using Photon
 - `python3 photon.py -u http://www.certifiedhacker.com`
+- `python3 photon.py -u http://www.certifiedhacker.com -l 3 -t 200 --wayback`
 #### Task 3: Gather Information About a Target Website using Central Ops
 - https://centralops.net
-- https://website.informer.com
+- [Website Informer](https://website.informer.com)
+- [Burp Suite](https://portswigger.net)
+- [Zaproxy](https://www.zaproxy.org)
 #### Task 4: Extract a Company's Data using Web Data Extractor
 - `Web Data Extractor`
-- https://www.parsehub.com
-- https://www.spiderfoot.net
+- [ParseHub](https://www.parsehub.com)
+- [SpiderFoot](https://www.spiderfoot.net)
 #### Task 5: Mirror a Target Website using HTTrack Web Site Copier
 - `HTTrack Web Site Copier`
-- https://www.cyotek.com
+- [Cyotek WebCopy](https://www.cyotek.com)
 #### Task 6: Gather Information About a Target Website using GRecon
 - `python3 grecon.py`
 #### Task 7: Gather a Wordlist from the Target Website using CeWL
+- `cewl -d 2 -m 5 https://www.certifiedhacker.com`
 - `cewl -w wordlist.txt -d 2 -m 5 https://www.certifiedhacker.com`
 
 ### Lab 5: Perform Email Footprinting
