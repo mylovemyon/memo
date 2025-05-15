@@ -183,6 +183,18 @@ https://tracker.debian.org/pkg/bluez
 - hcidump
 
 
+## bsd-finger
+https://tracker.debian.org/pkg/bsd-finger
+### finger
+- https://packages.debian.org/sid/amd64/finger/filelist
+- https://manpages.debian.org/unstable/finger/index.html
+- finger
+### fingerd
+- https://packages.debian.org/sid/amd64/fingerd/filelist
+- https://manpages.debian.org/unstable/fingerd/index.html
+- in.fingerd
+
+
 ## bubblewrap
 - https://tracker.debian.org/pkg/bubblewrap
 - https://packages.debian.org/sid/amd64/bubblewrap/filelist
@@ -714,16 +726,38 @@ https://tracker.debian.org/pkg/exo
 - file
 
 
-## bsd-finger
-https://tracker.debian.org/pkg/bsd-finger
-### finger
-- https://packages.debian.org/sid/amd64/finger/filelist
-- https://manpages.debian.org/unstable/finger/index.html
-- finger
-### fingerd
-- https://packages.debian.org/sid/amd64/fingerd/filelist
-- https://manpages.debian.org/unstable/fingerd/index.html
-- in.fingerd
+## firefox-esr
+- https://tracker.debian.org/pkg/firefox-esr
+- https://packages.debian.org/sid/amd64/firefox-esr/filelist
+- https://manpages.debian.org/unstable/firefox-esr/index.html
+- firefox / firefox-esr
+
+
+## flac
+- https://tracker.debian.org/pkg/flac
+- https://packages.debian.org/sid/amd64/flac/filelist
+- https://manpages.debian.org/unstable/flac/index.html
+- flac / metaflac
+
+
+## flashrom
+- https://tracker.debian.org/pkg/flashrom
+- https://packages.debian.org/sid/amd64/flashrom/filelist
+- https://manpages.debian.org/unstable/flashrom/index.html
+- flashrom
+
+
+## flex
+- https://tracker.debian.org/pkg/flex
+- https://packages.debian.org/sid/amd64/flex/filelist
+- https://manpages.debian.org/unstable/flex/index.html
+- flex / flex++ / lex
+
+
+
+
+
+
 
 
 
