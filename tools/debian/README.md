@@ -635,6 +635,32 @@ https://tracker.debian.org/pkg/espeak-ng
 - espeak / speak
 
 
+## ethtool
+- https://tracker.debian.org/pkg/ethtool
+- https://packages.debian.org/sid/amd64/ethtool/filelist
+- https://manpages.debian.org/unstable/ethtool/index.html
+- ethtool
+
+
+## ettercap
+- https://tracker.debian.org/pkg/ettercap
+### ettercap-graphical
+- https://packages.debian.org/sid/amd64/ettercap-graphical/filelist
+- https://manpages.debian.org/unstable/ettercap-graphical/index.html
+- ettercap / ettercap-pkexec / etterfilter / etterlog
+
+
+## exfatprogs
+- https://tracker.debian.org/pkg/exfatprogs
+- https://packages.debian.org/sid/amd64/exfatprogs/filelist
+- https://manpages.debian.org/unstable/exfatprogs/index.html
+- dump.exfat / exfat2img / exfatlabel / fsck.exfat / mkfs.exfat / tune.exfat
+
+
+
+
+
+
 ## ffuf
 - https://tracker.debian.org/pkg/ffuf
 - https://packages.debian.org/sid/amd64/ffuf/filelist
