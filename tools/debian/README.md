@@ -602,6 +602,39 @@ https://tracker.debian.org/pkg/e2fsprogs
 - logsave
 
 
+## easy-rsa
+- https://tracker.debian.org/pkg/easy-rsa
+- https://packages.debian.org/sid/all/easy-rsa/filelist
+- https://manpages.debian.org/unstable/easy-rsa/index.html
+- make-cadir
+
+
+## efibootmgr
+- https://tracker.debian.org/pkg/efibootmgr
+- https://packages.debian.org/sid/amd64/efibootmgr/filelist
+- https://manpages.debian.org/unstable/efibootmgr/index.html
+- efibootdump / efibootmgr
+
+
+## engrampa
+- https://tracker.debian.org/pkg/engrampa
+- https://packages.debian.org/sid/amd64/engrampa/filelist
+- https://manpages.debian.org/unstable/engrampa-common/index.html
+- engrampa
+
+
+## espeak-ng
+https://tracker.debian.org/pkg/espeak-ng
+### espeak-ng
+- https://packages.debian.org/sid/amd64/espeak-ng/filelist
+- https://manpages.debian.org/unstable/espeak-ng/index.html
+- espeak-ng / speak-ng
+### espeak-ng-espeak
+- https://packages.debian.org/sid/all/espeak-ng-espeak/filelist
+- https://manpages.debian.org/unstable/espeak-ng-espeak/index.html
+- espeak / speak
+
+
 ## ffuf
 - https://tracker.debian.org/pkg/ffuf
 - https://packages.debian.org/sid/amd64/ffuf/filelist
