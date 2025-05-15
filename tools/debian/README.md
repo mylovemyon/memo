@@ -657,15 +657,54 @@ https://tracker.debian.org/pkg/espeak-ng
 - dump.exfat / exfat2img / exfatlabel / fsck.exfat / mkfs.exfat / tune.exfat
 
 
+## exiv2
+- https://tracker.debian.org/pkg/exiv2
+- https://packages.debian.org/sid/amd64/exiv2/filelist
+- https://manpages.debian.org/unstable/exiv2/index.html
+- exiv2
 
 
+## exo
+https://tracker.debian.org/pkg/exo
+### exo-utils
+- https://packages.debian.org/sid/amd64/exo-utils/filelist
+- https://manpages.debian.org/unstable/exo-utils/index.html
+- exo-desktop-item-edit / exo-open
+
+
+## expect
+- https://tracker.debian.org/pkg/expect
+- https://packages.debian.org/sid/amd64/expect/filelist
+- https://manpages.debian.org/unstable/expect/index.html
+- autoexpect / autopasswd / cryptdir / decryptdir / dislocate / expect / expect_autoexpect / expect_autopasswd / expect_cryptdir / expect_decryptdir / expect_dislocate / expect_kibitz / expect_lpunlock / expect_mkpasswd / expect_multixterm / expect_passmass / expect_rftp / expect_rlogin-cwd / expect_timed-read / expect_timed-run / expect_tknewsbiff / expect_tkpasswd / expect_unbuffer / expect_weather / expect_xkibitz / expect_xpstat / kibitz / lpunlock / multixterm / passmass / rlogin-cwd / timed-read / timed-run / tknewsbiff / tkpasswd / unbuffer / xkibitz / xpstat
+
+
+## fakeroot
+- https://tracker.debian.org/pkg/fakeroot
+- https://packages.debian.org/sid/amd64/fakeroot/filelist
+- https://manpages.debian.org/unstable/fakeroot/index.html
+- faked-sysv / faked-tcp / fakeroot-sysv / fakeroot-tcp
 
 
 ## ffuf
 - https://tracker.debian.org/pkg/ffuf
 - https://packages.debian.org/sid/amd64/ffuf/filelist
-- https://manpages.debian.org/unstable/ffuf/ffuf.1.en.html
+- https://manpages.debian.org/unstable/ffuf/index.html
 - ffuf
+
+
+## fierce
+- https://tracker.debian.org/pkg/fierce
+- https://packages.debian.org/sid/all/fierce/filelist
+- https://manpages.debian.org/unstable/fierce/index.html
+- fierce
+
+
+## figlet
+- https://tracker.debian.org/pkg/figlet
+- https://packages.debian.org/sid/amd64/figlet/filelist
+- https://manpages.debian.org/unstable/figlet/index.html
+- chkfont / figlet-figlet / figlist / showfigfonts
 
 
 ## file
@@ -673,6 +712,21 @@ https://tracker.debian.org/pkg/espeak-ng
 - https://packages.debian.org/sid/amd64/file/filelist
 - https://manpages.debian.org/unstable/file/index.html
 - file
+
+
+## bsd-finger
+https://tracker.debian.org/pkg/bsd-finger
+### finger
+- https://packages.debian.org/sid/amd64/finger/filelist
+- https://manpages.debian.org/unstable/finger/index.html
+- finger
+### fingerd
+- https://packages.debian.org/sid/amd64/fingerd/filelist
+- https://manpages.debian.org/unstable/fingerd/index.html
+- in.fingerd
+
+
+
 
 
 ## git
