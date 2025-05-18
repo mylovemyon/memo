@@ -673,3 +673,15 @@
   macchanger -a eth0
   macchanger -r eth0
   ifconfig eth0 up
+  ```
+
+### Lab 2: Perform Network Sniffing using Various Sniffing Tools
+#### Task 1: Perform Password Sniffing using Wireshark
+- `Wireshark`
+#### Task 2: Analyze a Network using the Omnipeek Network Protocol Analyzer
+- [Omnipeek](https://www.liveaction.com/products/omnipeek-network-protocol-analyzer/)
+#### Task 3: Analyze a Network using the SteelCentral Packet Analyzer
+- [SteelCentral Packet Analyzer](https://www.riverbed.com/trial-downloads)
+
+### Lab 3: Detect Network Sniffing
+#### Task 1: Detect ARP Poisoning and Promiscuous Mode in a Switch-Based Network
