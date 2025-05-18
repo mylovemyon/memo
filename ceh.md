@@ -685,3 +685,7 @@
 
 ### Lab 3: Detect Network Sniffing
 #### Task 1: Detect ARP Poisoning and Promiscuous Mode in a Switch-Based Network
+- `nmap --script=sniffer-detect [Target IP Address/ IP Address Range]`
+#### Task 2: Detect ARP Poisoning using the Capsa Network Analyzer
+- [Colasoft Capsa - ARP poisoning & ARP flooding](https://www.colasoft.com/download/arp_flood_arp_spoofing_arp_poisoning_attack_solution_with_capsa.php)
+- `habu.arp.poison 10.10.1.11 10.10.1.13`
