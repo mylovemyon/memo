@@ -556,7 +556,7 @@
 #### Task 1: Create a Virus using the JPS Virus Maker Tool and Infect the Target System
 - `JPS Virus Maker`
 
-#### Lab 3: Perform Static Malware Analysis
+### Lab 3: Perform Static Malware Analysis
 #### Task 1: Perform Malware Scanning using Hybrid Analysis
 - https://www.hybrid-analysis.com
 - [Valkyrie](https://valkyrie.comodo.com)
@@ -597,3 +597,56 @@
 - [ProcDump](https://docs.microsoft.com)
 
 ### Lab 4: Perform Dynamic Malware Analysis
+#### Task 1: Perform Port Monitoring using TCPView and CurrPorts
+- `Tcpview`
+- `CurrPorts`
+- [Port Monitor](https://www.port-monitor.com)
+- [TCP Port Monitoring](https://www.dotcom-monitor.com)
+- [PortExpert](https://www.kcsoftwares.com)
+#### Task 2: Perform Process Monitoring using Process Monitor
+- `ProcessMonitor`
+- [Process Explorer](https://docs.microsoft.com)
+- [OpManager](https://www.manageengine.com)
+- [Monit](https://mmonit.com)
+- [ESET SysInspector](https://www.eset.com)
+#### Task 3: Perform Registry Monitoring using Reg Organizer
+- `Reg Organizer`
+- [regshot](https://sourceforge.net)
+- [Registry Viewer](https://accessdata.com)
+- [RegScanner](https://www.nirsoft.net)
+- [Registrar Registry Manager](https://www.resplendence.com)
+#### Task 4: Perform Windows Services Monitoring using Windows Service Manager (SrvMan)
+- `Windows Service Manager`
+- [Advanced Windows Service Manager](https://securityxploded.com)
+- [Process Hacker](https://processhacker.sourceforge.io)
+- [Netwrix Service Monitor](https://www.netwrix.com)
+- [AnVir Task Manager](https://www.anvir.com)
+#### Task 5: Perform Startup Program Monitoring using Autoruns for Windows and WinPatrol
+- `Autoruns for Windows`
+- `WinPatrol`
+- [Autorun Organizer](https://www.chemtable.com)
+- [Quick Startup](https://www.glarysoft.com)
+- [Chameleon Startup Manager](https://www.chameleon-managers.com) 
+#### Task 6: Perform Installation Monitoring using Mirekusoft Install Monitor
+- `Mirekusoft Install Monitor`
+- [SysAnalyzer](https://www.aldeid.com)
+- [Advanced Uninstaller PRO](https://www.advanceduninstaller.com)
+- [REVO UNINSTALLER PRO](https://www.revouninstaller.com)
+- [Comodo Programs Manager](https://www.comodo.com)
+#### Task 7: Perform Files and Folder Monitoring using PA File Sight
+- `PA File Sight`
+- [Tripwire File Integrity and Change Manager](https://www.tripwire.com)
+- [Netwrix Auditor](https://www.netwrix.com)
+- [Verisys](https://www.ionx.co.uk)
+- [CSP File Integrity Checker](https://www.cspsecurity.com)
+#### Task 8: Perform Device Driver Monitoring using DriverView and Driver Reviver
+- `DriverView`
+- `Driver Reviver`
+- [Driver Booster](https://www.iobit.com)
+- [Driver Easy](https://www.drivereasy.com)
+- [Driver Fusion](https://treexy.com)
+- [Driver Genius 22](https://www.driver-soft.com)
+#### Task 9: Perform DNS Monitoring using DNSQuerySniffer
+- `DNSQuerySniffer`
+- [DNSstuff](https://www.dnsstuff.com)
+- [Sonar Lite](https://constellix.com) 
