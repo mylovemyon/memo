@@ -54,8 +54,7 @@
 
 ### Lab 4: Perform Website Footprinting
 #### Task 1: Gather Information About a Target Website using Ping Command Line Utility
-- `ping www.certifiedhacker.com`
-- `ping www.certifiedhacker.com -i 4 -n 1`
+- `ping`
 #### Task 2: Gather Information about a Target Website using Photon
 - `python3 photon.py -u http://www.certifiedhacker.com`
 - `python3 photon.py -u http://www.certifiedhacker.com -l 3 -t 200 --wayback`
@@ -91,13 +90,7 @@
 
 ### Lab 7: Perform DNS Footprinting
 #### Task 1: Gather DNS Information using nslookup Command Line Utility and Online Tool
-- ```cmd
-  nslookup
-  > set type=a
-  > www.certifiedhacker.com
-  > set type=cname
-  > certifiedhacker.com
-  ```
+- `nslookup`
 - http://www.kloth.net/services/nslookup.php
 - [DNSdumpster](https://dnsdumpster.com)
 - [DNS Records](https://network-tools.com)
@@ -113,19 +106,14 @@
 #### Task 1: Locate the Network Range
 - https://www.arin.net/about/welcome/region
 #### Task 2: Perform Network Tracerouting in Windows and Linux Machines
-- ```cmd
-  tracert www.certifiedhacker.com
-  tracert -h 5 www.certifiedhacker.com
-  ```
-  ```sh
-  traceroute www.certifiedhacker.com
-  ```
+- `tracert`
+- `traceroute`
 - [VisualRoute](http://www.visualroute.com)
 - [Traceroute NG](https://www.solarwinds.com)
 
 ### Lab 9: Perform Footprinting using Various Footprinting Tools
 #### Task 1: Footprinting a Target using Recon-ng
-- `recon-ng`(`recon/domains-hosts/brute_hosts`,`recon/hosts-hosts/reverse_resolve`,`recon/domains-contacts/whois_pocs`,`recon/domains-hosts/hackertarget`,`reporting/html`)
+- `recon-ng`
 #### Task 2: Footprinting a Target using Maltego
 - `Maltego`
 #### Task 3: Footprinting a Target using OSRFramework
@@ -706,3 +694,27 @@
 ### Lab 3: Audit Organization's Security for Phishing Attacks
 #### Task 1: Audit Organization's Security for Phishing Attacks using OhPhish
 - `OhPhish`
+
+
+
+## Module 10: Denial-of-Service
+### Lab 1: Perform DoS and DDoS Attacks using Various Techniques
+#### Tasks 1: Perform a DoS Attack (SYN Flooding) on a Target Host using Metasploit
+- `auxiliary/dos/tcp/synflood`
+#### Task 2: Perform a DoS Attack on a Target Host using hping3
+- `hping3 -S (Target IP Address) -a (Spoofable IP Address) -p 22 --flood`
+- `hping3 -d 65538 -S -p 21 --flood (Target IP Address)`
+- `hping3 -2 -p 139 --flood (Target IP Address)`
+#### Task 3: Perform a DoS Attack using Raven-storm
+- `sudo rst`
+#### Task 4: Perform a DDoS Attack using HOIC
+- `HOIC`
+#### Task 5: Perform a DDoS Attack using LOIC
+- `LOIC`
+
+### Lab 2: Detect and Protect Against DoS and DDoS Attacks
+#### Task 1: Detect and Protect Against DDoS Attacks using Anti DDoS Guardian
+- `Anti DDoS Guardian`
+- [DOSarrest's DDoS protection service](https://www.dosarrest.com)
+- [DDoS-GUARD](https://ddos-guard.net)
+- [Cloudflare](https://www.cloudflare.com)
