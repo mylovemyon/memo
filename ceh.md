@@ -540,3 +540,60 @@
 - [Privacy Eraser](https://www.cybertronsoft.com)
 - [Wipe](https://privacyroot.com)
 - [BleachBit](https://www.bleachbit.org)
+
+
+
+## Module 07: Malware Threats
+### Lab 1: Gain Access to the Target System using Trojans
+#### Task 1: Gain Control over a Victim Machine using the njRAT RAT Trojan
+- `njRAT`
+#### Task 2: Hide a Trojan using SwayzCryptor and Make it Undetectable to Various Anti-Virus Programs
+- `SwayzCryptor`
+#### Task 3: Create a Trojan Server using Theef RAT Trojan
+- `Theef`
+
+### Lab 2: Infect the Target System using a Virus
+#### Task 1: Create a Virus using the JPS Virus Maker Tool and Infect the Target System
+- `JPS Virus Maker`
+
+#### Lab 3: Perform Static Malware Analysis
+#### Task 1: Perform Malware Scanning using Hybrid Analysis
+- https://www.hybrid-analysis.com
+- [Valkyrie](https://valkyrie.comodo.com)
+- [Cuckoo Sandbox](https://cuckoosandbox.org)
+- [Jotti](https://virusscan.jotti.org)
+- [IObit Cloud](https://cloud.iobit.com)
+#### Task 2: Perform a Strings Search using BinText
+- `BinText`
+- [FLOSS](https://www.fireeye.com)
+- [Strings](https://docs.microsoft.com)
+- [Free EXE DLL Resource Extract](https://www.resourceextract.com)
+- [FileSeek](https://www.fileseek.ca)
+#### Task 3: Identify Packaging and Obfuscation Methods using PEid
+- `PEid`
+#### Task 4: Analyze ELF Executable File using Detect It Easy (DIE)
+- `Detect It Easy`
+- [Macro_Pack](https://github.com/sevagas/macro_pack)
+- [UPX](https://upx.github.io)
+- [ASPack](http://www.aspack.com)
+#### Task 5: Find the Portable Executable (PE) Information of a Malware Executable File using PE Explorer
+- `PE Explorer`
+- [Portable Executable Scanner (pescan)](https://tzworks.net)
+- [Resource Hacker](http://www.angusj.com)
+- [PEView](https://www.aldeid.com)
+#### Task 6: Identify File Dependencies using Dependency Walker
+- `Dependency Walker`
+- [Dependency-check](https://jeremylong.github.io)
+- [Snyk](https://snyk.io)
+- [RetireJS](https://retirejs.github.io)
+#### Task 7: Perform Malware Disassembly using IDA and OllyDbg
+- `IDA`
+- `qwingraph.exe`
+- `OllyDbg`
+#### Task 8: Perform Malware Disassembly using Ghidra
+- `Ghidra`
+- [Radare2](https://rada.re)
+- [WinDbg](http://www.windbg.org)
+- [ProcDump](https://docs.microsoft.com)
+
+### Lab 4: Perform Dynamic Malware Analysis
