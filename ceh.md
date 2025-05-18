@@ -689,3 +689,20 @@
 #### Task 2: Detect ARP Poisoning using the Capsa Network Analyzer
 - [Colasoft Capsa - ARP poisoning & ARP flooding](https://www.colasoft.com/download/arp_flood_arp_spoofing_arp_poisoning_attack_solution_with_capsa.php)
 - `habu.arp.poison 10.10.1.11 10.10.1.13`
+
+
+
+## Module 09: Social Engineering
+### Lab 1: Perform Social Engineering using Various Techniques
+#### Task 1: Sniff Credentials using the Social-Engineer Toolkit (SET)
+- `./setoolkit `
+
+### Lab 2: Detect a Phishing Attack
+#### Task 1: Detect Phishing using Netcraft
+- https://www.netcraft.com/apps-extensions/browser-extension/
+#### Task 2: Detect Phishing using PhishTank
+- https://www.phishtank.com
+
+### Lab 3: Audit Organization's Security for Phishing Attacks
+#### Task 1: Audit Organization's Security for Phishing Attacks using OhPhish
+- `OhPhish`
