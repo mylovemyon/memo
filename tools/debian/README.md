@@ -754,7 +754,11 @@ https://tracker.debian.org/pkg/exo
 - flex / flex++ / lex
 
 
-
+## fontconfig
+- https://tracker.debian.org/pkg/fontconfig
+- https://packages.debian.org/sid/amd64/fontconfig/filelist
+- https://manpages.debian.org/unstable/fontconfig/index.html
+- fc-cache / fc-cat / fc-conflist / fc-list / fc-match / fc-pattern / fc-query / fc-scan / fc-validate
 
 
 
