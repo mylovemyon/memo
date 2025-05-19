@@ -49,6 +49,7 @@ dirb c 400
 dirsearch python 13K
 nikto perl 9K
 ```
+- GoFullPage - Full Page Screen Capture
 
 - https://www.intellilink.co.jp/article/column/ctf01.html
 - https://blog.devgenius.io/understanding-the-stack-a-precursor-to-exploiting-buffer-overflow-8c6972fdb4ac
