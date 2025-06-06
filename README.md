@@ -23,6 +23,8 @@
   - whoami
 - commix
 - jar
+- john
+  - ssh2john
 - nishang
 - potato
 - pspy
