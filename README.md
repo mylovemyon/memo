@@ -5,6 +5,7 @@
   - msfvenom
 - seclists
 
+https://www.hyhforever.top/  
 https://pkg.kali.org/  
 https://tracker.debian.org/  
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/#spawn-tty-shell
