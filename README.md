@@ -1,8 +1,3 @@
-- gnu
-- metasploit
-  - meterpreter
-  - msfconsole
-  - msfvenom
 - seclists
 
 https://www.hyhforever.top/  
