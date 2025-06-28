@@ -1,47 +1,16 @@
-- debian
 - gnu
-- impacket
-  - psexec / smbserver
 - metasploit
   - meterpreter
   - msfconsole
   - msfvenom
-- nmap
-  - ncat / ncrack / ndiff / nmap / nping
-- peas
-  - winpeas
-- python
-  - uv
-- windows
-  - certutil
-  - dir
-  - fc
-  - secedit
-  - systeminfo
-  - type
-  - where
-  - whoami
-- commix
-- jar
-- john
-  - ssh2john
-- nishang
-- potato
-- pspy
-- rustscan
-- searchsploit
 - seclists
-- tshark
-- watson
-- wes
-- wfuzz
-- init-system-helpers
-- 
 
 https://pkg.kali.org/  
+https://tracker.debian.org/  
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/#spawn-tty-shell
-
-
+### windowsコマンド
+https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands
+### web列挙
 ```
 gobuster go 11.5K
 ffuf go 14K
