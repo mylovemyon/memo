@@ -1,11 +1,15 @@
 - seclists
 
-https://www.hyhforever.top/  
-https://pkg.kali.org/  
-https://tracker.debian.org/  
-https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/#spawn-tty-shell
+### Link
+- https://github.com/hdks-bug/exploit-notes
+https://github.com/swisskyrepo/InternalAllTheThings
+
+### HackTheBox-writeup
+- https://www.hyhforever.top/
+
 ### windowsコマンド
 https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands
+
 ### web列挙
 ```
 gobuster go 11.5K
@@ -16,8 +20,10 @@ dirb c 400
 dirsearch python 13K
 nikto perl 9K
 ```
+
+### ブラウザ拡張機能
 - GoFullPage - Full Page Screen Capture
 
-- https://www.intellilink.co.jp/article/column/ctf01.html
-- https://blog.devgenius.io/understanding-the-stack-a-precursor-to-exploiting-buffer-overflow-8c6972fdb4ac
-- https://note.com/nekotricolor/n/n2a247c808275
+### Package
+- https://tracker.debian.org/  
+- https://pkg.kali.org/
