@@ -1,8 +1,10 @@
 - seclists
 
 ### Link
+- https://github.com/GTFOBins/GTFOBins.github.io
 - https://github.com/hdks-bug/exploit-notes
-https://github.com/swisskyrepo/InternalAllTheThings
+- https://github.com/swisskyrepo/InternalAllTheThings
+- https://morgan-bin-bash.gitbook.io/linux-privilege-escalation
 
 ### HackTheBox-writeup
 - https://www.hyhforever.top/
