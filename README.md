@@ -5,6 +5,7 @@
 - https://github.com/hdks-bug/exploit-notes
 - https://github.com/swisskyrepo/InternalAllTheThings
 - https://github.com/swisskyrepo/PayloadsAllTheThings
+- https://book.hacktricks.wiki/en/index.html
 - https://morgan-bin-bash.gitbook.io/linux-privilege-escalation
 
 ### organization
