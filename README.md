@@ -4,6 +4,7 @@
 - https://github.com/GTFOBins/GTFOBins.github.io
 - https://github.com/hdks-bug/exploit-notes
 - https://github.com/swisskyrepo/InternalAllTheThings
+- https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://morgan-bin-bash.gitbook.io/linux-privilege-escalation
 
 ### HackTheBox-writeup
