@@ -7,6 +7,7 @@
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://book.hacktricks.wiki/en/index.html
 - https://morgan-bin-bash.gitbook.io/linux-privilege-escalation
+- https://www.revshells.com/
 
 ### organization
 - https://cwe.mitre.org/data/published/cwe_latest.pdf
