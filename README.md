@@ -6,11 +6,17 @@
 - https://github.com/swisskyrepo/InternalAllTheThings
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://book.hacktricks.wiki/en/index.html
+- https://hideandsec.sh/books
 - https://morgan-bin-bash.gitbook.io/linux-privilege-escalation
+- https://www.hackingarticles.in/
 - https://www.revshells.com/
 
 ### AD
+- https://github.com/drak3hft7/Cheat-Sheet---Active-Directory
+- https://github.com/Integration-IT/Active-Directory-Exploitation-Cheat-Sheet
+- https://github.com/Orange-Cyberdefense/GOAD
 - https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet
+- https://github.com/WADComs/WADComs.github.io
 
 ### windowsコマンド
 - https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands
