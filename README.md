@@ -9,14 +9,18 @@
 - https://morgan-bin-bash.gitbook.io/linux-privilege-escalation
 - https://www.revshells.com/
 
-### organization
+### AD
+- https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet
+
+### windowsコマンド
+- https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands
+
+### mitre
 - https://cwe.mitre.org/data/published/cwe_latest.pdf
 
 ### HackTheBox-writeup
 - https://www.hyhforever.top/
 
-### windowsコマンド
-https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands
 
 ### web列挙
 ```
