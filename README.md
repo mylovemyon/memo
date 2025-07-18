@@ -10,7 +10,8 @@
 - https://morgan-bin-bash.gitbook.io/linux-privilege-escalation
 - https://www.hackingarticles.in/
 - https://www.revshells.com/
-
+- https://infra.newerasec.com/
+- 
 ### AD
 - https://github.com/drak3hft7/Cheat-Sheet---Active-Directory
 - https://github.com/Integration-IT/Active-Directory-Exploitation-Cheat-Sheet
