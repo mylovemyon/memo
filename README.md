@@ -3,6 +3,8 @@
 ### Link
 - https://github.com/GTFOBins/GTFOBins.github.io
 - https://github.com/hdks-bug/exploit-notes
+- https://github.com/SecWiki/windows-kernel-exploits
+- https://github.com/abatchy17/WindowsExploits
 - https://github.com/swisskyrepo/InternalAllTheThings
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://book.hacktricks.wiki/en/index.html
