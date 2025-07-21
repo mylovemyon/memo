@@ -13,6 +13,7 @@
 - https://www.hackingarticles.in/
 - https://www.revshells.com/
 - https://infra.newerasec.com/
+- https://kashz.gitbook.io/kashz-jewels
 - 
 ### AD
 - https://github.com/drak3hft7/Cheat-Sheet---Active-Directory
