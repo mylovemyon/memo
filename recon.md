@@ -8,14 +8,18 @@
 ## 445
 netexec(rpcを使用するためTCP135番も使う)
 ```sh
-`netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --disks`
-`netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --interfaces`
-`netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --local-group`
-`netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --loggedon-users`
-`netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --pass-pol`
-`netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --rid-brute`
-`netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --shares`
-`netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --users`
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --disks
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --interfaces
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --local-group
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --loggedon-users
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --pass-pol
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --rid-brute
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --shares
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --users
+
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -H 'NTHASH'
+
+netexec smb 'IP' -u USERNAMELIST -p PASSWORDLIST
 ```
 
 smbclient
@@ -26,13 +30,13 @@ smbclient -U 'DOMAIN'/'USERNAME'%'NT HASH' --pw-nt-hash -c 'COMMAND' //'HOST'/'S
 
 smbmap
 ```sh
-`smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -g smbmap.txt`
-`smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH' -g smbmap.txt`
+smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -g smbmap.txt
+smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH' -g smbmap.txt
 ```
 
 
 ## credentials
-```
+```sh
 └─$ find /usr/share/seclists/Usernames -type f -exec wc -l {} +
     1000 /usr/share/seclists/Usernames/Names/malenames-usa-top1000.txt
     1000 /usr/share/seclists/Usernames/Names/familynames-usa-top1000.txt
@@ -49,24 +53,7 @@ smbmap
  8295455 /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt
       10 /usr/share/seclists/Usernames/mssql-usernames-nansh0u-guardicore.txt
 
-└─$ find /usr/share/seclists/Usernames -type f -exec wc -l {} +
-    1000 /usr/share/seclists/Usernames/Names/malenames-usa-top1000.txt
-    1000 /usr/share/seclists/Usernames/Names/familynames-usa-top1000.txt
-    1000 /usr/share/seclists/Usernames/Names/femalenames-usa-top1000.txt
-   10177 /usr/share/seclists/Usernames/Names/names.txt
-    1000 /usr/share/seclists/Usernames/Names/forenames-india-top1000.txt
-  624370 /usr/share/seclists/Usernames/xato-net-10-million-usernames-dup.txt
-     828 /usr/share/seclists/Usernames/cirt-default-usernames.txt
-       1 /usr/share/seclists/Usernames/README.md
-     113 /usr/share/seclists/Usernames/CommonAdminBase64.txt
-      17 /usr/share/seclists/Usernames/top-usernames-shortlist.txt
-   26324 /usr/share/seclists/Usernames/Honeypot-Captures/multiplesources-users-fabian-fingerle.de.txt
-      23 /usr/share/seclists/Usernames/sap-default-usernames.txt
- 8295455 /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt
-      10 /usr/share/seclists/Usernames/mssql-usernames-nansh0u-guardicore.txt
- 8961318 total
                                                                                                                                                                                                                                             
-┌──(kali㉿kali)-[~]
 └─$ find /usr/share/seclists/Passwords -type f -exec wc -l {} + 
    103979 /usr/share/seclists/Passwords/scraped-JWT-secrets.txt
   5189454 /usr/share/seclists/Passwords/xato-net-10-million-passwords.txt
