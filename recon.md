@@ -44,8 +44,8 @@ netexec smb 'IP' -u 'COMPUTERACCOUNT$' -H 'NTHASH' --delegate 'ADMINISTRAOR' --s
 
 smbclient
 ```sh
-smbclient -L 'HOST' -U 'DOMAIN'/'USERNAME'%'PASSWORD'
-smbclient -U 'DOMAIN'/'USERNAME'%'NT HASH' --pw-nt-hash -c 'COMMAND' //'HOST'/'SHARE'
+smbclient -L 'HOST' -U 'DOMAIN/USERNAME%PASSWORD'
+smbclient -U 'DOMAIN/USERNAME%NT HASH' --pw-nt-hash -c 'COMMAND' '//HOST/SHARE'
 ```
 
 smbmap
