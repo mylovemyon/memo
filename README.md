@@ -21,6 +21,7 @@
 - https://github.com/Orange-Cyberdefense/GOAD
 - https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet
 - https://github.com/WADComs/WADComs.github.io
+- https://www.thehacker.recipes/
 
 ### windowsコマンド
 - https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands
