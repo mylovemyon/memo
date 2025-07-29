@@ -1,5 +1,5 @@
 ## 0
-- `rustsvan -a 0.0.0.0 --scripts none`
+- `rustsvan -a 'IP' --no-banner --scripts none`
 - `nmap -n -Pn -p- -sV 0.0.0.0 `
 
 
