@@ -875,4 +875,8 @@ https://github.com/kavika13/RemCom
      9608 /usr/share/seclists/Passwords/Keyboard-Walks/Keyboard-Combinations.txt
    279616 /usr/share/seclists/Passwords/Keyboard-Walks/walk-the-line.txt
      6240 /usr/share/seclists/Passwords/days.txt
-```s
+```
+
+### bloodhound
+admin
+bloodhounD1!
