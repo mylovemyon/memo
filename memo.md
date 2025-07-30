@@ -155,6 +155,7 @@ evil-winrm -i 'IP' -u 'USERNAME' -p 'PASSWORD'
 ## escalation
 ### windows
 #### winpeas
+32bit or 64bit のバージョンに注意
 ```bat
 .\winPEASx64.exe userinfo quiet
 ```
