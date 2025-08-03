@@ -186,6 +186,7 @@ impacket-smbserver -smb2support 'SHARENAME' 'PATH'
 - https://kashz.gitbook.io/kashz-jewels
 - https://morgan-bin-bash.gitbook.io/pentesting/
 - https://www.hackingarticles.in/
+- https://www.thehacker.recipes/
 - https://www.revshells.com/
 - a
 - https://github.com/kavika13/RemCom
