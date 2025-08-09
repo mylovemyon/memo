@@ -4,6 +4,15 @@
 
 
 
+## 80
+### ffuf
+```sh
+ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u http://IP/FUZZ
+ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://IP/FUZZ
+```
+
+
+
 ## 88
 ### impacket
 ```sh
@@ -163,6 +172,11 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 32bit or 64bit のバージョンに注意
 ```bat
 .\winPEASx64.exe userinfo quiet
+```
+### Linux
+#### pspy
+```sh
+./pspy64
 ```
 
 
