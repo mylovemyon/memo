@@ -552,4 +552,667 @@ You are NOT inside a container
 ```
 
 
-##
+## eventsinfo
+イベントログを大量に出力するのでだいぶノイズ
+```sh
+*Evil-WinRM* PS C:\Users\Administrator\Documents> .\winPEASx64.exe quiet eventsinfo
+ [!] If you want to run the file analysis checks (search sensitive information in files), you need to specify the 'fileanalysis' or 'all' argument. Note that this search might take several minutes. For help, run winpeass.exe --help
+ANSI color bit for Windows is not set. If you are executing this from a Windows terminal inside the host you should run 'REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+Long paths are disabled, so the maximum length of a path supported is 260 chars (this may cause false negatives when looking for files). If you are admin, you can enable it with 'REG ADD HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+  WinPEAS-ng by @hacktricks_live
+
+       /---------------------------------------------------------------------------------\                                                                                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |         Learn Cloud Hacking       :     training.hacktricks.xyz                 |                                                                                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |                                 Thank you!                                      |                                                                                                                                                  
+       \---------------------------------------------------------------------------------/                                                                                                                                                  
+                                                                                                                                                                                                                                            
+  [+] Legend:
+         Red                Indicates a special privilege over an object or something is misconfigured
+         Green              Indicates that some protection is enabled or something is well configured
+         Cyan               Indicates active users
+         Blue               Indicates disabled users
+         LightYellow        Indicates links
+
+ You can find a Windows local PE Checklist here: https://book.hacktricks.wiki/en/windows-hardening/checklist-windows-privilege-escalation.html
+   Creating Dynamic lists, this could take a while, please wait...                                                                                                                                                                          
+   - Loading sensitive_files yaml definitions file...
+   - Loading regexes yaml definitions file...
+   - Checking if domain...
+   - Getting Win32_UserAccount info...
+   - Creating current user groups list...
+   - Creating active users list (local only)...
+   - Creating disabled users list...
+   - Admin users list...
+   - Creating AppLocker bypass list...
+   - Creating files/directories list for search...
+        [skipped, file search is disabled]
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Interesting Events information ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Printing Explicit Credential Events (4648) for last 30 days - A process logged on using plaintext credentials
+                                                                                                                                                                                                                                            
+  Subject User       :         SAUNA$
+  Subject Domain     :         EGOTISTICALBANK                                                                                                                                                                                              
+  Created (UTC)      :         8/9/2025 11:44:55 AM                                                                                                                                                                                         
+  IP Address         :         -                                                                                                                                                                                                            
+  Process            :         C:\Program Files\VMware\VMware Tools\vmtoolsd.exe                                                                                                                                                            
+  Target User        :         Administrator                                                                                                                                                                                                
+  Target Domain      :         EGOTISTICALBANK                                                                                                                                                                                              
+                                                                                                                                                                                                                                            
+   =================================================================================================
+
+省略
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Printing Account Logon Events (4624) for the last 10 days.
+                                                                                                                                                                                                                                            
+  Subject User Name            :       -
+  Subject Domain Name          :       -                                                                                                                                                                                                    
+  Created (Utc)                :       8/9/2025 2:36:33 PM                                                                                                                                                                                  
+  IP Address                   :       -                                                                                                                                                                                                    
+  Authentication Package       :       NTLM                                                                                                                                                                                                 
+  Lm Package                   :       NTLM V2                                                                                                                                                                                              
+  Logon Type                   :       Network                                                                                                                                                                                              
+  Target User Name             :       Administrator                                                                                                                                                                                        
+  Target Domain Name           :       EGOTISTICALBANK                                                                                                                                                                                      
+  Target Outbound User Name    :       -                                                                                                                                                                                                    
+  Target Outbound Domain Name  :       -                                                                                                                                                                                                    
+                                                                                                                                                                                                                                            
+   =================================================================================================
+
+省略
+
+  NTLM relay might be possible - other users authenticate to this machine using NTLM!
+
+  Accounts authenticate to this machine using NTLM v2!                                                                                                                                                                                      
+  You can obtain NetNTLMv2 for these accounts by sniffing NTLM challenge/responses.
+  You can then try and crack their passwords.
+                                                                                                                                                                                                                                            
+    EGOTISTICALBANK\Administrator
+    EGOTISTICALBANK\FSmith
+    EGOTISTICALBANK\svc_loanmgr
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Process creation events - searching logs (EID 4688) for sensitive data.
+                                                                                                                                                                                                                                            
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ PowerShell events - script block logs (EID 4104) - searching for sensitive data.
+                                                                                                                                                                                                                                            
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Displaying Power off/on events for last 5 days
+                                                                                                                                                                                                                                            
+  8/9/2025 4:43:27 AM     :  Startup
+
+       /---------------------------------------------------------------------------------\                                                                                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |         Learn Cloud Hacking       :     training.hacktricks.xyz                 |                                                                                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |                                 Thank you!                                      |                                                                                                                                                  
+       \---------------------------------------------------------------------------------/    
+```
+
+
+## userinfo
+```sh
+*Evil-WinRM* PS C:\Users\Administrator\Documents> .\winPEASx64.exe quiet userinfo
+ [!] If you want to run the file analysis checks (search sensitive information in files), you need to specify the 'fileanalysis' or 'all' argument. Note that this search might take several minutes. For help, run winpeass.exe --help
+ANSI color bit for Windows is not set. If you are executing this from a Windows terminal inside the host you should run 'REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+Long paths are disabled, so the maximum length of a path supported is 260 chars (this may cause false negatives when looking for files). If you are admin, you can enable it with 'REG ADD HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+  WinPEAS-ng by @hacktricks_live
+
+       /---------------------------------------------------------------------------------\                                                                                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |         Learn Cloud Hacking       :     training.hacktricks.xyz                 |                                                                                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |                                 Thank you!                                      |                                                                                                                                                  
+       \---------------------------------------------------------------------------------/                                                                                                                                                  
+                                                                                                                                                                                                                                            
+  [+] Legend:
+         Red                Indicates a special privilege over an object or something is misconfigured
+         Green              Indicates that some protection is enabled or something is well configured
+         Cyan               Indicates active users
+         Blue               Indicates disabled users
+         LightYellow        Indicates links
+
+ You can find a Windows local PE Checklist here: https://book.hacktricks.wiki/en/windows-hardening/checklist-windows-privilege-escalation.html
+   Creating Dynamic lists, this could take a while, please wait...                                                                                                                                                                          
+   - Loading sensitive_files yaml definitions file...
+   - Loading regexes yaml definitions file...
+   - Checking if domain...
+   - Getting Win32_UserAccount info...
+   - Creating current user groups list...
+   - Creating active users list (local only)...
+   - Creating disabled users list...
+   - Admin users list...
+   - Creating AppLocker bypass list...
+   - Creating files/directories list for search...
+        [skipped, file search is disabled]
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Users Information ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Users
+È Check if you have some admin equivalent privileges https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#users--groups
+  Current user: Administrator
+  Current groups: Domain Users, Everyone, Administrators, Users, Builtin\Pre-Windows 2000 Compatible Access, Network, Authenticated Users, This Organization, Group Policy Creator Owners, Domain Admins, Schema Admins, Enterprise Admins, Denied RODC Password Replication Group, NTLM Authentication
+   =================================================================================================
+
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Current User Idle Time
+   Current User   :     EGOTISTICALBANK\Administrator
+   Idle Time      :     02h:52m:01s:234ms
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Display Tenant information (DsRegCmd.exe /status)
+   Tenant is NOT Azure AD Joined.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Current Token privileges
+È Check if you can escalate privilege using some enabled token https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#token-manipulation
+    SeIncreaseQuotaPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeMachineAccountPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeSecurityPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeTakeOwnershipPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeLoadDriverPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeSystemProfilePrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeSystemtimePrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeProfileSingleProcessPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeIncreaseBasePriorityPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeCreatePagefilePrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeBackupPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeRestorePrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeShutdownPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeDebugPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeSystemEnvironmentPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeChangeNotifyPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeRemoteShutdownPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeUndockPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeEnableDelegationPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeManageVolumePrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeImpersonatePrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeCreateGlobalPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeIncreaseWorkingSetPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeTimeZonePrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeCreateSymbolicLinkPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeDelegateSessionUserImpersonatePrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Clipboard text
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Logged users
+    EGOTISTICALBANK\Administrator
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Display information about local users
+   Computer Name           :   SAUNA
+   User Name               :   Administrator
+   User Id                 :   500
+   Is Enabled              :   True
+   User Type               :   Administrator
+   Comment                 :   Built-in account for administering the computer/domain
+   Last Logon              :   8/9/2025 4:44:55 AM
+   Logons Count            :   133
+   Password Last Set       :   7/26/2021 9:16:16 AM
+
+   =================================================================================================
+
+   Computer Name           :   SAUNA
+   User Name               :   Guest
+   User Id                 :   501
+   Is Enabled              :   False
+   User Type               :   Guest
+   Comment                 :   Built-in account for guest access to the computer/domain
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   1/1/1970 12:00:00 AM
+
+   =================================================================================================
+
+   Computer Name           :   SAUNA
+   User Name               :   krbtgt
+   User Id                 :   502
+   Is Enabled              :   False
+   User Type               :   User
+   Comment                 :   Key Distribution Center Service Account
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   1/22/2020 10:45:30 PM
+
+   =================================================================================================
+
+   Computer Name           :   SAUNA
+   User Name               :   HSmith
+   User Id                 :   1103
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   1/22/2020 10:54:34 PM
+
+   =================================================================================================
+
+   Computer Name           :   SAUNA
+   User Name               :   FSmith
+   User Id                 :   1105
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/24/2020 3:27:55 PM
+   Logons Count            :   8
+   Password Last Set       :   1/23/2020 9:45:19 AM
+
+   =================================================================================================
+
+   Computer Name           :   SAUNA
+   User Name               :   svc_loanmgr
+   User Id                 :   1108
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   1/24/2020 4:48:31 PM
+
+   =================================================================================================
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ RDP Sessions
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Ever logged users
+    EGOTISTICALBANK\Administrator
+    EGOTISTICALBANK\svc_loanmgr
+    EGOTISTICALBANK\FSmith
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Home folders found
+    C:\Users\Administrator : Administrators [Allow: AllAccess], Administrator [Allow: AllAccess]
+    C:\Users\All Users : Administrators [Allow: AllAccess]
+    C:\Users\Default : Administrators [Allow: AllAccess]
+    C:\Users\Default User : Administrators [Allow: AllAccess]
+    C:\Users\FSmith : Administrators [Allow: AllAccess]
+    C:\Users\Public : Administrators [Allow: AllAccess]
+    C:\Users\svc_loanmgr : Administrators [Allow: AllAccess]
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for AutoLogon credentials
+    Some AutoLogon credentials were found
+    DefaultDomainName             :  EGOTISTICALBANK
+    DefaultUserName               :  EGOTISTICALBANK\svc_loanmanager
+    DefaultPassword               :  Moneymakestheworldgoround!
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Password Policies
+È Check for a possible brute-force 
+    Domain: Builtin
+    SID: S-1-5-32
+    MaxPasswordAge: 42.22:47:31.7437440
+    MinPasswordAge: 00:00:00
+    MinPasswordLength: 0
+    PasswordHistoryLength: 0
+    PasswordProperties: 0
+   =================================================================================================
+
+    Domain: EGOTISTICALBANK
+    SID: S-1-5-21-2966785786-3096785034-1186376766
+    MaxPasswordAge: 42.00:00:00
+    MinPasswordAge: 1.00:00:00
+    MinPasswordLength: 7
+    PasswordHistoryLength: 24
+    PasswordProperties: DOMAIN_PASSWORD_COMPLEX
+   =================================================================================================
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Print Logon Sessions
+    Method:                       LSA
+    Logon Server:                 SAUNA
+    Logon Server Dns Domain:      EGOTISTICAL-BANK.LOCAL
+    Logon Id:                     5613909
+    Logon Time:                   8/9/2025 2:35:10 PM
+    Logon Type:                   Network
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       NTLM
+    Start Time:
+    User Name:                    Administrator
+    User Principal Name:          Administrator@EGOTISTICAL-BANK.LOCAL
+    User SID:                     S-1-5-21-2966785786-3096785034-1186376766-500
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:                 SAUNA
+    Logon Server Dns Domain:      EGOTISTICAL-BANK.LOCAL
+    Logon Id:                     3395198
+    Logon Time:                   8/9/2025 1:45:01 PM
+    Logon Type:                   Network
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       NTLM
+    Start Time:
+    User Name:                    FSmith
+    User Principal Name:          FSmith@EGOTISTICAL-BANK.LOCAL
+    User SID:                     S-1-5-21-2966785786-3096785034-1186376766-1105
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:      EGOTISTICAL-BANK.LOCAL
+    Logon Id:                     247002
+    Logon Time:                   8/9/2025 11:44:16 AM
+    Logon Type:                   Network
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       Kerberos
+    Start Time:
+    User Name:                    SAUNA$
+    User Principal Name:
+    User SID:                     S-1-5-18
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:      EGOTISTICAL-BANK.LOCAL
+    Logon Id:                     246882
+    Logon Time:                   8/9/2025 11:44:16 AM
+    Logon Type:                   Network
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       Kerberos
+    Start Time:
+    User Name:                    SAUNA$
+    User Principal Name:
+    User SID:                     S-1-5-18
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:      EGOTISTICAL-BANK.LOCAL
+    Logon Id:                     246627
+    Logon Time:                   8/9/2025 11:44:16 AM
+    Logon Type:                   Network
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       Kerberos
+    Start Time:
+    User Name:                    SAUNA$
+    User Principal Name:
+    User SID:                     S-1-5-18
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:      EGOTISTICAL-BANK.LOCAL
+    Logon Id:                     246460
+    Logon Time:                   8/9/2025 11:44:16 AM
+    Logon Type:                   Network
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       Kerberos
+    Start Time:
+    User Name:                    SAUNA$
+    User Principal Name:
+    User SID:                     S-1-5-18
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:
+    Logon Id:                     68298
+    Logon Time:                   8/9/2025 11:43:36 AM
+    Logon Type:                   Interactive
+    Start Time:
+    Domain:                       Window Manager
+    Authentication Package:       Negotiate
+    Start Time:
+    User Name:                    DWM-1
+    User Principal Name:
+    User SID:                     S-1-5-90-0-1
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:
+    Logon Id:                     996
+    Logon Time:                   8/9/2025 11:43:36 AM
+    Logon Type:                   Service
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       Negotiate
+    Start Time:
+    User Name:                    SAUNA$
+    User Principal Name:
+    User SID:                     S-1-5-20
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:
+    Logon Id:                     40436
+    Logon Time:                   8/9/2025 11:43:36 AM
+    Logon Type:                   Interactive
+    Start Time:
+    Domain:                       Font Driver Host
+    Authentication Package:       Negotiate
+    Start Time:
+    User Name:                    UMFD-1
+    User Principal Name:
+    User SID:                     S-1-5-96-0-1
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:
+    Logon Id:                     40310
+    Logon Time:                   8/9/2025 11:43:36 AM
+    Logon Type:                   Interactive
+    Start Time:
+    Domain:                       Font Driver Host
+    Authentication Package:       Negotiate
+    Start Time:
+    User Name:                    UMFD-1
+    User Principal Name:
+    User SID:                     S-1-5-96-0-1
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:
+    Logon Id:                     40288
+    Logon Time:                   8/9/2025 11:43:36 AM
+    Logon Type:                   Interactive
+    Start Time:
+    Domain:                       Font Driver Host
+    Authentication Package:       Negotiate
+    Start Time:
+    User Name:                    UMFD-0
+    User Principal Name:
+    User SID:                     S-1-5-96-0-0
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:                 SAUNA
+    Logon Server Dns Domain:      EGOTISTICAL-BANK.LOCAL
+    Logon Id:                     3564664
+    Logon Time:                   8/9/2025 2:00:32 PM
+    Logon Type:                   Network
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       NTLM
+    Start Time:
+    User Name:                    Administrator
+    User Principal Name:          Administrator@EGOTISTICAL-BANK.LOCAL
+    User SID:                     S-1-5-21-2966785786-3096785034-1186376766-500
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:                 SAUNA
+    Logon Server Dns Domain:      EGOTISTICAL-BANK.LOCAL
+    Logon Id:                     3466776
+    Logon Time:                   8/9/2025 1:51:49 PM
+    Logon Type:                   Network
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       NTLM
+    Start Time:
+    User Name:                    Administrator
+    User Principal Name:          Administrator@EGOTISTICAL-BANK.LOCAL
+    User SID:                     S-1-5-21-2966785786-3096785034-1186376766-500
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:      EGOTISTICAL-BANK.LOCAL
+    Logon Id:                     1625764
+    Logon Time:                   8/9/2025 11:58:46 AM
+    Logon Type:                   Network
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       Kerberos
+    Start Time:
+    User Name:                    SAUNA$
+    User Principal Name:
+    User SID:                     S-1-5-18
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:      EGOTISTICAL-BANK.LOCAL
+    Logon Id:                     246770
+    Logon Time:                   8/9/2025 11:44:16 AM
+    Logon Type:                   Network
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       Kerberos
+    Start Time:
+    User Name:                    SAUNA$
+    User Principal Name:
+    User SID:                     S-1-5-18
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:      EGOTISTICAL-BANK.LOCAL
+    Logon Id:                     246226
+    Logon Time:                   8/9/2025 11:44:16 AM
+    Logon Type:                   Network
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       Kerberos
+    Start Time:
+    User Name:                    SAUNA$
+    User Principal Name:
+    User SID:                     S-1-5-18
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:
+    Logon Id:                     995
+    Logon Time:                   8/9/2025 11:44:05 AM
+    Logon Type:                   Service
+    Start Time:
+    Domain:                       NT AUTHORITY
+    Authentication Package:       Negotiate
+    Start Time:
+    User Name:                    IUSR
+    User Principal Name:
+    User SID:                     S-1-5-17
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:
+    Logon Id:                     997
+    Logon Time:                   8/9/2025 11:43:36 AM
+    Logon Type:                   Service
+    Start Time:
+    Domain:                       NT AUTHORITY
+    Authentication Package:       Negotiate
+    Start Time:
+    User Name:                    LOCAL SERVICE
+    User Principal Name:
+    User SID:                     S-1-5-19
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:
+    Logon Id:                     68319
+    Logon Time:                   8/9/2025 11:43:36 AM
+    Logon Type:                   Interactive
+    Start Time:
+    Domain:                       Window Manager
+    Authentication Package:       Negotiate
+    Start Time:
+    User Name:                    DWM-1
+    User Principal Name:
+    User SID:                     S-1-5-90-0-1
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:
+    Logon Id:                     40431
+    Logon Time:                   8/9/2025 11:43:36 AM
+    Logon Type:                   Interactive
+    Start Time:
+    Domain:                       Font Driver Host
+    Authentication Package:       Negotiate
+    Start Time:
+    User Name:                    UMFD-0
+    User Principal Name:
+    User SID:                     S-1-5-96-0-0
+
+   =================================================================================================
+
+    Method:                       LSA
+    Logon Server:
+    Logon Server Dns Domain:      EGOTISTICAL-BANK.LOCAL
+    Logon Id:                     999
+    Logon Time:                   8/9/2025 11:43:34 AM
+    Logon Type:                   0
+    Start Time:
+    Domain:                       EGOTISTICALBANK
+    Authentication Package:       Negotiate
+    Start Time:
+    User Name:                    SAUNA$
+    User Principal Name:          SAUNA$@EGOTISTICAL-BANK.LOCAL
+    User SID:                     S-1-5-18
+
+   =================================================================================================
+
+
+       /---------------------------------------------------------------------------------\                                                                                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |         Learn Cloud Hacking       :     training.hacktricks.xyz                 |                                                                                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |                                 Thank you!                                      |                                                                                                                                                  
+       \---------------------------------------------------------------------------------/
+```
