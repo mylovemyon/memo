@@ -1,44 +1,8 @@
-```sh
-*Evil-WinRM* PS C:\Users\FSmith\Desktop> .\winPEASx86.exe -h
-  [*] WinPEAS is a binary to enumerate possible paths to escalate privileges locally. By default it'll run all the following checks unless otherwise specified, but you could also indicate as arguments the names of the checks to run if you only want to run a few of them.                                                                                                                                                                                                          
-        domain               Enumerate domain information
-        systeminfo           Search system information
-        eventsinfo           Display interesting events information
-        userinfo             Search user information
-        processinfo          Search processes information
-        servicesinfo         Search services information
-        applicationsinfo     Search installed applications information
-        networkinfo          Search network information
-        cloudinfo            Enumerate cloud information
-        windowscreds         Search windows credentials
-        browserinfo          Search browser information
-        filesinfo            Search generic files that can contains credentials
-        fileanalysis         [NOT RUN BY DEFAULT] Search specific files that can contains credentials and for regexes inside files. Might take several minutes.
-        all                  Run all checks the previous check including fileanalysis.
-
-        quiet                Do not print banner
-        notcolor             Don't use ansi colors (all white)
-        searchpf             Search credentials via regex also in Program Files folders
-        wait                 Wait for user input between checks
-        debug                Display debugging information - memory usage, method execution time
-        dont-check-hostname  Don't check the hostname externally
-        log[=logfile]        Log all output to file defined as logfile, or to "out.txt" if not specified
-        max-regex-file-size=1000000        Max file size (in Bytes) to search regex in. Default: 1000000B
-
-        Additional checks (slower):
-        -lolbas              Run additional LOLBAS check                                                                                                                                                                                    
-        -linpeas=[url]       Run additional linpeas.sh check for default WSL distribution, optionally provide custom linpeas.sh URL
-                             (default: https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh)                                                                                                                         
-        -network|-ports      Run additional network scanning - find network interfaces, hosts and scan nmap top 1000 TCP ports for each host found
-                             -network="auto"                          -    find interfaces/hosts automatically                                                                                                                              
-                             -network="10.10.10.10,10.10.10.20"       -    scan only selected ip address(es)
-                             -network="10.10.10.10/24"                -    scan host based on ip address/netmask
-                             -ports="80,443,8080"                     -    If a list of ports is provided, use this list instead of the nmap top 1000 TCP
-```
+## domain
 
 ## systeminfo
 ```sh
-*Evil-WinRM* PS C:\Users\FSmith\desktop> .\winPEASx64.exe systeminfo quiet 
+*Evil-WinRM* PS C:\Users\Administrator\Documents> .\winPEASx64.exe quiet systeminfo
  [!] If you want to run the file analysis checks (search sensitive information in files), you need to specify the 'fileanalysis' or 'all' argument. Note that this search might take several minutes. For help, run winpeass.exe --help
 ANSI color bit for Windows is not set. If you are executing this from a Windows terminal inside the host you should run 'REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
 Long paths are disabled, so the maximum length of a path supported is 260 chars (this may cause false negatives when looking for files). If you are admin, you can enable it with 'REG ADD HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
@@ -67,19 +31,10 @@ Long paths are disabled, so the maximum length of a path supported is 260 chars 
    - Loading regexes yaml definitions file...
    - Checking if domain...
    - Getting Win32_UserAccount info...
-Error while getting Win32_UserAccount info: System.Management.ManagementException: Access denied
-   at System.Management.ThreadDispatch.Start()                                                                                                                                                                                              
-   at System.Management.ManagementScope.Initialize()                                                                                                                                                                                        
-   at System.Management.ManagementObjectSearcher.Initialize()                                                                                                                                                                               
-   at System.Management.ManagementObjectSearcher.Get()                                                                                                                                                                                      
-   at winPEAS.Checks.Checks.CreateDynamicLists(Boolean isFileSearchEnabled)                                                                                                                                                                 
    - Creating current user groups list...
    - Creating active users list (local only)...
-  [X] Exception: Object reference not set to an instance of an object.
    - Creating disabled users list...
-  [X] Exception: Object reference not set to an instance of an object.
    - Admin users list...
-  [X] Exception: Object reference not set to an instance of an object.
    - Creating AppLocker bypass list...
    - Creating files/directories list for search...
         [skipped, file search is disabled]
@@ -89,10 +44,182 @@ Error while getting Win32_UserAccount info: System.Management.ManagementExceptio
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Basic System Information
 È Check if the Windows versions is vulnerable to some known exploit https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#version-exploits
-  [X] Exception: Access is denied
+    OS Name: Microsoft Windows Server 2019 Datacenter
+    OS Version: 10.0.17763 N/A Build 17763
+    System Type: x64-based PC
+    Hostname: SAUNA
+    Domain Name: EGOTISTICAL-BANK.LOCAL
+    ProductName: Windows Server 2019 Datacenter
+    EditionID: ServerDatacenter
+    ReleaseId: 1809
+    BuildBranch: rs5_release
+    CurrentMajorVersionNumber: 10
+    CurrentVersion: 6.3
+    Architecture: AMD64
+    ProcessorCount: 2
+    SystemLang: en-US
+    KeyboardLang: English (United States)
+    TimeZone: (UTC-08:00) Pacific Time (US & Canada)
+    IsVirtualMachine: True
+    Current Time: 8/9/2025 7:34:09 AM
+    HighIntegrity: True
+    PartOfDomain: True
+    Hotfixes: KB4532947 (1/23/2020), KB4516115 (1/23/2020), KB4523204 (1/23/2020), KB4534273 (1/23/2020), 
+
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Showing All Microsoft Updates
-  [X] Exception: Creating an instance of the COM component with CLSID {B699E5E8-67FF-4177-88B0-3684A3388BFB} from the IClassFactory failed due to the following error: 80070005 Access is denied. (Exception from HRESULT: 0x80070005 (E_ACCESSDENIED)).                                                                                                                                                                                                                                
+   HotFix ID                :   KB5004228
+   Installed At (UTC)       :   7/26/2021 11:17:26 PM
+   Title                    :   2021-07 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows Server 2019 for x64 (KB5004228)
+   Client Application ID    :   UpdateOrchestrator
+   Description              :   Install this update to resolve issues in Windows. For a complete listing of the issues that are included in this update, see the associated Microsoft Knowledge Base article for more information. After you install this item, you may have to restart your computer.
+
+   =================================================================================================
+
+   HotFix ID                :   KB2267602
+   Installed At (UTC)       :   7/15/2021 5:38:04 AM
+   Title                    :   Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.343.994.0)
+   Client Application ID    :   Windows Defender Antivirus (77BDAF73-B396-481F-9042-AD358843EC24)
+   Description              :   Install this update to revise the files that are used to detect viruses, spyware, and other potentially unwanted software. Once you have installed this item, it cannot be removed.
+
+   =================================================================================================
+
+   HotFix ID                :   KB2267602
+   Installed At (UTC)       :   7/15/2021 1:05:47 AM
+   Title                    :   Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.343.957.0)
+   Client Application ID    :   Windows Defender Antivirus (77BDAF73-B396-481F-9042-AD358843EC24)
+   Description              :   Install this update to revise the files that are used to detect viruses, spyware, and other potentially unwanted software. Once you have installed this item, it cannot be removed.
+
+   =================================================================================================
+
+   HotFix ID                :   KB2267602
+   Installed At (UTC)       :   7/14/2021 1:05:46 AM
+   Title                    :   Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.343.916.0)
+   Client Application ID    :   Windows Defender Antivirus (77BDAF73-B396-481F-9042-AD358843EC24)
+   Description              :   Install this update to revise the files that are used to detect viruses, spyware, and other potentially unwanted software. Once you have installed this item, it cannot be removed.
+
+   =================================================================================================
+
+   HotFix ID                :   KB2267602
+   Installed At (UTC)       :   7/13/2021 10:48:58 PM
+   Title                    :   Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.343.910.0)
+   Client Application ID    :   Windows Defender Antivirus (77BDAF73-B396-481F-9042-AD358843EC24)
+   Description              :   Install this update to revise the files that are used to detect viruses, spyware, and other potentially unwanted software. Once you have installed this item, it cannot be removed.
+
+   =================================================================================================
+
+   HotFix ID                :   KB2267602
+   Installed At (UTC)       :   1/26/2020 4:58:30 AM
+   Title                    :   Security Intelligence Update for Windows Defender Antivirus - KB2267602 (Version 1.307.3003.0)
+   Client Application ID    :   Windows Defender Antivirus (77BDAF73-B396-481F-9042-AD358843EC24)
+   Description              :   Install this update to revise the files that are used to detect viruses, spyware, and other potentially unwanted software. Once you have installed this item, it cannot be removed.
+
+   =================================================================================================
+
+   HotFix ID                :   KB2267602
+   Installed At (UTC)       :   1/25/2020 6:46:15 AM
+   Title                    :   Security Intelligence Update for Windows Defender Antivirus - KB2267602 (Version 1.307.2945.0)
+   Client Application ID    :   Windows Defender Antivirus (77BDAF73-B396-481F-9042-AD358843EC24)
+   Description              :   Install this update to revise the files that are used to detect viruses, spyware, and other potentially unwanted software. Once you have installed this item, it cannot be removed.
+
+   =================================================================================================
+
+   HotFix ID                :   KB4534273
+   Installed At (UTC)       :   1/24/2020 3:09:34 AM
+   Title                    :   2020-01 Cumulative Update for Windows Server 2019 (1809) for x64-based Systems (KB4534273)
+   Client Application ID    :   UpdateOrchestrator
+   Description              :   Install this update to resolve issues in Windows. For a complete listing of the issues that are included in this update, see the associated Microsoft Knowledge Base article for more information. After you install this item, you may have to restart your computer.
+
+   =================================================================================================
+
+   HotFix ID                :
+   Installed At (UTC)       :   1/24/2020 2:58:16 AM
+   Title                    :   VMware, Inc. - System - 7/11/2019 12:00:00 AM - 9.8.16.0
+   Client Application ID    :   UpdateOrchestrator
+   Description              :   VMware, Inc. System  driver update released in  July 2019
+
+   =================================================================================================
+
+   HotFix ID                :   KB4534273
+   Installed At (UTC)       :   1/24/2020 2:32:08 AM
+   Title                    :   2020-01 Cumulative Update for Windows Server 2019 (1809) for x64-based Systems (KB4534273)
+   Client Application ID    :   UpdateOrchestrator
+   Description              :   Install this update to resolve issues in Windows. For a complete listing of the issues that are included in this update, see the associated Microsoft Knowledge Base article for more information. After you install this item, you may have to restart your computer.
+
+   =================================================================================================
+
+   HotFix ID                :   KB890830
+   Installed At (UTC)       :   1/24/2020 2:31:56 AM
+   Title                    :   Windows Malicious Software Removal Tool x64 - January 2020 (KB890830)
+   Client Application ID    :   UpdateOrchestrator
+   Description              :   After the download, this tool runs one time to check your computer for infection by specific, prevalent malicious software (including Blaster, Sasser, and Mydoom) and helps remove any infection that is found. If an infection is found, the tool will display a status report the next time that you start your computer. A new version of the tool will be offered every month. If you want to manually run the tool on your computer, you can download a copy from the Microsoft Download Center, or you can run an online version from microsoft.com. This tool is not a replacement for an antivirus product. To help protect your computer, you should use an antivirus product.
+
+   =================================================================================================
+
+   HotFix ID                :   KB4535101
+   Installed At (UTC)       :   1/24/2020 2:30:14 AM
+   Title                    :   2020-01 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows Server 2019 for x64 (KB4535101)
+   Client Application ID    :   UpdateOrchestrator
+   Description              :   A security issue has been identified in a Microsoft software product that could affect your system. You can help protect your system by installing this update from Microsoft. For a complete listing of the issues that are included in this update, see the associated Microsoft Knowledge Base article. After you install this update, you may have to restart your system.
+
+   =================================================================================================
+
+   HotFix ID                :   KB4516115
+   Installed At (UTC)       :   1/24/2020 2:29:18 AM
+   Title                    :   2019-09 Security Update for Adobe Flash Player for Windows Server 2019 for x64-based Systems (KB4516115)
+   Client Application ID    :   UpdateOrchestrator
+   Description              :   A security issue has been identified in a Microsoft software product that could affect your system. You can help protect your system by installing this update from Microsoft. For a complete listing of the issues that are included in this update, see the associated Microsoft Knowledge Base article. After you install this update, you may have to restart your system.
+
+   =================================================================================================
+
+   HotFix ID                :   KB4462930
+   Installed At (UTC)       :   1/24/2020 2:29:14 AM
+   Title                    :   Update for Adobe Flash Player for Windows Server 2019 (1809) for x64-based Systems (KB4462930)
+   Client Application ID    :   UpdateOrchestrator
+   Description              :   Install this update to resolve issues in Windows. For a complete listing of the issues that are included in this update, see the associated Microsoft Knowledge Base article for more information. After you install this item, you may have to restart your computer.
+
+   =================================================================================================
+
+   HotFix ID                :   KB2267602
+   Installed At (UTC)       :   1/24/2020 2:26:38 AM
+   Title                    :   Security Intelligence Update for Windows Defender Antivirus - KB2267602 (Version 1.307.2867.0)
+   Client Application ID    :   UpdateOrchestrator
+   Description              :   Install this update to revise the files that are used to detect viruses, spyware, and other potentially unwanted software. Once you have installed this item, it cannot be removed.
+
+   =================================================================================================
+
+   HotFix ID                :   KB4052623
+   Installed At (UTC)       :   1/24/2020 2:26:17 AM
+   Title                    :   Update for Windows Defender Antivirus antimalware platform - KB4052623 (Version 4.18.1911.3)
+   Client Application ID    :   UpdateOrchestrator
+   Description              :   This package will update Windows Defender Antivirus antimalware platform's components on the user machine.
+
+   =================================================================================================
+
+   HotFix ID                :   KB4534273
+   Installed At (UTC)       :   1/24/2020 12:49:04 AM
+   Title                    :   2020-01 Cumulative Update for Windows Server 2019 (1809) for x64-based Systems (KB4534273)
+   Client Application ID    :   UpdateOrchestrator
+   Description              :   Install this update to resolve issues in Windows. For a complete listing of the issues that are included in this update, see the associated Microsoft Knowledge Base article for more information. After you install this item, you may have to restart your computer.
+
+   =================================================================================================
+
+   HotFix ID                :   KB2267602
+   Installed At (UTC)       :   1/23/2020 11:10:00 PM
+   Title                    :   Security Intelligence Update for Windows Defender Antivirus - KB2267602 (Version 1.307.2844.0)
+   Client Application ID    :   Windows Defender Antivirus (77BDAF73-B396-481F-9042-AD358843EC24)
+   Description              :   Install this update to revise the files that are used to detect viruses, spyware, and other potentially unwanted software. Once you have installed this item, it cannot be removed.
+
+   =================================================================================================
+
+   HotFix ID                :
+   Installed At (UTC)       :   1/23/2020 11:01:32 PM
+   Title                    :   VMware, Inc. - System - 7/11/2019 12:00:00 AM - 9.8.16.0
+   Client Application ID    :   Device Driver Retrieval Client
+   Description              :   VMware, Inc. System  driver update released in  July 2019
+
+   =================================================================================================
+
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ System Last Shutdown Date/time (from Registry)
                                                                                                                                                                                                                                             
@@ -102,32 +229,32 @@ Error while getting Win32_UserAccount info: System.Management.ManagementExceptio
 È Check for some passwords or keys in the env variables 
     COMPUTERNAME: SAUNA
     PUBLIC: C:\Users\Public
-    LOCALAPPDATA: C:\Users\FSmith\AppData\Local
-    PSModulePath: C:\Users\FSmith\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+    LOCALAPPDATA: C:\Users\Administrator\AppData\Local
+    PSModulePath: C:\Users\Administrator\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
     PROCESSOR_ARCHITECTURE: AMD64
-    Path: C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\FSmith\AppData\Local\Microsoft\WindowsApps
+    Path: C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps
     CommonProgramFiles(x86): C:\Program Files (x86)\Common Files
     ProgramFiles(x86): C:\Program Files (x86)
     PROCESSOR_LEVEL: 25
     ProgramFiles: C:\Program Files
     PATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
-    USERPROFILE: C:\Users\FSmith
+    USERPROFILE: C:\Users\Administrator
     SystemRoot: C:\Windows
     ALLUSERSPROFILE: C:\ProgramData
     DriverData: C:\Windows\System32\Drivers\DriverData
     ProgramData: C:\ProgramData
     PROCESSOR_REVISION: 0101
-    USERNAME: FSmith
+    USERNAME: Administrator
     CommonProgramW6432: C:\Program Files\Common Files
     CommonProgramFiles: C:\Program Files\Common Files
     OS: Windows_NT
     PROCESSOR_IDENTIFIER: AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD
     ComSpec: C:\Windows\system32\cmd.exe
     SystemDrive: C:
-    TEMP: C:\Users\FSmith\AppData\Local\Temp
+    TEMP: C:\Users\ADMINI~1\AppData\Local\Temp
     NUMBER_OF_PROCESSORS: 2
-    APPDATA: C:\Users\FSmith\AppData\Roaming
-    TMP: C:\Users\FSmith\AppData\Local\Temp
+    APPDATA: C:\Users\Administrator\AppData\Roaming
+    TMP: C:\Users\ADMINI~1\AppData\Local\Temp
     ProgramW6432: C:\Program Files
     windir: C:\Windows
     USERDOMAIN: EGOTISTICALBANK
@@ -176,6 +303,9 @@ Error while getting Win32_UserAccount info: System.Management.ManagementExceptio
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Credentials Guard
 È If enabled, a driver is needed to read LSASS memory https://book.hacktricks.wiki/windows-hardening/stealing-credentials/credentials-protections#credentials-guard
     CredentialGuard is not enabled
+    Virtualization Based Security Status:      Not enabled
+    Configured:                                False
+    Running:                                   False
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Cached Creds
 È If > 0, credentials will be cached in the registry and accessible by SYSTEM user https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#cached-credentials
@@ -208,11 +338,27 @@ Error while getting Win32_UserAccount info: System.Management.ManagementExceptio
     Transcription Settings: 
     Module Logging Settings: 
     Scriptblock Logging Settings: 
-    PS history file: 
-    PS history size: 
+    PS history file: C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+    PS history size: 1619B
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating PowerShell Session Settings using the registry
-      You must be an administrator to run this check
+    Name                                   Microsoft.PowerShell
+      BUILTIN\Administrators               AccessAllowed
+      NT AUTHORITY\INTERACTIVE             AccessAllowed
+      BUILTIN\Remote Management Users      AccessAllowed
+   =================================================================================================
+
+    Name                                   Microsoft.PowerShell.Workflow
+      BUILTIN\Administrators               AccessAllowed
+      BUILTIN\Remote Management Users      AccessAllowed
+   =================================================================================================
+
+    Name                                   Microsoft.PowerShell32
+      BUILTIN\Administrators               AccessAllowed
+      NT AUTHORITY\INTERACTIVE             AccessAllowed
+      BUILTIN\Remote Management Users      AccessAllowed
+   =================================================================================================
+
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ PS default transcripts history
 È Read the PS history inside these files (if any)
@@ -225,6 +371,10 @@ Error while getting Win32_UserAccount info: System.Management.ManagementExceptio
     User Agent: Mozilla/4.0 (compatible; MSIE 8.0; Win32)
     CertificateRevocation: 1
     ZonesSecurityUpgrade: System.Byte[]
+    EnableNegotiate: 1
+    WarnonZoneCrossing: 0
+    MigrateProxy: 1
+    ProxyEnable: 0
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ HKLM Internet Settings
     ActiveXCache: C:\Windows\Downloaded Program Files
@@ -235,7 +385,7 @@ Error while getting Win32_UserAccount info: System.Management.ManagementExceptio
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Drives Information
 È Remember that you should search more info inside the other drives 
-    C:\ (Type: Fixed)(Filesystem: NTFS)(Available space: 7 GB)(Permissions: Users [Allow: AppendData/CreateDirectories])
+    C:\ (Type: Fixed)(Filesystem: NTFS)(Available space: 7 GB)(Permissions: Administrators [Allow: AllAccess], Users [Allow: AppendData/CreateDirectories])
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking WSUS
 È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#wsus
@@ -266,7 +416,7 @@ You are NOT inside a container
     Security Packages                    :       ""
     Notification Packages                :       rassfm,scecli
     Authentication Packages              :       msv1_0
-    LsaPid                               :       648
+    LsaPid                               :       644
     LsaCfgFlagsDefault                   :       0
     SecureBoot                           :       1
     ProductType                          :       7
@@ -299,6 +449,17 @@ You are NOT inside a container
       OutboundExceptions      :
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Display Local Group Policy settings - local users/machine
+   Type             :     user
+   Display Name     :     Local Group Policy
+   Name             :     Local Group Policy
+   Extensions       :     [{35378EAC-683F-11D2-A89A-00C04FBBCFA2}{D02B1F73-3407-48AE-BA88-E8213C6761F1}]
+   File Sys Path    :     C:\Windows\System32\GroupPolicy\User
+   Link             :     Local
+   GPO Link         :     Local Machine
+   Options          :     All Sections Enabled
+
+   =================================================================================================
+
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking AppLocker effective policy
    AppLockerPolicy version: 1
@@ -307,6 +468,30 @@ You are NOT inside a container
 
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Printers (WMI)
+      Name:                    RICOH Aficio SP 8300DN PCL 6
+      Status:                  Unknown
+      Sddl:                    O:SYD:(A;;LCSWSDRCWDWO;;;LA)(A;OIIO;RPWPSDRCWDWO;;;LA)(A;OIIO;GA;;;CO)(A;OIIO;GA;;;AC)(A;;SWRC;;;WD)(A;CIIO;GX;;;WD)(A;;SWRC;;;AC)(A;CIIO;GX;;;AC)(A;;LCSWDTSDRCWDWO;;;BA)(A;OICIIO;GA;;;BA)(A;OIIO;GA;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;;SWRC;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;CIIO;GX;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;;LCSWDTSDRCWDWO;;;PO)(A;OICIIO;GA;;;PO)(A;;LCSWDTSDRCWDWO;;;SO)(A;OICIIO;GA;;;SO)
+      Is default:              False
+      Is network printer:      False
+
+   =================================================================================================
+
+      Name:                    Microsoft XPS Document Writer
+      Status:                  Unknown
+      Sddl:                    O:SYD:(A;;LCSWSDRCWDWO;;;LA)(A;OIIO;RPWPSDRCWDWO;;;LA)(A;OIIO;GA;;;CO)(A;OIIO;GA;;;AC)(A;;SWRC;;;WD)(A;CIIO;GX;;;WD)(A;;SWRC;;;AC)(A;CIIO;GX;;;AC)(A;;LCSWDTSDRCWDWO;;;BA)(A;OICIIO;GA;;;BA)(A;OIIO;GA;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;;SWRC;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;CIIO;GX;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)
+      Is default:              False
+      Is network printer:      False
+
+   =================================================================================================
+
+      Name:                    Microsoft Print to PDF
+      Status:                  Unknown
+      Sddl:                    O:SYD:(A;;LCSWSDRCWDWO;;;LA)(A;OIIO;RPWPSDRCWDWO;;;LA)(A;OIIO;GA;;;CO)(A;OIIO;GA;;;AC)(A;;SWRC;;;WD)(A;CIIO;GX;;;WD)(A;;SWRC;;;AC)(A;CIIO;GX;;;AC)(A;;LCSWDTSDRCWDWO;;;BA)(A;OICIIO;GA;;;BA)(A;OIIO;GA;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;;SWRC;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;CIIO;GX;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)
+      Is default:              False
+      Is network printer:      False
+
+   =================================================================================================
+
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Named Pipes
   Name                                                                                                 CurrentUserPerms                                                       Sddl
@@ -315,11 +500,13 @@ You are NOT inside a container
 
   ROUTER                                                                                               Everyone [Allow: WriteData/CreateFiles]                                O:SYG:SYD:P(A;;0x12019b;;;WD)(A;;0x12019b;;;AN)(A;;FA;;;SY)
 
-  RpcProxy\49673                                                                                       Everyone [Allow: WriteData/CreateFiles]                                O:BAG:SYD:(A;;0x12019b;;;WD)(A;;0x12019b;;;AN)(A;;FA;;;BA)
+  RpcProxy\49673                                                                                       Everyone [Allow: WriteData/CreateFiles], Administrators [Allow: AllAccess] O:BAG:SYD:(A;;0x12019b;;;WD)(A;;0x12019b;;;AN)(A;;FA;;;BA)
 
   RpcProxy\593                                                                                         Everyone [Allow: WriteData/CreateFiles]                                O:NSG:NSD:(A;;0x12019b;;;WD)(A;;RC;;;OW)(A;;0x12019b;;;AN)(A;;FA;;;S-1-5-80-521322694-906040134-3864710659-1525148216-3451224162)(A;;FA;;;S-1-5-80-979556362-403687129-3954533659-2335141334-1547273080)
 
-  vgauth-service                                                                                       Everyone [Allow: WriteData/CreateFiles]                                O:BAG:SYD:P(A;;0x12019f;;;WD)(A;;FA;;;SY)(A;;FA;;;BA)
+  vgauth-service                                                                                       Everyone [Allow: WriteData/CreateFiles], Administrators [Allow: AllAccess] O:BAG:SYD:P(A;;0x12019f;;;WD)(A;;FA;;;SY)(A;;FA;;;BA)
+
+  Winsock2\CatalogChangeListener-284-0                                                                 Network [Deny: WriteData/CreateFiles], Administrators [Allow: WriteData/CreateFiles] O:BAG:SYD:(D;;FW;;;NU)(A;;0x120196;;;SY)(A;;0x120196;;;BA)(A;;0x120196;;;SO)
 
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating AMSI registered providers
@@ -330,13 +517,28 @@ You are NOT inside a container
 
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Sysmon configuration
-      You must be an administrator to run this check
+      Installed:                False
+      Hashing Algorithm:        Not Defined
+      Options:                  Not Defined
+      Rules:
+
+   =================================================================================================
+
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Sysmon process creation logs (1)
-      You must be an administrator to run this check
+      Unable to query Sysmon event logs, Sysmon likely not installed.
 
 ÉÍÍÍÍÍÍÍÍÍÍ¹ Installed .NET versions
                                                                                                                                                                                                                                             
+  CLR Versions
+   4.0.30319
+
+  .NET Versions                                                                                                                                                                                                                             
+   4.7.03190
+
+  .NET & AMSI (Anti-Malware Scan Interface) support                                                                                                                                                                                         
+      .NET version supports AMSI     : False
+      OS supports AMSI               : True
 
        /---------------------------------------------------------------------------------\                                                                                                                                                  
        |                             Do you like PEASS?                                  |                                                                                                                                                  
@@ -348,3 +550,6 @@ You are NOT inside a container
        |                                 Thank you!                                      |                                                                                                                                                  
        \---------------------------------------------------------------------------------/
 ```
+
+
+##
