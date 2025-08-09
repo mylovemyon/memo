@@ -4214,4 +4214,515 @@ Long paths are disabled, so the maximum length of a path supported is 260 chars 
 ```
 
 
-## 
+## filesinfo
+```sh
+*Evil-WinRM* PS C:\Users\Administrator\Documents> .\winPEASx64.exe quiet filesinfo
+ [!] If you want to run the file analysis checks (search sensitive information in files), you need to specify the 'fileanalysis' or 'all' argument. Note that this search might take several minutes. For help, run winpeass.exe --help
+ANSI color bit for Windows is not set. If you are executing this from a Windows terminal inside the host you should run 'REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+Long paths are disabled, so the maximum length of a path supported is 260 chars (this may cause false negatives when looking for files). If you are admin, you can enable it with 'REG ADD HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+  WinPEAS-ng by @hacktricks_live
+
+       /---------------------------------------------------------------------------------\                                                                                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |         Learn Cloud Hacking       :     training.hacktricks.xyz                 |                                                                                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |                                 Thank you!                                      |                                                                                                                                                  
+       \---------------------------------------------------------------------------------/                                                                                                                                                  
+                                                                                                                                                                                                                                            
+  [+] Legend:
+         Red                Indicates a special privilege over an object or something is misconfigured
+         Green              Indicates that some protection is enabled or something is well configured
+         Cyan               Indicates active users
+         Blue               Indicates disabled users
+         LightYellow        Indicates links
+
+ You can find a Windows local PE Checklist here: https://book.hacktricks.wiki/en/windows-hardening/checklist-windows-privilege-escalation.html
+   Creating Dynamic lists, this could take a while, please wait...                                                                                                                                                                          
+   - Loading sensitive_files yaml definitions file...
+   - Loading regexes yaml definitions file...
+   - Checking if domain...
+   - Getting Win32_UserAccount info...
+   - Creating current user groups list...
+   - Creating active users list (local only)...
+   - Creating disabled users list...
+   - Admin users list...
+   - Creating AppLocker bypass list...
+   - Creating files/directories list for search...
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Interesting files and registry ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Putty Sessions
+
+
+=== Putty Saved Session Information (All Users) ===
+
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Putty SSH Host keys
+
+
+=== Putty SSH Host Hosts (All Users) ===
+
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ SSH keys in registry
+È If you find anything here, follow the link to learn how to decrypt the SSH keys https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#ssh-keys-in-registry
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ SuperPutty configuration files
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Office 365 endpoints synced by OneDrive.
+                                                                                                                                                                                                                                            
+    SID: S-1-5-19
+   =================================================================================================
+
+    SID: S-1-5-20
+   =================================================================================================
+
+    SID: S-1-5-21-2966785786-3096785034-1186376766-500
+   =================================================================================================
+
+    SID: S-1-5-18
+   =================================================================================================
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Cloud Credentials
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#files-and-registry-credentials
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Unattend Files
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for common SAM & SYSTEM backups
+    C:\Windows\System32\config\RegBack\SAM
+    File Permissions: Administrators [Allow: AllAccess]
+                                                                                                                                                                                                                                            
+    C:\Windows\System32\config\RegBack\SYSTEM
+    File Permissions: Administrators [Allow: AllAccess]
+                                                                                                                                                                                                                                            
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for McAfee Sitelist.xml Files
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Cached GPP Passwords
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for possible regs with creds
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#inside-the-registry
+    Not Found
+    Not Found
+    Not Found
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for possible password files in users homes
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#files-and-registry-credentials
+    C:\Users\All Users\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml                                                                                                                                                                                                                           
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml                                                                                                                                                                                                                             
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Application Data\Application Data\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+    C:\Users\All Users\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Searching for Oracle SQL Developer config files
+                                                                                                                                                                                                                                            
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Slack files & directories
+  note: check manually if something is found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for LOL Binaries and Scripts (can be slow)
+È  https://lolbas-project.github.io/
+   [!] Check skipped, if you want to run it, please specify '-lolbas' argument
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Outlook download files
+                                                                                                                                                                                                                                            
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating machine and user certificate files
+                                                                                                                                                                                                                                            
+  Issuer             : OU=EFS File Encryption Certificate, L=EFS, CN=Administrator
+  Subject            : OU=EFS File Encryption Certificate, L=EFS, CN=Administrator
+  ValidDate          : 1/22/2020 9:51:29 PM
+  ExpiryDate         : 12/29/2119 9:51:29 PM
+  HasPrivateKey      : True
+  StoreLocation      : CurrentUser
+  KeyExportable      : False
+  Thumbprint         : F85AECF36E9739C34B00E56154177EE25BB52A7F
+
+  Enhanced Key Usages
+       File Recovery
+   =================================================================================================
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Searching known files that can contain creds in home
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#files-and-registry-credentials
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for documents --limit 100--
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Office Most Recent Files -- limit 50
+                                                                                                                                                                                                                                            
+  Last Access Date           User                                           Application           Document
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Recent files --limit 70--
+   Administrator :
+
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking inside the Recycle Bin for creds files
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#files-and-registry-credentials
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Searching hidden files or folders in C:\Users home (can be slow)
+                                                                                                                                                                                                                                            
+     C:\Users\Administrator\My Documents\My Videos
+     C:\Users\Administrator\My Documents\My Pictures
+     C:\Users\Administrator\My Documents\My Music
+     C:\Users\Administrator\Cookies\ESE
+     C:\Users\Administrator\Cookies\DNTException
+     C:\Users\Administrator\Documents\My Videos
+     C:\Users\Administrator\Documents\My Pictures
+     C:\Users\Administrator\Documents\My Music
+     C:\Users\Administrator\Local Settings\History\History.IE5
+     C:\Users\Administrator\Local Settings\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\Local Settings\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\Local Settings\History
+     C:\Users\Administrator\Local Settings\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\Local Settings\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Temporary Internet Files\IE
+     C:\Users\Administrator\Local Settings\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\History
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727                                                                                                                                                                                                                       
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719                                                                                                                                                                                                                       
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5                                                                                                                                                                                                                               
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4                                                                                                                                                                                                                      
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE                                                                                                                                                                                                                                        
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4                                                                                                                                                                                                                               
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History                                                                                                                                                                                                                          
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE                                                                                                                                                                                                                       
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History                                                                                                                                                                                                                                           
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5                                                                                                                                                                                                                               
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4                                                                                                                                                                                                                                       
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719                                                                                                                                                                                                                                        
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727                                                                                                                                                                                                                                        
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\Local Settings\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\Local Settings\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\Local Settings\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\Local Settings\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\Local Settings\Application Data\History
+     C:\Users\Administrator\Local Settings\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\Local Settings\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\Local Settings\Application Data\History\History.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\History\History.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\AppData\Local\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\AppData\Local\Application Data\History
+     C:\Users\Administrator\AppData\Local\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\AppData\Local\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727                                                                                                                                                                                                                                         
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719                                                                                                                                                                                                                                         
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4                                                                                                                                                                                                                                        
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5                                                                                                                                                                                                                                
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE                                                                                                                                                                                                                        
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History                                                                                                                                                                                                                           
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4                                                                                                                                                                                                                                
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE                                                                                                                                                                                                                                         
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4                                                                                                                                                                                                                       
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5                                                                                                                                                                                                                                
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719                                                                                                                                                                                                                        
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727                                                                                                                                                                                                                        
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\History
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Temporary Internet Files\IE
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\History
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\AppData\Local\Application Data\Application Data\History\History.IE5
+     C:\Users\Administrator\AppData\Local\Temporary Internet Files\IE\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Temporary Internet Files\IE
+     C:\Users\Administrator\AppData\Local\Temporary Internet Files\Content.IE5\QZSF8RJ4
+     C:\Users\Administrator\AppData\Local\Temporary Internet Files\Content.IE5
+     C:\Users\Administrator\AppData\Local\History
+     C:\Users\Administrator\AppData\Local\History\History.IE5\MSHist012021071220210719
+     C:\Users\Administrator\AppData\Local\History\History.IE5\MSHist012021072620210727
+     C:\Users\Administrator\AppData\Local\History\History.IE5
+     C:\Users\Administrator\ntuser.pol
+     C:\Users\Default User
+     C:\Users\Default
+     C:\Users\All Users
+     C:\Users\Default
+     C:\Users\All Users\Application Data\Documents\My Music
+     C:\Users\All Users\Application Data\Documents\My Pictures
+     C:\Users\All Users\Application Data\Documents\My Videos
+     C:\Users\All Users\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6
+     C:\Users\All Users\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\do_not_delete_folders
+     C:\Users\All Users\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\_common
+     C:\Users\All Users\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\utne7z\FileCache_DrvDeviceCapabilites
+     C:\Users\All Users\Application Data\ntuser.pol
+     C:\Users\All Users\Application Data\Application Data\Application Data\Documents\My Music
+     C:\Users\All Users\Application Data\Application Data\Application Data\Documents\My Pictures
+     C:\Users\All Users\Application Data\Application Data\Application Data\Documents\My Videos
+     C:\Users\All Users\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6
+     C:\Users\All Users\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\do_not_delete_folders
+     C:\Users\All Users\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\_common
+     C:\Users\All Users\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\utne7z\FileCache_DrvDeviceCapabilites
+     C:\Users\All Users\Application Data\Application Data\Application Data\ntuser.pol
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Music
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Pictures
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Videos
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\do_not_delete_folders
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\_common
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\utne7z\FileCache_DrvDeviceCapabilites
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\ntuser.pol
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Music
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Pictures
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Videos
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\do_not_delete_folders
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\_common
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\utne7z\FileCache_DrvDeviceCapabilites
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\ntuser.pol
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Music
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Pictures
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Videos
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\do_not_delete_folders                                                                                                                                                                                                                                           
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\_common
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\utne7z\FileCache_DrvDeviceCapabilites                                                                                                                                                                                                                           
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\ntuser.pol
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Music
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Pictures
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Videos
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6                                                                                                                                                                                                                               
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\_common                                                                                                                                                                                                                       
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\ntuser.pol
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Music                                                                                                                                                                                                                 
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Videos                                                                                                                                                                                                                
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\ntuser.pol                                                                                                                                                                                                                         
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\ntuser.pol                                                                                                                                                                                                                                          
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Videos                                                                                                                                                                                                                                 
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Pictures                                                                                                                                                                                                                               
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Music                                                                                                                                                                                                                                  
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\ntuser.pol
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\_common                                                                                                                                                                                                                                        
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\do_not_delete_folders                                                                                                                                                                                                                          
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Videos
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Pictures
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Music
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\ntuser.pol
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\utne7z\FileCache_DrvDeviceCapabilites
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\_common
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\do_not_delete_folders
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Videos
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Pictures
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Music
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\ntuser.pol
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\utne7z\FileCache_DrvDeviceCapabilites
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\_common
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\do_not_delete_folders
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Videos
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Pictures
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Application Data\Application Data\Documents\My Music
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\ntuser.pol
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\utne7z\FileCache_DrvDeviceCapabilites
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\_common
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\do_not_delete_folders
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Documents\My Videos
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Documents\My Pictures
+     C:\Users\All Users\Application Data\Application Data\Application Data\Application Data\Documents\My Music
+     C:\Users\All Users\Application Data\Application Data\ntuser.pol
+     C:\Users\All Users\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\utne7z\FileCache_DrvDeviceCapabilites
+     C:\Users\All Users\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\_common
+     C:\Users\All Users\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6
+     C:\Users\All Users\Application Data\Application Data\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\do_not_delete_folders
+     C:\Users\All Users\Application Data\Application Data\Documents\My Videos
+     C:\Users\All Users\Application Data\Application Data\Documents\My Pictures
+     C:\Users\All Users\Application Data\Application Data\Documents\My Music
+     C:\Users\All Users
+     C:\Users\All Users\ntuser.pol
+     C:\Users\All Users\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\utne7z\FileCache_DrvDeviceCapabilites
+     C:\Users\All Users\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\_common
+     C:\Users\All Users\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6
+     C:\Users\All Users\RICOH_DRV\RICOH Aficio SP 8300DN PCL 6\do_not_delete_folders
+     C:\Users\All Users\Documents\My Videos
+     C:\Users\All Users\Documents\My Pictures
+     C:\Users\All Users\Documents\My Music
+     C:\Users\Public\Documents\My Videos
+     C:\Users\Public\Documents\My Pictures
+     C:\Users\Public\Documents\My Music
+     C:\Users\Default User
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Searching interesting files in other users home directories (can be slow)
+                                                                                                                                                                                                                                            
+     You are already Administrator, check users home folders manually.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Searching executable files in non-default folders with write (equivalent) permissions (can be slow)
+     File Permissions "C:\Users\Administrator\Downloads\z75198L13.exe": Administrators [Allow: AllAccess],Administrator [Allow: AllAccess]
+     File Permissions "C:\Users\Administrator\Documents\winPEASx64.exe": Administrators [Allow: AllAccess],Administrator [Allow: AllAccess]
+     File Permissions "C:\Users\Administrator\My Documents\winPEASx64.exe": Administrators [Allow: AllAccess],Administrator [Allow: AllAccess]
+     File Permissions "C:\Documents and Settings\Administrator\Downloads\z75198L13.exe": Administrators [Allow: AllAccess],Administrator [Allow: AllAccess]
+     File Permissions "C:\Documents and Settings\Administrator\Documents\winPEASx64.exe": Administrators [Allow: AllAccess],Administrator [Allow: AllAccess]
+     File Permissions "C:\Documents and Settings\Administrator\My Documents\winPEASx64.exe": Administrators [Allow: AllAccess],Administrator [Allow: AllAccess]
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for Linux shells/distributions - wsl.exe, bash.exe
+
+       /---------------------------------------------------------------------------------\                                                                                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |         Learn Cloud Hacking       :     training.hacktricks.xyz                 |                                                                                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |                                 Thank you!                                      |
+       \---------------------------------------------------------------------------------/ 
+```
