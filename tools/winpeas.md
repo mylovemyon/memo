@@ -3437,3 +3437,266 @@ Long paths are disabled, so the maximum length of a path supported is 260 chars 
        |                                 Thank you!                                      |
        \---------------------------------------------------------------------------------/                                                                                                                                                  
 ```
+
+
+## networkinfo
+```sh
+*Evil-WinRM* PS C:\Users\Administrator\Documents> .\winPEASx64.exe quiet networkinfo
+ [!] If you want to run the file analysis checks (search sensitive information in files), you need to specify the 'fileanalysis' or 'all' argument. Note that this search might take several minutes. For help, run winpeass.exe --help
+ANSI color bit for Windows is not set. If you are executing this from a Windows terminal inside the host you should run 'REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+Long paths are disabled, so the maximum length of a path supported is 260 chars (this may cause false negatives when looking for files). If you are admin, you can enable it with 'REG ADD HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+  WinPEAS-ng by @hacktricks_live
+
+       /---------------------------------------------------------------------------------\                                                                                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |         Learn Cloud Hacking       :     training.hacktricks.xyz                 |                                                                                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |                                 Thank you!                                      |                                                                                                                                                  
+       \---------------------------------------------------------------------------------/                                                                                                                                                  
+                                                                                                                                                                                                                                            
+  [+] Legend:
+         Red                Indicates a special privilege over an object or something is misconfigured
+         Green              Indicates that some protection is enabled or something is well configured
+         Cyan               Indicates active users
+         Blue               Indicates disabled users
+         LightYellow        Indicates links
+
+ You can find a Windows local PE Checklist here: https://book.hacktricks.wiki/en/windows-hardening/checklist-windows-privilege-escalation.html
+   Creating Dynamic lists, this could take a while, please wait...                                                                                                                                                                          
+   - Loading sensitive_files yaml definitions file...
+   - Loading regexes yaml definitions file...
+   - Checking if domain...
+   - Getting Win32_UserAccount info...
+   - Creating current user groups list...
+   - Creating active users list (local only)...
+   - Creating disabled users list...
+   - Admin users list...
+   - Creating AppLocker bypass list...
+   - Creating files/directories list for search...
+        [skipped, file search is disabled]
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Network Information ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Network Shares
+    ADMIN$ (Path: C:\Windows)
+    C$ (Path: C:\)
+    IPC$ (Path: )
+    NETLOGON (Path: C:\Windows\SYSVOL\sysvol\EGOTISTICAL-BANK.LOCAL\SCRIPTS) -- Permissions: AllAccess
+    print$ (Path: C:\Windows\system32\spool\drivers) -- Permissions: AllAccess
+    RICOH Aficio SP 8300DN PCL 6 (Path: RICOH Aficio SP 8300DN PCL 6,LocalsplOnly) -- Permissions: AllAccess
+    SYSVOL (Path: C:\Windows\SYSVOL\sysvol) -- Permissions: AllAccess
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerate Network Mapped Drives (WMI)
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Host File
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Network Ifaces and known hosts
+È The masks are only for the IPv4 addresses 
+    Ethernet0 2[00:50:56:94:95:C1]: 10.129.95.180, fe80::692d:c39e:1707:3cdb%7, dead:beef::692d:c39e:1707:3cdb, dead:beef::105 / 255.255.0.0
+        Gateways: 10.129.0.1, fe80::250:56ff:feb9:f8ec%7
+        DNSs: 1.1.1.1, 8.8.8.8
+        Known hosts:
+          10.129.0.1            00-50-56-B9-F8-EC     Dynamic
+          10.129.255.255        FF-FF-FF-FF-FF-FF     Static
+          169.254.255.255       00-00-00-00-00-00     Invalid
+          224.0.0.22            01-00-5E-00-00-16     Static
+          224.0.0.251           01-00-5E-00-00-FB     Static
+          224.0.0.252           01-00-5E-00-00-FC     Static
+          255.255.255.255       FF-FF-FF-FF-FF-FF     Static
+
+    Loopback Pseudo-Interface 1[]: 127.0.0.1, ::1 / 255.0.0.0
+        DNSs: fec0:0:0:ffff::1%1, fec0:0:0:ffff::2%1, fec0:0:0:ffff::3%1
+        Known hosts:
+          224.0.0.22            00-00-00-00-00-00     Static
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Current TCP Listening Ports
+È Check for services restricted from the outside 
+  Enumerating IPv4 connections
+                                                                                                                                                                                                                                            
+  Protocol   Local Address         Local Port    Remote Address        Remote Port     State             Process ID      Process Name
+
+  TCP        0.0.0.0               80            0.0.0.0               0               Listening         4               System
+  TCP        0.0.0.0               88            0.0.0.0               0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        0.0.0.0               135           0.0.0.0               0               Listening         896             C:\Windows\system32\svchost.exe
+  TCP        0.0.0.0               389           0.0.0.0               0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        0.0.0.0               445           0.0.0.0               0               Listening         4               System
+  TCP        0.0.0.0               464           0.0.0.0               0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        0.0.0.0               593           0.0.0.0               0               Listening         896             C:\Windows\system32\svchost.exe
+  TCP        0.0.0.0               636           0.0.0.0               0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        0.0.0.0               3268          0.0.0.0               0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        0.0.0.0               3269          0.0.0.0               0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        0.0.0.0               5985          0.0.0.0               0               Listening         4               System
+  TCP        0.0.0.0               9389          0.0.0.0               0               Listening         2984            C:\Windows\ADWS\Microsoft.ActiveDirectory.WebServices.exe
+  TCP        0.0.0.0               47001         0.0.0.0               0               Listening         4               System
+  TCP        0.0.0.0               49664         0.0.0.0               0               Listening         488             wininit
+  TCP        0.0.0.0               49665         0.0.0.0               0               Listening         1132            C:\Windows\System32\svchost.exe
+  TCP        0.0.0.0               49666         0.0.0.0               0               Listening         1528            C:\Windows\system32\svchost.exe
+  TCP        0.0.0.0               49668         0.0.0.0               0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        0.0.0.0               49673         0.0.0.0               0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        0.0.0.0               49674         0.0.0.0               0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        0.0.0.0               49676         0.0.0.0               0               Listening         2940            C:\Windows\System32\spoolsv.exe
+  TCP        0.0.0.0               49685         0.0.0.0               0               Listening         2076            C:\Windows\system32\dns.exe
+  TCP        0.0.0.0               49692         0.0.0.0               0               Listening         3052            C:\Windows\system32\DFSRs.exe
+  TCP        0.0.0.0               49705         0.0.0.0               0               Listening         624             services
+  TCP        10.129.95.180         53            0.0.0.0               0               Listening         2076            C:\Windows\system32\dns.exe
+  TCP        10.129.95.180         139           0.0.0.0               0               Listening         4               System
+  TCP        10.129.95.180         5985          10.10.16.23           37162           Established       4               System
+
+  Enumerating IPv6 connections
+                                                                                                                                                                                                                                            
+  Protocol   Local Address                               Local Port    Remote Address                              Remote Port     State             Process ID      Process Name
+
+  TCP        [::]                                        80            [::]                                        0               Listening         4               System
+  TCP        [::]                                        88            [::]                                        0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        [::]                                        135           [::]                                        0               Listening         896             C:\Windows\system32\svchost.exe
+  TCP        [::]                                        389           [::]                                        0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        [::]                                        445           [::]                                        0               Listening         4               System
+  TCP        [::]                                        464           [::]                                        0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        [::]                                        593           [::]                                        0               Listening         896             C:\Windows\system32\svchost.exe
+  TCP        [::]                                        636           [::]                                        0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        [::]                                        3268          [::]                                        0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        [::]                                        3269          [::]                                        0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        [::]                                        5985          [::]                                        0               Listening         4               System
+  TCP        [::]                                        9389          [::]                                        0               Listening         2984            C:\Windows\ADWS\Microsoft.ActiveDirectory.WebServices.exe
+  TCP        [::]                                        47001         [::]                                        0               Listening         4               System
+  TCP        [::]                                        49664         [::]                                        0               Listening         488             wininit
+  TCP        [::]                                        49665         [::]                                        0               Listening         1132            C:\Windows\System32\svchost.exe
+  TCP        [::]                                        49666         [::]                                        0               Listening         1528            C:\Windows\system32\svchost.exe
+  TCP        [::]                                        49668         [::]                                        0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        [::]                                        49673         [::]                                        0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        [::]                                        49674         [::]                                        0               Listening         644             C:\Windows\system32\lsass.exe
+  TCP        [::]                                        49676         [::]                                        0               Listening         2940            C:\Windows\System32\spoolsv.exe
+  TCP        [::]                                        49685         [::]                                        0               Listening         2076            C:\Windows\system32\dns.exe
+  TCP        [::]                                        49692         [::]                                        0               Listening         3052            C:\Windows\system32\DFSRs.exe
+  TCP        [::]                                        49705         [::]                                        0               Listening         624             services
+  TCP        [::1]                                       53            [::]                                        0               Listening         2076            C:\Windows\system32\dns.exe
+  TCP        [::1]                                       389           [::1]                                       49677           Established       644             C:\Windows\system32\lsass.exe
+  TCP        [::1]                                       389           [::1]                                       49678           Established       644             C:\Windows\system32\lsass.exe
+  TCP        [::1]                                       389           [::1]                                       49683           Established       644             C:\Windows\system32\lsass.exe
+  TCP        [::1]                                       49677         [::1]                                       389             Established       2440            C:\Windows\System32\ismserv.exe
+  TCP        [::1]                                       49678         [::1]                                       389             Established       2440            C:\Windows\System32\ismserv.exe
+  TCP        [::1]                                       49683         [::1]                                       389             Established       2076            C:\Windows\system32\dns.exe
+  TCP        [dead:beef::105]                            53            [::]                                        0               Listening         2076            C:\Windows\system32\dns.exe
+  TCP        [dead:beef::692d:c39e:1707:3cdb]            53            [::]                                        0               Listening         2076            C:\Windows\system32\dns.exe
+  TCP        [fe80::692d:c39e:1707:3cdb%7]               53            [::]                                        0               Listening         2076            C:\Windows\system32\dns.exe
+  TCP        [fe80::692d:c39e:1707:3cdb%7]               389           [fe80::692d:c39e:1707:3cdb%7]               49679           Established       644             C:\Windows\system32\lsass.exe
+  TCP        [fe80::692d:c39e:1707:3cdb%7]               389           [fe80::692d:c39e:1707:3cdb%7]               49684           Established       644             C:\Windows\system32\lsass.exe
+  TCP        [fe80::692d:c39e:1707:3cdb%7]               389           [fe80::692d:c39e:1707:3cdb%7]               49688           Established       644             C:\Windows\system32\lsass.exe
+  TCP        [fe80::692d:c39e:1707:3cdb%7]               49668         [fe80::692d:c39e:1707:3cdb%7]               49687           Established       644             C:\Windows\system32\lsass.exe
+  TCP        [fe80::692d:c39e:1707:3cdb%7]               49668         [fe80::692d:c39e:1707:3cdb%7]               49745           Established       644             C:\Windows\system32\lsass.exe
+  TCP        [fe80::692d:c39e:1707:3cdb%7]               49679         [fe80::692d:c39e:1707:3cdb%7]               389             Established       3052            C:\Windows\system32\DFSRs.exe
+  TCP        [fe80::692d:c39e:1707:3cdb%7]               49684         [fe80::692d:c39e:1707:3cdb%7]               389             Established       2076            C:\Windows\system32\dns.exe
+  TCP        [fe80::692d:c39e:1707:3cdb%7]               49687         [fe80::692d:c39e:1707:3cdb%7]               49668           Established       3052            C:\Windows\system32\DFSRs.exe
+  TCP        [fe80::692d:c39e:1707:3cdb%7]               49688         [fe80::692d:c39e:1707:3cdb%7]               389             Established       3052            C:\Windows\system32\DFSRs.exe
+  TCP        [fe80::692d:c39e:1707:3cdb%7]               49745         [fe80::692d:c39e:1707:3cdb%7]               49668           Established       644             C:\Windows\system32\lsass.exe
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Current UDP Listening Ports
+È Check for services restricted from the outside 
+  Enumerating IPv4 connections
+                                                                                                                                                                                                                                            
+  Protocol   Local Address         Local Port    Remote Address:Remote Port     Process ID        Process Name
+
+  UDP        0.0.0.0               123           *:*                            660               C:\Windows\system32\svchost.exe
+  UDP        0.0.0.0               389           *:*                            644               C:\Windows\system32\lsass.exe
+  UDP        0.0.0.0               5353          *:*                            1148              C:\Windows\system32\svchost.exe
+  UDP        0.0.0.0               5355          *:*                            1148              C:\Windows\system32\svchost.exe
+  UDP        0.0.0.0               49227         *:*                            1148              C:\Windows\system32\svchost.exe
+  UDP        0.0.0.0               50098         *:*                            2076              C:\Windows\system32\dns.exe
+
+省略
+
+ Enumerating IPv6 connections
+                                                                                                                                                                                                                                            
+  Protocol   Local Address                               Local Port    Remote Address:Remote Port     Process ID        Process Name
+
+  UDP        [::]                                        123           *:*                            660               C:\Windows\system32\svchost.exe
+  UDP        [::]                                        389           *:*                            644               C:\Windows\system32\lsass.exe
+  UDP        [::]                                        5353          *:*                            1148              C:\Windows\system32\svchost.exe
+  UDP        [::]                                        5355          *:*                            1148              C:\Windows\system32\svchost.exe
+  UDP        [::]                                        50099         *:*                            2076              C:\Windows\system32\dns.exe
+  UDP        [::]                                        52601         *:*                            2076              C:\Windows\system32\dns.exe
+
+省略
+
+ UDP        [::]                                        56384         *:*                            1148              C:\Windows\system32\svchost.exe
+  UDP        [::]                                        63181         *:*                            1148              C:\Windows\system32\svchost.exe
+  UDP        [::1]                                       53            *:*                            2076              C:\Windows\system32\dns.exe
+  UDP        [::1]                                       50097         *:*                            2076              C:\Windows\system32\dns.exe
+  UDP        [dead:beef::105]                            53            *:*                            2076              C:\Windows\system32\dns.exe
+  UDP        [dead:beef::105]                            88            *:*                            644               C:\Windows\system32\lsass.exe
+  UDP        [dead:beef::105]                            464           *:*                            644               C:\Windows\system32\lsass.exe
+  UDP        [dead:beef::692d:c39e:1707:3cdb]            53            *:*                            2076              C:\Windows\system32\dns.exe
+  UDP        [dead:beef::692d:c39e:1707:3cdb]            88            *:*                            644               C:\Windows\system32\lsass.exe
+  UDP        [dead:beef::692d:c39e:1707:3cdb]            464           *:*                            644               C:\Windows\system32\lsass.exe
+  UDP        [fe80::692d:c39e:1707:3cdb%7]               53            *:*                            2076              C:\Windows\system32\dns.exe
+  UDP        [fe80::692d:c39e:1707:3cdb%7]               88            *:*                            644               C:\Windows\system32\lsass.exe
+  UDP        [fe80::692d:c39e:1707:3cdb%7]               464           *:*                            644               C:\Windows\system32\lsass.exe
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Firewall Rules
+È Showing only DENY rules (too many ALLOW rules always) 
+    Current Profiles: DOMAIN
+    FirewallEnabled (Domain):    True
+    FirewallEnabled (Private):    True
+    FirewallEnabled (Public):    True
+    DENY rules:
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ DNS cached --limit 70--
+    Entry                                 Name                                  Data
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Internet settings, zone and proxy configuration
+  General Settings
+  Hive        Key                                       Value
+  HKCU        DisableCachingOfSSLPages                  0
+  HKCU        IE5_UA_Backup_Flag                        5.0
+  HKCU        PrivacyAdvanced                           1
+  HKCU        SecureProtocols                           2688
+  HKCU        User Agent                                Mozilla/4.0 (compatible; MSIE 8.0; Win32)
+  HKCU        CertificateRevocation                     1
+  HKCU        ZonesSecurityUpgrade                      System.Byte[]
+  HKCU        EnableNegotiate                           1
+  HKCU        WarnonZoneCrossing                        0
+  HKCU        MigrateProxy                              1
+  HKCU        ProxyEnable                               0
+  HKLM        ActiveXCache                              C:\Windows\Downloaded Program Files
+  HKLM        CodeBaseSearchPath                        CODEBASE
+  HKLM        EnablePunycode                            1
+  HKLM        MinorVersion                              0
+  HKLM        WarnOnIntranet                            1
+
+  Zone Maps                                                                                                                                                                                                                                 
+  No URLs configured
+
+  Zone Auth Settings                                                                                                                                                                                                                        
+  No Zone Auth Settings
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Internet Connectivity
+È Checking if internet access is possible via different methods 
+    HTTP (80) Access: Not Accessible
+  [X] Exception:       Error: A task was canceled.
+    HTTPS (443) Access: Not Accessible
+  [X] Exception:       Error: TCP connect timed out
+    HTTPS (443) Access by Domain Name: Not Accessible
+  [X] Exception:       Error: A task was canceled.
+    DNS (53) Access: Not Accessible
+  [X] Exception:       Error: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+    ICMP (ping) Access: Not Accessible
+  [X] Exception:       Error: Ping failed: TimedOut
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Hostname Resolution
+È Checking if the hostname can be resolved externally 
+  [X] Exception:     Error during hostname check: An error occurred while sending the request.
+
+       /---------------------------------------------------------------------------------\                                                                                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |         Learn Cloud Hacking       :     training.hacktricks.xyz                 |                                                                                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |                                 Thank you!                                      |                                                                                                                                                  
+       \---------------------------------------------------------------------------------/
