@@ -3700,3 +3700,518 @@ Long paths are disabled, so the maximum length of a path supported is 260 chars 
        |---------------------------------------------------------------------------------|                                                                                                                                                  
        |                                 Thank you!                                      |                                                                                                                                                  
        \---------------------------------------------------------------------------------/
+```
+
+
+## windowscreds
+```sh
+*Evil-WinRM* PS C:\Users\Administrator\Documents> .\winPEASx64.exe quiet windowscreds
+ [!] If you want to run the file analysis checks (search sensitive information in files), you need to specify the 'fileanalysis' or 'all' argument. Note that this search might take several minutes. For help, run winpeass.exe --help
+ANSI color bit for Windows is not set. If you are executing this from a Windows terminal inside the host you should run 'REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+Long paths are disabled, so the maximum length of a path supported is 260 chars (this may cause false negatives when looking for files). If you are admin, you can enable it with 'REG ADD HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+  WinPEAS-ng by @hacktricks_live
+
+       /---------------------------------------------------------------------------------\                                                                                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |         Learn Cloud Hacking       :     training.hacktricks.xyz                 |                                                                                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |                                 Thank you!                                      |                                                                                                                                                  
+       \---------------------------------------------------------------------------------/                                                                                                                                                  
+                                                                                                                                                                                                                                            
+  [+] Legend:
+         Red                Indicates a special privilege over an object or something is misconfigured
+         Green              Indicates that some protection is enabled or something is well configured
+         Cyan               Indicates active users
+         Blue               Indicates disabled users
+         LightYellow        Indicates links
+
+ You can find a Windows local PE Checklist here: https://book.hacktricks.wiki/en/windows-hardening/checklist-windows-privilege-escalation.html
+   Creating Dynamic lists, this could take a while, please wait...                                                                                                                                                                          
+   - Loading sensitive_files yaml definitions file...
+   - Loading regexes yaml definitions file...
+   - Checking if domain...
+   - Getting Win32_UserAccount info...
+   - Creating current user groups list...
+   - Creating active users list (local only)...
+   - Creating disabled users list...
+   - Admin users list...
+   - Creating AppLocker bypass list...
+   - Creating files/directories list for search...
+        [skipped, file search is disabled]
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Windows Credentials ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking Windows Vault
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#credentials-manager--windows-vault
+Unable to enumerate vault items from the following vault: Windows Credentials. Error 0x1312
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking Credential manager
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#credentials-manager--windows-vault
+    [!] Warning: if password contains non-printable characters, it will be printed as unicode base64 encoded string
+
+
+  [!] Unable to enumerate credentials automatically, error: 'Win32Exception: System.ComponentModel.Win32Exception (0x80004005): A specified logon session does not exist. It may already have been terminated'
+Please run:
+cmdkey /list
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Saved RDP connections
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Remote Desktop Server/Client Settings
+  RDP Server Settings
+    Network Level Authentication            :
+    Block Clipboard Redirection             :
+    Block COM Port Redirection              :
+    Block Drive Redirection                 :
+    Block LPT Port Redirection              :
+    Block PnP Device Redirection            :
+    Block Printer Redirection               :
+    Allow Smart Card Redirection            :
+
+  RDP Client Settings                                                                                                                                                                                                                       
+    Disable Password Saving                 :       True
+    Restricted Remote Administration        :       False
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Recently run commands
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking for DPAPI Master Keys
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#dpapi
+    MasterKey: C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2966785786-3096785034-1186376766-500\0eeb4512-eace-49f9-bd0c-06784491ef57
+    Accessed: 7/26/2021 9:16:50 AM
+    Modified: 7/26/2021 9:16:50 AM
+   =================================================================================================
+
+    MasterKey: C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2966785786-3096785034-1186376766-500\1c04d057-9af2-4499-9c85-90d66e76349f
+    Accessed: 8/9/2025 7:12:59 AM
+    Modified: 8/9/2025 7:12:59 AM
+   =================================================================================================
+
+    MasterKey: C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2966785786-3096785034-1186376766-500\2a7fea96-cd42-449b-acf4-ba9de327c36e
+    Accessed: 7/26/2021 9:16:51 AM
+    Modified: 7/26/2021 9:16:51 AM
+   =================================================================================================
+
+    MasterKey: C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2966785786-3096785034-1186376766-500\f4025d63-f6a0-4055-af3d-7049d578529d
+    Accessed: 1/24/2020 9:14:15 AM
+    Modified: 1/24/2020 9:14:15 AM
+   =================================================================================================
+
+    MasterKey: C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2966785786-3096785034-1186376766-500\0eeb4512-eace-49f9-bd0c-06784491ef57
+    Accessed: 7/26/2021 9:16:50 AM
+    Modified: 7/26/2021 9:16:50 AM
+   =================================================================================================
+
+    MasterKey: C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2966785786-3096785034-1186376766-500\1c04d057-9af2-4499-9c85-90d66e76349f
+    Accessed: 8/9/2025 7:12:59 AM
+    Modified: 8/9/2025 7:12:59 AM
+   =================================================================================================
+
+    MasterKey: C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2966785786-3096785034-1186376766-500\2a7fea96-cd42-449b-acf4-ba9de327c36e
+    Accessed: 7/26/2021 9:16:51 AM
+    Modified: 7/26/2021 9:16:51 AM
+   =================================================================================================
+
+    MasterKey: C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2966785786-3096785034-1186376766-500\f4025d63-f6a0-4055-af3d-7049d578529d
+    Accessed: 1/24/2020 9:14:15 AM
+    Modified: 1/24/2020 9:14:15 AM
+   =================================================================================================
+
+    MasterKey: C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2966785786-3096785034-1186376766-500\0eeb4512-eace-49f9-bd0c-06784491ef57
+    Accessed: 7/26/2021 9:16:50 AM
+    Modified: 7/26/2021 9:16:50 AM
+   =================================================================================================
+
+    MasterKey: C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2966785786-3096785034-1186376766-500\1c04d057-9af2-4499-9c85-90d66e76349f
+    Accessed: 8/9/2025 7:12:59 AM
+    Modified: 8/9/2025 7:12:59 AM
+   =================================================================================================
+
+    MasterKey: C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2966785786-3096785034-1186376766-500\2a7fea96-cd42-449b-acf4-ba9de327c36e
+    Accessed: 7/26/2021 9:16:51 AM
+    Modified: 7/26/2021 9:16:51 AM
+   =================================================================================================
+
+    MasterKey: C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2966785786-3096785034-1186376766-500\f4025d63-f6a0-4055-af3d-7049d578529d
+    Accessed: 1/24/2020 9:14:15 AM
+    Modified: 1/24/2020 9:14:15 AM
+   =================================================================================================
+
+È Follow the provided link for further instructions in how to decrypt the masterkey.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking for DPAPI Credential Files
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#dpapi
+    CredFile: C:\Users\Administrator\AppData\Local\Microsoft\Credentials\DFBE70A7E5CC19A398EBF1B96859CE5D
+    Description: Local Credential Data
+
+    MasterKey: 0eeb4512-eace-49f9-bd0c-06784491ef57
+    Accessed: 7/13/2021 8:57:45 AM
+    Modified: 7/13/2021 8:57:45 AM
+    Size: 10988
+   =================================================================================================
+
+È Follow the provided link for further instructions in how to decrypt the creds file
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking for RDCMan Settings Files
+È Dump credentials from Remote Desktop Connection Manager https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#remote-desktop-credential-manager
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for Kerberos tickets
+È  https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-kerberos-88/index.html
+    [*] Enumerated 1 ticket(s):
+
+    [*] Enumerated 1 ticket(s):
+
+    [*] Enumerated 1 ticket(s):
+
+    [*] Enumerated 1 ticket(s):
+
+    [*] Enumerated 2 ticket(s):
+
+    [*] Enumerated 1 ticket(s):
+
+    [*] Enumerated 1 ticket(s):
+
+    [*] Enumerated 1 ticket(s):
+
+    [*] Enumerated 10 ticket(s):
+
+    UserPrincipalName: 
+    serverName: ldap/SAUNA.EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:16 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 12/31/1600 4:00:00 PM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: 
+    serverName: LDAP/SAUNA.EGOTISTICAL-BANK.LOCAL/EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:16 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 12/31/1600 4:00:00 PM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: 
+    serverName: ldap/SAUNA.EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:16 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 12/31/1600 4:00:00 PM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: 
+    serverName: krbtgt/EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:16 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 8/16/2025 4:44:16 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, pre_authent, renewable, forwarded, forwardable
+   =================================================================================================
+
+    UserPrincipalName: 
+    serverName: krbtgt/EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:17 AM
+    EndTime: 8/9/2025 2:44:17 PM
+    RenewTime: 8/16/2025 4:44:17 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, pre_authent, initial, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: 
+    serverName: ldap/SAUNA.EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:17 AM
+    EndTime: 8/9/2025 2:44:17 PM
+    RenewTime: 8/16/2025 4:44:17 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: 
+    serverName: GC/SAUNA.EGOTISTICAL-BANK.LOCAL/EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:58:46 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 12/31/1600 4:00:00 PM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: 
+    serverName: ldap/SAUNA.EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:16 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 12/31/1600 4:00:00 PM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: 
+    serverName: ldap/SAUNA.EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:16 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 12/31/1600 4:00:00 PM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: SAUNA$@EGOTISTICAL-BANK.LOCAL
+    serverName: krbtgt/EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:16 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 8/16/2025 4:44:16 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, pre_authent, renewable, forwarded, forwardable
+   =================================================================================================
+
+    UserPrincipalName: SAUNA$@EGOTISTICAL-BANK.LOCAL
+    serverName: krbtgt/EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:16 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 8/16/2025 4:44:16 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, pre_authent, initial, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: SAUNA$@EGOTISTICAL-BANK.LOCAL
+    serverName: GC/SAUNA.EGOTISTICAL-BANK.LOCAL/EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:58:46 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 8/16/2025 4:44:16 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: SAUNA$@EGOTISTICAL-BANK.LOCAL
+    serverName: cifs/SAUNA
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:53:34 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 8/16/2025 4:44:16 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: SAUNA$@EGOTISTICAL-BANK.LOCAL
+    serverName: SAUNA$
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:38 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 8/16/2025 4:44:16 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: SAUNA$@EGOTISTICAL-BANK.LOCAL
+    serverName: cifs/SAUNA.EGOTISTICAL-BANK.LOCAL/EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:38 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 8/16/2025 4:44:16 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: SAUNA$@EGOTISTICAL-BANK.LOCAL
+    serverName: HTTP/SAUNA.EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:26 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 8/16/2025 4:44:16 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: SAUNA$@EGOTISTICAL-BANK.LOCAL
+    serverName: LDAP/SAUNA.EGOTISTICAL-BANK.LOCAL/EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:16 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 8/16/2025 4:44:16 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: SAUNA$@EGOTISTICAL-BANK.LOCAL
+    serverName: LDAP/SAUNA
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:16 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 8/16/2025 4:44:16 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+    UserPrincipalName: SAUNA$@EGOTISTICAL-BANK.LOCAL
+    serverName: ldap/SAUNA.EGOTISTICAL-BANK.LOCAL
+    RealmName: EGOTISTICAL-BANK.LOCAL
+    StartTime: 8/9/2025 4:44:16 AM
+    EndTime: 8/9/2025 2:44:16 PM
+    RenewTime: 8/16/2025 4:44:16 AM
+    EncryptionType: aes256_cts_hmac_sha1_96
+    TicketFlags: name_canonicalize, ok_as_delegate, pre_authent, renewable, forwardable
+   =================================================================================================
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for saved Wifi credentials
+  [X] Exception: Unable to load DLL 'wlanapi.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)
+Enumerating WLAN using wlanapi.dll failed, trying to enumerate using 'netsh'
+No saved Wifi credentials found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking AppCmd.exe
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#appcmdexe
+    AppCmd.exe was found in C:\Windows\system32\inetsrv\appcmd.exe
+    No application pool or virtual directory passwords were found.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking SSClient.exe
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#scclient--sccm
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating SSCM - System Center Configuration Manager settings
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Security Packages Credentials
+  [X] Exception: Couldn't parse nt_resp. Len: 0 Message bytes: 4e544c4d535350000300000001000100620000000000000063000000000000005800000000000000580000000a000a00580000000000000063000000058a80a20a0063450000000f344800b73d212822d26b9bd16ab6b57f5300410055004e00410000                                                                                                                                                                                                                   
+
+       /---------------------------------------------------------------------------------\                                                                                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |         Learn Cloud Hacking       :     training.hacktricks.xyz                 |                                                                                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |                                 Thank you!                                      |                                                                                                                                                  
+       \---------------------------------------------------------------------------------/
+```
+
+
+## browserinfo
+```sh
+*Evil-WinRM* PS C:\Users\Administrator\Documents> .\winPEASx64.exe quiet browserinfo
+ [!] If you want to run the file analysis checks (search sensitive information in files), you need to specify the 'fileanalysis' or 'all' argument. Note that this search might take several minutes. For help, run winpeass.exe --help
+ANSI color bit for Windows is not set. If you are executing this from a Windows terminal inside the host you should run 'REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+Long paths are disabled, so the maximum length of a path supported is 260 chars (this may cause false negatives when looking for files). If you are admin, you can enable it with 'REG ADD HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+  WinPEAS-ng by @hacktricks_live
+
+       /---------------------------------------------------------------------------------\                                                                                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |         Learn Cloud Hacking       :     training.hacktricks.xyz                 |                                                                                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |                                 Thank you!                                      |                                                                                                                                                  
+       \---------------------------------------------------------------------------------/                                                                                                                                                  
+                                                                                                                                                                                                                                            
+  [+] Legend:
+         Red                Indicates a special privilege over an object or something is misconfigured
+         Green              Indicates that some protection is enabled or something is well configured
+         Cyan               Indicates active users
+         Blue               Indicates disabled users
+         LightYellow        Indicates links
+
+ You can find a Windows local PE Checklist here: https://book.hacktricks.wiki/en/windows-hardening/checklist-windows-privilege-escalation.html
+   Creating Dynamic lists, this could take a while, please wait...                                                                                                                                                                          
+   - Loading sensitive_files yaml definitions file...
+   - Loading regexes yaml definitions file...
+   - Checking if domain...
+   - Getting Win32_UserAccount info...
+   - Creating current user groups list...
+   - Creating active users list (local only)...
+   - Creating disabled users list...
+   - Admin users list...
+   - Creating AppLocker bypass list...
+   - Creating files/directories list for search...
+        [skipped, file search is disabled]
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Browsers Information ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Showing saved credentials for Firefox
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for Firefox DBs
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#browsers-history
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for GET credentials in Firefox history
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#browsers-history
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Showing saved credentials for Chrome
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for Chrome DBs
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#browsers-history
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for GET credentials in Chrome history
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#browsers-history
+
+
+=== Chrome (All Users) ===
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Chrome bookmarks
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Showing saved credentials for Opera
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Showing saved credentials for Brave Browser
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Showing saved credentials for Internet Explorer (unsupported)
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Current IE tabs
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#browsers-history
+  [X] Exception: System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Runtime.InteropServices.COMException: The server process could not be started because the configured identity is incorrect. Check the username and password. (Exception from HRESULT: 0x8000401A)                                                                                                                                                   
+   --- End of inner exception stack trace ---                                                                                                                                                                                               
+   at System.RuntimeType.InvokeDispMethod(String name, BindingFlags invokeAttr, Object target, Object[] args, Boolean[] byrefModifiers, Int32 culture, String[] namedParameters)                                                            
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)                                
+   at winPEAS.KnownFileCreds.Browsers.InternetExplorer.GetCurrentIETabs()                                                                                                                                                                   
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for GET credentials in IE history
+È  https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#browsers-history
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ IE history -- limit 50
+                                                                                                                                                                                                                                            
+    http://go.microsoft.com/fwlink/p/?LinkId=255142
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ IE favorites
+    Not Found
+
+       /---------------------------------------------------------------------------------\                                                                                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |         Learn Cloud Hacking       :     training.hacktricks.xyz                 |                                                                                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                                                                                  
+       |                                 Thank you!                                      |                                                                                                                                                  
+       \---------------------------------------------------------------------------------/                                                                                                                                                  
+```
+
+
+## 
