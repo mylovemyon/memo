@@ -201,7 +201,7 @@ name-that-hash -f 'hash.txt' --no-banner --no-john
 ./username-anarchy -i userlist.txt > user.txt
 ```
 
-### phobash
+### phpbash
 [phpbash](https://github.com/Arrexel/phpbash)
 
 
@@ -230,7 +230,10 @@ name-that-hash -f 'hash.txt' --no-banner --no-john
 
 ## list
 ### seclists
-```sh
+<details>
+<summary>クリック</summary>
+
+ ```sh
 └─$ find /usr/share/seclists/Discovery -type f -exec wc -l {} +  
     64770 /usr/share/seclists/Discovery/Infrastructure/All-Ipv4-ClassC-192.168.txt
     65535 /usr/share/seclists/Discovery/Infrastructure/Ports-1-To-65535.txt
@@ -1411,6 +1414,8 @@ name-that-hash -f 'hash.txt' --no-banner --no-john
    279616 /usr/share/seclists/Passwords/Keyboard-Walks/walk-the-line.txt
      6240 /usr/share/seclists/Passwords/days.txt
 ```
+</details>
+
 
 ### bloodhound
 admin
