@@ -1,6 +1,7 @@
 ## 0
 - `rustsvan -a 'IP' --no-banner --scripts none`
-- `nmap -n -Pn -p- -sV 0.0.0.0 `
+- `nmap -n -Pn -p- -sV 'IP'`
+- `sudo nmap -n -Pn -sC -sV --script vuln 'IP'`
 
 
 
@@ -9,6 +10,10 @@
 ```sh
 ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u http://IP/FUZZ
 ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://IP/FUZZ
+```
+### nmap
+```sh
+nmap -n -Pn -p'PORT' -sV --script=http-webdav-scan 'IP'
 ```
 
 
@@ -168,6 +173,10 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 
 ## escalation
 ### windows
+- https://github.com/evets007/OSCP-Prep-cheatsheet/blob/master/windows-exploits.md
+- https://github.com/abatchy17/WindowsExploits
+- https://github.com/SecWiki/windows-kernel-exploits
+- https://kakyouim.hatenablog.com/entry/2020/05/27/010807
 #### winpeas
 32bit or 64bit のバージョンに注意
 ```bat
@@ -209,8 +218,6 @@ name-that-hash -f 'hash.txt' --no-banner --no-john
 - https://book.hacktricks.wiki/en/index.html
 - https://cwe.mitre.org/data/published/cwe_latest.pdf
 - https://exploit-notes.hdks.org/
-- https://github.com/abatchy17/WindowsExploits
-- https://github.com/SecWiki/windows-kernel-exploits
 - https://github.com/swisskyrepo/InternalAllTheThings
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://gtfobins.github.io/
