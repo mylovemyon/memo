@@ -1,11 +1,23 @@
 ## 0
 - `rustsvan -a 'IP' --no-banner --scripts none`
 - `nmap -n -Pn -p- -sV 'IP'`
-- `sudo nmap -n -Pn -sC -sV --script vuln 'IP'`
+- `nmap -n -Pn -sC -sV --script vuln 'IP'`
 
 
 
 ## 80
+### cadaver
+```sh
+cadaver http://IP
+```
+### curl
+```sh
+curl -X OPTIONS -I http://'IP'
+```
+### davtest
+```sh
+davtest -url 'URL' -cleanup
+```
 ### ffuf
 ```sh
 ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u http://IP/FUZZ
@@ -13,7 +25,7 @@ ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
 ```
 ### nmap
 ```sh
-nmap -n -Pn -p'PORT' -sV --script=http-webdav-scan 'IP'
+nmap -n -Pn -p80 --script=http-methods 'IP'
 ```
 
 
@@ -174,7 +186,7 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 ## escalation
 ### windows
 - https://github.com/evets007/OSCP-Prep-cheatsheet/blob/master/windows-exploits.md
-- https://github.com/abatchy17/WindowsExploits
+- `https://github.com/abatchy17/WindowsExploits`
 - https://github.com/SecWiki/windows-kernel-exploits
 - https://kakyouim.hatenablog.com/entry/2020/05/27/010807
 #### winpeas
