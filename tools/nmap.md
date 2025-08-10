@@ -1,3 +1,59 @@
+## http-methods
+```sh
+└─$ nmap -n -Pn -p80 --script=http-methods 10.129.95.234 -d 
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-09 04:59 EDT
+--------------- Timing report ---------------
+  hostgroups: min 1, max 100000
+  rtt-timeouts: init 1000, min 100, max 10000
+  max-scan-delay: TCP 1000, UDP 1000, SCTP 1000
+  parallelism: min 0, max 0
+  max-retries: 10, host-timeout: 0
+  min-rate: 0, max-rate: 0
+---------------------------------------------
+NSE: Using Lua 5.4.
+NSE: Arguments from CLI: 
+NSE: Loaded 1 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 1) scan.
+Initiating NSE at 04:59
+Completed NSE at 04:59, 0.00s elapsed
+Initiating SYN Stealth Scan at 04:59
+Scanning 10.129.95.234 [1 port]
+Packet capture filter (device tun0): dst host 10.10.16.23 and (icmp or icmp6 or ((tcp or udp or sctp) and (src host 10.129.95.234)))
+Discovered open port 80/tcp on 10.129.95.234
+Completed SYN Stealth Scan at 04:59, 0.33s elapsed (1 total ports)
+Overall sending rates: 3.05 packets / s, 134.07 bytes / s.
+NSE: Script scanning 10.129.95.234.
+NSE: Starting runlevel 1 (of 1) scan.
+Initiating NSE at 04:59
+NSE: Starting http-methods against 10.129.95.234:80.
+NSE: [http-methods 10.129.95.234:80] HTTP Status for OPTIONS is 200
+NSE: [http-methods 10.129.95.234:80] Response Code to Random Method is 501
+NSE: Finished http-methods against 10.129.95.234:80.
+Completed NSE at 04:59, 3.96s elapsed
+Nmap scan report for 10.129.95.234
+Host is up, received user-set (0.31s latency).
+Scanned at 2025-08-09 04:59:07 EDT for 4s
+
+PORT   STATE SERVICE REASON
+80/tcp open  http    syn-ack ttl 127
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD DELETE COPY MOVE PROPFIND PROPPATCH SEARCH MKCOL LOCK UNLOCK PUT POST
+|_  Potentially risky methods: TRACE DELETE COPY MOVE PROPFIND PROPPATCH SEARCH MKCOL LOCK UNLOCK PUT
+Final times for host: srtt: 307187 rttvar: 307187  to: 1535935
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 1) scan.
+Initiating NSE at 04:59
+Completed NSE at 04:59, 0.00s elapsed
+Read from /usr/share/nmap: nmap-protocols nmap-services.
+Nmap done: 1 IP address (1 host up) scanned in 4.38 seconds
+           Raw packets sent: 1 (44B) | Rcvd: 1 (44B)
+```
+
+
+
+# tips
 ## TARGET SPECIFICATION
 https://nmap.org/book/man-target-specification.html  
 おすすめオプション
