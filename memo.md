@@ -12,6 +12,7 @@ cadaver http://IP
 ```
 ### curl
 ```sh
+curl -I http://'IP'
 curl -X OPTIONS -I http://'IP'
 ```
 ### davtest
@@ -27,6 +28,8 @@ ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
 ```sh
 nmap -n -Pn -p80 --script=http-methods 'IP'
 ```
+### PoC
+- [CVE-2017-7269](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/) - Windows Server 2003 R2 IIS6.0 webdav
 
 
 
@@ -185,6 +188,7 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 
 ## escalation
 ### windows
+- [CVE-2009-0079](https://github.com/Re4son/Churrasco/)
 - https://github.com/evets007/OSCP-Prep-cheatsheet/blob/master/windows-exploits.md
 - `https://github.com/abatchy17/WindowsExploits`
 - https://github.com/SecWiki/windows-kernel-exploits
@@ -221,9 +225,9 @@ name-that-hash -f 'hash.txt' --no-banner --no-john
 ```sh
 ./username-anarchy -i userlist.txt > user.txt
 ```
-
 ### phpbash
 [phpbash](https://github.com/Arrexel/phpbash)
+
 
 
 ## link
