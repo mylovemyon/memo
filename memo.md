@@ -248,6 +248,7 @@ name-that-hash -f 'hash.txt' --no-banner --no-john
 
 
 ## list
+https://github.com/netbiosX/Default-Credentials
 ### seclists
 <details>
 <summary>クリック</summary>
