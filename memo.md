@@ -29,6 +29,8 @@ ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
 nmap -n -Pn -p80 --script=http-methods 'IP'
 ```
 ### PoC
+#### rce
+- CVE-2012-4869 - FreePBX = 2.9/2.10
 - [CVE-2017-7269](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/) - Windows Server 2003 R2 IIS6.0 webdav
 
 
@@ -96,6 +98,16 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dc-list
 # Bloodhound Ingestor
 netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection All
 ```
+
+
+
+## 443
+### sslscan
+```sh
+sslscan --no-check-certificate --no-ciphersuites --no-compression --no-fallback --no-groups --no-heartbleed --no-renegotiation 'IP'
+```
+
+
 
 
 
@@ -170,6 +182,13 @@ smbclient -U 'DOMAIN/USERNAME%NT HASH' --pw-nt-hash -c 'COMMAND' '//HOST/SHARE'
 ```sh
 smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -g 'OUTPUT.txt'
 smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH' -g 'OUTPUT.txt'
+```
+
+
+
+## 5060(UDP)
+```sh
+svwar -m INVITE 'IP'
 ```
 
 
