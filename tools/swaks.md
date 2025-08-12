@@ -300,3 +300,50 @@ X-Mailer: 0 #変化
 
 0
 ```
+
+
+## -d
+```sh
+└─$ swaks -f kali@beep.localdomain -t asterisk@beep.localdomain -h 'Hi' --protocol esmtp -d "a" -s 10.129.156.206
+=== Trying 10.129.156.206:25...
+=== Connected to 10.129.156.206.
+<-  220 beep.localdomain ESMTP Postfix
+ -> EHLO Hi
+<-  250-beep.localdomain
+<-  250-PIPELINING
+<-  250-SIZE 10240000
+<-  250-VRFY
+<-  250-ETRN
+<-  250-ENHANCEDSTATUSCODES
+<-  250-8BITMIME
+<-  250 DSN
+ -> MAIL FROM:<kali@beep.localdomain>
+<-  250 2.1.0 Ok
+ -> RCPT TO:<asterisk@beep.localdomain>
+<-  250 2.1.5 Ok
+ -> DATA
+<-  354 End data with <CR><LF>.<CR><LF>
+ -> a #変化
+ -> 
+ -> 
+ -> .
+<-  250 2.0.0 Ok: queued as ACCADC0003
+ -> QUIT
+<-  221 2.0.0 Bye
+=== Connection closed with remote host.
+```
+```sh
+From kali@beep.localdomain  Tue Aug 12 14:05:31 2025
+Return-Path: <kali@beep.localdomain>
+X-Original-To: asterisk@beep.localdomain
+Delivered-To: asterisk@beep.localdomain
+Received: from Hi (unknown [10.10.16.23])
+        by beep.localdomain (Postfix) with ESMTP id ACCADC0003
+        for <asterisk@beep.localdomain>; Tue, 12 Aug 2025 14:05:30 +0300 (EEST)
+Message-Id: <20250812110530.ACCADC0003@beep.localdomain>
+Date: Tue, 12 Aug 2025 14:05:30 +0300 (EEST)
+From: kali@beep.localdomain
+To: undisclosed-recipients:;
+
+a #変化
+```
