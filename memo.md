@@ -260,6 +260,7 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 
 ## escalation
 ### windows
+#### CVE
 - [MS08-066](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS08-066)
 - [CVE-2009-0079](https://github.com/Re4son/Churrasco/)
 - [MS10-059](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059)
@@ -272,6 +273,8 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 ```bat
 .\winPEASx64.exe userinfo quiet
 ```
+#### Azure
+[AdSyncDecrypt](https://github.com/VbScrub/AdSyncDecrypt)
 ### Linux
 ### command
 ```sh
