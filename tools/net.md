@@ -1,3 +1,57 @@
+## ads
+### info
+```sh
+└─$ net ads info -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Failed to open /var/lib/samba/private/secrets.tdb
+LDAP server: 10.129.95.210
+LDAP server name: FOREST.htb.local
+Workgroup: HTB
+Realm: HTB.LOCAL
+Bind Path: dc=HTB,dc=LOCAL
+LDAP port: 389
+Server time: Sun, 17 Aug 2025 12:55:20 EDT
+KDC server: 10.129.95.210
+Server time offset: 409
+Last machine account password change: Wed, 31 Dec 1969 19:00:00 EST
+```
+### user
+```sh
+└─$ net ads user -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Administrator
+Guest
+DefaultAccount
+krbtgt
+SM_2c8eef0a09b545acb
+SM_ca8c2ed5bdab4dc9b
+SM_75a538d3025e4db9a
+SM_681f53d4942840e18
+SM_1b41c9286325456bb
+SM_9b69f1b9d2cc45549
+SM_7c96b981967141ebb
+SM_c75ee099d0a64c91b
+SM_1ffab36a2f5f479cb
+HealthMailboxc3d7722
+HealthMailboxfc9daad
+HealthMailboxc0a90c9
+HealthMailbox670628e
+HealthMailbox968e74d
+HealthMailbox6ded678
+HealthMailbox83d6781
+HealthMailboxfd87238
+HealthMailboxb01ac64
+HealthMailbox7108a4e
+HealthMailbox0659cc1
+sebastien
+lucinda
+svc-alfresco
+andy
+mark
+santi
+user
+```
+#### user info
+
+
 ## rpc
 ### info
 ```sh
@@ -588,6 +642,7 @@ Administrator's pwnotreq flag: no
 net rpc> user edit pwnoexp administrator
 Administrator's pwnoexp flag: no
 
+net rpc> user edit pwnoexp administrator yes
 Set Administrator's pwnoexp flag from [no] to [yes]
 net rpc> user edit pwnoexp administrator
 Administrator's pwnoexp flag: yes
