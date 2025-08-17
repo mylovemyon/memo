@@ -167,21 +167,6 @@ Server Operators
 └─$ net rpc group members 'DOMAIN Admins' -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210 
 HTB\Administrator
 ```
-#### group add
-```sh
-└─$ net rpc group add hello -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
-Added group 'hello'.
-```
-#### group delete
-```sh
-└─$ net rpc group delete hello -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
-
-```
-#### group rename
-```sh
-└─$ net rpc group rename hello hello1 -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
-
-```
 #### group addmem
 ```sh
 └─$ net rpc group addmem 'EXCHANGE WINDOWS PERMISSIONS' svc-alfresco -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
@@ -191,4 +176,215 @@ Added group 'hello'.
 ```sh
 └─$ net rpc group delmem 'EXCHANGE WINDOWS PERMISSIONS' svc-alfresco -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
 
+```
+#### group add
+```sh
+└─$ net rpc group add hello -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Added group 'hello'.
+```
+#### group rename
+```sh
+└─$ net rpc group rename hello hello1 -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+
+```
+#### group delete
+```sh
+└─$ net rpc group delete hello -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+
+```
+
+### share
+```sh
+└─$ net rpc share -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210 
+ADMIN$
+C$
+IPC$
+NETLOGON
+SYSVOL
+```
+
+### printer
+```sh
+└─$ net rpc printer -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Could not initialise pipe spoolss. Error was NT_STATUS_OBJECT_NAME_NOT_FOUND
+```
+
+### service
+#### service list
+```sh
+└─$ net rpc service list -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210
+ADWS                    "Active Directory Web Services"
+AppIDSvc                "Application Identity"
+AppMgmt                 "Application Management"
+AppXSvc                 "AppX Deployment Service (AppXSVC)"
+BFE                     "Base Filtering Engine"
+BITS                    "Background Intelligent Transfer Service"
+Browser                 "Computer Browser"
+CertPropSvc             "Certificate Propagation"
+ClipSVC                 "Client License Service (ClipSVC)"
+COMSysApp               "COM+ System Application"
+CoreMessagingRegistrar    "CoreMessaging"
+CryptSvc                "Cryptographic Services"
+DcomLaunch              "DCOM Server Process Launcher"
+defragsvc               "Optimize drives"
+DeviceInstall           "Device Install Service"
+Dfs                     "DFS Namespace"
+DFSR                    "DFS Replication"
+Dhcp                    "DHCP Client"
+diagnosticshub.standardcollector.service    "Microsoft (R) Diagnostics Hub Standard Collector Service"
+DiagTrack               "Connected User Experiences and Telemetry"
+DNS                     "DNS Server"
+Dnscache                "DNS Client"
+DPS                     "Diagnostic Policy Service"
+DsRoleSvc               "DS Role Server"
+EapHost                 "Extensible Authentication Protocol"
+EFS                     "Encrypting File System (EFS)"
+EventLog                "Windows Event Log"
+EventSystem             "COM+ Event System"
+fdPHost                 "Function Discovery Provider Host"
+FontCache               "Windows Font Cache Service"
+gpsvc                   "Group Policy Client"
+hidserv                 "Human Interface Device Service"
+HvHost                  "HV Host Service"
+IKEEXT                  "IKE and AuthIP IPsec Keying Modules"
+iphlpsvc                "IP Helper"
+IsmServ                 "Intersite Messaging"
+Kdc                     "Kerberos Key Distribution Center"
+KdsSvc                  "Microsoft Key Distribution Service"
+KeyIso                  "CNG Key Isolation"
+KPSSVC                  "KDC Proxy Server service (KPS)"
+KtmRm                   "KtmRm for Distributed Transaction Coordinator"
+LanmanServer            "Server"
+LanmanWorkstation       "Workstation"
+lltdsvc                 "Link-Layer Topology Discovery Mapper"
+lmhosts                 "TCP/IP NetBIOS Helper"
+LSM                     "Local Session Manager"
+MpsSvc                  "Windows Firewall"
+MSDTC                   "Distributed Transaction Coordinator"
+MSiSCSI                 "Microsoft iSCSI Initiator Service"
+msiserver               "Windows Installer"
+NcaSvc                  "Network Connectivity Assistant"
+Netlogon                "Netlogon"
+netprofm                "Network List Service"
+NetSetupSvc             "Network Setup Service"
+NetTcpPortSharing       "Net.Tcp Port Sharing Service"
+NlaSvc                  "Network Location Awareness"
+nsi                     "Network Store Interface Service"
+NTDS                    "Active Directory Domain Services"
+NtFrs                   "File Replication"
+PerfHost                "Performance Counter DLL Host"
+pla                     "Performance Logs & Alerts"
+PlugPlay                "Plug and Play"
+PolicyAgent             "IPsec Policy Agent"
+Power                   "Power"
+ProfSvc                 "User Profile Service"
+RasMan                  "Remote Access Connection Manager"
+RemoteAccess            "Routing and Remote Access"
+RemoteRegistry          "Remote Registry"
+RpcEptMapper            "RPC Endpoint Mapper"
+RpcSs                   "Remote Procedure Call (RPC)"
+RSoPProv                "Resultant Set of Policy Provider"
+sacsvr                  "Special Administration Console Helper"
+SamSs                   "Security Accounts Manager"
+SCardSvr                "Smart Card"
+ScDeviceEnum            "Smart Card Device Enumeration Service"
+Schedule                "Task Scheduler"
+SCPolicySvc             "Smart Card Removal Policy"
+seclogon                "Secondary Logon"
+SENS                    "System Event Notification Service"
+SessionEnv              "Remote Desktop Configuration"
+SharedAccess            "Internet Connection Sharing (ICS)"
+smphost                 "Microsoft Storage Spaces SMP"
+SNMPTRAP                "SNMP Trap"
+Spooler                 "Print Spooler"
+sppsvc                  "Software Protection"
+SstpSvc                 "Secure Socket Tunneling Protocol Service"
+StateRepository         "State Repository Service"
+svsvc                   "Spot Verifier"
+swprv                   "Microsoft Software Shadow Copy Provider"
+SysMain                 "Superfetch"
+SystemEventsBroker      "System Events Broker"
+TermService             "Remote Desktop Services"
+TieringEngineService    "Storage Tiers Management"
+TimeBrokerSvc           "Time Broker"
+TrustedInstaller        "Windows Modules Installer"
+UALSVC                  "User Access Logging Service"
+UmRdpService            "Remote Desktop Services UserMode Port Redirector"
+UserManager             "User Manager"
+UsoSvc                  "Update Orchestrator Service for Windows Update"
+VaultSvc                "Credential Manager"
+vds                     "Virtual Disk"
+VGAuthService           "VMware Alias Manager and Ticket Service"
+vmicguestinterface      "Hyper-V Guest Service Interface"
+vmicheartbeat           "Hyper-V Heartbeat Service"
+vmickvpexchange         "Hyper-V Data Exchange Service"
+vmicrdv                 "Hyper-V Remote Desktop Virtualization Service"
+vmicshutdown            "Hyper-V Guest Shutdown Service"
+vmictimesync            "Hyper-V Time Synchronization Service"
+vmicvmsession           "Hyper-V PowerShell Direct Service"
+vmicvss                 "Hyper-V Volume Shadow Copy Requestor"
+VMTools                 "VMware Tools"
+vmvss                   "VMware Snapshot Provider"
+VMwareCAFCommAmqpListener    "VMware CAF AMQP Communication Service"
+VMwareCAFManagementAgentHost    "VMware CAF Management Agent Service"
+VSS                     "Volume Shadow Copy"
+W32Time                 "Windows Time"
+WdiServiceHost          "Diagnostic Service Host"
+WdiSystemHost           "Diagnostic System Host"
+WdNisSvc                "Windows Defender Network Inspection Service"
+Wecsvc                  "Windows Event Collector"
+WerSvc                  "Windows Error Reporting Service"
+WinDefend               "Windows Defender Service"
+WinHttpAutoProxySvc     "WinHTTP Web Proxy Auto-Discovery Service"
+Winmgmt                 "Windows Management Instrumentation"
+WinRM                   "Windows Remote Management (WS-Management)"
+wisvc                   "Windows Insider Service"
+wmiApSrv                "WMI Performance Adapter"
+wuauserv                "Windows Update"
+wudfsvc                 "Windows Driver Foundation - User-mode Driver Framework"
+```
+#### service status
+```sh
+└─$ net rpc service status ADWS -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210
+ADWS service is running.
+Configuration details:
+        Controls Accepted    = 0x5
+        Service Type         = 0x10
+        Start Type           = 0x2
+        Error Control        = 0x1
+        Tag ID               = 0x0
+        Executable Path      = C:\Windows\ADWS\Microsoft.ActiveDirectory.WebServices.exe
+        Load Order Group     = 
+        Dependencies         = /
+        Start Name           = LocalSystem
+        Display Name         = Active Directory Web Services
+```
+
+### registry
+#### registry enumerate
+```sh
+└─$ net rpc registry enumerate 'HKLM\' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210 
+Keyname   = BCD00000000
+Modtime   = Sun, 17 Aug 2025 05:46:35 EDT
+
+Keyname   = HARDWARE
+Modtime   = Sun, 17 Aug 2025 05:46:31 EDT
+
+Keyname   = SAM
+Modtime   = Sun, 17 Aug 2025 05:46:37 EDT
+
+Keyname   = SECURITY
+Modtime   = Sun, 17 Aug 2025 05:46:37 EDT
+
+Keyname   = SOFTWARE
+Modtime   = Sun, 17 Aug 2025 05:46:36 EDT
+
+Keyname   = SYSTEM
+Modtime   = Sun, 17 Aug 2025 05:46:31 EDT
+```
+#### registry getvalue
+```sh
+└─$ net rpc registry getvalue 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run' 'VMware User Process' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210 
+Type       = REG_SZ
+Value      = ""C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr"
 ```
