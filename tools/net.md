@@ -78,7 +78,7 @@ Deleted user 'user'.
 
 ### group
 #### group list
-##### rpc group list global
+##### group list global
 ```sh
 └─$ net rpc group list global -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210 
 $D31000-NSEL5BRJ63V7
@@ -120,7 +120,7 @@ test
 UM Management
 View-Only Organization Management
 ```
-##### rpc group list local
+##### group list local
 ```sh
 └─$ net rpc group list local -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
 Cert Publishers
@@ -129,7 +129,7 @@ Allowed RODC Password Replication Group
 Denied RODC Password Replication Group
 DnsAdmins
 ```
-##### rpc group list builtin
+##### group list builtin
 ```sh
 └─$ net rpc group list builtin -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
 Account Operators
@@ -204,8 +204,14 @@ SYSVOL
 ```
 
 ### printer
+#### printer list
 ```sh
-└─$ net rpc printer -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+└─$ net rpc printer list -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Could not initialise pipe spoolss. Error was NT_STATUS_OBJECT_NAME_NOT_FOUND
+```
+#### printer driver
+```sh
+└─$ net rpc printer driver -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
 Could not initialise pipe spoolss. Error was NT_STATUS_OBJECT_NAME_NOT_FOUND
 ```
 
@@ -345,19 +351,56 @@ wudfsvc                 "Windows Driver Foundation - User-mode Driver Framework"
 ```
 #### service status
 ```sh
-└─$ net rpc service status ADWS -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210
-ADWS service is running.
+└─$ net rpc service status MpsSvc -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210
+MpsSvc service is running.
 Configuration details:
-        Controls Accepted    = 0x5
-        Service Type         = 0x10
+        Controls Accepted    = 0x1
+        Service Type         = 0x20
         Start Type           = 0x2
         Error Control        = 0x1
         Tag ID               = 0x0
-        Executable Path      = C:\Windows\ADWS\Microsoft.ActiveDirectory.WebServices.exe
+        Executable Path      = C:\Windows\system32\svchost.exe -k LocalServiceNoNetwork
+        Load Order Group     = NetworkProvider
+        Dependencies         = mpsdrv/bfe/
+        Start Name           = NT Authority\LocalService
+        Display Name         = Windows Firewall
+```
+#### service start
+```sh
+└─$ net rpc service start MpsSvc -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210 
+.
+Successfully started service: MpsSvc
+```
+#### service stop
+```sh
+└─$ net rpc service stop MpsSvc -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210   
+.
+MpsSvc service is stopped.
+```
+#### service create
+```sh
+└─$ net rpc service create test test 'C:\Windows\System32\cmd.exe' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210
+Successfully created Service: test
+                                                                                                                    
+┌──(kali㉿kali)-[~]
+└─$ net rpc service status test -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210                                   
+test service is stopped.
+Configuration details:
+        Controls Accepted    = 0x0
+        Service Type         = 0x10
+        Start Type           = 0x3
+        Error Control        = 0x1
+        Tag ID               = 0x0
+        Executable Path      = C:\Windows\System32\cmd.exe
         Load Order Group     = 
         Dependencies         = /
         Start Name           = LocalSystem
-        Display Name         = Active Directory Web Services
+        Display Name         = test
+```
+#### service delete
+```sh
+└─$ net rpc service delete test -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210    
+Successfully deleted Service: test
 ```
 
 ### registry
