@@ -244,6 +244,50 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'wmiexec' -x '
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'mmcexec' -x 'COMMAND'
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'atexec' -x 'COMMAND'
 ```
+### net rpc
+```sh
+net rpc info -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# user
+net rpc user -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc user info 'USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc user add 'USERNAME' 'PASSWORD' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc user password 'USERNAME' 'PASSWORD' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc user rename 'OLD_USERNAME' 'NEW_USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc user delete 'USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# group
+net rpc group list global -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc group list local -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc group list builtin -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc group add 'GROUPNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc group rename 'OLD_GROUPNAME' 'NEW_GROUPNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc group delete 'GROUPNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc group members 'GROUPNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc group addmem 'GROUPNAME' 'USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc group delmem 'GROUPNAME' 'USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# share
+net rpc share -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# printer
+net rpc printer list -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc printer driver -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# service
+net rpc service list -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc service status 'SERVICENAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc service start 'SERVICENAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc service stop 'SERVICENAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc service create 'SERVICENAME' 'DISPLAYNAME' 'BINARYPATH' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc service delete 'SERVICENAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# regisgtry
+net rpc registry enumerate 'KEYPATH' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc registry getvalue 'KEYPATH' 'VALUENAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc registry createkey 'KEYPATH' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc registry deletekey 'KEYPATH' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc registry setvalue 'KEYPATH' 'VALUENAME' 'TYPE' 'VALUE' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc registry deletevalue 'KEYPATH' 'VALUENAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc registry export 'KEYPATH' 'LOCALPATH' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc registry save 'KEYPATH' 'REMOTEPATH' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# shell
+net rpc shell -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+```
 ### smbclient
 ```sh
 smbclient -L 'HOST' -U 'DOMAIN/USERNAME%PASSWORD'
