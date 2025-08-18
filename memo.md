@@ -115,6 +115,17 @@ https://github.com/XiaoliChan/wmiexec-Pro
 
 
 ## 389
+### impacket
+```sh
+# write
+impacket-dacledit -ts -dc-ip 'IP' -principal-dn 'DN' -target-dn 'DN' -action write -rights WriteMembers -ace-type allowed 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-dacledit -ts -dc-ip 'IP' -principal-sid 'SID' -target-sid 'SID' -action write -rights DCSync -ace-type denied 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target 'SAMACCOUNTNAME' -action write -rights FullControl -ace-type allowed 'DOMAIN/USERNAME:PASSWORD@IP'
+# read
+impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action read -rights FullControl -ace-type allowed 'DOMAIN/USERNAME:PASSWORD@IP'
+# remove
+impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action remove -rights FullControl -ace-type allowed 'DOMAIN/USERNAME:PASSWORD@IP'
+```
 ### net ads
 ```sh
 net ads info -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
