@@ -154,9 +154,44 @@ msDS-SupportedEncryptionTypes: 0
 Workgroup: HTB
 ```
 
-### 
+### lookup
+```sh
+└─$ net ads lookup -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Information for Domain Controller: 10.129.95.210
 
-
+Response Type: LOGON_SAM_LOGON_RESPONSE_EX
+GUID: dff0c71a-a949-4b26-8c7b-52e3e2cb6eab
+Flags:
+        Is a PDC:                                   yes
+        Is a GC of the forest:                      yes
+        Is an LDAP server:                          yes
+        Supports DS:                                yes
+        Is running a KDC:                           yes
+        Is running time services:                   yes
+        Is the closest DC:                          yes
+        Is writable:                                yes
+        Has a hardware clock:                       yes
+        Is a non-domain NC serviced by LDAP server: no
+        Is NT6 DC that has some secrets:            no
+        Is NT6 DC that has all secrets:             yes
+        Runs Active Directory Web Services:         yes
+        Runs on Windows 2012 or later:              yes
+        Runs on Windows 2012R2 or later:            yes
+        Runs on Windows 2016 or later:              yes
+        Has a DNS name:                             no
+        Is a default NC:                            no
+        Is the forest root:                         no
+Forest: htb.local
+Domain: htb.local
+Domain Controller: FOREST.htb.local
+Pre-Win2k Domain: HTB
+Pre-Win2k Hostname: FOREST
+Server Site Name: Default-First-Site-Name
+Client Site Name: Default-First-Site-Name
+NT Version: 5
+LMNT Token: ffff
+LM20 Token: ffff
+```
 
 
 
