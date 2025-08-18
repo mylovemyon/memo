@@ -14,6 +14,7 @@ KDC server: 10.129.95.210
 Server time offset: 409
 Last machine account password change: Wed, 31 Dec 1969 19:00:00 EST
 ```
+
 ### user
 ```sh
 └─$ net ads user -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
@@ -47,9 +48,116 @@ svc-alfresco
 andy
 mark
 santi
-user
 ```
 #### user info
+```sh
+└─$ net ads user info administrator -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+wbcLookupSid: WBC_ERR_WINBIND_NOT_AVAILABLE
+```
+#### user add
+```sh
+└─$ net ads user add user -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+User user added
+```
+#### user delete
+```sh
+└─$ net ads user delete user -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+User user deleted
+```
+
+### group
+#### group add
+```sh
+└─$ net ads group add user -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Group user added
+```
+#### group delete
+```sh
+└─$ net ads group delete user -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210  
+Group user deleted
+```
+
+### printer
+#### printer search
+```sh
+└─$ net ads printer search -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+No results found
+```
+
+### search
+```sh
+└─$ net ads search 'sAMAccountName=administrator' 'distinguishedName' -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Got 1 replies
+
+distinguishedName: CN=Administrator,CN=Users,DC=htb,DC=local
+```
+
+### dn
+```sh
+└─$ net ads dn 'CN=Administrator,CN=Users,DC=htb,DC=local' 'distinguishedName' -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Got 1 replies
+
+distinguishedName: CN=Administrator,CN=Users,DC=htb,DC=local
+```
+
+### sid
+```sh
+└─$ net ads sid 'S-1-5-21-3072663084-364016917-1341370565-1147' -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210
+Got 1 replies
+
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: svc-alfresco
+givenName: svc-alfresco
+distinguishedName: CN=svc-alfresco,OU=Service Accounts,DC=htb,DC=local
+instanceType: 4
+whenCreated: 20190920005851.0Z
+whenChanged: 20250818061717.0Z
+displayName: svc-alfresco
+uSNCreated: 26083
+memberOf: CN=Service Accounts,OU=Security Groups,DC=htb,DC=local
+uSNChanged: 5889911
+name: svc-alfresco
+objectGUID: 58a51302-4c7c-4686-9502-d3ada3afaef1
+userAccountControl: 4260352
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 132137105879311936
+ads_pull_strvals: pull_utf8_talloc failed: Invalid argument
+pwdLastSet: 133999714379251224
+primaryGroupID: 513
+objectSid: S-1-5-21-3072663084-364016917-1341370565-1147
+adminCount: 1
+accountExpires: 0
+logonCount: 6
+sAMAccountName: svc-alfresco
+sAMAccountType: 805306368
+userPrincipalName: svc-alfresco@htb.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=htb,DC=local
+dSCorePropagationData: 20250818061739.0Z
+dSCorePropagationData: 20250818061739.0Z
+dSCorePropagationData: 20250818061739.0Z
+dSCorePropagationData: 20250818061739.0Z
+dSCorePropagationData: 16010101000000.0Z
+lastLogonTimestamp: 132136663111826271
+msDS-SupportedEncryptionTypes: 0
+```
+
+### workgroup
+```sh
+└─$ net ads workgroup -U 'htb.local/svc-alfresco%s3rvice' -S 10.129.95.210 
+Workgroup: HTB
+```
+
+### 
+
+
+
 
 
 ## rpc
@@ -647,6 +755,7 @@ Set Administrator's pwnoexp flag from [no] to [yes]
 net rpc> user edit pwnoexp administrator
 Administrator's pwnoexp flag: yes
 ```
+
 #### account
 ##### account show
 ```sh
