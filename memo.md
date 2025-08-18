@@ -115,6 +115,29 @@ https://github.com/XiaoliChan/wmiexec-Pro
 
 
 ## 389
+### net ads
+```sh
+net ads info -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# user
+net ads user -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net ads user add 'USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net ads user delete 'USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# group
+net ads group add 'GROUPNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net ads group delete 'GROUPNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# printer
+net ads printer search -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# search
+net ads search 'EXPRESSION' 'ATTRIBUTES' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# dn
+net ads search 'DISTINGUISHEDNAME' 'ATTRIBUTES' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# sid
+net ads search 'SID' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# workgroup
+net ads workgroup-U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+# lookup
+net ads lookup -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+```
 ### netexec
 ```sh
 # Authentication
