@@ -279,3 +279,5 @@ GENERAL OPTIONS
       transport         Choose ncacn transport for RPC operations
            none         Force RPC pipe connections to have no special properties
 ```
+
+## WINREG
