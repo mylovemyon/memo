@@ -201,7 +201,7 @@ donpapi
 ```
 ### enum4linux-ng
 ```sh
-enum4linux-ng -A -u 'USERNAME' -p 'PASSWORD' -t 'TIMEOUT' 'IP'
+enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
 ### impacket
 ```sh
