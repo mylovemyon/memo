@@ -199,6 +199,11 @@ sslscan --no-check-certificate --no-ciphersuites --no-compression --no-fallback 
 ```sh
 donpapi
 ```
+### enum4linux
+```sh
+# enum4linux-ng のほうが２倍はやい
+enum4linux -a -d -u 'USERNAME' -p 'PASSWORD' -w 'DOMAIN' -v 'IP'
+```
 ### enum4linux-ng
 ```sh
 enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
