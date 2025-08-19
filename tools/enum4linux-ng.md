@@ -1,18 +1,18 @@
 ```sh
-└─$ enum4linux-ng -A -Gm -u administrator -H 32693b11e6aa90eb43d32c72a07ceea6 -d -t 30 -v 10.129.95.210
+└─$ enum4linux-ng -A -Gm -C -u svc-alfresco -p s3rvice -d -t 30 -v 10.129.149.11
 ENUM4LINUX - next generation (v1.3.4)
 
  ==========================
 |    Target Information    |
  ==========================
-[*] Target ........... 10.129.95.210
-[*] Username ......... 'administrator'
-[*] Random Username .. 'tlmcjduh'
-[*] Password ......... ''
+[*] Target ........... 10.129.149.11
+[*] Username ......... 'svc-alfresco'
+[*] Random Username .. 'elcqaefm'
+[*] Password ......... 's3rvice'
 [*] Timeout .......... 30 second(s)
 
  ======================================
-|    Listener Scan on 10.129.95.210    |
+|    Listener Scan on 10.129.149.11    |
  ======================================
 [*] Checking LDAP
 [+] LDAP is accessible on 389/tcp
@@ -24,20 +24,20 @@ ENUM4LINUX - next generation (v1.3.4)
 [+] SMB over NetBIOS is accessible on 139/tcp
 
  =====================================================
-|    Domain Information via LDAP for 10.129.95.210    |
+|    Domain Information via LDAP for 10.129.149.11    |
  =====================================================
 [*] Trying LDAP
 [+] Appears to be root/parent DC
 [+] Long domain name is: htb.local
 
  ============================================================
-|    NetBIOS Names and Workgroup/Domain for 10.129.95.210    |
+|    NetBIOS Names and Workgroup/Domain for 10.129.149.11    |
  ============================================================
-[V] Trying to get NetBIOS names information, running command: nmblookup -s /tmp/tmpk_ld8i3_ -A 10.129.95.210
+[V] Trying to get NetBIOS names information, running command: nmblookup -s /tmp/tmplj1frw6t -A 10.129.149.11
 [-] Could not get NetBIOS names information via 'nmblookup': host does not reply
 
  ==========================================
-|    SMB Dialect Check on 10.129.95.210    |
+|    SMB Dialect Check on 10.129.149.11    |
  ==========================================
 [*] Trying on 445/tcp
 [+] Supported dialects and settings:
@@ -52,7 +52,7 @@ SMB1 only: false
 SMB signing required: true
 
  ============================================================
-|    Domain Information via SMB session for 10.129.95.210    |
+|    Domain Information via SMB session for 10.129.149.11    |
  ============================================================
 [*] Enumerating via unauthenticated SMB session on 445/tcp
 [+] Found domain information via SMB
@@ -64,33 +64,33 @@ Derived membership: domain member
 Derived domain: HTB
 
  ==========================================
-|    RPC Session Check on 10.129.95.210    |
+|    RPC Session Check on 10.129.149.11    |
  ==========================================
 [*] Check for null session
-[V] Attempting to make session, running command: smbclient -W HTB -U % -s /tmp/tmpk_ld8i3_ -t 30 -c help '//10.129.95.210/ipc$'
+[V] Attempting to make session, running command: smbclient -W HTB -U % -s /tmp/tmplj1frw6t -t 30 -c help '//10.129.149.11/ipc$'
 [+] Server allows session using username '', password ''
-[*] Check for NT hash session
-[V] Attempting to make session, running command: smbclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 -c help '//10.129.95.210/ipc$'
-[+] Server allows NT hash session using '32693b11e6aa90eb43d32c72a07ceea6'
+[*] Check for user session
+[V] Attempting to make session, running command: smbclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 -c help '//10.129.149.11/ipc$'
+[+] Server allows session using username 'svc-alfresco', password 's3rvice'
 [*] Check for random user
-[V] Attempting to make session, running command: smbclient -W HTB -U tlmcjduh% -s /tmp/tmpk_ld8i3_ -t 30 -c help '//10.129.95.210/ipc$'
+[V] Attempting to make session, running command: smbclient -W HTB -U elcqaefm%s3rvice -s /tmp/tmplj1frw6t -t 30 -c help '//10.129.149.11/ipc$'
 [-] Could not establish random user session: STATUS_LOGON_FAILURE
 
  ====================================================
-|    Domain Information via RPC for 10.129.95.210    |
+|    Domain Information via RPC for 10.129.149.11    |
  ====================================================
-[V] Attempting to get domain SID, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c lsaquery 10.129.95.210
+[V] Attempting to get domain SID, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c lsaquery 10.129.149.11
 [+] Domain: HTB
 [+] Domain SID: S-1-5-21-3072663084-364016917-1341370565
 [+] Membership: domain member
 
  ================================================
-|    OS Information via RPC for 10.129.95.210    |
+|    OS Information via RPC for 10.129.149.11    |
  ================================================
 [*] Enumerating via unauthenticated SMB session on 445/tcp
 [+] Found OS information via SMB
 [*] Enumerating via 'srvinfo'
-[V] Attempting to get OS info with command, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c srvinfo 10.129.95.210
+[V] Attempting to get OS info with command, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c srvinfo 10.129.149.11
 [+] Found OS information via 'srvinfo'
 [+] After merging OS information we have the following result:
 OS: Windows Server 2016 Standard 14393                                                                                                                                                                                                      
@@ -104,76 +104,76 @@ Server type: '0x80102b'
 Server type string: Wk Sv PDC Tim NT                                                                                                                                                                                                        
 
  ======================================
-|    Users via RPC on 10.129.95.210    |
+|    Users via RPC on 10.129.149.11    |
  ======================================
 [*] Enumerating users via 'querydispinfo'
-[V] Attempting to get userlist, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c querydispinfo 10.129.95.210
+[V] Attempting to get userlist, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c querydispinfo 10.129.149.11
 [+] Found 31 user(s) via 'querydispinfo'
 [*] Enumerating users via 'enumdomusers'
-[V] Attempting to get userlist, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c enumdomusers 10.129.95.210
+[V] Attempting to get userlist, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c enumdomusers 10.129.149.11
 [+] Found 31 user(s) via 'enumdomusers'
 [*] Enumerating users details
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 500' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 500' 10.129.149.11
 [+] Found details for user 'Administrator' (RID 500)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 501' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 501' 10.129.149.11
 [+] Found details for user 'Guest' (RID 501)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 502' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 502' 10.129.149.11
 [+] Found details for user 'krbtgt' (RID 502)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 503' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 503' 10.129.149.11
 [+] Found details for user 'DefaultAccount' (RID 503)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1123' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1123' 10.129.149.11
 [+] Found details for user '$331000-VK4ADACQNUCA' (RID 1123)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1124' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1124' 10.129.149.11
 [+] Found details for user 'SM_2c8eef0a09b545acb' (RID 1124)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1125' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1125' 10.129.149.11
 [+] Found details for user 'SM_ca8c2ed5bdab4dc9b' (RID 1125)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1126' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1126' 10.129.149.11
 [+] Found details for user 'SM_75a538d3025e4db9a' (RID 1126)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1127' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1127' 10.129.149.11
 [+] Found details for user 'SM_681f53d4942840e18' (RID 1127)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1128' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1128' 10.129.149.11
 [+] Found details for user 'SM_1b41c9286325456bb' (RID 1128)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1129' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1129' 10.129.149.11
 [+] Found details for user 'SM_9b69f1b9d2cc45549' (RID 1129)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1130' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1130' 10.129.149.11
 [+] Found details for user 'SM_7c96b981967141ebb' (RID 1130)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1131' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1131' 10.129.149.11
 [+] Found details for user 'SM_c75ee099d0a64c91b' (RID 1131)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1132' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1132' 10.129.149.11
 [+] Found details for user 'SM_1ffab36a2f5f479cb' (RID 1132)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1134' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1134' 10.129.149.11
 [+] Found details for user 'HealthMailboxc3d7722' (RID 1134)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1135' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1135' 10.129.149.11
 [+] Found details for user 'HealthMailboxfc9daad' (RID 1135)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1136' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1136' 10.129.149.11
 [+] Found details for user 'HealthMailboxc0a90c9' (RID 1136)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1137' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1137' 10.129.149.11
 [+] Found details for user 'HealthMailbox670628e' (RID 1137)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1138' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1138' 10.129.149.11
 [+] Found details for user 'HealthMailbox968e74d' (RID 1138)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1139' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1139' 10.129.149.11
 [+] Found details for user 'HealthMailbox6ded678' (RID 1139)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1140' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1140' 10.129.149.11
 [+] Found details for user 'HealthMailbox83d6781' (RID 1140)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1141' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1141' 10.129.149.11
 [+] Found details for user 'HealthMailboxfd87238' (RID 1141)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1142' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1142' 10.129.149.11
 [+] Found details for user 'HealthMailboxb01ac64' (RID 1142)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1143' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1143' 10.129.149.11
 [+] Found details for user 'HealthMailbox7108a4e' (RID 1143)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1144' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1144' 10.129.149.11
 [+] Found details for user 'HealthMailbox0659cc1' (RID 1144)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1145' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1145' 10.129.149.11
 [+] Found details for user 'sebastien' (RID 1145)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1146' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1146' 10.129.149.11
 [+] Found details for user 'lucinda' (RID 1146)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1147' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1147' 10.129.149.11
 [+] Found details for user 'svc-alfresco' (RID 1147)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1150' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1150' 10.129.149.11
 [+] Found details for user 'andy' (RID 1150)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1151' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1151' 10.129.149.11
 [+] Found details for user 'mark' (RID 1151)
-[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'queryuser 1152' 10.129.95.210
+[V] Attempting to get detailed user info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'queryuser 1152' 10.129.149.11
 [+] Found details for user 'santi' (RID 1152)
 [+] After merging user results we have 31 user(s) total:
 '1123':                                                                                                                                                                                                                                     
@@ -574,7 +574,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Mon, 23 Sep 2019 18:51:32 EDT                                                                                                                                                                                   
-    Password can change Time: Mon, 23 Sep 2019 18:51:32 EDT                                                                                                                                                                                 
+    Password can change Time: Tue, 24 Sep 2019 18:51:32 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x46e'                                                                                                                                                                                                                       
@@ -612,7 +612,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Mon, 23 Sep 2019 18:51:35 EDT                                                                                                                                                                                   
-    Password can change Time: Mon, 23 Sep 2019 18:51:35 EDT                                                                                                                                                                                 
+    Password can change Time: Tue, 24 Sep 2019 18:51:35 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x46f'                                                                                                                                                                                                                       
@@ -650,7 +650,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Thu, 19 Sep 2019 07:56:35 EDT                                                                                                                                                                                   
-    Password can change Time: Thu, 19 Sep 2019 07:56:35 EDT                                                                                                                                                                                 
+    Password can change Time: Fri, 20 Sep 2019 07:56:35 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x470'                                                                                                                                                                                                                       
@@ -688,7 +688,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Thu, 19 Sep 2019 07:56:46 EDT                                                                                                                                                                                   
-    Password can change Time: Thu, 19 Sep 2019 07:56:46 EDT                                                                                                                                                                                 
+    Password can change Time: Fri, 20 Sep 2019 07:56:46 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x471'                                                                                                                                                                                                                       
@@ -726,7 +726,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Thu, 19 Sep 2019 07:56:56 EDT                                                                                                                                                                                   
-    Password can change Time: Thu, 19 Sep 2019 07:56:56 EDT                                                                                                                                                                                 
+    Password can change Time: Fri, 20 Sep 2019 07:56:56 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x472'                                                                                                                                                                                                                       
@@ -764,7 +764,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Thu, 19 Sep 2019 07:57:07 EDT                                                                                                                                                                                   
-    Password can change Time: Thu, 19 Sep 2019 07:57:07 EDT                                                                                                                                                                                 
+    Password can change Time: Fri, 20 Sep 2019 07:57:07 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x473'                                                                                                                                                                                                                       
@@ -802,7 +802,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Thu, 19 Sep 2019 07:57:17 EDT                                                                                                                                                                                   
-    Password can change Time: Thu, 19 Sep 2019 07:57:17 EDT                                                                                                                                                                                 
+    Password can change Time: Fri, 20 Sep 2019 07:57:17 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x474'                                                                                                                                                                                                                       
@@ -840,7 +840,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Thu, 19 Sep 2019 07:57:27 EDT                                                                                                                                                                                   
-    Password can change Time: Thu, 19 Sep 2019 07:57:27 EDT                                                                                                                                                                                 
+    Password can change Time: Fri, 20 Sep 2019 07:57:27 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x475'                                                                                                                                                                                                                       
@@ -878,7 +878,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Thu, 19 Sep 2019 07:57:38 EDT                                                                                                                                                                                   
-    Password can change Time: Thu, 19 Sep 2019 07:57:38 EDT                                                                                                                                                                                 
+    Password can change Time: Fri, 20 Sep 2019 07:57:38 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x476'                                                                                                                                                                                                                       
@@ -916,7 +916,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Thu, 19 Sep 2019 07:57:48 EDT                                                                                                                                                                                   
-    Password can change Time: Thu, 19 Sep 2019 07:57:48 EDT                                                                                                                                                                                 
+    Password can change Time: Fri, 20 Sep 2019 07:57:48 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x477'                                                                                                                                                                                                                       
@@ -954,7 +954,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Thu, 19 Sep 2019 07:57:59 EDT                                                                                                                                                                                   
-    Password can change Time: Thu, 19 Sep 2019 07:57:59 EDT                                                                                                                                                                                 
+    Password can change Time: Fri, 20 Sep 2019 07:57:59 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x478'                                                                                                                                                                                                                       
@@ -992,7 +992,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Thu, 19 Sep 2019 20:30:00 EDT                                                                                                                                                                                   
-    Password can change Time: Thu, 19 Sep 2019 20:30:00 EDT                                                                                                                                                                                 
+    Password can change Time: Fri, 20 Sep 2019 20:30:00 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x479'                                                                                                                                                                                                                       
@@ -1030,7 +1030,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Thu, 19 Sep 2019 20:44:13 EDT                                                                                                                                                                                   
-    Password can change Time: Thu, 19 Sep 2019 20:44:13 EDT                                                                                                                                                                                 
+    Password can change Time: Fri, 20 Sep 2019 20:44:13 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x47a'                                                                                                                                                                                                                       
@@ -1067,8 +1067,8 @@ Server type string: Wk Sv PDC Tim NT
     Logon Time: Mon, 23 Sep 2019 07:09:48 EDT                                                                                                                                                                                               
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                             
-    Password last set Time: Mon, 18 Aug 2025 12:03:53 EDT                                                                                                                                                                                   
-    Password can change Time: Mon, 18 Aug 2025 12:03:53 EDT                                                                                                                                                                                 
+    Password last set Time: Tue, 19 Aug 2025 09:48:10 EDT                                                                                                                                                                                   
+    Password can change Time: Wed, 20 Aug 2025 09:48:10 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x47b'                                                                                                                                                                                                                       
@@ -1106,7 +1106,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Sun, 22 Sep 2019 18:44:16 EDT                                                                                                                                                                                   
-    Password can change Time: Sun, 22 Sep 2019 18:44:16 EDT                                                                                                                                                                                 
+    Password can change Time: Mon, 23 Sep 2019 18:44:16 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x47e'                                                                                                                                                                                                                       
@@ -1144,7 +1144,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Fri, 20 Sep 2019 18:57:30 EDT                                                                                                                                                                                   
-    Password can change Time: Fri, 20 Sep 2019 18:57:30 EDT                                                                                                                                                                                 
+    Password can change Time: Sat, 21 Sep 2019 18:57:30 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x47f'                                                                                                                                                                                                                       
@@ -1182,7 +1182,7 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Fri, 20 Sep 2019 19:02:55 EDT                                                                                                                                                                                   
-    Password can change Time: Fri, 20 Sep 2019 19:02:55 EDT                                                                                                                                                                                 
+    Password can change Time: Sat, 21 Sep 2019 19:02:55 EDT                                                                                                                                                                                 
     Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x480'                                                                                                                                                                                                                       
@@ -1205,7 +1205,7 @@ Server type string: Wk Sv PDC Tim NT
 '500':                                                                                                                                                                                                                                      
   username: Administrator                                                                                                                                                                                                                   
   name: Administrator                                                                                                                                                                                                                       
-  acb: '0x00020010'                                                                                                                                                                                                                         
+  acb: '0x00000010'                                                                                                                                                                                                                         
   description: Built-in account for administering the computer/domain                                                                                                                                                                       
   details:                                                                                                                                                                                                                                  
     Home Drive: ''                                                                                                                                                                                                                          
@@ -1216,26 +1216,26 @@ Server type string: Wk Sv PDC Tim NT
     Workstations: ''                                                                                                                                                                                                                        
     Comment: ''                                                                                                                                                                                                                             
     Remote Dial: ''                                                                                                                                                                                                                         
-    Logon Time: Sun, 17 Aug 2025 10:08:23 EDT                                                                                                                                                                                               
+    Logon Time: Tue, 19 Aug 2025 09:39:37 EDT                                                                                                                                                                                               
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                             
     Password last set Time: Mon, 30 Aug 2021 20:51:59 EDT                                                                                                                                                                                   
-    Password can change Time: Mon, 30 Aug 2021 20:51:59 EDT                                                                                                                                                                                 
-    Password must change Time: Tue, 30 Aug 2022 20:51:59 EDT                                                                                                                                                                                
+    Password can change Time: Tue, 31 Aug 2021 20:51:59 EDT                                                                                                                                                                                 
+    Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x1f4'                                                                                                                                                                                                                       
     group_rid: '0x201'                                                                                                                                                                                                                      
-    acb_info: '0x00020010'                                                                                                                                                                                                                  
+    acb_info: '0x00000010'                                                                                                                                                                                                                  
     fields_present: '0x00ffffff'                                                                                                                                                                                                            
     logon_divs: '168'                                                                                                                                                                                                                       
     bad_password_count: '0x00000000'                                                                                                                                                                                                        
-    logon_count: '0x0000008c'                                                                                                                                                                                                               
+    logon_count: '0x00000086'                                                                                                                                                                                                               
     padding1[0..7]: ''                                                                                                                                                                                                                      
     logon_hrs[0..21]: ''                                                                                                                                                                                                                    
     Account Disabled: false                                                                                                                                                                                                                 
     Password not expired: false                                                                                                                                                                                                             
     Account locked out: false                                                                                                                                                                                                               
-    Password expired: true                                                                                                                                                                                                                  
+    Password expired: false                                                                                                                                                                                                                 
     Interdomain trust account: false                                                                                                                                                                                                        
     Workstation trust account: false                                                                                                                                                                                                        
     Server trust account: false                                                                                                                                                                                                             
@@ -1281,7 +1281,7 @@ Server type string: Wk Sv PDC Tim NT
 '502':                                                                                                                                                                                                                                      
   username: krbtgt                                                                                                                                                                                                                          
   name: (null)                                                                                                                                                                                                                              
-  acb: '0x00020011'                                                                                                                                                                                                                         
+  acb: '0x00000011'                                                                                                                                                                                                                         
   description: Key Distribution Center Service Account                                                                                                                                                                                      
   details:                                                                                                                                                                                                                                  
     Home Drive: ''                                                                                                                                                                                                                          
@@ -1296,12 +1296,12 @@ Server type string: Wk Sv PDC Tim NT
     Logoff Time: Wed, 31 Dec 1969 19:00:00 EST                                                                                                                                                                                              
     Kickoff Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                                            
     Password last set Time: Wed, 18 Sep 2019 06:53:23 EDT                                                                                                                                                                                   
-    Password can change Time: Wed, 18 Sep 2019 06:53:23 EDT                                                                                                                                                                                 
-    Password must change Time: Thu, 17 Sep 2020 06:53:23 EDT                                                                                                                                                                                
+    Password can change Time: Thu, 19 Sep 2019 06:53:23 EDT                                                                                                                                                                                 
+    Password must change Time: Wed, 13 Sep 30828 22:48:05 EDT                                                                                                                                                                               
     unknown_2[0..31]: ''                                                                                                                                                                                                                    
     user_rid: '0x1f6'                                                                                                                                                                                                                       
     group_rid: '0x201'                                                                                                                                                                                                                      
-    acb_info: '0x00020011'                                                                                                                                                                                                                  
+    acb_info: '0x00000011'                                                                                                                                                                                                                  
     fields_present: '0x00ffffff'                                                                                                                                                                                                            
     logon_divs: '168'                                                                                                                                                                                                                       
     bad_password_count: '0x00000000'                                                                                                                                                                                                        
@@ -1311,7 +1311,7 @@ Server type string: Wk Sv PDC Tim NT
     Account Disabled: true                                                                                                                                                                                                                  
     Password not expired: false                                                                                                                                                                                                             
     Account locked out: false                                                                                                                                                                                                               
-    Password expired: true                                                                                                                                                                                                                  
+    Password expired: false                                                                                                                                                                                                                 
     Interdomain trust account: false                                                                                                                                                                                                        
     Workstation trust account: false                                                                                                                                                                                                        
     Server trust account: false                                                                                                                                                                                                             
@@ -1356,306 +1356,306 @@ Server type string: Wk Sv PDC Tim NT
     Trusted for delegation: false                                                                                                                                                                                                           
 
  =======================================
-|    Groups via RPC on 10.129.95.210    |
+|    Groups via RPC on 10.129.149.11    |
  =======================================
 [*] Enumerating local groups
-[V] Attempting to get local groups, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'enumalsgroups domain' 10.129.95.210
+[V] Attempting to get local groups, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'enumalsgroups domain' 10.129.149.11
 [+] Found 5 group(s) via 'enumalsgroups domain'
 [*] Enumerating builtin groups
-[V] Attempting to get builtin groups, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'enumalsgroups builtin' 10.129.95.210
+[V] Attempting to get builtin groups, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'enumalsgroups builtin' 10.129.149.11
 [+] Found 29 group(s) via 'enumalsgroups builtin'
 [*] Enumerating domain groups
-[V] Attempting to get domain groups, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c enumdomgroups 10.129.95.210
+[V] Attempting to get domain groups, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c enumdomgroups 10.129.149.11
 [+] Found 38 group(s) via 'enumdomgroups'
 [*] Enumerating group members
-[V] Attempting to get group memberships for local group 'Cert Publishers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Cert Publishers' -S 10.129.95.210
+[V] Attempting to get group memberships for local group 'Cert Publishers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Cert Publishers' -S 10.129.149.11
 [+] Found 0 member(s) for local group 'Cert Publishers' (RID 517)
-[V] Attempting to get group memberships for local group 'RAS and IAS Servers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'RAS and IAS Servers' -S 10.129.95.210
+[V] Attempting to get group memberships for local group 'RAS and IAS Servers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'RAS and IAS Servers' -S 10.129.149.11
 [+] Found 0 member(s) for local group 'RAS and IAS Servers' (RID 553)
-[V] Attempting to get group memberships for local group 'Allowed RODC Password Replication Group', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Allowed RODC Password Replication Group' -S 10.129.95.210
+[V] Attempting to get group memberships for local group 'Allowed RODC Password Replication Group', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Allowed RODC Password Replication Group' -S 10.129.149.11
 [+] Found 0 member(s) for local group 'Allowed RODC Password Replication Group' (RID 571)
-[V] Attempting to get group memberships for local group 'Denied RODC Password Replication Group', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Denied RODC Password Replication Group' -S 10.129.95.210
+[V] Attempting to get group memberships for local group 'Denied RODC Password Replication Group', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Denied RODC Password Replication Group' -S 10.129.149.11
 [+] Found 8 member(s) for local group 'Denied RODC Password Replication Group' (RID 572)
-[V] Attempting to get group memberships for local group 'DnsAdmins', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members DnsAdmins -S 10.129.95.210
+[V] Attempting to get group memberships for local group 'DnsAdmins', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members DnsAdmins -S 10.129.149.11
 [+] Found 0 member(s) for local group 'DnsAdmins' (RID 1101)
-[V] Attempting to get group memberships for builtin group 'Account Operators', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Account Operators' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Account Operators', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Account Operators' -S 10.129.149.11
 [+] Found 1 member(s) for builtin group 'Account Operators' (RID 548)
-[V] Attempting to get group memberships for builtin group 'Pre-Windows 2000 Compatible Access', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Pre-Windows 2000 Compatible Access' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Pre-Windows 2000 Compatible Access', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Pre-Windows 2000 Compatible Access' -S 10.129.149.11
 [+] Found 2 member(s) for builtin group 'Pre-Windows 2000 Compatible Access' (RID 554)
-[V] Attempting to get group memberships for builtin group 'Incoming Forest Trust Builders', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Incoming Forest Trust Builders' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Incoming Forest Trust Builders', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Incoming Forest Trust Builders' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Incoming Forest Trust Builders' (RID 557)
-[V] Attempting to get group memberships for builtin group 'Windows Authorization Access Group', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Windows Authorization Access Group' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Windows Authorization Access Group', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Windows Authorization Access Group' -S 10.129.149.11
 [+] Found 2 member(s) for builtin group 'Windows Authorization Access Group' (RID 560)
-[V] Attempting to get group memberships for builtin group 'Terminal Server License Servers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Terminal Server License Servers' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Terminal Server License Servers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Terminal Server License Servers' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Terminal Server License Servers' (RID 561)
-[V] Attempting to get group memberships for builtin group 'Administrators', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members Administrators -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Administrators', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members Administrators -S 10.129.149.11
 [+] Found 3 member(s) for builtin group 'Administrators' (RID 544)
-[V] Attempting to get group memberships for builtin group 'Users', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members Users -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Users', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members Users -S 10.129.149.11
 [+] Found 3 member(s) for builtin group 'Users' (RID 545)
-[V] Attempting to get group memberships for builtin group 'Guests', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members Guests -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Guests', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members Guests -S 10.129.149.11
 [+] Found 2 member(s) for builtin group 'Guests' (RID 546)
-[V] Attempting to get group memberships for builtin group 'Print Operators', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Print Operators' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Print Operators', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Print Operators' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Print Operators' (RID 550)
-[V] Attempting to get group memberships for builtin group 'Backup Operators', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Backup Operators' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Backup Operators', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Backup Operators' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Backup Operators' (RID 551)
-[V] Attempting to get group memberships for builtin group 'Replicator', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members Replicator -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Replicator', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members Replicator -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Replicator' (RID 552)
-[V] Attempting to get group memberships for builtin group 'Remote Desktop Users', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Remote Desktop Users' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Remote Desktop Users', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Remote Desktop Users' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Remote Desktop Users' (RID 555)
-[V] Attempting to get group memberships for builtin group 'Network Configuration Operators', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Network Configuration Operators' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Network Configuration Operators', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Network Configuration Operators' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Network Configuration Operators' (RID 556)
-[V] Attempting to get group memberships for builtin group 'Performance Monitor Users', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Performance Monitor Users' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Performance Monitor Users', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Performance Monitor Users' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Performance Monitor Users' (RID 558)
-[V] Attempting to get group memberships for builtin group 'Performance Log Users', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Performance Log Users' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Performance Log Users', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Performance Log Users' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Performance Log Users' (RID 559)
-[V] Attempting to get group memberships for builtin group 'Distributed COM Users', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Distributed COM Users' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Distributed COM Users', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Distributed COM Users' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Distributed COM Users' (RID 562)
-[V] Attempting to get group memberships for builtin group 'IIS_IUSRS', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members IIS_IUSRS -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'IIS_IUSRS', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members IIS_IUSRS -S 10.129.149.11
 [+] Found 1 member(s) for builtin group 'IIS_IUSRS' (RID 568)
-[V] Attempting to get group memberships for builtin group 'Cryptographic Operators', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Cryptographic Operators' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Cryptographic Operators', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Cryptographic Operators' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Cryptographic Operators' (RID 569)
-[V] Attempting to get group memberships for builtin group 'Event Log Readers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Event Log Readers' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Event Log Readers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Event Log Readers' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Event Log Readers' (RID 573)
-[V] Attempting to get group memberships for builtin group 'Certificate Service DCOM Access', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Certificate Service DCOM Access' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Certificate Service DCOM Access', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Certificate Service DCOM Access' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Certificate Service DCOM Access' (RID 574)
-[V] Attempting to get group memberships for builtin group 'RDS Remote Access Servers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'RDS Remote Access Servers' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'RDS Remote Access Servers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'RDS Remote Access Servers' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'RDS Remote Access Servers' (RID 575)
-[V] Attempting to get group memberships for builtin group 'RDS Endpoint Servers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'RDS Endpoint Servers' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'RDS Endpoint Servers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'RDS Endpoint Servers' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'RDS Endpoint Servers' (RID 576)
-[V] Attempting to get group memberships for builtin group 'RDS Management Servers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'RDS Management Servers' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'RDS Management Servers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'RDS Management Servers' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'RDS Management Servers' (RID 577)
-[V] Attempting to get group memberships for builtin group 'Hyper-V Administrators', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Hyper-V Administrators' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Hyper-V Administrators', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Hyper-V Administrators' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Hyper-V Administrators' (RID 578)
-[V] Attempting to get group memberships for builtin group 'Access Control Assistance Operators', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Access Control Assistance Operators' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Access Control Assistance Operators', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Access Control Assistance Operators' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Access Control Assistance Operators' (RID 579)
-[V] Attempting to get group memberships for builtin group 'Remote Management Users', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Remote Management Users' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Remote Management Users', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Remote Management Users' -S 10.129.149.11
 [+] Found 1 member(s) for builtin group 'Remote Management Users' (RID 580)
-[V] Attempting to get group memberships for builtin group 'System Managed Accounts Group', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'System Managed Accounts Group' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'System Managed Accounts Group', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'System Managed Accounts Group' -S 10.129.149.11
 [+] Found 1 member(s) for builtin group 'System Managed Accounts Group' (RID 581)
-[V] Attempting to get group memberships for builtin group 'Storage Replica Administrators', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Storage Replica Administrators' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Storage Replica Administrators', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Storage Replica Administrators' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Storage Replica Administrators' (RID 582)
-[V] Attempting to get group memberships for builtin group 'Server Operators', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Server Operators' -S 10.129.95.210
+[V] Attempting to get group memberships for builtin group 'Server Operators', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Server Operators' -S 10.129.149.11
 [+] Found 0 member(s) for builtin group 'Server Operators' (RID 549)
-[V] Attempting to get group memberships for domain group 'Enterprise Read-only Domain Controllers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Enterprise Read-only Domain Controllers' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Enterprise Read-only Domain Controllers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Enterprise Read-only Domain Controllers' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Enterprise Read-only Domain Controllers' (RID 498)
-[V] Attempting to get group memberships for domain group 'Domain Admins', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Domain Admins' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Domain Admins', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Domain Admins' -S 10.129.149.11
 [+] Found 1 member(s) for domain group 'Domain Admins' (RID 512)
-[V] Attempting to get group memberships for domain group 'Domain Users', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Domain Users' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Domain Users', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Domain Users' -S 10.129.149.11
 [+] Found 30 member(s) for domain group 'Domain Users' (RID 513)
-[V] Attempting to get group memberships for domain group 'Domain Guests', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Domain Guests' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Domain Guests', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Domain Guests' -S 10.129.149.11
 [+] Found 1 member(s) for domain group 'Domain Guests' (RID 514)
-[V] Attempting to get group memberships for domain group 'Domain Computers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Domain Computers' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Domain Computers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Domain Computers' -S 10.129.149.11
 [+] Found 1 member(s) for domain group 'Domain Computers' (RID 515)
-[V] Attempting to get group memberships for domain group 'Domain Controllers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Domain Controllers' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Domain Controllers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Domain Controllers' -S 10.129.149.11
 [+] Found 1 member(s) for domain group 'Domain Controllers' (RID 516)
-[V] Attempting to get group memberships for domain group 'Schema Admins', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Schema Admins' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Schema Admins', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Schema Admins' -S 10.129.149.11
 [+] Found 1 member(s) for domain group 'Schema Admins' (RID 518)
-[V] Attempting to get group memberships for domain group 'Enterprise Admins', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Enterprise Admins' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Enterprise Admins', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Enterprise Admins' -S 10.129.149.11
 [+] Found 1 member(s) for domain group 'Enterprise Admins' (RID 519)
-[V] Attempting to get group memberships for domain group 'Group Policy Creator Owners', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Group Policy Creator Owners' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Group Policy Creator Owners', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Group Policy Creator Owners' -S 10.129.149.11
 [+] Found 1 member(s) for domain group 'Group Policy Creator Owners' (RID 520)
-[V] Attempting to get group memberships for domain group 'Read-only Domain Controllers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Read-only Domain Controllers' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Read-only Domain Controllers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Read-only Domain Controllers' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Read-only Domain Controllers' (RID 521)
-[V] Attempting to get group memberships for domain group 'Cloneable Domain Controllers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Cloneable Domain Controllers' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Cloneable Domain Controllers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Cloneable Domain Controllers' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Cloneable Domain Controllers' (RID 522)
-[V] Attempting to get group memberships for domain group 'Protected Users', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Protected Users' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Protected Users', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Protected Users' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Protected Users' (RID 525)
-[V] Attempting to get group memberships for domain group 'Key Admins', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Key Admins' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Key Admins', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Key Admins' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Key Admins' (RID 526)
-[V] Attempting to get group memberships for domain group 'Enterprise Key Admins', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Enterprise Key Admins' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Enterprise Key Admins', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Enterprise Key Admins' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Enterprise Key Admins' (RID 527)
-[V] Attempting to get group memberships for domain group 'DnsUpdateProxy', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members DnsUpdateProxy -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'DnsUpdateProxy', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members DnsUpdateProxy -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'DnsUpdateProxy' (RID 1102)
-[V] Attempting to get group memberships for domain group 'Organization Management', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Organization Management' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Organization Management', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Organization Management' -S 10.129.149.11
 [+] Found 1 member(s) for domain group 'Organization Management' (RID 1104)
-[V] Attempting to get group memberships for domain group 'Recipient Management', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Recipient Management' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Recipient Management', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Recipient Management' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Recipient Management' (RID 1105)
-[V] Attempting to get group memberships for domain group 'View-Only Organization Management', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'View-Only Organization Management' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'View-Only Organization Management', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'View-Only Organization Management' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'View-Only Organization Management' (RID 1106)
-[V] Attempting to get group memberships for domain group 'Public Folder Management', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Public Folder Management' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Public Folder Management', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Public Folder Management' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Public Folder Management' (RID 1107)
-[V] Attempting to get group memberships for domain group 'UM Management', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'UM Management' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'UM Management', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'UM Management' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'UM Management' (RID 1108)
-[V] Attempting to get group memberships for domain group 'Help Desk', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Help Desk' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Help Desk', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Help Desk' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Help Desk' (RID 1109)
-[V] Attempting to get group memberships for domain group 'Records Management', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Records Management' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Records Management', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Records Management' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Records Management' (RID 1110)
-[V] Attempting to get group memberships for domain group 'Discovery Management', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Discovery Management' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Discovery Management', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Discovery Management' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Discovery Management' (RID 1111)
-[V] Attempting to get group memberships for domain group 'Server Management', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Server Management' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Server Management', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Server Management' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Server Management' (RID 1112)
-[V] Attempting to get group memberships for domain group 'Delegated Setup', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Delegated Setup' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Delegated Setup', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Delegated Setup' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Delegated Setup' (RID 1113)
-[V] Attempting to get group memberships for domain group 'Hygiene Management', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Hygiene Management' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Hygiene Management', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Hygiene Management' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Hygiene Management' (RID 1114)
-[V] Attempting to get group memberships for domain group 'Compliance Management', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Compliance Management' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Compliance Management', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Compliance Management' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Compliance Management' (RID 1115)
-[V] Attempting to get group memberships for domain group 'Security Reader', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Security Reader' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Security Reader', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Security Reader' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Security Reader' (RID 1116)
-[V] Attempting to get group memberships for domain group 'Security Administrator', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Security Administrator' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Security Administrator', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Security Administrator' -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'Security Administrator' (RID 1117)
-[V] Attempting to get group memberships for domain group 'Exchange Servers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Exchange Servers' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Exchange Servers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Exchange Servers' -S 10.129.149.11
 [+] Found 2 member(s) for domain group 'Exchange Servers' (RID 1118)
-[V] Attempting to get group memberships for domain group 'Exchange Trusted Subsystem', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Exchange Trusted Subsystem' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Exchange Trusted Subsystem', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Exchange Trusted Subsystem' -S 10.129.149.11
 [+] Found 1 member(s) for domain group 'Exchange Trusted Subsystem' (RID 1119)
-[V] Attempting to get group memberships for domain group 'Managed Availability Servers', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Managed Availability Servers' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Managed Availability Servers', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Managed Availability Servers' -S 10.129.149.11
 [+] Found 2 member(s) for domain group 'Managed Availability Servers' (RID 1120)
-[V] Attempting to get group memberships for domain group 'Exchange Windows Permissions', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Exchange Windows Permissions' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Exchange Windows Permissions', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Exchange Windows Permissions' -S 10.129.149.11
 [+] Found 1 member(s) for domain group 'Exchange Windows Permissions' (RID 1121)
-[V] Attempting to get group memberships for domain group 'ExchangeLegacyInterop', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members ExchangeLegacyInterop -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'ExchangeLegacyInterop', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members ExchangeLegacyInterop -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'ExchangeLegacyInterop' (RID 1122)
-[V] Attempting to get group memberships for domain group '$D31000-NSEL5BRJ63V7', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members '$D31000-NSEL5BRJ63V7' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group '$D31000-NSEL5BRJ63V7', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members '$D31000-NSEL5BRJ63V7' -S 10.129.149.11
 [+] Found 1 member(s) for domain group '$D31000-NSEL5BRJ63V7' (RID 1133)
-[V] Attempting to get group memberships for domain group 'Service Accounts', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Service Accounts' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Service Accounts', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Service Accounts' -S 10.129.149.11
 [+] Found 1 member(s) for domain group 'Service Accounts' (RID 1148)
-[V] Attempting to get group memberships for domain group 'Privileged IT Accounts', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members 'Privileged IT Accounts' -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'Privileged IT Accounts', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members 'Privileged IT Accounts' -S 10.129.149.11
 [+] Found 1 member(s) for domain group 'Privileged IT Accounts' (RID 1149)
-[V] Attempting to get group memberships for domain group 'test', running command: net -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 rpc group members test -S 10.129.95.210
+[V] Attempting to get group memberships for domain group 'test', running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc group members test -S 10.129.149.11
 [+] Found 0 member(s) for domain group 'test' (RID 5101)
 [*] Enumerating group details
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 517' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 517' 10.129.149.11
 [-] Could not get details for local group 'Cert Publishers' (RID 517): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 553' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 553' 10.129.149.11
 [-] Could not get details for local group 'RAS and IAS Servers' (RID 553): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 571' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 571' 10.129.149.11
 [-] Could not get details for local group 'Allowed RODC Password Replication Group' (RID 571): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 572' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 572' 10.129.149.11
 [-] Could not get details for local group 'Denied RODC Password Replication Group' (RID 572): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1101' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1101' 10.129.149.11
 [-] Could not get details for local group 'DnsAdmins' (RID 1101): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 548' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 548' 10.129.149.11
 [-] Could not get details for builtin group 'Account Operators' (RID 548): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 554' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 554' 10.129.149.11
 [-] Could not get details for builtin group 'Pre-Windows 2000 Compatible Access' (RID 554): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 557' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 557' 10.129.149.11
 [-] Could not get details for builtin group 'Incoming Forest Trust Builders' (RID 557): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 560' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 560' 10.129.149.11
 [-] Could not get details for builtin group 'Windows Authorization Access Group' (RID 560): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 561' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 561' 10.129.149.11
 [-] Could not get details for builtin group 'Terminal Server License Servers' (RID 561): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 544' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 544' 10.129.149.11
 [-] Could not get details for builtin group 'Administrators' (RID 544): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 545' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 545' 10.129.149.11
 [-] Could not get details for builtin group 'Users' (RID 545): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 546' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 546' 10.129.149.11
 [-] Could not get details for builtin group 'Guests' (RID 546): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 550' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 550' 10.129.149.11
 [-] Could not get details for builtin group 'Print Operators' (RID 550): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 551' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 551' 10.129.149.11
 [-] Could not get details for builtin group 'Backup Operators' (RID 551): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 552' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 552' 10.129.149.11
 [-] Could not get details for builtin group 'Replicator' (RID 552): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 555' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 555' 10.129.149.11
 [-] Could not get details for builtin group 'Remote Desktop Users' (RID 555): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 556' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 556' 10.129.149.11
 [-] Could not get details for builtin group 'Network Configuration Operators' (RID 556): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 558' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 558' 10.129.149.11
 [-] Could not get details for builtin group 'Performance Monitor Users' (RID 558): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 559' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 559' 10.129.149.11
 [-] Could not get details for builtin group 'Performance Log Users' (RID 559): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 562' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 562' 10.129.149.11
 [-] Could not get details for builtin group 'Distributed COM Users' (RID 562): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 568' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 568' 10.129.149.11
 [-] Could not get details for builtin group 'IIS_IUSRS' (RID 568): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 569' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 569' 10.129.149.11
 [-] Could not get details for builtin group 'Cryptographic Operators' (RID 569): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 573' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 573' 10.129.149.11
 [-] Could not get details for builtin group 'Event Log Readers' (RID 573): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 574' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 574' 10.129.149.11
 [-] Could not get details for builtin group 'Certificate Service DCOM Access' (RID 574): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 575' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 575' 10.129.149.11
 [-] Could not get details for builtin group 'RDS Remote Access Servers' (RID 575): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 576' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 576' 10.129.149.11
 [-] Could not get details for builtin group 'RDS Endpoint Servers' (RID 576): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 577' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 577' 10.129.149.11
 [-] Could not get details for builtin group 'RDS Management Servers' (RID 577): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 578' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 578' 10.129.149.11
 [-] Could not get details for builtin group 'Hyper-V Administrators' (RID 578): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 579' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 579' 10.129.149.11
 [-] Could not get details for builtin group 'Access Control Assistance Operators' (RID 579): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 580' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 580' 10.129.149.11
 [-] Could not get details for builtin group 'Remote Management Users' (RID 580): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 581' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 581' 10.129.149.11
 [-] Could not get details for builtin group 'System Managed Accounts Group' (RID 581): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 582' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 582' 10.129.149.11
 [-] Could not get details for builtin group 'Storage Replica Administrators' (RID 582): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 549' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 549' 10.129.149.11
 [-] Could not get details for builtin group 'Server Operators' (RID 549): STATUS_NO_SUCH_GROUP
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 498' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 498' 10.129.149.11
 [+] Found details for domain group 'Enterprise Read-only Domain Controllers' (RID 498)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 512' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 512' 10.129.149.11
 [+] Found details for domain group 'Domain Admins' (RID 512)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 513' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 513' 10.129.149.11
 [+] Found details for domain group 'Domain Users' (RID 513)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 514' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 514' 10.129.149.11
 [+] Found details for domain group 'Domain Guests' (RID 514)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 515' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 515' 10.129.149.11
 [+] Found details for domain group 'Domain Computers' (RID 515)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 516' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 516' 10.129.149.11
 [+] Found details for domain group 'Domain Controllers' (RID 516)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 518' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 518' 10.129.149.11
 [+] Found details for domain group 'Schema Admins' (RID 518)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 519' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 519' 10.129.149.11
 [+] Found details for domain group 'Enterprise Admins' (RID 519)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 520' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 520' 10.129.149.11
 [+] Found details for domain group 'Group Policy Creator Owners' (RID 520)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 521' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 521' 10.129.149.11
 [+] Found details for domain group 'Read-only Domain Controllers' (RID 521)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 522' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 522' 10.129.149.11
 [+] Found details for domain group 'Cloneable Domain Controllers' (RID 522)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 525' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 525' 10.129.149.11
 [+] Found details for domain group 'Protected Users' (RID 525)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 526' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 526' 10.129.149.11
 [+] Found details for domain group 'Key Admins' (RID 526)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 527' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 527' 10.129.149.11
 [+] Found details for domain group 'Enterprise Key Admins' (RID 527)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1102' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1102' 10.129.149.11
 [+] Found details for domain group 'DnsUpdateProxy' (RID 1102)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1104' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1104' 10.129.149.11
 [+] Found details for domain group 'Organization Management' (RID 1104)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1105' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1105' 10.129.149.11
 [+] Found details for domain group 'Recipient Management' (RID 1105)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1106' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1106' 10.129.149.11
 [+] Found details for domain group 'View-Only Organization Management' (RID 1106)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1107' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1107' 10.129.149.11
 [+] Found details for domain group 'Public Folder Management' (RID 1107)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1108' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1108' 10.129.149.11
 [+] Found details for domain group 'UM Management' (RID 1108)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1109' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1109' 10.129.149.11
 [+] Found details for domain group 'Help Desk' (RID 1109)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1110' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1110' 10.129.149.11
 [+] Found details for domain group 'Records Management' (RID 1110)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1111' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1111' 10.129.149.11
 [+] Found details for domain group 'Discovery Management' (RID 1111)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1112' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1112' 10.129.149.11
 [+] Found details for domain group 'Server Management' (RID 1112)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1113' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1113' 10.129.149.11
 [+] Found details for domain group 'Delegated Setup' (RID 1113)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1114' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1114' 10.129.149.11
 [+] Found details for domain group 'Hygiene Management' (RID 1114)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1115' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1115' 10.129.149.11
 [+] Found details for domain group 'Compliance Management' (RID 1115)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1116' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1116' 10.129.149.11
 [+] Found details for domain group 'Security Reader' (RID 1116)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1117' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1117' 10.129.149.11
 [+] Found details for domain group 'Security Administrator' (RID 1117)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1118' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1118' 10.129.149.11
 [+] Found details for domain group 'Exchange Servers' (RID 1118)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1119' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1119' 10.129.149.11
 [+] Found details for domain group 'Exchange Trusted Subsystem' (RID 1119)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1120' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1120' 10.129.149.11
 [+] Found details for domain group 'Managed Availability Servers' (RID 1120)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1121' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1121' 10.129.149.11
 [+] Found details for domain group 'Exchange Windows Permissions' (RID 1121)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1122' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1122' 10.129.149.11
 [+] Found details for domain group 'ExchangeLegacyInterop' (RID 1122)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1133' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1133' 10.129.149.11
 [+] Found details for domain group '$D31000-NSEL5BRJ63V7' (RID 1133)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1148' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1148' 10.129.149.11
 [+] Found details for domain group 'Service Accounts' (RID 1148)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 1149' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 1149' 10.129.149.11
 [+] Found details for domain group 'Privileged IT Accounts' (RID 1149)
-[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c 'querygroup 5101' 10.129.95.210
+[V] Attempting to get detailed group info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c 'querygroup 5101' 10.129.149.11
 [+] Found details for domain group 'test' (RID 5101)
 [+] After merging groups results we have 72 group(s) total:
 '1101':                                                                                                                                                                                                                                     
@@ -2148,10 +2148,16 @@ Server type string: Wk Sv PDC Tim NT
   members: ''                                                                                                                                                                                                                               
   details: null                                                                                                                                                                                                                             
 
+ =========================================
+|    Services via RPC on 10.129.149.11    |
+ =========================================
+[V] Attempting to get RPC services, running command: net -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 rpc service list -S 10.129.149.11
+[-] Could not get RPC services via 'net rpc service list': WERR_ACCESS_DENIED
+
  =======================================
-|    Shares via RPC on 10.129.95.210    |
+|    Shares via RPC on 10.129.149.11    |
  =======================================
-[V] Attempting to get share list using authentication, running command: smbclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 -L //10.129.95.210 -g
+[V] Attempting to get share list using authentication, running command: smbclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 -L //10.129.149.11 -g
 [*] Enumerating shares
 [+] Found 5 share(s):
 ADMIN$:                                                                                                                                                                                                                                     
@@ -2170,30 +2176,30 @@ SYSVOL:
   comment: Logon server share                                                                                                                                                                                                               
   type: Disk                                                                                                                                                                                                                                
 [*] Testing share ADMIN$
-[V] Attempting to map share //10.129.95.210/ADMIN$, running command: smbclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 -c dir '//10.129.95.210/ADMIN$'
-[+] Mapping: OK, Listing: OK
+[V] Attempting to map share //10.129.149.11/ADMIN$, running command: smbclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 -c dir '//10.129.149.11/ADMIN$'
+[+] Mapping: DENIED, Listing: N/A
 [*] Testing share C$
-[V] Attempting to map share //10.129.95.210/C$, running command: smbclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 -c dir '//10.129.95.210/C$'
-[+] Mapping: OK, Listing: OK
+[V] Attempting to map share //10.129.149.11/C$, running command: smbclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 -c dir '//10.129.149.11/C$'
+[+] Mapping: DENIED, Listing: N/A
 [*] Testing share IPC$
-[V] Attempting to map share //10.129.95.210/IPC$, running command: smbclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 -c dir '//10.129.95.210/IPC$'
+[V] Attempting to map share //10.129.149.11/IPC$, running command: smbclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 -c dir '//10.129.149.11/IPC$'
 [+] Mapping: OK, Listing: NOT SUPPORTED
 [*] Testing share NETLOGON
-[V] Attempting to map share //10.129.95.210/NETLOGON, running command: smbclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 -c dir //10.129.95.210/NETLOGON
+[V] Attempting to map share //10.129.149.11/NETLOGON, running command: smbclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 -c dir //10.129.149.11/NETLOGON
 [+] Mapping: OK, Listing: OK
 [*] Testing share SYSVOL
-[V] Attempting to map share //10.129.95.210/SYSVOL, running command: smbclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -t 30 -c dir //10.129.95.210/SYSVOL
+[V] Attempting to map share //10.129.149.11/SYSVOL, running command: smbclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -t 30 -c dir //10.129.149.11/SYSVOL
 [+] Mapping: OK, Listing: OK
 
  ==========================================
-|    Policies via RPC for 10.129.95.210    |
+|    Policies via RPC for 10.129.149.11    |
  ==========================================
 [*] Trying port 445/tcp
 [+] Found policy:
 Domain password information:                                                                                                                                                                                                                
-  Password history length: None                                                                                                                                                                                                             
-  Minimum password length: None                                                                                                                                                                                                             
-  Maximum password age: '365 days '                                                                                                                                                                                                         
+  Password history length: 24                                                                                                                                                                                                               
+  Minimum password length: 7                                                                                                                                                                                                                
+  Maximum password age: not set                                                                                                                                                                                                             
   Password properties:                                                                                                                                                                                                                      
   - DOMAIN_PASSWORD_COMPLEX: false                                                                                                                                                                                                          
   - DOMAIN_PASSWORD_NO_ANON_CHANGE: false                                                                                                                                                                                                   
@@ -2202,17 +2208,17 @@ Domain password information:
   - DOMAIN_PASSWORD_PASSWORD_STORE_CLEARTEXT: false                                                                                                                                                                                         
   - DOMAIN_PASSWORD_REFUSE_PASSWORD_CHANGE: false                                                                                                                                                                                           
 Domain lockout information:                                                                                                                                                                                                                 
-  Lockout observation window: none                                                                                                                                                                                                          
+  Lockout observation window: 30 minutes                                                                                                                                                                                                    
   Lockout duration: 30 minutes                                                                                                                                                                                                              
   Lockout threshold: None                                                                                                                                                                                                                   
 Domain logoff information:                                                                                                                                                                                                                  
   Force logoff time: not set                                                                                                                                                                                                                
 
  ==========================================
-|    Printers via RPC for 10.129.95.210    |
+|    Printers via RPC for 10.129.149.11    |
  ==========================================
-[V] Attempting to get printer info, running command: rpcclient -W HTB -U administrator%32693b11e6aa90eb43d32c72a07ceea6 --pw-nt-hash -s /tmp/tmpk_ld8i3_ -c enumprinters 10.129.95.210
+[V] Attempting to get printer info, running command: rpcclient -W HTB -U svc-alfresco%s3rvice -s /tmp/tmplj1frw6t -c enumprinters 10.129.149.11
 [+] No printers available
 
-Completed after 1442.00 seconds
+Completed after 1436.90 seconds
 ```
