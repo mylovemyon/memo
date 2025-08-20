@@ -345,7 +345,9 @@ entry: 0 written at Wed, 31 Dec 1969 19:00:00 EST
 ### eventlog_loginfo
 ```sh
 rpcclient $> eventlog_loginfo security
+rpcclient $>
 rpcclient $> eventlog_loginfo system
+rpcclient $>
 ```
 
 
@@ -467,6 +469,171 @@ rpcclient $> netfileenum
 rpcclient $> netsessenum
 trying level: 1
 Received 2 entries.
+```
+### netdiskenum
+```sh
+rpcclient $> netdiskenum
+rpcclient $>
+```
+### netconnenum
+```sh
+rpcclient $> netconnenum
+rpcclient $>
+```
+
+
+
+## NETLOGON
+### getanydcname
+```sh
+rpcclient $> getanydcname htb
+result was WERR_INVALID_COMPUTERNAME
+```
+### getdcname
+```sh
+rpcclient $> getdcname htb
+\\FOREST
+```
+### dsr_getdcname
+```sh
+rpcclient $> dsr_getdcname htb
+DsGetDcName gave:     info: struct netr_DsRGetDCNameInfo
+        dc_unc                   : *
+            dc_unc                   : '\\FOREST.htb.local'
+        dc_address               : *
+            dc_address               : '\\dead:beef::6cb3:6a45:f79d:c356'
+        dc_address_type          : DS_ADDRESS_TYPE_INET (1)
+        domain_guid              : dff0c71a-a949-4b26-8c7b-52e3e2cb6eab
+        domain_name              : *
+            domain_name              : 'htb.local'
+        forest_name              : *
+            forest_name              : 'htb.local'
+        dc_flags                 : 0xe001f3fd (3758224381)
+               1: NBT_SERVER_PDC           
+               1: NBT_SERVER_GC            
+               1: NBT_SERVER_LDAP          
+               1: NBT_SERVER_DS            
+               1: NBT_SERVER_KDC           
+               1: NBT_SERVER_TIMESERV      
+               1: NBT_SERVER_CLOSEST       
+               1: NBT_SERVER_WRITABLE      
+               1: NBT_SERVER_GOOD_TIMESERV 
+               0: NBT_SERVER_NDNC          
+               0: NBT_SERVER_SELECT_SECRET_DOMAIN_6
+               1: NBT_SERVER_FULL_SECRET_DOMAIN_6
+               1: NBT_SERVER_ADS_WEB_SERVICE
+               1: NBT_SERVER_DS_8          
+               1: NBT_SERVER_DS_9          
+               1: NBT_SERVER_DS_10         
+               1: NBT_SERVER_HAS_DNS_NAME  
+               1: NBT_SERVER_IS_DEFAULT_NC 
+               1: NBT_SERVER_FOREST_ROOT   
+        dc_site_name             : *
+            dc_site_name             : 'Default-First-Site-Name'
+        client_site_name         : *
+            client_site_name         : 'Default-First-Site-Name'
+```
+### dsr_getdcnameex
+```sh
+rpcclient $> dsr_getdcnameex htb dff0c71a-a949-4b26-8c7b-52e3e2cb6eab
+DsRGetDCNameEx gave     info: struct netr_DsRGetDCNameInfo
+        dc_unc                   : *
+            dc_unc                   : '\\FOREST.htb.local'
+        dc_address               : *
+            dc_address               : '\\dead:beef::6cb3:6a45:f79d:c356'
+        dc_address_type          : DS_ADDRESS_TYPE_INET (1)
+        domain_guid              : dff0c71a-a949-4b26-8c7b-52e3e2cb6eab
+        domain_name              : *
+            domain_name              : 'htb.local'
+        forest_name              : *
+            forest_name              : 'htb.local'
+        dc_flags                 : 0xe001f3fd (3758224381)
+               1: NBT_SERVER_PDC           
+               1: NBT_SERVER_GC            
+               1: NBT_SERVER_LDAP          
+               1: NBT_SERVER_DS            
+               1: NBT_SERVER_KDC           
+               1: NBT_SERVER_TIMESERV      
+               1: NBT_SERVER_CLOSEST       
+               1: NBT_SERVER_WRITABLE      
+               1: NBT_SERVER_GOOD_TIMESERV 
+               0: NBT_SERVER_NDNC          
+               0: NBT_SERVER_SELECT_SECRET_DOMAIN_6
+               1: NBT_SERVER_FULL_SECRET_DOMAIN_6
+               1: NBT_SERVER_ADS_WEB_SERVICE
+               1: NBT_SERVER_DS_8          
+               1: NBT_SERVER_DS_9          
+               1: NBT_SERVER_DS_10         
+               1: NBT_SERVER_HAS_DNS_NAME  
+               1: NBT_SERVER_IS_DEFAULT_NC 
+               1: NBT_SERVER_FOREST_ROOT   
+        dc_site_name             : *
+            dc_site_name             : 'Default-First-Site-Name'
+        client_site_name         : *
+            client_site_name         : 'Default-First-Site-Name'
+```
+### dsr_getsitename
+```sh
+rpcclient $> dsr_getsitename FOREST
+Computer FOREST is on Site: Default-First-Site-Name
+```
+### dsr_getforesttrustinfo
+```sh
+rpcclient $> dsr_getforesttrustinfo
+success
+```
+### logonctrl
+```sh
+rpcclient $> logonctrl FOREST
+rpcclient $>
+```
+### samlogon
+```sh
+rpcclient $> samlogon
+do_cmd: Failed to fetch trust credentials for HTB.LOCAL to connect to netlogon: NT_STATUS_CANT_ACCESS_DOMAIN_INFO
+```
+### gettrustrid
+```sh
+rpcclient $> gettrustrid
+result was WERR_ACCESS_DENIED
+```
+### dsr_enumtrustdom
+```sh
+rpcclient $> dsr_enumtrustdom
+1 domains returned
+htb.local (HTB)
+```
+### dsenumdomtrusts
+```sh
+rpcclient $> dsenumdomtrusts
+1 domains returned
+htb.local (HTB)
+```
+### netrenumtrusteddomains
+```sh
+rpcclient $> netrenumtrusteddomains
+success
+```
+### netrenumtrusteddomainsex
+```
+rpcclient $> netrenumtrusteddomainsex
+success
+```
+### getdcsitecoverage
+```sh
+rpcclient $> getdcsitecoverage forest
+sites covered by this DC: 1
+Default-First-Site-Name
+```
+### capabilities
+```sh
+rpcclient $> capabilities
+do_cmd: Failed to fetch trust credentials for HTB.LOCAL to connect to netlogon: NT_STATUS_CANT_ACCESS_DOMAIN_INFO
+```
+### logongetdomaininfo
+```sh
+rpcclient $> logongetdomaininfo
+do_cmd: Failed to fetch trust credentials for HTB.LOCAL to connect to netlogon: NT_STATUS_CANT_ACCESS_DOMAIN_INFO
 ```
 
 
