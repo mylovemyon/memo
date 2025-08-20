@@ -638,6 +638,305 @@ do_cmd: Failed to fetch trust credentials for HTB.LOCAL to connect to netlogon: 
 
 
 
+## SAMR
+### querydispinfo
+```sh
+rpcclient $> querydispinfo 
+index: 0x2137 RID: 0x463 acb: 0x00020015 Account: $331000-VK4ADACQNUCA  Name: (null)    Desc: (null)
+index: 0xfbc RID: 0x1f4 acb: 0x00000010 Account: Administrator  Name: Administrator     Desc: Built-in account for administering the computer/domain
+index: 0x2369 RID: 0x47e acb: 0x00000210 Account: andy  Name: Andy Hislip       Desc: (null)
+index: 0xfbe RID: 0x1f7 acb: 0x00000215 Account: DefaultAccount Name: (null)    Desc: A user account managed by the system.
+index: 0xfbd RID: 0x1f5 acb: 0x00000215 Account: Guest  Name: (null)    Desc: Built-in account for guest access to the computer/domain
+index: 0x2352 RID: 0x478 acb: 0x00000210 Account: HealthMailbox0659cc1  Name: HealthMailbox-EXCH01-010  Desc: (null)
+index: 0x234b RID: 0x471 acb: 0x00000210 Account: HealthMailbox670628e  Name: HealthMailbox-EXCH01-003  Desc: (null)
+index: 0x234d RID: 0x473 acb: 0x00000210 Account: HealthMailbox6ded678  Name: HealthMailbox-EXCH01-005  Desc: (null)
+index: 0x2351 RID: 0x477 acb: 0x00000210 Account: HealthMailbox7108a4e  Name: HealthMailbox-EXCH01-009  Desc: (null)
+index: 0x234e RID: 0x474 acb: 0x00000210 Account: HealthMailbox83d6781  Name: HealthMailbox-EXCH01-006  Desc: (null)
+index: 0x234c RID: 0x472 acb: 0x00000210 Account: HealthMailbox968e74d  Name: HealthMailbox-EXCH01-004  Desc: (null)
+index: 0x2350 RID: 0x476 acb: 0x00000210 Account: HealthMailboxb01ac64  Name: HealthMailbox-EXCH01-008  Desc: (null)
+index: 0x234a RID: 0x470 acb: 0x00000210 Account: HealthMailboxc0a90c9  Name: HealthMailbox-EXCH01-002  Desc: (null)
+index: 0x2348 RID: 0x46e acb: 0x00000210 Account: HealthMailboxc3d7722  Name: HealthMailbox-EXCH01-Mailbox-Database-1118319013  Desc: (null)
+index: 0x2349 RID: 0x46f acb: 0x00000210 Account: HealthMailboxfc9daad  Name: HealthMailbox-EXCH01-001  Desc: (null)
+index: 0x234f RID: 0x475 acb: 0x00000210 Account: HealthMailboxfd87238  Name: HealthMailbox-EXCH01-007  Desc: (null)
+index: 0xff4 RID: 0x1f6 acb: 0x00000011 Account: krbtgt Name: (null)    Desc: Key Distribution Center Service Account
+index: 0x2360 RID: 0x47a acb: 0x00000210 Account: lucinda       Name: Lucinda Berger    Desc: (null)
+index: 0x236a RID: 0x47f acb: 0x00000210 Account: mark  Name: Mark Brandt       Desc: (null)
+index: 0x236b RID: 0x480 acb: 0x00000210 Account: santi Name: Santi Rodriguez   Desc: (null)
+index: 0x235c RID: 0x479 acb: 0x00000210 Account: sebastien     Name: Sebastien Caron   Desc: (null)
+index: 0x215a RID: 0x468 acb: 0x00020011 Account: SM_1b41c9286325456bb  Name: Microsoft Exchange Migration      Desc: (null)
+index: 0x2161 RID: 0x46c acb: 0x00020011 Account: SM_1ffab36a2f5f479cb  Name: SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9}       Desc: (null)
+index: 0x2156 RID: 0x464 acb: 0x00020011 Account: SM_2c8eef0a09b545acb  Name: Microsoft Exchange Approval Assistant     Desc: (null)
+index: 0x2159 RID: 0x467 acb: 0x00020011 Account: SM_681f53d4942840e18  Name: Discovery Search Mailbox  Desc: (null)
+index: 0x2158 RID: 0x466 acb: 0x00020011 Account: SM_75a538d3025e4db9a  Name: Microsoft Exchange        Desc: (null)
+index: 0x215c RID: 0x46a acb: 0x00020011 Account: SM_7c96b981967141ebb  Name: E4E Encryption Store - Active     Desc: (null)
+index: 0x215b RID: 0x469 acb: 0x00020011 Account: SM_9b69f1b9d2cc45549  Name: Microsoft Exchange Federation Mailbox     Desc: (null)
+index: 0x215d RID: 0x46b acb: 0x00020011 Account: SM_c75ee099d0a64c91b  Name: Microsoft Exchange        Desc: (null)
+index: 0x2157 RID: 0x465 acb: 0x00020011 Account: SM_ca8c2ed5bdab4dc9b  Name: Microsoft Exchange        Desc: (null)
+index: 0x2365 RID: 0x47b acb: 0x00010210 Account: svc-alfresco  Name: svc-alfresco      Desc: (null)
+```
+### querydominfo
+```sh
+rpcclient $> querydominfo
+Domain:         HTB
+Server:
+Comment:
+Total Users:    105
+Total Groups:   0
+Total Aliases:  0
+Sequence No:    1
+Force Logoff:   18446744073709551615
+Domain Server State:    0x1
+Server Role:    ROLE_DOMAIN_PDC
+Unknown 3:      0x1
+```
+### enumdomusers
+```sh
+rpcclient $> enumdomusers
+user:[Administrator] rid:[0x1f4]
+user:[Guest] rid:[0x1f5]
+user:[krbtgt] rid:[0x1f6]
+user:[DefaultAccount] rid:[0x1f7]
+user:[$331000-VK4ADACQNUCA] rid:[0x463]
+user:[SM_2c8eef0a09b545acb] rid:[0x464]
+user:[SM_ca8c2ed5bdab4dc9b] rid:[0x465]
+user:[SM_75a538d3025e4db9a] rid:[0x466]
+user:[SM_681f53d4942840e18] rid:[0x467]
+user:[SM_1b41c9286325456bb] rid:[0x468]
+user:[SM_9b69f1b9d2cc45549] rid:[0x469]
+user:[SM_7c96b981967141ebb] rid:[0x46a]
+user:[SM_c75ee099d0a64c91b] rid:[0x46b]
+user:[SM_1ffab36a2f5f479cb] rid:[0x46c]
+user:[HealthMailboxc3d7722] rid:[0x46e]
+user:[HealthMailboxfc9daad] rid:[0x46f]
+user:[HealthMailboxc0a90c9] rid:[0x470]
+user:[HealthMailbox670628e] rid:[0x471]
+user:[HealthMailbox968e74d] rid:[0x472]
+user:[HealthMailbox6ded678] rid:[0x473]
+user:[HealthMailbox83d6781] rid:[0x474]
+user:[HealthMailboxfd87238] rid:[0x475]
+user:[HealthMailboxb01ac64] rid:[0x476]
+user:[HealthMailbox7108a4e] rid:[0x477]
+user:[HealthMailbox0659cc1] rid:[0x478]
+user:[sebastien] rid:[0x479]
+user:[lucinda] rid:[0x47a]
+user:[svc-alfresco] rid:[0x47b]
+user:[andy] rid:[0x47e]
+user:[mark] rid:[0x47f]
+user:[santi] rid:[0x480]
+```
+### enumdomgroups
+```sh
+rpcclient $> enumdomgroups
+group:[Enterprise Read-only Domain Controllers] rid:[0x1f2]
+group:[Domain Admins] rid:[0x200]
+group:[Domain Users] rid:[0x201]
+group:[Domain Guests] rid:[0x202]
+group:[Domain Computers] rid:[0x203]
+group:[Domain Controllers] rid:[0x204]
+group:[Schema Admins] rid:[0x206]
+group:[Enterprise Admins] rid:[0x207]
+group:[Group Policy Creator Owners] rid:[0x208]
+group:[Read-only Domain Controllers] rid:[0x209]
+group:[Cloneable Domain Controllers] rid:[0x20a]
+group:[Protected Users] rid:[0x20d]
+group:[Key Admins] rid:[0x20e]
+group:[Enterprise Key Admins] rid:[0x20f]
+group:[DnsUpdateProxy] rid:[0x44e]
+group:[Organization Management] rid:[0x450]
+group:[Recipient Management] rid:[0x451]
+group:[View-Only Organization Management] rid:[0x452]
+group:[Public Folder Management] rid:[0x453]
+group:[UM Management] rid:[0x454]
+group:[Help Desk] rid:[0x455]
+group:[Records Management] rid:[0x456]
+group:[Discovery Management] rid:[0x457]
+group:[Server Management] rid:[0x458]
+group:[Delegated Setup] rid:[0x459]
+group:[Hygiene Management] rid:[0x45a]
+group:[Compliance Management] rid:[0x45b]
+group:[Security Reader] rid:[0x45c]
+group:[Security Administrator] rid:[0x45d]
+group:[Exchange Servers] rid:[0x45e]
+group:[Exchange Trusted Subsystem] rid:[0x45f]
+group:[Managed Availability Servers] rid:[0x460]
+group:[Exchange Windows Permissions] rid:[0x461]
+group:[ExchangeLegacyInterop] rid:[0x462]
+group:[$D31000-NSEL5BRJ63V7] rid:[0x46d]
+group:[Service Accounts] rid:[0x47c]
+group:[Privileged IT Accounts] rid:[0x47d]
+group:[test] rid:[0x13ed]
+```
+### enumalsgroups
+#### enumalsgroups builtin
+```sh
+rpcclient $> enumalsgroups builtin
+group:[Account Operators] rid:[0x224]
+group:[Pre-Windows 2000 Compatible Access] rid:[0x22a]
+group:[Incoming Forest Trust Builders] rid:[0x22d]
+group:[Windows Authorization Access Group] rid:[0x230]
+group:[Terminal Server License Servers] rid:[0x231]
+group:[Administrators] rid:[0x220]
+group:[Users] rid:[0x221]
+group:[Guests] rid:[0x222]
+group:[Print Operators] rid:[0x226]
+group:[Backup Operators] rid:[0x227]
+group:[Replicator] rid:[0x228]
+group:[Remote Desktop Users] rid:[0x22b]
+group:[Network Configuration Operators] rid:[0x22c]
+group:[Performance Monitor Users] rid:[0x22e]
+group:[Performance Log Users] rid:[0x22f]
+group:[Distributed COM Users] rid:[0x232]
+group:[IIS_IUSRS] rid:[0x238]
+group:[Cryptographic Operators] rid:[0x239]
+group:[Event Log Readers] rid:[0x23d]
+group:[Certificate Service DCOM Access] rid:[0x23e]
+group:[RDS Remote Access Servers] rid:[0x23f]
+group:[RDS Endpoint Servers] rid:[0x240]
+group:[RDS Management Servers] rid:[0x241]
+group:[Hyper-V Administrators] rid:[0x242]
+group:[Access Control Assistance Operators] rid:[0x243]
+group:[Remote Management Users] rid:[0x244]
+group:[System Managed Accounts Group] rid:[0x245]
+group:[Storage Replica Administrators] rid:[0x246]
+group:[Server Operators] rid:[0x225]
+```
+#### enumalsgroups domain
+```sh
+rpcclient $> enumalsgroups domain
+group:[Cert Publishers] rid:[0x205]
+group:[RAS and IAS Servers] rid:[0x229]
+group:[Allowed RODC Password Replication Group] rid:[0x23b]
+group:[Denied RODC Password Replication Group] rid:[0x23c]
+group:[DnsAdmins] rid:[0x44d]
+```
+### enumdomains
+```sh
+rpcclient $> enumdomains
+name:[HTB] idx:[0x0]
+name:[Builtin] idx:[0x0]
+```
+### queryuser
+```sh
+rpcclient $> queryuser 0x1f4
+        User Name   :   Administrator
+        Full Name   :   Administrator
+        Home Drive  :
+        Dir Drive   :
+        Profile Path:
+        Logon Script:
+        Description :   Built-in account for administering the computer/domain
+        Workstations:
+        Comment     :
+        Remote Dial :
+        Logon Time               :      Tue, 19 Aug 2025 09:39:37 EDT
+        Logoff Time              :      Wed, 31 Dec 1969 19:00:00 EST
+        Kickoff Time             :      Wed, 31 Dec 1969 19:00:00 EST
+        Password last set Time   :      Mon, 30 Aug 2021 20:51:59 EDT
+        Password can change Time :      Tue, 31 Aug 2021 20:51:59 EDT
+        Password must change Time:      Wed, 13 Sep 30828 22:48:05 EDT
+        unknown_2[0..31]...
+        user_rid :      0x1f4
+        group_rid:      0x201
+        acb_info :      0x00000010
+        fields_present: 0x00ffffff
+        logon_divs:     168
+        bad_password_count:     0x00000000
+        logon_count:    0x00000086
+        padding1[0..7]...
+        logon_hrs[0..21]...
+```
+### queryusergroups
+```sh
+rpcclient $> queryusergroups 0x1f4
+        group rid:[0x207] attr:[0x7]
+        group rid:[0x450] attr:[0x7]
+        group rid:[0x201] attr:[0x7]
+        group rid:[0x208] attr:[0x7]
+        group rid:[0x200] attr:[0x7]
+        group rid:[0x206] attr:[0x7]
+```
+### queryuseraliases
+#### queryuseraliases builtin
+```sh
+rpcclient $> queryuseraliases builtin S-1-5-21-3072663084-364016917-1341370565-500
+        group rid:[0x220]
+```
+#### queryuseraliases domain
+```sh
+rpcclient $> queryuseraliases domain S-1-5-21-3072663084-364016917-1341370565-502
+        group rid:[0x23c]
+```
+### querygroup
+```sh
+rpcclient $> querygroup 0x200
+        Group Name:     Domain Admins
+        Description:    Designated administrators of the domain
+        Group Attribute:7
+        Num Members:1
+```
+### querygroupmem
+```sh
+rpcclient $> querygroupmem 0x200
+        rid:[0x1f4] attr:[0x7]
+```
+### queryaliasmem
+#### queryaliasmem builtin
+```sh
+rpcclient $> queryaliasmem builtin 0x220
+        sid:[S-1-5-21-3072663084-364016917-1341370565-500]
+        sid:[S-1-5-21-3072663084-364016917-1341370565-519]
+        sid:[S-1-5-21-3072663084-364016917-1341370565-512]
+```
+#### queryaliasmem domain
+```sh
+rpcclient $> queryaliasmem domain 0x23c
+        sid:[S-1-5-21-3072663084-364016917-1341370565-502]
+        sid:[S-1-5-21-3072663084-364016917-1341370565-516]
+        sid:[S-1-5-21-3072663084-364016917-1341370565-518]
+        sid:[S-1-5-21-3072663084-364016917-1341370565-519]
+        sid:[S-1-5-21-3072663084-364016917-1341370565-517]
+        sid:[S-1-5-21-3072663084-364016917-1341370565-512]
+        sid:[S-1-5-21-3072663084-364016917-1341370565-520]
+        sid:[S-1-5-21-3072663084-364016917-1341370565-521]
+```
+### createdomuser
+```sh
+rpcclient $> createdomuser user
+rpcclient $>
+
+rpcclient $> queryuser user
+        User Name   :   user
+        Full Name   :
+        Home Drive  :
+        Dir Drive   :
+        Profile Path:
+        Logon Script:
+        Description :
+        Workstations:
+        Comment     :
+        Remote Dial :
+        Logon Time               :      Wed, 31 Dec 1969 19:00:00 EST
+        Logoff Time              :      Wed, 31 Dec 1969 19:00:00 EST
+        Kickoff Time             :      Wed, 13 Sep 30828 22:48:05 EDT
+        Password last set Time   :      Wed, 31 Dec 1969 19:00:00 EST
+        Password can change Time :      Wed, 31 Dec 1969 19:00:00 EST
+        Password must change Time:      Wed, 31 Dec 1969 19:00:00 EST
+        unknown_2[0..31]...
+        user_rid :      0x2775
+        group_rid:      0x201
+        acb_info :      0x00020015
+        fields_present: 0x00ffffff
+        logon_divs:     168
+        bad_password_count:     0x00000000
+        logon_count:    0x00000000
+        padding1[0..7]...
+        logon_hrs[0..21]...
+```
+
+
+
+
+
 ## EPMAPPER
 ### epmmap
 ```sh
