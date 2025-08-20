@@ -899,10 +899,75 @@ rpcclient $> queryaliasmem domain 0x23c
         sid:[S-1-5-21-3072663084-364016917-1341370565-520]
         sid:[S-1-5-21-3072663084-364016917-1341370565-521]
 ```
+### samlookupnames
+#### samlookupnames builtin
+```sh
+rpcclient $> samlookupnames builtin Administrators
+name Administrators: 0x220 (4)
+```
+#### samlookupnames domain
+```sh
+rpcclient $> samlookupnames domain 'Denied RODC Password Replication Group'
+name Denied RODC Password Replication Group: 0x23c (4)
+```
+### samlookuprids
+#### samlookuprids builtin
+```sh
+rpcclient $> samlookuprids builtin 0x220
+rid 0x220: Administrators (4)
+```
+#### samlookuprids domain
+```sh
+rpcclient $> samlookuprids domain 0x23c
+rid 0x23c: Denied RODC Password Replication Group (4)
+```
+### lookupdomain
+```sh
+rpcclient $> lookupdomain htb
+SAMR_LOOKUP_DOMAIN: Domain Name: htb Domain SID: S-1-5-21-3072663084-364016917-1341370565
+```
+### getusrdompwinfo
+```sh
+rpcclient $> getusrdompwinfo 0x1f4
+    &info: struct samr_PwInfo
+        min_password_length      : 0x0007 (7)
+        password_properties      : 0x00000000 (0)
+               0: DOMAIN_PASSWORD_COMPLEX  
+               0: DOMAIN_PASSWORD_NO_ANON_CHANGE
+               0: DOMAIN_PASSWORD_NO_CLEAR_CHANGE
+               0: DOMAIN_PASSWORD_LOCKOUT_ADMINS
+               0: DOMAIN_PASSWORD_STORE_CLEARTEXT
+               0: DOMAIN_REFUSE_PASSWORD_CHANGE
+```
+### getdompwinfo
+```sh
+rpcclient $> getdompwinfo
+min_password_length: 7
+password_properties: 0x00000000
+```
+### samquerysecobj
+```sh
+rpcclient $> samquerysecobj
+revision: 1
+type: 0x8004: SEC_DESC_DACL_PRESENT SEC_DESC_SELF_RELATIVE 
+DACL
+        ACL     Num ACEs:       2       revision:       2
+        ---
+        ACE
+                type: ACCESS ALLOWED (0) flags: 0x00 
+                Specific bits: 0x31
+                Permissions: 0x20031: READ_CONTROL_ACCESS 
+                SID: S-1-1-0
+
+        ACE
+                type: ACCESS ALLOWED (0) flags: 0x00 
+                Specific bits: 0x3f
+                Permissions: 0xf003f: WRITE_OWNER_ACCESS WRITE_DAC_ACCESS READ_CONTROL_ACCESS DELETE_ACCESS 
+                SID: S-1-5-32-544
+```
 ### createdomuser
 ```sh
 rpcclient $> createdomuser user
-rpcclient $>
 
 rpcclient $> queryuser user
         User Name   :   user
@@ -932,6 +997,44 @@ rpcclient $> queryuser user
         padding1[0..7]...
         logon_hrs[0..21]...
 ```
+### deletedomuser
+```sh
+rpcclient $> deletedomuser user
+rpcclient $>
+```
+### createdomgroup
+```sh
+rpcclient $> createdomgroup user
+
+rpcclient $> querygroup 0x2776
+        Group Name:     user
+        Description:
+        Group Attribute:7
+        Num Members:0
+```
+### deletedomgroup
+```sh
+rpcclient $> deletedomgroup user
+rpcclient $>
+```
+### createdomalias
+```sh
+rpcclient $> createdomalias user
+
+rpcclient $> enumalsgroups domain
+group:[Cert Publishers] rid:[0x205]
+group:[RAS and IAS Servers] rid:[0x229]
+group:[Allowed RODC Password Replication Group] rid:[0x23b]
+group:[Denied RODC Password Replication Group] rid:[0x23c]
+group:[DnsAdmins] rid:[0x44d]
+group:[user] rid:[0x2777]
+```
+### deletealias
+```sh
+rpcclient $> deletealias domain 10103
+rpcclient $>
+```
+
 
 
 
