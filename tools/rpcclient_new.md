@@ -1133,6 +1133,7 @@ SeCreateSymbolicLinkPrivilege           0:35 (0x0:0x23)
 SeDelegateSessionUserImpersonatePrivilege               0:36 (0x0:0x24)
 ```
 ### lsaenumsid
+https://learn.microsoft.com/en-us/windows/win32/secauthz/well-known-sids
 ```sh
 rpcclient $> lsaenumsid
 found 17 SIDs
@@ -1169,6 +1170,24 @@ rpcclient $> lsaenumacctrights S-1-1-0
 found 2 privileges for SID S-1-1-0
         SeChangeNotifyPrivilege
         SeNetworkLogonRight
+```
+### lsacreateaccount
+```sh
+rpcclient $> lsacreateaccount S-1-1-1
+Account for SID S-1-1-1 successfully created
+
+rpcclient $> lookupsids S-1-1-1
+S-1-1-1 *unknown*\*unknown* (8)
+
+rpcclient $> lsaenumprivsaccount S-1-1-1
+found 0 privileges for SID S-1-1-1
+
+high    low     attribute
+
+rpcclient $> lsaenumacctrights S-1-1-1
+found 0 privileges for SID S-1-1-1
+
+rpcclient $> lsaaddacctrights S-1-1-1 SeCreateTokenPrivilege
 ```
 
 
