@@ -281,6 +281,7 @@ GENERAL OPTIONS
 ```
 
 
+
 ## WINREG
 ### winreg_enumkey
 [ソース](https://github.com/samba-team/samba/blob/d4d231dc50f1bbf42ae8cd8fb49f96ae6c4c0ee8/source3/rpcclient/cmd_winreg.c#L47)を見たかんじ、プログラム側に問題がありそう
@@ -318,6 +319,7 @@ ProgramFilesDir (x86): REG_SZ: C:\Program Files (x86)
 ```
 
 
+
 ## EVENTLOG
 ### eventlog_numrecord
 ```sh
@@ -347,4 +349,30 @@ rpcclient $> eventlog_loginfo system
 ```
 
 
+
 ## DRSUAPI
+administartorでもアクセス拒否
+
+
+
+## WKSSVC
+### wkssvc_wkstagetinfo
+```sh
+rpcclient $> wkssvc_wkstagetinfo
+rpcclient $> 
+```
+### wkssvc_getjoininformation
+```sh
+rpcclient $> wkssvc_getjoininformation
+HTB (3)
+```
+### wkssvc_enumeratecomputernames
+```sh
+rpcclient $> wkssvc_enumeratecomputernames
+name: 0 FOREST.htb.local
+```
+### wkssvc_enumerateusers
+```sh
+rpcclient $> wkssvc_enumerateusers
+result was WERR_INVALID_PARAMETER
+```
