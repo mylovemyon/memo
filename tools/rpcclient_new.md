@@ -280,4 +280,71 @@ GENERAL OPTIONS
            none         Force RPC pipe connections to have no special properties
 ```
 
+
 ## WINREG
+### winreg_enumkey
+[ソース](https://github.com/samba-team/samba/blob/d4d231dc50f1bbf42ae8cd8fb49f96ae6c4c0ee8/source3/rpcclient/cmd_winreg.c#L47)を見たかんじ、プログラム側に問題がありそう
+```sh
+rpcclient $> winreg_enumkey 'Software\Microsoft\Windows\CurrentVersion\Run'
+result was WERR_INVALID_PARAMETER
+```
+### winreg_enumval
+```sh
+rpcclient $> winreg_enumval 'Software\Microsoft\Windows\CurrentVersion'
+00: ProgramFilesDir     : REG_SZ: C:\Program Files
+01: CommonFilesDir      : REG_SZ: C:\Program Files\Common Files
+02: ProgramFilesDir (x86): REG_SZ: C:\Program Files (x86)
+03: CommonFilesDir (x86): REG_SZ: C:\Program Files (x86)\Common Files
+04: CommonW6432Dir      : REG_SZ: C:\Program Files\Common Files
+05: DevicePath          s: unknown type 0x02:
+06: MediaPathUnexpanded s: unknown type 0x02:
+07: ProgramFilesPath    s: unknown type 0x02:
+08: ProgramW6432Dir     : REG_SZ: C:\Program Files
+result was WERR_NO_MORE_ITEMS
+```
+### querymultiplevalues
+```sh
+rpcclient $> querymultiplevalues 'Software\Microsoft\Windows\CurrentVersion' ProgramFilesDir CommonFilesDir 'ProgramFilesDir (x86)'
+ProgramFilesDir     : REG_SZ: C:\Program Files
+CommonFilesDir      : REG_SZ: C:\Program Files\Common Files
+ProgramFilesDir (x86): REG_SZ: C:\Program Files (x86)
+```
+### querymultiplevalues2
+```sh
+rpcclient $> querymultiplevalues2 'Software\Microsoft\Windows\CurrentVersion' ProgramFilesDir CommonFilesDir 'ProgramFilesDir (x86)'
+ProgramFilesDir     : REG_SZ: C:\Program Files
+CommonFilesDir      : REG_SZ: C:\Program Files\Common Files
+ProgramFilesDir (x86): REG_SZ: C:\Program Files (x86)
+```
+
+
+## EVENTLOG
+### eventlog_numrecord
+```sh
+rpcclient $> eventlog_numrecord security
+number of records: 183107
+rpcclient $> eventlog_numrecord system
+number of records: 5932
+```
+### eventlog_oldestrecord
+```sh
+rpcclient $> eventlog_oldestrecord security
+oldest entry: 1
+rpcclient $> eventlog_oldestrecord system
+oldest entry: 1
+```
+### eventlog_reportevent
+```sh
+rpcclient $> eventlog_reportevent security
+result was NT_STATUS_ACCESS_DENIED
+rpcclient $> eventlog_reportevent system
+entry: 0 written at Wed, 31 Dec 1969 19:00:00 EST
+```
+### eventlog_loginfo
+```sh
+rpcclient $> eventlog_loginfo security
+rpcclient $> eventlog_loginfo system
+```
+
+
+## DRSUAPI
