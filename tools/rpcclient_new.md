@@ -1086,10 +1086,85 @@ result was NT_STATUS_ACCESS_DENIED
 rpcclient $> lookupnames_level 1 administrator
 administrator S-1-5-21-3072663084-364016917-1341370565-500 (User: 1)
 ```
-### enumtrust
+### lsaenumsid
+https://learn.microsoft.com/en-us/windows/win32/secauthz/well-known-sids
 ```sh
-rpcclient $> enumtrust
-rpcclient $>
+rpcclient $> lsaenumsid
+found 17 SIDs
+
+S-1-5-9
+S-1-5-80-3139157870-2983391045-3678747466-658725712-1809340420
+S-1-5-80-0
+S-1-5-6
+S-1-5-32-559
+S-1-5-32-554
+S-1-5-32-551
+S-1-5-32-550
+S-1-5-32-549
+S-1-5-32-548
+S-1-5-32-545
+S-1-5-32-544
+S-1-5-21-3072663084-364016917-1341370565-1118
+S-1-5-20
+S-1-5-19
+S-1-5-11
+S-1-1-0
+```
+### lsaquerysecobj
+```sh
+rpcclient $> lsaquerysecobj
+revision: 1
+type: 0x8004: SEC_DESC_DACL_PRESENT SEC_DESC_SELF_RELATIVE 
+DACL
+        ACL     Num ACEs:       8       revision:       2
+        ---
+        ACE
+                type: ACCESS DENIED (1) flags: 0x00 
+                Specific bits: 0x800
+                Permissions: 0x800: 
+                SID: S-1-5-7
+
+        ACE
+                type: ACCESS ALLOWED (0) flags: 0x00 
+                Specific bits: 0x1fff
+                Permissions: 0xf1fff: WRITE_OWNER_ACCESS WRITE_DAC_ACCESS READ_CONTROL_ACCESS DELETE_ACCESS 
+                SID: S-1-5-32-544
+
+        ACE
+                type: ACCESS ALLOWED (0) flags: 0x00 
+                Specific bits: 0x801
+                Permissions: 0x20801: READ_CONTROL_ACCESS 
+                SID: S-1-1-0
+
+        ACE
+                type: ACCESS ALLOWED (0) flags: 0x00 
+                Specific bits: 0x801
+                Permissions: 0x801: 
+                SID: S-1-5-7
+
+        ACE
+                type: ACCESS ALLOWED (0) flags: 0x00 
+                Specific bits: 0x1000
+                Permissions: 0x1000: 
+                SID: S-1-5-19
+
+        ACE
+                type: ACCESS ALLOWED (0) flags: 0x00 
+                Specific bits: 0x1000
+                Permissions: 0x1000: 
+                SID: S-1-5-20
+
+        ACE
+                type: ACCESS ALLOWED (0) flags: 0x00 
+                Specific bits: 0x1000
+                Permissions: 0x1000: 
+                SID: S-1-5-17
+
+        ACE
+                type: ACCESS ALLOWED (0) flags: 0x00 
+                Specific bits: 0x801
+                Permissions: 0x801: 
+                SID: S-1-15-2-1
 ```
 ### enumprivs
 ```sh
@@ -1132,29 +1207,15 @@ SeTimeZonePrivilege             0:34 (0x0:0x22)
 SeCreateSymbolicLinkPrivilege           0:35 (0x0:0x23)
 SeDelegateSessionUserImpersonatePrivilege               0:36 (0x0:0x24)
 ```
-### lsaenumsid
-https://learn.microsoft.com/en-us/windows/win32/secauthz/well-known-sids
+### enumtrust
 ```sh
-rpcclient $> lsaenumsid
-found 17 SIDs
-
-S-1-5-9
-S-1-5-80-3139157870-2983391045-3678747466-658725712-1809340420
-S-1-5-80-0
-S-1-5-6
-S-1-5-32-559
-S-1-5-32-554
-S-1-5-32-551
-S-1-5-32-550
-S-1-5-32-549
-S-1-5-32-548
-S-1-5-32-545
-S-1-5-32-544
-S-1-5-21-3072663084-364016917-1341370565-1118
-S-1-5-20
-S-1-5-19
-S-1-5-11
-S-1-1-0
+rpcclient $> enumtrust
+rpcclient $>
+```
+### lsalookupprivvalue
+```sh
+rpcclient $> lsalookupprivvalue SeBackupPrivilege
+0:17 (0x0:0x11)
 ```
 ### lsaenumprivsaccount
 ```sh
@@ -1327,8 +1388,37 @@ S-1-5-19
 S-1-5-11
 S-1-1-0
 ```
+### lsaremoveacctrights
+```sh
+rpcclient $> lsaremoveacctrights S-1-5-21-3072663084-364016917-1341370565-1147 SeBackupPrivilege
 
+rpcclient $> lsaenumprivsaccount S-1-5-21-3072663084-364016917-1341370565-1147
+result was NT_STATUS_OBJECT_NAME_NOT_FOUND
 
+rpcclient $> lsaenumacctrights S-1-5-21-3072663084-364016917-1341370565-1147
+result was NT_STATUS_OBJECT_NAME_NOT_FOUND
+
+rpcclient $> lsaenumsid
+found 17 SIDs
+
+S-1-5-9
+S-1-5-80-3139157870-2983391045-3678747466-658725712-1809340420
+S-1-5-80-0
+S-1-5-6
+S-1-5-32-559
+S-1-5-32-554
+S-1-5-32-551
+S-1-5-32-550
+S-1-5-32-549
+S-1-5-32-548
+S-1-5-32-545
+S-1-5-32-544
+S-1-5-21-3072663084-364016917-1341370565-1118
+S-1-5-20
+S-1-5-19
+S-1-5-11
+S-1-1-0
+```
 ### lsacreateaccount
 ```sh
 rpcclient $> lsacreateaccount S-1-1-1
@@ -1344,10 +1434,12 @@ high    low     attribute
 
 rpcclient $> lsaenumacctrights S-1-1-1
 found 0 privileges for SID S-1-1-1
-
-rpcclient $> lsaaddacctrights S-1-1-1 SeCreateTokenPrivilege
 ```
-
+### getusername
+```sh
+rpcclient $> getusername
+Account Name: Administrator, Authority Name: HTB
+```
 
 
 
