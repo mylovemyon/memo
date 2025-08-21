@@ -347,9 +347,63 @@ rpcclient $> gettrustrid
 rpcclient $> dsr_enumtrustdom
 rpcclient $> dsenumdomtrusts
 rpcclient $> netrenumtrusteddomains
-rpcclient $> getdcsitecoverage 'DOMAIN'
+rpcclient $> getdcsitecoverage 'COMPUTERNAME'
 rpcclient $> capabilities
 rpcclient $> logongetdomaininfo
+# SAMR
+rpcclient $> enumdomusers
+rpcclient $> enumdomgroups
+rpcclient $> enumalsgroups builtin
+rpcclient $> enumalsgroups domain
+rpcclient $> enumdomains
+rpcclient $> querydispinfo
+rpcclient $> querydominfo
+rpcclient $> queryuser 'RID'
+rpcclient $> queryusergroups 'RID'
+rpcclient $> queryuseraliases builtin 'SID'
+rpcclient $> queryuseraliases domain 'SID'
+rpcclient $> querygroup 'RID'
+rpcclient $> querygroupmem 'RID'
+rpcclient $> queryaliasmem builtin 'RID'
+rpcclient $> queryaliasmem domain 'RID'
+rpcclient $> samlookupnames builtin 'GROUPNAME'
+rpcclient $> samlookupnames domain 'GROUPNAME'
+rpcclient $> samlookuprids builtin 'RID'
+rpcclient $> samlookuprids domain 'RID'
+rpcclient $> samquerysecobj
+rpcclient $> lookupdomain 'DOMAIN'
+rpcclient $> getusrdompwinfo 'RID'
+rpcclient $> getdompwinfo
+rpcclient $> createdomuser 'USERNAME'
+rpcclient $> deletedomuser 'USERNAME'
+rpcclient $> createdomgroup 'GROUPNAME'
+rpcclient $> deletedomgroup 'GROUPNAME'
+rpcclient $> createdomalias 'GROUPNAME'
+rpcclient $> deletealias domain 'RID'
+# LSARPC-DS
+rpcclient $> dsroledominfo
+# LSARPC
+rpcclient $> lsaquery
+rpcclient $> lookupsids 'SID'
+rpcclient $> lookupsids_level 1 'SID'
+rpcclient $> lookupnames 'NAME'
+rpcclient $> lookupnames_level 1 'NAME'
+rpcclient $> lsaenumsid
+rpcclient $> lsaquerysecobj
+rpcclient $> enumprivs
+rpcclient $> enumtrust
+rpcclient $> lsalookupprivvalue 'PRIVILEGE NAME'
+rpcclient $> lsaenumprivsaccount 'SID'
+rpcclient $> lsaenumacctrights 'SID'
+rpcclient $> lsaaddpriv 'SID' 'PRIVILEGE NAME'
+rpcclient $> lsadelpriv 'SID' 'PRIVILEGE NAME'
+rpcclient $> lsaaddacctrights 'SID' 'PRIVILEGE NAME'
+rpcclient $> lsaremoveacctrights 'SID' 'PRIVILEGE NAME'
+rpcclient $> lsacreateaccount 'SID'
+rpcclient $> getusername
+# EPMAPPER
+rpcclient $> epmmap
+rpcclient $> epmlookup
 ```
 ### smbclient
 ```sh
