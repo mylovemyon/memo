@@ -1158,6 +1158,7 @@ S-1-1-0
 ```
 ### lsaenumprivsaccount
 ```sh
+# lsaenumsidで確認できたSIDのみが対象
 rpcclient $> lsaenumprivsaccount S-1-1-0
 found 1 privileges for SID S-1-1-0
 
@@ -1166,11 +1167,168 @@ high    low     attribute
 ```
 ### lsaenumacctrights
 ```sh
+# lsaenumsidで確認できたSIDのみが対象
 rpcclient $> lsaenumacctrights S-1-1-0
 found 2 privileges for SID S-1-1-0
         SeChangeNotifyPrivilege
         SeNetworkLogonRight
 ```
+### lsaaddpriv
+```sh
+rpcclient $> lsaenumsid
+found 17 SIDs
+
+S-1-5-9
+S-1-5-80-3139157870-2983391045-3678747466-658725712-1809340420
+S-1-5-80-0
+S-1-5-6
+S-1-5-32-559
+S-1-5-32-554
+S-1-5-32-551
+S-1-5-32-550
+S-1-5-32-549
+S-1-5-32-548
+S-1-5-32-545
+S-1-5-32-544
+S-1-5-21-3072663084-364016917-1341370565-1118
+S-1-5-20
+S-1-5-19
+S-1-5-11
+S-1-1-0
+
+rpcclient $> lookupsids S-1-5-21-3072663084-364016917-1341370565-1147
+S-1-5-21-3072663084-364016917-1341370565-1147 HTB\svc-alfresco (1)
+
+rpcclient $> lsaaddpriv S-1-5-21-3072663084-364016917-1341370565-1147 SeBackupPrivilege
+
+rpcclient $> lsaenumprivsaccount S-1-5-21-3072663084-364016917-1341370565-1147
+found 1 privileges for SID S-1-5-21-3072663084-364016917-1341370565-1147
+
+high    low     attribute
+0       17      0
+
+rpcclient $> lsaenumacctrights S-1-5-21-3072663084-364016917-1341370565-1147
+found 1 privileges for SID S-1-5-21-3072663084-364016917-1341370565-1147
+        SeBackupPrivilege
+
+rpcclient $> lsaenumsid
+found 18 SIDs
+
+S-1-5-9
+S-1-5-80-3139157870-2983391045-3678747466-658725712-1809340420
+S-1-5-80-0
+S-1-5-6
+S-1-5-32-559
+S-1-5-32-554
+S-1-5-32-551
+S-1-5-32-550
+S-1-5-32-549
+S-1-5-32-548
+S-1-5-32-545
+S-1-5-32-544
+S-1-5-21-3072663084-364016917-1341370565-1147
+S-1-5-21-3072663084-364016917-1341370565-1118
+S-1-5-20
+S-1-5-19
+S-1-5-11
+S-1-1-0
+```
+### lsadelpriv
+```sh
+rpcclient $> lsadelpriv S-1-5-21-3072663084-364016917-1341370565-1147 SeBackupPrivilege
+
+rpcclient $> lsaenumprivsaccount S-1-5-21-3072663084-364016917-1341370565-1147
+found 0 privileges for SID S-1-5-21-3072663084-364016917-1341370565-1147
+
+high    low     attribute
+
+rpcclient $> lsaenumacctrights S-1-5-21-3072663084-364016917-1341370565-1147
+found 0 privileges for SID S-1-5-21-3072663084-364016917-1341370565-1147
+
+rpcclient $> lsaenumsid
+found 18 SIDs
+
+S-1-5-9
+S-1-5-80-3139157870-2983391045-3678747466-658725712-1809340420
+S-1-5-80-0
+S-1-5-6
+S-1-5-32-559
+S-1-5-32-554
+S-1-5-32-551
+S-1-5-32-550
+S-1-5-32-549
+S-1-5-32-548
+S-1-5-32-545
+S-1-5-32-544
+S-1-5-21-3072663084-364016917-1341370565-1147
+S-1-5-21-3072663084-364016917-1341370565-1118
+S-1-5-20
+S-1-5-19
+S-1-5-11
+S-1-1-0
+```
+### lsaaddacctrights
+```sh
+rpcclient $> lsaenumsid
+found 17 SIDs
+
+S-1-5-9
+S-1-5-80-3139157870-2983391045-3678747466-658725712-1809340420
+S-1-5-80-0
+S-1-5-6
+S-1-5-32-559
+S-1-5-32-554
+S-1-5-32-551
+S-1-5-32-550
+S-1-5-32-549
+S-1-5-32-548
+S-1-5-32-545
+S-1-5-32-544
+S-1-5-21-3072663084-364016917-1341370565-1118
+S-1-5-20
+S-1-5-19
+S-1-5-11
+S-1-1-0
+
+rpcclient $> lookupsids S-1-5-21-3072663084-364016917-1341370565-1147
+S-1-5-21-3072663084-364016917-1341370565-1147 HTB\svc-alfresco (1)
+
+rpcclient $> lsaaddacctrights S-1-5-21-3072663084-364016917-1341370565-1147 SeBackupPrivilege
+
+rpcclient $> lsaenumprivsaccount S-1-5-21-3072663084-364016917-1341370565-1147
+found 1 privileges for SID S-1-5-21-3072663084-364016917-1341370565-1147
+
+high    low     attribute
+0       17      0
+
+rpcclient $> lsaenumacctrights S-1-5-21-3072663084-364016917-1341370565-1147
+found 1 privileges for SID S-1-5-21-3072663084-364016917-1341370565-1147
+        SeBackupPrivilege
+
+rpcclient $> lsaenumsid
+found 18 SIDs
+
+S-1-5-9
+S-1-5-80-3139157870-2983391045-3678747466-658725712-1809340420
+S-1-5-80-0
+S-1-5-6
+S-1-5-32-559
+S-1-5-32-554
+S-1-5-32-551
+S-1-5-32-550
+S-1-5-32-549
+S-1-5-32-548
+S-1-5-32-545
+S-1-5-32-544
+S-1-5-21-3072663084-364016917-1341370565-1147
+S-1-5-21-3072663084-364016917-1341370565-1118
+S-1-5-20
+S-1-5-19
+S-1-5-11
+S-1-1-0
+```
+
+
 ### lsacreateaccount
 ```sh
 rpcclient $> lsacreateaccount S-1-1-1
@@ -1189,8 +1347,6 @@ found 0 privileges for SID S-1-1-1
 
 rpcclient $> lsaaddacctrights S-1-1-1 SeCreateTokenPrivilege
 ```
-
-
 
 
 
