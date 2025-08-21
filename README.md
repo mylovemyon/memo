@@ -305,6 +305,52 @@ net rpc registry save 'KEYPATH' 'REMOTEPATH' -U 'DOMAIN/USERNAME%PASSWORD' -S 'I
 # shell
 net rpc shell -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 ```
+### rpcclient
+```sh
+# WINREG
+rpcclient $> winreg_enumkey 'KEYPATH'
+rpcclient $> winreg_enumval 'KEYPATH'
+rpcclient $> querymultiplevalues 'KEYPATH' 'VALUENAME' 'VALUENAME' ...
+# EVENTLOG
+rpcclient $> eventlog_numrecord 'LOGNAME'
+rpcclient $> eventlog_oldestrecord 'LOGNAME'
+rpcclient $> eventlog_reportevent 'LOGNAME'
+rpcclient $> eventlog_loginfo 'LOGNAME'
+# DRSUAPI
+
+# WKSSVC
+rpcclient $> wkssvc_wkstagetinfo
+rpcclient $> wkssvc_getjoininformation
+rpcclient $> wkssvc_enumeratecomputernames
+rpcclient $> wkssvc_enumerateusers
+# DFS
+rpcclient $> dfsversion
+rpcclient $> dfsenum
+# SRVSVC
+rpcclient $> srvinfo
+rpcclient $> netshareenum
+rpcclient $> netshareenumall
+rpcclient $> netsharegetinfo 'SHARENAME'
+rpcclient $> netfileenum
+rpcclient $> netsessenum
+rpcclient $> netdiskenum
+rpcclient $> netconnenum
+# NETLOGON
+rpcclient $> getanydcname 'DOMAIN'
+rpcclient $> getdcname 'DOMAIN'
+rpcclient $> dsr_getdcname 'DOMAIN'
+rpcclient $> dsr_getsitename 'COMPUTERNAME'
+rpcclient $> dsr_getforesttrustinfo
+rpcclient $> logonctrl 'COMPUTERNAME'
+rpcclient $> samlogon
+rpcclient $> gettrustrid
+rpcclient $> dsr_enumtrustdom
+rpcclient $> dsenumdomtrusts
+rpcclient $> netrenumtrusteddomains
+rpcclient $> getdcsitecoverage 'DOMAIN'
+rpcclient $> capabilities
+rpcclient $> logongetdomaininfo
+```
 ### smbclient
 ```sh
 smbclient -L 'HOST' -U 'DOMAIN/USERNAME%PASSWORD'
