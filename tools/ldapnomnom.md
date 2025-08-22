@@ -259,5 +259,5 @@ IN  SPACE  NO  ONE  CAN  HEAR  YOU  NOM  NOM  USERNAMES
     },
     "Server": "10.129.158.167"
   }
-]                                                                                                                                                                                                                                            
+]  
 ```
