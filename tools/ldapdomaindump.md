@@ -5,7 +5,7 @@
 [+] Bind OK
 [*] Starting domain dump
 [+] Domain dump finished
-                                                                                                                                                                                                                                            
+
 
 └─$ ls domain_*                                                                                               
 domain_computers_by_os.html  domain_computers.html  domain_groups.html  domain_policy.html  domain_trusts.html  domain_users_by_group.html  domain_users.html
