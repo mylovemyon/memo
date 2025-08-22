@@ -126,6 +126,13 @@ impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -a
 # remove
 impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action remove -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD@IP'
 ```
+### ldapnomnom
+```sh
+# LDAP Ping
+./ldapnomnom -input 'USERLIST' -parallel 'THREAD NUMBER' -server 'IP'
+# rootDSE
+./ldapnomnom -server 'IP' -dump
+```
 ### net ads
 ```sh
 net ads info -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
