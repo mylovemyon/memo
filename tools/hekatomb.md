@@ -1,5 +1,5 @@
 ```sh
-└─$ hekatomb -hashes 'aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6' 'htb.local/administrator@10.129.95.210' -csv -debugmax
+└─$ hekatomb -hashes 'aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6' 'htb.local/administrator@10.129.95.210' -debugmax
 
 ██░ ██ ▓█████  ██ ▄█▀▄▄▄     ▄▄▄█████▓ ▒█████   ███▄ ▄███▓ ▄▄▄▄   
 ▓██░ ██▒▓█   ▀  ██▄█▒▒████▄   ▓  ██▒ ▓▒▒██▒  ██▒▓██▒▀█▀ ██▒▓█████▄ 
