@@ -115,6 +115,10 @@ https://github.com/XiaoliChan/wmiexec-Pro
 
 
 ## 389
+### godap
+```sh
+./godap 'IP' -u 'USERNAME' -p 'PASSWORD'
+```
 ### impacket
 ```sh
 # write
