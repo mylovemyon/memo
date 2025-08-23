@@ -214,6 +214,11 @@ sslscan --no-check-certificate --no-ciphersuites --no-compression --no-fallback 
 ```sh
 donpapi
 ```
+### hekatomb
+```sh
+# DPAPI blob (TCP53番とTCP389番も使用)
+hekatomb 'DOMAIN/USERNAME:PASSWORD@IP'
+```
 ### enum4linux
 ```sh
 # enum4linux-ng のほうが２倍はやい
