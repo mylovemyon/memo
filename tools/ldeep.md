@@ -23,7 +23,7 @@ FOREST.htb.local
 ### conf
 ```sh
 └─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice conf
- "(objectClass=*)"をダンプ
+ "(objectClass=*)"なので割愛
 ```
 
 
@@ -289,7 +289,7 @@ Certificate Authorities
 ### schema
 ```sh
 └─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice schema
-CN=Schemaをダンプ
+CN=Schemaで大量なので割愛
 ```
 
 
@@ -525,6 +525,134 @@ Administrator
 ```
 
 
+### laps
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice laps   
+invalid attribute type msLAPS-EncryptedPassword
+[!] No LAPS related attribute has been detected
+```
+
+
+### memberships
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice memberships administrator
+CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=htb,DC=local
+CN=Group Policy Creator Owners,CN=Users,DC=htb,DC=local
+CN=Domain Admins,CN=Users,DC=htb,DC=local
+CN=Enterprise Admins,CN=Users,DC=htb,DC=local
+CN=Schema Admins,CN=Users,DC=htb,DC=local
+CN=Administrators,CN=Builtin,DC=htb,DC=local
+CN=Domain Users,CN=Users,DC=htb,DC=local
+```
+
+
+### membersof
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice membersof administrators
+[GROUP] CN=Domain Admins,CN=Users,DC=htb,DC=local
+[GROUP] CN=Enterprise Admins,CN=Users,DC=htb,DC=local
+[USER] CN=Administrator,CN=Users,DC=htb,DC=local
+```
+
+
+### object
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice object administrator
+Administrators (group)
+Administrator
+```
+
+
+### sddl
+ユーザのntSecurityDescriptorを調査
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice sddl administrator     
+[{
+  "dn": "CN=Administrator,CN=Users,DC=htb,DC=local",
+  "nTSecurityDescriptor": {
+    "DACL": {
+      "ACEs": [
+        {
+          "Access Required": {
+            "Access SACL": false,
+            "Ads Control Access": false,
+            "Ads Create Child": true,
+            "Ads Delete Child": true,
+            "Ads Delete Tree": false,
+            "Ads List": true,
+            "Ads List Object": false,
+            "Ads Read Prop": false,
+            "Ads Self Write": false,
+            "Ads Write Prop": false,
+            "Delete": false,
+            "Generic All": false,
+            "Generic Execute": false,
+            "Generic Read": false,
+            "Generic Write": false,
+            "Maximum Allowed": false,
+            "Read Control": false,
+            "Synchronise": false,
+            "Write DAC": false,
+            "Write Owner": false
+          },
+          "GUID": "{c975c901-6cea-4b6f-8319-d67f45449506}",
+          "Inherited GUID": "{4828cc14-1437-45bc-9b07-ad6f015e5f28}",
+          "Object Flags": {
+            "Inherited Object Type Present": true,
+            "Object Type Present": true
+          },
+          "Raw Access Required": 7,
+          "Raw Flags": 10,
+          "Raw Object Flags": 3,
+          "Raw Type": 5,
+          "SID": "S-1-5-21-3072663084-364016917-1341370565-1118",
+          "Size": 72,
+          "Type": "Access Allowed Object"
+        },
+        {
+          "Access Required": {
+            "Access SACL": false,
+・・・
+```
+
+
+### silo
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice silo all
+[!] Silo all does not exists
+[]
+```
+
+
+### zones
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice zone htb.local
+[+] Domain records:
+EXCH01 AAAA dead:beef::9548:657:1098:7fdd
+EXCH01 A 10.10.10.7
+forest AAAA dead:beef::e826:a024:b25:d8a7
+forest AAAA dead:beef::8a
+forest A 10.129.143.161
+_msdcs NS forest.htb.local
+@ AAAA dead:beef::8a
+@ AAAA dead:beef::e826:a024:b25:d8a7
+@ NS forest.htb.local
+@ A 10.129.143.161
+```
+
+
+### enum_users
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice enum_users /usr/share/seclists/Usernames/xato-net-10-million-usernames-dup.txt
+mark
+andy
+administrator
+sebastien
+santi
+lucinda
+```
+
+
 ### search
 ```sh
 └─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice search '(sAMAccountName=administrator)' objectGUID
@@ -532,4 +660,19 @@ Administrator
   "dn": "CN=Administrator,CN=Users,DC=htb,DC=local",
   "objectGUID": "{a8133c53-217c-40e2-81cb-887e0f61bdb0}"
 }]
+```
+
+
+### whoami
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice whoami
+HTB\svc-alfresco
+```
+
+
+### add_to_group
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice add_to_group 'CN=svc-alfresco,DC=htb,DC=local' 'CN=administrators,CN=Builtin,DC=htb,DC=local'
+[!] Unable to add CN=svc-alfresco,DC=htb,DC=local to CN=administrators,CN=Builtin,DC=htb,DC=local, check privileges or dn
+
 ```
