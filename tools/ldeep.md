@@ -1,14 +1,14 @@
 ### auth_policis
 ```sh
-└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice auth_policies -v
-[]
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice auth_policies
+
 ```
 
 
 ### bitlockerkeys
 ```
-└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice bitlockerkeys -v
-[]
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice bitlockerkeys
+
  ```
 
 
@@ -23,7 +23,7 @@ FOREST.htb.local
 ### conf
 ```sh
 └─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice conf
- "(objectClass=*)"なので全出力
+ "(objectClass=*)"をダンプ
 ```
 
 
@@ -262,4 +262,274 @@ OU=Microsoft Exchange Security Groups,DC=htb,DC=local
 OU=Domain Controllers,DC=htb,DC=local
   [gPLink]:
     * Default Domain Controllers Policy
+```
+
+
+### pkis
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice pkis
+Certificate Authorities
+```
+
+
+### pso
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice pso
+
+```
+
+
+### sccm
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice sccm
+[!] invalid attribute type mSSMSDefaultMP. Can't find SCCM management points
+```
+
+
+### schema
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice schema
+CN=Schemaをダンプ
+```
+
+
+### server_info
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice server_info              
+altServer []
+configurationNamingContext ['CN=Configuration,DC=htb,DC=local']
+currentTime ['20250825104227.0Z']
+defaultNamingContext ['DC=htb,DC=local']
+dnsHostName ['FOREST.htb.local']
+domainControllerFunctionality ['7']
+domainFunctionality ['7']
+dsServiceName ['CN=NTDS Settings,CN=FOREST,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=htb,DC=local']
+forestFunctionality ['7']
+highestCommittedUSN ['3263212']
+isGlobalCatalogReady ['TRUE']
+isSynchronized ['TRUE']
+ldapServiceName ['htb.local:forest$@HTB.LOCAL']
+namingContexts ['DC=htb,DC=local', 'CN=Configuration,DC=htb,DC=local', 'CN=Schema,CN=Configuration,DC=htb,DC=local', 'DC=DomainDnsZones,DC=htb,DC=local', 'DC=ForestDnsZones,DC=htb,DC=local']
+rootDomainNamingContext ['DC=htb,DC=local']
+schemaNamingContext ['CN=Schema,CN=Configuration,DC=htb,DC=local']
+serverName ['CN=FOREST,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=htb,DC=local']
+subschemaSubentry ['CN=Aggregate,CN=Schema,CN=Configuration,DC=htb,DC=local']
+supportedCapabilities ['1.2.840.113556.1.4.800', '1.2.840.113556.1.4.1670', '1.2.840.113556.1.4.1791', '1.2.840.113556.1.4.1935', '1.2.840.113556.1.4.2080', '1.2.840.113556.1.4.2237']
+supportedControl ['1.2.840.113556.1.4.319', '1.2.840.113556.1.4.801', '1.2.840.113556.1.4.473', '1.2.840.113556.1.4.528', '1.2.840.113556.1.4.417', '1.2.840.113556.1.4.619', '1.2.840.113556.1.4.841', '1.2.840.113556.1.4.529', '1.2.840.113556.1.4.805', '1.2.840.113556.1.4.521', '1.2.840.113556.1.4.970', '1.2.840.113556.1.4.1338', '1.2.840.113556.1.4.474', '1.2.840.113556.1.4.1339', '1.2.840.113556.1.4.1340', '1.2.840.113556.1.4.1413', '2.16.840.1.113730.3.4.9', '2.16.840.1.113730.3.4.10', '1.2.840.113556.1.4.1504', '1.2.840.113556.1.4.1852', '1.2.840.113556.1.4.802', '1.2.840.113556.1.4.1907', '1.2.840.113556.1.4.1948', '1.2.840.113556.1.4.1974', '1.2.840.113556.1.4.1341', '1.2.840.113556.1.4.2026', '1.2.840.113556.1.4.2064', '1.2.840.113556.1.4.2065', '1.2.840.113556.1.4.2066', '1.2.840.113556.1.4.2090', '1.2.840.113556.1.4.2205', '1.2.840.113556.1.4.2204', '1.2.840.113556.1.4.2206', '1.2.840.113556.1.4.2211', '1.2.840.113556.1.4.2239', '1.2.840.113556.1.4.2255', '1.2.840.113556.1.4.2256', '1.2.840.113556.1.4.2309']
+supportedExtension ['1.3.6.1.4.1.1466.20037', '1.3.6.1.4.1.1466.101.119.1', '1.2.840.113556.1.4.1781', '1.3.6.1.4.1.4203.1.11.3', '1.2.840.113556.1.4.2212']
+supportedFeatures []
+supportedLDAPPolicies ['MaxPoolThreads', 'MaxPercentDirSyncRequests', 'MaxDatagramRecv', 'MaxReceiveBuffer', 'InitRecvTimeout', 'MaxConnections', 'MaxConnIdleTime', 'MaxPageSize', 'MaxBatchReturnMessages', 'MaxQueryDuration', 'MaxDirSyncDuration', 'MaxTempTableSize', 'MaxResultSetSize', 'MinResultSets', 'MaxResultSetsPerConn', 'MaxNotificationPerConn', 'MaxValRange', 'MaxValRangeTransitive', 'ThreadMemoryLimit', 'SystemMemoryLimitPercent']
+supportedLDAPVersion ['3', '2']
+supportedSASLMechanisms ['GSSAPI', 'GSS-SPNEGO', 'EXTERNAL', 'DIGEST-MD5']
+vendorName []
+vendorVersion []
+```
+
+
+### shadow_principals
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice shadow_principals
+
+```
+
+
+### silos
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice silos
+
+```
+
+
+### smsa
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice smsa
+
+```
+
+
+### subnets
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice subnets   
+
+```
+
+
+### templates
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice templates   
+
+```
+
+
+### trusts
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice trusts
+
+```
+
+
+### users
+#### users all
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice users all   
+santi
+mark
+andy
+svc-alfresco
+lucinda
+sebastien
+HealthMailbox0659cc1
+HealthMailbox7108a4e
+HealthMailboxb01ac64
+HealthMailboxfd87238
+HealthMailbox83d6781
+HealthMailbox6ded678
+HealthMailbox968e74d
+HealthMailbox670628e
+HealthMailboxc0a90c9
+HealthMailboxfc9daad
+HealthMailboxc3d7722
+SM_1ffab36a2f5f479cb
+SM_c75ee099d0a64c91b
+SM_7c96b981967141ebb
+SM_9b69f1b9d2cc45549
+SM_1b41c9286325456bb
+SM_681f53d4942840e18
+SM_75a538d3025e4db9a
+SM_ca8c2ed5bdab4dc9b
+SM_2c8eef0a09b545acb
+$331000-VK4ADACQNUCA
+krbtgt
+DefaultAccount
+Guest
+Administrator
+```
+#### users spn
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice users spn
+
+```
+#### users enabled
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice users enabled
+santi
+mark
+andy
+svc-alfresco
+lucinda
+sebastien
+HealthMailbox0659cc1
+HealthMailbox7108a4e
+HealthMailboxb01ac64
+HealthMailboxfd87238
+HealthMailbox83d6781
+HealthMailbox6ded678
+HealthMailbox968e74d
+HealthMailbox670628e
+HealthMailboxc0a90c9
+HealthMailboxfc9daad
+HealthMailboxc3d7722
+Administrator
+```
+#### users disabled
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice users disabled
+SM_1ffab36a2f5f479cb
+SM_c75ee099d0a64c91b
+SM_7c96b981967141ebb
+SM_9b69f1b9d2cc45549
+SM_1b41c9286325456bb
+SM_681f53d4942840e18
+SM_75a538d3025e4db9a
+SM_ca8c2ed5bdab4dc9b
+SM_2c8eef0a09b545acb
+$331000-VK4ADACQNUCA
+krbtgt
+DefaultAccount
+Guest
+```
+#### users locked
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice users locked  
+
+```
+#### users nopasswordexpire
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice users nopasswordexpire
+santi
+mark
+andy
+svc-alfresco
+lucinda
+sebastien
+HealthMailbox0659cc1
+HealthMailbox7108a4e
+HealthMailboxb01ac64
+HealthMailboxfd87238
+HealthMailbox83d6781
+HealthMailbox6ded678
+HealthMailbox968e74d
+HealthMailbox670628e
+HealthMailboxc0a90c9
+HealthMailboxfc9daad
+HealthMailboxc3d7722
+DefaultAccount
+Guest
+```
+#### users passwordexpired
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice users passwordexpired
+
+```
+#### users passwordnotrequired
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice users passwordnotrequired
+$331000-VK4ADACQNUCA
+DefaultAccount
+Guest
+```
+#### users nokrbpreauth
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice users nokrbpreauth       
+svc-alfresco
+```
+#### users reversible 
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice users reversible  
+
+```
+
+
+### zones
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice zones   
+[+] Domain zones:
+htb.local
+
+[+] Forest zones:
+_msdcs.htb.local
+```
+
+
+### from_guid
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice from_guid a8133c53-217c-40e2-81cb-887e0f61bdb0
+Administrator
+```
+
+
+### from_sid
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice from_sid S-1-5-21-3072663084-364016917-1341370565-500
+Administrator
+```
+
+
+### search
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice search '(sAMAccountName=administrator)' objectGUID
+[{
+  "dn": "CN=Administrator,CN=Users,DC=htb,DC=local",
+  "objectGUID": "{a8133c53-217c-40e2-81cb-887e0f61bdb0}"
+}]
 ```
