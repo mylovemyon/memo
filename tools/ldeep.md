@@ -16,3 +16,17 @@
 EXCH01.htb.local
 FOREST.htb.local
 ```
+
+
+### conf
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice conf
+ "(objectClass=*)"なので全出力
+```
+
+
+### delegations
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice delegations
+FOREST$:unconstrained:
+```
