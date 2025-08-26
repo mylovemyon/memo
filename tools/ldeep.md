@@ -672,7 +672,141 @@ HTB\svc-alfresco
 
 ### add_to_group
 ```sh
-└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice add_to_group 'CN=svc-alfresco,DC=htb,DC=local' 'CN=administrators,CN=Builtin,DC=htb,DC=local'
-[!] Unable to add CN=svc-alfresco,DC=htb,DC=local to CN=administrators,CN=Builtin,DC=htb,DC=local, check privileges or dn
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice add_to_group 'CN=svc-alfresco,OU=service Accounts,DC=htb,DC=local' 'CN=Exchange Windows Permissions,OU=Microsoft Exchange Security Groups,DC=htb,DC=local'
+[+] User CN=svc-alfresco,OU=service Accounts,DC=htb,DC=local successfully added to CN=Exchange Windows Permissions,OU=Microsoft Exchange Security Groups,DC=htb,DC=local
+```
+
+
+### remove_from_group
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice remove_from_group 'CN=svc-alfresco,OU=service Accounts,DC=htb,DC=local' 'CN=Exchange Windows Permissions,OU=Microsoft Exchange Security Groups,DC=htb,DC=local'
+[+] User CN=svc-alfresco,OU=service Accounts,DC=htb,DC=local successfully removed from CN=Exchange Windows Permissions,OU=Microsoft Exchange Security Groups,DC=htb,DC=local
+```
+
+
+### change_uac
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u administrator -H aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6 change_uac 'CN=svc-alfresco,OU=service Accounts,DC=htb,DC=local' 4194304        
+[+] UAC successfully changed for CN=svc-alfresco,OU=service Accounts,DC=htb,DC=local
+                                                                                                                    
+
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice search '(sAMAccountName=svc-alfresco)' UserAccountControl                                                                          
+[{
+  "dn": "CN=svc-alfresco,OU=Service Accounts,DC=htb,DC=local",
+  "userAccountControl": "NORMAL_ACCOUNT | DONT_REQ_PREAUTH"
+}]
+```
+
+
+### create_computer
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice create_computer testtest '!QAZ2wsx'
+[+] Computer testtest successfully created with password !QAZ2wsx
+                                                                                                                    
+                                                                                                                    
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice search '(sAMAccountName=testtest)' 
+[{
+  "accountExpires": "9999-12-31T23:59:59.999999+00:00",
+  "badPasswordTime": "1601-01-01T00:00:00+00:00",
+  "badPwdCount": 0,
+  "cn": "testtest",
+  "codePage": 0,
+  "countryCode": 0,
+  "dNSHostName": "testtest.htb.local",
+  "dSCorePropagationData": [
+    "2025-08-26T12:56:38+00:00",
+    "2025-08-26T12:56:38+00:00",
+    "2025-08-26T12:56:38+00:00",
+    "2025-08-26T12:56:38+00:00",
+    "1601-01-01T00:00:00+00:00"
+  ],
+  "distinguishedName": "CN=testtest,CN=Computers,DC=htb,DC=local",
+  "dn": "CN=testtest,CN=Computers,DC=htb,DC=local",
+  "instanceType": 4,
+  "isCriticalSystemObject": false,
+  "lastLogoff": "1601-01-01T00:00:00+00:00",
+  "lastLogon": "1601-01-01T00:00:00+00:00",
+  "localPolicyFlags": 0,
+  "logonCount": 0,
+  "name": "testtest",
+  "objectCategory": "CN=Computer,CN=Schema,CN=Configuration,DC=htb,DC=local",
+  "objectClass": [
+    "top",
+    "person",
+    "organizationalPerson",
+    "user",
+    "computer"
+  ],
+  "objectGUID": "{dab7a8f9-f623-4803-bbeb-0c44c6d7d92a}",
+  "objectSid": "S-1-5-21-3072663084-364016917-1341370565-10101",
+  "primaryGroupID": 515,
+  "pwdLastSet": "2025-08-26T12:55:28.592291+00:00",
+  "sAMAccountName": "testtest",
+  "sAMAccountType": "SAM_GROUP_OBJECT | SAM_NON_SECURITY_GROUP_OBJECT | SAM_ALIAS_OBJECT | SAM_NON_SECURITY_ALIAS_OBJECT | SAM_USER_OBJECT | SAM_NORMAL_USER_ACCOUNT | SAM_MACHINE_ACCOUNT | SAM_TRUST_ACCOUNT | SAM_APP_QUERY_GROUP | SAM_ACCOUNT_TYPE_MAX",
+  "servicePrincipalName": [
+    "RestrictedKrbHost/testtest.htb.local",
+    "RestrictedKrbHost/testtest",
+    "HOST/testtest.htb.local",
+    "HOST/testtest"
+  ],
+  "uSNChanged": 1245755,
+  "uSNCreated": 1245753,
+  "userAccountControl": "WORKSTATION_TRUST_ACCOUNT",
+  "whenChanged": "2025-08-26T12:55:28+00:00",
+  "whenCreated": "2025-08-26T12:55:28+00:00"
+}]
+```
+
+
+### create_user
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice create_user user1 '!QAZ2wsx'
+[+] User user1 successfully created with password !QAZ2wsx
+
+
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice search '(sAMAccountName=user1)'   
+[{
+  "accountExpires": "1601-01-01T00:00:00+00:00",
+  "badPasswordTime": "1601-01-01T00:00:00+00:00",
+  "badPwdCount": 0,
+  "cn": "user1",
+  "codePage": 0,
+  "countryCode": 0,
+  "dSCorePropagationData": [
+    "2025-08-26T13:18:42+00:00",
+    "2025-08-26T13:18:42+00:00",
+    "2025-08-26T13:18:42+00:00",
+    "2025-08-26T13:18:42+00:00",
+    "1601-01-01T00:00:00+00:00"
+  ],
+  "displayName": "user1",
+  "distinguishedName": "CN=user1,CN=Users,DC=htb,DC=local",
+  "dn": "CN=user1,CN=Users,DC=htb,DC=local",
+  "givenName": "user1",
+  "instanceType": 4,
+  "lastLogoff": "1601-01-01T00:00:00+00:00",
+  "lastLogon": "1601-01-01T00:00:00+00:00",
+  "logonCount": 0,
+  "name": "user1",
+  "objectCategory": "CN=Person,CN=Schema,CN=Configuration,DC=htb,DC=local",
+  "objectClass": [
+    "top",
+    "person",
+    "organizationalPerson",
+    "user"
+  ],
+  "objectGUID": "{36aac6e9-2ee2-49ad-bbac-41e4149d60a2}",
+  "objectSid": "S-1-5-21-3072663084-364016917-1341370565-10102",
+  "primaryGroupID": 513,
+  "pwdLastSet": "2025-08-26T13:17:55.829576+00:00",
+  "sAMAccountName": "user1",
+  "sAMAccountType": "SAM_GROUP_OBJECT | SAM_NON_SECURITY_GROUP_OBJECT | SAM_ALIAS_OBJECT | SAM_NON_SECURITY_ALIAS_OBJECT | SAM_USER_OBJECT | SAM_NORMAL_USER_ACCOUNT | SAM_MACHINE_ACCOUNT | SAM_TRUST_ACCOUNT | SAM_ACCOUNT_TYPE_MAX",
+  "sn": "user1",
+  "uSNChanged": 1330576,
+  "uSNCreated": 1330574,
+  "userAccountControl": "NORMAL_ACCOUNT",
+  "whenChanged": "2025-08-26T13:17:55+00:00",
+  "whenCreated": "2025-08-26T13:17:55+00:00"
+}]
 
 ```
