@@ -1,5 +1,5 @@
-## "frothly\\billy.tun"
-### index="botsv*" "frothly\\billy.tun" process_name="netsh.exe"
+## "frothly\\\billy.tun"
+### index="botsv*" "frothly\\\billy.tun" process_name="netsh.exe"
 ```sh
 08/23/2017 08:33:29 PM
 LogName=Security
