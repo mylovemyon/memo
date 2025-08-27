@@ -141,6 +141,7 @@ ldapdomaindump -u 'DOMAIN\USERNAME' -p 'PASSWORD' -at NTLM --no-json --no-grep l
 # rootDSE
 ./ldapnomnom -server 'IP' -dump
 ```
+### LdapRelayScan
 ### ldeep
 ```sh
 ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users all
