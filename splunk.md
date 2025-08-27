@@ -75,8 +75,6 @@ Type 3 is a limited token with administrative privileges removed and administrat
 | 2017/08/26 15:43:37 | 0xe80 | 0xe08 | "C:\Windows\system32\ftp.exe" | open hildegardsfarm.com | 1 |
 | 2017/08/26 15:46:08 | 0xe80 | 0x148c | "C:\Windows\system32\ftp.exe" | -i -s:singlefile.dll | 1 |
 
-
-
 ### index="botsv*" WRK-BTUN AND EventCode IN (4648,4688) AND parent_process_id IN (0xed8, 0x8c0, 0x1174) | stats count by _time,parent_process_id,process_id,process_command_line_process,process_command_line_arguments
 | _time | parent_process_id | process_id | process_command_line_process | process_command_line_arguments  | count |
 | - | - | - | - | - | - |
@@ -105,7 +103,9 @@ Type 3 is a limited token with administrative privileges removed and administrat
 
 
 
-## event log
+
+
+## maniputalin eventlog
 ### index="botsv*" EventCode=104 SourceName=Microsoft-Windows-Eventlog | stats count by ComputerName,Message
 1個ホストに100件以上あったので省略
 | ComputerName                  | Message                                                                      | count |
@@ -135,11 +135,65 @@ Type 3 is a limited token with administrative privileges removed and administrat
 | 2018/08/20 18:11:24 | PCERF-L.froth.ly            | The Event log service was stopped.    | 1      |
 | 2018/08/20 22:34:02 | BSTOLL-L.froth.ly           | The Event log service was stopped.    | 1      |
 
-### index="botsv*" EventCode=7036 SourceName="Microsoft-Windows-Service Control Manager" service="Windows Event Log" status=stopped | stats count by ComputerName,Message
-| ComputerName               | Message                                                   | count |
-|----------------------------|------------------------------------------------------------|-------|
-| wrk-aturing.frothly.local | The Windows Event Log service entered the stopped state.  | 1     |
+### index="botsv*" EventCode=7036 SourceName="Microsoft-Windows-Service Control Manager" service="Windows Event Log" status=stopped | stats count by _time,ComputerName,Message
+| _time              | ComputerName               | Message                                                   | count |
+|--------------------|----------------------------|------------------------------------------------------------|-------|
+| 2017/08/28 08:23:55 | wrk-aturing.frothly.local | The Windows Event Log service entered the stopped state.  | 1     |
 
+### index="botsv*" EventCode=1102 SourceName=Microsoft-Windows-Eventlog
+```
+08/25/2017 10:30:27 PM
+LogName=Security
+SourceName=Microsoft-Windows-Eventlog
+EventCode=1102
+EventType=4
+Type=Information
+ComputerName=wrk-klagerf.frothly.local
+TaskCategory=Log clear
+OpCode=Info
+RecordNumber=64808
+Keywords=Audit Success
+Message=The audit log was cleared.
+Subject:
+	Security ID:	FROTHLY\service3
+	Account Name:	service3
+	Domain Name:	FROTHLY
+	Logon ID:	0xf9b47f
+```
+
+
+
+
+
+## service3
+### index="botsv*" EventCode=4672 | top limit=100 Security_ID
+| Security_ID                     | count  | percent   |
+|----------------------------------|--------|-----------|
+| FROTHLY\service3                | 336393 | 91.069877 |
+| NT AUTHORITY\SYSTEM            | 16235  | 4.395215  |
+| FROTHLY\grace.hoppy            | 9163   | 2.480650  |
+| FROTHLY\administrator          | 7166   | 1.940013  |
+| FROTHLY\kevin.lagerfield       | 398    | 0.107748  |
+| Window Manager\DWM-1           | 4      | 0.001083  |
+| Window Manager\DWM-2           | 3      | 0.000812  |
+| NT AUTHORITY\NETWORK SERVICE   | 3      | 0.000812  |
+| NT AUTHORITY\LOCAL SERVICE     | 3      | 0.000812  |
+| FROTHLY\Administrator          | 3      | 0.000812  |
+| FROTHLY\mallory.kraeusen       | 2      | 0.000541  |
+| AzureAD\BudStoll               | 2      | 0.000541  |
+| S-1-5-18                       | 1      | 0.000271  |
+| IIS APPPOOL\DefaultAppPool     | 1      | 0.000271  |
+| FROTHLY\amber.turing           | 1      | 0.000271  |
+| FROTHLY\MERCURY$               | 1      | 0.000271  |
+
+
+## index="botsv*" subject="A handle to an object was requested" | stats count by Security_ID
+| Security_ID | count |
+| :--- | :--- |
+| FROTHLY\mallory.kraeusen | 195 |
+| NT AUTHORITY\SYSTEM | 375 |
+| FROTHLY\Administrator | 310 |
+| FROTHLY\service3 | 4 |
 
 
 
@@ -171,6 +225,8 @@ Type 3 is a limited token with administrative privileges removed and administrat
 | 10.0.2.109 | 160.153.91.7 | wget64.exe                                 | 1      |
 | 10.0.2.109 | 160.153.91.7 | winsys64.dll                               | 1      |
 | 10.0.2.109 | 160.153.91.7 | 나는_데이비드를_사랑한다.hwp                | 1      |
+
+
 
 
 
