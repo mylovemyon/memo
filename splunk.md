@@ -35,3 +35,35 @@ Type 2 is an elevated token with no privileges removed or groups disabled.  An e
 
 Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
 ```
+
+
+## ftp
+### index="botsv*" sourcetype="stream:ftp" loadway=Upload "*.pdf" | stats count by src_ip,dest_ip
+| src_ip | dest_ip | count |
+| -      | -       | -     |
+| 10.0.2.107 | 160.153.91.7 | 710 |
+
+### index="botsv*" sourcetype="stream:ftp" loadway=Upload NOT "*.pdf" | stats count by src_ip,dest_ip,filename
+| src_ip | dest_ip | filename | count |
+| -      |    -    |    -     |   -   |
+| 10.0.2.109 | 160.153.91.7 | frothly_passwords.kdbx | 1 |
+
+### index="botsv*" sourcetype="stream:ftp" loadway=Download | stats count by src_ip,dest_ip,filename
+| src_ip     | dest_ip      | filename                                   | count |
+|------------|--------------|--------------------------------------------|--------|
+| 10.0.2.107 | 160.153.91.7 | dns.py                                     | 1      |
+| 10.0.2.107 | 160.153.91.7 | nc.exe                                     | 1      |
+| 10.0.2.107 | 160.153.91.7 | psexec.exe                                 | 1      |
+| 10.0.2.107 | 160.153.91.7 | python-2.7.6.amd64.msi                      | 1      |
+| 10.0.2.107 | 160.153.91.7 | wget64.exe                                 | 1      |
+| 10.0.2.107 | 160.153.91.7 | winsys64.dll                               | 1      |
+| 10.0.2.107 | 160.153.91.7 | 나는_데이비드를_사랑한다.hwp                | 1      |
+| 10.0.2.109 | 160.153.91.7 | dns.py                                     | 1      |
+| 10.0.2.109 | 160.153.91.7 | nc.exe                                     | 1      |
+| 10.0.2.109 | 160.153.91.7 | psexec.exe                                 | 1      |
+| 10.0.2.109 | 160.153.91.7 | python-2.7.6.amd64.msi                      | 1      |
+| 10.0.2.109 | 160.153.91.7 | wget64.exe                                 | 1      |
+| 10.0.2.109 | 160.153.91.7 | winsys64.dll                               | 1      |
+| 10.0.2.109 | 160.153.91.7 | 나는_데이비드를_사랑한다.hwp                | 1      |
+
+
