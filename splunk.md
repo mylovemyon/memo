@@ -105,6 +105,45 @@ Type 3 is a limited token with administrative privileges removed and administrat
 
 
 
+## event log
+### index="botsv*" SourceName=Microsoft-Windows-Eventlog EventCode=104 | stats count by ComputerName,Message
+1個ホストに100件以上あったので省略
+| ComputerName                  | Message                                                                      | count |
+|------------------------------|-------------------------------------------------------------------------------|-------|
+| wrk-klagerf.frothly.local    | The Application log file was cleared.                                        | 1     |
+| wrk-klagerf.frothly.local    | The ForwardedEvents log file was cleared.                                    | 1     |
+| wrk-klagerf.frothly.local    | The HardwareEvents log file was cleared.                                     | 1     |
+| wrk-klagerf.frothly.local    | The Internet Explorer log file was cleared.                                  | 1     |
+| wrk-klagerf.frothly.local    | The Key Management Service log file was cleared.                             | 1     |
+| wrk-klagerf.frothly.local    | The Media Center log file was cleared.                                       | 1     |
+| wrk-klagerf.frothly.local    | The Microsoft-Windows-API-Tracing/Operational log file was cleared.          | 1     |
+| wrk-klagerf.frothly.local    | The Microsoft-Windows-AppID/Operational log file was cleared.                | 1     |
+| wrk-klagerf.frothly.local    | The Microsoft-Windows-AppLocker/EXE and DLL log file was cleared.            | 1     |
+| wrk-klagerf.frothly.local    | The Microsoft-Windows-AppLocker/MSI and Script log file was cleared.         | 1     |
+
+### index="botsv*" SourceName=EventLog EventCode=6006 | stats count by _time,ComputerName
+| _time              | ComputerName                | Message                               | count |
+|--------------------|-----------------------------|----------------------------------------|--------|
+| 2017/08/28 08:23:55 | wrk-aturing.frothly.local   | The Event log service was stopped.    | 1      |
+| 2018/08/20 18:11:24 | PCERF-L.froth.ly            | The Event log service was stopped.    | 1      |
+| 2018/08/20 22:34:02 | BSTOLL-L.froth.ly           | The Event log service was stopped.    | 1      |
+
+### index="botsv*" service="Windows Event Log" EventCode=7036 status=stopped
+```
+08/27/2017 04:23:55 PM
+LogName=System
+SourceName=Microsoft-Windows-Service Control Manager
+EventCode=7036
+EventType=4
+Type=Information
+ComputerName=wrk-aturing.frothly.local
+TaskCategory=The operation completed successfully.
+OpCode=The operation completed successfully.
+RecordNumber=5145
+Keywords=Classic
+Message=The Windows Event Log service entered the stopped state.
+```
+
 
 ##  index="botsv*" sourcetype="stream:ftp"
 ### index="botsv*" sourcetype="stream:ftp" loadway=Upload "*.pdf" | stats count by src_ip,dest_ip
