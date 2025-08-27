@@ -246,6 +246,10 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dc-list
 # Bloodhound Ingestor
 netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection All
 ```
+### silenthound
+```sh
+python3.13 silenthound.py -u 'USERNAME' -p 'PASSWORD' -g -n -k --kerberoast 'IP' 'DOMAIN'
+```
 
 
 
