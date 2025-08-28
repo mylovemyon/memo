@@ -199,6 +199,7 @@ ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' smsa
 ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' subnets
 ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' tempaltes
 ```
+### msldap
 ### net ads
 ```sh
 net ads info -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
