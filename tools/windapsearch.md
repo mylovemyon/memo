@@ -436,3 +436,193 @@ INFO[2025-08-28T08:37:25-04:00] Received page 1 with 1 LDAP entries...        pa
 dn: CN=Administrator,CN=Users,DC=htb,DC=local
 sAMAccountName: Administrator
 ```
+
+
+
+### unconstrained
+```sh
+└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m unconstrained -v
+INFO[2025-08-28T08:53:10-04:00] Saving output to STDOUT                       package=windapsearch
+INFO[2025-08-28T08:53:12-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
+INFO[2025-08-28T08:53:12-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
+INFO[2025-08-28T08:53:12-04:00] sending LDAP search request                   attributes="[cn sAMAccountName]" filter="(userAccountControl:1.2.840.113556.1.4.803:=524288)" package=ldapsession
+INFO[2025-08-28T08:53:13-04:00] Received page 1 with 1 LDAP entries...        package=ldapsession
+dn: CN=FOREST,OU=Domain Controllers,DC=htb,DC=local
+cn: FOREST
+sAMAccountName: FOREST$
+```
+
+
+
+### user-spns
+```sh
+└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m user-spns -v
+INFO[2025-08-28T08:59:28-04:00] Saving output to STDOUT                       package=windapsearch
+INFO[2025-08-28T08:59:29-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
+INFO[2025-08-28T08:59:30-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
+INFO[2025-08-28T08:59:30-04:00] sending LDAP search request                   attributes="[cn sAMAccountName servicePrincipalName]" filter="(&(&(servicePrincipalName=*)(UserAccountControl:1.2.840.113556.1.4.803:=512))(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))" package=ldapsession
+INFO[2025-08-28T08:59:30-04:00] Received page 1 with 0 LDAP entries...        package=ldapsession
+```
+
+
+
+### users
+```sh
+└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m users -v
+INFO[2025-08-28T09:03:37-04:00] Saving output to STDOUT                       package=windapsearch
+INFO[2025-08-28T09:03:39-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
+INFO[2025-08-28T09:03:39-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
+INFO[2025-08-28T09:03:39-04:00] sending LDAP search request                   attributes="[cn sAMAccountName userPrincipalName]" filter="(objectcategory=user)" package=ldapsession
+dn: CN=Exchange Online-ApplicationAccount,CN=Users,DC=htb,DC=local
+cn: Exchange Online-ApplicationAccount
+sAMAccountName: $331000-VK4ADACQNUCA
+userPrincipalName: Exchange_Online-ApplicationAccount@htb.local
+
+dn: CN=SystemMailbox{1f05a927-89c0-4725-adca-4527114196a1},CN=Users,DC=htb,DC=local
+cn: SystemMailbox{1f05a927-89c0-4725-adca-4527114196a1}
+sAMAccountName: SM_2c8eef0a09b545acb
+userPrincipalName: SystemMailbox{1f05a927-89c0-4725-adca-4527114196a1}@htb.local
+
+dn: CN=DefaultAccount,CN=Users,DC=htb,DC=local
+cn: DefaultAccount
+sAMAccountName: DefaultAccount
+
+dn: CN=krbtgt,CN=Users,DC=htb,DC=local
+cn: krbtgt
+sAMAccountName: krbtgt
+
+dn: CN=Guest,CN=Users,DC=htb,DC=local
+cn: Guest
+sAMAccountName: Guest
+
+dn: CN=Administrator,CN=Users,DC=htb,DC=local
+cn: Administrator
+sAMAccountName: Administrator
+userPrincipalName: Administrator@htb.local
+
+dn: CN=SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c},CN=Users,DC=htb,DC=local
+cn: SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}
+sAMAccountName: SM_ca8c2ed5bdab4dc9b
+userPrincipalName: SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}@htb.local
+
+dn: CN=DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852},CN=Users,DC=htb,DC=local
+cn: DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852}
+sAMAccountName: SM_681f53d4942840e18
+userPrincipalName: DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852}@htb.local
+
+dn: CN=SystemMailbox{2CE34405-31BE-455D-89D7-A7C7DA7A0DAA},CN=Users,DC=htb,DC=local
+cn: SystemMailbox{2CE34405-31BE-455D-89D7-A7C7DA7A0DAA}
+sAMAccountName: SM_c75ee099d0a64c91b
+userPrincipalName: SystemMailbox{2CE34405-31BE-455D-89D7-A7C7DA7A0DAA}@htb.local
+
+dn: CN=SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9},CN=Users,DC=htb,DC=local
+cn: SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}
+sAMAccountName: SM_75a538d3025e4db9a
+userPrincipalName: SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}@htb.local
+
+dn: CN=SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9},CN=Users,DC=htb,DC=local
+cn: SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9}
+sAMAccountName: SM_1ffab36a2f5f479cb
+userPrincipalName: SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9}@htb.local
+
+dn: CN=HealthMailboxfc9daad117b84fe08b081886bd8a5a50,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=htb,DC=local
+cn: HealthMailboxfc9daad117b84fe08b081886bd8a5a50
+sAMAccountName: HealthMailboxfc9daad
+userPrincipalName: HealthMailboxfc9daad117b84fe08b081886bd8a5a50@htb.local
+
+dn: CN=HealthMailboxc0a90c97d4994429b15003d6a518f3f5,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=htb,DC=local
+cn: HealthMailboxc0a90c97d4994429b15003d6a518f3f5
+sAMAccountName: HealthMailboxc0a90c9
+userPrincipalName: HealthMailboxc0a90c97d4994429b15003d6a518f3f5@htb.local
+
+dn: CN=HealthMailboxc3d7722415ad41a5b19e3e00e165edbe,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=htb,DC=local
+cn: HealthMailboxc3d7722415ad41a5b19e3e00e165edbe
+sAMAccountName: HealthMailboxc3d7722
+userPrincipalName: HealthMailboxc3d7722415ad41a5b19e3e00e165edbe@htb.local
+
+dn: CN=SystemMailbox{D0E409A0-AF9B-4720-92FE-AAC869B0D201},CN=Users,DC=htb,DC=local
+cn: SystemMailbox{D0E409A0-AF9B-4720-92FE-AAC869B0D201}
+sAMAccountName: SM_7c96b981967141ebb
+userPrincipalName: SystemMailbox{D0E409A0-AF9B-4720-92FE-AAC869B0D201}@htb.local
+
+dn: CN=Migration.8f3e7716-2011-43e4-96b1-aba62d229136,CN=Users,DC=htb,DC=local
+cn: Migration.8f3e7716-2011-43e4-96b1-aba62d229136
+sAMAccountName: SM_1b41c9286325456bb
+userPrincipalName: Migration.8f3e7716-2011-43e4-96b1-aba62d229136@htb.local
+
+dn: CN=FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042,CN=Users,DC=htb,DC=local
+cn: FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042
+sAMAccountName: SM_9b69f1b9d2cc45549
+userPrincipalName: FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042@htb.local
+
+dn: CN=HealthMailbox670628ec4dd64321acfdf6e67db3a2d8,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=htb,DC=local
+cn: HealthMailbox670628ec4dd64321acfdf6e67db3a2d8
+sAMAccountName: HealthMailbox670628e
+userPrincipalName: HealthMailbox670628ec4dd64321acfdf6e67db3a2d8@htb.local
+
+dn: CN=HealthMailboxb01ac647a64648d2a5fa21df27058a24,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=htb,DC=local
+cn: HealthMailboxb01ac647a64648d2a5fa21df27058a24
+sAMAccountName: HealthMailboxb01ac64
+userPrincipalName: HealthMailboxb01ac647a64648d2a5fa21df27058a24@htb.local
+
+dn: CN=HealthMailbox6ded67848a234577a1756e072081d01f,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=htb,DC=local
+cn: HealthMailbox6ded67848a234577a1756e072081d01f
+sAMAccountName: HealthMailbox6ded678
+userPrincipalName: HealthMailbox6ded67848a234577a1756e072081d01f@htb.local
+
+dn: CN=HealthMailbox7108a4e350f84b32a7a90d8e718f78cf,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=htb,DC=local
+cn: HealthMailbox7108a4e350f84b32a7a90d8e718f78cf
+sAMAccountName: HealthMailbox7108a4e
+userPrincipalName: HealthMailbox7108a4e350f84b32a7a90d8e718f78cf@htb.local
+
+dn: CN=HealthMailbox968e74dd3edb414cb4018376e7dd95ba,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=htb,DC=local
+cn: HealthMailbox968e74dd3edb414cb4018376e7dd95ba
+sAMAccountName: HealthMailbox968e74d
+userPrincipalName: HealthMailbox968e74dd3edb414cb4018376e7dd95ba@htb.local
+
+dn: CN=HealthMailbox83d6781be36b4bbf8893b03c2ee379ab,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=htb,DC=local
+cn: HealthMailbox83d6781be36b4bbf8893b03c2ee379ab
+sAMAccountName: HealthMailbox83d6781
+userPrincipalName: HealthMailbox83d6781be36b4bbf8893b03c2ee379ab@htb.local
+
+dn: CN=HealthMailboxfd87238e536e49e08738480d300e3772,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=htb,DC=local
+cn: HealthMailboxfd87238e536e49e08738480d300e3772
+sAMAccountName: HealthMailboxfd87238
+userPrincipalName: HealthMailboxfd87238e536e49e08738480d300e3772@htb.local
+
+dn: CN=HealthMailbox0659cc188f4c4f9f978f6c2142c4181e,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=htb,DC=local
+cn: HealthMailbox0659cc188f4c4f9f978f6c2142c4181e
+sAMAccountName: HealthMailbox0659cc1
+userPrincipalName: HealthMailbox0659cc188f4c4f9f978f6c2142c4181e@htb.local
+
+dn: CN=Sebastien Caron,OU=Exchange Administrators,OU=Information Technology,OU=Employees,DC=htb,DC=local
+cn: Sebastien Caron
+sAMAccountName: sebastien
+userPrincipalName: sebastien@htb.local
+
+dn: CN=Lucinda Berger,OU=IT Management,OU=Information Technology,OU=Employees,DC=htb,DC=local
+cn: Lucinda Berger
+sAMAccountName: lucinda
+userPrincipalName: lucinda@htb.local
+
+dn: CN=svc-alfresco,OU=Service Accounts,DC=htb,DC=local
+cn: svc-alfresco
+sAMAccountName: svc-alfresco
+userPrincipalName: svc-alfresco@htb.local
+
+dn: CN=Andy Hislip,OU=Helpdesk,OU=Information Technology,OU=Employees,DC=htb,DC=local
+cn: Andy Hislip
+sAMAccountName: andy
+userPrincipalName: andy@htb.local
+
+dn: CN=Mark Brandt,OU=Sysadmins,OU=Information Technology,OU=Employees,DC=htb,DC=local
+cn: Mark Brandt
+sAMAccountName: mark
+userPrincipalName: mark@htb.local
+INFO[2025-08-28T09:03:40-04:00] Received page 1 with 31 LDAP entries...       package=ldapsession
+
+dn: CN=Santi Rodriguez,OU=Developers,OU=Information Technology,OU=Employees,DC=htb,DC=local
+cn: Santi Rodriguez
+sAMAccountName: santi
+userPrincipalName: santi@htb.local
+```
