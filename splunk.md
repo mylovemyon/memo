@@ -1,3 +1,132 @@
+## index="botsv*" sourcetype=WinEventLog
+### index="botsv*" sourcetype=WinEventLog | stats count by source
+| source | count |
+|---|---|
+| WinEventLog:Security | 2198936 |
+| WinEventLog:Application | 19700 |
+| WinEventLog:System | 11906 |
+| WinEventLog:Microsoft-Windows-AppLocker/EXE and DLL | 187 |
+| WinEventLog:Microsoft-Windows-AppLocker/Packaged app-Execution | 152 |
+| WinEventLog:Microsoft-Windows-PowerShell/Operational | 92 |
+| WinEventLog:Directory Service | 5 |
+
+### index="botsv*" sourcetype=WinEventLog | stats count by SourceName
+| SourceName | Count |
+|---|---|
+| Microsoft Windows security auditing. | 2198882 |
+| Office Software Protection Platform Service | 10071 |
+| Microsoft-Windows-Service Control Manager | 9956 |
+| Outlook | 3909 |
+| Microsoft-Windows-Winlogon | 2501 |
+| Microsoft-Windows-Security-SPP | 2115 |
+| Desktop Window Manager | 780 |
+| Microsoft-Windows-DistributedCOM | 434 |
+| Microsoft-Windows-CAPI2 | 388 |
+| Microsoft-Windows-AppLocker | 339 |
+| SideBySide | 288 |
+| Microsoft-Windows-DNS Client Events | 181 |
+| Microsoft-Windows-Eventlog | 172 |
+| ESENT | 129 |
+| Microsoft-Windows-PowerShell | 92 |
+| Symantec AntiVirus | 84 |
+| Symantec Network Protection | 69 |
+| Microsoft-Windows-FilterManager | 56 |
+| Microsoft-Windows-Kernel-General | 51 |
+| VSSAudit | 48 |
+| SecurityCenter | 38 |
+| VSS | 37 |
+| Microsoft-Windows-LSA | 28 |
+| e1iexpress | 28 |
+| EventLog | 24 |
+| Microsoft-Windows-WindowsUpdateClient | 22 |
+| Windows Error Reporting | 20 |
+| SpeechRuntime | 17 |
+| SceCli | 15 |
+| Microsoft-Windows-Dhcp-Client | 14 |
+| Microsoft-Windows-Kernel-Boot | 12 |
+| Microsoft-Windows-Time-Service | 11 |
+| Microsoft-Windows-User Profile Service | 11 |
+| Microsoft-Windows-DHCPv6-Client | 10 |
+| VMUpgradeHelper | 10 |
+| Microsoft-Windows-GroupPolicy | 9 |
+| Application Error | 8 |
+| Microsoft-Windows-WMI | 7 |
+| Microsoft-Windows-Kernel-Power | 6 |
+| Schannel | 6 |
+| volsnap | 6 |
+| Application Hang | 5 |
+| Microsoft-Windows-Kernel-Processor-Power | 5 |
+| Microsoft-Windows-Ntfs | 5 |
+| Microsoft-Windows-Search | 5 |
+| Symantec Endpoint Protection | 5 |
+| VMTools | 5 |
+| Microsoft-Windows-Defrag | 4 |
+| Microsoft-Windows-RestartManager | 4 |
+| Microsoft-Windows-UserPnp | 4 |
+| MsiInstaller | 4 |
+| Microsoft-Windows-ActiveDirectory_DomainService | 3 |
+| Microsoft-Windows-Directory-Services-SAM | 3 |
+| Microsoft-Windows-DriverFrameworks-UserMode | 3 |
+| Microsoft-Windows-EventSystem | 3 |
+| Microsoft-Windows-WPD-ClassInstaller | 3 |
+| CrashPlanService | 2 |
+| Microsoft-Windows-Application-Experience | 2 |
+| Microsoft-Windows-Complus | 2 |
+| Microsoft-Windows-LoadPerf | 2 |
+| Microsoft-Windows-MSDTC 2 | 2 |
+| Microsoft-Windows-Resource-Exhaustion-Detector | 2 |
+| Microsoft-Windows-Wininit | 2 |
+| NTDS ISAM | 2 |
+| SRTSP | 2 |
+| Teefer2 | 2 |
+| USER32 | 2 |
+| User32 | 2 |
+| vmci | 2 |
+| Application Popup | 1 |
+| Microsoft Office 16 | 1 |
+| Microsoft-Windows-MSDTC | 1 |
+| Microsoft-Windows-NDIS | 1 |
+| Microsoft-Windows-Security-Kerberos | 1 |
+| Microsoft-Windows-WAS | 1 |
+| Office 2016 Licensing Service | 1 |
+
+### index="botsv*" sourcetype=WinEventLog | stats count by ComputerName
+| ComputerName | Count |
+|---|---|
+| mercury.frothly.local | 1589019 |
+| wrk-aturing.frothly.local | 84998 |
+| wrk-fmaltes.frothly.local | 83539 |
+| wrk-btun.frothly.local | 81480 |
+| wrk-abungst.frothly.local | 78292 |
+| wrk-ghoppy.frothly.local | 72786 |
+| venus.frothly.local | 69194 |
+| wrk-bgist.frothly.local | 65183 |
+| wrk-klagerf.frothly.local | 58385 |
+| BSTOLL-L.froth.ly | 24427 |
+| PCERF-L.froth.ly | 4280 |
+| MKRAEUS-L.froth.ly | 4174 |
+| BTUN-L.froth.ly | 3968 |
+| BGIST-L.froth.ly | 3340 |
+| ABUNGST-L.froth.ly | 2791 |
+| FYODOR-L.froth.ly | 2543 |
+| JWORTOS-L.froth.ly | 2439 |
+| SEPM1 | 39 |
+| WRK-ATURING | 1 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## index="botsv*" "frothly\\\billy.tun"
 ### index="botsv*" user="frothly\\billy.tun" 45.77.65.211 | stats count by src_ip,dest_ip
 | src_ip     | dest_ip     | count |
