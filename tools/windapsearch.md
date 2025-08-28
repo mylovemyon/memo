@@ -1,3 +1,61 @@
+### metadata
+```sh
+└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m metadata -v 
+INFO[2025-08-28T08:29:13-04:00] Saving output to STDOUT                       package=windapsearch
+INFO[2025-08-28T08:29:14-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
+INFO[2025-08-28T08:29:14-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
+INFO[2025-08-28T08:29:14-04:00] sending LDAP search request                   attributes="[defaultNamingContext domainFunctionality forestFunctionality domainControllerFunctionality dnsHostName]" filter="(objectClass=*)" package=ldapsession
+defaultNamingContext: DC=htb,DC=local
+dnsHostName: FOREST.htb.local
+domainFunctionality: 7
+forestFunctionality: 7
+domainControllerFunctionality: 7
+```
+
+
+
+### gpos
+```sh
+└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m gpos -v
+INFO[2025-08-28T08:09:14-04:00] Saving output to STDOUT                       package=windapsearch
+INFO[2025-08-28T08:09:15-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
+INFO[2025-08-28T08:09:16-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
+INFO[2025-08-28T08:09:16-04:00] sending LDAP search request                   attributes="[displayName gPCFileSysPath]" filter="(objectClass=groupPolicyContainer)" package=ldapsession
+dn: CN={31B2F340-016D-11D2-945F-00C04FB984F9},CN=Policies,CN=System,DC=htb,DC=local
+displayName: Default Domain Policy
+gPCFileSysPath: \\htb.local\sysvol\htb.local\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}
+
+dn: CN={6AC1786C-016F-11D2-945F-00C04fB984F9},CN=Policies,CN=System,DC=htb,DC=local
+displayName: Default Domain Controllers Policy
+gPCFileSysPath: \\htb.local\sysvol\htb.local\Policies\{6AC1786C-016F-11D2-945F-00C04fB984F9}
+INFO[2025-08-28T08:09:16-04:00] Received page 1 with 2 LDAP entries...        package=ldapsession
+```
+
+
+
+### computers
+```sh
+└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m computers -v
+INFO[2025-08-28T08:11:52-04:00] Saving output to STDOUT                       package=windapsearch
+INFO[2025-08-28T08:11:53-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
+INFO[2025-08-28T08:11:54-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
+INFO[2025-08-28T08:11:54-04:00] sending LDAP search request                   attributes="[cn dNSHostName operatingSystem operatingSystemVersion operatingSystemServicePack]" filter="(objectClass=Computer)" package=ldapsession
+INFO[2025-08-28T08:11:54-04:00] Received page 1 with 2 LDAP entries...        package=ldapsession
+dn: CN=FOREST,OU=Domain Controllers,DC=htb,DC=local
+cn: FOREST
+operatingSystem: Windows Server 2016 Standard
+operatingSystemVersion: 10.0 (14393)
+dNSHostName: FOREST.htb.local
+
+dn: CN=EXCH01,CN=Computers,DC=htb,DC=local
+cn: EXCH01
+operatingSystem: Windows Server 2016 Standard
+operatingSystemVersion: 10.0 (14393)
+dNSHostName: EXCH01.htb.local
+```
+
+
+
 ### admin-objects
 ```sh
 └─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m admin-objects -v         
@@ -57,29 +115,6 @@ INFO[2025-08-28T08:12:28-04:00] Received page 1 with 16 LDAP entries...       pa
 
 
 
-### computers
-```sh
-└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m computers -v
-INFO[2025-08-28T08:11:52-04:00] Saving output to STDOUT                       package=windapsearch
-INFO[2025-08-28T08:11:53-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
-INFO[2025-08-28T08:11:54-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
-INFO[2025-08-28T08:11:54-04:00] sending LDAP search request                   attributes="[cn dNSHostName operatingSystem operatingSystemVersion operatingSystemServicePack]" filter="(objectClass=Computer)" package=ldapsession
-INFO[2025-08-28T08:11:54-04:00] Received page 1 with 2 LDAP entries...        package=ldapsession
-dn: CN=FOREST,OU=Domain Controllers,DC=htb,DC=local
-cn: FOREST
-operatingSystem: Windows Server 2016 Standard
-operatingSystemVersion: 10.0 (14393)
-dNSHostName: FOREST.htb.local
-
-dn: CN=EXCH01,CN=Computers,DC=htb,DC=local
-cn: EXCH01
-operatingSystem: Windows Server 2016 Standard
-operatingSystemVersion: 10.0 (14393)
-dNSHostName: EXCH01.htb.local
-```
-
-
-
 ### domain-admins 
 ```sh
 └─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m domain-admins -v
@@ -91,25 +126,6 @@ INFO[2025-08-28T08:11:28-04:00] Received page 1 with 1 LDAP entries...        pa
 dn: CN=Administrator,CN=Users,DC=htb,DC=local
 cn: Administrator
 sAMAccountName: Administrator
-```
-
-
-
-### gpos
-```sh
-└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m gpos -v
-INFO[2025-08-28T08:09:14-04:00] Saving output to STDOUT                       package=windapsearch
-INFO[2025-08-28T08:09:15-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
-INFO[2025-08-28T08:09:16-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
-INFO[2025-08-28T08:09:16-04:00] sending LDAP search request                   attributes="[displayName gPCFileSysPath]" filter="(objectClass=groupPolicyContainer)" package=ldapsession
-dn: CN={31B2F340-016D-11D2-945F-00C04FB984F9},CN=Policies,CN=System,DC=htb,DC=local
-displayName: Default Domain Policy
-gPCFileSysPath: \\htb.local\sysvol\htb.local\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}
-
-dn: CN={6AC1786C-016F-11D2-945F-00C04fB984F9},CN=Policies,CN=System,DC=htb,DC=local
-displayName: Default Domain Controllers Policy
-gPCFileSysPath: \\htb.local\sysvol\htb.local\Policies\{6AC1786C-016F-11D2-945F-00C04fB984F9}
-INFO[2025-08-28T08:09:16-04:00] Received page 1 with 2 LDAP entries...        package=ldapsession
 ```
 
 
@@ -386,86 +402,6 @@ sAMAccountName: Administrator
 
 
 
-### metadata
-```sh
-└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m metadata -v 
-INFO[2025-08-28T08:29:13-04:00] Saving output to STDOUT                       package=windapsearch
-INFO[2025-08-28T08:29:14-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
-INFO[2025-08-28T08:29:14-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
-INFO[2025-08-28T08:29:14-04:00] sending LDAP search request                   attributes="[defaultNamingContext domainFunctionality forestFunctionality domainControllerFunctionality dnsHostName]" filter="(objectClass=*)" package=ldapsession
-defaultNamingContext: DC=htb,DC=local
-dnsHostName: FOREST.htb.local
-domainFunctionality: 7
-forestFunctionality: 7
-domainControllerFunctionality: 7
-```
-
-
-
-### privileged-users
-```sh
-└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m privileged-users -v
-INFO[2025-08-28T08:30:24-04:00] Saving output to STDOUT                       package=windapsearch
-INFO[2025-08-28T08:30:25-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
-INFO[2025-08-28T08:30:26-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
-INFO[2025-08-28T08:30:26-04:00] sending LDAP search request                   attributes="[cn sAMAccountName]" filter="(&(objectClass=user)(|(memberof:1.2.840.113556.1.4.1941:=CN=Administrators,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Enterprise Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Schema Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Account Operators,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Backup Operators,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Server Management,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Konten-Operatoren,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Sicherungs-Operatoren,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Server-Operatoren,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Schema-Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domain Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domain-Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domain Administrators,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domain-Administrators,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domänen Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domänen-Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domain Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domain-Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domänen Administratoren,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domänen-Administratoren,CN=Users,DC=htb,DC=local)))" package=ldapsession
-INFO[2025-08-28T08:30:26-04:00] Received page 1 with 1 LDAP entries...        package=ldapsession
-dn: CN=Administrator,CN=Users,DC=htb,DC=local
-cn: Administrator
-sAMAccountName: Administrator
-```
-
-
-
-### search
-```sh
-└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m search -s administrator --attrs sAMAccountName -v
-INFO[2025-08-28T08:37:20-04:00] Saving output to STDOUT                       package=windapsearch
-INFO[2025-08-28T08:37:21-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
-INFO[2025-08-28T08:37:22-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
-INFO[2025-08-28T08:37:22-04:00] sending LDAP search request                   attributes="[distinguishedName]" filter="(anr=administrator)" package=ldapsession
-What DN do you want to use?
-
-1. CN=Administrator,CN=Users,DC=htb,DC=local
-2. CN=Administrators,CN=Builtin,DC=htb,DC=local
-
-Enter a number: 1
-
-INFO[2025-08-28T08:37:24-04:00] sending LDAP search request                   attributes="[sAMAccountName]" filter="(cn=*)" package=ldapsession
-INFO[2025-08-28T08:37:25-04:00] Received page 1 with 1 LDAP entries...        package=ldapsession
-dn: CN=Administrator,CN=Users,DC=htb,DC=local
-sAMAccountName: Administrator
-```
-
-
-
-### unconstrained
-```sh
-└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m unconstrained -v
-INFO[2025-08-28T08:53:10-04:00] Saving output to STDOUT                       package=windapsearch
-INFO[2025-08-28T08:53:12-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
-INFO[2025-08-28T08:53:12-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
-INFO[2025-08-28T08:53:12-04:00] sending LDAP search request                   attributes="[cn sAMAccountName]" filter="(userAccountControl:1.2.840.113556.1.4.803:=524288)" package=ldapsession
-INFO[2025-08-28T08:53:13-04:00] Received page 1 with 1 LDAP entries...        package=ldapsession
-dn: CN=FOREST,OU=Domain Controllers,DC=htb,DC=local
-cn: FOREST
-sAMAccountName: FOREST$
-```
-
-
-
-### user-spns
-```sh
-└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m user-spns -v
-INFO[2025-08-28T08:59:28-04:00] Saving output to STDOUT                       package=windapsearch
-INFO[2025-08-28T08:59:29-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
-INFO[2025-08-28T08:59:30-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
-INFO[2025-08-28T08:59:30-04:00] sending LDAP search request                   attributes="[cn sAMAccountName servicePrincipalName]" filter="(&(&(servicePrincipalName=*)(UserAccountControl:1.2.840.113556.1.4.803:=512))(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))" package=ldapsession
-INFO[2025-08-28T08:59:30-04:00] Received page 1 with 0 LDAP entries...        package=ldapsession
-```
-
-
-
 ### users
 ```sh
 └─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m users -v
@@ -625,4 +561,80 @@ dn: CN=Santi Rodriguez,OU=Developers,OU=Information Technology,OU=Employees,DC=h
 cn: Santi Rodriguez
 sAMAccountName: santi
 userPrincipalName: santi@htb.local
+```
+### privileged-users
+```sh
+└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m privileged-users -v
+INFO[2025-08-28T08:30:24-04:00] Saving output to STDOUT                       package=windapsearch
+INFO[2025-08-28T08:30:25-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
+INFO[2025-08-28T08:30:26-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
+INFO[2025-08-28T08:30:26-04:00] sending LDAP search request                   attributes="[cn sAMAccountName]" filter="(&(objectClass=user)(|(memberof:1.2.840.113556.1.4.1941:=CN=Administrators,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Enterprise Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Schema Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Account Operators,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Backup Operators,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Server Management,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Konten-Operatoren,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Sicherungs-Operatoren,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Server-Operatoren,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Schema-Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domain Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domain-Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domain Administrators,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domain-Administrators,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domänen Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domänen-Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domain Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domain-Admins,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domänen Administratoren,CN=Users,DC=htb,DC=local)(memberof:1.2.840.113556.1.4.1941:=CN=Domänen-Administratoren,CN=Users,DC=htb,DC=local)))" package=ldapsession
+INFO[2025-08-28T08:30:26-04:00] Received page 1 with 1 LDAP entries...        package=ldapsession
+dn: CN=Administrator,CN=Users,DC=htb,DC=local
+cn: Administrator
+sAMAccountName: Administrator
+```
+
+
+
+### unconstrained
+```sh
+└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m unconstrained -v
+INFO[2025-08-28T08:53:10-04:00] Saving output to STDOUT                       package=windapsearch
+INFO[2025-08-28T08:53:12-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
+INFO[2025-08-28T08:53:12-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
+INFO[2025-08-28T08:53:12-04:00] sending LDAP search request                   attributes="[cn sAMAccountName]" filter="(userAccountControl:1.2.840.113556.1.4.803:=524288)" package=ldapsession
+INFO[2025-08-28T08:53:13-04:00] Received page 1 with 1 LDAP entries...        package=ldapsession
+dn: CN=FOREST,OU=Domain Controllers,DC=htb,DC=local
+cn: FOREST
+sAMAccountName: FOREST$
+```
+
+
+
+### user-spns
+```sh
+└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m user-spns -v
+INFO[2025-08-28T08:59:28-04:00] Saving output to STDOUT                       package=windapsearch
+INFO[2025-08-28T08:59:29-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
+INFO[2025-08-28T08:59:30-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
+INFO[2025-08-28T08:59:30-04:00] sending LDAP search request                   attributes="[cn sAMAccountName servicePrincipalName]" filter="(&(&(servicePrincipalName=*)(UserAccountControl:1.2.840.113556.1.4.803:=512))(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))" package=ldapsession
+INFO[2025-08-28T08:59:30-04:00] Received page 1 with 0 LDAP entries...        package=ldapsession
+```
+
+
+
+### search
+```sh
+└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m search -s administrator --attrs sAMAccountName -v
+INFO[2025-08-28T08:37:20-04:00] Saving output to STDOUT                       package=windapsearch
+INFO[2025-08-28T08:37:21-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
+INFO[2025-08-28T08:37:22-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
+INFO[2025-08-28T08:37:22-04:00] sending LDAP search request                   attributes="[distinguishedName]" filter="(anr=administrator)" package=ldapsession
+What DN do you want to use?
+
+1. CN=Administrator,CN=Users,DC=htb,DC=local
+2. CN=Administrators,CN=Builtin,DC=htb,DC=local
+
+Enter a number: 1
+
+INFO[2025-08-28T08:37:24-04:00] sending LDAP search request                   attributes="[sAMAccountName]" filter="(cn=*)" package=ldapsession
+INFO[2025-08-28T08:37:25-04:00] Received page 1 with 1 LDAP entries...        package=ldapsession
+dn: CN=Administrator,CN=Users,DC=htb,DC=local
+sAMAccountName: Administrator
+```
+
+
+
+### custom
+```sh
+└─$ ./windapsearch-linux-amd64 --dc 10.129.125.30 -u 'svc-alfresco@htb.local' -p s3rvice -m custom --filter '(&(servicePrincipalName=*)(UserAccountControl:1.2.840.113556.1.4.803:=512))' --attrs UserAccountControl,sAMAccountName -v
+INFO[2025-08-28T09:09:20-04:00] Saving output to STDOUT                       package=windapsearch
+INFO[2025-08-28T09:09:21-04:00] successful bind to "ldap://10.129.125.30:389" as "svc-alfresco@htb.local"  package=ldapsession
+INFO[2025-08-28T09:09:22-04:00] retrieved default naming context: "DC=htb,DC=local"  package=ldapsession
+INFO[2025-08-28T09:09:22-04:00] sending LDAP search request                   attributes="[UserAccountControl sAMAccountName]" filter="(&(servicePrincipalName=*)(UserAccountControl:1.2.840.113556.1.4.803:=512))" package=ldapsession
+INFO[2025-08-28T09:09:22-04:00] Received page 1 with 1 LDAP entries...        package=ldapsession
+dn: CN=krbtgt,CN=Users,DC=htb,DC=local
+userAccountControl: 514
+sAMAccountName: krbtgt
 ```
