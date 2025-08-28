@@ -1,125 +1,62 @@
 ## index="botsv*" sourcetype=WinEventLog
-### index="botsv*" sourcetype=WinEventLog | stats count by source
-| source | count |
-|---|---|
-| WinEventLog:Security | 2198936 |
-| WinEventLog:Application | 19700 |
-| WinEventLog:System | 11906 |
-| WinEventLog:Microsoft-Windows-AppLocker/EXE and DLL | 187 |
-| WinEventLog:Microsoft-Windows-AppLocker/Packaged app-Execution | 152 |
-| WinEventLog:Microsoft-Windows-PowerShell/Operational | 92 |
-| WinEventLog:Directory Service | 5 |
-
-### index="botsv*" sourcetype=WinEventLog | stats count by SourceName
-| SourceName | Count |
-|---|---|
-| Microsoft Windows security auditing. | 2198882 |
-| Office Software Protection Platform Service | 10071 |
-| Microsoft-Windows-Service Control Manager | 9956 |
-| Outlook | 3909 |
-| Microsoft-Windows-Winlogon | 2501 |
-| Microsoft-Windows-Security-SPP | 2115 |
-| Desktop Window Manager | 780 |
-| Microsoft-Windows-DistributedCOM | 434 |
-| Microsoft-Windows-CAPI2 | 388 |
-| Microsoft-Windows-AppLocker | 339 |
-| SideBySide | 288 |
-| Microsoft-Windows-DNS Client Events | 181 |
-| Microsoft-Windows-Eventlog | 172 |
-| ESENT | 129 |
-| Microsoft-Windows-PowerShell | 92 |
-| Symantec AntiVirus | 84 |
-| Symantec Network Protection | 69 |
-| Microsoft-Windows-FilterManager | 56 |
-| Microsoft-Windows-Kernel-General | 51 |
-| VSSAudit | 48 |
-| SecurityCenter | 38 |
-| VSS | 37 |
-| Microsoft-Windows-LSA | 28 |
-| e1iexpress | 28 |
-| EventLog | 24 |
-| Microsoft-Windows-WindowsUpdateClient | 22 |
-| Windows Error Reporting | 20 |
-| SpeechRuntime | 17 |
-| SceCli | 15 |
-| Microsoft-Windows-Dhcp-Client | 14 |
-| Microsoft-Windows-Kernel-Boot | 12 |
-| Microsoft-Windows-Time-Service | 11 |
-| Microsoft-Windows-User Profile Service | 11 |
-| Microsoft-Windows-DHCPv6-Client | 10 |
-| VMUpgradeHelper | 10 |
-| Microsoft-Windows-GroupPolicy | 9 |
-| Application Error | 8 |
-| Microsoft-Windows-WMI | 7 |
-| Microsoft-Windows-Kernel-Power | 6 |
-| Schannel | 6 |
-| volsnap | 6 |
-| Application Hang | 5 |
-| Microsoft-Windows-Kernel-Processor-Power | 5 |
-| Microsoft-Windows-Ntfs | 5 |
-| Microsoft-Windows-Search | 5 |
-| Symantec Endpoint Protection | 5 |
-| VMTools | 5 |
-| Microsoft-Windows-Defrag | 4 |
-| Microsoft-Windows-RestartManager | 4 |
-| Microsoft-Windows-UserPnp | 4 |
-| MsiInstaller | 4 |
-| Microsoft-Windows-ActiveDirectory_DomainService | 3 |
-| Microsoft-Windows-Directory-Services-SAM | 3 |
-| Microsoft-Windows-DriverFrameworks-UserMode | 3 |
-| Microsoft-Windows-EventSystem | 3 |
-| Microsoft-Windows-WPD-ClassInstaller | 3 |
-| CrashPlanService | 2 |
-| Microsoft-Windows-Application-Experience | 2 |
-| Microsoft-Windows-Complus | 2 |
-| Microsoft-Windows-LoadPerf | 2 |
-| Microsoft-Windows-MSDTC 2 | 2 |
-| Microsoft-Windows-Resource-Exhaustion-Detector | 2 |
-| Microsoft-Windows-Wininit | 2 |
-| NTDS ISAM | 2 |
-| SRTSP | 2 |
-| Teefer2 | 2 |
-| USER32 | 2 |
-| User32 | 2 |
-| vmci | 2 |
-| Application Popup | 1 |
-| Microsoft Office 16 | 1 |
-| Microsoft-Windows-MSDTC | 1 |
-| Microsoft-Windows-NDIS | 1 |
-| Microsoft-Windows-Security-Kerberos | 1 |
-| Microsoft-Windows-WAS | 1 |
-| Office 2016 Licensing Service | 1 |
-
-### index="botsv*" sourcetype=WinEventLog | stats count by ComputerName
+```
+index="botsv*" sourcetype=WinEventLog | stats count by ComputerName
+```
 | ComputerName | Count |
-|---|---|
-| mercury.frothly.local | 1589019 |
-| wrk-aturing.frothly.local | 84998 |
-| wrk-fmaltes.frothly.local | 83539 |
-| wrk-btun.frothly.local | 81480 |
-| wrk-abungst.frothly.local | 78292 |
-| wrk-ghoppy.frothly.local | 72786 |
-| venus.frothly.local | 69194 |
-| wrk-bgist.frothly.local | 65183 |
-| wrk-klagerf.frothly.local | 58385 |
-| BSTOLL-L.froth.ly | 24427 |
-| PCERF-L.froth.ly | 4280 |
-| MKRAEUS-L.froth.ly | 4174 |
-| BTUN-L.froth.ly | 3968 |
-| BGIST-L.froth.ly | 3340 |
+| :--- | :--- |
 | ABUNGST-L.froth.ly | 2791 |
+| BGIST-L.froth.ly | 3340 |
+| BSTOLL-L.froth.ly | 24427 |
+| BTUN-L.froth.ly | 3968 |
 | FYODOR-L.froth.ly | 2543 |
 | JWORTOS-L.froth.ly | 2439 |
+| MKRAEUS-L.froth.ly | 4174 |
+| PCERF-L.froth.ly | 4280 |
 | SEPM1 | 39 |
 | WRK-ATURING | 1 |
+| mercury.frothly.local | 1589019 |
+| venus.frothly.local | 69194 |
+| wrk-abungst.frothly.local | 78292 |
+| wrk-aturing.frothly.local | 84998 |
+| wrk-bgist.frothly.local | 65183 |
+| wrk-btun.frothly.local | 81480 |
+| wrk-fmaltes.frothly.local | 83539 |
+| wrk-ghoppy.frothly.local | 72786 |
+| wrk-klagerf.frothly.local | 58385 |
 
+```
+index="botsv*" sourcetype=WinEventLog EventCode=4624 | stats count by src_nt_host,src_ip
+```
+| src_nt_host | src_ip | count |
+| :--- | :--- | :--- |
+| BSTOLL-L | 127.0.0.1 | 2 |
+| GROWLER | 10.0.1.133 | 5470 |
+| MACLORY-AIR13S | 10.0.4.4 | 1 |
+| MERCURY | 10.0.1.222 | 1029 |
+| MERCURY | 10.0.4.1 | 2 |
+| MERCURY | 127.0.0.1 | 1 |
+| STARRAIDERS | 172.16.0.1 | 1 |
+| VENUS | 10.0.1.101 | 1 |
+| VENUS | 127.0.0.1 | 1 |
+| VENUS | 71.39.18.121 | 1 |
+| WRK-ATURING | 10.0.2.101 | 1 |
+| WRK-ATURING | 127.0.0.1 | 436 |
+| WRK-BTUN | 10.0.2.107 | 515 |
+| WRK-FMALTES | 10.0.2.105 | 434 |
+| WRK-GHOPPY | 10.0.2.103 | 465 |
+| WRK-GHOPPY | 127.0.0.1 | 341 |
+| WRK-KLAGERF | 10.0.2.109 | 1131 |
 
+```
+index="botsv*" sourcetype=WinEventLog EventCode=4624
+| eval dest_host = upper(dvc_nt_host)
+| stats count by src_nt_host,dest_host
+| eval from=src_nt_host,to=dest_host,type="desktop"
+```
 
+### index="botsv*" sourcetype=WinEventLog | stats count by source
 
-
-
-
-
+### index="botsv*" sourcetype=WinEventLog | stats count by SourceName
 
 
 
