@@ -314,6 +314,15 @@ enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
 ### impacket
 ```sh
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' user
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' user -name 'USERNAME'
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' user -create 'USERNAME' -newPasswd 'PASSWORD'
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' user -remove 'USERNAME'
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' user -enable 'USERNAME'
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' user -disable 'USERNAME'
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' computer
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' localgroup
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group
 # dumping NTLM hashs and Kerberos Keys
 impacket-secretsdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME:PASSWORD@IP'
