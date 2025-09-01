@@ -132,7 +132,7 @@ impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -a
 ```
 ### ldapdomaindump
 ```sh
-ldapdomaindump -u 'DOMAIN\USERNAME' -p 'PASSWORD' -at NTLM --no-json --no-grep ldap://'IP' 'ATTRIBUTES'
+ldapdomaindump -u 'DOMAIN\USERNAME' -p 'PASSWORD' -at NTLM --no-json --no-grep ldap://'IP'
 ```
 ### ldapnomnom
 ```sh
@@ -144,7 +144,7 @@ ldapdomaindump -u 'DOMAIN\USERNAME' -p 'PASSWORD' -at NTLM --no-json --no-grep l
 ### LdapRelayScan
 ### ldapsearch
 ```sh
-ldapsearch -b 'DN' -LLL -s 'sub' -D 'USERNAME@DOMAIN' -H ldap://'IP' -w 'PASSWORD' 'FILTER' 'dn'
+ldapsearch -b 'DN' -LLL -s 'sub' -D 'USERNAME@DOMAIN' -H ldap://'IP' -w 'PASSWORD' 'FILTER' 'ATTRIBUTES'
 ```
 ### ldeep
 ```sh
