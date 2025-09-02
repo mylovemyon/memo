@@ -125,6 +125,77 @@ Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies
   1. FOREST$ (1000)
   2. EXCH01$ (1103)
 ```
+#### net computer -name
+```sh
+┌──(kali㉿kali)-[~]
+└─$ impacket-net 'htb.local/svc-alfresco:s3rvice@10.129.138.203' -debug computer -name 'FOREST$'
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
+User name                      FOREST$
+Full name                      
+Comment                        
+User's comment                 
+Country/region code            000 (System Default)
+Account active                 Yes
+Account expires                Never
+
+Password last set              09/01/2025 08:48:44 AM
+Password expires               Never
+Password changeable            09/02/2025 08:48:44 AM
+Password required              Yes
+User may change password       Yes
+
+Workstations allowed           All
+Logon script                   
+User profile                   
+Home directory                 
+Last logon                     09/02/2025 00:48:39 AM
+Logon count                    89
+
+Logon hours allowed            All
+
+Local Group Memberships
+
+Global Group memberships
+  * Domain Controllers
+```
+#### net computer -ceate
+```sh
+└─$ impacket-net 'htb.local/svc-alfresco:s3rvice@10.129.138.203' -debug computer -create 'test$' -newPasswd '!QAZ2wsx'
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
+[*] Creating computer account 'test$'
+[+] computer account created succesfully: test$:!QAZ2wsx
+```
+#### net computer -remove
+```sh
+└─$ impacket-net 'htb.local/svc-alfresco:s3rvice@10.129.138.203' -debug computer -remove 'test$'
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
+[*] Deleting computer account 'test$'
+[+] computer account deleted succesfully!
+```
+#### net computer -enable
+```sh
+└─$ impacket-net 'htb.local/svc-alfresco:s3rvice@10.129.138.203' -debug computer -enable 'test$'
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
+[*] Enabling computer account 'test$'
+[+] computer account enabled succesfully!
+```
+#### net computer -disable
+```sh
+└─$ impacket-net 'htb.local/svc-alfresco:s3rvice@10.129.138.203' -debug computer -disable 'test$'                     
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
+[*] Disabling computer account 'test$'
+[+] computer account disabled succesfully!
+```
 ### net localgroup
 ```sh
 └─$ impacket-net 'htb.local/svc-alfresco:s3rvice@10.129.138.203' -debug localgroup
@@ -161,6 +232,34 @@ Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies
   27. System Managed Accounts Group (581)
   28. Storage Replica Administrators (582)
   29. Server Operators (549)
+```
+#### net localgroup -name
+```sh
+└─$ impacket-net 'htb.local/svc-alfresco:s3rvice@10.129.138.203' -debug localgroup -name administrators
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
+  1. Administrator
+  2. Enterprise Admins
+  3. Domain Admins
+```
+#### net localgroup -join
+```sh
+└─$ impacket-net 'htb.local/svc-alfresco:s3rvice@10.129.138.203' -debug localgroup -name Users -join test
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
+[*] Adding user account 'test' to group 'Users'
+[+] User account added to Users succesfully!
+```
+#### net localgroup -unjoin
+```sh
+└─$ impacket-net 'htb.local/svc-alfresco:s3rvice@10.129.138.203' -debug localgroup -name Users -unjoin test
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
+[*] Removing user account 'test' from group 'Users'
+[+] User account removed from Users succesfully!
 ```
 ### net group
 ```sh
@@ -207,6 +306,32 @@ Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies
   36. Service Accounts (1148)
   37. Privileged IT Accounts (1149)
   38. test (5101)
+```
+#### net group -name
+```sh
+└─$ impacket-net 'htb.local/svc-alfresco:s3rvice@10.129.138.203' -debug group -name 'Domain Admins'
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
+  1. Administrator
+```
+#### net group -join
+```sh
+└─$ impacket-net 'htb.local/svc-alfresco:s3rvice@10.129.138.203' -debug group -name 'Domain Users' -join 'test'
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
+[*] Adding user account 'test' to group 'Domain Users'
+[+] User account added to Domain Users succesfully!
+```
+#### net group -unjoin
+```sh
+└─$ impacket-net 'htb.local/svc-alfresco:s3rvice@10.129.138.203' -debug group -name 'Domain Users' -unjoin 'test'
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
+[*] Removing user account 'test' from group 'Domain Users'
+[+] User account removed from Domain Users succesfully!
 ```
 
 
