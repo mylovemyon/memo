@@ -2143,6 +2143,1640 @@ WQL> SELECT * FROM Win32_COMApplicationSettings
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ff9e6131-a8c1-4188-aa03-82e9f10a05a8}" | \\FOREST\root\cimv2:Win32_DCOMApplicationSetting.AppID="{ff9e6131-a8c1-4188-aa03-82e9f10a05a8}" | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{FFB8655F-81B9-4fce-B89C-9A6BA76D13E7}" | \\FOREST\root\cimv2:Win32_DCOMApplicationSetting.AppID="{FFB8655F-81B9-4fce-B89C-9A6BA76D13E7}" |
 ```
+#### Win32_COMClass
+めっちゃおおいので割愛
+```sh
+WQL> SELECT * FROM Win32_COMClass WHERE caption = "Microsoft Windows Defender"
+| Caption | Description | InstallDate | Name | Status | ComponentId | 
+| Microsoft Windows Defender | Microsoft Windows Defender | None | Microsoft Windows Defender | None | {A2D75874-6750-4931-94C1-C99D3BC9D0C7} | 
+```
+#### Win32_ComClassAutoEmulator
+#### Win32_ComClassEmulator
+#### Win32_ComponentCategory
+```sh
+WQL> SELECT * FROM Win32_ComponentCategory
+| Caption | Description | InstallDate | Name | Status | CategoryId | 
+| Trusted Custom Marshalers | Trusted Custom Marshalers | None | Trusted Custom Marshalers | None | {00000003-0000-0000-C000-000000000046} | 
+| Active Scripting Engine with Authoring | Active Scripting Engine with Authoring | None | Active Scripting Engine with Authoring | None | {0AEE2A92-BCBB-11D0-8C72-00C04FC2B085} | 
+| Class requires the ability to save data to one or more paths  | Class requires the ability to save data to one or more paths  | None | Class requires the ability to save data to one or more paths  | None | {0DE86A50-2BAA-11CF-A229-00AA003D7352} | 
+| Class implements IPersistMoniker | Class implements IPersistMoniker | None | Class implements IPersistMoniker | None | {0DE86A51-2BAA-11CF-A229-00AA003D7352} | 
+| Class implements IPersistStorage | Class implements IPersistStorage | None | Class implements IPersistStorage | None | {0DE86A52-2BAA-11CF-A229-00AA003D7352} | 
+| Class implements IPersistStreamInit | Class implements IPersistStreamInit | None | Class implements IPersistStreamInit | None | {0DE86A53-2BAA-11CF-A229-00AA003D7352} | 
+| Class implements IPersistStream | Class implements IPersistStream | None | Class implements IPersistStream | None | {0DE86A54-2BAA-11CF-A229-00AA003D7352} | 
+| Class implements IPersistMemory | Class implements IPersistMemory | None | Class implements IPersistMemory | None | {0DE86A55-2BAA-11CF-A229-00AA003D7352} | 
+| Class implements IPersistFile | Class implements IPersistFile | None | Class implements IPersistFile | None | {0DE86A56-2BAA-11CF-A229-00AA003D7352} | 
+| Class implements IPersistPropertyBag | Class implements IPersistPropertyBag | None | Class implements IPersistPropertyBag | None | {0DE86A57-2BAA-11CF-A229-00AA003D7352} | 
+| Embeddable Objects | Embeddable Objects | None | Embeddable Objects | None | {40FC6ED3-2438-11CF-A3DB-080036F12502} | 
+| Controls | Controls | None | Controls | None | {40FC6ED4-2438-11CF-A3DB-080036F12502} | 
+| Automation Objects | Automation Objects | None | Automation Objects | None | {40FC6ED5-2438-11CF-A3DB-080036F12502} | 
+| Document Objects | Document Objects | None | Document Objects | None | {40FC6ED8-2438-11CF-A3DB-080036F12502} | 
+| _Printable Objects | _Printable Objects | None | _Printable Objects | None | {40FC6ED9-2438-11CF-A3DB-080036F12502} | 
+| .NET Category | .NET Category | None | .NET Category | None | {62C8FE65-4EBB-45E7-B440-6E39B2CDBF29} | 
+| Controls that are safely scriptable | Controls that are safely scriptable | None | Controls that are safely scriptable | None | {7DD95801-9882-11CF-9FA9-00AA006C42C4} | 
+| Controls safely initializable from persistent data | Controls safely initializable from persistent data | None | Controls safely initializable from persistent data | None | {7DD95802-9882-11CF-9FA9-00AA006C42C4} | 
+| Active Scripting Engine | Active Scripting Engine | None | Active Scripting Engine | None | {F0B7A1A1-9847-11CF-8F20-00805F2CD064} | 
+| Active Scripting Engine with Parsing | Active Scripting Engine with Parsing | None | Active Scripting Engine with Parsing | None | {F0B7A1A2-9847-11CF-8F20-00805F2CD064} | 
+| Active Scripting Engine with Encoding | Active Scripting Engine with Encoding | None | Active Scripting Engine with Encoding | None | {F0B7A1A3-9847-11CF-8F20-00805F2CD064} |
+```
+#### Win32_COMSetting
+めっちゃおおいので割愛
+```sh
+WQL> SELECT * FROM Win32_COMSetting WHERE caption = "Microsoft Windows Defender"
+| SettingID | Caption | Description | AppID | AuthenticationLevel | RemoteServerName | RunAsUser | EnableAtStorageActivation | UseSurrogate | CustomSurrogate | LocalService | ServiceParameters | 
+| None | Microsoft Windows Defender | Microsoft Windows Defender | {A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F} | None | None | None | False | True | None | None | None | 
+| None | Microsoft Windows Defender | Microsoft Windows Defender | {A2D75874-6750-4931-94C1-C99D3BC9D0C7} | None | {A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F} | Both | None | False | False | None | False | None | None | C:\Program Files\Windows Defender\MsMpCom.dll | None | None | None | None | None | None | None | None | None | None | None |
+```
+#### Win32_DCOMApplication
+```sh
+QL> SELECT * FROM Win32_DCOMApplication
+| Caption | Description | InstallDate | Name | Status | AppID | 
+| None | None | None | None | None | {00021401-0000-0000-C000-000000000046} | 
+| None | None | None | None | None | {000C101C-0000-0000-C000-000000000046} | 
+| User Notification | User Notification | None | User Notification | None | {0010890e-8789-413c-adbc-48f5b511b3af} | 
+| DFSRHelper.ServerHealthReport Class | DFSRHelper.ServerHealthReport Class | None | DFSRHelper.ServerHealthReport Class | None | {01D0824E-81A6-447B-9223-167C2A78AFC8} | 
+| PLA | PLA | None | PLA | None | {03837503-098b-11d8-9414-505054503030} | 
+| COpenControlPanel | COpenControlPanel | None | COpenControlPanel | None | {06622D85-6856-4460-8DE1-A81921B41C4B} | 
+| sppui | sppui | None | sppui | None | {0868DC9B-D9A2-4f64-9362-133CEA201299} | 
+| PersistentZoneIdentifier | PersistentZoneIdentifier | None | PersistentZoneIdentifier | None | {0968e258-16c7-4dba-aa86-462dd61e31a3} | 
+| None | None | None | None | None | {0A886F29-465A-4aea-8B8E-BE926BFAE83E} | 
+| None | None | None | None | None | {0CA545C6-37AD-4A6C-BF92-9F7610067EF5} | 
+| VCBSnapshotProvider | VCBSnapshotProvider | None | VCBSnapshotProvider | None | {13390438-AA43-44B5-AEF0-DA857DD05B00} | 
+| Shell Create Object Task Server | Shell Create Object Task Server | None | Shell Create Object Task Server | None | {133eac4f-5891-4d04-bada-d84870380a80} | 
+| Shell Create Object Handler | Shell Create Object Handler | None | Shell Create Object Handler | None | {135fd325-45b7-4c30-89f8-4386961669f0} | 
+| None | None | None | None | None | {19BCA967-D266-436f-B2D4-CBE4D4B42F96} | 
+| None | None | None | None | None | {1BE1F766-5536-11D1-B726-00C04FB926AF} | 
+| %systemroot%\system32\lpksetup.exe | %systemroot%\system32\lpksetup.exe | None | %systemroot%\system32\lpksetup.exe | None | {1C749B87-568C-4865-8E73-6413F8372CE6} | 
+| ThirdPartyEapDispatcherPeerConfig | ThirdPartyEapDispatcherPeerConfig | None | ThirdPartyEapDispatcherPeerConfig | None | {1F7D1BE9-7A50-40B6-A605-C4F3696F49C0} | 
+| Microsoft WMI Provider Subsystem Secured Host | Microsoft WMI Provider Subsystem Secured Host | None | Microsoft WMI Provider Subsystem Secured Host | None | {1F87137D-0E7C-44d5-8C73-4EFFB68962F2} | 
+| ThirdPartyEapDispatcherAuthenticatorConfig | ThirdPartyEapDispatcherAuthenticatorConfig | None | ThirdPartyEapDispatcherAuthenticatorConfig | None | {1FF84C3B-1140-4EB6-BE38-4BE618D2E7D6} | 
+| Microsoft Software Protection Platform Admin Object (Inner) | Microsoft Software Protection Platform Admin Object (Inner) | None | Microsoft Software Protection Platform Admin Object (Inner) | None | {205609B7-5E08-443E-B0A7-A7AED3F3A717} | 
+| Microsoft Windows WSMan Provider Host With User Settings | Microsoft Windows WSMan Provider Host With User Settings | None | Microsoft Windows WSMan Provider Host With User Settings | None | {209444d2-2540-495e-962c-a61ad3243526} | 
+| MSDAINITIALIZE | MSDAINITIALIZE | None | MSDAINITIALIZE | None | {2206CDB0-19C1-11D1-89E0-00C04FD7A829} | 
+| components | components | None | components | None | {259FD5A7-B58E-4160-A698-0348A02CA8E3} | 
+| Microsoft WBEM Active Scripting Event Consumer Provider | Microsoft WBEM Active Scripting Event Consumer Provider | None | Microsoft WBEM Active Scripting Event Consumer Provider | None | {266C72E7-62E8-11D1-AD89-00C04FD8FDFF} | 
+| WInRTDesktopBroker | WInRTDesktopBroker | None | WInRTDesktopBroker | None | {27550CA0-E9DE-4186-A566-37A59BB6CA69} | 
+| None | None | None | None | None | {2781761E-28E2-4109-99FE-B9D127C57AFE} | 
+| faultrep.dll | faultrep.dll | None | faultrep.dll | None | {2C256447-3F0D-4CBB-9D12-575BB20CDA0A} | 
+| None | None | None | None | None | {2C5BC43E-3369-4C33-AB0C-BE9469677AF4} | 
+| None | None | None | None | None | {304CE942-6E39-40D8-943A-B913C40C9CD4} | 
+| DFSRHelper.ADProxy Class | DFSRHelper.ADProxy Class | None | DFSRHelper.ADProxy Class | None | {33024A8D-6A46-4acd-95B3-9D9EBBEAD458} | 
+| DFSRHelper.ServerHealthReport Class | DFSRHelper.ServerHealthReport Class | None | DFSRHelper.ServerHealthReport Class | None | {36C95A5F-0A17-47c7-9983-F6BFD009A867} | 
+| None | None | None | None | None | {3ad05575-8857-4850-9277-11b85bdb8e09} | 
+| Microsoft Windows Remote Shell Host | Microsoft Windows Remote Shell Host | None | Microsoft Windows Remote Shell Host | None | {3e5ca495-8d6a-4d1f-ad99-177b426c8b8e} | 
+| WinInetCacheServer | WinInetCacheServer | None | WinInetCacheServer | None | {3eb3c877-1f16-487c-9050-104dbcd66683} | 
+| None | None | None | None | None | {3eef301f-b596-4c0b-bd92-013beafce793} | 
+| Microsoft Windows WSMan Provider Host | Microsoft Windows WSMan Provider Host | None | Microsoft Windows WSMan Provider Host | None | {3feb2f63-0eec-4b96-84ab-da1307e0117c} | 
+| None | None | None | None | None | {42CBFAA7-A4A7-47BB-B422-BD10E9D02700} | 
+| SPP External COM Object | SPP External COM Object | None | SPP External COM Object | None | {44831FEC-DC51-4716-A7E1-E898FDF83C85} | 
+| None | None | None | None | None | {448aee3b-dc65-4af6-bf5f-dce86d62b6c7} | 
+| DFSRHelper.HealthReport Class | DFSRHelper.HealthReport Class | None | DFSRHelper.HealthReport Class | None | {4579476D-036C-430C-801F-60CBC4A6C059} | 
+| Microsoft WBEM Unsecured Apartment | Microsoft WBEM Unsecured Apartment | None | Microsoft WBEM Unsecured Apartment | None | {49BD2028-1523-11D1-AD79-00C04FD8FDFF} | 
+| UIAutomationCrossBitnessHook64 Class | UIAutomationCrossBitnessHook64 Class | None | UIAutomationCrossBitnessHook64 Class | None | {49f171dd-b51a-40d3-9a6c-52d674cc729d} | 
+| Shell Security Editor | Shell Security Editor | None | Shell Security Editor | None | {4D111E08-CBF7-4f12-A926-2C7920AF52FC} | 
+| Microsoft Volume Shadow Copy Service software provider | Microsoft Volume Shadow Copy Service software provider | None | Microsoft Volume Shadow Copy Service software provider | None | {4db9c793-c48d-449c-9754-46027ee45c94} | 
+| COM+ Event System | COM+ Event System | None | COM+ Event System | None | {4E14FBA2-2E22-11D1-9964-00C04FBBB345} | 
+| Shell Computer Accounts | Shell Computer Accounts | None | Shell Computer Accounts | None | {4f6bcd94-c2a5-42ce-8dbc-31e794be4630} | 
+| %systemroot%\system32\intl.cpl | %systemroot%\system32\intl.cpl | None | %systemroot%\system32\intl.cpl | None | {514B5E31-5596-422F-BE58-D804464683B5} | 
+| None | None | None | None | None | {515980c3-57fe-4c1e-a561-730dd256ab98} | 
+| None | None | None | None | None | {51a1467f-96a2-4b1c-9632-4b4d950fe216} | 
+| RemoteProxyFactory32 Class | RemoteProxyFactory32 Class | None | RemoteProxyFactory32 Class | None | {53362C32-A296-4F2D-A2F8-FD984D08340B} | 
+| RemoteProxyFactory32 Class | RemoteProxyFactory32 Class | None | RemoteProxyFactory32 Class | None | {53362C64-A296-4F2D-A2F8-FD984D08340B} | 
+| Virtual Disk Service Loader | Virtual Disk Service Loader | None | Virtual Disk Service Loader | None | {5364ED0E-493F-4B16-9DBF-AE486CF22660} | 
+| Volume Shadow Copy Service | Volume Shadow Copy Service | None | Volume Shadow Copy Service | None | {56BE716B-2F76-4dfa-8702-67AE10044F0B} | 
+| propshts | propshts | None | propshts | None | {59B8AFA0-229E-46d9-B980-DDA2C817EC7E} | 
+| Authentication UI Terminal Services Bump Dialog | Authentication UI Terminal Services Bump Dialog | None | Authentication UI Terminal Services Bump Dialog | None | {59c7f6ec-7d18-412f-a68e-877982768e61} | 
+| DFSRHelper.PropagationReport Class | DFSRHelper.PropagationReport Class | None | DFSRHelper.PropagationReport Class | None | {5DC19DE6-D228-4338-AAC4-2D1A1262CA7B} | 
+| User OOBE Create User Object Server | User OOBE Create User Object Server | None | User OOBE Create User Object Server | None | {5f7f3f7b-1177-4d4b-b1db-bc6f671b8f25} | 
+| None | None | None | None | None | {60173D16-A550-47f0-A14B-C6F9E4DA0831} | 
+| UIAutomationCrossBitnessHook32 Class | UIAutomationCrossBitnessHook32 Class | None | UIAutomationCrossBitnessHook32 Class | None | {60a90a2f-858d-42af-8929-82be9d99e8a1} | 
+| None | None | None | None | None | {63A53A38-004F-489B-BD61-96B5EEFADC04} | 
+| Windows Update Agent | Windows Update Agent | None | Windows Update Agent | None | {653C5148-4DCE-4905-9CFD-1B23662D3D9E} | 
+| None | None | None | None | None | {66eea0f5-001a-4073-a496-783f86fcf4c0} | 
+| Background Intelligent Transfer Service | Background Intelligent Transfer Service | None | Background Intelligent Transfer Service | None | {69AD4AEE-51BE-439b-A92C-86AE490E8B30} | 
+| SPPComApi | SPPComApi | None | SPPComApi | None | {6D9A7A40-DDCA-414E-B48E-DFB032C03C1B} | 
+| TieringEngineService | TieringEngineService | None | TieringEngineService | None | {6DF5BCF4-22E9-446D-8763-A2C7677ECF7D} | 
+| RSoPProv | RSoPProv | None | RSoPProv | None | {6EBBFC6C-B721-4D10-9371-5D8E8C76D315} | 
+| EditionUpgradeHelper | EditionUpgradeHelper | None | EditionUpgradeHelper | None | {6F65B602-F798-4094-8A41-A2A61961E5E8} | 
+| Windows Insider Service | Windows Insider Service | None | Windows Insider Service | None | {7006698d-2974-4091-a424-85dd0b909e23} | 
+| None | None | None | None | None | {722b3793-5367-4446-b6bb-db89b05c1f24} | 
+| Sharing Elevated Virtual Factory | Sharing Elevated Virtual Factory | None | Sharing Elevated Virtual Factory | None | {72A7994A-3092-4054-B6BE-08FF81AEEFFC} | 
+| User Profile Service DCOM server | User Profile Service DCOM server | None | User Profile Service DCOM server | None | {72E3272B-4EEA-4104-B358-1A282E4FC1AD} | 
+| Microsoft WMI Provider Subsystem Host | Microsoft WMI Provider Subsystem Host | None | Microsoft WMI Provider Subsystem Host | None | {73E709EA-5D93-4B2E-BBB0-99B7938DA9E4} | 
+| Trusted Installer Service | Trusted Installer Service | None | Trusted Installer Service | None | {752073A2-23F2-4396-85F0-8FDB879ED0ED} | 
+| PrintFilterPipelineSvc | PrintFilterPipelineSvc | None | PrintFilterPipelineSvc | None | {76db1bf3-e820-4765-a1b2-0b16a86b1950} | 
+| Shell FMIFS Wrapper | Shell FMIFS Wrapper | None | Shell FMIFS Wrapper | None | {7aa7790d-75d7-484b-98a1-3913d022091d} | 
+| EapThirdPartyDllHost | EapThirdPartyDllHost | None | EapThirdPartyDllHost | None | {7B130458-E09C-4823-A8AF-2583DCD9AEC7} | 
+| Shell Create Object Local Server | Shell Create Object Local Server | None | Shell Create Object Local Server | None | {7B6EA1D5-03C2-4AE4-B21C-8D0515CC91B7} | 
+| Microsoft Windows Remote Shell Host With User Settings | Microsoft Windows Remote Shell Host With User Settings | None | Microsoft Windows Remote Shell Host With User Settings | None | {7d378de6-ed8d-426d-91df-0273d07cd7f6} | 
+| GPMC Reporting | GPMC Reporting | None | GPMC Reporting | None | {7f9bbc82-ba5f-4448-8622-ef76b8d007e6} | 
+| Authentication UI CredUI Out of Proc Helper for AppContainer Clients | Authentication UI CredUI Out of Proc Helper for AppContainer Clients | None | Authentication UI CredUI Out of Proc Helper for AppContainer Clients | None | {7FC12E96-4CB7-4ABD-ADAA-EF7845B10629} | 
+| CFmIfsEngine host | CFmIfsEngine host | None | CFmIfsEngine host | None | {82D94FB3-7FE6-4797-BB72-9A886C66073B} | 
+| CustReg Class | CustReg Class | None | CustReg Class | None | {84D586C4-A423-11D2-B943-00C04F79D22F} | 
+| ThirdPartyEapDispatcherPeerRuntime | ThirdPartyEapDispatcherPeerRuntime | None | ThirdPartyEapDispatcherPeerRuntime | None | {87BB326B-E4A0-4DE1-94F0-B9F41D0C6059} | 
+| DFSRHelper.PropagationReport Class | DFSRHelper.PropagationReport Class | None | DFSRHelper.PropagationReport Class | None | {88B931BB-4810-457D-86B6-1F5911E9E084} | 
+| Desktop Wallpaper Factory | Desktop Wallpaper Factory | None | Desktop Wallpaper Factory | None | {8B30085D-A3E3-44e3-AE7F-B03A1340EBED} | 
+| None | None | None | None | None | {8B4B437E-4CAB-4e83-89F6-7F9F7DF414EA} | 
+| Windows Management and Instrumentation | Windows Management and Instrumentation | None | Windows Management and Instrumentation | None | {8BC3F05E-D86B-11D0-A075-00C04FB68820} | 
+| TSTheme | TSTheme | None | TSTheme | None | {8be0366c-8522-40be-8b08-cb26557f2854} | 
+| None | None | None | None | None | {8C482DCE-2644-4419-AEFF-189219F916B9} | 
+| TiWorker | TiWorker | None | TiWorker | None | {8D15A4F3-1BE5-4120-8A4D-2EF92A5DD58D} | 
+| RdpSa | RdpSa | None | RdpSa | None | {8e7fae4d-cff0-41d3-a326-5a80470264bb} | 
+| Shell Computer Groups | Shell Computer Groups | None | Shell Computer Groups | None | {8f3080a6-af99-4f2e-a806-f3d5702a0444} | 
+| Authentication UI CredUI Out of Proc Helper for Non-AppContainer Clients | Authentication UI CredUI Out of Proc Helper for Non-AppContainer Clients | None | Authentication UI CredUI Out of Proc Helper for Non-AppContainer Clients | None | {924DC564-16A6-42EB-929A-9A61FA7DA06F} | 
+| HtmlLocalFileResolver | HtmlLocalFileResolver | None | HtmlLocalFileResolver | None | {93AAD2A0-036A-4B11-A078-DA8776B38139} | 
+| PenIMC4v2 | PenIMC4v2 | None | PenIMC4v2 | None | {953E4863-7AD1-4DAE-B2BD-108F1D57967B} | 
+| DFSRHelper.HealthReport Class | DFSRHelper.HealthReport Class | None | DFSRHelper.HealthReport Class | None | {970B4475-63F0-4aa4-959C-AB8FFF3BD27C} | 
+| PrintIsolationHost | PrintIsolationHost | None | PrintIsolationHost | None | {98a89e0c-1fde-4c2a-a373-b04831e6aa60} | 
+| Shell Hardware Mixed Content Handler | Shell Hardware Mixed Content Handler | None | Shell Hardware Mixed Content Handler | None | {995C996E-D918-4a8c-A302-45719A6F4EA7} | 
+| None | None | None | None | None | {9aa46009-3ce0-458a-a354-715610a075e6} | 
+| timedate.cpl | timedate.cpl | None | timedate.cpl | None | {9df523b0-a6c0-4ea9-b5f1-f4565c3ac8b8} | 
+| registryBrowser | registryBrowser | None | registryBrowser | None | {A3D9ED06-DDCB-4392-ADBF-205DB8B281C9} | 
+| Shell ChkdskEx Dialog | Shell ChkdskEx Dialog | None | Shell ChkdskEx Dialog | None | {a4c31131-ff70-4984-afd6-0609ced53ad6} | 
+| Virtual Factory for MaintenanceUI | Virtual Factory for MaintenanceUI | None | Virtual Factory for MaintenanceUI | None | {A6BFEA43-501F-456F-A845-983D3AD7B8F0} | 
+| Microsoft Windows Defender | Microsoft Windows Defender | None | Microsoft Windows Defender | None | {A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F} | 
+| None | None | None | None | None | {AA0B85DA-FDDF-4272-8D1D-FF9B966D75B0} | 
+| DEFRAGSVC service | DEFRAGSVC service | None | DEFRAGSVC service | None | {ab7c873b-eb14-49a6-be60-a602f80e6d22} | 
+| Out of proc server to enable Insider Hub scenarios to be reached from inside of its appcontainer | Out of proc server to enable Insider Hub scenarios to be reached from inside of its appcontainer | None | Out of proc server to enable Insider Hub scenarios to be reached from inside of its appcontainer | None | {ac0fd47a-37f4-4502-bfee-6b317e479d41} | 
+| None | None | None | None | None | {b0316d0c-da2f-40e0-9f91-f600caf042dc} | 
+| ThirdPartyEapDispatcherAuthenticatorRuntime | ThirdPartyEapDispatcherAuthenticatorRuntime | None | ThirdPartyEapDispatcherAuthenticatorRuntime | None | {B0E28D63-52F6-4E30-992B-78ECF97268E9} | 
+| DFSRHelper.ADProxy Class | DFSRHelper.ADProxy Class | None | DFSRHelper.ADProxy Class | None | {B167BEB5-324D-4C2C-93D8-89F82AB8D75E} | 
+| Windows Update Agent - Remote Access | Windows Update Agent - Remote Access | None | Windows Update Agent - Remote Access | None | {B366DEBE-645B-43A5-B865-DDD82C345492} | 
+| Found New Hardware Wizard | Found New Hardware Wizard | None | Found New Hardware Wizard | None | {B6A32FE6-E29D-AEAE-A608-D273E40CA34C} | 
+| Event Object Change 2 | Event Object Change 2 | None | Event Object Change 2 | None | {BB07BACD-CD56-4E63-A8FF-CBF0355FB9F4} | 
+| EditionUpgradeManagerObj | EditionUpgradeManagerObj | None | EditionUpgradeManagerObj | None | {BD54C901-076B-434E-B6C7-17C531F4AB41} | 
+| VM IC Heartbeat Service | VM IC Heartbeat Service | None | VM IC Heartbeat Service | None | {be0fc7f0-f248-4091-a123-34ca29a6901b} | 
+| Shell AutoPlay Direct | Shell AutoPlay Direct | None | Shell AutoPlay Direct | None | {BF8841C9-378A-4CAD-B4FC-5091366CBC0D} | 
+| None | None | None | None | None | {c8b67f54-d1cb-44bf-9103-a1ab9a9ed8ad} | 
+| netprofm | netprofm | None | netprofm | None | {C96887DA-A652-4426-905E-4A37546F847C} | 
+| editionupgradebroker | editionupgradebroker | None | editionupgradebroker | None | {C97E2AEF-AB0E-4FA6-BA29-1A1A7CCBA125} | 
+| RCM | RCM | None | RCM | None | {C9F65BA8-1F8F-4382-AE27-C91FFB29275F} | 
+| User OOBE Create Elevated Object Server | User OOBE Create Elevated Object Server | None | User OOBE Create Elevated Object Server | None | {ca8c87c1-929d-45ba-94db-ef8e6cb346ad} | 
+| OpenSearch Description Create Search Connector Verb Handler | OpenSearch Description Create Search Connector Verb Handler | None | OpenSearch Description Create Search Connector Verb Handler | None | {CB1DFE3A-EDFF-4d1f-867D-8ADB02926F4B} | 
+| PrintIsolationSessionHost | PrintIsolationSessionHost | None | PrintIsolationSessionHost | None | {CB363445-F453-4C1E-8EE4-BD123C5E394F} | 
+| sppui | sppui | None | sppui | None | {CCFDD24D-CEAB-458B-A4F1-F884973395DF} | 
+| PNPXAssoc.dll | PNPXAssoc.dll | None | PNPXAssoc.dll | None | {cee8ccc9-4f6b-4469-a235-5a22869eef03} | 
+| Event Object Change | Event Object Change | None | Event Object Change | None | {D0565000-9DF4-11D1-A281-00C04FCA0AA7} | 
+| Winmgmt MOF Compiler OOP | Winmgmt MOF Compiler OOP | None | Winmgmt MOF Compiler OOP | None | {D215781D-019E-4FA0-903D-0CDCDE13A4F5} | 
+| None | None | None | None | None | {D3DCB472-7261-43ce-924B-0704BD730D5F} | 
+| Microsoft Software Protection Platform Admin Object (outer) | Microsoft Software Protection Platform Admin Object (outer) | None | Microsoft Software Protection Platform Admin Object (outer) | None | {D8D4249F-A8FB-44A7-8AA0-564E8C385BD6} | 
+| None | None | None | None | None | {DCED8DB0-11A5-4b16-AB9D-4E28CA38C99F} | 
+| BrowserBrokerServer | BrowserBrokerServer | None | BrowserBrokerServer | None | {DD9C53BC-8441-4B94-BD0E-36E6E02A6D61} | 
+| rundll32.exe | rundll32.exe | None | rundll32.exe | None | {de5d803e-5d2a-4b5f-9c63-af25a465cc44} | 
+| LockScreen Call Broker | LockScreen Call Broker | None | LockScreen Call Broker | None | {DE7D3D65-5454-4EF5-9518-776739DAB39F} | 
+| Profile Notification Host | Profile Notification Host | None | Profile Notification Host | None | {E10F6C3A-F1AE-4adc-AA9D-2FE65525666E} | 
+| Immersive Print Dialog Surrogate | Immersive Print Dialog Surrogate | None | Immersive Print Dialog Surrogate | None | {E15FBAC2-C276-4523-92CA-561456EBCF3E} | 
+| None | None | None | None | None | {E2B3C97F-6AE1-41AC-817A-F6F92166D7DD} | 
+| Windows Update Agent User Interface for Published Applications | Windows Update Agent User Interface for Published Applications | None | Windows Update Agent User Interface for Published Applications | None | {e30984f1-b02b-4c27-a40f-23d11b8c1212} | 
+| Execute Unknown | Execute Unknown | None | Execute Unknown | None | {e44e9428-bdbc-4987-a099-40dc8fd255e7} | 
+| Authentication UI CredUI Out of Proc Helper for Non-AppContainer Clients (Failed Mouse In Pointer) | Authentication UI CredUI Out of Proc Helper for Non-AppContainer Clients (Failed Mouse In Pointer) | None | Authentication UI CredUI Out of Proc Helper for Non-AppContainer Clients (Failed Mouse In Pointer) | None | {E45A56CE-399C-45F0-9E6F-BFAACD3C711F} | 
+| Orchestrator Service | Orchestrator Service | None | Orchestrator Service | None | {E7299E79-75E5-47BB-A03D-6D319FB7F886} | 
+| File Prop Sheet Page Helper | File Prop Sheet Page Helper | None | File Prop Sheet Page Helper | None | {E96767E0-7EAA-45E1-8E7D-64414AFF281A} | 
+| browser | browser | None | browser | None | {E9F570A3-EA8F-4CE9-9D59-C6AC35B9F403} | 
+| Immersive Print Dialog Surrogate | Immersive Print Dialog Surrogate | None | Immersive Print Dialog Surrogate | None | {EB28E902-728E-42C4-97DC-DA89E144C744} | 
+| None | None | None | None | None | {EC9846B3-2762-4A6B-A214-6ACB603462D2} | 
+| ComEvents.ComServiceEvents | ComEvents.ComServiceEvents | None | ComEvents.ComServiceEvents | None | {ECABB0C3-7F19-11D2-978E-0000F8757E2A} | 
+| ComEvents.ComSystemAppEventData | ComEvents.ComSystemAppEventData | None | ComEvents.ComSystemAppEventData | None | {ECABB0C6-7F19-11D2-978E-0000F8757E2A} | 
+| Share Manager | Share Manager | None | Share Manager | None | {edb5f444-cb8d-445a-a523-ec5ab6ea33c7} | 
+| polmkr | polmkr | None | polmkr | None | {EE81B265-32DD-41A0-878F-05B9A7C94D68} | 
+| Virtual Disk Service | Virtual Disk Service | None | Virtual Disk Service | None | {F290BFB2-1864-45B1-8804-2654194A87E7} | 
+| NDFAPI | NDFAPI | None | NDFAPI | None | {F3D3AA8D-EF96-4470-848E-BD70B803047A} | 
+| None | None | None | None | None | {f735e733-d681-4aef-83c1-7ec82cac5ecc} | 
+| WinInetBrokerServer | WinInetBrokerServer | None | WinInetBrokerServer | None | {F9717507-6651-4EDB-BFF7-AE615179BCCF} | 
+| VssEvent | VssEvent | None | VssEvent | None | {FAF53CC4-BD73-4E36-83F1-2B23F46E513E} | 
+| Shell Hardware Mixed Content Handler Cancelled | Shell Hardware Mixed Content Handler Cancelled | None | Shell Hardware Mixed Content Handler Cancelled | None | {fb479c02-9ec4-4fed-8599-debe037452cb} | 
+| None | None | None | None | None | {ff9e6131-a8c1-4188-aa03-82e9f10a05a8} | 
+| Shell Execute Hardware Event Handler | Shell Execute Hardware Event Handler | None | Shell Execute Hardware Event Handler | None | {FFB8655F-81B9-4fce-B89C-9A6BA76D13E7} | 
+```
+#### Win32_DCOMApplicationAccessAllowedSetting
+```sh
+WQL> SELECT * FROM Win32_DCOMApplicationAccessAllowedSetting
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{00021401-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{00021401-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{00021401-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{03837503-098b-11d8-9414-505054503030}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{03837503-098b-11d8-9414-505054503030}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{03837503-098b-11d8-9414-505054503030}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-559" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0868DC9B-D9A2-4f64-9362-133CEA201299}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0868DC9B-D9A2-4f64-9362-133CEA201299}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0A886F29-465A-4aea-8B8E-BE926BFAE83E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0A886F29-465A-4aea-8B8E-BE926BFAE83E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0A886F29-465A-4aea-8B8E-BE926BFAE83E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0CA545C6-37AD-4A6C-BF92-9F7610067EF5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0CA545C6-37AD-4A6C-BF92-9F7610067EF5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0CA545C6-37AD-4A6C-BF92-9F7610067EF5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{133eac4f-5891-4d04-bada-d84870380a80}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{133eac4f-5891-4d04-bada-d84870380a80}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{133eac4f-5891-4d04-bada-d84870380a80}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{135fd325-45b7-4c30-89f8-4386961669f0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{135fd325-45b7-4c30-89f8-4386961669f0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{135fd325-45b7-4c30-89f8-4386961669f0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-547" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-545" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-556" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1C749B87-568C-4865-8E73-6413F8372CE6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1C749B87-568C-4865-8E73-6413F8372CE6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1C749B87-568C-4865-8E73-6413F8372CE6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1F7D1BE9-7A50-40B6-A605-C4F3696F49C0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1F7D1BE9-7A50-40B6-A605-C4F3696F49C0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1FF84C3B-1140-4EB6-BE38-4BE618D2E7D6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1FF84C3B-1140-4EB6-BE38-4BE618D2E7D6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{205609B7-5E08-443E-B0A7-A7AED3F3A717}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-80-123231216-2592883651-3715271367-3753151631-4175906628" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{205609B7-5E08-443E-B0A7-A7AED3F3A717}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{27550CA0-E9DE-4186-A566-37A59BB6CA69}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{27550CA0-E9DE-4186-A566-37A59BB6CA69}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{27550CA0-E9DE-4186-A566-37A59BB6CA69}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{27550CA0-E9DE-4186-A566-37A59BB6CA69}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{27550CA0-E9DE-4186-A566-37A59BB6CA69}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C256447-3F0D-4CBB-9D12-575BB20CDA0A}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C256447-3F0D-4CBB-9D12-575BB20CDA0A}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C256447-3F0D-4CBB-9D12-575BB20CDA0A}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C5BC43E-3369-4C33-AB0C-BE9469677AF4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C5BC43E-3369-4C33-AB0C-BE9469677AF4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C5BC43E-3369-4C33-AB0C-BE9469677AF4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{304CE942-6E39-40D8-943A-B913C40C9CD4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{304CE942-6E39-40D8-943A-B913C40C9CD4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{304CE942-6E39-40D8-943A-B913C40C9CD4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{33024A8D-6A46-4acd-95B3-9D9EBBEAD458}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3ad05575-8857-4850-9277-11b85bdb8e09}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3ad05575-8857-4850-9277-11b85bdb8e09}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3ad05575-8857-4850-9277-11b85bdb8e09}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{42CBFAA7-A4A7-47BB-B422-BD10E9D02700}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-11" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{42CBFAA7-A4A7-47BB-B422-BD10E9D02700}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{42CBFAA7-A4A7-47BB-B422-BD10E9D02700}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{42CBFAA7-A4A7-47BB-B422-BD10E9D02700}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{42CBFAA7-A4A7-47BB-B422-BD10E9D02700}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{4D111E08-CBF7-4f12-A926-2C7920AF52FC}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{4D111E08-CBF7-4f12-A926-2C7920AF52FC}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{4D111E08-CBF7-4f12-A926-2C7920AF52FC}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{514B5E31-5596-422F-BE58-D804464683B5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{514B5E31-5596-422F-BE58-D804464683B5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{514B5E31-5596-422F-BE58-D804464683B5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{51a1467f-96a2-4b1c-9632-4b4d950fe216}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{51a1467f-96a2-4b1c-9632-4b4d950fe216}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{51a1467f-96a2-4b1c-9632-4b4d950fe216}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{59c7f6ec-7d18-412f-a68e-877982768e61}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{59c7f6ec-7d18-412f-a68e-877982768e61}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{59c7f6ec-7d18-412f-a68e-877982768e61}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{60173D16-A550-47f0-A14B-C6F9E4DA0831}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{60173D16-A550-47f0-A14B-C6F9E4DA0831}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{60173D16-A550-47f0-A14B-C6F9E4DA0831}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{653C5148-4DCE-4905-9CFD-1B23662D3D9E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{653C5148-4DCE-4905-9CFD-1B23662D3D9E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{653C5148-4DCE-4905-9CFD-1B23662D3D9E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-545" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{6D9A7A40-DDCA-414E-B48E-DFB032C03C1B}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{6D9A7A40-DDCA-414E-B48E-DFB032C03C1B}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{6D9A7A40-DDCA-414E-B48E-DFB032C03C1B}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{6F65B602-F798-4094-8A41-A2A61961E5E8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{6F65B602-F798-4094-8A41-A2A61961E5E8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{6F65B602-F798-4094-8A41-A2A61961E5E8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{72A7994A-3092-4054-B6BE-08FF81AEEFFC}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{72A7994A-3092-4054-B6BE-08FF81AEEFFC}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{72A7994A-3092-4054-B6BE-08FF81AEEFFC}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{752073A2-23F2-4396-85F0-8FDB879ED0ED}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{752073A2-23F2-4396-85F0-8FDB879ED0ED}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{752073A2-23F2-4396-85F0-8FDB879ED0ED}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{752073A2-23F2-4396-85F0-8FDB879ED0ED}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{752073A2-23F2-4396-85F0-8FDB879ED0ED}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-6" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{76db1bf3-e820-4765-a1b2-0b16a86b1950}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{76db1bf3-e820-4765-a1b2-0b16a86b1950}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-11" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{76db1bf3-e820-4765-a1b2-0b16a86b1950}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-546" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{76db1bf3-e820-4765-a1b2-0b16a86b1950}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7aa7790d-75d7-484b-98a1-3913d022091d}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7aa7790d-75d7-484b-98a1-3913d022091d}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7aa7790d-75d7-484b-98a1-3913d022091d}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7aa7790d-75d7-484b-98a1-3913d022091d}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7f9bbc82-ba5f-4448-8622-ef76b8d007e6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7f9bbc82-ba5f-4448-8622-ef76b8d007e6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{82D94FB3-7FE6-4797-BB72-9A886C66073B}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{82D94FB3-7FE6-4797-BB72-9A886C66073B}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{82D94FB3-7FE6-4797-BB72-9A886C66073B}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{82D94FB3-7FE6-4797-BB72-9A886C66073B}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{82D94FB3-7FE6-4797-BB72-9A886C66073B}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{84D586C4-A423-11D2-B943-00C04F79D22F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{87BB326B-E4A0-4DE1-94F0-B9F41D0C6059}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{87BB326B-E4A0-4DE1-94F0-B9F41D0C6059}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8B4B437E-4CAB-4e83-89F6-7F9F7DF414EA}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8B4B437E-4CAB-4e83-89F6-7F9F7DF414EA}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8be0366c-8522-40be-8b08-cb26557f2854}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8be0366c-8522-40be-8b08-cb26557f2854}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8be0366c-8522-40be-8b08-cb26557f2854}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8C482DCE-2644-4419-AEFF-189219F916B9}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8C482DCE-2644-4419-AEFF-189219F916B9}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8D15A4F3-1BE5-4120-8A4D-2EF92A5DD58D}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8D15A4F3-1BE5-4120-8A4D-2EF92A5DD58D}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8D15A4F3-1BE5-4120-8A4D-2EF92A5DD58D}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8D15A4F3-1BE5-4120-8A4D-2EF92A5DD58D}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-545" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8e7fae4d-cff0-41d3-a326-5a80470264bb}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8e7fae4d-cff0-41d3-a326-5a80470264bb}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8e7fae4d-cff0-41d3-a326-5a80470264bb}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{924DC564-16A6-42EB-929A-9A61FA7DA06F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{924DC564-16A6-42EB-929A-9A61FA7DA06F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{924DC564-16A6-42EB-929A-9A61FA7DA06F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{924DC564-16A6-42EB-929A-9A61FA7DA06F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-6" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{924DC564-16A6-42EB-929A-9A61FA7DA06F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{98a89e0c-1fde-4c2a-a373-b04831e6aa60}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{98a89e0c-1fde-4c2a-a373-b04831e6aa60}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{98a89e0c-1fde-4c2a-a373-b04831e6aa60}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{9df523b0-a6c0-4ea9-b5f1-f4565c3ac8b8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{9df523b0-a6c0-4ea9-b5f1-f4565c3ac8b8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{9df523b0-a6c0-4ea9-b5f1-f4565c3ac8b8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{a4c31131-ff70-4984-afd6-0609ced53ad6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{a4c31131-ff70-4984-afd6-0609ced53ad6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{a4c31131-ff70-4984-afd6-0609ced53ad6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A6BFEA43-501F-456F-A845-983D3AD7B8F0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A6BFEA43-501F-456F-A845-983D3AD7B8F0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A6BFEA43-501F-456F-A845-983D3AD7B8F0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{AA0B85DA-FDDF-4272-8D1D-FF9B966D75B0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{AA0B85DA-FDDF-4272-8D1D-FF9B966D75B0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{AA0B85DA-FDDF-4272-8D1D-FF9B966D75B0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{AA0B85DA-FDDF-4272-8D1D-FF9B966D75B0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{b0316d0c-da2f-40e0-9f91-f600caf042dc}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{b0316d0c-da2f-40e0-9f91-f600caf042dc}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{b0316d0c-da2f-40e0-9f91-f600caf042dc}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{b0316d0c-da2f-40e0-9f91-f600caf042dc}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{b0316d0c-da2f-40e0-9f91-f600caf042dc}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{B0E28D63-52F6-4E30-992B-78ECF97268E9}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{B0E28D63-52F6-4E30-992B-78ECF97268E9}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{B167BEB5-324D-4C2C-93D8-89F82AB8D75E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{B366DEBE-645B-43A5-B865-DDD82C345492}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{BD54C901-076B-434E-B6C7-17C531F4AB41}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{BD54C901-076B-434E-B6C7-17C531F4AB41}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{BD54C901-076B-434E-B6C7-17C531F4AB41}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{C97E2AEF-AB0E-4FA6-BA29-1A1A7CCBA125}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{C97E2AEF-AB0E-4FA6-BA29-1A1A7CCBA125}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{C97E2AEF-AB0E-4FA6-BA29-1A1A7CCBA125}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{C97E2AEF-AB0E-4FA6-BA29-1A1A7CCBA125}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{C97E2AEF-AB0E-4FA6-BA29-1A1A7CCBA125}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{C97E2AEF-AB0E-4FA6-BA29-1A1A7CCBA125}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ca8c87c1-929d-45ba-94db-ef8e6cb346ad}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ca8c87c1-929d-45ba-94db-ef8e6cb346ad}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ca8c87c1-929d-45ba-94db-ef8e6cb346ad}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{CB363445-F453-4C1E-8EE4-BD123C5E394F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{CB363445-F453-4C1E-8EE4-BD123C5E394F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{CB363445-F453-4C1E-8EE4-BD123C5E394F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{CCFDD24D-CEAB-458B-A4F1-F884973395DF}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{CCFDD24D-CEAB-458B-A4F1-F884973395DF}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{cee8ccc9-4f6b-4469-a235-5a22869eef03}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{cee8ccc9-4f6b-4469-a235-5a22869eef03}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{cee8ccc9-4f6b-4469-a235-5a22869eef03}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{D215781D-019E-4FA0-903D-0CDCDE13A4F5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{D8D4249F-A8FB-44A7-8AA0-564E8C385BD6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-80-123231216-2592883651-3715271367-3753151631-4175906628" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{D8D4249F-A8FB-44A7-8AA0-564E8C385BD6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DCED8DB0-11A5-4b16-AB9D-4E28CA38C99F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DCED8DB0-11A5-4b16-AB9D-4E28CA38C99F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DCED8DB0-11A5-4b16-AB9D-4E28CA38C99F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DD9C53BC-8441-4B94-BD0E-36E6E02A6D61}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DD9C53BC-8441-4B94-BD0E-36E6E02A6D61}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DD9C53BC-8441-4B94-BD0E-36E6E02A6D61}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-3624051433-2125758914-1423191267-1740899205-1073925389-3782572162-737981194" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{de5d803e-5d2a-4b5f-9c63-af25a465cc44}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{de5d803e-5d2a-4b5f-9c63-af25a465cc44}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{de5d803e-5d2a-4b5f-9c63-af25a465cc44}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{de5d803e-5d2a-4b5f-9c63-af25a465cc44}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{de5d803e-5d2a-4b5f-9c63-af25a465cc44}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E2B3C97F-6AE1-41AC-817A-F6F92166D7DD}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E2B3C97F-6AE1-41AC-817A-F6F92166D7DD}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E2B3C97F-6AE1-41AC-817A-F6F92166D7DD}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{e30984f1-b02b-4c27-a40f-23d11b8c1212}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{e30984f1-b02b-4c27-a40f-23d11b8c1212}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{e30984f1-b02b-4c27-a40f-23d11b8c1212}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E7299E79-75E5-47BB-A03D-6D319FB7F886}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E7299E79-75E5-47BB-A03D-6D319FB7F886}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E7299E79-75E5-47BB-A03D-6D319FB7F886}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-545" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{EC9846B3-2762-4A6B-A214-6ACB603462D2}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{EC9846B3-2762-4A6B-A214-6ACB603462D2}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{EC9846B3-2762-4A6B-A214-6ACB603462D2}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F290BFB2-1864-45B1-8804-2654194A87E7}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F290BFB2-1864-45B1-8804-2654194A87E7}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-551" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F290BFB2-1864-45B1-8804-2654194A87E7}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F3D3AA8D-EF96-4470-848E-BD70B803047A}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F3D3AA8D-EF96-4470-848E-BD70B803047A}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F3D3AA8D-EF96-4470-848E-BD70B803047A}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{f735e733-d681-4aef-83c1-7ec82cac5ecc}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-80-364023826-931424190-487969545-1024119571-74567675" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{f735e733-d681-4aef-83c1-7ec82cac5ecc}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{f735e733-d681-4aef-83c1-7ec82cac5ecc}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{f735e733-d681-4aef-83c1-7ec82cac5ecc}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F9717507-6651-4EDB-BFF7-AE615179BCCF}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F9717507-6651-4EDB-BFF7-AE615179BCCF}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F9717507-6651-4EDB-BFF7-AE615179BCCF}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ff9e6131-a8c1-4188-aa03-82e9f10a05a8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ff9e6131-a8c1-4188-aa03-82e9f10a05a8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ff9e6131-a8c1-4188-aa03-82e9f10a05a8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" |
+```
+#### Win32_DCOMApplicationLaunchAllowedSetting	
+```sh
+WQL> SELECT * FROM Win32_DCOMApplicationLaunchAllowedSetting
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{03837503-098b-11d8-9414-505054503030}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{03837503-098b-11d8-9414-505054503030}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{03837503-098b-11d8-9414-505054503030}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-559" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0868DC9B-D9A2-4f64-9362-133CEA201299}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0A886F29-465A-4aea-8B8E-BE926BFAE83E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0A886F29-465A-4aea-8B8E-BE926BFAE83E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0A886F29-465A-4aea-8B8E-BE926BFAE83E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0A886F29-465A-4aea-8B8E-BE926BFAE83E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0CA545C6-37AD-4A6C-BF92-9F7610067EF5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0CA545C6-37AD-4A6C-BF92-9F7610067EF5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0CA545C6-37AD-4A6C-BF92-9F7610067EF5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0CA545C6-37AD-4A6C-BF92-9F7610067EF5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{133eac4f-5891-4d04-bada-d84870380a80}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{133eac4f-5891-4d04-bada-d84870380a80}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{135fd325-45b7-4c30-89f8-4386961669f0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{135fd325-45b7-4c30-89f8-4386961669f0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-556" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-547" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{19BCA967-D266-436f-B2D4-CBE4D4B42F96}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-545" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1BE1F766-5536-11D1-B726-00C04FB926AF}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1BE1F766-5536-11D1-B726-00C04FB926AF}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1BE1F766-5536-11D1-B726-00C04FB926AF}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1BE1F766-5536-11D1-B726-00C04FB926AF}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1C749B87-568C-4865-8E73-6413F8372CE6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1C749B87-568C-4865-8E73-6413F8372CE6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1C749B87-568C-4865-8E73-6413F8372CE6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1C749B87-568C-4865-8E73-6413F8372CE6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1F7D1BE9-7A50-40B6-A605-C4F3696F49C0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1F7D1BE9-7A50-40B6-A605-C4F3696F49C0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1F7D1BE9-7A50-40B6-A605-C4F3696F49C0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1F87137D-0E7C-44d5-8C73-4EFFB68962F2}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1F87137D-0E7C-44d5-8C73-4EFFB68962F2}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1F87137D-0E7C-44d5-8C73-4EFFB68962F2}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1F87137D-0E7C-44d5-8C73-4EFFB68962F2}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1F87137D-0E7C-44d5-8C73-4EFFB68962F2}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1FF84C3B-1140-4EB6-BE38-4BE618D2E7D6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{1FF84C3B-1140-4EB6-BE38-4BE618D2E7D6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{205609B7-5E08-443E-B0A7-A7AED3F3A717}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-80-123231216-2592883651-3715271367-3753151631-4175906628" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{205609B7-5E08-443E-B0A7-A7AED3F3A717}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{209444d2-2540-495e-962c-a61ad3243526}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{209444d2-2540-495e-962c-a61ad3243526}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{209444d2-2540-495e-962c-a61ad3243526}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{209444d2-2540-495e-962c-a61ad3243526}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{209444d2-2540-495e-962c-a61ad3243526}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{209444d2-2540-495e-962c-a61ad3243526}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{27550CA0-E9DE-4186-A566-37A59BB6CA69}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{27550CA0-E9DE-4186-A566-37A59BB6CA69}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C256447-3F0D-4CBB-9D12-575BB20CDA0A}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C256447-3F0D-4CBB-9D12-575BB20CDA0A}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C256447-3F0D-4CBB-9D12-575BB20CDA0A}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C256447-3F0D-4CBB-9D12-575BB20CDA0A}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C5BC43E-3369-4C33-AB0C-BE9469677AF4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C5BC43E-3369-4C33-AB0C-BE9469677AF4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C5BC43E-3369-4C33-AB0C-BE9469677AF4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{2C5BC43E-3369-4C33-AB0C-BE9469677AF4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{304CE942-6E39-40D8-943A-B913C40C9CD4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{304CE942-6E39-40D8-943A-B913C40C9CD4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{304CE942-6E39-40D8-943A-B913C40C9CD4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{304CE942-6E39-40D8-943A-B913C40C9CD4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{33024A8D-6A46-4acd-95B3-9D9EBBEAD458}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3e5ca495-8d6a-4d1f-ad99-177b426c8b8e}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3e5ca495-8d6a-4d1f-ad99-177b426c8b8e}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3e5ca495-8d6a-4d1f-ad99-177b426c8b8e}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3e5ca495-8d6a-4d1f-ad99-177b426c8b8e}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3e5ca495-8d6a-4d1f-ad99-177b426c8b8e}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3e5ca495-8d6a-4d1f-ad99-177b426c8b8e}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3feb2f63-0eec-4b96-84ab-da1307e0117c}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3feb2f63-0eec-4b96-84ab-da1307e0117c}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3feb2f63-0eec-4b96-84ab-da1307e0117c}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3feb2f63-0eec-4b96-84ab-da1307e0117c}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3feb2f63-0eec-4b96-84ab-da1307e0117c}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{3feb2f63-0eec-4b96-84ab-da1307e0117c}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{42CBFAA7-A4A7-47BB-B422-BD10E9D02700}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{42CBFAA7-A4A7-47BB-B422-BD10E9D02700}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-11" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{42CBFAA7-A4A7-47BB-B422-BD10E9D02700}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{42CBFAA7-A4A7-47BB-B422-BD10E9D02700}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{42CBFAA7-A4A7-47BB-B422-BD10E9D02700}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{44831FEC-DC51-4716-A7E1-E898FDF83C85}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-80-123231216-2592883651-3715271367-3753151631-4175906628" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{514B5E31-5596-422F-BE58-D804464683B5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{514B5E31-5596-422F-BE58-D804464683B5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{514B5E31-5596-422F-BE58-D804464683B5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{514B5E31-5596-422F-BE58-D804464683B5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{56BE716B-2F76-4dfa-8702-67AE10044F0B}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-551" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{56BE716B-2F76-4dfa-8702-67AE10044F0B}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{56BE716B-2F76-4dfa-8702-67AE10044F0B}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{59c7f6ec-7d18-412f-a68e-877982768e61}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{59c7f6ec-7d18-412f-a68e-877982768e61}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{59c7f6ec-7d18-412f-a68e-877982768e61}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{59c7f6ec-7d18-412f-a68e-877982768e61}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{653C5148-4DCE-4905-9CFD-1B23662D3D9E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{653C5148-4DCE-4905-9CFD-1B23662D3D9E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{653C5148-4DCE-4905-9CFD-1B23662D3D9E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-545" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{69AD4AEE-51BE-439b-A92C-86AE490E8B30}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{69AD4AEE-51BE-439b-A92C-86AE490E8B30}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{69AD4AEE-51BE-439b-A92C-86AE490E8B30}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-580" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{69AD4AEE-51BE-439b-A92C-86AE490E8B30}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-6" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{69AD4AEE-51BE-439b-A92C-86AE490E8B30}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{6DF5BCF4-22E9-446D-8763-A2C7677ECF7D}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-11" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{6F65B602-F798-4094-8A41-A2A61961E5E8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{6F65B602-F798-4094-8A41-A2A61961E5E8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7006698d-2974-4091-a424-85dd0b909e23}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7006698d-2974-4091-a424-85dd0b909e23}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7006698d-2974-4091-a424-85dd0b909e23}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-4100369157-1034187050-1364371154-1714612948-1847883727-388702109-1961059416" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7006698d-2974-4091-a424-85dd0b909e23}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1322174799-1054373777-2441082058-564842223-2721992343-4124100487-3261661085" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7006698d-2974-4091-a424-85dd0b909e23}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-4016783169-893401051-2237370320-274899566-412088533-2398988950-2155762795" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{73E709EA-5D93-4B2E-BBB0-99B7938DA9E4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{73E709EA-5D93-4B2E-BBB0-99B7938DA9E4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{73E709EA-5D93-4B2E-BBB0-99B7938DA9E4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{73E709EA-5D93-4B2E-BBB0-99B7938DA9E4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{73E709EA-5D93-4B2E-BBB0-99B7938DA9E4}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{752073A2-23F2-4396-85F0-8FDB879ED0ED}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{752073A2-23F2-4396-85F0-8FDB879ED0ED}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{752073A2-23F2-4396-85F0-8FDB879ED0ED}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{752073A2-23F2-4396-85F0-8FDB879ED0ED}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-6" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{76db1bf3-e820-4765-a1b2-0b16a86b1950}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{76db1bf3-e820-4765-a1b2-0b16a86b1950}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{76db1bf3-e820-4765-a1b2-0b16a86b1950}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-546" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{76db1bf3-e820-4765-a1b2-0b16a86b1950}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7B6EA1D5-03C2-4AE4-B21C-8D0515CC91B7}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7B6EA1D5-03C2-4AE4-B21C-8D0515CC91B7}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7B6EA1D5-03C2-4AE4-B21C-8D0515CC91B7}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7B6EA1D5-03C2-4AE4-B21C-8D0515CC91B7}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7d378de6-ed8d-426d-91df-0273d07cd7f6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7d378de6-ed8d-426d-91df-0273d07cd7f6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7d378de6-ed8d-426d-91df-0273d07cd7f6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7d378de6-ed8d-426d-91df-0273d07cd7f6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7d378de6-ed8d-426d-91df-0273d07cd7f6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7d378de6-ed8d-426d-91df-0273d07cd7f6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7f9bbc82-ba5f-4448-8622-ef76b8d007e6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7f9bbc82-ba5f-4448-8622-ef76b8d007e6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7f9bbc82-ba5f-4448-8622-ef76b8d007e6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-11" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7FC12E96-4CB7-4ABD-ADAA-EF7845B10629}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7FC12E96-4CB7-4ABD-ADAA-EF7845B10629}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{7FC12E96-4CB7-4ABD-ADAA-EF7845B10629}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{87BB326B-E4A0-4DE1-94F0-B9F41D0C6059}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{87BB326B-E4A0-4DE1-94F0-B9F41D0C6059}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8B4B437E-4CAB-4e83-89F6-7F9F7DF414EA}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8B4B437E-4CAB-4e83-89F6-7F9F7DF414EA}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8BC3F05E-D86B-11D0-A075-00C04FB68820}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8BC3F05E-D86B-11D0-A075-00C04FB68820}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-11" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8be0366c-8522-40be-8b08-cb26557f2854}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8be0366c-8522-40be-8b08-cb26557f2854}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8be0366c-8522-40be-8b08-cb26557f2854}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8be0366c-8522-40be-8b08-cb26557f2854}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8C482DCE-2644-4419-AEFF-189219F916B9}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8C482DCE-2644-4419-AEFF-189219F916B9}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8C482DCE-2644-4419-AEFF-189219F916B9}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8C482DCE-2644-4419-AEFF-189219F916B9}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8D15A4F3-1BE5-4120-8A4D-2EF92A5DD58D}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8D15A4F3-1BE5-4120-8A4D-2EF92A5DD58D}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8D15A4F3-1BE5-4120-8A4D-2EF92A5DD58D}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8D15A4F3-1BE5-4120-8A4D-2EF92A5DD58D}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-6" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8e7fae4d-cff0-41d3-a326-5a80470264bb}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8e7fae4d-cff0-41d3-a326-5a80470264bb}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8e7fae4d-cff0-41d3-a326-5a80470264bb}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{8e7fae4d-cff0-41d3-a326-5a80470264bb}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{924DC564-16A6-42EB-929A-9A61FA7DA06F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{924DC564-16A6-42EB-929A-9A61FA7DA06F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{924DC564-16A6-42EB-929A-9A61FA7DA06F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{924DC564-16A6-42EB-929A-9A61FA7DA06F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-6" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{93AAD2A0-036A-4B11-A078-DA8776B38139}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{93AAD2A0-036A-4B11-A078-DA8776B38139}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{93AAD2A0-036A-4B11-A078-DA8776B38139}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{98a89e0c-1fde-4c2a-a373-b04831e6aa60}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{98a89e0c-1fde-4c2a-a373-b04831e6aa60}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{98a89e0c-1fde-4c2a-a373-b04831e6aa60}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{9df523b0-a6c0-4ea9-b5f1-f4565c3ac8b8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{9df523b0-a6c0-4ea9-b5f1-f4565c3ac8b8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{9df523b0-a6c0-4ea9-b5f1-f4565c3ac8b8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{9df523b0-a6c0-4ea9-b5f1-f4565c3ac8b8}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A6BFEA43-501F-456F-A845-983D3AD7B8F0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A6BFEA43-501F-456F-A845-983D3AD7B8F0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A6BFEA43-501F-456F-A845-983D3AD7B8F0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A6BFEA43-501F-456F-A845-983D3AD7B8F0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{AA0B85DA-FDDF-4272-8D1D-FF9B966D75B0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{AA0B85DA-FDDF-4272-8D1D-FF9B966D75B0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{AA0B85DA-FDDF-4272-8D1D-FF9B966D75B0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{AA0B85DA-FDDF-4272-8D1D-FF9B966D75B0}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ab7c873b-eb14-49a6-be60-a602f80e6d22}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-11" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ac0fd47a-37f4-4502-bfee-6b317e479d41}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ac0fd47a-37f4-4502-bfee-6b317e479d41}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ac0fd47a-37f4-4502-bfee-6b317e479d41}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-3926089429-3779096810-139998268-2665160821-3597776985-345016210-467500384" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ac0fd47a-37f4-4502-bfee-6b317e479d41}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-4016783169-893401051-2237370320-274899566-412088533-2398988950-2155762795" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{ac0fd47a-37f4-4502-bfee-6b317e479d41}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-4100369157-1034187050-1364371154-1714612948-1847883727-388702109-1961059416" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{b0316d0c-da2f-40e0-9f91-f600caf042dc}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{b0316d0c-da2f-40e0-9f91-f600caf042dc}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{B0E28D63-52F6-4E30-992B-78ECF97268E9}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{B0E28D63-52F6-4E30-992B-78ECF97268E9}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{B167BEB5-324D-4C2C-93D8-89F82AB8D75E}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{B366DEBE-645B-43A5-B865-DDD82C345492}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{BD54C901-076B-434E-B6C7-17C531F4AB41}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{BD54C901-076B-434E-B6C7-17C531F4AB41}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{C96887DA-A652-4426-905E-4A37546F847C}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{C96887DA-A652-4426-905E-4A37546F847C}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{C97E2AEF-AB0E-4FA6-BA29-1A1A7CCBA125}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{C97E2AEF-AB0E-4FA6-BA29-1A1A7CCBA125}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{C97E2AEF-AB0E-4FA6-BA29-1A1A7CCBA125}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{CB363445-F453-4C1E-8EE4-BD123C5E394F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{CB363445-F453-4C1E-8EE4-BD123C5E394F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{CB363445-F453-4C1E-8EE4-BD123C5E394F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{CCFDD24D-CEAB-458B-A4F1-F884973395DF}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{D215781D-019E-4FA0-903D-0CDCDE13A4F5}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{D3DCB472-7261-43ce-924B-0704BD730D5F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{D3DCB472-7261-43ce-924B-0704BD730D5F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{D3DCB472-7261-43ce-924B-0704BD730D5F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{D3DCB472-7261-43ce-924B-0704BD730D5F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{D8D4249F-A8FB-44A7-8AA0-564E8C385BD6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-80-123231216-2592883651-3715271367-3753151631-4175906628" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{D8D4249F-A8FB-44A7-8AA0-564E8C385BD6}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DCED8DB0-11A5-4b16-AB9D-4E28CA38C99F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DCED8DB0-11A5-4b16-AB9D-4E28CA38C99F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DCED8DB0-11A5-4b16-AB9D-4E28CA38C99F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DD9C53BC-8441-4B94-BD0E-36E6E02A6D61}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DD9C53BC-8441-4B94-BD0E-36E6E02A6D61}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-3624051433-2125758914-1423191267-1740899205-1073925389-3782572162-737981194" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{de5d803e-5d2a-4b5f-9c63-af25a465cc44}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{de5d803e-5d2a-4b5f-9c63-af25a465cc44}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{de5d803e-5d2a-4b5f-9c63-af25a465cc44}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{de5d803e-5d2a-4b5f-9c63-af25a465cc44}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E2B3C97F-6AE1-41AC-817A-F6F92166D7DD}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E2B3C97F-6AE1-41AC-817A-F6F92166D7DD}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E2B3C97F-6AE1-41AC-817A-F6F92166D7DD}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E2B3C97F-6AE1-41AC-817A-F6F92166D7DD}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{e30984f1-b02b-4c27-a40f-23d11b8c1212}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{e30984f1-b02b-4c27-a40f-23d11b8c1212}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{e30984f1-b02b-4c27-a40f-23d11b8c1212}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E7299E79-75E5-47BB-A03D-6D319FB7F886}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E7299E79-75E5-47BB-A03D-6D319FB7F886}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{E7299E79-75E5-47BB-A03D-6D319FB7F886}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-545" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{EC9846B3-2762-4A6B-A214-6ACB603462D2}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{EC9846B3-2762-4A6B-A214-6ACB603462D2}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{EC9846B3-2762-4A6B-A214-6ACB603462D2}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{EC9846B3-2762-4A6B-A214-6ACB603462D2}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F290BFB2-1864-45B1-8804-2654194A87E7}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F290BFB2-1864-45B1-8804-2654194A87E7}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-551" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F290BFB2-1864-45B1-8804-2654194A87E7}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F9717507-6651-4EDB-BFF7-AE615179BCCF}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{F9717507-6651-4EDB-BFF7-AE615179BCCF}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-15-2-1" | 
+```
+#### Win32_DCOMApplicationSetting
+```sh
+WQL> SELECT * FROM Win32_DCOMApplicationSetting
+| SettingID | Caption | Description | AppID | AuthenticationLevel | RemoteServerName | RunAsUser | EnableAtStorageActivation | UseSurrogate | CustomSurrogate | LocalService | ServiceParameters | 
+| None | None | None | {00021401-0000-0000-C000-000000000046} | None | None | None | False | True | None | None | None | 
+| None | None | None | {000C101C-0000-0000-C000-000000000046} | None | None | None | False | False | None | MSIServer |  | 
+| None | User Notification | User Notification | {0010890e-8789-413c-adbc-48f5b511b3af} | None | None | Interactive User | False | True | None | None | None | 
+| None | DFSRHelper.ServerHealthReport Class | DFSRHelper.ServerHealthReport Class | {01D0824E-81A6-447B-9223-167C2A78AFC8} | None | None | None | False | True | C:\Windows\SysWOW64\dfsfrsHost.exe | None | None | 
+| None | PLA | PLA | {03837503-098b-11d8-9414-505054503030} | 6 | None | None | False | False | None | None | None | 
+| None | COpenControlPanel | COpenControlPanel | {06622D85-6856-4460-8DE1-A81921B41C4B} | None | None | None | False | True | None | None | None | 
+| None | sppui | sppui | {0868DC9B-D9A2-4f64-9362-133CEA201299} | None | None | Interactive User | False | False | None | None | None | 
+| None | PersistentZoneIdentifier | PersistentZoneIdentifier | {0968e258-16c7-4dba-aa86-462dd61e31a3} | None | None | None | False | True | None | None | None | 
+| None | None | None | {0A886F29-465A-4aea-8B8E-BE926BFAE83E} | None | None | None | False | False | None | EapHost |  | 
+| None | None | None | {0CA545C6-37AD-4A6C-BF92-9F7610067EF5} | None | None | None | False | True | None | None | None | 
+| None | VCBSnapshotProvider | VCBSnapshotProvider | {13390438-AA43-44B5-AEF0-DA857DD05B00} | None | None | None | False | False | None | None | None | 
+| None | Shell Create Object Task Server | Shell Create Object Task Server | {133eac4f-5891-4d04-bada-d84870380a80} | None | None | None | False | True | None | None | None | 
+| None | Shell Create Object Handler | Shell Create Object Handler | {135fd325-45b7-4c30-89f8-4386961669f0} | None | None | nt authority\system | False | False | None | None | None | 
+| None | None | None | {19BCA967-D266-436f-B2D4-CBE4D4B42F96} | None | None | None | False | False | None | lltdsvc | None | 
+| None | None | None | {1BE1F766-5536-11D1-B726-00C04FB926AF} | None | None | None | False | False | None | EventSystem | None | 
+| None | %systemroot%\system32\lpksetup.exe | %systemroot%\system32\lpksetup.exe | {1C749B87-568C-4865-8E73-6413F8372CE6} | None | None | None | False | False | None | None | None | 
+| None | ThirdPartyEapDispatcherPeerConfig | ThirdPartyEapDispatcherPeerConfig | {1F7D1BE9-7A50-40B6-A605-C4F3696F49C0} | None | None | None | False | True | None | None | None | 
+| None | Microsoft WMI Provider Subsystem Secured Host | Microsoft WMI Provider Subsystem Secured Host | {1F87137D-0E7C-44d5-8C73-4EFFB68962F2} | None | None | None | False | False | None | None | None | 
+| None | ThirdPartyEapDispatcherAuthenticatorConfig | ThirdPartyEapDispatcherAuthenticatorConfig | {1FF84C3B-1140-4EB6-BE38-4BE618D2E7D6} | None | None | None | False | True | None | None | None | 
+| None | Microsoft Software Protection Platform Admin Object (Inner) | Microsoft Software Protection Platform Admin Object (Inner) | {205609B7-5E08-443E-B0A7-A7AED3F3A717} | None | None | None | False | False | None | None | None | 
+| None | Microsoft Windows WSMan Provider Host With User Settings | Microsoft Windows WSMan Provider Host With User Settings | {209444d2-2540-495e-962c-a61ad3243526} | None | None | None | False | False | None | None | None | 
+| None | MSDAINITIALIZE | MSDAINITIALIZE | {2206CDB0-19C1-11D1-89E0-00C04FD7A829} | None | None | None | False | True | None | None | None | 
+| None | components | components | {259FD5A7-B58E-4160-A698-0348A02CA8E3} | None | None | None | False | False | None | None | None | 
+| None | Microsoft WBEM Active Scripting Event Consumer Provider | Microsoft WBEM Active Scripting Event Consumer Provider | {266C72E7-62E8-11D1-AD89-00C04FD8FDFF} | None | None | None | False | False | None | None | None | 
+| None | WInRTDesktopBroker | WInRTDesktopBroker | {27550CA0-E9DE-4186-A566-37A59BB6CA69} | 6 | None | Interactive User | False | True | None | None | None | 
+| None | None | None | {2781761E-28E2-4109-99FE-B9D127C57AFE} | None | None | None | False | False | None | WinDefend |  | 
+| None | faultrep.dll | faultrep.dll | {2C256447-3F0D-4CBB-9D12-575BB20CDA0A} | None | None | None | False | True | None | None | None | 
+| None | None | None | {2C5BC43E-3369-4C33-AB0C-BE9469677AF4} | None | None | None | False | True | None | None | None | 
+| None | None | None | {304CE942-6E39-40D8-943A-B913C40C9CD4} | None | None | None | False | True | None | None | None | 
+| None | DFSRHelper.ADProxy Class | DFSRHelper.ADProxy Class | {33024A8D-6A46-4acd-95B3-9D9EBBEAD458} | None | None | nt authority\networkservice | False | True | C:\Windows\System32\dfsfrsHost.exe | None | None | 
+| None | DFSRHelper.ServerHealthReport Class | DFSRHelper.ServerHealthReport Class | {36C95A5F-0A17-47c7-9983-F6BFD009A867} | None | None | None | False | True | C:\Windows\System32\dfsfrsHost.exe | None | None | 
+| None | None | None | {3ad05575-8857-4850-9277-11b85bdb8e09} | None | None | None | False | True | None | None | None | 
+| None | Microsoft Windows Remote Shell Host | Microsoft Windows Remote Shell Host | {3e5ca495-8d6a-4d1f-ad99-177b426c8b8e} | None | None | None | False | False | None | None | None | 
+| None | WinInetCacheServer | WinInetCacheServer | {3eb3c877-1f16-487c-9050-104dbcd66683} | None | None | None | False | True | None | None | None | 
+| None | None | None | {3eef301f-b596-4c0b-bd92-013beafce793} | None | None | Interactive User | False | False | None | None | None | 
+| None | Microsoft Windows WSMan Provider Host | Microsoft Windows WSMan Provider Host | {3feb2f63-0eec-4b96-84ab-da1307e0117c} | None | None | None | False | False | None | None | None | 
+| None | None | None | {42CBFAA7-A4A7-47BB-B422-BD10E9D02700} | 2 | None | None | False | False | None | DiagnosticsHub.StandardCollector.Service | None | 
+| None | SPP External COM Object | SPP External COM Object | {44831FEC-DC51-4716-A7E1-E898FDF83C85} | None | None | None | False | False | None | None | None | 
+| None | None | None | {448aee3b-dc65-4af6-bf5f-dce86d62b6c7} | None | None | None | False | True | None | None | None | 
+| None | DFSRHelper.HealthReport Class | DFSRHelper.HealthReport Class | {4579476D-036C-430C-801F-60CBC4A6C059} | None | None | None | False | True | C:\Windows\SysWOW64\dfsfrsHost.exe | None | None | 
+| None | Microsoft WBEM Unsecured Apartment | Microsoft WBEM Unsecured Apartment | {49BD2028-1523-11D1-AD79-00C04FD8FDFF} | None | None | None | False | False | None | None | None | 
+| None | UIAutomationCrossBitnessHook64 Class | UIAutomationCrossBitnessHook64 Class | {49f171dd-b51a-40d3-9a6c-52d674cc729d} | None | None | None | False | True | None | None | None | 
+| None | Shell Security Editor | Shell Security Editor | {4D111E08-CBF7-4f12-A926-2C7920AF52FC} | None | None | None | False | True | None | None | None | 
+| None | Microsoft Volume Shadow Copy Service software provider | Microsoft Volume Shadow Copy Service software provider | {4db9c793-c48d-449c-9754-46027ee45c94} | None | None | None | False | False | None | swprv | None | 
+| None | COM+ Event System | COM+ Event System | {4E14FBA2-2E22-11D1-9964-00C04FBBB345} | None | None | None | False | True | None | None | None | 
+| None | Shell Computer Accounts | Shell Computer Accounts | {4f6bcd94-c2a5-42ce-8dbc-31e794be4630} | None | None | None | False | True | None | None | None | 
+| None | %systemroot%\system32\intl.cpl | %systemroot%\system32\intl.cpl | {514B5E31-5596-422F-BE58-D804464683B5} | None | None | None | False | True | None | None | None | 
+| None | None | None | {515980c3-57fe-4c1e-a561-730dd256ab98} | None | None | Interactive User | False | False | None | None | None | 
+| None | None | None | {51a1467f-96a2-4b1c-9632-4b4d950fe216} | None | None | None | False | True | None | None | None | 
+| None | RemoteProxyFactory32 Class | RemoteProxyFactory32 Class | {53362C32-A296-4F2D-A2F8-FD984D08340B} | None | None | None | False | True | None | None | None | 
+| None | RemoteProxyFactory32 Class | RemoteProxyFactory32 Class | {53362C64-A296-4F2D-A2F8-FD984D08340B} | None | None | None | False | True | None | None | None | 
+| None | Virtual Disk Service Loader | Virtual Disk Service Loader | {5364ED0E-493F-4B16-9DBF-AE486CF22660} | None | None | None | False | False | None | None | None | 
+| None | Volume Shadow Copy Service | Volume Shadow Copy Service | {56BE716B-2F76-4dfa-8702-67AE10044F0B} | None | None | None | False | False | None | VSS | None | 
+| None | propshts | propshts | {59B8AFA0-229E-46d9-B980-DDA2C817EC7E} | None | None | None | False | False | None | None | None | 
+| None | Authentication UI Terminal Services Bump Dialog | Authentication UI Terminal Services Bump Dialog | {59c7f6ec-7d18-412f-a68e-877982768e61} | None | None | Interactive User | False | False | None | None | None | 
+| None | DFSRHelper.PropagationReport Class | DFSRHelper.PropagationReport Class | {5DC19DE6-D228-4338-AAC4-2D1A1262CA7B} | None | None | None | False | True | C:\Windows\System32\dfsfrsHost.exe | None | None | 
+| None | User OOBE Create User Object Server | User OOBE Create User Object Server | {5f7f3f7b-1177-4d4b-b1db-bc6f671b8f25} | None | None | None | False | False | None | None | None | 
+| None | None | None | {60173D16-A550-47f0-A14B-C6F9E4DA0831} | None | None | None | False | True | None | None | None | 
+| None | UIAutomationCrossBitnessHook32 Class | UIAutomationCrossBitnessHook32 Class | {60a90a2f-858d-42af-8929-82be9d99e8a1} | None | None | None | False | True | None | None | None | 
+| None | None | None | {63A53A38-004F-489B-BD61-96B5EEFADC04} | None | None | None | False | False | None | WMIApSrv | None | 
+| None | Windows Update Agent | Windows Update Agent | {653C5148-4DCE-4905-9CFD-1B23662D3D9E} | None | None | None | False | False | None | wuauserv | None | 
+| None | None | None | {66eea0f5-001a-4073-a496-783f86fcf4c0} | None | None | None | False | True | None | None | None | 
+| None | Background Intelligent Transfer Service | Background Intelligent Transfer Service | {69AD4AEE-51BE-439b-A92C-86AE490E8B30} | None | None | None | False | False | None | BITS | None | 
+| None | SPPComApi | SPPComApi | {6D9A7A40-DDCA-414E-B48E-DFB032C03C1B} | None | None | None | False | True | None | None | None | 
+| None | TieringEngineService | TieringEngineService | {6DF5BCF4-22E9-446D-8763-A2C7677ECF7D} | None | None | None | False | False | None | TieringEngineService | None | 
+| None | RSoPProv | RSoPProv | {6EBBFC6C-B721-4D10-9371-5D8E8C76D315} | None | None | None | False | False | None | RSoPProv | -Service | 
+| None | EditionUpgradeHelper | EditionUpgradeHelper | {6F65B602-F798-4094-8A41-A2A61961E5E8} | None | None | None | False | True | None | None | None | 
+| None | Windows Insider Service | Windows Insider Service | {7006698d-2974-4091-a424-85dd0b909e23} | None | None | None | False | False | None | wisvc | None | 
+| None | None | None | {722b3793-5367-4446-b6bb-db89b05c1f24} | None | None | Interactive User | False | False | None | None | None | 
+| None | Sharing Elevated Virtual Factory | Sharing Elevated Virtual Factory | {72A7994A-3092-4054-B6BE-08FF81AEEFFC} | None | None | None | False | True | None | None | None | 
+| None | User Profile Service DCOM server | User Profile Service DCOM server | {72E3272B-4EEA-4104-B358-1A282E4FC1AD} | None | None | None | False | False | None | profsvc | None | 
+| None | Microsoft WMI Provider Subsystem Host | Microsoft WMI Provider Subsystem Host | {73E709EA-5D93-4B2E-BBB0-99B7938DA9E4} | None | None | None | False | False | None | None | None | 
+| None | Trusted Installer Service | Trusted Installer Service | {752073A2-23F2-4396-85F0-8FDB879ED0ED} | None | None | None | False | False | None | TrustedInstaller | None | 
+| None | PrintFilterPipelineSvc | PrintFilterPipelineSvc | {76db1bf3-e820-4765-a1b2-0b16a86b1950} | None | None | NT Authority\LocalService | False | False | None | None | None | 
+| None | Shell FMIFS Wrapper | Shell FMIFS Wrapper | {7aa7790d-75d7-484b-98a1-3913d022091d} | None | None | None | False | True | None | None | None | 
+| None | EapThirdPartyDllHost | EapThirdPartyDllHost | {7B130458-E09C-4823-A8AF-2583DCD9AEC7} | None | None | None | False | True | %SystemRoot%\System32\Eap3Host.exe | None | None | 
+| None | Shell Create Object Local Server | Shell Create Object Local Server | {7B6EA1D5-03C2-4AE4-B21C-8D0515CC91B7} | None | None | None | False | False | None | None | None | 
+| None | Microsoft Windows Remote Shell Host With User Settings | Microsoft Windows Remote Shell Host With User Settings | {7d378de6-ed8d-426d-91df-0273d07cd7f6} | None | None | None | False | False | None | None | None | 
+| None | GPMC Reporting | GPMC Reporting | {7f9bbc82-ba5f-4448-8622-ef76b8d007e6} | 6 | None | None | False | True | None | None | None | 
+| None | Authentication UI CredUI Out of Proc Helper for AppContainer Clients | Authentication UI CredUI Out of Proc Helper for AppContainer Clients | {7FC12E96-4CB7-4ABD-ADAA-EF7845B10629} | None | None | Interactive User | False | False | None | None | None | 
+| None | CFmIfsEngine host | CFmIfsEngine host | {82D94FB3-7FE6-4797-BB72-9A886C66073B} | None | None | None | False | True | None | None | None | 
+| None | CustReg Class | CustReg Class | {84D586C4-A423-11D2-B943-00C04F79D22F} | None | None | None | False | True | None | None | None | 
+| None | ThirdPartyEapDispatcherPeerRuntime | ThirdPartyEapDispatcherPeerRuntime | {87BB326B-E4A0-4DE1-94F0-B9F41D0C6059} | None | None | None | False | True | %SystemRoot%\System32\Eap3Host.exe | None | None | 
+| None | DFSRHelper.PropagationReport Class | DFSRHelper.PropagationReport Class | {88B931BB-4810-457D-86B6-1F5911E9E084} | None | None | None | False | True | C:\Windows\SysWOW64\dfsfrsHost.exe | None | None | 
+| None | Desktop Wallpaper Factory | Desktop Wallpaper Factory | {8B30085D-A3E3-44e3-AE7F-B03A1340EBED} | None | None | Interactive User | False | False | None | None | None | 
+| None | None | None | {8B4B437E-4CAB-4e83-89F6-7F9F7DF414EA} | None | None | None | False | False | None | EapHost |  | 
+| None | Windows Management and Instrumentation | Windows Management and Instrumentation | {8BC3F05E-D86B-11D0-A075-00C04FB68820} | None | None | None | False | False | None | winmgmt | None | 
+| None | TSTheme | TSTheme | {8be0366c-8522-40be-8b08-cb26557f2854} | None | None | Interactive User | False | False | None | None | None | 
+| None | None | None | {8C482DCE-2644-4419-AEFF-189219F916B9} | None | None | None | False | False | None | EapHost |  | 
+| None | TiWorker | TiWorker | {8D15A4F3-1BE5-4120-8A4D-2EF92A5DD58D} | None | None | None | False | False | None | None | None | 
+| None | RdpSa | RdpSa | {8e7fae4d-cff0-41d3-a326-5a80470264bb} | None | None | Interactive User | False | False | None | None | None | 
+| None | Shell Computer Groups | Shell Computer Groups | {8f3080a6-af99-4f2e-a806-f3d5702a0444} | None | None | None | False | True | None | None | None | 
+| None | Authentication UI CredUI Out of Proc Helper for Non-AppContainer Clients | Authentication UI CredUI Out of Proc Helper for Non-AppContainer Clients | {924DC564-16A6-42EB-929A-9A61FA7DA06F} | None | None | Interactive User | False | False | None | None | None | 
+| None | HtmlLocalFileResolver | HtmlLocalFileResolver | {93AAD2A0-036A-4B11-A078-DA8776B38139} | None | None | Interactive User | False | True | None | None | None | 
+| None | PenIMC4v2 | PenIMC4v2 | {953E4863-7AD1-4DAE-B2BD-108F1D57967B} | None | None | Interactive User | False | True | None | None | None | 
+| None | DFSRHelper.HealthReport Class | DFSRHelper.HealthReport Class | {970B4475-63F0-4aa4-959C-AB8FFF3BD27C} | None | None | None | False | True | C:\Windows\System32\dfsfrsHost.exe | None | None | 
+| None | PrintIsolationHost | PrintIsolationHost | {98a89e0c-1fde-4c2a-a373-b04831e6aa60} | None | None | None | False | False | None | None | None | 
+| None | Shell Hardware Mixed Content Handler | Shell Hardware Mixed Content Handler | {995C996E-D918-4a8c-A302-45719A6F4EA7} | None | None | Interactive User | False | False | None | None | None | 
+| None | None | None | {9aa46009-3ce0-458a-a354-715610a075e6} | None | None | Interactive User | False | False | None | None | None | 
+| None | timedate.cpl | timedate.cpl | {9df523b0-a6c0-4ea9-b5f1-f4565c3ac8b8} | None | None | None | False | True | None | None | None | 
+| None | registryBrowser | registryBrowser | {A3D9ED06-DDCB-4392-ADBF-205DB8B281C9} | None | None | None | False | False | None | None | None | 
+| None | Shell ChkdskEx Dialog | Shell ChkdskEx Dialog | {a4c31131-ff70-4984-afd6-0609ced53ad6} | None | None | None | False | True | None | None | None | 
+| None | Virtual Factory for MaintenanceUI | Virtual Factory for MaintenanceUI | {A6BFEA43-501F-456F-A845-983D3AD7B8F0} | None | None | None | False | True | None | None | None | 
+| None | Microsoft Windows Defender | Microsoft Windows Defender | {A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F} | None | None | None | False | True | None | None | None | 
+| None | None | None | {AA0B85DA-FDDF-4272-8D1D-FF9B966D75B0} | None | None | Interactive User | False | True | None | None | None | 
+| None | DEFRAGSVC service | DEFRAGSVC service | {ab7c873b-eb14-49a6-be60-a602f80e6d22} | None | None | None | False | False | None | defragsvc | None | 
+| None | Out of proc server to enable Insider Hub scenarios to be reached from inside of its appcontainer | Out of proc server to enable Insider Hub scenarios to be reached from inside of its appcontainer | {ac0fd47a-37f4-4502-bfee-6b317e479d41} | None | None | Interactive User | False | True | None | None | None | 
+| None | None | None | {b0316d0c-da2f-40e0-9f91-f600caf042dc} | None | None | Interactive User | False | False | None | None | None | 
+| None | ThirdPartyEapDispatcherAuthenticatorRuntime | ThirdPartyEapDispatcherAuthenticatorRuntime | {B0E28D63-52F6-4E30-992B-78ECF97268E9} | None | None | None | False | True | %SystemRoot%\System32\Eap3Host.exe | None | None | 
+| None | DFSRHelper.ADProxy Class | DFSRHelper.ADProxy Class | {B167BEB5-324D-4C2C-93D8-89F82AB8D75E} | None | None | nt authority\networkservice | False | True | C:\Windows\SysWOW64\dfsfrsHost.exe | None | None | 
+| None | Windows Update Agent - Remote Access | Windows Update Agent - Remote Access | {B366DEBE-645B-43A5-B865-DDD82C345492} | 6 | None | None | False | True | None | None | None | 
+| None | Found New Hardware Wizard | Found New Hardware Wizard | {B6A32FE6-E29D-AEAE-A608-D273E40CA34C} | None | None | Interactive User | False | False | None | None | None | 
+| None | Event Object Change 2 | Event Object Change 2 | {BB07BACD-CD56-4E63-A8FF-CBF0355FB9F4} | None | None | None | False | True | None | None | None | 
+| None | EditionUpgradeManagerObj | EditionUpgradeManagerObj | {BD54C901-076B-434E-B6C7-17C531F4AB41} | None | None | None | False | True | None | None | None | 
+| None | VM IC Heartbeat Service | VM IC Heartbeat Service | {be0fc7f0-f248-4091-a123-34ca29a6901b} | None | None | None | False | False | None | vmicheartbeat | None | 
+| None | Shell AutoPlay Direct | Shell AutoPlay Direct | {BF8841C9-378A-4CAD-B4FC-5091366CBC0D} | None | None | Interactive User | False | False | None | None | None | 
+| None | None | None | {c8b67f54-d1cb-44bf-9103-a1ab9a9ed8ad} | None | None | None | False | True | None | None | None | 
+| None | netprofm | netprofm | {C96887DA-A652-4426-905E-4A37546F847C} | None | None | None | False | False | None | netprofm | None | 
+| None | editionupgradebroker | editionupgradebroker | {C97E2AEF-AB0E-4FA6-BA29-1A1A7CCBA125} | 6 | None | Interactive User | False | True | None | None | None | 
+| None | RCM | RCM | {C9F65BA8-1F8F-4382-AE27-C91FFB29275F} | None | None | None | False | False | None | TermService | None | 
+| None | User OOBE Create Elevated Object Server | User OOBE Create Elevated Object Server | {ca8c87c1-929d-45ba-94db-ef8e6cb346ad} | None | None | None | False | True | None | None | None | 
+| None | OpenSearch Description Create Search Connector Verb Handler | OpenSearch Description Create Search Connector Verb Handler | {CB1DFE3A-EDFF-4d1f-867D-8ADB02926F4B} | None | None | None | False | True | None | None | None | 
+| None | PrintIsolationSessionHost | PrintIsolationSessionHost | {CB363445-F453-4C1E-8EE4-BD123C5E394F} | None | None | Interactive User | False | False | None | None | None | 
+| None | sppui | sppui | {CCFDD24D-CEAB-458B-A4F1-F884973395DF} | None | None | None | False | False | None | None | None | 
+| None | PNPXAssoc.dll | PNPXAssoc.dll | {cee8ccc9-4f6b-4469-a235-5a22869eef03} | None | None | None | False | True | None | None | None | 
+| None | Event Object Change | Event Object Change | {D0565000-9DF4-11D1-A281-00C04FCA0AA7} | None | None | None | False | True | None | None | None | 
+| None | Winmgmt MOF Compiler OOP | Winmgmt MOF Compiler OOP | {D215781D-019E-4FA0-903D-0CDCDE13A4F5} | None | None | None | False | False | None | None | None | 
+| None | None | None | {D3DCB472-7261-43ce-924B-0704BD730D5F} | None | None | None | False | False | None | fdPHost | None | 
+| None | Microsoft Software Protection Platform Admin Object (outer) | Microsoft Software Protection Platform Admin Object (outer) | {D8D4249F-A8FB-44A7-8AA0-564E8C385BD6} | None | None | None | False | False | None | TrustedInstaller | None | 
+| None | None | None | {DCED8DB0-11A5-4b16-AB9D-4E28CA38C99F} | None | None | None | False | True | None | None | None | 
+| None | BrowserBrokerServer | BrowserBrokerServer | {DD9C53BC-8441-4B94-BD0E-36E6E02A6D61} | None | None | Interactive User | False | False | None | None | None | 
+| None | rundll32.exe | rundll32.exe | {de5d803e-5d2a-4b5f-9c63-af25a465cc44} | None | None | None | False | False | None | None | None | 
+| None | LockScreen Call Broker | LockScreen Call Broker | {DE7D3D65-5454-4EF5-9518-776739DAB39F} | None | None | Interactive User | False | False | None | None | None | 
+| None | Profile Notification Host | Profile Notification Host | {E10F6C3A-F1AE-4adc-AA9D-2FE65525666E} | None | None | None | False | True | None | None | None | 
+| None | Immersive Print Dialog Surrogate | Immersive Print Dialog Surrogate | {E15FBAC2-C276-4523-92CA-561456EBCF3E} | None | None | None | False | True | C:\Windows\System32\PrintDialogHost.exe | None | None | 
+| None | None | None | {E2B3C97F-6AE1-41AC-817A-F6F92166D7DD} | None | None | None | False | True | None | None | None | 
+| None | Windows Update Agent User Interface for Published Applications | Windows Update Agent User Interface for Published Applications | {e30984f1-b02b-4c27-a40f-23d11b8c1212} | 6 | None | None | False | True | None | None | None | 
+| None | Execute Unknown | Execute Unknown | {e44e9428-bdbc-4987-a099-40dc8fd255e7} | None | None | None | False | False | None | None | None | 
+| None | Authentication UI CredUI Out of Proc Helper for Non-AppContainer Clients (Failed Mouse In Pointer) | Authentication UI CredUI Out of Proc Helper for Non-AppContainer Clients (Failed Mouse In Pointer) | {E45A56CE-399C-45F0-9E6F-BFAACD3C711F} | None | None | None | False | False | None | None | None | 
+| None | Orchestrator Service | Orchestrator Service | {E7299E79-75E5-47BB-A03D-6D319FB7F886} | None | None | None | False | False | None | UsoSvc | None | 
+| None | File Prop Sheet Page Helper | File Prop Sheet Page Helper | {E96767E0-7EAA-45E1-8E7D-64414AFF281A} | None | None | None | False | True | None | None | None | 
+| None | browser | browser | {E9F570A3-EA8F-4CE9-9D59-C6AC35B9F403} | None | None | None | False | False | None | None | None | 
+| None | Immersive Print Dialog Surrogate | Immersive Print Dialog Surrogate | {EB28E902-728E-42C4-97DC-DA89E144C744} | None | None | None | False | True | C:\Windows\System32\PrintDialogHost3D.exe | None | None | 
+| None | None | None | {EC9846B3-2762-4A6B-A214-6ACB603462D2} | None | None | None | False | True | None | None | None | 
+| None | ComEvents.ComServiceEvents | ComEvents.ComServiceEvents | {ECABB0C3-7F19-11D2-978E-0000F8757E2A} | None | None | None | False | True | None | None | None | 
+| None | ComEvents.ComSystemAppEventData | ComEvents.ComSystemAppEventData | {ECABB0C6-7F19-11D2-978E-0000F8757E2A} | None | None | None | False | True | None | None | None | 
+| None | Share Manager | Share Manager | {edb5f444-cb8d-445a-a523-ec5ab6ea33c7} | None | None | None | False | True | None | None | None | 
+| None | polmkr | polmkr | {EE81B265-32DD-41A0-878F-05B9A7C94D68} | None | None | None | False | False | None | None | None | 
+| None | Virtual Disk Service | Virtual Disk Service | {F290BFB2-1864-45B1-8804-2654194A87E7} | None | None | None | False | False | None | vds | None | 
+| None | NDFAPI | NDFAPI | {F3D3AA8D-EF96-4470-848E-BD70B803047A} | None | None | None | False | True | None | None | None | 
+| None | None | None | {f735e733-d681-4aef-83c1-7ec82cac5ecc} | None | None | None | False | False | None | None | None | 
+| None | WinInetBrokerServer | WinInetBrokerServer | {F9717507-6651-4EDB-BFF7-AE615179BCCF} | None | None | Interactive User | False | True | None | None | None | 
+| None | VssEvent | VssEvent | {FAF53CC4-BD73-4E36-83F1-2B23F46E513E} | None | None | None | False | True | None | None | None | 
+| None | Shell Hardware Mixed Content Handler Cancelled | Shell Hardware Mixed Content Handler Cancelled | {fb479c02-9ec4-4fed-8599-debe037452cb} | None | None | Interactive User | False | False | None | None | None | 
+| None | None | None | {ff9e6131-a8c1-4188-aa03-82e9f10a05a8} | None | None | None | False | True | None | None | None | 
+| None | Shell Execute Hardware Event Handler | Shell Execute Hardware Event Handler | {FFB8655F-81B9-4fce-B89C-9A6BA76D13E7} | None | None | Interactive User | False | False | None | None | None | 
+```
+#### Win32_ImplementedCategory
+```sh
+WQL> SELECT * FROM Win32_ImplementedCategory
+| Category | Component | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{00000535-0000-0010-8000-00AA006D2EA4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{00021401-0000-0000-C000-000000000046}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{26671179-2EC2-42BF-93D3-64108589CAD5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4590F812-1D3A-11D0-891F-00AA004B2E24}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{674B6698-EE92-11D0-AD71-00C04FD8FDFF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6C19BE35-7500-11D1-AD94-00C04FD8FDFF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9AC9FBE1-E0A2-4AD6-B4EE-E212013EA917}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{ECABAFCB-7F19-11D2-978E-0000F8757E2A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EF636390-F343-11D0-9477-00C04FD36226}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EF636392-F343-11D0-9477-00C04FD36226}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{0AEE2A92-BCBB-11D0-8C72-00C04FC2B085}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B54F3742-5B07-11CF-A4B0-00AA004A55E8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{0AEE2A92-BCBB-11D0-8C72-00C04FC2B085}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F414C261-6AC0-11CF-B6D1-00AA00BBBB58}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0B83ED2D-136E-4FD9-BD91-1CC036FC2B14}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0CA1D98A-FEFE-4067-928C-36CA2CD8D246}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0E0F51A1-94CC-471E-B74F-1D64423E1EBA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{11715555-4996-47E9-99C2-6CCF71E1412E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1945373A-CBD3-45D9-80E3-A81F582FC9E4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{25C5469D-7363-4467-96E3-4B08C53808DA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2C6A5D6D-A445-4F7B-BF25-8FE429CF258D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2ED2D312-A53F-4F08-9C50-71CD4218581B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5BD865BB-3563-4119-A841-7AF5A27B8FC2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{641507C4-3BE1-43C5-A3E3-C9C1B2CE2432}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{80D653BA-54BF-49D5-81F5-FB1DB5FED615}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{83D9022D-8DB7-41B6-8622-88E9301420CE}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{96EF39DB-3818-4E7B-9A00-35D9F7C01EAD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A2658ED8-2A3D-4041-9141-2744622064DE}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A398CCC9-0305-418A-88CC-3CF881A5D699}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C3701884-B39B-11D1-9D68-00C04FC30DF6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DEF5A7FF-3254-452D-8EE0-575915DDC5AC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E37CB85B-4D77-4CDA-918D-2EE90D3CC5EF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E73B6BE9-C066-4153-B09C-A1900D2B33B0}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED3-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EDBCA2F4-A1A0-4074-AC25-4D24E18D5182}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{01EF9003-3A81-43F8-8DCA-762AFB22D9CD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{04282051-1F1C-4742-9551-816C9D9C7E83}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{04E98202-6FAF-4F3B-99CE-ADEF801314CD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{08E9AD98-9FDD-4BA1-AAEA-40181D0065D8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{096170A3-B314-467E-B96A-6ECEC20E9371}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0B83ED2D-136E-4FD9-BD91-1CC036FC2B14}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0CA1D98A-FEFE-4067-928C-36CA2CD8D246}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0E0F51A1-94CC-471E-B74F-1D64423E1EBA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1049DD1D-65B3-4BFC-BFDD-1B744E5B76E8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{11715555-4996-47E9-99C2-6CCF71E1412E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{154D6118-5A40-49D0-9A81-55E74672914F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{166BADDE-67F9-497B-9B9C-FFB9AD9EB64B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{17C08CAB-3BCA-4EE6-8377-4867CC58DEF2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1945373A-CBD3-45D9-80E3-A81F582FC9E4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{19E38D35-EF0E-41C9-A521-A0214A91CAA1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1BA53ADB-3E66-4129-8F0B-C616B6527207}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1BC2B69A-3904-44CD-BD8C-88ED5FCBB6CF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1C55D69F-925C-4C60-B0F4-9E0EDCEA5341}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1C6EEEA3-BB9F-4FBA-B053-836798150986}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1DD72B33-03E9-4CB0-BE80-FEC534CC7DFC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{25C5469D-7363-4467-96E3-4B08C53808DA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{290914A1-A0A8-45D7-9850-494EBB021691}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{298F7F67-B747-4925-8E59-C5DF6BE5F76D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2C6A5D6D-A445-4F7B-BF25-8FE429CF258D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2D19CA7E-0242-4E26-92C4-A70255CA1584}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2ED2D312-A53F-4F08-9C50-71CD4218581B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{34165C6D-0017-4D71-871D-C79BCDFFD001}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{360F93B3-8AA1-447D-9221-F7A6E33267D2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3A5859D7-7B5B-4FC8-8689-422F96F38F2E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3AD5D6FD-4D35-4BE0-8062-73D15E6510EB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3EC80189-C07C-45DD-8F11-0E6D41B181C2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3F15991A-FEFA-4556-90D0-ACA0C979D7DD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3F66A8E8-A631-4F4E-B2A0-20BB2EF29D66}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{444C718F-5772-4ABE-8A30-DD856E34A978}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{450F6E4C-DD63-46CD-A35C-B477B545231C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{45260AAF-5471-44E1-9539-E8C7BD71DDAA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{458ED13E-A9F2-4F37-BDCB-A50CB42B63EF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{45B07150-E207-44F1-9305-CCD6DB9BF1BF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{47FB9C4C-1B5E-4573-BFCD-C03EBE7F8CDD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{49CD50D2-844E-42A6-A017-3F12F3B7EE44}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4EA6D9ED-1A4E-4D14-AB17-D1B7DB97CDFA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50362BD0-990A-466C-8725-61EDD69817AA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50D33BB6-0061-4304-AC3E-96B02AB7AB03}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50D33BB6-0061-4304-AC3E-96B02AB7AB05}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50D33BB6-0061-4304-AC3E-96B02AB7AB06}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50D33BB6-0061-4304-AC3E-96B02AB7AB07}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50D33BB6-0061-4304-AC3E-96B02AB7AB08}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50D33BB6-0061-4304-AC3E-96B02AB7AB09}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50DBEEB8-DB8F-4060-B51D-D849AC02E1FC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{512B2841-E369-43A3-993A-B968798C030A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{545CD43B-A94C-4495-B763-33B09D8691FB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{54AA24EA-50E1-4526-B086-939114815801}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{57233914-D067-4C2A-AC4D-F9C58360A5F4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5828227C-20CF-4408-B73F-73AB70B8849F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5A21B3E9-A999-4E51-BAA1-C7D0EEC7C131}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5BD865BB-3563-4119-A841-7AF5A27B8FC2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5C209626-D820-4D69-8D50-1FACD6214488}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{641507C4-3BE1-43C5-A3E3-C9C1B2CE2432}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{69A29E40-690A-4D2A-9101-C7A9EE3BC0B1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{69BFE4E0-3887-4797-A946-4F94B428B088}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6A40AA0F-7103-4728-AAA0-F027E5175910}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6CDC31D9-44A2-4C68-B45E-2AA6C351E6F6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6D4A79E4-529C-4481-ABD0-F5BD7EA93BA7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{72693084-2DA7-4CEA-92D8-9B0E8E603B32}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{72ADD386-C0F3-464C-9413-60E85A7C433D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{741174A3-A099-4418-82BA-E255DBF32865}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{79535BA6-DFFE-4372-953C-C567171CAFBA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{803A474F-B1DE-4042-A297-9EFFD079E640}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{80D653BA-54BF-49D5-81F5-FB1DB5FED615}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{834E6790-E318-4A57-B395-86EB2D1F7A96}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{83D9022D-8DB7-41B6-8622-88E9301420CE}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{855B476A-C1D7-47DA-9AFE-A9AAB7384B20}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{85DDE7EA-50E4-4E3B-B65F-A82A4508B70F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8AFE3B32-D342-44A6-B72A-858388E983D1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8B63C2D9-3330-47C4-9BA0-AF80C93232B4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8C162D71-48DC-4F10-B861-6DAB1C9EF9E0}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8C8232C2-D4D1-49E3-9F34-A39B2ABA005F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8D10A18D-7A02-4911-9A1C-7487275AD5ED}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8D69AEBD-03FF-43CB-929E-3B136C7845B1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8E2D9B44-BFD9-4FB7-9111-DF9025AA68F5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8EB28F7A-65D6-4E8B-86D7-FABE82565AE5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{900DADEF-38F5-41F4-A544-8F20BEA459BC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9200CC80-59E0-41D1-96FC-9592DB834D10}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{94A58C75-1EF5-4663-9D80-A3258230E701}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{94DD2AEB-6D73-49C1-AF1A-820E21218610}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{96EF39DB-3818-4E7B-9A00-35D9F7C01EAD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{98A4F564-538B-4CB2-9AA3-7F636A2797C5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{98BC80B2-B764-478A-9146-BC43BC9F86A7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{996F28A2-BCD1-4D3F-8FF3-7BF20186FC17}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9BA05971-F6A8-11CF-A442-00A0C90A8F39}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9BD0E9BF-7C86-40BF-9A9B-AF9231301637}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A0CAE2B0-84D8-45D3-9D75-C03B9376982F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A1E0E766-C3C3-46C1-AA18-7C0761254670}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A2658ED8-2A3D-4041-9141-2744622064DE}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A276EF54-2D6E-48F1-83CF-416327AAFECE}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A2D79232-0229-4AEA-9667-5E1D6B3F9E3F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A398CCC9-0305-418A-88CC-3CF881A5D699}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A52E7669-1ACF-4087-AC87-1CCF356046E2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A5F2773C-2525-4F4F-825A-E5A8C839B042}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A70B996D-53A9-45F1-8246-5C3BB5C25658}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AB15AACC-DC35-47EF-A6B1-2AFDA2F4D94C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B01E5D08-9703-4256-A869-2C7C3A96C053}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B0EDDB1C-FD57-4854-82AC-0DC3A017738E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B2FA6F3D-AE06-464B-83D4-F1A53D20C392}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B330EE8D-1D86-4C41-B080-669F5CFEE211}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BD2E2EBE-A12A-454F-A419-559C6CC06CB6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BEB4F0D3-0AE0-4B70-89AB-BF441F105153}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BEE9930C-1EBD-4C05-A7DE-75861D813FEA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C022C22D-BCDD-4C4E-A4DF-229CD404C1B7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C3701884-B39B-11D1-9D68-00C04FC30DF6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C37C64B1-19D1-4E2C-84F7-92ACF0200172}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C4D4FFE9-121E-498C-A8C8-40C8E5DA79A6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C623B63E-9E5F-4E4B-88DA-8186D3CA1175}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C7D7220C-3760-4CA7-9256-4AD68814ED2E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D065B13D-BE56-4FEE-9438-0B0199B50584}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D132B247-1D32-49A6-A697-532024E827A8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D15E99E7-7673-442F-BB8F-A27C24FEB32A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D3CE5DB0-6F51-4AFB-87DA-F240DACE05A6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D78468FA-95F8-4AAF-821D-3DE031F2EBF9}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D7B6CE82-B809-4332-87DD-153018824374}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D7BD47C8-14F6-49B2-88CD-339F05EEC695}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DCFD8A0B-4BA5-4E9F-88D8-EA8461C8C5A3}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DE4DE0DC-FA65-4BC9-8DB6-52676B889F13}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DEF5A7FF-3254-452D-8EE0-575915DDC5AC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E02A27D7-2315-48BE-BC18-703687DEAA7F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E0FD54F8-E4E3-4BA6-BD98-906A15798F40}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E105618D-D888-4B63-82E2-D79EFD1DE62E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E26A6C01-DDE4-4321-9779-23B220DDDD66}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E34D5316-0B78-4350-B75E-15E8E2472492}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E37CB85B-4D77-4CDA-918D-2EE90D3CC5EF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E4EB31E9-B958-4ED9-8827-E660EB55BE7C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E71C4F23-9AA1-4830-AEEF-E7C915FA3E22}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E73B6BE9-C066-4153-B09C-A1900D2B33B0}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E829131F-8665-4181-8633-819DC1E76104}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E9C5B991-5828-4D4D-8EDF-3121CEDB6360}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EAE9E57A-C2DB-4301-9EDC-E3B015317A46}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EDBCA2F4-A1A0-4074-AC25-4D24E18D5182}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EFE3549A-25E8-4B90-8C79-9D531975BD31}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F4A612D1-9832-46C2-B02C-F2976DC9148D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F4FA3223-A3AD-43C8-8B90-2AF1F8A49D31}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F5954FDA-9D0B-4A21-AC06-D8CA786095B7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F722CC65-E38A-496B-BA76-49EBF9571415}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F8EFE842-769F-4ACD-B945-392576AB0EB8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED4-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{FC1D6420-BCE7-4AE8-B15C-A53FEC68884A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{01776DF3-B9AF-4E50-9B1C-56E93116D704}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{01EF9003-3A81-43F8-8DCA-762AFB22D9CD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{04282051-1F1C-4742-9551-816C9D9C7E83}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{04E98202-6FAF-4F3B-99CE-ADEF801314CD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{08E9AD98-9FDD-4BA1-AAEA-40181D0065D8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{093FF999-1EA0-4079-9525-9614C3504B74}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{095B9B12-8BDE-49D2-984B-BF01B4F8CDAF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{096170A3-B314-467E-B96A-6ECEC20E9371}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0AEA3667-1039-43FF-8D21-B1A162090671}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0F87369F-A4E5-4CFC-BD3E-73E6154572DD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1049DD1D-65B3-4BFC-BFDD-1B744E5B76E8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{13639463-00DB-4646-803D-528026140D88}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{154D6118-5A40-49D0-9A81-55E74672914F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{166BADDE-67F9-497B-9B9C-FFB9AD9EB64B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{17C08CAB-3BCA-4EE6-8377-4867CC58DEF2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{19E38D35-EF0E-41C9-A521-A0214A91CAA1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1BA53ADB-3E66-4129-8F0B-C616B6527207}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1BC2B69A-3904-44CD-BD8C-88ED5FCBB6CF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1C55D69F-925C-4C60-B0F4-9E0EDCEA5341}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1C6EEEA3-BB9F-4FBA-B053-836798150986}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1DD72B33-03E9-4CB0-BE80-FEC534CC7DFC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1FEFD825-016B-484C-A0AA-616C5F371C1F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2206CDB2-19C1-11D1-89E0-00C04FD7A829}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{290914A1-A0A8-45D7-9850-494EBB021691}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{298F7F67-B747-4925-8E59-C5DF6BE5F76D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2D19CA7E-0242-4E26-92C4-A70255CA1584}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{317E92FC-1679-46FD-A0B5-F08914DD8623}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{360F93B3-8AA1-447D-9221-F7A6E33267D2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{372796A9-76EC-479D-AD6C-556318ED5F9D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{397A2E5F-348C-482D-B9A3-57D383B483CD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3A5859D7-7B5B-4FC8-8689-422F96F38F2E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3AD5D6FD-4D35-4BE0-8062-73D15E6510EB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3E4D4F1C-2AEE-11D1-9D3D-00C04FC30DF6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3EC80189-C07C-45DD-8F11-0E6D41B181C2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3F15991A-FEFA-4556-90D0-ACA0C979D7DD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3F66A8E8-A631-4F4E-B2A0-20BB2EF29D66}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{435899C9-44AB-11D1-AF00-080036234103}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{444C718F-5772-4ABE-8A30-DD856E34A978}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{45260AAF-5471-44E1-9539-E8C7BD71DDAA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{458ED13E-A9F2-4F37-BDCB-A50CB42B63EF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{45B07150-E207-44F1-9305-CCD6DB9BF1BF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{46AE633A-032B-41CC-8FC7-E26E246E6CB8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{47DFBE54-CF76-11D3-B38F-00105A1F473A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{47FB9C4C-1B5E-4573-BFCD-C03EBE7F8CDD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{483AFB5D-70DF-4E16-ABDC-A1DE4D015A3E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{49CD50D2-844E-42A6-A017-3F12F3B7EE44}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4CB43D7F-7EEE-4906-8698-60DA1C38F2FE}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4EA6D9ED-1A4E-4D14-AB17-D1B7DB97CDFA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4F664F91-FF01-11D0-8AED-00C04FD7B597}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50362BD0-990A-466C-8725-61EDD69817AA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50D33BB6-0061-4304-AC3E-96B02AB7AB03}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50D33BB6-0061-4304-AC3E-96B02AB7AB05}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50D33BB6-0061-4304-AC3E-96B02AB7AB06}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50D33BB6-0061-4304-AC3E-96B02AB7AB07}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50D33BB6-0061-4304-AC3E-96B02AB7AB08}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50D33BB6-0061-4304-AC3E-96B02AB7AB09}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50DBEEB8-DB8F-4060-B51D-D849AC02E1FC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{512B2841-E369-43A3-993A-B968798C030A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{53362C64-A296-4F2D-A2F8-FD984D08340B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{545CD43B-A94C-4495-B763-33B09D8691FB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{54AA24EA-50E1-4526-B086-939114815801}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{54AF9350-1923-11D3-9CA4-00C04F72C514}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{57233914-D067-4C2A-AC4D-F9C58360A5F4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5791BC26-CE9C-11D1-97BF-0000F81E849C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5828227C-20CF-4408-B73F-73AB70B8849F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5971EC44-072A-41B7-8E67-D9E045CC196D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5A21B3E9-A999-4E51-BAA1-C7D0EEC7C131}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5BAF654A-5A07-4264-A255-9FF54C7151E7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5C209626-D820-4D69-8D50-1FACD6214488}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5C2DC96F-8D51-434B-B33C-379BCCAE77C3}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{61E79517-4A4E-45D8-9219-30E71A9EFF39}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{650503CF-9108-4DDC-A2CE-6C2341E1C582}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{65303443-AD66-11D1-9D65-00C04FC30DF6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{69A29E40-690A-4D2A-9101-C7A9EE3BC0B1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{69BFE4E0-3887-4797-A946-4F94B428B088}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6A40AA0F-7103-4728-AAA0-F027E5175910}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6CDC31D9-44A2-4C68-B45E-2AA6C351E6F6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6D4A79E4-529C-4481-ABD0-F5BD7EA93BA7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6F6114AD-BD1C-4FEB-BFE1-CB7738DDE75F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{72693084-2DA7-4CEA-92D8-9B0E8E603B32}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{72ADD386-C0F3-464C-9413-60E85A7C433D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{72C24DD5-D70A-438B-8A42-98424B88AFB8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{72C97D74-7C3B-40AE-B77D-ABDB22EBA6FB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{741174A3-A099-4418-82BA-E255DBF32865}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{75718C9A-F029-11D1-A1AC-00C04FB6C223}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{76A64158-CB41-11D1-8B02-00600806D9B6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{79535BA6-DFFE-4372-953C-C567171CAFBA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7988B571-EC89-11CF-9C00-00AA00A14F56}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7DE087A5-5DCB-4DF7-BB12-0924AD8FBD9A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{803A474F-B1DE-4042-A297-9EFFD079E640}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{834E6790-E318-4A57-B395-86EB2D1F7A96}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{855B476A-C1D7-47DA-9AFE-A9AAB7384B20}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{85DDE7EA-50E4-4E3B-B65F-A82A4508B70F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8AFE3B32-D342-44A6-B72A-858388E983D1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8B63C2D9-3330-47C4-9BA0-AF80C93232B4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8C162D71-48DC-4F10-B861-6DAB1C9EF9E0}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8C8232C2-D4D1-49E3-9F34-A39B2ABA005F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8D69AEBD-03FF-43CB-929E-3B136C7845B1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8E2D9B44-BFD9-4FB7-9111-DF9025AA68F5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8EB28F7A-65D6-4E8B-86D7-FABE82565AE5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{900DADEF-38F5-41F4-A544-8F20BEA459BC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9200CC80-59E0-41D1-96FC-9592DB834D10}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{92337A8C-E11D-11D0-BE48-00C04FC30DF6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{94A58C75-1EF5-4663-9D80-A3258230E701}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{94DD2AEB-6D73-49C1-AF1A-820E21218610}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{98A4F564-538B-4CB2-9AA3-7F636A2797C5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{98BC80B2-B764-478A-9146-BC43BC9F86A7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{996F28A2-BCD1-4D3F-8FF3-7BF20186FC17}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9AED384E-CE8B-11D1-8B05-00600806D9B6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9BD0E9BF-7C86-40BF-9A9B-AF9231301637}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9C4D3346-650D-472D-A867-6F595B39D973}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A0CAE2B0-84D8-45D3-9D75-C03B9376982F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A276EF54-2D6E-48F1-83CF-416327AAFECE}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A2D79232-0229-4AEA-9667-5E1D6B3F9E3F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A52E7669-1ACF-4087-AC87-1CCF356046E2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A5F2773C-2525-4F4F-825A-E5A8C839B042}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A70B996D-53A9-45F1-8246-5C3BB5C25658}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AA558FA2-A340-4A23-B765-614BA827CE1D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AB15AACC-DC35-47EF-A6B1-2AFDA2F4D94C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B01E5D08-9703-4256-A869-2C7C3A96C053}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B0EDDB1C-FD57-4854-82AC-0DC3A017738E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B2BCFF59-A757-4B0B-A1BC-EA69981DA69E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B2FA6F3D-AE06-464B-83D4-F1A53D20C392}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B330EE8D-1D86-4C41-B080-669F5CFEE211}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B699E5E8-67FF-4177-88B0-3684A3388BFB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BCED617B-EC03-420B-8508-977DC7A686BD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BD2E2EBE-A12A-454F-A419-559C6CC06CB6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BEB4F0D3-0AE0-4B70-89AB-BF441F105153}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BEE9930C-1EBD-4C05-A7DE-75861D813FEA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BF6111AC-B7FC-4A1C-8D66-599F0F7642DC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BFE18E9C-6D87-4450-B37C-E02F0B373803}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C01B9BA0-BEA7-41BA-B604-D0A36F469133}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C022C22D-BCDD-4C4E-A4DF-229CD404C1B7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C2E88C2F-6F5B-4AAA-894B-55C847AD3A2D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C2FEEEAC-CFCD-11D1-8B05-00600806D9B6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C3701884-B39B-11D1-9D68-00C04FC30DF6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C4D4FFE9-121E-498C-A8C8-40C8E5DA79A6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C623B63E-9E5F-4E4B-88DA-8186D3CA1175}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C7D7220C-3760-4CA7-9256-4AD68814ED2E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CF66AF8F-699F-4FD8-9ED9-B7FD1416F7B6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D065B13D-BE56-4FEE-9438-0B0199B50584}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D132B247-1D32-49A6-A697-532024E827A8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D15E99E7-7673-442F-BB8F-A27C24FEB32A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D20A3293-3341-4AE8-9AAF-8E397CB63C34}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D269BF5C-D9C1-11D3-B38F-00105A1F473A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D2E0FE7F-D23E-48E1-93C0-6FA8CC346474}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D3CE5DB0-6F51-4AFB-87DA-F240DACE05A6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D78468FA-95F8-4AAF-821D-3DE031F2EBF9}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D7B6CE82-B809-4332-87DD-153018824374}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D7BD47C8-14F6-49B2-88CD-339F05EEC695}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DCFD8A0B-4BA5-4E9F-88D8-EA8461C8C5A3}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DE4DE0DC-FA65-4BC9-8DB6-52676B889F13}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E02A27D7-2315-48BE-BC18-703687DEAA7F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E0FD54F8-E4E3-4BA6-BD98-906A15798F40}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E105618D-D888-4B63-82E2-D79EFD1DE62E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E26A6C01-DDE4-4321-9779-23B220DDDD66}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E34D5316-0B78-4350-B75E-15E8E2472492}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E4EB31E9-B958-4ED9-8827-E660EB55BE7C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E71C4F23-9AA1-4830-AEEF-E7C915FA3E22}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E829131F-8665-4181-8633-819DC1E76104}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E9C5B991-5828-4D4D-8EDF-3121CEDB6360}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EFE3549A-25E8-4B90-8C79-9D531975BD31}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F159A1A7-462A-4FF3-8E51-E518DC011268}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F1ED7D4C-F863-4DE6-A1CA-7253EFDEE1F3}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F31091EA-B0A8-11D6-B6FC-005056C00008}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F4A612D1-9832-46C2-B02C-F2976DC9148D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F4FA3223-A3AD-43C8-8B90-2AF1F8A49D31}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F512434A-23E2-4A2E-B08C-1E8BDAD43E43}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F5694708-88FE-4B35-BABF-E56162D5FBC8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F5954FDA-9D0B-4A21-AC06-D8CA786095B7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F722CC65-E38A-496B-BA76-49EBF9571415}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F8D253D9-89A4-4DAA-87B6-1168369F0B21}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F8EFE842-769F-4ACD-B945-392576AB0EB8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F935DC22-1CF0-11D0-ADB9-00C04FD58A0B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F935DC26-1CF0-11D0-ADB9-00C04FD58A0B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{FC1D6420-BCE7-4AE8-B15C-A53FEC68884A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED5-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{FCDC2CF5-ABCD-4BA5-94DA-1823AE06FE2B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED8-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{98AF66E4-AA41-4226-B80F-0B1A8F34EEB4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED8-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{ADBE6DEC-9B04-4A3D-A09C-4BB38EF1351C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{40FC6ED8-2438-11CF-A3DB-080036F12502}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CF1BF3B6-7AD0-4410-996B-C78EAFCD3269}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{00B01B2E-B1FE-33A6-AD40-57DE8358DC7D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{01FF4E4B-8AD0-3171-8C82-5C2F48B87E3D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{026CC6D7-34B2-33D5-B551-CA31EB6CE345}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{06B81C12-A5DA-340D-AFF7-FA1453FBC29A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{07F94112-A42E-328B-B508-702EF62BCC29}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{08295C62-7462-3633-B35E-7AE68ACA3948}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{09A60795-31C0-3A79-9250-8D93C74FE540}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0D23F8B4-F2A6-3EFF-9D37-BDF79AC6B440}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0D52ABE3-3C93-3D94-A744-AC44850BACCD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0E4EFFC0-2387-11D3-B372-00105A98B7CE}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0E71F9BD-C109-3352-BD60-14F96D56B6F3}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0FF66430-C796-3EE7-902B-166C402CA288}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{112BC2E7-9EF9-3648-AF9E-45C0D4B89929}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{11581718-2434-32E3-B559-E86CE9923744}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1163D0CA-2A02-37C1-BF3F-A9B9E9D49245}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{146855FA-309F-3D0E-BB3E-DF525F30A715}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{146A47AB-A2CF-3587-BB25-2B286D7566B4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{14910622-09D4-3B4A-8C1E-9991DBDCC553}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{14BE6B21-C682-3A3A-8B24-FEE75B4FF8C5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{18B1C7EE-68E3-35BB-9E40-469A223285F7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1A06A4DC-E239-3717-89E1-D0683F3A5320}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1B979846-AAEB-314B-8E63-D44EF1CB9EFC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1C97EF1D-74ED-3D21-84A4-8631D959634A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1D09B407-A97F-378A-ACCB-82CA0082F9F3}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1EC2DE53-75CC-11D2-9775-00A0C9B4D50C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1F17C39C-99D5-37E0-8E98-8F27044BD50A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{1F9F18A3-EFC0-3913-84A5-90678A4A9A80}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{20051D1B-321F-3E4D-A3DA-5FBE892F7EC5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{204D5A28-46A0-3F04-BD7C-B5672631E57F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{21F5A790-53EA-3D73-86C3-A5BA6CF65FE9}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2206D773-CA1C-3258-9456-CEB7706C3710}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{24540EBC-316E-35D2-80DB-8A535CAF6A35}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{24EEC005-3938-3C71-821D-7F68FD850B2D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2763BE6B-F8CF-39D9-A2E8-9E9815C0815E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{27E986E1-BAEC-3D48-82E4-14169CA8CECF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{27F31D55-D6C6-3676-9D42-C40F3A918636}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2846AE5E-A9FA-36CF-B2D1-6E95596DBDE7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{29625281-51CE-3F8A-AC4D-E360CACB92E2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{29A6CF6F-D663-31A7-9210-1347871681FC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{29C69707-875F-3678-8F01-283094A2DFB1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2BB6C5E0-C2B9-3608-8868-21CFD6DDB91E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2C314899-8F99-3041-A49D-2F6AFC0E6296}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2D5EC63C-1B3E-3EE4-9052-EB0D0303549C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{2DECBCB7-BAC0-316D-9131-43035C5CB480}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{30AC0B94-3BDB-3199-8A5D-ECA0C5458381}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{31C967B5-2F8A-3957-9C6D-34A0731DB36C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{31D353B3-0A0A-3986-9B20-3EC4EE90B389}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{346D5B9F-45E1-45C0-AADF-1B7D221E9063}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3495E5FA-2A90-3CA7-B3B5-58736C4441DD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{35E946E4-7CDA-3824-8B24-D799A96309AD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{36DCDA30-DC3B-4D93-BE42-90B2D74C64E7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{374050DD-6190-3257-8812-8230BF095147}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{37F7FF28-6836-4AC9-9A21-7670AF0C89CF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{390E92C9-FA66-3357-BEF2-45A1F34186B9}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{39B68485-6773-3C46-82E9-56D8F0B4570C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3B0398C9-7812-4007-85CB-18C771F2206F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3BD1F243-9BC4-305D-9B1C-0D10C80329FC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3C9DCA8B-4410-3143-B801-559553EB6725}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3CDED51A-86B4-39F0-A12A-5D1FDCED6546}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3D367908-928F-3C13-8B93-5E1718820F6D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3DDB2114-9285-30A6-906D-B117640CA927}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3E5509F0-1FB9-304D-8174-75D6C9AFE5DA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3E8E0F03-D3FD-3A93-BAE0-C74A6494DBCA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3F281000-E95A-11D2-886B-00C04F869F04}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3F4A4283-6A08-3E90-A976-2C2D3BE4EB0B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3FA7A1C5-812C-3B56-B957-CB14AF670C09}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3FB717AF-9D21-3016-871A-DF817ABDDD51}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{3FDCEEC6-B14B-37E2-BB69-ABC7CA0DA22F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{40031115-09D2-3851-A13F-56930BE48038}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{405C2D81-315B-3CB0-8442-EF5A38D4C3B8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{40AE2088-CE00-33AD-9320-5D201CB46FC9}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{41970D73-92F6-36D9-874D-3BD0762A0D6F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4224AC84-9B11-3561-8923-C893CA77ACBE}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{42399796-BADB-41FC-BDD6-9E7130A024E6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4286FA72-A2FA-3245-8751-D4206070A191}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{432D76CE-8C9E-4EED-ADDD-91737F27A8CB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{433CA926-9887-3541-89CC-5D74D0259144}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{43CD41AD-3B78-3531-9031-3059E0AA64EB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{44181B13-AE94-3CFB-81D1-37DB59145030}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4479C009-4CC3-39A2-8F92-DFCDF034F748}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{458AA3B5-265A-4B75-BC05-9BEA4630CF18}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4599202D-460F-3FB7-8A1C-C2CC6ED6C7C8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{45FB4600-E6E8-4928-B25E-50476FF79425}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{46080CA7-7CB8-3A55-A72E-8E50ECA4D4FC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{463AE13F-C7E5-357E-A41C-DF8762FFF85C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{46E97093-B2EC-3787-A9A5-470D1A27417C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{475E398F-8AFA-43A7-A3BE-F4EF8D6787C9}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{477A7D8E-8D26-3959-88F6-F6AB7E7F50CF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{47D3C68D-7D85-3227-A9E7-88451D6BADFC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{48728B3F-F7D9-36C1-B3E7-8BF2E63CE1B3}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{48A75519-CB7A-3D18-B91E-BE62EE842A3E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{48AD62E8-BD40-37F4-8FD7-F7A17478A8E6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{48C6E96F-A2F3-33E7-BA7F-C8F74866760B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{48D0CFE7-3128-3D2C-A5B5-8C7B82B4AB4F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4B601364-A04B-38BC-BD38-A18E981324CF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4BE89AC3-603D-36B2-AB9B-9C38866F56D5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4C3EBFD5-FC72-33DC-BC37-9953EB25B8D7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4C69C54F-9824-38CC-8387-A22DC67E0BAB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4D187AC2-D815-3B7E-BCEA-8E0BBC702F7C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4E515531-7A71-3CDD-8078-0A01C85C8F9D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4E77EC8F-51D8-386C-85FE-7DC931B7A8E7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{4F272C37-F0A8-350C-867B-2C03B2B16B80}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50369004-DB9A-3A75-BE7A-1D0EF017B9D3}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{50AAD4C2-61FA-3B1F-8157-5BA3B27AEE61}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{53A3C917-BB24-3908-B58B-09ECDA99265F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5520B6D3-6EC6-3CE7-958B-E69FAF6EFF99}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5610F042-FF1D-36D0-996C-68F7A207D1F0}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{57154C7C-EDB2-3BFD-A8BA-924C60913EBF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{58897D76-EF6C-327A-93F7-6CD66C424E11}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{58D052BC-A3DF-3508-AC95-FF297BDC9F0C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{590E4A07-DAFC-3BE7-A178-DA349BBA980B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5A18D43E-115B-3B8B-8245-9A06B204B717}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5B76534C-3ACC-3D52-AA61-D788B134ABE2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5C35F099-165E-3225-A3A5-564150EA17F5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5C3E6CE8-B218-3762-883C-91BC987CDC2D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5CA9971B-2DC3-3BC8-847A-5E6D15CBB16E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5F3A0F8D-5EF9-3AD5-94E0-53AFF8BCE960}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{5F9A955F-AA55-4127-A32B-33496AA8A44E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{61B3E12B-3586-3A58-A497-7ED7C4C794B9}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{62545937-20A9-3D0F-B04B-322E854EACB0}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{62E92675-CB77-3FC9-8597-1A81A5F18013}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{630A3EF1-23C6-31FE-9D25-294E3B3E7486}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{647053C3-1879-34D7-AE57-67015C91FC70}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{66CE75D4-0334-3CA6-BCA8-CE9AF28A4396}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{673DFE75-9F93-304F-ABA8-D2A86BA87D7C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{676E1164-752C-3A74-8D3F-BCD32A2026D6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{682D63B8-1692-31BE-88CD-5CB1F79EDB7B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6850404F-D7FB-32BD-8328-C94F66E8C1C7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6896B49D-7AFB-34DC-934E-5ADD38EEEE39}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{68F8AEA9-1968-35B9-8A0E-6FDC637A4F8E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6A02951C-B129-4D26-AB92-B9CA19BDCA26}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6C1C243A-2146-3342-8078-AC4BFB9DB4E9}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6F674828-9081-3B45-BC39-791BD84CCF8F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{6F8527BF-5AAD-3236-B639-A05177332EFE}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{70A738D1-1BC5-3175-BD42-603E2B82C08B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{726BBDF4-6C6D-30F4-B3A0-F14D6AEC08C7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{742AD1FB-B2F0-3681-B4AA-E736A3BCE4E1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{74BDD0B9-38D7-3FDA-A67E-D404EE684F24}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{75215200-A2FE-30F6-A34B-8F1A1830358E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{75999EBA-0679-3D43-BDC4-02E4D637F1B1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{769B8B68-64F7-3B61-B744-160A9FCC3216}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{777F668E-3272-39CD-A8B5-860935A35181}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{78D22140-40CF-303E-BE96-B3AC0407A34D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7AE01D6C-BEE7-38F6-9A86-329D8A917803}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7AE844F0-ECA8-3F15-AE27-AFA21A2AA6F8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7B769B29-35F0-3BDC-AAE9-E99937F6CDEC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7B938A6F-77BF-351C-A712-69483C91115D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7BC115CD-1EE2-3068-894D-E3D3F7632F40}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7E3393AB-2AB2-320B-8F6F-EAB6F5CF2CAF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7E34AB89-0684-3B86-8A0F-E638EB4E6252}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7F6BCBE5-EB30-370B-9F1B-92A6265AFEDD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7F71DB2D-1EA0-3CAE-8087-26095F5215E6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7F8C7DC5-D8B4-3758-981F-02AF6B42461A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7F976B72-4B71-3858-BEE8-8E3A3189A651}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7FD3958D-0A14-3001-8074-0D15EAD7F05C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{7FE87A55-1321-3D9F-8FEF-CD2F5E8AB2E9}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{81C5FE01-027C-3E1C-98D5-DA9C9862AA21}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{837A6733-1675-3BC9-BBF8-13889F84DAF4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{84589833-40D7-36E2-8545-67A92B97C408}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{84F70B6C-D59E-394A-B879-FFCC30DDCAA2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8833BC41-DC6B-34B9-A799-682D2554F02F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{88C8A919-EB24-3CCA-84F7-2EA82BB3F3ED}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{89A86E7B-C229-4008-9BAA-2F5C8411D7E0}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{89BCC804-53A5-3EB2-A342-6282CC410260}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{89D26277-8408-3FC8-BD44-CF5F0E614C82}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8A3FD229-B2A9-347F-93D2-87F3B7F92753}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8C1425C9-A7D3-35CD-8248-928CA52AD49B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8C40D44A-4EDE-3760-9B61-50255056D3C7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8D36569B-14D6-3C3D-B55C-9D02A45BFC3D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8F45C7FF-1E6E-34C1-A7CC-260985392A05}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8F6D198C-E66F-3A87-AA3F-F885DD09EA13}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{8FD730C1-DD1B-3694-84A1-8CE7159E266B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{90F1A06E-7712-4762-86B5-7A5EBA6BDB01}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{90F1A06E-7712-4762-86B5-7A5EBA6BDB02}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{91591469-EFEF-3D63-90F9-88520F0AA1EF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9173D971-B142-38A5-8488-D10A9DCF71B0}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{91F672A3-6B82-3E04-B2D7-BAC5D6676609}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{92755472-2059-3F96-8938-8AC767B5187B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{92E76A74-2622-3AA9-A3CA-1AE8BD7BC4A8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{93D11DE9-5F6C-354A-A7C5-16CCCA64A9B8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{93F551D6-2F9E-301B-BE63-85AEF508CAE0}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9546306B-1B68-33AF-80DB-3A9206501515}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{964AA3BD-4B12-3E23-9D7F-99342AFAE812}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{96705EE3-F7AB-3E9A-9FB2-AD1D536E901A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{96A058CD-FAF7-386C-85BF-E47F00C81795}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9A3A64F4-8BA5-3DCF-880C-8D3EE06C5538}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9A944885-EDAF-3A81-A2FF-6A9D5D1ABFC7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9B924EC5-BF13-3A98-8AC0-80877995D403}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9BF86F6E-B0E1-348B-9627-6970672EB3D3}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9C125A6F-EAE2-3FC1-97A1-C0DCEAB0B5DF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9C67F424-22DC-3D05-AB36-17EAF95881F2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9D309F77-4655-372E-84B0-B0FB4030F3B8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9DA2F8B8-59F0-3852-B509-0663E3BF643B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9E28EF95-9C6F-3A00-B525-36A76178CC9C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9E31421C-2F15-4F35-AD20-66FB9D4CD428}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{9EA60ECA-3DCD-340F-8E95-67845D185999}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A0E2E749-63CE-3651-8F4F-F5F996344C32}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A0F5F5DC-337B-38D7-B1A3-FB1B95666BBF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A164C0BF-67AE-3C7E-BC05-BFE24A8CDB62}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A1C0A095-DF97-3441-BFC1-C9F194E494DB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A36738B5-FA8F-3316-A929-68099A32B43B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A36E4EAF-EA3F-30A6-906D-374BBF7903B1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A3A1F076-1FA7-3A26-886D-8841CB45382F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A5448B7A-AA07-3C56-B42B-7D881FA10934}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A6673C32-3943-3BBB-B476-C09A0EC0BCD6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A7136BDF-B141-3913-9D1C-9BC5AFF21470}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A7248EC6-A8A5-3D07-890E-6107F8C247E5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A7EDDCB5-6043-3988-921C-25E3DEE6322B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A8D058C4-D923-3859-9490-D3888FC90439}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A8F9F740-70C9-30A7-937C-59785A9BB5A4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AAD4BDD3-81AA-3ABC-B53B-D904D25BC01E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AB558A90-77EC-3C9A-A7E3-7B2260890A84}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AD326409-BF80-3E0C-BA6F-EE2C33B675A5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AD664904-FE8A-3217-BBF5-E6AB1D998F5F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AE53ED01-CAB4-39CE-854A-8BF544EEEC35}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AF60343F-6C7B-3761-839F-0C44E3CA06DA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AF8C5F8A-9999-3E92-BB41-C5F4955174CD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AFAEF10F-1BC4-351F-886A-878A265C1862}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AFC681CF-E82F-361A-8280-CF4E1F844C3E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{AFEF65AD-4577-447A-A148-83ACADD3D4B9}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B0F64827-79BB-3163-B1AB-A2EA0E1FDA23}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B29D466A-857D-35BA-8712-A758861BFEA1}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B406AC70-4D7E-3D24-B241-AEAEAC343BD9}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B54E38F8-17FF-3D0A-9FF3-5E662DE2055F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B6EB52D5-BB1C-3380-8BCA-345FF43F4B04}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B71E484D-93ED-4B56-BFB9-CEED5134822B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B81CB5ED-E654-399F-9698-C83C50665786}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B81FF171-20F3-11D2-8DCC-00A0C9B00525}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BC5062B6-79E8-3F19-A87E-F9DAF826960C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BCB67D4D-2096-36BE-974C-A003FC95041B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BDA7BEE5-85F1-3B66-B610-DDF1D5898006}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{BFFECCA7-4069-49F9-B5AB-7CCBB078ED91}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C016A313-9606-36D3-A823-33EBF5006189}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C03880A5-0B5E-39AD-954A-CE0DCBD5EF7D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C1ABB475-F198-39D5-BF8D-330BC7189661}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C30ABD41-7B5A-3D10-A6EF-56862E2979B6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C41D0B30-A518-3093-A18F-364AF9E71EB7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C41FA05C-8A7A-3157-8166-4104BB4925BA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C437AB2E-865B-321D-BA15-0C8EC4CA119B}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C498F2D9-A77C-3D4B-A1A5-12CC7B99115D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C76B435D-86C2-30FD-9329-E2603246095C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C7B9C313-2FD4-4384-8571-7ABC08BD17E5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C89AC250-E18A-4FC7-ABD5-B8897B6A78A5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C8B67F54-D1CB-44BF-9103-A1AB9A9ED8AD}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C9F0A842-3CE1-338F-A1D4-6D7BB397BDAA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{C9F61CBD-287F-3D24-9FEB-2C3F347CF570}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CA0F511A-FAF2-4942-B9A8-17D5E46514E8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CA35CB3D-0357-11D3-8729-00C04F79ED0D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CA805B13-468C-3A22-BF9A-818E97EFA6B7}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CAA817CC-0C04-4D22-A05C-2B7E162F4E8F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CAEC7D4F-0B02-3579-943F-821738EE78CC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CB2F6723-AB3A-11D2-9C40-00C04FA30A3E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CBEAA915-4D2C-3F77-98E8-A258B0FD3CEF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CC20C6DF-A054-3F09-A5F5-A3B5A25F4CE6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CC77F5F3-222D-3586-88C3-410477A3B65D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CCF306AE-33BD-3003-9CCE-DAF5BEFEF611}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CDC70043-D56B-3799-B7BD-6113BBCA160A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CDFA7117-B2A4-3A3F-B393-BC19D44F9749}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CF8F7FCF-94FE-3516-90E9-C103156DD2D5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D049DC2B-82C3-3350-A1CC-BF69FEE3825E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D13B741D-051F-322F-93AA-1367A3C8AAFB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D23D2F41-1D69-3E03-A275-32AE381223AC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D2548BF2-801A-36AF-8800-1F11FBF54361}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D41969A6-C394-34B9-BD24-DD408F39F261}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D5CB383D-99F4-3C7E-A9C3-85B53661448F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D6D2034D-5F67-30D7-9CC5-452F2C46694F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D74D613D-F27F-311B-A9A3-27EBC63A1A5D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D8013EEF-730B-45E2-BA24-874B7242C425}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D8013EF1-730B-45E2-BA24-874B7242C425}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D8013FF1-730B-45E2-BA24-874B7242C425}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D8A4F3EB-E7EC-3620-831A-B052A67C9944}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{D9035152-6B1F-33E3-86F4-411CD21CDE0E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DA317BE2-1A0D-37B3-83F2-A0F32787FC67}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DAA132BF-1170-3D8B-A0EF-E2F55A68A91D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DAFB2462-2A5B-3818-B17E-602984FE1BB0}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DB13821E-9835-3958-8539-1E021399AB6C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DD5856E5-8151-3334-B8E9-07CB152B20A4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DE47D9CF-0107-3D66-93E9-A8ACB06B4583}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{DFD888A7-A6B0-3B1B-985E-4CDAB0E4C17D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E38DA416-8050-3786-8201-46F187C15213}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E5CB7A31-7512-11D2-89CE-0080C792E5D8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E724B749-18D6-36AB-9F6D-09C36D9C6016}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E772BBE6-CB52-3C19-876A-D1BFA2305F4E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E786FB32-B659-3D96-94C4-E1A9FC037868}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E7D574D5-2E51-3400-9FB6-A058F2D5B8AB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E822F35C-DDC2-3FB2-9768-A2AEBCED7C40}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E9148312-A9BF-3A45-BBCA-350967FD78F5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{E947A0B0-D47F-3AA3-9B77-4624E0F3ACA4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EAA78D4A-20A3-3FDE-AB72-D3D55E3AEFE6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EBAA029C-01C0-32B6-AAE6-FE21ADFC3E5D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EC3DAC94-DF80-3017-B381-B13DCED6C4D8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{ECABAFD1-7F19-11D2-978E-0000F8757E2A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{ECC82A10-B731-3A01-8A17-AC0DDD7666CF}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{ED0BC45C-2438-31A9-BBB6-E2A3B5916419}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EE24A2C3-3AA2-33DA-8731-A4FCC1105813}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EE832CE3-06CA-33EF-8F01-61C7C218BD7E}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EE96F4E1-377E-315C-AEF5-874DC8C7A2AA}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EEF05C76-5C98-3685-A69C-6E1A26A7F846}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EF24F689-14F8-4D92-B4AF-D7B1F0E70FD4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F00CA7A7-4B8D-3F2F-A5F2-CE4A4478B39C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F12FDE6A-9394-3C32-8E4D-F3D470947284}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F1C3BF79-C3E4-11D3-88E7-00902754C43A}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F1EBA909-6621-346D-9CE2-39F266C9D011}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F59D514C-F200-319F-BF3F-9E4E23B2848C}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F5E692D9-8A87-349D-9657-F96E5799D2F4}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F6914A11-D95D-324F-BA0F-39A374625290}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F6B6768F-F99E-4152-8ED2-0412F78517FB}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F8BE2AD5-4E99-3E00-B10E-7C54D31C1C1D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{FA0B54D5-F221-3648-A20C-F67A96F4A207}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{FC13A7D5-E2B3-37BA-B807-7FA6238284D5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{FD8C8FCE-4F85-36B2-B8E8-F5A183654539}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{FDB2DC94-B5A0-3702-AE84-BBFA752ACB36}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{FDF9C30D-CCAB-3E2D-B584-9E24CE8038E3}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{FFC9F9AE-E87A-3252-8E25-B22423A40065}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{7DD95801-9882-11CF-9FA9-00AA006C42C4}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{06290BD8-48AA-11D2-8432-006008C3FBFC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{7DD95801-9882-11CF-9FA9-00AA006C42C4}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{06290BD9-48AA-11D2-8432-006008C3FBFC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{7DD95801-9882-11CF-9FA9-00AA006C42C4}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{06290BDB-48AA-11D2-8432-006008C3FBFC}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{7DD95801-9882-11CF-9FA9-00AA006C42C4}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{92337A8C-E11D-11D0-BE48-00C04FC30DF6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{7DD95801-9882-11CF-9FA9-00AA006C42C4}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B021FF57-A928-459C-9D6C-14DED0C9BED2}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{7DD95801-9882-11CF-9FA9-00AA006C42C4}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{EE09B103-97E0-11CF-978F-00A02463E06F}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{7DD95802-9882-11CF-9FA9-00AA006C42C4}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{92337A8C-E11D-11D0-BE48-00C04FC30DF6}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A1-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{989D1DC0-B162-11D1-B6EC-D27DDCF9A923}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A1-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B54F3741-5B07-11CF-A4B0-00AA004A55E8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A1-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B54F3743-5B07-11CF-A4B0-00AA004A55E8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A1-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CC5BBEC3-DB4A-4BED-828D-08D78EE3E1ED}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A1-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F414C260-6AC0-11CF-B6D1-00AA00BBBB58}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A1-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F414C262-6AC0-11CF-B6D1-00AA00BBBB58}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A2-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{989D1DC0-B162-11D1-B6EC-D27DDCF9A923}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A2-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B54F3741-5B07-11CF-A4B0-00AA004A55E8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A2-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B54F3743-5B07-11CF-A4B0-00AA004A55E8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A2-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{CC5BBEC3-DB4A-4BED-828D-08D78EE3E1ED}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A2-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F414C260-6AC0-11CF-B6D1-00AA00BBBB58}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A2-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F414C262-6AC0-11CF-B6D1-00AA00BBBB58}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A3-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B54F3743-5B07-11CF-A4B0-00AA004A55E8}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{F0B7A1A3-9847-11CF-8F20-00805F2CD064}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F414C262-6AC0-11CF-B6D1-00AA00BBBB58}" | 
+```
+
+
+
+### Desktop
+#### Win32_Desktop
+```sh
+WQL> SELECT * FROM Win32_Desktop
+| SettingID | Caption | Description | BorderWidth | CoolSwitch | CursorBlinkRate | DragFullWindows | GridGranularity | IconSpacing | IconTitleFaceName | IconTitleSize | IconTitleWrap | Name | Pattern | ScreenSaverActive | ScreenSaverExecutable | ScreenSaverSecure | ScreenSaverTimeout | Wallpaper | WallpaperTiled | WallpaperStretched | 
+| None | None | None | 1 | None | 500 | True | None | None | Segoe UI | 9 | True | NT AUTHORITY\SYSTEM | (None) | False | None | None | None | None | None | False | 
+| None | None | None | 0 | None | 530 | True | None | None | Tahoma | 8 | True | NT AUTHORITY\LOCAL SERVICE | 0 | False | None | None | None | None | False | True | 
+| None | None | None | 0 | None | 530 | True | None | None | Tahoma | 8 | True | NT AUTHORITY\NETWORK SERVICE | 0 | False | None | None | None | None | False | True | 
+| None | None | None | 0 | None | 530 | True | None | None | Tahoma | 8 | True | HTB\sebastien | 0 | False | None | None | None | None | False | True | 
+| None | None | None | 0 | None | 530 | True | None | None | Tahoma | 8 | True | HTB\svc-alfresco | 0 | False | None | None | None | None | False | True | 
+| None | None | None | 1 | None | 530 | False | None | None | Segoe UI | 9 | True | HTB\Administrator | 0 | False | None | None | None | None | False | True | 
+| None | None | None | 1 | None | 500 | True | None | None | Segoe UI | 9 | True | .DEFAULT | (None) | False | None | None | None | None | None | False | 
+```
+#### Win32_Environment
+```sh
+WQL> SELECT * FROM Win32_Environment
+| Caption | Description | InstallDate | Name | Status | SystemVariable | UserName | VariableValue | 
+| <SYSTEM>\ComSpec | <SYSTEM>\ComSpec | None | ComSpec | OK | True | <SYSTEM> | %SystemRoot%\system32\cmd.exe | 
+| <SYSTEM>\OS | <SYSTEM>\OS | None | OS | OK | True | <SYSTEM> | Windows_NT | 
+| <SYSTEM>\Path | <SYSTEM>\Path | None | Path | OK | True | <SYSTEM> | %SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\ | 
+| <SYSTEM>\PATHEXT | <SYSTEM>\PATHEXT | None | PATHEXT | OK | True | <SYSTEM> | .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC | 
+| <SYSTEM>\PROCESSOR_ARCHITECTURE | <SYSTEM>\PROCESSOR_ARCHITECTURE | None | PROCESSOR_ARCHITECTURE | OK | True | <SYSTEM> | AMD64 | 
+| <SYSTEM>\PSModulePath | <SYSTEM>\PSModulePath | None | PSModulePath | OK | True | <SYSTEM> | %ProgramFiles%\WindowsPowerShell\Modules;%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules | 
+| <SYSTEM>\TEMP | <SYSTEM>\TEMP | None | TEMP | OK | True | <SYSTEM> | %SystemRoot%\TEMP | 
+| <SYSTEM>\TMP | <SYSTEM>\TMP | None | TMP | OK | True | <SYSTEM> | %SystemRoot%\TEMP | 
+| <SYSTEM>\USERNAME | <SYSTEM>\USERNAME | None | USERNAME | OK | True | <SYSTEM> | SYSTEM | 
+| <SYSTEM>\windir | <SYSTEM>\windir | None | windir | OK | True | <SYSTEM> | %SystemRoot% | 
+| <SYSTEM>\NUMBER_OF_PROCESSORS | <SYSTEM>\NUMBER_OF_PROCESSORS | None | NUMBER_OF_PROCESSORS | OK | True | <SYSTEM> | 2 | 
+| <SYSTEM>\PROCESSOR_LEVEL | <SYSTEM>\PROCESSOR_LEVEL | None | PROCESSOR_LEVEL | OK | True | <SYSTEM> | 25 | 
+| <SYSTEM>\PROCESSOR_IDENTIFIER | <SYSTEM>\PROCESSOR_IDENTIFIER | None | PROCESSOR_IDENTIFIER | OK | True | <SYSTEM> | AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD | 
+| <SYSTEM>\PROCESSOR_REVISION | <SYSTEM>\PROCESSOR_REVISION | None | PROCESSOR_REVISION | OK | True | <SYSTEM> | 0101 | 
+| NT AUTHORITY\SYSTEM\Path | NT AUTHORITY\SYSTEM\Path | None | Path | OK | False | NT AUTHORITY\SYSTEM | %USERPROFILE%\AppData\Local\Microsoft\WindowsApps; | 
+| NT AUTHORITY\SYSTEM\TEMP | NT AUTHORITY\SYSTEM\TEMP | None | TEMP | OK | False | NT AUTHORITY\SYSTEM | %USERPROFILE%\AppData\Local\Temp | 
+| NT AUTHORITY\SYSTEM\TMP | NT AUTHORITY\SYSTEM\TMP | None | TMP | OK | False | NT AUTHORITY\SYSTEM | %USERPROFILE%\AppData\Local\Temp | 
+| NT AUTHORITY\LOCAL SERVICE\Path | NT AUTHORITY\LOCAL SERVICE\Path | None | Path | OK | False | NT AUTHORITY\LOCAL SERVICE | %USERPROFILE%\AppData\Local\Microsoft\WindowsApps; | 
+| NT AUTHORITY\LOCAL SERVICE\TEMP | NT AUTHORITY\LOCAL SERVICE\TEMP | None | TEMP | OK | False | NT AUTHORITY\LOCAL SERVICE | %USERPROFILE%\AppData\Local\Temp | 
+| NT AUTHORITY\LOCAL SERVICE\TMP | NT AUTHORITY\LOCAL SERVICE\TMP | None | TMP | OK | False | NT AUTHORITY\LOCAL SERVICE | %USERPROFILE%\AppData\Local\Temp | 
+| NT AUTHORITY\NETWORK SERVICE\Path | NT AUTHORITY\NETWORK SERVICE\Path | None | Path | OK | False | NT AUTHORITY\NETWORK SERVICE | %USERPROFILE%\AppData\Local\Microsoft\WindowsApps; | 
+| NT AUTHORITY\NETWORK SERVICE\TEMP | NT AUTHORITY\NETWORK SERVICE\TEMP | None | TEMP | OK | False | NT AUTHORITY\NETWORK SERVICE | %USERPROFILE%\AppData\Local\Temp | 
+| NT AUTHORITY\NETWORK SERVICE\TMP | NT AUTHORITY\NETWORK SERVICE\TMP | None | TMP | OK | False | NT AUTHORITY\NETWORK SERVICE | %USERPROFILE%\AppData\Local\Temp | 
+| HTB\sebastien\Path | HTB\sebastien\Path | None | Path | OK | False | HTB\sebastien | %USERPROFILE%\AppData\Local\Microsoft\WindowsApps; | 
+| HTB\sebastien\TEMP | HTB\sebastien\TEMP | None | TEMP | OK | False | HTB\sebastien | %USERPROFILE%\AppData\Local\Temp | 
+| HTB\sebastien\TMP | HTB\sebastien\TMP | None | TMP | OK | False | HTB\sebastien | %USERPROFILE%\AppData\Local\Temp | 
+| HTB\svc-alfresco\Path | HTB\svc-alfresco\Path | None | Path | OK | False | HTB\svc-alfresco | %USERPROFILE%\AppData\Local\Microsoft\WindowsApps; | 
+| HTB\svc-alfresco\TEMP | HTB\svc-alfresco\TEMP | None | TEMP | OK | False | HTB\svc-alfresco | %USERPROFILE%\AppData\Local\Temp | 
+| HTB\svc-alfresco\TMP | HTB\svc-alfresco\TMP | None | TMP | OK | False | HTB\svc-alfresco | %USERPROFILE%\AppData\Local\Temp | 
+| HTB\Administrator\Path | HTB\Administrator\Path | None | Path | OK | False | HTB\Administrator | %USERPROFILE%\AppData\Local\Microsoft\WindowsApps; | 
+| HTB\Administrator\TEMP | HTB\Administrator\TEMP | None | TEMP | OK | False | HTB\Administrator | %USERPROFILE%\AppData\Local\Temp | 
+| HTB\Administrator\TMP | HTB\Administrator\TMP | None | TMP | OK | False | HTB\Administrator | %USERPROFILE%\AppData\Local\Temp |
+```
+#### Win32_TimeZone
+```sh
+WQL> SELECT * FROM Win32_TimeZone
+| SettingID | Caption | Description | Bias | DaylightBias | DaylightDay | DaylightDayOfWeek | DaylightHour | DaylightMillisecond | DaylightMinute | DaylightMonth | DaylightName | DaylightSecond | DaylightYear | StandardBias | StandardDay | StandardDayOfWeek | StandardHour | StandardMillisecond | StandardMinute | StandardMonth | StandardName | StandardSecond | StandardYear | 
+| None | (UTC-08:00) Pacific Time (US & Canada) | (UTC-08:00) Pacific Time (US & Canada) | -480 | -60 | 2 | 0 | 2 | 0 | 0 | 3 | Pacific Daylight Time | 0 | 0 | 0 | 1 | 0 | 2 | 0 | 0 | 11 | Pacific Standard Time | 0 | 0 |
+```
+#### Win32_UserDesktop
+```sh
+WQL> SELECT * FROM Win32_UserDesktop
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\Administrator" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Guest" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="krbtgt" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="DefaultAccount" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="$331000-VK4ADACQNUCA" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_2c8eef0a09b545acb" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_ca8c2ed5bdab4dc9b" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_75a538d3025e4db9a" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_681f53d4942840e18" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_1b41c9286325456bb" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_9b69f1b9d2cc45549" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_7c96b981967141ebb" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_c75ee099d0a64c91b" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_1ffab36a2f5f479cb" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxc3d7722" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxfc9daad" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxc0a90c9" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox670628e" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox968e74d" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox6ded678" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox83d6781" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxfd87238" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxb01ac64" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox7108a4e" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox0659cc1" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="sebastien" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\sebastien" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="lucinda" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="svc-alfresco" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\svc-alfresco" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="andy" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="mark" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="santi" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" |
+```
+
+
+
+
+
 
 
 
