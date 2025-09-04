@@ -4667,15 +4667,1438 @@ WQL> SELECT * FROM Win32_ProtocolBinding
 ```
 
 
+### Operating System Events
+#### Win32_ComputerShutdownEvent
+#### Win32_ComputerSystemEvent
+#### Win32_DeviceChangeEvent
+#### Win32_ModuleLoadTrace
+#### Win32_ModuleTrace
+#### Win32_ProcessStartTrace
+#### Win32_ProcessStopTrace
+#### Win32_ProcessTrace
+#### Win32_SystemConfigurationChangeEvent
+#### Win32_SystemTrace
+#### Win32_ThreadStartTrace
+#### Win32_ThreadStopTrace
+#### Win32_ThreadTrace
+#### Win32_VolumeChangeEvent
 
 
-
-### Win32_ComputerSystemProcessor
+### Operating System Settings
+#### Win32_BootConfiguration
+```sh
+WQL> SELECT * FROM Win32_BootConfiguration
+| SettingID | Caption | Description | BootDirectory | ConfigurationPath | LastDrive | Name | ScratchDirectory | TempDirectory | 
+| None | \Device\Harddisk0\Partition2 | \Device\Harddisk0\Partition2 | C:\Windows | C:\Windows | C: | BootConfiguration | C:\Windows\system32\config\systemprofile\AppData\Local\Temp | C:\Windows\system32\config\systemprofile\AppData\Local\Temp |
+```
+#### Win32_ComputerSystem
+```sh
+WQL> SELECT * FROM Win32_ComputerSystem
+| Caption | Description | InstallDate | Name | Status | CreationClassName | NameFormat | PrimaryOwnerContact | PrimaryOwnerName | Roles | InitialLoadInfo | LastLoadInfo | PowerManagementSupported | PowerManagementCapabilities | PowerState | ResetCapability | AutomaticResetBootOption | AutomaticManagedPagefile | AutomaticResetCapability | BootROMSupported | BootupState | CurrentTimeZone | DNSHostName | Domain | InfraredSupported | Manufacturer | Model | NetworkServerModeEnabled | OEMLogoBitmap | SupportContactDescription | SystemStartupDelay | SystemStartupOptions | SystemStartupSetting | SystemType | UserName | DomainRole | WakeUpType | OEMStringArray | BootOptionOnLimit | BootOptionOnWatchDog | ResetCount | ResetLimit | PauseAfterReset | PowerOnPasswordStatus | KeyboardPasswordStatus | AdminPasswordStatus | FrontPanelResetStatus | ChassisBootupState | PowerSupplyState | ThermalState | DaylightInEffect | EnableDaylightSavingsTime | NumberOfProcessors | NumberOfLogicalProcessors | TotalPhysicalMemory | PartOfDomain | PCSystemType | PCSystemTypeEx | Workgroup | SystemSKUNumber | SystemFamily | ChassisSKUNumber | BootStatus | HypervisorPresent | 
+| FOREST | AT/AT COMPATIBLE | None | FOREST | OK | Win32_ComputerSystem | None | None | Windows User | 323 339 350 377 389 393  | None | None | True | None | 0 | 1 | True | True | True | True | Normal boot | -420 | FOREST | htb.local | False | VMware, Inc. | VMware7,1 | True | None | None | None | None | None | x64-based PC | None | 5 | 6 | [MS_VM_CERT/SHA1/27d66596a61c48dd3dc7216fd715126e33f59ae7] Welcome to the Virtual Machine  | 3 | 3 | -1 | -1 | 3932100000 | 0 | 3 | 1 | 3 | 3 | 3 | 3 | True | True | 1 | 2 | 2146447360 | True | 1 | 1 | None | None | None | None | 0 0 0 33 31 162 0 3 2 2  | True |
+```
+#### Win32_ComputerSystemProcessor
 ```sh
 WQL> SELECT * FROM Win32_ComputerSystemProcessor
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" |
 ```
+#### Win32_ComputerSystemProduct
+```sh
+WQL> SELECT * FROM Win32_ComputerSystemProduct
+| Caption | Description | IdentifyingNumber | Name | SKUNumber | Vendor | Version | UUID | 
+| Computer System Product | Computer System Product | VMware-42 14 e6 d4 ac b6 44 b0-7a a2 11 4c d5 f0 d2 d7 | VMware7,1 | None | VMware, Inc. | None | D4E61442-B6AC-B044-7AA2-114CD5F0D2D7 |
+```
+#### Win32_DependentService
+```sh
+WQL> SELECT * FROM Win32_DependentService
+| Antecedent | Dependent | TypeOfDependency | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="FltMgr" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AppID" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="FltMgr" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="applockerfltr" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="AppID" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="applockerfltr" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="AppIDSvc" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="applockerfltr" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Mup" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Dfsc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="FltMgr" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="DfsrRo" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="FltMgr" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="FileInfo" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="FltMgr" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="FsDepends" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="acpiex" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="GPIOClx0101" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="IPNAT" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="IPsecGW" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="rdbss" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mrxsmb" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="mrxsmb" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mrxsmb10" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="mrxsmb" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mrxsmb20" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="ibbus" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ndfltr" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="tdx" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NetBT" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NetBT" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Mup" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="rdbss" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="rdbss" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="RDPDR" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="acpiex" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="SerCx" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="acpiex" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="SpbCx" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="srv2" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="srv" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="srvnet" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="srv2" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="FltMgr" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="storqosflt" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip6" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="tcpipreg" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="tdx" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Ucx01000" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="USBXHCI" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="FltMgr" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WdFilter" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="BFE" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WdNisDrv" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WFPLWFS" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="WinVerbs" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WinMad" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WinNat" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="ibbus" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WinVerbs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="FltMgr" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Wof" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="AppIDSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="AppID" | \\FOREST\root\cimv2:Win32_Service.Name="AppIDSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="CryptSvc" | \\FOREST\root\cimv2:Win32_Service.Name="AppIDSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="AppXSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="StateRepository" | \\FOREST\root\cimv2:Win32_Service.Name="AppXSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="BFE" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="BITS" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="LanmanWorkstation" | \\FOREST\root\cimv2:Win32_Service.Name="Browser" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="LanmanServer" | \\FOREST\root\cimv2:Win32_Service.Name="Browser" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="CertPropSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="ClipSVC" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="COMSysApp" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="EventSystem" | \\FOREST\root\cimv2:Win32_Service.Name="COMSysApp" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="SENS" | \\FOREST\root\cimv2:Win32_Service.Name="COMSysApp" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="CoreMessagingRegistrar" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="CryptSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="defragsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="LanmanWorkstation" | \\FOREST\root\cimv2:Win32_Service.Name="Dfs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="LanmanServer" | \\FOREST\root\cimv2:Win32_Service.Name="Dfs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="DfsDriver" | \\FOREST\root\cimv2:Win32_Service.Name="Dfs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Mup" | \\FOREST\root\cimv2:Win32_Service.Name="Dfs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="SamSs" | \\FOREST\root\cimv2:Win32_Service.Name="Dfs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RemoteRegistry" | \\FOREST\root\cimv2:Win32_Service.Name="Dfs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="DFSR" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="EventSystem" | \\FOREST\root\cimv2:Win32_Service.Name="DFSR" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="NTDS" | \\FOREST\root\cimv2:Win32_Service.Name="DFSR" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="nsi" | \\FOREST\root\cimv2:Win32_Service.Name="Dhcp" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="tdx" | \\FOREST\root\cimv2:Win32_Service.Name="Dhcp" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="AFD" | \\FOREST\root\cimv2:Win32_Service.Name="Dhcp" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="DiagTrack" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | \\FOREST\root\cimv2:Win32_Service.Name="DNS" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="AFD" | \\FOREST\root\cimv2:Win32_Service.Name="DNS" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="DNS" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="NTDS" | \\FOREST\root\cimv2:Win32_Service.Name="DNS" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="tdx" | \\FOREST\root\cimv2:Win32_Service.Name="Dnscache" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="nsi" | \\FOREST\root\cimv2:Win32_Service.Name="Dnscache" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="EapHost" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="KeyIso" | \\FOREST\root\cimv2:Win32_Service.Name="EapHost" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="EFS" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="EventSystem" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="fdPHost" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="HTTP" | \\FOREST\root\cimv2:Win32_Service.Name="fdPHost" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="gpsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Mup" | \\FOREST\root\cimv2:Win32_Service.Name="gpsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="hvservice" | \\FOREST\root\cimv2:Win32_Service.Name="HvHost" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="BFE" | \\FOREST\root\cimv2:Win32_Service.Name="IKEEXT" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="nsi" | \\FOREST\root\cimv2:Win32_Service.Name="IKEEXT" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="iphlpsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="tdx" | \\FOREST\root\cimv2:Win32_Service.Name="iphlpsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="Winmgmt" | \\FOREST\root\cimv2:Win32_Service.Name="iphlpsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | \\FOREST\root\cimv2:Win32_Service.Name="iphlpsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="nsi" | \\FOREST\root\cimv2:Win32_Service.Name="iphlpsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="WinHttpAutoProxySvc" | \\FOREST\root\cimv2:Win32_Service.Name="iphlpsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="SamSs" | \\FOREST\root\cimv2:Win32_Service.Name="IsmServ" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="NTDS" | \\FOREST\root\cimv2:Win32_Service.Name="IsmServ" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="Kdc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="AFD" | \\FOREST\root\cimv2:Win32_Service.Name="Kdc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="NTDS" | \\FOREST\root\cimv2:Win32_Service.Name="Kdc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="KdsSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="KeyIso" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="KPSSVC" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="HTTP" | \\FOREST\root\cimv2:Win32_Service.Name="KPSSVC" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="KtmRm" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="SamSs" | \\FOREST\root\cimv2:Win32_Service.Name="KtmRm" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="SamSs" | \\FOREST\root\cimv2:Win32_Service.Name="LanmanServer" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="srv2" | \\FOREST\root\cimv2:Win32_Service.Name="LanmanServer" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="bowser" | \\FOREST\root\cimv2:Win32_Service.Name="LanmanWorkstation" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="mrxsmb20" | \\FOREST\root\cimv2:Win32_Service.Name="LanmanWorkstation" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="nsi" | \\FOREST\root\cimv2:Win32_Service.Name="LanmanWorkstation" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="lltdsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="lltdio" | \\FOREST\root\cimv2:Win32_Service.Name="lltdsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="AFD" | \\FOREST\root\cimv2:Win32_Service.Name="lmhosts" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcEptMapper" | \\FOREST\root\cimv2:Win32_Service.Name="LSM" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="DcomLaunch" | \\FOREST\root\cimv2:Win32_Service.Name="LSM" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="LSM" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="mpsdrv" | \\FOREST\root\cimv2:Win32_Service.Name="MpsSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="BFE" | \\FOREST\root\cimv2:Win32_Service.Name="MpsSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="MSDTC" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="SamSs" | \\FOREST\root\cimv2:Win32_Service.Name="MSDTC" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="msiserver" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="BFE" | \\FOREST\root\cimv2:Win32_Service.Name="NcaSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="Dnscache" | \\FOREST\root\cimv2:Win32_Service.Name="NcaSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="nsi" | \\FOREST\root\cimv2:Win32_Service.Name="NcaSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="iphlpsvc" | \\FOREST\root\cimv2:Win32_Service.Name="NcaSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="LanmanWorkstation" | \\FOREST\root\cimv2:Win32_Service.Name="Netlogon" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="LanmanServer" | \\FOREST\root\cimv2:Win32_Service.Name="Netlogon" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="netprofm" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="NlaSvc" | \\FOREST\root\cimv2:Win32_Service.Name="netprofm" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="NetSetupSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="nsi" | \\FOREST\root\cimv2:Win32_Service.Name="NlaSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="NlaSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | \\FOREST\root\cimv2:Win32_Service.Name="NlaSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="Dhcp" | \\FOREST\root\cimv2:Win32_Service.Name="NlaSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="EventLog" | \\FOREST\root\cimv2:Win32_Service.Name="NlaSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="nsi" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="nsiproxy" | \\FOREST\root\cimv2:Win32_Service.Name="nsi" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="NtFrs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="EventSystem" | \\FOREST\root\cimv2:Win32_Service.Name="NtFrs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="PerfHost" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="pla" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | \\FOREST\root\cimv2:Win32_Service.Name="PolicyAgent" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="BFE" | \\FOREST\root\cimv2:Win32_Service.Name="PolicyAgent" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="ProfSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="SstpSvc" | \\FOREST\root\cimv2:Win32_Service.Name="RasMan" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="RemoteAccess" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="BFE" | \\FOREST\root\cimv2:Win32_Service.Name="RemoteAccess" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RasMan" | \\FOREST\root\cimv2:Win32_Service.Name="RemoteAccess" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="HTTP" | \\FOREST\root\cimv2:Win32_Service.Name="RemoteAccess" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="RemoteRegistry" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcEptMapper" | \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="DcomLaunch" | \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="RSoPProv" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="SamSs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="wudfsvc" | \\FOREST\root\cimv2:Win32_Service.Name="SCardSvr" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="Schedule" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="SystemEventsBroker" | \\FOREST\root\cimv2:Win32_Service.Name="Schedule" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="SCPolicySvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="EventSystem" | \\FOREST\root\cimv2:Win32_Service.Name="SENS" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="SessionEnv" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="LanmanWorkstation" | \\FOREST\root\cimv2:Win32_Service.Name="SessionEnv" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="BFE" | \\FOREST\root\cimv2:Win32_Service.Name="SharedAccess" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="smphost" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="Spooler" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="HTTP" | \\FOREST\root\cimv2:Win32_Service.Name="Spooler" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="sppsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="StateRepository" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="swprv" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="SysMain" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcEptMapper" | \\FOREST\root\cimv2:Win32_Service.Name="SystemEventsBroker" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="SystemEventsBroker" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_TerminalService.Name="TermService" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="Winmgmt" | \\FOREST\root\cimv2:Win32_Service.Name="UALSVC" | 65535 | 
+| \\FOREST\root\cimv2:Win32_TerminalService.Name="TermService" | \\FOREST\root\cimv2:Win32_Service.Name="UmRdpService" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="RDPDR" | \\FOREST\root\cimv2:Win32_Service.Name="UmRdpService" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="UserManager" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="ProfSvc" | \\FOREST\root\cimv2:Win32_Service.Name="UserManager" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="UsoSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="VaultSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="vds" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="vmgid" | \\FOREST\root\cimv2:Win32_Service.Name="vmictimesync" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="vmvss" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="VSS" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="WdNisDrv" | \\FOREST\root\cimv2:Win32_Service.Name="WdNisSvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="HTTP" | \\FOREST\root\cimv2:Win32_Service.Name="Wecsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="EventLog" | \\FOREST\root\cimv2:Win32_Service.Name="Wecsvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="WinDefend" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="Dhcp" | \\FOREST\root\cimv2:Win32_Service.Name="WinHttpAutoProxySvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="Winmgmt" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="WinRM" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="HTTP" | \\FOREST\root\cimv2:Win32_Service.Name="WinRM" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="wisvc" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | \\FOREST\root\cimv2:Win32_Service.Name="wuauserv" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="WudfPf" | \\FOREST\root\cimv2:Win32_Service.Name="wudfsvc" | 65535 |
+```
+#### Win32_LoadOrderGroup
+```sh
+WQL> SELECT * FROM Win32_LoadOrderGroup
+| Caption | Description | InstallDate | Name | Status | GroupOrder | DriverEnabled | 
+| System Reserved | System Reserved | None | System Reserved | OK | 1 | True | 
+| EMS | EMS | None | EMS | OK | 2 | True | 
+| WdfLoadGroup | WdfLoadGroup | None | WdfLoadGroup | OK | 3 | True | 
+| Boot Bus Extender | Boot Bus Extender | None | Boot Bus Extender | OK | 4 | True | 
+| System Bus Extender | System Bus Extender | None | System Bus Extender | OK | 5 | True | 
+| SCSI miniport | SCSI miniport | None | SCSI miniport | OK | 6 | True | 
+| Port | Port | None | Port | OK | 7 | True | 
+| Primary Disk | Primary Disk | None | Primary Disk | OK | 8 | True | 
+| SCSI Class | SCSI Class | None | SCSI Class | OK | 9 | True | 
+| SCSI CDROM Class | SCSI CDROM Class | None | SCSI CDROM Class | OK | 10 | True | 
+| FSFilter Infrastructure | FSFilter Infrastructure | None | FSFilter Infrastructure | OK | 11 | True | 
+| FSFilter System | FSFilter System | None | FSFilter System | OK | 12 | True | 
+| FSFilter Bottom | FSFilter Bottom | None | FSFilter Bottom | OK | 13 | True | 
+| FSFilter Copy Protection | FSFilter Copy Protection | None | FSFilter Copy Protection | OK | 14 | True | 
+| FSFilter Security Enhancer | FSFilter Security Enhancer | None | FSFilter Security Enhancer | OK | 15 | True | 
+| FSFilter Open File | FSFilter Open File | None | FSFilter Open File | OK | 16 | True | 
+| FSFilter Physical Quota Management | FSFilter Physical Quota Management | None | FSFilter Physical Quota Management | OK | 17 | True | 
+| FSFilter Virtualization | FSFilter Virtualization | None | FSFilter Virtualization | OK | 18 | True | 
+| FSFilter Encryption | FSFilter Encryption | None | FSFilter Encryption | OK | 19 | True | 
+| FSFilter Compression | FSFilter Compression | None | FSFilter Compression | OK | 20 | True | 
+| FSFilter Imaging | FSFilter Imaging | None | FSFilter Imaging | OK | 21 | True | 
+| FSFilter HSM | FSFilter HSM | None | FSFilter HSM | OK | 22 | True | 
+| FSFilter Cluster File System | FSFilter Cluster File System | None | FSFilter Cluster File System | OK | 23 | True | 
+| FSFilter System Recovery | FSFilter System Recovery | None | FSFilter System Recovery | OK | 24 | True | 
+| FSFilter Quota Management | FSFilter Quota Management | None | FSFilter Quota Management | OK | 25 | True | 
+| FSFilter Content Screener | FSFilter Content Screener | None | FSFilter Content Screener | OK | 26 | True | 
+| FSFilter Continuous Backup | FSFilter Continuous Backup | None | FSFilter Continuous Backup | OK | 27 | True | 
+| FSFilter Replication | FSFilter Replication | None | FSFilter Replication | OK | 28 | True | 
+| FSFilter Anti-Virus | FSFilter Anti-Virus | None | FSFilter Anti-Virus | OK | 29 | True | 
+| FSFilter Undelete | FSFilter Undelete | None | FSFilter Undelete | OK | 30 | True | 
+| FSFilter Activity Monitor | FSFilter Activity Monitor | None | FSFilter Activity Monitor | OK | 31 | True | 
+| FSFilter Top | FSFilter Top | None | FSFilter Top | OK | 32 | True | 
+| Filter | Filter | None | Filter | OK | 33 | True | 
+| Boot File System | Boot File System | None | Boot File System | OK | 34 | True | 
+| Base | Base | None | Base | OK | 35 | True | 
+| Pointer Port | Pointer Port | None | Pointer Port | OK | 36 | True | 
+| Keyboard Port | Keyboard Port | None | Keyboard Port | OK | 37 | True | 
+| Pointer Class | Pointer Class | None | Pointer Class | OK | 38 | True | 
+| Keyboard Class | Keyboard Class | None | Keyboard Class | OK | 39 | True | 
+| Video Init | Video Init | None | Video Init | OK | 40 | True | 
+| Video | Video | None | Video | OK | 41 | True | 
+| Video Save | Video Save | None | Video Save | OK | 42 | True | 
+| File System | File System | None | File System | OK | 43 | True | 
+| Streams Drivers | Streams Drivers | None | Streams Drivers | OK | 44 | True | 
+| NDIS Wrapper | NDIS Wrapper | None | NDIS Wrapper | OK | 45 | True | 
+| COM Infrastructure | COM Infrastructure | None | COM Infrastructure | OK | 46 | True | 
+| Event Log | Event Log | None | Event Log | OK | 47 | True | 
+| ProfSvc_Group | ProfSvc_Group | None | ProfSvc_Group | OK | 48 | True | 
+| UIGroup | UIGroup | None | UIGroup | OK | 49 | True | 
+| PlugPlay | PlugPlay | None | PlugPlay | OK | 50 | True | 
+| Cryptography | Cryptography | None | Cryptography | OK | 51 | True | 
+| PNP_TDI | PNP_TDI | None | PNP_TDI | OK | 52 | True | 
+| NDIS | NDIS | None | NDIS | OK | 53 | True | 
+| TDI | TDI | None | TDI | OK | 54 | True | 
+| iSCSI | iSCSI | None | iSCSI | OK | 55 | True | 
+| NetBIOSGroup | NetBIOSGroup | None | NetBIOSGroup | OK | 56 | True | 
+| ShellSvcGroup | ShellSvcGroup | None | ShellSvcGroup | OK | 57 | True | 
+| SchedulerGroup | SchedulerGroup | None | SchedulerGroup | OK | 58 | True | 
+| AudioGroup | AudioGroup | None | AudioGroup | OK | 59 | True | 
+| SmartCardGroup | SmartCardGroup | None | SmartCardGroup | OK | 60 | True | 
+| NetworkProvider | NetworkProvider | None | NetworkProvider | OK | 61 | True | 
+| MS_WindowsRemoteValidation | MS_WindowsRemoteValidation | None | MS_WindowsRemoteValidation | OK | 62 | True | 
+| MS_WindowsLocalValidation | MS_WindowsLocalValidation | None | MS_WindowsLocalValidation | OK | 63 | True | 
+| SpoolerGroup | SpoolerGroup | None | SpoolerGroup | OK | 64 | True | 
+| NetDDEGroup | NetDDEGroup | None | NetDDEGroup | OK | 65 | True | 
+| Parallel arbitrator | Parallel arbitrator | None | Parallel arbitrator | OK | 66 | True | 
+| Extended Base | Extended Base | None | Extended Base | OK | 67 | True | 
+| PCI Configuration | PCI Configuration | None | PCI Configuration | OK | 68 | True | 
+| MS Transactions | MS Transactions | None | MS Transactions | OK | 69 | True | 
+| Core | Core | None | Core | OK | 70 | False | 
+| Network | Network | None | Network | OK | 71 | False | 
+| dfs | dfs | None | dfs | OK | 72 | False | 
+| PnP Filter | PnP Filter | None | PnP Filter | OK | 73 | False | 
+| Early-Launch | Early-Launch | None | Early-Launch | OK | 74 | False |
+```
+#### Win32_LoadOrderGroupServiceDependencies
+```sh
+WQL> SELECT * FROM Win32_LoadOrderGroupServiceDependencies
+| Antecedent | Dependent | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NetBIOSGroup" | \\FOREST\root\cimv2:Win32_Service.Name="RemoteAccess" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI CDROM Class" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="cdfs" |
+```
+#### Win32_LoadOrderGroupServiceMembers
+```sh
+WQL> SELECT * FROM Win32_LoadOrderGroupServiceMembers
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NetworkProvider" | \\FOREST\root\cimv2:Win32_Service.Name="MpsSvc" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="iSCSI" | \\FOREST\root\cimv2:Win32_Service.Name="MSiSCSI" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="MS_WindowsRemoteValidation" | \\FOREST\root\cimv2:Win32_Service.Name="Netlogon" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Base" | \\FOREST\root\cimv2:Win32_Service.Name="NTDS" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PlugPlay" | \\FOREST\root\cimv2:Win32_Service.Name="PlugPlay" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Plugplay" | \\FOREST\root\cimv2:Win32_Service.Name="Power" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="profsvc_group" | \\FOREST\root\cimv2:Win32_Service.Name="ProfSvc" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="COM Infrastructure" | \\FOREST\root\cimv2:Win32_Service.Name="RpcEptMapper" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="COM Infrastructure" | \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="MS_WindowsLocalValidation" | \\FOREST\root\cimv2:Win32_Service.Name="SamSs" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SmartCardGroup" | \\FOREST\root\cimv2:Win32_Service.Name="SCardSvr" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SchedulerGroup" | \\FOREST\root\cimv2:Win32_Service.Name="Schedule" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="ProfSvc_Group" | \\FOREST\root\cimv2:Win32_Service.Name="SENS" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SpoolerGroup" | \\FOREST\root\cimv2:Win32_Service.Name="Spooler" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="3ware" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Core" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ACPI" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AcpiDev" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="acpiex" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="acpitime" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ADP80XX" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PNP_TDI" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AFD" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AmdK8" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AmdPPM" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="amdsata" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="amdsbs" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="amdxata" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="arcsas" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="atapi" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="b06bdrv" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="BasicDisplay" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="BasicRender" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="bfadfcoei" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="bfadi" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Network" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="bowser" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot File System" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="cdfs" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI CDROM Class" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="cdrom" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="cht4iscsi" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="cht4vbd" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Filter" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="CLFS" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Core" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="CNG" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="CompositeBus" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ConDrv" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Network" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Dfsc" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Filter" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="DfsDriver" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Content Screener" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="DfsrRo" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video Init" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="DXGKrnl" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="e1iexpress" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ebdrv" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="elxfcoe" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="elxstor" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ErrDev" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot File System" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="exfat" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot File System" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="fastfat" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="fcvsc" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="ProfSvc_Group" | \\FOREST\root\cimv2:Win32_Service.Name="AppIDSvc" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NetworkProvider" | \\FOREST\root\cimv2:Win32_Service.Name="BFE" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NetworkProvider" | \\FOREST\root\cimv2:Win32_Service.Name="Browser" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="COM Infrastructure" | \\FOREST\root\cimv2:Win32_Service.Name="DcomLaunch" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PlugPlay" | \\FOREST\root\cimv2:Win32_Service.Name="DeviceInstall" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="dfs" | \\FOREST\root\cimv2:Win32_Service.Name="Dfs" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="TDI" | \\FOREST\root\cimv2:Win32_Service.Name="Dhcp" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="TDI" | \\FOREST\root\cimv2:Win32_Service.Name="Dnscache" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Event Log" | \\FOREST\root\cimv2:Win32_Service.Name="EventLog" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="AudioGroup" | \\FOREST\root\cimv2:Win32_Service.Name="FontCache" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="ProfSvc_Group" | \\FOREST\root\cimv2:Win32_Service.Name="gpsvc" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="MS_WindowsRemoteValidation" | \\FOREST\root\cimv2:Win32_Service.Name="Kdc" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="ProfSvc_Group" | \\FOREST\root\cimv2:Win32_Service.Name="TrustedInstaller" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PlugPlay" | \\FOREST\root\cimv2:Win32_Service.Name="wudfsvc" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NetworkProvider" | \\FOREST\root\cimv2:Win32_Service.Name="LanmanWorkstation" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="TDI" | \\FOREST\root\cimv2:Win32_Service.Name="lmhosts" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="COM Infrastructure" | \\FOREST\root\cimv2:Win32_Service.Name="LSM" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Bottom" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="FileInfo" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Infrastructure" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="FltMgr" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Top" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="FsDepends" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="GPIOClx0101" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="extended base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="HidUsb" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="HpSAMD" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="hvservice" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="hyperkbd" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="HyperVideo" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Keyboard Port" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="i8042prt" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="iaStorAV" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="iaStorV" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PnP Filter" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ibbus" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="intelide" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="intelppm" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="isapnp" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="kdnic" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="KSecDD" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Cryptography" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="KSecPkg" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="lltdio" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="LSI_SAS" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="LSI_SAS2i" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="LSI_SAS3i" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="LSI_SSS" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="megasas" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="megasr" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mlx4_bus" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mountmgr" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="network" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mpsdrv" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Network" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mrxsmb" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Network" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mrxsmb10" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Network" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mrxsmb20" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="File system" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Msfs" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="msisadrv" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="MsLbfoProvider" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="MTConfig" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Network" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Mup" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mvumis" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PNP Filter" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ndfltr" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS Wrapper" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NDIS" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NdisCap" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NdisTapi" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Ndisuio" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ndiswanlegacy" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PNP_TDI" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ndproxy" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NetBIOSGroup" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NetBIOS" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PNP_TDI" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NetBT" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="netvsc" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="File system" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Npfs" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot File System" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Ntfs" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Null" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="nvraid" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="nvstor" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Parallel arbitrator" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Parport" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="partmgr" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="pci" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="pciide" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Reserved" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="pcw" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="pdc" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="percsas2i" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="percsas3i" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Processor" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Psched" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ql2300i" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ql40xx2i" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="qlfcoei" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Network" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="rdbss" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot File System" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ReFS" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot File System" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ReFSv1" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="rspndr" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="s3cap" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="EMS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="sacdrv" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PnP Filter" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="scfilter" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PNP Filter" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Serenum" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Serial" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Pointer Port" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="sermouse" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="SiSRaid2" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="SiSRaid4" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Network" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="smbdirect" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="spaceport" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Network" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="srv" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Network" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="srv2" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Network" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="srvnet" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="stexstor" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="storahci" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="storflt" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="stornvme" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Quota Management" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="storqosflt" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="storvsc" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="swenum" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video Init" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Synth3dVsc" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PNP_TDI" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PNP_TDI" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="tdx" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="terminpt" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="TPM" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="tsusbhub" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="tunnel" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Ucx01000" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot File System" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="udfs" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="umbus" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="UmPass" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbccgp" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbehci" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbhub" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="USBHUB3" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbohci" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="extended base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbprint" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbuhci" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vdrvroot" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="WdfLoadGroup" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="VerifierExt" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vhdmp" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vm3dmp" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vm3dmp-debug" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vm3dmp-stats" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vm3dmp_loader" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vmbus" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="VMBusHID" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vmci" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vmmemctl" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Pointer Port" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vmmouse" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Pointer Port" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vmusbmouse" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="volmgr" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="volmgrx" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vpci" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vsmraid" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vsock" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Miniport" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="VSTXRAID" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WacomPen" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="wanarp" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="wanarpv6" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Early-Launch" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WdBoot" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="WdfLoadGroup" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Wdf01000" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Anti-Virus" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WdFilter" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PNP_TDI" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WFPLWFS" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Infrastructure" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WIMMount" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PNP Filter" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WinMad" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PNP Filter" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WinVerbs" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WmiAcpi" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Compression" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Wof" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PNP_TDI" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ws2ifsl" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WudfPf" | 
+| \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="base" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WUDFRd" |
+```
+#### Win32_OperatingSystem
+```sh
+WQL> SELECT * FROM Win32_OperatingSystem
+| Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | Distributed | FreePhysicalMemory | FreeVirtualMemory | MaxProcessMemorySize | OSType | OtherTypeDescription | Version | LocalDateTime | CurrentTimeZone | SizeStoredInPagingFiles | FreeSpaceInPagingFiles | LastBootUpTime | MaxNumberOfProcesses | NumberOfLicensedUsers | NumberOfProcesses | NumberOfUsers | TotalSwapSpaceSize | TotalVirtualMemorySize | TotalVisibleMemorySize | BootDevice | MUILanguages | BuildNumber | OSArchitecture | BuildType | CodeSet | CountryCode | CSDVersion | DataExecutionPrevention_Available | DataExecutionPrevention_32BitApplications | DataExecutionPrevention_Drivers | DataExecutionPrevention_SupportPolicy | Debug | ForegroundApplicationBoost | Locale | Manufacturer | Organization | OSLanguage | OSProductSuite | OperatingSystemSKU | PlusProductID | PlusVersionNumber | Primary | RegisteredUser | SerialNumber | ServicePackMajorVersion | ServicePackMinorVersion | SystemDevice | SystemDirectory | SystemDrive | WindowsDirectory | EncryptionLevel | LargeSystemCache | SuiteMask | ProductType | PAEEnabled | PortableOperatingSystem | 
+| Microsoft Windows Server 2016 Standard |  | 20190918100759.000000-420 | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | OK | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | False | 540748 | 956616 | 137438953344 | 18 | None | 10.0.14393 | 20250904084031.571000-420 | -420 | 458592 | 346660 | 20250903233416.493515-420 | None | 0 | 36 | 2 | 18446744073709551615 | 2554732 | 2096140 | \Device\HarddiskVolume3 | en-US  | 14393 | 64-bit | Multiprocessor Free | 1252 | 1 | None | True | True | True | 3 | False | 2 | 0409 | Microsoft Corporation |  | 1033 | 272 | 7 | None | None | True | Windows User | 00376-30821-30176-AA930 | 0 | 0 | \Device\HarddiskVolume4 | C:\Windows\system32 | C: | C:\Windows | 256 | None | 272 | 2 | None | False | 
+```
+#### Win32_OperatingSystemQFE
+```sh
+WQL> SELECT * FROM Win32_OperatingSystemQFE
+| Antecedent | Dependent | 
+| \\FOREST\root\cimv2:Win32_OperatingSystem=@ | \\FOREST\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB3199986",ServicePackInEffect="" | 
+| \\FOREST\root\cimv2:Win32_OperatingSystem=@ | \\FOREST\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4512574",ServicePackInEffect="" | 
+| \\FOREST\root\cimv2:Win32_OperatingSystem=@ | \\FOREST\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4103720",ServicePackInEffect="" | 
+```
+#### Win32_OSRecoveryConfiguration
+```sh
+WQL> SELECT * FROM Win32_OSRecoveryConfiguration
+| SettingID | Caption | Description | AutoReboot | DebugFilePath | ExpandedDebugFilePath | MiniDumpDirectory | ExpandedMiniDumpDirectory | Name | OverwriteExistingDebugFile | SendAdminAlert | WriteDebugInfo | DebugInfoType | WriteToSystemLog | KernelDumpOnly | 
+| None | None | None | True | %SystemRoot%\MEMORY.DMP | C:\Windows\MEMORY.DMP | %SystemRoot%\Minidump | C:\Windows\Minidump | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | True | False | True | 7 | True | False |
+```
+#### Win32_QuickFixEngineering
+```sh
+WQL> SELECT * FROM Win32_QuickFixEngineering
+| Caption | Description | InstallDate | Name | Status | HotFixID | ServicePackInEffect | CSName | FixComments | InstalledBy | InstalledOn | 
+| http://support.microsoft.com/?kbid=3199986 | Update | None | None | None | KB3199986 |  | FOREST |  | NT AUTHORITY\SYSTEM | 11/21/2016 | 
+| http://support.microsoft.com/?kbid=4512574 | Security Update | None | None | None | KB4512574 |  | FOREST |  | HTB\Administrator | 9/18/2019 | 
+| http://support.microsoft.com/?kbid=4103720 | Update | None | None | None | KB4103720 |  | FOREST |  | NT AUTHORITY\SYSTEM | 9/20/2019 |
+```
+#### Win32_StartupCommand
+```sh
+WQL> SELECT * FROM Win32_StartupCommand
+| SettingID | Caption | Description | User | UserSID | Name | Location | Command | 
+| None | VMware User Process | VMware User Process | Public | None | VMware User Process | HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run | "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr |
+```
+#### Win32_SystemBootConfiguration
+```sh
+WQL> SELECT * FROM Win32_SystemBootConfiguration
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_BootConfiguration.Name="BootConfiguration" |
+```
+#### Win32_SystemDesktop
+```sh
+WQL> SELECT * FROM Win32_SystemDesktop 
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="NT AUTHORITY\\SYSTEM" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="NT AUTHORITY\\LOCAL SERVICE" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="NT AUTHORITY\\NETWORK SERVICE" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\sebastien" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\svc-alfresco" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\Administrator" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" |
+```
+#### Win32_SystemDevices
+#### Win32_SystemLoadOrderGroups
+```sh
+WQL> SELECT * FROM Win32_SystemLoadOrderGroups
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Reserved" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="EMS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="WdfLoadGroup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot Bus Extender" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Bus Extender" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI miniport" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Port" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Primary Disk" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI Class" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI CDROM Class" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Infrastructure" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter System" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Bottom" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Copy Protection" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Security Enhancer" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Open File" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Physical Quota Management" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Virtualization" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Encryption" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Compression" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Imaging" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter HSM" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Cluster File System" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter System Recovery" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Quota Management" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Content Screener" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Continuous Backup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Replication" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Anti-Virus" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Undelete" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Activity Monitor" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="FSFilter Top" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Filter" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Boot File System" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Base" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Pointer Port" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Keyboard Port" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Pointer Class" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Keyboard Class" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video Init" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Video Save" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="File System" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Streams Drivers" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS Wrapper" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="COM Infrastructure" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Event Log" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="ProfSvc_Group" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="UIGroup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PlugPlay" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Cryptography" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PNP_TDI" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NDIS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="TDI" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="iSCSI" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NetBIOSGroup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="ShellSvcGroup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SchedulerGroup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="AudioGroup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SmartCardGroup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NetworkProvider" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="MS_WindowsRemoteValidation" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="MS_WindowsLocalValidation" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SpoolerGroup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NetDDEGroup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Parallel arbitrator" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Extended Base" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PCI Configuration" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="MS Transactions" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Core" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Network" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="dfs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="PnP Filter" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="Early-Launch" | 
+```
+#### Win32_SystemNetworkConnections
+#### Win32_SystemOperatingSystem
+```sh
+WQL> SELECT * FROM Win32_SystemOperatingSystem
+| GroupComponent | PartComponent | PrimaryOS | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_OperatingSystem=@ | True |
+```
+#### Win32_SystemProcesses
+```sh
+WQL> SELECT * FROM Win32_SystemProcesses
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="0" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="4" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="268" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="368" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="448" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="456" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="508" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="576" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="588" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="756" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="808" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="916" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="924" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="988" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="1000" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="684" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="1072" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="1804" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="1980" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="1988" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="2016" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="772" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="1052" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="1168" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="1280" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="1452" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="1464" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="2136" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="2312" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="2440" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="2456" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="2688" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="2732" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="3036" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="2944" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="3420" |
+```
+#### Win32_SystemProgramGroups
+```sh
+WQL> SELECT * FROM Win32_SystemProgramGroups
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Accessories" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Startup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\System Tools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Windows PowerShell" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\Administrative Tools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\StartUp" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\System Tools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\VMware" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\VMware\\VMware Tools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Accessories" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Administrative Tools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Startup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\System Tools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Windows PowerShell" |
+```
+#### Win32_SystemResources
+```sh
+WQL> SELECT * FROM Win32_SystemResources
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DMAChannel.DMAChannel=4 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967293 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967292 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967291 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967290 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967289 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967288 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967287 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967286 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967285 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967284 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967283 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967282 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967281 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967280 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967279 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967278 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967277 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967276 | 
+[-] DCOM SessionError: unknown error code: 0x778
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967275 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967274 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967273 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967272 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967271 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967270 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967269 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967268 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967267 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967266 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967265 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967264 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967263 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967294 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967258 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967257 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967256 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967255 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=0 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=14 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=15 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=12 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967260 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=8 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=1 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=54 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=55 |
+
+~~~
+
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=511 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967259 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967262 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967261 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=16 | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="3758096384" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4290772992" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4271898624" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4270850048" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4196401152" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4269801472" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4195352576" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4268752896" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4194304000" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4267704320" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4193255424" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4266655744" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4192206848" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4265607168" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4191158272" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4264558592" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4190109696" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4263510016" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4262461440" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4189061120" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4261412864" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4188012544" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4260364288" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4186963968" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4259315712" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4185915392" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4258267136" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4184866816" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4257218560" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4183818240" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4256169984" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4182769664" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4255121408" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4181721088" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4254072832" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4180672512" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4253024256" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4179623936" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4251975680" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4178575360" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4250927104" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4177526784" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4249878528" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4176478208" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4248829952" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4175429632" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4247781376" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4174381056" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4246732800" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4173332480" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4245684224" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4172283904" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4244635648" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4171235328" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4243587072" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4170186752" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4242538496" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4169138176" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4241489920" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4168089600" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4240441344" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4167041024" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4239392768" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4165992448" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4263641088" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4263837696" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4277141504" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4275326976" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4274061312" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4197449728" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4026531840" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="3221225472" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="655360" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="802816" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="819200" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="868352" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="884736" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="933888" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="950272" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="966656" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4271964160" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4275044352" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4227923968" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4290764800" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4227858432" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4160749568" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4219469824" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="1024" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="16384" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="12288" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="64" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="3328" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="0" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="496" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="1014" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="368" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="886" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="112" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="96" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="100" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="129" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="192" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="16" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="36" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="40" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="44" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="46" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="48" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="52" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="56" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="60" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="80" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="114" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="128" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="144" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="164" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="168" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="172" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="176" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="184" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="188" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="1088" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="22104" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="22128" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="3312" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="65472" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="4096" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="97" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="8256" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="944" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="960" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="32" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="160" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="1232" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="8272" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="ComSpec",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="OS",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="Path",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="PATHEXT",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="PROCESSOR_ARCHITECTURE",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="PSModulePath",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TEMP",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TMP",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="USERNAME",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="windir",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="NUMBER_OF_PROCESSORS",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="PROCESSOR_LEVEL",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="PROCESSOR_IDENTIFIER",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="PROCESSOR_REVISION",UserName="<SYSTEM>" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="Path",UserName="NT AUTHORITY\\SYSTEM" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TEMP",UserName="NT AUTHORITY\\SYSTEM" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TMP",UserName="NT AUTHORITY\\SYSTEM" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="Path",UserName="NT AUTHORITY\\LOCAL SERVICE" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TEMP",UserName="NT AUTHORITY\\LOCAL SERVICE" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TMP",UserName="NT AUTHORITY\\LOCAL SERVICE" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="Path",UserName="NT AUTHORITY\\NETWORK SERVICE" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TEMP",UserName="NT AUTHORITY\\NETWORK SERVICE" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TMP",UserName="NT AUTHORITY\\NETWORK SERVICE" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="Path",UserName="HTB\\sebastien" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TEMP",UserName="HTB\\sebastien" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TMP",UserName="HTB\\sebastien" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="Path",UserName="HTB\\svc-alfresco" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TEMP",UserName="HTB\\svc-alfresco" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TMP",UserName="HTB\\svc-alfresco" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="Path",UserName="HTB\\Administrator" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TEMP",UserName="HTB\\Administrator" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="TMP",UserName="HTB\\Administrator" |
+```
+#### Win32_SystemServices
+```sh
+WQL> SELECT * FROM Win32_SystemServices
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="ADWS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="AppIDSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="AppMgmt" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="AppXSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="BFE" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="BITS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="Browser" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="CertPropSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="ClipSVC" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="COMSysApp" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="CoreMessagingRegistrar" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="CryptSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="DcomLaunch" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="defragsvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="DeviceInstall" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="Dfs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="DFSR" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="Dhcp" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="diagnosticshub.standardcollector.service" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="DiagTrack" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="DNS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="Dnscache" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="DPS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="DsRoleSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="EapHost" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="EFS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="EventLog" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="EventSystem" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="fdPHost" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="FontCache" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="gpsvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="hidserv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="HvHost" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="IKEEXT" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="iphlpsvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="IsmServ" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="Kdc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="KdsSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="KeyIso" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="KPSSVC" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="KtmRm" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="LanmanServer" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="LanmanWorkstation" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="lltdsvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="lmhosts" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="LSM" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="MpsSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="MSDTC" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="MSiSCSI" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="msiserver" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="NcaSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="Netlogon" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="netprofm" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="NetSetupSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="NetTcpPortSharing" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="NlaSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="nsi" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="NTDS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="NtFrs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="PerfHost" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="pla" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="PlugPlay" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="PolicyAgent" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="Power" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="ProfSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="RasMan" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="RemoteAccess" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="RemoteRegistry" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="RpcEptMapper" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="RpcSs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="RSoPProv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="sacsvr" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="SamSs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="SCardSvr" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="ScDeviceEnum" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="Schedule" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="SCPolicySvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="seclogon" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="SENS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="SessionEnv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="SharedAccess" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="smphost" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="SNMPTRAP" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="Spooler" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="sppsvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="SstpSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="StateRepository" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="svsvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="swprv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="SysMain" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="SystemEventsBroker" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_TerminalService.Name="TermService" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="TieringEngineService" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="TimeBrokerSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="TrustedInstaller" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="UALSVC" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="UmRdpService" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="UserManager" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="UsoSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="VaultSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="vds" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="VGAuthService" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="vmicguestinterface" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="vmicheartbeat" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="vmickvpexchange" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="vmicrdv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="vmicshutdown" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="vmictimesync" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="vmicvmsession" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="vmicvss" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="VMTools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="vmvss" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="VMwareCAFCommAmqpListener" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="VMwareCAFManagementAgentHost" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="VSS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="W32Time" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="WdiServiceHost" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="WdiSystemHost" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="WdNisSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="Wecsvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="WerSvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="WinDefend" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="WinHttpAutoProxySvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="Winmgmt" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="WinRM" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="wisvc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="wmiApSrv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="wuauserv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="wudfsvc" |
+```
+#### Win32_SystemSetting
+```sh
+WQL> SELECT * FROM Win32_SystemSetting
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_BootConfiguration.Name="BootConfiguration" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="NT AUTHORITY\\SYSTEM" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="NT AUTHORITY\\LOCAL SERVICE" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="NT AUTHORITY\\NETWORK SERVICE" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\sebastien" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\svc-alfresco" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\Administrator" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_TimeZone.StandardName="Pacific Standard Time" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Accessories" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Startup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\System Tools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Windows PowerShell" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\Administrative Tools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\StartUp" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\System Tools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\VMware" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\VMware\\VMware Tools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Accessories" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Administrative Tools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Startup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\System Tools" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Windows PowerShell" |
+```
+#### Win32_SystemSystemDriver
+```sh
+WQL> SELECT * FROM Win32_SystemSystemDriver
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="1394ohci" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="3ware" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ACPI" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AcpiDev" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="acpiex" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="acpipagr" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AcpiPmi" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="acpitime" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ADP80XX" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AFD" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ahcache" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AmdK8" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AmdPPM" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="amdsata" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="amdsbs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="amdxata" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AppID" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="applockerfltr" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="arcsas" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AsyncMac" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="atapi" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="b06bdrv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="BasicDisplay" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="BasicRender" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="bfadfcoei" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="bfadi" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="bowser" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="bxfcoe" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="bxois" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="cdfs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="cdrom" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="cht4iscsi" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="cht4vbd" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="CLFS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="CmBatt" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="CNG" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="CompositeBus" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ConDrv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Dfsc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="DfsDriver" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="DfsrRo" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="disk" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="dmvsc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="DXGKrnl" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="e1iexpress" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ebdrv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="elxfcoe" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="elxstor" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ErrDev" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="exfat" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="fastfat" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="fcvsc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="fdc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="FileInfo" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="flpydisk" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="FltMgr" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="FsDepends" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="gencounter" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="GPIOClx0101" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="HidBatt" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="HidUsb" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="HpSAMD" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="HTTP" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="hvservice" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="hwpolicy" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="hyperkbd" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="HyperVideo" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="i8042prt" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="iaStorAV" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="iaStorV" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ibbus" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="intelide" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="intelppm" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="IPMIDRV" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="IPNAT" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="IPsecGW" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="isapnp" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="iScsiPrt" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="kbdclass" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="kbdhid" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="kdnic" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="KSecDD" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="KSecPkg" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="lltdio" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="LSI_SAS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="LSI_SAS2i" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="LSI_SAS3i" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="LSI_SSS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="megasas" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="megasr" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mlx4_bus" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="monitor" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mouclass" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mouhid" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mountmgr" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mpsdrv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mrxsmb" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mrxsmb10" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mrxsmb20" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Msfs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="msisadrv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="MsLbfoProvider" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="MsRPC" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mssmbios" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="MTConfig" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Mup" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="mvumis" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ndfltr" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NDIS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NdisCap" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NdisImPlatform" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NdisTapi" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Ndisuio" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NdisVirtualBus" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NdisWan" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ndiswanlegacy" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ndproxy" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NetBIOS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="NetBT" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="netvsc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Npfs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="npsvctrig" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="nsiproxy" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Ntfs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Null" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="nvraid" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="nvstor" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Parport" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="partmgr" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="pci" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="pciide" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="pcw" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="pdc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="percsas2i" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="percsas3i" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="PptpMiniport" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Processor" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Psched" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ql2300i" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ql40xx2i" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="qlfcoei" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="RasAgileVpn" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="RasGre" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Rasl2tp" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="RasPppoe" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="RasSstp" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="rdbss" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="RDPDR" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="RdpVideoMiniport" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ReFS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ReFSv1" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="rspndr" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="s3cap" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="sacdrv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="sbp2port" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="scfilter" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="scmbus" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="scmdisk0101" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="SerCx" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Serenum" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Serial" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="sermouse" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="sfloppy" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="SiSRaid2" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="SiSRaid4" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="smbdirect" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="spaceport" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="SpbCx" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="srv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="srv2" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="srvnet" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="stexstor" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="storahci" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="storflt" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="stornvme" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="storqosflt" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="storvsc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="swenum" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Synth3dVsc" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Tcpip6" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="tcpipreg" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="tdx" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="terminpt" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="TPM" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="tsusbhub" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="tunnel" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="UASPStor" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Ucx01000" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="udfs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="UEFI" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="umbus" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="UmPass" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbccgp" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbehci" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbhub" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="USBHUB3" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbohci" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbprint" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbser" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="USBSTOR" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="usbuhci" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="USBXHCI" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vdrvroot" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="VerifierExt" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vhdmp" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vm3dmp" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vm3dmp-debug" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vm3dmp-stats" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vm3dmp_loader" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vmbus" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="VMBusHID" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vmci" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vmgid" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vmmemctl" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vmmouse" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vmusbmouse" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="volmgr" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="volmgrx" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="volsnap" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="volume" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vpci" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vsmraid" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="vsock" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="VSTXRAID" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WacomPen" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="wanarp" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="wanarpv6" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WdBoot" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Wdf01000" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WdFilter" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WdNisDrv" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WFPLWFS" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WIMMount" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WinMad" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WinNat" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WINUSB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WinVerbs" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WmiAcpi" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="Wof" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="ws2ifsl" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WudfPf" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="WUDFRd" | 
+```
+#### Win32_SystemTimeZone
+```sh
+WQL> SELECT * FROM Win32_SystemTimeZone
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_TimeZone.StandardName="Pacific Standard Time" |
+```
+#### Win32_SystemUsers
+```sh
+WQL> SELECT * FROM Win32_SystemUsers
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="Administrator",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="Guest",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="krbtgt",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="DefaultAccount",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="$331000-VK4ADACQNUCA",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="SM_2c8eef0a09b545acb",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="SM_ca8c2ed5bdab4dc9b",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="SM_75a538d3025e4db9a",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="SM_681f53d4942840e18",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="SM_1b41c9286325456bb",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="SM_9b69f1b9d2cc45549",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="SM_7c96b981967141ebb",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="SM_c75ee099d0a64c91b",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="SM_1ffab36a2f5f479cb",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="HealthMailboxc3d7722",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="HealthMailboxfc9daad",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="HealthMailboxc0a90c9",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="HealthMailbox670628e",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="HealthMailbox968e74d",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="HealthMailbox6ded678",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="HealthMailbox83d6781",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="HealthMailboxfd87238",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="HealthMailboxb01ac64",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="HealthMailbox7108a4e",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="HealthMailbox0659cc1",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="sebastien",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="lucinda",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="svc-alfresco",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="andy",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="mark",Domain="HTB" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="santi",Domain="HTB" | 
+```
+
+
+
 
 ### Win32_DisplayControllerConfiguration
 ```sh
