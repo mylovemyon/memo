@@ -1,7 +1,6 @@
 - https://learn.microsoft.com/ja-jp/windows/win32/cimwin32prov/win32-provider
 - https://learn.microsoft.com/en-us/windows/win32/wmisdk/wql-sql-for-wmi
 
-
 ## command
 ```sh
 └─$ impacket-wmiquery -debug 'htb.local/administrator@10.129.138.203' -hashes 'aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6'                          
@@ -15,6 +14,8 @@ Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies
 [+] StringBinding chosen: ncacn_ip_tcp:10.129.138.203[49668]
 [!] Press help for extra shell commands
 ```
+
+
 
 
 
@@ -1127,6 +1128,8 @@ WQL> SELECT * FROM Win32_VideoController
 | VMware SVGA 3D | VMware SVGA 3D | None | VMware SVGA 3D | OK | 3 | Win32_VideoController | 0 | False | VideoController1 | None | PCI\VEN_15AD&DEV_0405&SUBSYS_040515AD&REV_00\3&18D45AA6&0&78 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 65535 | None | VMware Virtual SVGA 3D Graphics Adapter | 2 | None | None | None | None | 32 | 1440 | 621 | 64 | 64 | 1 | 4 | 4294967296 | 0 | 0 | 5 | 65535 | 65535 | VMware, Inc. | n/a | 0 | False | 0 | oem6.inf | VM3D_AMD64 | vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum_loader,vm3dum_loader,vm3dum_loader | 20180726000000.000000-000 | 8.16.1.1 | None | None | None | None | None | None | None | 1440 x 621 x 4294967296 colors | 
 ```
 #### Win32_VideoSettings
+
+
 
 
 
@@ -3679,7 +3682,6 @@ WQL> SELECT * FROM Win32_ImplementedCategory
 ```
 
 
-
 ### Desktop
 #### Win32_Desktop
 ```sh
@@ -3772,7 +3774,6 @@ WQL> SELECT * FROM Win32_UserDesktop
 | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="mark" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" | 
 | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="santi" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" |
 ```
-
 
 
 ### Drivers
@@ -4024,7 +4025,6 @@ WQL> SELECT * FROM Win32_SystemDriver
 | User Mode Driver Frameworks Platform Driver | User Mode Driver Frameworks Platform Driver | None | WudfPf | OK | Win32_SystemDriver | Manual | False | Win32_ComputerSystem | FOREST | False | False | False | User Mode Driver Frameworks Platform Driver | Normal | C:\Windows\system32\drivers\WudfPf.sys | Kernel Driver |  | Stopped | 0 | 1077 | 0 | 
 | WUDFRd | WUDFRd | None | WUDFRd | OK | Win32_SystemDriver | Manual | False | Win32_ComputerSystem | FOREST | False | False | False | WUDFRd | Normal | C:\Windows\system32\drivers\WudfRd.sys | Kernel Driver |  | Stopped | 0 | 1077 | 0 |
 ```
-
 
 
 ### File System
@@ -4515,6 +4515,159 @@ WQL> SELECT * FROM Win32_VolumeUserQuota
 ```
 
 
+### Job Objects
+#### Win32_CollectionStatistics
+```sh
+WQL> SELECT * FROM Win32_CollectionStatistics
+| Stats | Collection | 
+| \\FOREST\root\cimv2:Win32_NamedJobObjectActgInfo.Name="\\wmi\\provider\\sub\\system\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | 
+| \\FOREST\root\cimv2:Win32_NamedJobObjectActgInfo.Name="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" |
+```
+#### Win32_LUID
+#### Win32_LUIDandAttributes
+#### Win32_NamedJobObject
+```sh
+WQL> SELECT * FROM Win32_NamedJobObject
+| CollectionID | Caption | Description | BasicUIRestrictions | 
+| \wmi\provider\sub\system\host\job | None | None | 0 | 
+| \wmi\provider\sub\system\special\host\job | None | None | 0 |
+```
+#### Win32_NamedJobObjectActgInfo
+```sh
+WQL> SELECT * FROM Win32_NamedJobObjectActgInfo
+| Name | Description | Caption | TotalUserTime | TotalKernelTime | ThisPeriodTotalUserTime | ThisPeriodTotalKernelTime | TotalPageFaultCount | TotalProcesses | ActiveProcesses | TotalTerminatedProcesses | ReadOperationCount | WriteOperationCount | OtherOperationCount | ReadTransferCount | WriteTransferCount | OtherTransferCount | PeakProcessMemoryUsed | PeakJobMemoryUsed | 
+| \wmi\provider\sub\system\host\job | None | None | 172031250 | 467343750 | 172031250 | 467343750 | 3167363 | 7 | 2 | 0 | 10001 | 9120 | 2223009 | 8742902 | 991528 | 119208014 | 24891392 | 32108544 | 
+| \wmi\provider\sub\system\special\host\job | None | None | 2656250 | 468750 | 2656250 | 468750 | 7025 | 2 | 0 | 0 | 0 | 74 | 330 | 0 | 10515 | 2056 | 5730304 | 5730304 |
+```
+#### Win32_NamedJobObjectLimit
+```sh
+WQL> SELECT * FROM Win32_NamedJobObjectLimit
+| Collection | Setting | 
+| \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\host\\job" | 
+| \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\special\\host\\job" |
+```
+#### Win32_NamedJobObjectLimitSetting
+```sh
+WQL> SELECT * FROM Win32_NamedJobObjectLimitSetting
+| SettingID | Caption | Description | ProcessMemoryLimit | JobMemoryLimit | PerProcessUserTimeLimit | PerJobUserTimeLimit | LimitFlags | MinimumWorkingSetSize | MaximumWorkingSetSize | ActiveProcessLimit | Affinity | PriorityClass | SchedulingClass | 
+| \wmi\provider\sub\system\host\job | None | None | 568868864 | 1073741824 | 0 | 0 | 11016 | 0 | 0 | 32 | 0 | 32 | 5 | 
+| \wmi\provider\sub\system\special\host\job | None | None | 0 | 0 | 0 | 0 | 11016 | 0 | 0 | 32 | 0 | 32 | 5 |
+```
+#### Win32_NamedJobObjectProcess
+```sh
+WQL> SELECT * FROM Win32_NamedJobObjectProcess
+| Collection | Member | 
+| \\.\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | \\.\root\cimv2:Win32_Process.Handle="2456" | 
+| \\.\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | \\.\root\cimv2:Win32_Process.Handle="2836" |
+```
+#### Win32_NamedJobObjectSecLimit
+```sh
+WQL> SELECT * FROM Win32_NamedJobObjectSecLimit
+| Collection | Setting | 
+| \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectSecLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\host\\job" | 
+| \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectSecLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\special\\host\\job" |
+```
+#### Win32_NamedJobObjectSecLimitSetting
+```sh
+WQL> SELECT * FROM Win32_NamedJobObjectSecLimitSetting
+| SettingID | Caption | Description | SecurityLimitFlags | SIDsToDisable | RestrictedSIDs | PrivilegesToDelete | 
+| \wmi\provider\sub\system\host\job | None | None | 0 | None | None | None | 
+| \wmi\provider\sub\system\special\host\job | None | None | 0 | None | None | None |
+```
+#### Win32_NamedJobObjectStatistics
+```sh
+WQL> SELECT * FROM Win32_NamedJobObjectStatistics
+| Stats | Collection | 
+| \\FOREST\root\cimv2:Win32_NamedJobObjectActgInfo.Name="\\wmi\\provider\\sub\\system\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | 
+| \\FOREST\root\cimv2:Win32_NamedJobObjectActgInfo.Name="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" |
+```
+#### Win32_SIDandAttributes
+#### Win32_TokenGroups
+#### Win32_TokenPrivileges
+
+
+### Memory and Page Files
+#### Win32_PageFile
+#### Win32_PageFileElementSetting	
+#### Win32_PageFileSetting
+#### Win32_PageFileUsage
+```sh
+WQL> SELECT * FROM Win32_PageFileUsage
+| Caption | Description | InstallDate | Name | Status | AllocatedBaseSize | CurrentUsage | PeakUsage | TempPageFile | 
+| C:\pagefile.sys | C:\pagefile.sys | 20190918100723.678412-420 | C:\pagefile.sys | None | 448 | 106 | 401 | False |
+```
+
+
+### Multimedia Audio or Visual
+#### Win32_CodecFile
+
+
+### Networking
+#### Win32_ActiveRoute
+#### Win32_IP4PersistedRouteTable
+#### Win32_IP4RouteTable
+```sh
+WQL> SELECT * FROM Win32_IP4RouteTable
+| Caption | Description | InstallDate | Name | Status | Destination | Mask | InterfaceIndex | NextHop | Type | Protocol | Age | Metric1 | Metric2 | Metric3 | Metric4 | Metric5 | Information | 
+| 0.0.0.0 | 0.0.0.0 - 0.0.0.0 - 10.129.0.1 | None | 0.0.0.0 | None | 0.0.0.0 | 0.0.0.0 | 5 | 10.129.0.1 | 4 | 3 | 31005 | 25 | -1 | -1 | -1 | -1 | 0.0 | 
+| 10.129.0.0 | 10.129.0.0 - 255.255.0.0 - 0.0.0.0 | None | 10.129.0.0 | None | 10.129.0.0 | 255.255.0.0 | 5 | 0.0.0.0 | 3 | 2 | 31005 | 281 | -1 | -1 | -1 | -1 | 0.0 | 
+| 10.129.95.210 | 10.129.95.210 - 255.255.255.255 - 0.0.0.0 | None | 10.129.95.210 | None | 10.129.95.210 | 255.255.255.255 | 5 | 0.0.0.0 | 3 | 2 | 31005 | 281 | -1 | -1 | -1 | -1 | 0.0 | 
+| 10.129.255.255 | 10.129.255.255 - 255.255.255.255 - 0.0.0.0 | None | 10.129.255.255 | None | 10.129.255.255 | 255.255.255.255 | 5 | 0.0.0.0 | 3 | 2 | 31005 | 281 | -1 | -1 | -1 | -1 | 0.0 | 
+| 127.0.0.0 | 127.0.0.0 - 255.0.0.0 - 0.0.0.0 | None | 127.0.0.0 | None | 127.0.0.0 | 255.0.0.0 | 1 | 0.0.0.0 | 3 | 2 | 31012 | 331 | -1 | -1 | -1 | -1 | 0.0 | 
+| 127.0.0.1 | 127.0.0.1 - 255.255.255.255 - 0.0.0.0 | None | 127.0.0.1 | None | 127.0.0.1 | 255.255.255.255 | 1 | 0.0.0.0 | 3 | 2 | 31012 | 331 | -1 | -1 | -1 | -1 | 0.0 | 
+| 127.255.255.255 | 127.255.255.255 - 255.255.255.255 - 0.0.0.0 | None | 127.255.255.255 | None | 127.255.255.255 | 255.255.255.255 | 1 | 0.0.0.0 | 3 | 2 | 31012 | 331 | -1 | -1 | -1 | -1 | 0.0 | 
+| 224.0.0.0 | 224.0.0.0 - 240.0.0.0 - 0.0.0.0 | None | 224.0.0.0 | None | 224.0.0.0 | 240.0.0.0 | 1 | 0.0.0.0 | 3 | 2 | 31012 | 331 | -1 | -1 | -1 | -1 | 0.0 | 
+| 224.0.0.0 | 224.0.0.0 - 240.0.0.0 - 0.0.0.0 | None | 224.0.0.0 | None | 224.0.0.0 | 240.0.0.0 | 5 | 0.0.0.0 | 3 | 2 | 31011 | 281 | -1 | -1 | -1 | -1 | 0.0 | 
+| 255.255.255.255 | 255.255.255.255 - 255.255.255.255 - 0.0.0.0 | None | 255.255.255.255 | None | 255.255.255.255 | 255.255.255.255 | 1 | 0.0.0.0 | 3 | 2 | 31012 | 331 | -1 | -1 | -1 | -1 | 0.0 | 
+| 255.255.255.255 | 255.255.255.255 - 255.255.255.255 - 0.0.0.0 | None | 255.255.255.255 | None | 255.255.255.255 | 255.255.255.255 | 5 | 0.0.0.0 | 3 | 2 | 31011 | 281 | -1 | -1 | -1 | -1 | 0.0 | 
+```
+#### Win32_IP4RouteTableEvent
+#### Win32_NetworkClient
+```sh
+WQL> SELECT * FROM Win32_NetworkClient
+| Caption | Description | InstallDate | Name | Status | Manufacturer | 
+| Workstation | LanmanWorkstation | None | Microsoft Windows Network | OK | Microsoft Corporation |
+```
+#### Win32_NetworkConnection
+#### Win32_NetworkProtocol
+```sh
+WQL> SELECT * FROM Win32_NetworkProtocol
+| Caption | Description | InstallDate | Name | Status | ConnectionlessService | GuaranteesDelivery | GuaranteesSequencing | MaximumAddressSize | MaximumMessageSize | MessageOriented | MinimumAddressSize | PseudoStreamOriented | SupportsBroadcasting | SupportsConnectData | SupportsDisconnectData | SupportsEncryption | SupportsExpeditedData | SupportsFragmentation | SupportsGracefulClosing | SupportsGuaranteedBandwidth | SupportsMulticasting | SupportsQualityofService | 
+| Tcpip | @%SystemRoot%\system32\tcpipcfg.dll,-50003 | 20190918042749.221503-420 | MSAFD Tcpip [TCP/IP] | OK | False | True | True | 16 | 0 | False | 16 | False | False | False | False | False | True | None | True | False | False | False | 
+| Tcpip | @%SystemRoot%\system32\tcpipcfg.dll,-50003 | 20190918042749.221503-420 | MSAFD Tcpip [UDP/IP] | OK | True | False | False | 16 | 65527 | True | 16 | False | True | False | False | False | False | None | False | False | True | False | 
+| Tcpip | @%SystemRoot%\system32\tcpipcfg.dll,-50003 | 20190918042749.221503-420 | MSAFD Tcpip [TCP/IPv6] | OK | False | True | True | 28 | 0 | False | 28 | False | False | False | False | False | True | None | True | False | False | False | 
+| Tcpip | @%SystemRoot%\system32\tcpipcfg.dll,-50003 | 20190918042749.221503-420 | MSAFD Tcpip [UDP/IPv6] | OK | True | False | False | 28 | 65527 | True | 28 | False | True | False | False | False | False | None | False | False | True | False | 
+| RSVP | RSVP TCPv6 Service Provider | None | RSVP TCPv6 Service Provider | None | False | True | True | 28 | 0 | False | 28 | False | False | False | False | True | True | None | True | False | False | True | 
+| RSVP | RSVP TCP Service Provider | None | RSVP TCP Service Provider | None | False | True | True | 16 | 0 | False | 16 | False | False | False | False | True | True | None | True | False | False | True | 
+| RSVP | RSVP UDPv6 Service Provider | None | RSVP UDPv6 Service Provider | None | True | False | False | 28 | 65527 | True | 28 | False | True | False | False | True | False | None | False | False | True | True | 
+| RSVP | RSVP UDP Service Provider | None | RSVP UDP Service Provider | None | True | False | False | 16 | 65527 | True | 16 | False | True | False | False | True | False | None | False | False | True | True | 
+| Hyper-V | Hyper-V RAW | None | Hyper-V RAW | None | False | True | True | 36 | 0 | False | 36 | False | False | False | False | False | False | None | True | False | False | False | 
+| vSockets | vSockets DGRAM | None | vSockets DGRAM | None | True | False | False | 16 | 0 | True | 16 | False | False | False | False | False | False | None | False | False | False | False | 
+| vSockets | vSockets STREAM | None | vSockets STREAM | None | False | True | True | 16 | 0 | False | 16 | False | False | False | False | False | False | None | True | False | False | False |
+```
+#### Win32_NTDomain
+```sh
+WQL> SELECT * FROM Win32_NTDomain
+| Caption | Description | InstallDate | Name | Status | CreationClassName | NameFormat | PrimaryOwnerContact | PrimaryOwnerName | Roles | DomainControllerName | DomainControllerAddress | DomainControllerAddressType | DomainGuid | DomainName | DnsForestName | DSPrimaryDomainControllerFlag | DSWritableFlag | DSGlobalCatalogFlag | DSDirectoryServiceFlag | DSKerberosDistributionCenterFlag | DSTimeServiceFlag | DSDnsControllerFlag | DSDnsDomainFlag | DSDnsForestFlag | DcSiteName | ClientSiteName | 
+| HTB | HTB | None | Domain: HTB | OK | Win32_NTDomain | None | None | None | None | \\FOREST | \\dead:beef::4039:28df:14a7:eb85 | 1 | {DFF0C71A-A949-4B26-8C7B-52E3E2CB6EAB} | HTB | htb.local | True | True | True | True | True | True | False | False | True | Default-First-Site-Name | Default-First-Site-Name |
+```
+#### Win32_PingStatus
+#### Win32_ProtocolBinding
+```sh
+WQL> SELECT * FROM Win32_ProtocolBinding
+| Antecedent | Device | Dependent | 
+| \\FOREST\root\cimv2:Win32_NetworkProtocol.Name="MSAFD Tcpip [TCP/IP]" | \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="0" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="kdnic" | 
+| \\FOREST\root\cimv2:Win32_NetworkProtocol.Name="MSAFD Tcpip [UDP/IP]" | \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="0" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="kdnic" | 
+| \\FOREST\root\cimv2:Win32_NetworkProtocol.Name="MSAFD Tcpip [TCP/IPv6]" | \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="0" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="kdnic" | 
+| \\FOREST\root\cimv2:Win32_NetworkProtocol.Name="MSAFD Tcpip [UDP/IPv6]" | \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="0" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="kdnic" | 
+| \\FOREST\root\cimv2:Win32_NetworkProtocol.Name="MSAFD Tcpip [TCP/IP]" | \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="1" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="e1iexpress" | 
+| \\FOREST\root\cimv2:Win32_NetworkProtocol.Name="MSAFD Tcpip [UDP/IP]" | \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="1" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="e1iexpress" | 
+| \\FOREST\root\cimv2:Win32_NetworkProtocol.Name="MSAFD Tcpip [TCP/IPv6]" | \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="1" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="e1iexpress" | 
+| \\FOREST\root\cimv2:Win32_NetworkProtocol.Name="MSAFD Tcpip [UDP/IPv6]" | \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="1" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="e1iexpress" |
+```
+
+
+
 
 
 ### Win32_ComputerSystemProcessor
@@ -4679,13 +4832,6 @@ WQL> SELECT * FROM Win32_LogicalProgramGroupItemDataFile
 | \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk" |
 ```
 
-### Win32_NetworkClient
-```sh
-WQL> SELECT * FROM Win32_NetworkClient 
-| Caption | Description | InstallDate | Name | Status | Manufacturer | 
-| Workstation | LanmanWorkstation | None | Microsoft Windows Network | OK | Microsoft Corporation |
-```
-
 ### Win32_NetworkLoginProfile
 ```sh
 WQL> SELECT * FROM Win32_NetworkLoginProfile
@@ -4696,21 +4842,4 @@ WQL> SELECT * FROM Win32_NetworkLoginProfile
 | None | sebastien | Network login profile settings for Sebastien Caron on HTB | None | 0 | 0 | 0 |  | 0 | 66113 | Sebastien Caron |  |  | **************.******+*** | 20190922152929.000000-420 | Sunday: No Limit -- Monday: No Limit -- Tuesday: No Limit -- Wednesday: No Limit -- Thursday: No Limit -- Friday: No Limit -- Saturday: No Limit | \\* | None | HTB\sebastien | 8 |  | 00002174153832.000000:000 | None | 513 | 1 |  |  | 168 |  | 1145 | Normal Account |  | 
 | None | svc-alfresco | Network login profile settings for svc-alfresco on HTB | None | 0 | 0 | 0 |  | 0 | 4260353 | svc-alfresco |  |  | **************.******+*** | 20250902073300.000000-420 | Sunday: No Limit -- Monday: No Limit -- Tuesday: No Limit -- Wednesday: No Limit -- Thursday: No Limit -- Friday: No Limit -- Saturday: No Limit | \\* | None | HTB\svc-alfresco | 6 |  | 00000000000130.000000:000 | None | 513 | 1 |  |  | 168 |  | 1147 | Normal Account |  | 
 | None | Administrator | Network login profile settings for Administrator on HTB | None | 0 | 0 | 0 | Built-in account for administering the computer/domain | 0 | 513 | Administrator |  |  | **************.******+*** | 20250901054943.000000-420 | Sunday: No Limit -- Monday: No Limit -- Tuesday: No Limit -- Wednesday: No Limit -- Thursday: No Limit -- Friday: No Limit -- Saturday: No Limit | \\* | None | HTB\Administrator | 143 |  | 00001463151633.000000:000 | None | 513 | 2 |  |  | 168 |  | 500 | Normal Account |  |
-```
-
-### Win32_NetworkProtocol
-```sh
-WQL> SELECT * FROM Win32_NetworkProtocol
-| Caption | Description | InstallDate | Name | Status | ConnectionlessService | GuaranteesDelivery | GuaranteesSequencing | MaximumAddressSize | MaximumMessageSize | MessageOriented | MinimumAddressSize | PseudoStreamOriented | SupportsBroadcasting | SupportsConnectData | SupportsDisconnectData | SupportsEncryption | SupportsExpeditedData | SupportsFragmentation | SupportsGracefulClosing | SupportsGuaranteedBandwidth | SupportsMulticasting | SupportsQualityofService | 
-| Tcpip | @%SystemRoot%\system32\tcpipcfg.dll,-50003 | 20190918042749.221503-420 | MSAFD Tcpip [TCP/IP] | OK | False | True | True | 16 | 0 | False | 16 | False | False | False | False | False | True | None | True | False | False | False | 
-| Tcpip | @%SystemRoot%\system32\tcpipcfg.dll,-50003 | 20190918042749.221503-420 | MSAFD Tcpip [UDP/IP] | OK | True | False | False | 16 | 65527 | True | 16 | False | True | False | False | False | False | None | False | False | True | False | 
-| Tcpip | @%SystemRoot%\system32\tcpipcfg.dll,-50003 | 20190918042749.221503-420 | MSAFD Tcpip [TCP/IPv6] | OK | False | True | True | 28 | 0 | False | 28 | False | False | False | False | False | True | None | True | False | False | False | 
-| Tcpip | @%SystemRoot%\system32\tcpipcfg.dll,-50003 | 20190918042749.221503-420 | MSAFD Tcpip [UDP/IPv6] | OK | True | False | False | 28 | 65527 | True | 28 | False | True | False | False | False | False | None | False | False | True | False | 
-| RSVP | RSVP TCPv6 Service Provider | None | RSVP TCPv6 Service Provider | None | False | True | True | 28 | 0 | False | 28 | False | False | False | False | True | True | None | True | False | False | True | 
-| RSVP | RSVP TCP Service Provider | None | RSVP TCP Service Provider | None | False | True | True | 16 | 0 | False | 16 | False | False | False | False | True | True | None | True | False | False | True | 
-| RSVP | RSVP UDPv6 Service Provider | None | RSVP UDPv6 Service Provider | None | True | False | False | 28 | 65527 | True | 28 | False | True | False | False | True | False | None | False | False | True | True | 
-| RSVP | RSVP UDP Service Provider | None | RSVP UDP Service Provider | None | True | False | False | 16 | 65527 | True | 16 | False | True | False | False | True | False | None | False | False | True | True | 
-| Hyper-V | Hyper-V RAW | None | Hyper-V RAW | None | False | True | True | 36 | 0 | False | 36 | False | False | False | False | False | False | None | True | False | False | False | 
-| vSockets | vSockets DGRAM | None | vSockets DGRAM | None | True | False | False | 16 | 0 | True | 16 | False | False | False | False | False | False | None | False | False | False | False | 
-| vSockets | vSockets STREAM | None | vSockets STREAM | None | False | True | True | 16 | 0 | False | 16 | False | False | False | False | False | False | None | True | False | False | False |
 ```
