@@ -6143,7 +6143,231 @@ WQL> SELECT * FROM Win32_Process
 ```
 #### Win32_ProcessStartup
 #### Win32_Thread
+多いので、powershell.exeプロセスのスレッドのみ表示
+```sh
+WQL> SELECT * FROM Win32_Process WHERE caption = "powershell.exe"
+| Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | CreationDate | Handle | KernelModeTime | OSCreationClassName | OSName | Priority | ExecutionState | TerminationDate | UserModeTime | WorkingSetSize | ExecutablePath | MaximumWorkingSetSize | MinimumWorkingSetSize | PageFaults | PageFileUsage | PeakPageFileUsage | PeakWorkingSetSize | ProcessId | QuotaNonPagedPoolUsage | QuotaPagedPoolUsage | QuotaPeakNonPagedPoolUsage | QuotaPeakPagedPoolUsage | WindowsVersion | ThreadCount | HandleCount | ParentProcessId | SessionId | PrivatePageCount | PeakVirtualSize | VirtualSize | ReadOperationCount | WriteOperationCount | OtherOperationCount | ReadTransferCount | WriteTransferCount | OtherTransferCount | CommandLine | 
+| powershell.exe | powershell.exe | None | powershell.exe | None | Win32_ComputerSystem | FOREST | Win32_Process | 20250903233527.352261-420 | 3036 | 7413437500 | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | 6 | 65535 | None | 46128750000 | 504143872 | C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe | 1380 | 200 | 31700113 | 543464 | 671480 | 627732 | 3036 | 44 | 522 | 139 | 530 | 10.0.14393 | 12 | 410 | 988 | 0 | 556507136 | 2200181616640 | 2200169426944 | 353 | 2 | 38498979 | 4783486 | 160 | 709873028 | powershell.exe -ep bypass C:\Users\Administrator\Documents\revert.ps1 | 
 
+WQL> SELECT * FROM Win32_Thread WHERE processhandle = "3036"
+| Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | OSCreationClassName | OSName | ProcessCreationClassName | ProcessHandle | CreationClassName | Handle | Priority | ExecutionState | UserModeTime | KernelModeTime | ElapsedTime | PriorityBase | StartAddress | ThreadState | ThreadWaitReason | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 2972 | 6 | 65535 | 15 | 62 | 36668000 | 6 | 0 | 5 | 6 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 1480 | 8 | 65535 | 0 | 0 | 36668000 | 6 | 1461809264 | 5 | 6 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 2648 | 11 | 65535 | 31218 | 10046 | 36668000 | 8 | 1461809264 | 5 | 6 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 2380 | 8 | 65535 | 0 | 0 | 36667000 | 6 | 0 | 5 | 15 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 3096 | 8 | 65535 | 0 | 0 | 36666000 | 6 | 1461809264 | 5 | 6 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 3100 | 10 | 65535 | 4578968 | 730859 | 36666000 | 6 | 0 | 5 | 6 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 3108 | 8 | 65535 | 0 | 0 | 36665000 | 6 | 1461809264 | 5 | 4 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 3316 | 11 | 65535 | 0 | 0 | 36601000 | 7 | 1461809264 | 5 | 15 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 3836 | 9 | 65535 | 0 | 0 | 11284000 | 6 | 1461809264 | 5 | 6 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 3940 | 8 | 65535 | 0 | 0 | 214000 | 6 | 1461809264 | 5 | 15 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 3692 | 8 | 65535 | 0 | 0 | 150000 | 6 | 1461809264 | 5 | 15 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 3428 | 8 | 65535 | 0 | 0 | 34000 | 6 | 1461809264 | 5 | 15 |
+```
+
+
+### Registry
+#### Win32_Registry
+```sh
+WQL> SELECT * FROM Win32_Registry
+| Caption | Description | InstallDate | Name | Status | CurrentSize | ProposedSize | MaximumSize | 
+| Registry | Registry | 20190918100759.000000-420 | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | OK | 52 | 4095 | 4095 |
+```
+
+
+### Scheduler Jobs
+#### Win32_CurrentTime
+```sh
+WQL> SELECT * FROM Win32_CurrentTime
+| Year | Month | Day | DayOfWeek | WeekInMonth | Quarter | Hour | Minute | Second | Milliseconds | 
+| 2025 | 9 | 4 | 4 | 1 | 3 | 9 | 50 | 19 | None | 
+| 2025 | 9 | 4 | 4 | 1 | 3 | 16 | 50 | 19 | None |
+```
+#### Win32_ScheduledJob
+#### Win32_LocalTime
+```sh
+WQL> SELECT * FROM Win32_LocalTime
+| Year | Month | Day | DayOfWeek | WeekInMonth | Quarter | Hour | Minute | Second | Milliseconds | 
+| 2025 | 9 | 4 | 4 | 1 | 3 | 9 | 51 | 22 | None |
+```
+#### Win32_UTCTime
+```sh
+WQL> SELECT * FROM Win32_UTCTime
+| Year | Month | Day | DayOfWeek | WeekInMonth | Quarter | Hour | Minute | Second | Milliseconds | 
+| 2025 | 9 | 4 | 4 | 1 | 3 | 16 | 51 | 52 | None |
+```
+
+
+### Security
+#### Win32_AccountSID
+```sh
+WQL> SELECT * FROM Win32_AccountSID
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="Everyone" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="LOCAL" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-2-0" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="CREATOR OWNER" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-3-0" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="CREATOR GROUP" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-3-1" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="CREATOR OWNER SERVER" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-3-2" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="CREATOR GROUP SERVER" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-3-3" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="OWNER RIGHTS" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-3-4" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="DIALUP" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-1" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="NETWORK" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-2" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="BATCH" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-3" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="INTERACTIVE" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="SERVICE" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-6" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="ANONYMOUS LOGON" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-7" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="PROXY" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-8" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="SYSTEM" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="ENTERPRISE DOMAIN CONTROLLERS" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-9" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="SELF" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="Authenticated Users" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-11" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="RESTRICTED" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-12" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="TERMINAL SERVER USER" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-13" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="REMOTE INTERACTIVE LOGON" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-14" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="IUSR" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-17" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="LOCAL SERVICE" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-19" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="NETWORK SERVICE" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-20" | 
+| \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="BUILTIN" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-500" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Guest" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-501" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="krbtgt" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-502" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="DefaultAccount" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-503" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="$331000-VK4ADACQNUCA" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1123" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_2c8eef0a09b545acb" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1124" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_ca8c2ed5bdab4dc9b" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1125" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_75a538d3025e4db9a" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1126" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_681f53d4942840e18" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1127" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_1b41c9286325456bb" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1128" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_9b69f1b9d2cc45549" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1129" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_7c96b981967141ebb" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1130" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_c75ee099d0a64c91b" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1131" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_1ffab36a2f5f479cb" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1132" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxc3d7722" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1134" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxfc9daad" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1135" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxc0a90c9" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1136" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox670628e" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1137" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox968e74d" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1138" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox6ded678" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1139" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox83d6781" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1140" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxfd87238" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1141" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxb01ac64" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1142" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox7108a4e" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1143" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox0659cc1" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1144" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="sebastien" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1145" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="lucinda" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1146" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="svc-alfresco" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1147" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="andy" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1150" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="mark" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1151" | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="santi" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1152" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Account Operators" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-548" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Pre-Windows 2000 Compatible Access" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-554" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Incoming Forest Trust Builders" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-557" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Windows Authorization Access Group" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-560" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Terminal Server License Servers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-561" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Administrators" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Users" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-545" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Guests" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-546" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Print Operators" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-550" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Backup Operators" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-551" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Replicator" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-552" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Remote Desktop Users" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-555" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Network Configuration Operators" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-556" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Performance Monitor Users" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-558" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Performance Log Users" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-559" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Distributed COM Users" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-562" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="IIS_IUSRS" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-568" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Cryptographic Operators" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-569" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Event Log Readers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-573" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Certificate Service DCOM Access" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-574" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="RDS Remote Access Servers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-575" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="RDS Endpoint Servers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-576" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="RDS Management Servers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-577" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Hyper-V Administrators" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-578" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Access Control Assistance Operators" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-579" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Remote Management Users" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-580" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="System Managed Accounts Group" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-581" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Storage Replica Administrators" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-582" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Server Operators" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-549" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Cert Publishers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-517" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="RAS and IAS Servers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-553" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Allowed RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-571" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-572" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="DnsAdmins" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1101" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Cert Publishers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-517" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="RAS and IAS Servers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-553" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Allowed RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-571" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-572" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="DnsAdmins" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1101" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="$D31000-NSEL5BRJ63V7" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1133" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Cloneable Domain Controllers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-522" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Compliance Management" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1115" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Delegated Setup" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1113" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Discovery Management" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1111" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="DnsUpdateProxy" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1102" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Admins" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-512" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Computers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-515" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Controllers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-516" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Guests" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-514" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-513" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Enterprise Admins" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-519" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Enterprise Key Admins" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-527" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Enterprise Read-only Domain Controllers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-498" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Exchange Servers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1118" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Exchange Trusted Subsystem" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1119" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Exchange Windows Permissions" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1121" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="ExchangeLegacyInterop" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1122" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Group Policy Creator Owners" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-520" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Help Desk" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1109" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Hygiene Management" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1114" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Key Admins" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-526" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Managed Availability Servers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1120" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Organization Management" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1104" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Privileged IT Accounts" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1149" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Protected Users" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-525" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Public Folder Management" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1107" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Read-only Domain Controllers" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-521" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Recipient Management" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1105" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Records Management" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1110" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Schema Admins" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-518" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Security Administrator" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1117" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Security Reader" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1116" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Server Management" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1112" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Service Accounts" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1148" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="test" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-5101" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="UM Management" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1108" | 
+| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="View-Only Organization Management" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-21-3072663084-364016917-1341370565-1106" | 
+```
+#### Win32_ACE
+#### Win32_LogicalFileAccess
+#### Win32_LogicalFileAuditing
+#### Win32_LogicalFileGroup
+#### Win32_LogicalFileOwner
+#### Win32_LogicalFileSecuritySetting
+#### Win32_LogicalShareAccess
+```sh
+WQL> SELECT * FROM Win32_LogicalShareAccess
+| SecuritySetting | Trustee | Type | Inheritance | AccessMask | GuidObjectType | GuidInheritedObjectType | 
+| \\FOREST\root\cimv2:Win32_LogicalShareSecuritySetting.Name="NETLOGON" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 0 | 0 | 1179817 | None | None | 
+| \\FOREST\root\cimv2:Win32_LogicalShareSecuritySetting.Name="NETLOGON" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 0 | 0 | 2032127 | None | None | 
+| \\FOREST\root\cimv2:Win32_LogicalShareSecuritySetting.Name="SYSVOL" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-1-0" | 0 | 0 | 1179817 | None | None | 
+| \\FOREST\root\cimv2:Win32_LogicalShareSecuritySetting.Name="SYSVOL" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 0 | 0 | 2032127 | None | None | 
+| \\FOREST\root\cimv2:Win32_LogicalShareSecuritySetting.Name="SYSVOL" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-11" | 0 | 0 | 2032127 | None | None |
+```
+#### Win32_LogicalShareAuditing
+#### Win32_LogicalShareSecuritySetting
+```sh
+WQL> SELECT * FROM Win32_LogicalShareSecuritySetting
+| SettingID | Caption | Description | ControlFlags | Name | 
+| None | Security settings of NETLOGON | Security settings of NETLOGON | 32772 | NETLOGON | 
+| None | Security settings of SYSVOL | Security settings of SYSVOL | 32772 | SYSVOL |
+```
+#### Win32_PrivilegesStatus
+#### Win32_SecurityDescriptor
+#### Win32_SecuritySetting
+#### Win32_SecuritySettingAccess
+#### Win32_SecuritySettingAuditing
+#### Win32_SecuritySettingGroup
+#### Win32_SecuritySettingOfLogicalFile
 
 
 
