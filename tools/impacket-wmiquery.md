@@ -734,11 +734,11 @@ WQL> SELECT * FROM Win32_ComponentCategory
 ```
 #### Win32_ImplementedCategory
 ```sh
-WQL> SELECT * FROM Win32_ImplementedCategory
+WQL> SELECT * FROM Win32_ImplementedCategory WHERE Category = "Win32_ComponentCategory.CategoryId=\"{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}\""
 | Category | Component | 
-| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{00000535-0000-0010-8000-00AA006D2EA4}" | 
-| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{00021401-0000-0000-C000-000000000046}" | 
-| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{00000003-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{26671179-2EC2-42BF-93D3-64108589CAD5}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{00B01B2E-B1FE-33A6-AD40-57DE8358DC7D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{01FF4E4B-8AD0-3171-8C82-5C2F48B87E3D}" | 
+| \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{026CC6D7-34B2-33D5-B551-CA31EB6CE345}" |
 
 ~~~
 ```
