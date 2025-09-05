@@ -1,7 +1,7 @@
 - https://learn.microsoft.com/ja-jp/windows/win32/cimwin32prov/win32-provider
 - https://learn.microsoft.com/en-us/windows/win32/wmisdk/wql-sql-for-wmi
 
-## command
+# COMMAND
 ```sh
 └─$ impacket-wmiquery -debug 'htb.local/administrator@10.129.138.203' -hashes 'aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6'                          
 Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
@@ -19,6 +19,41 @@ Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies
 
 
 
+# CIM WMI Provider
+### CIM_Action
+```sh
+WQL> SELECT * FROM CIM_Action
+| Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | Registry | EntryName | EntryValue | Root | key | 
+| C_x86_Runtime_Detection | 14.12.25810 | 2 | {E3819B64-3C56-3DD7-921D-00B011AD31DE} | 19 | reg31F4ACE8A8619D39F2E77D1700A55703{7FED75A1-600C-394B-8376-712E2A8861F2} | 65535 | reg31F4ACE8A8619D39F2E77D1700A55703 | reg31F4ACE8A8619D39F2E77D1700A55703 | reg31F4ACE8A8619D39F2E77D1700A55703 | Version | v14.12.25810.00 | 2 | SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x86 | 
+| Servicing_Key_ProductFamily_x86 | 14.12.25810 | 2 | {C96DC6F1-894A-33E0-A8C1-3E9E7394FA28} | 19 | reg5C3AC4DB2756A2B6BDAE7C2C44DA3EC7{7FED75A1-600C-394B-8376-712E2A8861F2} | 65535 | reg5C3AC4DB2756A2B6BDAE7C2C44DA3EC7 | reg5C3AC4DB2756A2B6BDAE7C2C44DA3EC7 | reg5C3AC4DB2756A2B6BDAE7C2C44DA3EC7 | SP | #0 | 2 | SOFTWARE\Microsoft\DevDiv\vc\Servicing\14.0 | 
+| Servicing_Key_ProductEdition_x86 | 14.12.25810 | 2 | {1EA220DF-5B36-3289-B979-D06841E41888} | 19 | reg382D83E6CA16404D47254964DA752DEA{7FED75A1-600C-394B-8376-712E2A8861F2} | 65535 | reg382D83E6CA16404D47254964DA752DEA | reg382D83E6CA16404D47254964DA752DEA | reg382D83E6CA16404D47254964DA752DEA | Install | #1 | 2 | SOFTWARE\Microsoft\DevDiv\vc\Servicing\14.0\RuntimeAdditional | 
+
+~~~
+```
+### CIM_ActionSequence
+### CIM_ActsAsSpare
+### CIM_AdjacentSlots
+### CIM_AggregatePExtent
+### CIM_AggregatePSExtent
+### CIM_AlarmDevice
+### CIM_AllocatedResource
+```sh
+WQL> SELECT * FROM CIM_AllocatedResource
+| Antecedent | Dependent | 
+| \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="3758096384" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" | 
+| \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="1024" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" | 
+| \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4290772992" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" |
+
+~~~
+```
+
+
+
+
+
+
+
+# Win32 Provider
 ## Computer System Hardware Classes
 ### Cooling Device Classes
 #### Win32_Fan
@@ -7909,9 +7944,257 @@ WQL> SELECT * FROM Win32_WMIElementSetting
 
 
 
-### Win32_DisplayControllerConfiguration
+
+# Win32_ClusterShare class
+
+
+
+
+
+# Win32_OptionalFeature class
 ```sh
-WQL> SELECT * FROM Win32_DisplayControllerConfiguration
-| SettingID | Caption | Description | BitsPerPixel | ColorPlanes | DeviceEntriesInAColorTable | DeviceSpecificPens | HorizontalResolution | Name | RefreshRate | ReservedSystemPaletteEntries | SystemPaletteEntries | VerticalResolution | VideoMode | 
-| VMware SVGA 3D | VMware SVGA 3D | VMware SVGA 3D | 32 | 1 | None | None | 1024 | VMware SVGA 3D | 60 | None | None | 768 | 1024 by 768 pixels, True Color, 60 Hertz |
+WQL> SELECT * FROM Win32_OptionalFeature
+| Caption | Description | InstallDate | Name | Status | InstallState | 
+| .NET Framework 4.6 Features | None | None | NetFx4ServerFeatures | None | 1 | 
+| .NET Framework 4.6 | None | None | NetFx4 | None | 1 | 
+| ASP.NET 4.6 | None | None | NetFx4Extended-ASPNET45 | None | 2 | 
+| Windows PowerShell | None | None | MicrosoftWindowsPowerShellRoot | None | 1 | 
+| Windows PowerShell | None | None | MicrosoftWindowsPowerShell | None | 1 | 
+| Remote Access Management Tools | None | None | RemoteAccessMgmtTools | None | 2 | 
+| Remote Access module for Windows PowerShell | None | None | RemoteAccessPowerShell | None | 2 | 
+|  | None | None | WSS-Product-Package | None | 2 | 
+| Active Directory PowerShell | None | None | ActiveDirectory-PowerShell | None | 1 | 
+| Active Directory Domain Controller | None | None | DirectoryServices-DomainController | None | 1 | 
+|  | None | None | HostGuardianService-Package | None | 2 | 
+| Active Directory Administrative Center | None | None | DirectoryServices-AdministrativeCenter | None | 2 | 
+| Remote Access | None | None | RemoteAccess | None | 2 | 
+| Remote Access Server | None | None | RemoteAccessServer | None | 2 | 
+| Ras Server Routing Protocols | None | None | RasRoutingProtocols | None | 2 | 
+| Active Directory Federation Services Proxy | None | None | Web-Application-Proxy | None | 2 | 
+| iSCSI Target Server Powershell | None | None | iSCSITargetServer-PowerShell | None | 2 | 
+| Windows PowerShell 2.0 Engine | None | None | MicrosoftWindowsPowerShellV2 | None | 1 | 
+| Windows PowerShell Web Access | None | None | WindowsPowerShellWebAccess | None | 2 | 
+| Rights Management Services | None | None | RightsManagementServices-Role | None | 2 | 
+| Rights Management Services | None | None | RightsManagementServices | None | 2 | 
+| Federation support for Rights Management Services | None | None | RMS-Federation | None | 2 | 
+|  | None | None | RightsManagementServices-AdminTools | None | 2 | 
+| DataCenterBridging LLDP Tools | None | None | DataCenterBridging-LLDP-Tools | None | 2 | 
+| Microsoft Windows ServerCore Foundational PowerShell Cmdlets | None | None | Server-Psh-Cmdlets | None | 1 | 
+| PKIClient PowerShell Cmdlets | None | None | PKIClient-PSH-Cmdlets | None | 2 | 
+| Key Distribution Service PowerShell Cmdlets | None | None | KeyDistributionService-PSH-Cmdlets | None | 1 | 
+| TLS Session Ticket Key Commands | None | None | TlsSessionTicketKey-PSH-Cmdlets | None | 1 | 
+| Trusted Platform Module Service PowerShell Cmdlets | None | None | Tpm-PSH-Cmdlets | None | 1 | 
+| Internet Information Services | None | None | IIS-WebServerRole | None | 2 | 
+| World Wide Web Services | None | None | IIS-WebServer | None | 2 | 
+| Common HTTP Features | None | None | IIS-CommonHttpFeatures | None | 2 | 
+| Security | None | None | IIS-Security | None | 2 | 
+| Request Filtering | None | None | IIS-RequestFiltering | None | 2 | 
+| Static Content | None | None | IIS-StaticContent | None | 2 | 
+| Default Document | None | None | IIS-DefaultDocument | None | 2 | 
+| Directory Browsing | None | None | IIS-DirectoryBrowsing | None | 2 | 
+| HTTP Errors | None | None | IIS-HttpErrors | None | 2 | 
+| HTTP Redirection | None | None | IIS-HttpRedirect | None | 2 | 
+| WebDAV Publishing | None | None | IIS-WebDAV | None | 2 | 
+| Application Development Features | None | None | IIS-ApplicationDevelopment | None | 2 | 
+| WebSocket Protocol | None | None | IIS-WebSockets | None | 2 | 
+| Application Initialization | None | None | IIS-ApplicationInit | None | 2 | 
+| .NET Extensibility 3.5 | None | None | IIS-NetFxExtensibility | None | 2 | 
+| .NET Extensibility 4.6 | None | None | IIS-NetFxExtensibility45 | None | 2 | 
+| ISAPI Extensions | None | None | IIS-ISAPIExtensions | None | 2 | 
+| ISAPI Filters | None | None | IIS-ISAPIFilter | None | 2 | 
+| ASP.NET 3.5 | None | None | IIS-ASPNET | None | 2 | 
+| ASP.NET 4.6 | None | None | IIS-ASPNET45 | None | 2 | 
+| ASP | None | None | IIS-ASP | None | 2 | 
+| CGI | None | None | IIS-CGI | None | 2 | 
+| Server-Side Includes | None | None | IIS-ServerSideIncludes | None | 2 | 
+| Health and Diagnostics | None | None | IIS-HealthAndDiagnostics | None | 2 | 
+| HTTP Logging | None | None | IIS-HttpLogging | None | 2 | 
+| Logging Tools | None | None | IIS-LoggingLibraries | None | 2 | 
+| Request Monitor | None | None | IIS-RequestMonitor | None | 2 | 
+| Tracing | None | None | IIS-HttpTracing | None | 2 | 
+| Custom Logging | None | None | IIS-CustomLogging | None | 2 | 
+| ODBC Logging | None | None | IIS-ODBCLogging | None | 2 | 
+| Centralized SSL Certificate Support | None | None | IIS-CertProvider | None | 2 | 
+| Basic Authentication | None | None | IIS-BasicAuthentication | None | 2 | 
+| Windows Authentication | None | None | IIS-WindowsAuthentication | None | 2 | 
+| Digest Authentication | None | None | IIS-DigestAuthentication | None | 2 | 
+| Client Certificate Mapping Authentication | None | None | IIS-ClientCertificateMappingAuthentication | None | 2 | 
+| IIS Client Certificate Mapping Authentication | None | None | IIS-IISCertificateMappingAuthentication | None | 2 | 
+| URL Authorization | None | None | IIS-URLAuthorization | None | 2 | 
+| IP Security | None | None | IIS-IPSecurity | None | 2 | 
+| Performance Features | None | None | IIS-Performance | None | 2 | 
+| Static Content Compression | None | None | IIS-HttpCompressionStatic | None | 2 | 
+| Dynamic Content Compression | None | None | IIS-HttpCompressionDynamic | None | 2 | 
+| Web Management Tools | None | None | IIS-WebServerManagementTools | None | 2 | 
+| IIS Management Console | None | None | IIS-ManagementConsole | None | 3 | 
+| IIS 6 Management Console | None | None | IIS-LegacySnapIn | None | 3 | 
+| IIS Management Scripts and Tools | None | None | IIS-ManagementScriptingTools | None | 2 | 
+| IIS Management Service | None | None | IIS-ManagementService | None | 2 | 
+| IIS 6 Management Compatibility | None | None | IIS-IIS6ManagementCompatibility | None | 2 | 
+| IIS Metabase and IIS 6 configuration compatibility | None | None | IIS-Metabase | None | 2 | 
+| IIS 6 WMI Compatibility | None | None | IIS-WMICompatibility | None | 2 | 
+| IIS 6 Scripting Tools | None | None | IIS-LegacyScripts | None | 2 | 
+| FTP Server | None | None | IIS-FTPServer | None | 2 | 
+| FTP Service | None | None | IIS-FTPSvc | None | 2 | 
+| FTP Extensibility | None | None | IIS-FTPExtensibility | None | 2 | 
+| Windows Process Activation Service | None | None | WAS-WindowsActivationService | None | 2 | 
+| Process Model | None | None | WAS-ProcessModel | None | 2 | 
+| .NET Environment 3.5 | None | None | WAS-NetFxEnvironment | None | 2 | 
+| Configuration APIs | None | None | WAS-ConfigurationAPI | None | 2 | 
+| Internet Information Services Hostable Web Core | None | None | IIS-HostableWebCore | None | 2 | 
+| Message Queuing | None | None | MSMQ | None | 2 | 
+| Message Queuing Services | None | None | MSMQ-Services | None | 2 | 
+| Microsoft Message Queue (MSMQ) Server | None | None | MSMQ-Server | None | 2 | 
+| MSMQ Triggers | None | None | MSMQ-Triggers | None | 2 | 
+| MSMQ Active Directory Domain Services Integration | None | None | MSMQ-ADIntegration | None | 2 | 
+| MSMQ HTTP Support | None | None | MSMQ-HTTP | None | 2 | 
+| Multicasting Support | None | None | MSMQ-Multicast | None | 3 | 
+| MSMQ DCOM Proxy | None | None | MSMQ-DCOMProxy | None | 2 | 
+| MSMQ routing server | None | None | MSMQ-RoutingServer | None | 2 | 
+| WCF Services | None | None | WCF-Services45 | None | 1 | 
+| HTTP Activation | None | None | WCF-HTTP-Activation45 | None | 2 | 
+| TCP Activation | None | None | WCF-TCP-Activation45 | None | 2 | 
+| Named Pipe Activation | None | None | WCF-Pipe-Activation45 | None | 2 | 
+| Message Queuing (MSMQ) Activation | None | None | WCF-MSMQ-Activation45 | None | 2 | 
+| TCP Port Sharing | None | None | WCF-TCP-PortSharing45 | None | 1 | 
+| Management OData IIS Extension | None | None | ManagementOdata | None | 2 | 
+| Windows PowerShell Desired State Configuration Service | None | None | DSC-Service | None | 2 | 
+| Active Directory Certificate Services | None | None | ADCertificateServicesRole | None | 2 | 
+| Certificate Service | None | None | CertificateServices | None | 2 | 
+| Online Revocation Services | None | None | OnlineRevocationServices | None | 2 | 
+| Web Enrollment Services | None | None | WebEnrollmentServices | None | 2 | 
+| Network Device Enrollment Services | None | None | NetworkDeviceEnrollmentServices | None | 2 | 
+| Certificate Services Enrollment Policy Server | None | None | CertificateEnrollmentPolicyServer | None | 2 | 
+| Certificate Services Enrollment Server | None | None | CertificateEnrollmentServer | None | 2 | 
+| Active Directory Federation Services | None | None | IdentityServer-SecurityTokenService | None | 2 | 
+| IPAM Server Feature | None | None | IPAMServerFeature | None | 2 | 
+| Device Health Attestation | None | None | DeviceHealthAttestationService | None | 2 | 
+| Background Intelligent Transfer Service (BITS) Server Extensions for File Upload | None | None | BITSExtensions-Upload | None | 3 | 
+| Windows Communication Foundation HTTP Activation | None | None | WCF-HTTP-Activation | None | 2 | 
+| Windows Communication Foundation Non-HTTP Activation | None | None | WCF-NonHTTP-Activation | None | 2 | 
+| RPC over HTTP proxy | None | None | RPC-HTTP_Proxy | None | 2 | 
+| SMTP Service Admin Pack | None | None | Smtpsvc-Admin-Update-Name | None | 3 | 
+| SMTP Service | None | None | Smtpsvc-Service-Update-Name | None | 3 | 
+| Remote Desktop Services Web Access | None | None | WebAccess | None | 3 | 
+| Windows Server Update Services | None | None | UpdateServices | None | 2 | 
+| WSUS Services | None | None | UpdateServices-Services | None | 2 | 
+| SQL Server Connectivity | None | None | UpdateServices-Database | None | 2 | 
+| WID Connectivity | None | None | UpdateServices-WidDatabase | None | 2 | 
+| Windows Remote Management (WinRM) IIS Extension | None | None | Microsoft-Windows-Web-Services-for-Management-IIS-Extension | None | 2 | 
+| Work Folders | None | None | WorkFolders-Server | None | 2 | 
+| Windows Server Update Services Tools | None | None | UpdateServices-RSAT | None | 2 | 
+| API and PowerShell cmdlets | None | None | UpdateServices-API | None | 2 | 
+| Active Directory Lightweight Directory Services | None | None | DirectoryServices-ADAM | None | 2 | 
+| FSRM Infrastructure | None | None | FSRM-Infrastructure | None | 2 | 
+| Microsoft-Windows-FCI-Client-Package | None | None | Microsoft-Windows-FCI-Client-Package | None | 2 | 
+| FSRM Infrastructure Services | None | None | FSRM-Infrastructure-Services | None | 2 | 
+| IPAM Management Tools | None | None | IPAMClientFeature | None | 2 | 
+| Microsoft Windows AuthManager | None | None | AuthManager | None | 2 | 
+| Microsoft Windows ServerCore WOW64 | None | None | ServerCore-WOW64 | None | 1 | 
+| Print and Document Services | None | None | Printing-Server-Foundation-Features | None | 2 | 
+| Windows Print Server Role Settings | None | None | Printing-Server-Role | None | 2 | 
+| LPD Print Service | None | None | Printing-LPDPrintService | None | 2 | 
+| Windows Server Print Client | None | None | Printing-Client | None | 1 | 
+| Windows Server Print Client Management UI | None | None | Printing-Client-Gui | None | 3 | 
+| ServerCore East Asian IME WOW64 | None | None | ServerCore-EA-IME-WOW64 | None | 1 | 
+|  | None | None | ServerManager-Core-RSAT | None | 1 | 
+|  | None | None | ServerManager-Core-RSAT-Role-Tools | None | 1 | 
+|  | None | None | ServerManager-Core-RSAT-Feature-Tools | None | 2 | 
+| DHCP Server Tools | None | None | DHCPServer-Tools | None | 2 | 
+|  | None | None | RSAT-AD-Tools-Feature | None | 1 | 
+|  | None | None | RSAT-ADDS-Tools-Feature | None | 2 | 
+| Active Directory Domain Controller Tools | None | None | DirectoryServices-DomainController-Tools | None | 2 | 
+| Active Directory Lightweight Directory Services Tools | None | None | DirectoryServices-ADAM-Tools | None | 2 | 
+| DNS Server Tools | None | None | DNS-Server-Tools | None | 2 | 
+| Hyper-V | None | None | Microsoft-Hyper-V | None | 2 | 
+| Hyper-V Offline | None | None | Microsoft-Hyper-V-Offline | None | 2 | 
+| Hyper-V Online | None | None | Microsoft-Hyper-V-Online | None | 2 | 
+|  | None | None | RSAT-Hyper-V-Tools-Feature | None | 2 | 
+| Hyper-V Management Console | None | None | Microsoft-Hyper-V-Management-Clients | None | 3 | 
+| Hyper-V PowerShell cmdlets | None | None | Microsoft-Hyper-V-Management-PowerShell | None | 2 | 
+| VM Host Agent | None | None | VmHostAgent | None | 2 | 
+| Remote Administration pack for Shielded VM Tools | None | None | ShieldedVMToolsAdminPack | None | 2 | 
+| Storage Replica Module for Windows PowerShell | None | None | Storage-Replica-AdminPack | None | 2 | 
+| WINS Server Tools | None | None | WINS-Server-Tools | None | 3 | 
+| .NET Framework 3.5 Features | None | None | NetFx3ServerFeatures | None | 2 | 
+| .NET Framework 3.5 (includes .NET 2.0 and 3.0) | None | None | NetFx3 | None | 2 | 
+| Enhanced Storage | None | None | EnhancedStorage | None | 2 | 
+| BitLocker Drive Encryption | None | None | BitLocker | None | 2 | 
+|  | None | None | Bitlocker-Utilities | None | 2 | 
+|  | None | None | Microsoft-Windows-GroupPolicy-ServerAdminTools-Update | None | 1 | 
+| Failover Cluster FullServer | None | None | FailoverCluster-FullServer | None | 2 | 
+| Windows Server Backup | None | None | WindowsServerBackup | None | 2 | 
+| CCFFilter | None | None | CCFFilter | None | 2 | 
+| Failover Clustering Tools | None | None | FailoverCluster-AdminPak | None | 2 | 
+| Failover Cluster Module for Windows PowerShell | None | None | FailoverCluster-PowerShell | None | 2 | 
+| Hardened Fabric Encryption Task | None | None | HardenedFabricEncryptionTask | None | 2 | 
+| Services for NFS | None | None | ServicesForNFS-ServerAndClient | None | 2 | 
+| Server for NFS | None | None | ServerForNFS-Infrastructure | None | 2 | 
+| Client for NFS | None | None | ClientForNFS-Infrastructure | None | 2 | 
+| Simple TCPIP services (i.e. echo, daytime etc) | None | None | SimpleTCP | None | 2 | 
+| SMB Direct | None | None | SmbDirect | None | 1 | 
+| Windows Defender Features | None | None | Windows-Defender-Features | None | 1 | 
+| Windows Defender | None | None | Windows-Defender | None | 1 | 
+| Data Deduplication | None | None | Dedup-Core | None | 2 | 
+| DFS Namespace | None | None | DFSN-Server | None | 2 | 
+| Windows DFS Replication Service | None | None | DFSR-Infrastructure-ServerEdition | None | 2 | 
+| DHCP Server feature | None | None | DHCPServer | None | 2 | 
+| DNS Server | None | None | DNS-Server-Full-Role | None | 1 | 
+| Failover Cluster Automation Server | None | None | FailoverCluster-AutomationServer | None | 2 | 
+| Failover Cluster Command Interface | None | None | FailoverCluster-CmdInterface | None | 2 | 
+| Windows File Replication Service | None | None | FRS-Infrastructure | None | 2 | 
+| File Server VSS Agent Service | None | None | FileServerVSSAgent | None | 2 | 
+| Windows Internal Database | None | None | Windows-Internal-Database | None | 2 | 
+| WINS Runtime | None | None | WINSRuntime | None | 2 | 
+| iSCSI Target Server - Disk Providers | None | None | iSCSITargetStorageProviders | None | 2 | 
+| iSCSI Target Server | None | None | iSCSITargetServer | None | 2 | 
+| iSNS Server service | None | None | iSNS_Service | None | 2 | 
+| Background Intelligent Transfer Service (BITS) | None | None | BITS | None | 2 | 
+| BITS Compact Server | None | None | LightweightServer | None | 2 | 
+| Microsoft MultipathIo | None | None | MultipathIo | None | 2 | 
+| MultiPoint Services | None | None | MultiPoint-Role | None | 2 | 
+| MultiPoint Connector | None | None | MultiPoint-Connector | None | 2 | 
+| MultiPoint Connector Services | None | None | MultiPoint-Connector-Services | None | 2 | 
+| MultiPoint Manager and MultiPoint Dashboard | None | None | MultiPoint-Tools | None | 2 | 
+| Network Load Balancing | None | None | NetworkLoadBalancingFullServer | None | 2 | 
+| Containers | None | None | Containers | None | 2 | 
+|  | None | None | PeerDist | None | 2 | 
+| Peer Name Resolution Protocol(PNRP) | None | None | P2P-PnrpOnly | None | 2 | 
+| Microsoft Print to PDF | None | None | Printing-PrintToPDFServices-Features | None | 1 | 
+| XPS Services | None | None | Printing-XPSServices-Features | None | 1 | 
+| QWAVE component | None | None | QWAVE | None | 2 | 
+| Remote Differential Compression API Support | None | None | MSRDC-Infrastructure | None | 2 | 
+| ResumeKeyFilter | None | None | ResumeKeyFilter | None | 2 | 
+| ServerCore East Asian IME | None | None | ServerCore-EA-IME | None | 1 | 
+| Data Center Bridging | None | None | DataCenterBridging | None | 2 | 
+| I/O Quality of Service | None | None | DiskIo-QoS | None | 2 | 
+| Media Foundation | None | None | ServerMediaFoundation | None | 2 | 
+| Server Migration Tools | None | None | ServerMigration | None | 2 | 
+| SMBHashGeneration | None | None | SMBHashGeneration | None | 2 | 
+| SmbWitness | None | None | SmbWitness | None | 2 | 
+| Simple Network Management Protocol (SNMP) for Server Core | None | None | SNMP | None | 2 | 
+| WMI SNMP Provider | None | None | WMISnmpProvider | None | 2 | 
+| Windows Standards-Based Storage Management | None | None | WindowsStorageManagementService | None | 2 | 
+| Telnet Client | None | None | TelnetClient | None | 2 | 
+| Remote Desktop Services | None | None | Remote-Desktop-Services | None | 2 | 
+| Remote Desktop Services Session Directory Server | None | None | SessionDirectory | None | 2 | 
+| Remote Desktop Services Session Broker Tools Admin Pack | None | None | SBMgr-UI | None | 2 | 
+| Terminal Services Licensing | None | None | Licensing | None | 2 | 
+| Volume Activation Services | None | None | VolumeActivation-Full-Role | None | 2 | 
+| SMB 1.0/CIFS File Sharing Support | None | None | SMB1Protocol | None | 1 | 
+| SMB Bandwidth Limit | None | None | SMBBW | None | 2 | 
+| Microsoft-Windows-BootEvent-Collector-Opt-Package | None | None | SetupAndBootEventCollection | None | 2 | 
+| VM Shielding Tools for Fabric Management | None | None | FabricShieldedTools | None | 2 | 
+|  | None | None | FileAndStorage-Services | None | 1 | 
+|  | None | None | Storage-Services | None | 1 | 
+|  | None | None | File-Services | None | 1 | 
+| File Server Role | None | None | CoreFileServer | None | 1 | 
+| Server Core Drivers | None | None | ServerCore-Drivers-General | None | 1 | 
+| Server Core WOW64 Drivers | None | None | ServerCore-Drivers-General-WOW64 | None | 1 |
 ```
+
+
+
+
+
+# Win32_PnPDeviceProperty
