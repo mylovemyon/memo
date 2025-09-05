@@ -474,37 +474,6 @@ WQL> SELECT * FROM Win32_VideoController
 
 ## Operating System Classes
 ### COM
-#### Win32_ClassicCOMApplicationClasses
-```sh
-WQL> SELECT * FROM Win32_ClassicCOMApplicationClasses
-| GroupComponent | PartComponent | 
-| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{00021401-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicComClass.ComponentId="{00021401-0000-0000-C000-000000000046}" | 
-| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DD9C53BC-8441-4B94-BD0E-36E6E02A6D61}" | \\FOREST\root\cimv2:Win32_ClassicComClass.ComponentId="{0002DF02-0000-0000-C000-000000000046}" | 
-| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{000C101C-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicComClass.ComponentId="{000C101C-0000-0000-C000-000000000046}" | 
-
-~~~
-```
-#### Win32_ClassicCOMClass
-```sh
-WQL> SELECT * FROM Win32_ClassicCOMClass
-| Caption | Description | InstallDate | Name | Status | ComponentId | 
-| CLSID_RecordInfo | CLSID_RecordInfo | None | CLSID_RecordInfo | None | {0000002F-0000-0000-C000-000000000046} | 
-| StdOleLink | StdOleLink | None | StdOleLink | None | {00000300-0000-0000-C000-000000000046} | 
-| PSFactoryBuffer | PSFactoryBuffer | None | PSFactoryBuffer | None | {00000301-A8F2-4877-BA0A-FD2B6645FB94} |
-
-~~~
-```
-#### Win32_ClassicCOMClassSettings
-```sh
-WQL> SELECT * FROM Win32_ClassicCOMClassSettings
-| Element | Setting | 
-| \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0000002F-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClassSetting.ComponentId="{0000002F-0000-0000-C000-000000000046}" | 
-| \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{00000300-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClassSetting.ComponentId="{00000300-0000-0000-C000-000000000046}" | 
-| \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{00000301-A8F2-4877-BA0A-FD2B6645FB94}" | \\FOREST\root\cimv2:Win32_ClassicCOMClassSetting.ComponentId="{00000301-A8F2-4877-BA0A-FD2B6645FB94}" | 
-
-~~~
-```
-#### Win32_ClientApplicationSetting
 #### Win32_COMApplication
 ```sh
 WQL> SELECT * FROM Win32_COMApplication
@@ -666,36 +635,62 @@ WQL> SELECT * FROM Win32_COMApplication
 | None | None | None | None | None | {ff9e6131-a8c1-4188-aa03-82e9f10a05a8} | 
 | Shell Execute Hardware Event Handler | Shell Execute Hardware Event Handler | None | Shell Execute Hardware Event Handler | None | {FFB8655F-81B9-4fce-B89C-9A6BA76D13E7} |
 ```
-#### Win32_COMApplicationClasses
+#### Win32_DCOMApplication
 ```sh
-WQL> SELECT * FROM Win32_COMApplicationClasses
-| GroupComponent | PartComponent | 
-| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{00021401-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicComClass.ComponentId="{00021401-0000-0000-C000-000000000046}" | 
-| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{DD9C53BC-8441-4B94-BD0E-36E6E02A6D61}" | \\FOREST\root\cimv2:Win32_ClassicComClass.ComponentId="{0002DF02-0000-0000-C000-000000000046}" | 
-| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{000C101C-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicComClass.ComponentId="{000C101C-0000-0000-C000-000000000046}" | 
-
-~~~
+WQL> SELECT * FROM Win32_DCOMApplication WHERE Caption = "Microsoft Windows Defender"
+| Caption | Description | InstallDate | Name | Status | AppID | 
+| Microsoft Windows Defender | Microsoft Windows Defender | None | Microsoft Windows Defender | None | {A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F} |
 ```
 #### Win32_COMApplicationSettings
 ```sh
-WQL> SELECT * FROM Win32_COMApplicationSettings
+WQL> SELECT * FROM Win32_COMApplicationSettings WHERE Element = "Win32_DCOMApplication.AppID=\"{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}\""
 | Element | Setting | 
-| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{00021401-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_DCOMApplicationSetting.AppID="{00021401-0000-0000-C000-000000000046}" | 
-| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{000C101C-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_DCOMApplicationSetting.AppID="{000C101C-0000-0000-C000-000000000046}" | 
-| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{0010890e-8789-413c-adbc-48f5b511b3af}" | \\FOREST\root\cimv2:Win32_DCOMApplicationSetting.AppID="{0010890e-8789-413c-adbc-48f5b511b3af}" | 
-
-~~~
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_DCOMApplicationSetting.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" |
+```
+#### Win32_COMApplicationClasses
+```sh
+WQL> SELECT * FROM Win32_COMApplicationClasses WHERE GroupComponent = "Win32_DCOMApplication.AppID=\"{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}\""
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_ClassicComClass.ComponentId="{A2D75874-6750-4931-94C1-C99D3BC9D0C7}" | 
+```
+#### Win32_ClassicCOMApplicationClasses
+```sh
+WQL> SELECT * FROM Win32_ClassicCOMApplicationClasses WHERE GroupComponent = "Win32_DCOMApplication.AppID=\"{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}\""
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_ClassicComClass.ComponentId="{A2D75874-6750-4931-94C1-C99D3BC9D0C7}" | 
+```
+#### Win32_DCOMApplicationSetting
+```sh
+WQL> SELECT * FROM Win32_DCOMApplicationSetting WHERE Caption = "Microsoft Windows Defender"
+| SettingID | Caption | Description | AppID | AuthenticationLevel | RemoteServerName | RunAsUser | EnableAtStorageActivation | UseSurrogate | CustomSurrogate | LocalService | ServiceParameters | 
+| None | Microsoft Windows Defender | Microsoft Windows Defender | {A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F} | None | None | None | False | True | None | None | None |
 ```
 #### Win32_COMClass
 ```sh
-WQL> SELECT * FROM Win32_COMClass 
+WQL> SELECT * FROM Win32_COMClass WHERE Caption = "Microsoft Windows Defender"
 | Caption | Description | InstallDate | Name | Status | ComponentId | 
-| CLSID_RecordInfo | CLSID_RecordInfo | None | CLSID_RecordInfo | None | {0000002F-0000-0000-C000-000000000046} | 
-| StdOleLink | StdOleLink | None | StdOleLink | None | {00000300-0000-0000-C000-000000000046} | 
-| PSFactoryBuffer | PSFactoryBuffer | None | PSFactoryBuffer | None | {00000301-A8F2-4877-BA0A-FD2B6645FB94} |
+| Microsoft Windows Defender | Microsoft Windows Defender | None | Microsoft Windows Defender | None | {A2D75874-6750-4931-94C1-C99D3BC9D0C7} | 
+```
+#### Win32_ClassicCOMClass
+```sh
+WQL> SELECT * FROM Win32_ClassicCOMClass WHERE Caption = "Microsoft Windows Defender"
+| Caption | Description | InstallDate | Name | Status | ComponentId | 
+| Microsoft Windows Defender | Microsoft Windows Defender | None | Microsoft Windows Defender | None | {A2D75874-6750-4931-94C1-C99D3BC9D0C7} | 
+```
+
+
+#### Win32_ClassicCOMClassSettings
+```sh
+WQL> SELECT * FROM Win32_ClassicCOMClassSettings
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0000002F-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClassSetting.ComponentId="{0000002F-0000-0000-C000-000000000046}" | 
+| \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{00000300-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClassSetting.ComponentId="{00000300-0000-0000-C000-000000000046}" | 
+| \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{00000301-A8F2-4877-BA0A-FD2B6645FB94}" | \\FOREST\root\cimv2:Win32_ClassicCOMClassSetting.ComponentId="{00000301-A8F2-4877-BA0A-FD2B6645FB94}" | 
 
 ~~~
 ```
+#### Win32_ClientApplicationSetting
+
 #### Win32_ComClassAutoEmulator
 #### Win32_ComClassEmulator
 #### Win32_ComponentCategory
@@ -734,16 +729,7 @@ WQL>  SELECT * FROM Win32_COMSetting
 
 ~~~
 ```
-#### Win32_DCOMApplication
-```sh
-QL> SELECT * FROM Win32_DCOMApplication
-| Caption | Description | InstallDate | Name | Status | AppID | 
-| None | None | None | None | None | {00021401-0000-0000-C000-000000000046} | 
-| None | None | None | None | None | {000C101C-0000-0000-C000-000000000046} | 
-| User Notification | User Notification | None | User Notification | None | {0010890e-8789-413c-adbc-48f5b511b3af} | 
 
-~~~
-```
 #### Win32_DCOMApplicationAccessAllowedSetting
 ```sh
 WQL> SELECT * FROM Win32_DCOMApplicationAccessAllowedSetting
@@ -761,16 +747,6 @@ WQL> SELECT * FROM Win32_DCOMApplicationLaunchAllowedSetting
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{03837503-098b-11d8-9414-505054503030}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{03837503-098b-11d8-9414-505054503030}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{03837503-098b-11d8-9414-505054503030}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-559" | 
-
-~~~
-```
-#### Win32_DCOMApplicationSetting
-```sh
-WQL> SELECT * FROM Win32_DCOMApplicationSetting
-| SettingID | Caption | Description | AppID | AuthenticationLevel | RemoteServerName | RunAsUser | EnableAtStorageActivation | UseSurrogate | CustomSurrogate | LocalService | ServiceParameters | 
-| None | None | None | {00021401-0000-0000-C000-000000000046} | None | None | None | False | True | None | None | None | 
-| None | None | None | {000C101C-0000-0000-C000-000000000046} | None | None | None | False | False | None | MSIServer |  | 
-| None | User Notification | User Notification | {0010890e-8789-413c-adbc-48f5b511b3af} | None | None | Interactive User | False | True | None | None | None | 
 
 ~~~
 ```
