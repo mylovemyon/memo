@@ -6368,6 +6368,17 @@ WQL> SELECT * FROM Win32_LogicalShareSecuritySetting
 #### Win32_SecuritySettingAuditing
 #### Win32_SecuritySettingGroup
 #### Win32_SecuritySettingOfLogicalFile
+#### Win32_SecuritySettingOfLogicalShare
+```sh
+WQL> SELECT * FROM Win32_SecuritySettingOfLogicalShare
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_Share.Name="NETLOGON" | \\FOREST\root\cimv2:Win32_LogicalShareSecuritySetting.Name="NETLOGON" | 
+| \\FOREST\root\cimv2:Win32_Share.Name="SYSVOL" | \\FOREST\root\cimv2:Win32_LogicalShareSecuritySetting.Name="SYSVOL" |
+```
+#### Win32_SecuritySettingOfObject
+#### Win32_SecuritySettingOwner
+#### Win32_SID
+#### Win32_Trustee
 
 
 
