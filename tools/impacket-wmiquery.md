@@ -156,65 +156,8 @@ WQL> SELECT * FROM Win32_DeviceBus
 | \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" | 
 | \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\ACPI0003\\1" | 
 | \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&A8" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&A9" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&AA" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&AB" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&AC" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&AD" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&AE" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&AF" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&B0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&B1" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&B2" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&B3" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&B4" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&B5" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&B6" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&B7" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&B8" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&B9" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&BA" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&BB" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&BC" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&BD" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&BE" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&BF" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&C0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&C1" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&C2" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&C3" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&C4" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&C5" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&C6" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&C7" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_11" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_8086&DEV_10D3&SUBSYS_07D015AD&REV_00\\005056FFFFB441AF00" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0100\\4&25EE97C0&0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0A03\\2&DABA3FF&1" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\VMW0001\\7" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\VMW0003\\4&25EE97C0&0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PNP_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="SWD\\IP_TUNNEL_VBUS\\IP_TUNNEL_DEVICE_ROOT" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0A05\\4&25EE97C0&0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_1_-_AMD_EPYC_7513_32-CORE_PROCESSOR________________\\_0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_1_-_AMD_EPYC_7513_32-CORE_PROCESSOR________________\\_1" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PNP_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="SWD\\IP_TUNNEL_VBUS\\ISATAP_0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_3" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\\4&2732702B&0&00A8" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0103\\4&25EE97C0&0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0B00\\4&25EE97C0&0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_8086&DEV_7110&SUBSYS_197615AD&REV_08\\3&18D45AA6&0&38" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0303\\4&25EE97C0&0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\FIXEDBUTTON\\2&DABA3FF&1" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0200\\4&25EE97C0&0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\1F" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_8086&DEV_7190&SUBSYS_197615AD&REV_01\\3&18D45AA6&0&00" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PNP_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="DISPLAY\\DEFAULT_MONITOR\\4&31BE19FA&0&UID0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_2" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07E0&SUBSYS_07E015AD&REV_00\\4&B70F118&0&0888" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_8086&DEV_7191&SUBSYS_00000000&REV_01\\3&18D45AA6&0&08" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_0740&SUBSYS_074015AD&REV_10\\3&18D45AA6&0&3F" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_0790&SUBSYS_079015AD&REV_02\\3&18D45AA6&0&88" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0800\\4&25EE97C0&0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_0405&SUBSYS_040515AD&REV_00\\3&18D45AA6&0&78" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0001\\4&25EE97C0&0" | 
-| \\FOREST\root\cimv2:Win32_Bus.DeviceID="PCI_BUS_0" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_8086&DEV_7111&SUBSYS_197615AD&REV_01\\3&18D45AA6&0&39" |
+
+~~~
 ```
 #### Win32_DeviceMemoryAddress
 ```sh
@@ -223,90 +166,8 @@ WQL> SELECT * FROM Win32_DeviceMemoryAddress
 | 0xE0000000-0xE7FFFFFF | 0xE0000000-0xE7FFFFFF | None | 0xE0000000-0xE7FFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 3758096384 | 3892314111 | None | 
 | 0xFFC00000-0xFFDFFFFF | 0xFFC00000-0xFFDFFFFF | None | 0xFFC00000-0xFFDFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4290772992 | 4292870143 | None | 
 | 0xFEA00000-0xFEAFFFFF | 0xFEA00000-0xFEAFFFFF | None | 0xFEA00000-0xFEAFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4271898624 | 4272947199 | WindowDecode | 
-| 0xFE900000-0xFE9FFFFF | 0xFE900000-0xFE9FFFFF | None | 0xFE900000-0xFE9FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4270850048 | 4271898623 | WindowDecode | 
-| 0xFA200000-0xFA2FFFFF | 0xFA200000-0xFA2FFFFF | None | 0xFA200000-0xFA2FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4196401152 | 4197449727 | None | 
-| 0xFE800000-0xFE8FFFFF | 0xFE800000-0xFE8FFFFF | None | 0xFE800000-0xFE8FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4269801472 | 4270850047 | WindowDecode | 
-| 0xFA100000-0xFA1FFFFF | 0xFA100000-0xFA1FFFFF | None | 0xFA100000-0xFA1FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4195352576 | 4196401151 | None | 
-| 0xFE700000-0xFE7FFFFF | 0xFE700000-0xFE7FFFFF | None | 0xFE700000-0xFE7FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4268752896 | 4269801471 | WindowDecode | 
-| 0xFA000000-0xFA0FFFFF | 0xFA000000-0xFA0FFFFF | None | 0xFA000000-0xFA0FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4194304000 | 4195352575 | None | 
-| 0xFE600000-0xFE6FFFFF | 0xFE600000-0xFE6FFFFF | None | 0xFE600000-0xFE6FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4267704320 | 4268752895 | WindowDecode | 
-| 0xF9F00000-0xF9FFFFFF | 0xF9F00000-0xF9FFFFFF | None | 0xF9F00000-0xF9FFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4193255424 | 4194303999 | None | 
-| 0xFE500000-0xFE5FFFFF | 0xFE500000-0xFE5FFFFF | None | 0xFE500000-0xFE5FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4266655744 | 4267704319 | WindowDecode | 
-| 0xF9E00000-0xF9EFFFFF | 0xF9E00000-0xF9EFFFFF | None | 0xF9E00000-0xF9EFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4192206848 | 4193255423 | None | 
-| 0xFE400000-0xFE4FFFFF | 0xFE400000-0xFE4FFFFF | None | 0xFE400000-0xFE4FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4265607168 | 4266655743 | WindowDecode | 
-| 0xF9D00000-0xF9DFFFFF | 0xF9D00000-0xF9DFFFFF | None | 0xF9D00000-0xF9DFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4191158272 | 4192206847 | None | 
-| 0xFE300000-0xFE3FFFFF | 0xFE300000-0xFE3FFFFF | None | 0xFE300000-0xFE3FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4264558592 | 4265607167 | WindowDecode | 
-| 0xF9C00000-0xF9CFFFFF | 0xF9C00000-0xF9CFFFFF | None | 0xF9C00000-0xF9CFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4190109696 | 4191158271 | None | 
-| 0xFE200000-0xFE2FFFFF | 0xFE200000-0xFE2FFFFF | None | 0xFE200000-0xFE2FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4263510016 | 4264558591 | WindowDecode | 
-| 0xFE100000-0xFE1FFFFF | 0xFE100000-0xFE1FFFFF | None | 0xFE100000-0xFE1FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4262461440 | 4263510015 | WindowDecode | 
-| 0xF9B00000-0xF9BFFFFF | 0xF9B00000-0xF9BFFFFF | None | 0xF9B00000-0xF9BFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4189061120 | 4190109695 | None | 
-| 0xFE000000-0xFE0FFFFF | 0xFE000000-0xFE0FFFFF | None | 0xFE000000-0xFE0FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4261412864 | 4262461439 | WindowDecode | 
-| 0xF9A00000-0xF9AFFFFF | 0xF9A00000-0xF9AFFFFF | None | 0xF9A00000-0xF9AFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4188012544 | 4189061119 | None | 
-| 0xFDF00000-0xFDFFFFFF | 0xFDF00000-0xFDFFFFFF | None | 0xFDF00000-0xFDFFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4260364288 | 4261412863 | WindowDecode | 
-| 0xF9900000-0xF99FFFFF | 0xF9900000-0xF99FFFFF | None | 0xF9900000-0xF99FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4186963968 | 4188012543 | None | 
-| 0xFDE00000-0xFDEFFFFF | 0xFDE00000-0xFDEFFFFF | None | 0xFDE00000-0xFDEFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4259315712 | 4260364287 | WindowDecode | 
-| 0xF9800000-0xF98FFFFF | 0xF9800000-0xF98FFFFF | None | 0xF9800000-0xF98FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4185915392 | 4186963967 | None | 
-| 0xFDD00000-0xFDDFFFFF | 0xFDD00000-0xFDDFFFFF | None | 0xFDD00000-0xFDDFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4258267136 | 4259315711 | WindowDecode | 
-| 0xF9700000-0xF97FFFFF | 0xF9700000-0xF97FFFFF | None | 0xF9700000-0xF97FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4184866816 | 4185915391 | None | 
-| 0xFDC00000-0xFDCFFFFF | 0xFDC00000-0xFDCFFFFF | None | 0xFDC00000-0xFDCFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4257218560 | 4258267135 | WindowDecode | 
-| 0xF9600000-0xF96FFFFF | 0xF9600000-0xF96FFFFF | None | 0xF9600000-0xF96FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4183818240 | 4184866815 | None | 
-| 0xFDB00000-0xFDBFFFFF | 0xFDB00000-0xFDBFFFFF | None | 0xFDB00000-0xFDBFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4256169984 | 4257218559 | WindowDecode | 
-| 0xF9500000-0xF95FFFFF | 0xF9500000-0xF95FFFFF | None | 0xF9500000-0xF95FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4182769664 | 4183818239 | None | 
-| 0xFDA00000-0xFDAFFFFF | 0xFDA00000-0xFDAFFFFF | None | 0xFDA00000-0xFDAFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4255121408 | 4256169983 | WindowDecode | 
-| 0xF9400000-0xF94FFFFF | 0xF9400000-0xF94FFFFF | None | 0xF9400000-0xF94FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4181721088 | 4182769663 | None | 
-| 0xFD900000-0xFD9FFFFF | 0xFD900000-0xFD9FFFFF | None | 0xFD900000-0xFD9FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4254072832 | 4255121407 | WindowDecode | 
-| 0xF9300000-0xF93FFFFF | 0xF9300000-0xF93FFFFF | None | 0xF9300000-0xF93FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4180672512 | 4181721087 | None | 
-| 0xFD800000-0xFD8FFFFF | 0xFD800000-0xFD8FFFFF | None | 0xFD800000-0xFD8FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4253024256 | 4254072831 | WindowDecode | 
-| 0xF9200000-0xF92FFFFF | 0xF9200000-0xF92FFFFF | None | 0xF9200000-0xF92FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4179623936 | 4180672511 | None | 
-| 0xFD700000-0xFD7FFFFF | 0xFD700000-0xFD7FFFFF | None | 0xFD700000-0xFD7FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4251975680 | 4253024255 | WindowDecode | 
-| 0xF9100000-0xF91FFFFF | 0xF9100000-0xF91FFFFF | None | 0xF9100000-0xF91FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4178575360 | 4179623935 | None | 
-| 0xFD600000-0xFD6FFFFF | 0xFD600000-0xFD6FFFFF | None | 0xFD600000-0xFD6FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4250927104 | 4251975679 | WindowDecode | 
-| 0xF9000000-0xF90FFFFF | 0xF9000000-0xF90FFFFF | None | 0xF9000000-0xF90FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4177526784 | 4178575359 | None | 
-| 0xFD500000-0xFD5FFFFF | 0xFD500000-0xFD5FFFFF | None | 0xFD500000-0xFD5FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4249878528 | 4250927103 | WindowDecode | 
-| 0xF8F00000-0xF8FFFFFF | 0xF8F00000-0xF8FFFFFF | None | 0xF8F00000-0xF8FFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4176478208 | 4177526783 | None | 
-| 0xFD400000-0xFD4FFFFF | 0xFD400000-0xFD4FFFFF | None | 0xFD400000-0xFD4FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4248829952 | 4249878527 | WindowDecode | 
-| 0xF8E00000-0xF8EFFFFF | 0xF8E00000-0xF8EFFFFF | None | 0xF8E00000-0xF8EFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4175429632 | 4176478207 | None | 
-| 0xFD300000-0xFD3FFFFF | 0xFD300000-0xFD3FFFFF | None | 0xFD300000-0xFD3FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4247781376 | 4248829951 | WindowDecode | 
-| 0xF8D00000-0xF8DFFFFF | 0xF8D00000-0xF8DFFFFF | None | 0xF8D00000-0xF8DFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4174381056 | 4175429631 | None | 
-| 0xFD200000-0xFD2FFFFF | 0xFD200000-0xFD2FFFFF | None | 0xFD200000-0xFD2FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4246732800 | 4247781375 | WindowDecode | 
-| 0xF8C00000-0xF8CFFFFF | 0xF8C00000-0xF8CFFFFF | None | 0xF8C00000-0xF8CFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4173332480 | 4174381055 | None | 
-| 0xFD100000-0xFD1FFFFF | 0xFD100000-0xFD1FFFFF | None | 0xFD100000-0xFD1FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4245684224 | 4246732799 | WindowDecode | 
-| 0xF8B00000-0xF8BFFFFF | 0xF8B00000-0xF8BFFFFF | None | 0xF8B00000-0xF8BFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4172283904 | 4173332479 | None | 
-| 0xFD000000-0xFD0FFFFF | 0xFD000000-0xFD0FFFFF | None | 0xFD000000-0xFD0FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4244635648 | 4245684223 | WindowDecode | 
-| 0xF8A00000-0xF8AFFFFF | 0xF8A00000-0xF8AFFFFF | None | 0xF8A00000-0xF8AFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4171235328 | 4172283903 | None | 
-| 0xFCF00000-0xFCFFFFFF | 0xFCF00000-0xFCFFFFFF | None | 0xFCF00000-0xFCFFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4243587072 | 4244635647 | WindowDecode | 
-| 0xF8900000-0xF89FFFFF | 0xF8900000-0xF89FFFFF | None | 0xF8900000-0xF89FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4170186752 | 4171235327 | None | 
-| 0xFCE00000-0xFCEFFFFF | 0xFCE00000-0xFCEFFFFF | None | 0xFCE00000-0xFCEFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4242538496 | 4243587071 | WindowDecode | 
-| 0xF8800000-0xF88FFFFF | 0xF8800000-0xF88FFFFF | None | 0xF8800000-0xF88FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4169138176 | 4170186751 | None | 
-| 0xFCD00000-0xFCDFFFFF | 0xFCD00000-0xFCDFFFFF | None | 0xFCD00000-0xFCDFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4241489920 | 4242538495 | WindowDecode | 
-| 0xF8700000-0xF87FFFFF | 0xF8700000-0xF87FFFFF | None | 0xF8700000-0xF87FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4168089600 | 4169138175 | None | 
-| 0xFCC00000-0xFCCFFFFF | 0xFCC00000-0xFCCFFFFF | None | 0xFCC00000-0xFCCFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4240441344 | 4241489919 | WindowDecode | 
-| 0xF8600000-0xF86FFFFF | 0xF8600000-0xF86FFFFF | None | 0xF8600000-0xF86FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4167041024 | 4168089599 | None | 
-| 0xFCB00000-0xFCBFFFFF | 0xFCB00000-0xFCBFFFFF | None | 0xFCB00000-0xFCBFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4239392768 | 4240441343 | WindowDecode | 
-| 0xF8500000-0xF85FFFFF | 0xF8500000-0xF85FFFFF | None | 0xF8500000-0xF85FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4165992448 | 4167041023 | None | 
-| 0xFE220000-0xFE23FFFF | 0xFE220000-0xFE23FFFF | None | 0xFE220000-0xFE23FFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4263641088 | 4263772159 | Bar | 
-| 0xFE250000-0xFE253FFF | 0xFE250000-0xFE253FFF | None | 0xFE250000-0xFE253FFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4263837696 | 4263854079 | Bar | 
-| 0xFEF00000-0xFFDFFFFF | 0xFEF00000-0xFFDFFFFF | None | 0xFEF00000-0xFFDFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4277141504 | 4292870143 | None | 
-| 0xFED45000-0xFEDFFFFF | 0xFED45000-0xFEDFFFFF | None | 0xFED45000-0xFEDFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4275326976 | 4276092927 | None | 
-| 0xFEC10000-0xFED3FFFF | 0xFEC10000-0xFED3FFFF | None | 0xFEC10000-0xFED3FFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4274061312 | 4275306495 | None | 
-| 0xFA300000-0xFEBFFFFF | 0xFA300000-0xFEBFFFFF | None | 0xFA300000-0xFEBFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4197449728 | 4273995775 | None | 
-| 0xF0000000-0xFA2FFFFF | 0xF0000000-0xFA2FFFFF | None | 0xF0000000-0xFA2FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4026531840 | 4197449727 | None | 
-| 0xC0000000-0xEFFFFFFF | 0xC0000000-0xEFFFFFFF | None | 0xC0000000-0xEFFFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 3221225472 | 4026531839 | None | 
-| 0xA0000-0xBFFFF | 0xA0000-0xBFFFF | None | 0xA0000-0xBFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 655360 | 786431 | None | 
-| 0xC4000-0xC7FFF | 0xC4000-0xC7FFF | None | 0xC4000-0xC7FFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 802816 | 819199 | None | 
-| 0xC8000-0xCBFFF | 0xC8000-0xCBFFF | None | 0xC8000-0xCBFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 819200 | 835583 | None | 
-| 0xD4000-0xD7FFF | 0xD4000-0xD7FFF | None | 0xD4000-0xD7FFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 868352 | 884735 | None | 
-| 0xD8000-0xDBFFF | 0xD8000-0xDBFFF | None | 0xD8000-0xDBFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 884736 | 901119 | None | 
-| 0xE4000-0xE7FFF | 0xE4000-0xE7FFF | None | 0xE4000-0xE7FFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 933888 | 950271 | None | 
-| 0xE8000-0xEBFFF | 0xE8000-0xEBFFF | None | 0xE8000-0xEBFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 950272 | 966655 | None | 
-| 0xEC000-0xEFFFF | 0xEC000-0xEFFFF | None | 0xEC000-0xEFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 966656 | 983039 | None | 
-| 0xFEA10000-0xFEA13FFF | 0xFEA10000-0xFEA13FFF | None | 0xFEA10000-0xFEA13FFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4271964160 | 4271980543 | Bar | 
-| 0xFED00000-0xFED003FF | 0xFED00000-0xFED003FF | None | 0xFED00000-0xFED003FF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4275044352 | 4275045375 | None | 
-| 0xFC010000-0xFC010FFF | 0xFC010000-0xFC010FFF | None | 0xFC010000-0xFC010FFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4227923968 | 4227928063 | Bar | 
-| 0xFFBFE000-0xFFBFFFFF | 0xFFBFE000-0xFFBFFFFF | None | 0xFFBFE000-0xFFBFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4290764800 | 4290772991 | Bar | 
-| 0xFC000000-0xFC9FFFFF | 0xFC000000-0xFC9FFFFF | None | 0xFC000000-0xFC9FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4227858432 | 4238344191 | WindowDecode | 
-| 0xF8000000-0xF84FFFFF | 0xF8000000-0xF84FFFFF | None | 0xF8000000-0xF84FFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4160749568 | 4165992447 | None | 
-| 0xFB800000-0xFBFFFFFF | 0xFB800000-0xFBFFFFFF | None | 0xFB800000-0xFBFFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 4219469824 | 4227858431 | Bar |
+
+~~~
 ```
 #### Win32_DeviceSettings
 #### Win32_DMAChannel
@@ -340,56 +201,8 @@ WQL> SELECT * FROM Win32_IRQResource
 | IRQ 4294967293 | IRQ 4294967293 | None | IRQ4294967293 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967293 | 2 | 2 | 2 | True | None | True | 
 | IRQ 4294967292 | IRQ 4294967292 | None | IRQ4294967292 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967292 | 2 | 2 | 2 | True | None | True | 
 | IRQ 4294967291 | IRQ 4294967291 | None | IRQ4294967291 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967291 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967290 | IRQ 4294967290 | None | IRQ4294967290 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967290 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967289 | IRQ 4294967289 | None | IRQ4294967289 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967289 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967288 | IRQ 4294967288 | None | IRQ4294967288 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967288 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967287 | IRQ 4294967287 | None | IRQ4294967287 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967287 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967286 | IRQ 4294967286 | None | IRQ4294967286 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967286 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967285 | IRQ 4294967285 | None | IRQ4294967285 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967285 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967284 | IRQ 4294967284 | None | IRQ4294967284 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967284 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967283 | IRQ 4294967283 | None | IRQ4294967283 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967283 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967282 | IRQ 4294967282 | None | IRQ4294967282 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967282 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967281 | IRQ 4294967281 | None | IRQ4294967281 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967281 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967280 | IRQ 4294967280 | None | IRQ4294967280 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967280 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967279 | IRQ 4294967279 | None | IRQ4294967279 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967279 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967278 | IRQ 4294967278 | None | IRQ4294967278 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967278 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967277 | IRQ 4294967277 | None | IRQ4294967277 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967277 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967276 | IRQ 4294967276 | None | IRQ4294967276 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967276 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967275 | IRQ 4294967275 | None | IRQ4294967275 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967275 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967274 | IRQ 4294967274 | None | IRQ4294967274 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967274 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967273 | IRQ 4294967273 | None | IRQ4294967273 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967273 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967272 | IRQ 4294967272 | None | IRQ4294967272 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967272 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967271 | IRQ 4294967271 | None | IRQ4294967271 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967271 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967270 | IRQ 4294967270 | None | IRQ4294967270 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967270 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967269 | IRQ 4294967269 | None | IRQ4294967269 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967269 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967268 | IRQ 4294967268 | None | IRQ4294967268 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967268 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967267 | IRQ 4294967267 | None | IRQ4294967267 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967267 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967266 | IRQ 4294967266 | None | IRQ4294967266 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967266 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967265 | IRQ 4294967265 | None | IRQ4294967265 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967265 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967264 | IRQ 4294967264 | None | IRQ4294967264 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967264 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967263 | IRQ 4294967263 | None | IRQ4294967263 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967263 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967294 | IRQ 4294967294 | None | IRQ4294967294 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967294 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967258 | IRQ 4294967258 | None | IRQ4294967258 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967258 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967257 | IRQ 4294967257 | None | IRQ4294967257 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967257 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967256 | IRQ 4294967256 | None | IRQ4294967256 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967256 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967255 | IRQ 4294967255 | None | IRQ4294967255 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967255 | 2 | 2 | 2 | True | None | True | 
-| IRQ 0 | IRQ 0 | None | IRQ0 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 0 | 2 | 2 | 2 | True | None | True | 
-| IRQ 14 | IRQ 14 | None | IRQ14 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 14 | 2 | 2 | 2 | True | 14 | True | 
-| IRQ 15 | IRQ 15 | None | IRQ15 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 15 | 2 | 2 | 2 | True | 15 | True | 
-| IRQ 12 | IRQ 12 | None | IRQ12 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 12 | 2 | 2 | 2 | True | 12 | True | 
-| IRQ 4294967260 | IRQ 4294967260 | None | IRQ4294967260 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967260 | 2 | 2 | 2 | True | None | True | 
-| IRQ 8 | IRQ 8 | None | IRQ8 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 8 | 2 | 2 | 2 | True | 8 | True | 
-| IRQ 1 | IRQ 1 | None | IRQ1 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 1 | 2 | 2 | 2 | True | 1 | True | 
-| IRQ 54 | IRQ 54 | None | IRQ54 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 54 | 2 | 2 | 2 | True | 54 | True | 
-| IRQ 55 | IRQ 55 | None | IRQ55 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 55 | 2 | 2 | 2 | True | 55 | True | 
 
 ~~~
-
-| IRQ 511 | IRQ 511 | None | IRQ511 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 511 | 2 | 2 | 2 | True | 511 | True | 
-| IRQ 4294967259 | IRQ 4294967259 | None | IRQ4294967259 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967259 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967262 | IRQ 4294967262 | None | IRQ4294967262 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967262 | 2 | 2 | 2 | True | None | True | 
-| IRQ 4294967261 | IRQ 4294967261 | None | IRQ4294967261 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967261 | 2 | 2 | 2 | True | None | True | 
-| IRQ 16 | IRQ 16 | None | IRQ16 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 16 | 2 | 2 | 2 | True | 16 | True |
 ```
 #### Win32_MemoryArray
 ```sh
