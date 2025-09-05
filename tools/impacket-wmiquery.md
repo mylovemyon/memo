@@ -1485,6 +1485,7 @@ WQL> SELECT * FROM Win32_ClassicCOMClassSettings
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{0000002F-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClassSetting.ComponentId="{0000002F-0000-0000-C000-000000000046}" | 
 | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{00000300-0000-0000-C000-000000000046}" | \\FOREST\root\cimv2:Win32_ClassicCOMClassSetting.ComponentId="{00000300-0000-0000-C000-000000000046}" |
+
 ~~~
 ```
 #### Win32_ClientApplicationSetting
@@ -2151,7 +2152,7 @@ WQL> SELECT * FROM Win32_COMApplicationSettings
 ```sh
 WQL> SELECT * FROM Win32_COMClass WHERE caption = "Microsoft Windows Defender"
 | Caption | Description | InstallDate | Name | Status | ComponentId | 
-| Microsoft Windows Defender | Microsoft Windows Defender | None | Microsoft Windows Defender | None | {A2D75874-6750-4931-94C1-C99D3BC9D0C7} | 
+| Microsoft Windows Defender | Microsoft Windows Defender | None | Microsoft Windows Defender | None | {A2D75874-6750-4931-94C1-C99D3BC9D0C7} |
 ```
 #### Win32_ComClassAutoEmulator
 #### Win32_ComClassEmulator
@@ -4477,6 +4478,8 @@ WQL> SELECT * FROM Win32_SubDirectory
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\PerfLogs" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\PerfLogs\\Admin" | 
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Program Files" | 
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Program Files" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Program Files\\Common Files" |
+
+~~~
 ```
 #### Win32_SystemPartitions
 ```sh
@@ -7807,6 +7810,8 @@ WQL> SELECT * FROM Win32_NTLogEventComputer
 | Win32_ComputerSystem.Name="FOREST" | Win32_NTLogEvent.Logfile="Application",RecordNumber=2117 | 
 | Win32_ComputerSystem.Name="FOREST" | Win32_NTLogEvent.Logfile="Application",RecordNumber=2076 | 
 | Win32_ComputerSystem.Name="FOREST" | Win32_NTLogEvent.Logfile="Application",RecordNumber=1924 |
+
+~~~
 ```
 #### Win32_NTLogEventLog
 めっちゃおおいので割愛
@@ -7816,8 +7821,91 @@ WQL> SELECT * FROM Win32_NTLogEventLog
 | Win32_NTEventlogFile.Name="C:\\Windows\\System32\\Winevt\\Logs\\Active Directory Web Services.evtx" | Win32_NTLogEvent.Logfile="Active Directory Web Services",RecordNumber=288 | 
 | Win32_NTEventlogFile.Name="C:\\Windows\\System32\\Winevt\\Logs\\Active Directory Web Services.evtx" | Win32_NTLogEvent.Logfile="Active Directory Web Services",RecordNumber=287 | 
 | Win32_NTEventlogFile.Name="C:\\Windows\\System32\\Winevt\\Logs\\Active Directory Web Services.evtx" | Win32_NTLogEvent.Logfile="Active Directory Web Services",RecordNumber=286 |
+
+~~~
 ```
 #### Win32_NTLogEventUser
+```sh
+WQL> SELECT * FROM Win32_NTLogEventUser
+| User | Record | 
+| Win32_UserAccount.Domain="HTB",Name="Administrator" | Win32_NTLogEvent.Logfile="Application",RecordNumber=622 | 
+| Win32_UserAccount.Domain="HTB",Name="Administrator" | Win32_NTLogEvent.Logfile="Application",RecordNumber=621 | 
+| Win32_UserAccount.Domain="HTB",Name="Administrator" | Win32_NTLogEvent.Logfile="Application",RecordNumber=620 |
+```
+
+
+### Windows Product Activation
+#### Win32_ComputerSystemWindowsProductActivationSetting
+#### Win32_Proxy
+#### Win32_WindowsProductActivation
+
+
+
+
+
+## Performance Counter Classes
+### Win32_Perf
+めっちゃおおいので割愛
+```sh
+WQL> SELECT * FROM Win32_Perf
+| Name | Description | Caption | Frequency_PerfTime | Timestamp_PerfTime | Timestamp_Sys100NS | Frequency_Sys100NS | Frequency_Object | Timestamp_Object | ActiveWebServiceSessions | AllocatedConnections | ChangeOptionalFeatureOperationsPerSecond | ChangePasswordOperationsPerSecond | CreateOperationsPerSecond | CustomActionCacheSize | CustomActionDSRPCCacheConnectionCreationRate | CustomActionDSRPCCacheConnectionReuseRate | CustomActionDSRPCCacheMaximumPossibleSize | CustomActionLDAPCacheConnectionCreationRate | CustomActionLDAPCacheConnectionReuseRate | CustomActionLDAPCacheMaximumPossibleSize | DeleteOperationsPerSecond | EnumerateOperationsPerSecond | GetOperationsPerSecond | GetADDomainOperationsPerSecond | GetADDomainControllerOperationsPerSecond | GetADForestOperationsPerSecond | GetADGroupMemberOperationsPerSecond | GetADPrincipalAuthorizationGroupOperationsPerSecond | GetADPrincipalGroupMembershipOperationsPerSecond | GetVersionOperationsPerSecond | MoveADOperationMasterRoleOperationsPerSecond | NonreservedConnectionsInUse | NumberofDirectoryInstances | OpenEnumerationContexts | OpenWebServiceSessions | PossibleConnections | PullOperationsPerSecond | PutOperationsPerSecond | ReservedConnections | ReservedConnectionsInUse | SetPasswordOperationsPerSecond | TranslateNameOperationsPerSecond | WebServiceSessionsCreatedPerSecond | 
+| None | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 10 | 0 | 0 | 0 | 1 | 0 | 0 | 10 | 0 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 2 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 
+| None | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 0 | 0 | 0 | 
+| Default | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 0 | 0 | 0 | 0 | 0 | 
+| None | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 1138688 | 163840 | 15 | 463 | 125 | 209 | 
+| DefenderApiLogger | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 0 | 
+| DefenderAuditLogger | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 0 | 
+| DiagLog | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 32768 | 0 | 0 | 0 | 1 | 
+| Diagtrack-Listener | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 262144 | 0 | 0 | 0 | 1 | 
+| EventLog-Application | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 131072 | 0 | 0 | 1 | 
+| Eventlog-Security | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 1 | 
+| EventLog-System | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 1 |
+
+~~~
+```
+### Win32_PerfFormattedData
+めっちゃおおいので割愛
+```sh
+WQL> SELECT * FROM Win32_PerfFormattedData
+| Name | Description | Caption | Frequency_PerfTime | Timestamp_PerfTime | Timestamp_Sys100NS | Frequency_Sys100NS | Frequency_Object | Timestamp_Object | DroppedDatagrams | DroppedDatagramsPersec | RejectedConnections | RejectedConnectionsPersec | 
+| None | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 0 | 0 | 0 | 
+| None | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 10 | 0 | 0 | 0 | 1 | 0 | 0 | 10 | 0 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 2 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 
+| Default | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 0 | 0 | 0 | 0 | 0 | 
+| None | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 1138688 | 163840 | 15 | 463 | 125 | 209 | 
+| DefenderApiLogger | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 0 | 
+| DefenderAuditLogger | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 0 | 
+| DiagLog | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 32768 | 0 | 0 | 0 | 1 | 
+| Diagtrack-Listener | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 262144 | 0 | 0 | 0 | 1 | 
+| EventLog-Application | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 131072 | 0 | 0 | 1 | 
+| Eventlog-Security | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 1 | 
+| EventLog-System | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 1 | 
+
+~~~
+```
+
+
+
+
+
+## WMI Service Management Classes
+### WMI Configuration
+#### Win32_MethodParameterClass
+
+
+### WMI Management Classes
+#### Win32_WMISetting
+```sh
+WQL> SELECT * FROM Win32_WMISetting
+| SettingID | Caption | Description | InstallationDirectory | BuildVersion | MofSelfInstallDirectory | AutorecoverMofs | AutoStartWin9X | EnableAnonWin9xConnections | MaxLogFileSize | LoggingLevel | LoggingDirectory | DatabaseDirectory | DatabaseMaxSize | BackupInterval | BackupLastTime | ASPScriptEnabled | ASPScriptDefaultNamespace | EnableEvents | HighThresholdOnClientObjects | LowThresholdOnClientObjects | MaxWaitOnClientObjects | HighThresholdOnEvents | LowThresholdOnEvents | MaxWaitOnEvents | EnableStartupHeapPreallocation | LastStartupHeapPreallocation | 
+| None | None | None | C:\Windows\system32\wbem | 14393.0 | None | %windir%\system32\wbem\cimwin32.mof %windir%\system32\wbem\ncprov.mof %windir%\system32\wbem\wmipcima.mof %windir%\system32\wbem\secrcw32.mof %windir%\system32\wbem\system.mof %windir%\system32\wbem\interop.mof %windir%\system32\wbem\wmi.mof %windir%\system32\wbem\wmi_tracing.mof %windir%\system32\wbem\scrcons.mof %windir%\system32\wbem\smtpcons.mof %windir%\system32\wbem\wbemcons.mof %windir%\system32\wbem\subscrpt.mof %windir%\system32\wbem\win32_printer.mof %windir%\system32\wbem\tcpip.mof %windir%\system32\wbem\ncsi.mof %windir%\system32\wbem\nlasvc.mof %windir%\system32\wbem\tspkg.mof %windir%\system32\wbem\services.mof %windir%\system32\wbem\scm.mof %windir%\system32\wbem\drvinst.mof %windir%\system32\wbem\umpnpmgr.mof %windir%\system32\wbem\mountmgr.mof %windir%\system32\wbem\cli.mof %windir%\system32\wbem\cliegaliases.mof %windir%\system32\wbem\policman.mof %windir%\system32\wbem\krnlprov.mof %windir%\system32\wbem\wmitimep.mof %windir%\system32\wbem\regevent.mof %windir%\system32\wbem\dsprov.mof %windir%\system32\wbem\wmipiprt.mof %windir%\system32\wbem\wmipjobj.mof %windir%\system32\wbem\ntevt.mof %windir%\system32\wbem\msi.mof %windir%\system32\wbem\wmipicmp.mof %windir%\system32\wbem\wmipdfs.mof %windir%\system32\wbem\wmipdskq.mof %windir%\system32\wbem\wmipsess.mof %windir%\system32\wbem\rsop.mof %windir%\system32\wbem\ppcrsopcompschema.mof %windir%\system32\wbem\ppcrsopuserschema.mof %windir%\system32\wbem\printfilterpipelinesvc.mof %windir%\system32\wbem\vss.mof %windir%\system32\wbem\vds.mof %windir%\system32\wbem\newdev.mof %windir%\system32\restartmanager.mof %windir%\system32\wbem\fundisc.mof %windir%\system32\wbem\fdwsd.mof %windir%\system32\wbem\umb.mof %windir%\system32\wbem\umbus.mof %windir%\system32\wbem\umpass.mof %windir%\system32\wbem\win32_tpm.mof %windir%\system32\wbem\sppwmi.mof %windir%\system32\wbem\schannel.mof %windir%\system32\wbem\ipsecsvc.mof %windir%\system32\wbem\polstore.mof %windir%\system32\wbem\winipsec.mof %windir%\system32\wbem\sstpsvc.mof %windir%\system32\wbem\wininit.mof %windir%\system32\wbem\cimdmtf.mof %windir%\system32\wbem\powermeterprovider.mof %windir%\system32\wbem\profileassociationprovider.mof %windir%\system32\wbem\lltdio.mof %windir%\system32\wbem\rspndr.mof %windir%\system32\wbem\lltdsvc.mof %windir%\system32\wbem\networkitemfactory.mof %windir%\system32\wbem\msv1_0.mof %windir%\system32\wbem\kerberos.mof %windir%\system32\wbem\wdigest.mof %windir%\system32\wbem\bcd.mof %windir%\system32\wbem\ntfs.mof %windir%\system32\wbem\setupapi.mof %windir%\system32\wbem\dimsjob.mof %windir%\system32\wbem\wsmauto.mof %windir%\system32\wbem\wsmagent.mof %windir%\system32\wbem\rdpshell.mof %windir%\system32\wbem\rdpinit.mof %windir%\system32\wbem\ipmiprv.mof %windir%\system32\wbem\ipmidtrc.mof %windir%\system32\wbem\ipmiptrc.mof %windir%\system32\wbem\microsoft-windows-remote-filesystem.mof %windir%\system32\wbem\whqlprov.mof %windir%\system32\wbem\wmiperfclass.mof %windir%\system32\wbem\wmiperfinst.mof %windir%\system32\wbem\scersop.mof %windir%\system32\wbem\winlogon.mof %windir%\system32\wbem\auditrsop.mof %windir%\system32\wbem\sdbus.mof %windir%\system32\wbem\msiscsi.mof %windir%\system32\wbem\iscsihba.mof %windir%\system32\wbem\iscsidsc.mof %windir%\system32\wbem\iscsiprf.mof %windir%\system32\wbem\iscsiwmiv2.mof %windir%\system32\wbem\hbaapi.mof %windir%\system32\wbem\dimsroam.mof %windir%\system32\wbem\eaimeapi.mof %windir%\system32\wbem\fdphost.mof %windir%\system32\wbem\pnpxassoc.mof %windir%\system32\wbem\nshipsec.mof %windir%\system32\wbem\polprocl.mof %windir%\system32\wbem\stortrace.mof %windir%\system32\wbem\classlog.mof %windir%\system32\wbem\tsallow.mof %windir%\system32\wbem\tscfgwmi.mof %windir%\system32\wbem\servercompprov.mof %windir%\system32\wbem\servicemodel.mof %windir%\system32\wbem\servicemodel35.mof %windir%\system32\wbem\netttcim.mof %windir%\system32\wbem\netdacim.mof %windir%\system32\wbem\netnccim.mof %windir%\system32\wbem\mgmtprovider.mof %windir%\system32\wbem\dscproxy.mof %windir%\system32\wbem\partmgr.mof %windir%\system32\wbem\smbwitnesswmiv2provider.mof %windir%\system32\wbem\wudfx.mof %windir%\system32\wbem\mpeval.mof %windir%\system32\wbem\qmgr.mof %windir%\system32\wbem\netadaptercim.mof %windir%\system32\wbem\netadaptercimtrace.mof %windir%\system32\wbem\eventtracingmanagement.mof %windir%\system32\wbem\schedprov.mof %windir%\system32\wbem\fwcfg.mof %windir%\system32\wbem\authfwcfg.mof %windir%\system32\wbem\win32_deviceguard.mof %windir%\system32\wbem\refs.mof %windir%\system32\wbem\neteventpacketcapture.mof %windir%\system32\wbem\msnetimplatform.mof %windir%\system32\wbem\netswitchteam.mof %windir%\system32\wbem\wsp_fs.mof %windir%\system32\wbem\userprofilewmiprovider.mof %windir%\system32\wbem\userprofileconfigurationwmiprovider.mof %windir%\system32\hypervisor.mof %windir%\system32\wbem\smbwmiv2.mof %windir%\system32\wbem\wfascim.mof %windir%\system32\wbem\wuaprovider.mof %windir%\system32\wbem\nlsvc.mof %windir%\system32\wbem\qoswmi.mof %windir%\system32\wbem\qoswmitrc.mof %windir%\system32\wbem\samsrv.mof %windir%\system32\wbem\mttmprov.mof %windir%\system32\wbem\wsp_health.mof %windir%\system32\wbem\netpeerdistcim.mof %windir%\system32\wbem\sum.mof %windir%\system32\wbem\wsp_sr.mof %windir%\system32\wbem\mistreamprov.mof %windir%\system32\wbem\dnsclientpsprovider.mof %windir%\system32\wbem\storagewmi.mof %windir%\system32\wbem\storagewmi_passthru.mof %windir%\system32\wbem\sdndiagnosticsprovider.mof %windir%\system32\wbem\dsctimer.mof %windir%\system32\wbem\netnat.mof %windir%\system32\wbem\servermanager.deploymentprovider.mof %windir%\system32\wbem\powerwmiprovider.mof %windir%\system32\wbem\nettcpip.mof %windir%\system32\psmodulediscoveryprovider.mof %windir%\system32\wbem\platid.mof %windir%\system32\wbem\refsv1.mof %windir%\system32\wbem\dnsclientcim.mof %windir%\system32\wbem\regprov.mof %ProgramFiles%\windows defender\protectionmanagement.mof %windir%\system32\wbem\silprovider.mof %windir%\system32\wbem\netprofm.mof %windir%\system32\wbem\nlmcim.mof %windir%\system32\wbem\ciwmi.mof %windir%\system32\wbem\dsccoreconfprov.mof %windir%\system32\wbem\npivwmi.mof %windir%\system32\wbem\wudfx02000.mof %windir%\system32\wbem\msdtcwmi.mof %windir%\system32\wbem\mpssvc.mof %windir%\system32\wbem\mpsdrv.mof %windir%\system32\wbem\firewallapi.mof %windir%\system32\wbem\wfapigp.mof %windir%\system32\wbem\dsccore.mof %windir%\system32\wbem\wdacwmiprov.mof %windir%\system32\wbem\lsasrv.mof %ProgramFiles%\windows defender\clientwmiinstall.mof %ProgramFiles%\windows defender\ammonitoringinstall.mof %ProgramFiles%\windows defender\amstatusinstall.mof %windir%\system32\wbem\pcsvdevice.mof %windir%\system32\wbem\wfp.mof %windir%\system32\wbem\mispace.mof %windir%\system32\wbem\wdf01000.mof %windir%\system32\wbem\ps_mmagent.mof %windir%\system32\wbem\printmanagementprovider.mof %windir%\system32\wbem\en-us\cimwin32.mfl %windir%\system32\wbem\en-us\wmipcima.mfl %windir%\system32\wbem\en-us\secrcw32.mfl %windir%\system32\wbem\en-us\ncprov.mfl %windir%\system32\wbem\en-us\system.mfl %windir%\system32\wbem\en-us\interop.mfl %windir%\system32\wbem\en-us\wmi.mfl %windir%\system32\wbem\en-us\subscrpt.mfl %windir%\system32\wbem\en-us\scrcons.mfl %windir%\system32\wbem\en-us\smtpcons.mfl %windir%\system32\wbem\en-us\wbemcons.mfl %windir%\system32\wbem\en-us\win32_printer.mfl %windir%\system32\wbem\en-us\cli.mfl %windir%\system32\wbem\en-us\cliegaliases.mfl %windir%\system32\wbem\en-us\policman.mfl %windir%\system32\wbem\en-us\krnlprov.mfl %windir%\system32\wbem\en-us\wmitimep.mfl %windir%\system32\wbem\en-us\regevent.mfl %windir%\system32\wbem\en-us\dsprov.mfl %windir%\system32\wbem\en-us\wmipiprt.mfl %windir%\system32\wbem\en-us\wmipjobj.mfl %windir%\system32\wbem\en-us\ntevt.mfl %windir%\system32\wbem\en-us\msi.mfl %windir%\system32\wbem\en-us\wmipicmp.mfl %windir%\system32\wbem\en-us\wmipdfs.mfl %windir%\system32\wbem\en-us\wmipdskq.mfl %windir%\system32\wbem\en-us\wmipsess.mfl %windir%\system32\wbem\en-us\rsop.mfl %windir%\system32\wbem\en-us\vss.mfl %windir%\system32\wbem\en-us\vds.mfl %windir%\system32\wbem\en-us\polprocl.mfl %windir%\system32\wbem\en-us\ipmiprv.mfl %windir%\system32\wbem\en-us\iscsiprf.mfl %windir%\system32\wbem\en-us\iscsidsc.mfl %windir%\system32\wbem\en-us\iscsiwmiv2.mfl %windir%\system32\wbem\en-us\whqlprov.mfl %windir%\system32\wbem\en-us\tscfgwmi.mfl %windir%\system32\wbem\en-us\wsp_sr.mfl %windir%\system32\wbem\en-us\netttcim.mfl %windir%\system32\wbem\en-us\netdacim.mfl %windir%\system32\wbem\en-us\netnccim.mfl %windir%\system32\wbem\en-us\sum.mfl %windir%\system32\wbem\en-us\printmanagementprovider.mfl %windir%\system32\wbem\en-us\netpeerdistcim.mfl %windir%\system32\wbem\en-us\dnsclientpsprovider.mfl %windir%\system32\wbem\en-us\sppwmi.mfl %windir%\system32\wbem\en-us\regprov.mfl %windir%\system32\wbem\en-us\netadaptercim.mfl %windir%\system32\wbem\en-us\netadaptercimtrace.mfl %windir%\system32\wbem\en-us\smbwmiv2.mfl %ProgramFiles%\windows defender\en-us\protectionmanagement.mfl %windir%\system32\wbem\en-us\schedprov.mfl %windir%\system32\wbem\en-us\mttmprov.mfl %windir%\system32\en-us\psmodulediscoveryprovider.mfl %windir%\system32\wbem\en-us\win32_deviceguard.mfl %windir%\system32\wbem\en-us\wdacwmiprov.mfl %windir%\system32\wbem\en-us\ciwmi.mfl %windir%\system32\wbem\en-us\mgmtprovider.mfl %windir%\system32\wbem\en-us\mistreamprov.mfl %windir%\system32\wbem\en-us\msdtcwmi.mfl %windir%\system32\wbem\en-us\nlmcim.mfl %windir%\system32\wbem\en-us\dsctimer.mfl %windir%\system32\wbem\en-us\mpeval.mfl %windir%\system32\wbem\en-us\wininit.mfl %windir%\system32\wbem\en-us\eventtracingmanagement.mfl %windir%\system32\wbem\en-us\wudfx02000.mfl %windir%\system32\wbem\en-us\wudfx.mfl %windir%\system32\wbem\en-us\sdndiagnosticsprovider.mfl %windir%\system32\wbem\en-us\mispace.mfl %windir%\system32\wbem\en-us\wsp_health.mfl %windir%\system32\wbem\en-us\neteventpacketcapture.mfl %windir%\system32\wbem\en-us\platid.mfl %windir%\system32\wbem\en-us\wfascim.mfl %windir%\system32\wbem\en-us\powerwmiprovider.mfl %windir%\system32\wbem\en-us\nettcpip.mfl %windir%\system32\wbem\en-us\qoswmi.mfl %windir%\system32\wbem\en-us\qoswmitrc.mfl %windir%\system32\wbem\en-us\netnat.mfl %windir%\system32\wbem\en-us\wsp_fs.mfl %windir%\system32\wbem\en-us\dscproxy.mfl %windir%\system32\en-us\restartmanager.mfl %windir%\system32\wbem\en-us\npivwmi.mfl %windir%\system32\wbem\en-us\winlogon.mfl %windir%\system32\wbem\en-us\msnetimplatform.mfl %windir%\system32\wbem\en-us\netswitchteam.mfl %windir%\system32\wbem\en-us\dsccoreconfprov.mfl %windir%\system32\wbem\en-us\userprofilewmiprovider.mfl %windir%\system32\wbem\en-us\userprofileconfigurationwmiprovider.mfl %windir%\system32\en-us\hypervisor.mfl %windir%\system32\wbem\en-us\pcsvdevice.mfl %windir%\system32\wbem\en-us\cimdmtf.mfl %windir%\system32\wbem\en-us\powermeterprovider.mfl %windir%\system32\wbem\en-us\profileassociationprovider.mfl %windir%\system32\wbem\en-us\storagewmi.mfl %windir%\system32\wbem\en-us\storagewmi_passthru.mfl %windir%\system32\wbem\en-us\servercompprov.mfl %windir%\system32\wbem\en-us\silprovider.mfl %windir%\system32\wbem\en-us\dsccore.mfl %windir%\system32\wbem\en-us\smbwitnesswmiv2provider.mfl %windir%\system32\wbem\en-us\hbaapi.mfl %windir%\system32\wbem\en-us\ps_mmagent.mfl %windir%\system32\wbem\en-us\tsallow.mfl %windir%\system32\wbem\en-us\servermanager.deploymentprovider.mfl %windir%\system32\wbem\tspkg.mof %windir%\system32\wbem\wsmauto.mof %windir%\system32\wbem\wsmagent.mof %windir%\system32\wbem\en-us\storagewmi.mfl %windir%\system32\wbem\en-us\storagewmi_passthru.mfl %windir%\system32\wbem\en-us\dsccore.mfl %windir%\system32\wbem\wsp_health.mof %windir%\system32\wbem\wsp_sr.mof %windir%\system32\wbem\wsp_fs.mof %windir%\system32\wbem\mispace.mof %windir%\system32\wbem\storagewmi.mof %windir%\system32\wbem\storagewmi_passthru.mof %windir%\system32\wbem\dsccore.mof C:\WINDOWS\SYSTEM32\WBEM\MSWMDM.MOF D:\WSC_CLEAN.MOF C:\WINDOWS\SYSTEM32\WBEM\KDCSVC.MOF C:\WINDOWS\SYSTEM32\WBEM\EN-US\REPLPROV.MFL C:\WINDOWS\SYSTEM32\REPLPROV.MOF C:\WINDOWS\SYSTEM32\WBEM\ADSTATUS\EN-US\TRUSTMON.MFL C:\WINDOWS\SYSTEM32\WBEM\ADSTATUS\TRUSTMON.MOF C:\WINDOWS\SYSTEM32\WBEM\DFSRWMIV2.MOF C:\WINDOWS\SYSTEM32\WBEM\DFSRPROVS.MOF C:\WINDOWS\SYSTEM32\WBEM\DFSNCIMPROV.MOF C:\WINDOWS\SYSTEM32\WBEM\EN-US\DFSNCIMPROV.MFL C:\WINDOWS\SYSTEM32\WBEM\EN-US\DFSRPROVS.MFL C:\WINDOWS\SYSTEM32\WBEM\EN-US\DFSRWMIV2.MFL C:\WINDOWS\SYSTEM32\WBEM\NTDSA.MOF C:\WINDOWS\SYSTEM32\WBEM\DNSETW.MOF C:\WINDOWS\SYSTEM32\WBEM\DNSPROV.MOF C:\WINDOWS\SYSTEM32\WBEM\EN-US\DNSETW.MFL C:\WINDOWS\SYSTEM32\WBEM\DNSSERVERPSPROVIDER.MOF C:\WINDOWS\SYSTEM32\WBEM\EN-US\DNSSERVERPSPROVIDER.MFL C:\WINDOWS\SYSTEM32\WBEM\EN-US\DNSPROV.MFL C:\WINDOWS\SYSTEM32\WBEM\TSPKG.MOF C:\WINDOWS\SYSTEM32\WBEM\WSMAUTO.MOF C:\WINDOWS\SYSTEM32\WBEM\WSMAGENT.MOF C:\WINDOWS\SYSTEM32\WBEM\EN-US\SDNDIAGNOSTICSPROVIDER.MFL C:\WINDOWS\SYSTEM32\WBEM\EN-US\STORAGEWMI.MFL C:\WINDOWS\SYSTEM32\WBEM\EN-US\STORAGEWMI_PASSTHRU.MFL C:\WINDOWS\SYSTEM32\WBEM\EN-US\SDDCPROV.MFL C:\WINDOWS\SYSTEM32\WBEM\NETADAPTERCIM.MOF C:\WINDOWS\SYSTEM32\WBEM\NETADAPTERCIMTRACE.MOF C:\WINDOWS\SYSTEM32\WBEM\SDNDIAGNOSTICSPROVIDER.MOF C:\WINDOWS\SYSTEM32\WBEM\WSP_FS.MOF C:\WINDOWS\SYSTEM32\WBEM\NETTCPIP.MOF C:\WINDOWS\SYSTEM32\WBEM\WSP_HEALTH.MOF C:\WINDOWS\SYSTEM32\WBEM\SDDCPROV.MOF C:\WINDOWS\SYSTEM32\WBEM\WSP_SR.MOF C:\WINDOWS\SYSTEM32\WBEM\MISPACE.MOF C:\WINDOWS\SYSTEM32\WBEM\STORAGEWMI.MOF C:\WINDOWS\SYSTEM32\WBEM\STORAGEWMI_PASSTHRU.MOF C:\WINDOWS\SYSTEM32\WBEM\VMSTATSPROVIDER.MOF  | None | None | 65536 | 0 | C:\Windows\system32\wbem\Logs\ | C:\Windows\system32\wbem\repository | None | None | None | None | root\cimv2 | True | None | None | None | 20000000 | 10000000 | 2000 | False | None |
+```
+#### Win32_WMIElementSetting
+```sh
+WQL> SELECT * FROM Win32_WMIElementSetting
+| Element | Setting | 
+| Win32_Service="winmgmt" | Win32_WMISetting=@ |
+```
+
 
 
 
