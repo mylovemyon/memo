@@ -1,4 +1,4 @@
-- https://learn.microsoft.com/ja-jp/windows/win32/cimwin32prov/win32-provider
+- https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/cimwin32-wmi-providers
 - https://learn.microsoft.com/en-us/windows/win32/wmisdk/wql-sql-for-wmi
 
 # COMMAND
@@ -110,6 +110,60 @@ WQL> SELECT * FROM CIM_Card
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | HostingBoard | SlotLayout | RequiresDaughterBoard | SpecialRequirements | RequirementsDescription | Product | ConfigOptions | 
 | Base Board | Base Board | None | Base Board | OK | Win32_BaseBoard | Intel Corporation | None | None | None | Base Board | None | None | None | True | False | False | False | None | None | None | None | False | None | False | True | None | 440BX Desktop Reference Platform | None | 
 ```
+### CIM_CardInSlot
+### CIM_CardOnCard
+### CIM_CDROMDrive 
+### CIM_Chassis
+```sh
+WQL> SELECT * FROM CIM_Chassis
+| Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | CableManagementStrategy | ServicePhilosophy | ServiceDescriptions | LockPresent | AudibleAlarm | VisibleAlarm | SecurityBreach | BreachDescription | NumberOfPowerCords | CurrentRequiredOrProduced | HeatGeneration | ChassisTypes | TypeDescriptions | SMBIOSAssetTag | SecurityStatus | 
+| System Enclosure | System Enclosure | None | System Enclosure | None | Win32_SystemEnclosure | No Enclosure | None | None | None | System Enclosure 0 | N/A | None | None | True | True | True | True | None | None | None | None | None | None | None | False | True | True | 65535 | None | 65535 | None | 65535 | 1  | None | No Asset Tag | 3 | 
+```
+### CIM_ChassisInRack
+### CIM_Check
+省略
+```sh
+WQL> SELECT * FROM CIM_Check
+| Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | CheckID | Description | Caption | CheckMode | Level | Condition | Feature | 
+| BootCamp | None | 65535 | None | 65535 | BootCamp200{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | BootCamp | BootCamp | True | 200 | VM_TYPE<>"WS" | BootCamp | 
+| AppDefense | None | 65535 | None | 65535 | AppDefense0{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | AppDefense | AppDefense | True | 0 | (VM_TYPE="WS" OR MsiNTProductType=1) | AppDefense | 
+| Hgfs | None | 65535 | None | 65535 | Hgfs200{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | Hgfs | Hgfs | True | 200 | VM_TYPE="ESX" | Hgfs | 
+```
+### CIM_Chip
+```sh
+WQL> SELECT * FROM CIM_Chip
+| Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | FormFactor | MemoryType | TotalWidth | DataWidth | Speed | Capacity | BankLabel | PositionInRow | InterleavePosition | DeviceLocator | TypeDetail | InterleaveDataDepth | Attributes | ConfiguredClockSpeed | MinVoltage | MaxVoltage | ConfiguredVoltage | SMBIOSMemoryType | 
+| Physical Memory | Physical Memory | None | Physical Memory | None | Win32_PhysicalMemory | VMware Virtual RAM | None | None | 00000001 | Physical Memory 0 | None | VMW-2048MB | None | True | True | True | True | 8 | 2 | 64 | 64 | None | 2147483648 | RAM slot #0 | None | None | RAM slot #0 | 128 | None | 0 | 4800 | None | None | None | 3 |
+```
+### CIM_ClusteringSAP 
+### CIM_ClusteringService
+### CIM_ClusterServiceAccessBySAP
+### CIM_CollectedCollections
+### CIM_CollectedMSEs
+```sh
+WQL> SELECT * FROM CIM_CollectedMSEs
+| Collection | Member | 
+| \\.\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | \\.\root\cimv2:Win32_Process.Handle="2480" |
+```
+### CIM_CollectionOfMSEs
+```sh
+WQL> SELECT * FROM CIM_CollectionOfMSEs
+| CollectionID | Caption | Description | BasicUIRestrictions | 
+| \wmi\provider\sub\system\host\job | None | None | 0 | 
+| \wmi\provider\sub\system\special\host\job | None | None | 0 |
+```
+### CIM_CollectionOfSensors
+### CIM_CollectionSetting
+```sh
+WQL> SELECT * FROM CIM_CollectionSetting
+| Collection | Setting | 
+| \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\host\\job" | 
+| \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectSecLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\host\\job" | 
+| \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\special\\host\\job" | 
+| \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectSecLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\special\\host\\job" |
+```
+
+
 
 
 
