@@ -866,7 +866,10 @@ WQL> SELECT * FROM Win32_Directory WHERE caption = "C:\\"
 WQL> SELECT * FROM Win32_DirectorySpecification
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | CheckID | Description | Caption | CheckMode | DirectoryType | DirectoryPath | DefaultDir | Directory | 
 | C_x86_Runtime_Detection | 14.12.25810 | 2 | {E3819B64-3C56-3DD7-921D-00B011AD31DE} | 19 | TARGETDIR{E3819B64-3C56-3DD7-921D-00B011AD31DE}{7FED75A1-600C-394B-8376-712E2A8861F2} | SourceDir | SourceDir | True | 65535 | None | SourceDir | TARGETDIR | 
-| Servicing_Key_ProductFamily_x86 | 14.12.25810 | 2 | {C96DC6F1-894A-33E0-A8C1-3E9E7394FA28} | 19 | TARGETDIR{C96DC6F1-894A-33E0-A8C1-3E9E7394FA28}{7FED75A1-600C-394B-8376-712E2A8861F2} | SourceDir | SourceDir | True | 65535 | None | SourceDir | TARGETDIR |
+| Servicing_Key_ProductFamily_x86 | 14.12.25810 | 2 | {C96DC6F1-894A-33E0-A8C1-3E9E7394FA28} | 19 | TARGETDIR{C96DC6F1-894A-33E0-A8C1-3E9E7394FA28}{7FED75A1-600C-394B-8376-712E2A8861F2} | SourceDir | SourceDir | True | 65535 | None | SourceDir | TARGETDIR | 
+| Servicing_Key_ProductEdition_x86 | 14.12.25810 | 2 | {1EA220DF-5B36-3289-B979-D06841E41888} | 19 | TARGETDIR{1EA220DF-5B36-3289-B979-D06841E41888}{7FED75A1-600C-394B-8376-712E2A8861F2} | SourceDir | SourceDir | True | 65535 | None | SourceDir | TARGETDIR |
+
+~~~
 ```
 #### Win32_DiskDriveToDiskPartition
 ```sh
@@ -929,19 +932,19 @@ WQL> SELECT * FROM Win32_ShortcutFile WHERE target LIKE "%perfmon.msc%"
 | c:\programdata\microsoft\windows\start menu\programs\vmware\vmware tools\start vm statistics logging.lnk | c:\programdata\microsoft\windows\start menu\programs\vmware\vmware tools\start vm statistics logging.lnk | 20190922165619.352516-420 | c:\programdata\microsoft\windows\start menu\programs\vmware\vmware tools\start vm statistics logging.lnk | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | False | CIM_LogicalFile | 20190922165619.352516-420 | False | Win32_FileSystem | NTFS | 20190922165619.352516-420 | 20190922165619.352516-420 | True | 690 | True | False | False | Shortcut | c:\programdata\microsoft\windows\start menu\programs\vmware\vmware tools\startv~1.lnk | None | None | c: | \programdata\microsoft\windows\start menu\programs\vmware\vmware tools\ | start VM Statistics Logging | lnk | 18809343 | None | None | C:\Windows\system32\perfmon.msc |
 ```
 #### Win32_SubDirectory
-めっちゃおおいので割愛
 ```sh
-WQL> SELECT * FROM Win32_SubDirectory
+WQL> SELECT * FROM Win32_SubDirectory WHERE GroupComponent = "Win32_Directory.Name='C:\\'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\$RECYCLE.BIN" | 
-| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\$RECYCLE.BIN" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\$RECYCLE.BIN\\S-1-5-21-3072663084-364016917-1341370565-500" | 
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Documents and Settings" | 
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\PerfLogs" | 
-| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\PerfLogs" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\PerfLogs\\Admin" | 
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Program Files" | 
-| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Program Files" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Program Files\\Common Files" |
-
-~~~
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Program Files (x86)" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\ProgramData" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Recovery" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\System Volume Information" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Windows" |
 ```
 #### Win32_SystemPartitions
 ```sh
