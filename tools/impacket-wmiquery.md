@@ -1612,27 +1612,57 @@ WQL> SELECT * FROM Win32_NTEventlogFile
 | c:\windows\system32\winevt\logs\windows powershell.evtx | c:\windows\system32\winevt\logs\windows powershell.evtx | 20190918100732.787811-420 | C:\Windows\System32\Winevt\Logs\Windows PowerShell.evtx | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | False | Win32_NTEventlogFile | 20190918100732.787811-420 | False | Win32_FileSystem | NTFS | 20190918100732.787811-420 | 20250905043742.423198-420 | True | 1118208 | True | False | False | evtx File | c:\windows\system32\winevt\logs\window~1.evt | None | None | c: | \windows\system32\winevt\logs\ | Windows PowerShell | evtx | None | None | None | Windows PowerShell | 15728640 | 253 | WhenNeeded | 0 | Windows PowerShell PowerShell  |
 ```
 #### Win32_NTLogEvent
-#### Win32_NTLogEventComputer
-めっちゃおおいので割愛
 ```sh
-WQL> SELECT * FROM Win32_NTLogEventComputer
-| Computer | Record | 
-| Win32_ComputerSystem.Name="FOREST" | Win32_NTLogEvent.Logfile="Application",RecordNumber=2117 | 
-| Win32_ComputerSystem.Name="FOREST" | Win32_NTLogEvent.Logfile="Application",RecordNumber=2076 | 
-| Win32_ComputerSystem.Name="FOREST" | Win32_NTLogEvent.Logfile="Application",RecordNumber=1924 |
+WQL> SELECT * FROM Win32_NTLogEvent WHERE LogFile = "windows powershell" AND RecordNumber = 1
+| RecordNumber | Logfile | EventIdentifier | EventCode | SourceName | Type | Category | CategoryString | TimeGenerated | TimeWritten | ComputerName | User | Message | InsertionStrings | Data | EventType | 
+| 1 | Windows PowerShell | 600 | 600 | PowerShell | Information | 6 | Provider Lifecycle | 20190918170915.514729-000 | 20190918170915.514729-000 | WIN-TN63P6UFH7R | None | Provider "Registry" is Started. 
 
-~~~
+Details: 
+        ProviderName=Registry
+        NewProviderState=Started
+
+        SequenceNumber=1
+
+        HostName=ConsoleHost
+        HostVersion=5.1.14393.206
+        HostId=ceb02fed-7ead-4325-bf42-c7fd57395a06
+        HostApplication=powershell
+        EngineVersion=
+        RunspaceId=
+        PipelineId=
+        CommandName=
+        CommandType=
+        ScriptName=
+        CommandPath=
+        CommandLine= | Registry Started         ProviderName=Registry
+        NewProviderState=Started
+
+        SequenceNumber=1
+
+        HostName=ConsoleHost
+        HostVersion=5.1.14393.206
+        HostId=ceb02fed-7ead-4325-bf42-c7fd57395a06
+        HostApplication=powershell
+        EngineVersion=
+        RunspaceId=
+        PipelineId=
+        CommandName=
+        CommandType=
+        ScriptName=
+        CommandPath=
+        CommandLine=  | None | 3 |
+```
+#### Win32_NTLogEventComputer
+```sh
+WQL> SELECT * FROM Win32_NTLogEventComputer WHERE Record = 'Win32_NTLogEvent.Logfile="Application",RecordNumber=2117'
+| Computer | Record | 
+| Win32_ComputerSystem.Name="FOREST" | Win32_NTLogEvent.Logfile="Application",RecordNumber=2117 |
 ```
 #### Win32_NTLogEventLog
-めっちゃおおいので割愛
 ```sh
-WQL> SELECT * FROM Win32_NTLogEventLog
+WQL> SELECT * FROM Win32_NTLogEventLog WHERE Record = 'Win32_NTLogEvent.Logfile="Windows Powershell",RecordNumber=1'
 | Log | Record | 
-| Win32_NTEventlogFile.Name="C:\\Windows\\System32\\Winevt\\Logs\\Active Directory Web Services.evtx" | Win32_NTLogEvent.Logfile="Active Directory Web Services",RecordNumber=288 | 
-| Win32_NTEventlogFile.Name="C:\\Windows\\System32\\Winevt\\Logs\\Active Directory Web Services.evtx" | Win32_NTLogEvent.Logfile="Active Directory Web Services",RecordNumber=287 | 
-| Win32_NTEventlogFile.Name="C:\\Windows\\System32\\Winevt\\Logs\\Active Directory Web Services.evtx" | Win32_NTLogEvent.Logfile="Active Directory Web Services",RecordNumber=286 |
-
-~~~
+| Win32_NTEventlogFile.Name="C:\\Windows\\System32\\Winevt\\Logs\\Windows PowerShell.evtx" | Win32_NTLogEvent.Logfile="Windows Powershell",RecordNumber=1 | 
 ```
 #### Win32_NTLogEventUser
 ```sh
