@@ -1576,105 +1576,21 @@ WQL> SELECT * FROM Win32_NetworkLoginProfile
 ```
 #### Win32_SystemAccount
 ```sh
-WQL> SELECT * FROM Win32_SystemAccount
+WQL> SELECT * FROM Win32_SystemAccount WHERE Name = "system"
 | Caption | Description | InstallDate | Name | Status | Domain | SID | SIDType | LocalAccount | 
-| FOREST\Everyone | FOREST\Everyone | None | Everyone | OK | FOREST | S-1-1-0 | 5 | True | 
-| FOREST\LOCAL | FOREST\LOCAL | None | LOCAL | OK | FOREST | S-1-2-0 | 5 | True | 
-| FOREST\CREATOR OWNER | FOREST\CREATOR OWNER | None | CREATOR OWNER | OK | FOREST | S-1-3-0 | 5 | True | 
-| FOREST\CREATOR GROUP | FOREST\CREATOR GROUP | None | CREATOR GROUP | OK | FOREST | S-1-3-1 | 5 | True | 
-| FOREST\CREATOR OWNER SERVER | FOREST\CREATOR OWNER SERVER | None | CREATOR OWNER SERVER | OK | FOREST | S-1-3-2 | 5 | True | 
-| FOREST\CREATOR GROUP SERVER | FOREST\CREATOR GROUP SERVER | None | CREATOR GROUP SERVER | OK | FOREST | S-1-3-3 | 5 | True | 
-| FOREST\OWNER RIGHTS | FOREST\OWNER RIGHTS | None | OWNER RIGHTS | OK | FOREST | S-1-3-4 | 5 | True | 
-| FOREST\DIALUP | FOREST\DIALUP | None | DIALUP | OK | FOREST | S-1-5-1 | 5 | True | 
-| FOREST\NETWORK | FOREST\NETWORK | None | NETWORK | OK | FOREST | S-1-5-2 | 5 | True | 
-| FOREST\BATCH | FOREST\BATCH | None | BATCH | OK | FOREST | S-1-5-3 | 5 | True | 
-| FOREST\INTERACTIVE | FOREST\INTERACTIVE | None | INTERACTIVE | OK | FOREST | S-1-5-4 | 5 | True | 
-| FOREST\SERVICE | FOREST\SERVICE | None | SERVICE | OK | FOREST | S-1-5-6 | 5 | True | 
-| FOREST\ANONYMOUS LOGON | FOREST\ANONYMOUS LOGON | None | ANONYMOUS LOGON | OK | FOREST | S-1-5-7 | 5 | True | 
-| FOREST\PROXY | FOREST\PROXY | None | PROXY | OK | FOREST | S-1-5-8 | 5 | True | 
-| FOREST\SYSTEM | FOREST\SYSTEM | None | SYSTEM | OK | FOREST | S-1-5-18 | 5 | True | 
-| FOREST\ENTERPRISE DOMAIN CONTROLLERS | FOREST\ENTERPRISE DOMAIN CONTROLLERS | None | ENTERPRISE DOMAIN CONTROLLERS | OK | FOREST | S-1-5-9 | 5 | True | 
-| FOREST\SELF | FOREST\SELF | None | SELF | OK | FOREST | S-1-5-10 | 5 | True | 
-| FOREST\Authenticated Users | FOREST\Authenticated Users | None | Authenticated Users | OK | FOREST | S-1-5-11 | 5 | True | 
-| FOREST\RESTRICTED | FOREST\RESTRICTED | None | RESTRICTED | OK | FOREST | S-1-5-12 | 5 | True | 
-| FOREST\TERMINAL SERVER USER | FOREST\TERMINAL SERVER USER | None | TERMINAL SERVER USER | OK | FOREST | S-1-5-13 | 5 | True | 
-| FOREST\REMOTE INTERACTIVE LOGON | FOREST\REMOTE INTERACTIVE LOGON | None | REMOTE INTERACTIVE LOGON | OK | FOREST | S-1-5-14 | 5 | True | 
-| FOREST\IUSR | FOREST\IUSR | None | IUSR | OK | FOREST | S-1-5-17 | 5 | True | 
-| FOREST\LOCAL SERVICE | FOREST\LOCAL SERVICE | None | LOCAL SERVICE | OK | FOREST | S-1-5-19 | 5 | True | 
-| FOREST\NETWORK SERVICE | FOREST\NETWORK SERVICE | None | NETWORK SERVICE | OK | FOREST | S-1-5-20 | 5 | True | 
-| FOREST\BUILTIN | FOREST\BUILTIN | None | BUILTIN | OK | FOREST | S-1-5-32 | 3 | True | 
+| FOREST\SYSTEM | FOREST\SYSTEM | None | SYSTEM | OK | FOREST | S-1-5-18 | 5 | True |
 ```
 #### Win32_UserAccount
 ```sh
-WQL> SELECT * FROM Win32_UserAccount
+WQL> SELECT * FROM Win32_UserAccount WHERE Name = "administrator"
 | Caption | Description | InstallDate | Name | Status | Domain | SID | SIDType | LocalAccount | AccountType | Disabled | FullName | Lockout | PasswordChangeable | PasswordExpires | PasswordRequired | 
-| HTB\Administrator | Built-in account for administering the computer/domain | None | Administrator | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-500 | 1 | False | 512 | False | Administrator | False | True | True | True | 
-| HTB\Guest | Built-in account for guest access to the computer/domain | None | Guest | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-501 | 1 | False | 512 | True |  | False | True | False | False | 
-| HTB\krbtgt | Key Distribution Center Service Account | None | krbtgt | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-502 | 1 | False | 512 | True |  | False | True | True | True | 
-| HTB\DefaultAccount | A user account managed by the system. | None | DefaultAccount | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-503 | 1 | False | 512 | True |  | False | True | False | False | 
-| HTB\$331000-VK4ADACQNUCA |  | None | $331000-VK4ADACQNUCA | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1123 | 1 | False | 512 | True |  | False | True | True | False | 
-| HTB\SM_2c8eef0a09b545acb |  | None | SM_2c8eef0a09b545acb | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1124 | 1 | False | 512 | True | Microsoft Exchange Approval Assistant | False | True | True | True | 
-| HTB\SM_ca8c2ed5bdab4dc9b |  | None | SM_ca8c2ed5bdab4dc9b | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1125 | 1 | False | 512 | True | Microsoft Exchange | False | True | True | True | 
-| HTB\SM_75a538d3025e4db9a |  | None | SM_75a538d3025e4db9a | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1126 | 1 | False | 512 | True | Microsoft Exchange | False | True | True | True | 
-| HTB\SM_681f53d4942840e18 |  | None | SM_681f53d4942840e18 | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1127 | 1 | False | 512 | True | Discovery Search Mailbox | False | True | True | True | 
-| HTB\SM_1b41c9286325456bb |  | None | SM_1b41c9286325456bb | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1128 | 1 | False | 512 | True | Microsoft Exchange Migration | False | True | True | True | 
-| HTB\SM_9b69f1b9d2cc45549 |  | None | SM_9b69f1b9d2cc45549 | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1129 | 1 | False | 512 | True | Microsoft Exchange Federation Mailbox | False | True | True | True | 
-| HTB\SM_7c96b981967141ebb |  | None | SM_7c96b981967141ebb | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1130 | 1 | False | 512 | True | E4E Encryption Store - Active | False | True | True | True | 
-| HTB\SM_c75ee099d0a64c91b |  | None | SM_c75ee099d0a64c91b | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1131 | 1 | False | 512 | True | Microsoft Exchange | False | True | True | True | 
-| HTB\SM_1ffab36a2f5f479cb |  | None | SM_1ffab36a2f5f479cb | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1132 | 1 | False | 512 | True | SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9} | False | True | True | True | 
-| HTB\HealthMailboxc3d7722 |  | None | HealthMailboxc3d7722 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1134 | 1 | False | 512 | False | HealthMailbox-EXCH01-Mailbox-Database-1118319013 | False | True | False | True | 
-| HTB\HealthMailboxfc9daad |  | None | HealthMailboxfc9daad | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1135 | 1 | False | 512 | False | HealthMailbox-EXCH01-001 | False | True | False | True | 
-| HTB\HealthMailboxc0a90c9 |  | None | HealthMailboxc0a90c9 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1136 | 1 | False | 512 | False | HealthMailbox-EXCH01-002 | False | True | False | True | 
-| HTB\HealthMailbox670628e |  | None | HealthMailbox670628e | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1137 | 1 | False | 512 | False | HealthMailbox-EXCH01-003 | False | True | False | True | 
-| HTB\HealthMailbox968e74d |  | None | HealthMailbox968e74d | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1138 | 1 | False | 512 | False | HealthMailbox-EXCH01-004 | False | True | False | True | 
-| HTB\HealthMailbox6ded678 |  | None | HealthMailbox6ded678 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1139 | 1 | False | 512 | False | HealthMailbox-EXCH01-005 | False | True | False | True | 
-| HTB\HealthMailbox83d6781 |  | None | HealthMailbox83d6781 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1140 | 1 | False | 512 | False | HealthMailbox-EXCH01-006 | False | True | False | True | 
-| HTB\HealthMailboxfd87238 |  | None | HealthMailboxfd87238 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1141 | 1 | False | 512 | False | HealthMailbox-EXCH01-007 | False | True | False | True | 
-| HTB\HealthMailboxb01ac64 |  | None | HealthMailboxb01ac64 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1142 | 1 | False | 512 | False | HealthMailbox-EXCH01-008 | False | True | False | True | 
-| HTB\HealthMailbox7108a4e |  | None | HealthMailbox7108a4e | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1143 | 1 | False | 512 | False | HealthMailbox-EXCH01-009 | False | True | False | True | 
-| HTB\HealthMailbox0659cc1 |  | None | HealthMailbox0659cc1 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1144 | 1 | False | 512 | False | HealthMailbox-EXCH01-010 | False | True | False | True | 
-| HTB\sebastien |  | None | sebastien | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1145 | 1 | False | 512 | False | Sebastien Caron | False | False | False | True | 
-| HTB\lucinda |  | None | lucinda | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1146 | 1 | False | 512 | False | Lucinda Berger | False | False | False | True | 
-| HTB\svc-alfresco |  | None | svc-alfresco | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1147 | 1 | False | 512 | False | svc-alfresco | False | True | False | True | 
-| HTB\andy |  | None | andy | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1150 | 1 | False | 512 | False | Andy Hislip | False | False | False | True | 
-| HTB\mark |  | None | mark | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1151 | 1 | False | 512 | False | Mark Brandt | False | False | False | True | 
-| HTB\santi |  | None | santi | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1152 | 1 | False | 512 | False | Santi Rodriguez | False | False | False | True |
+| HTB\administrator | Built-in account for administering the computer/domain | None | administrator | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-500 | 1 | False | 512 | False | Administrator | False | True | True | True |
 ```
 #### Win32_UserInDomain
 ```sh
-WQL> SELECT * FROM Win32_UserInDomain
+WQL> SELECT * FROM Win32_UserInDomain WHERE PartComponent= 'Win32_UserAccount.Domain="HTB",Name="Administrator"'
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Guest" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="krbtgt" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="DefaultAccount" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="$331000-VK4ADACQNUCA" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_2c8eef0a09b545acb" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_ca8c2ed5bdab4dc9b" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_75a538d3025e4db9a" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_681f53d4942840e18" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_1b41c9286325456bb" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_9b69f1b9d2cc45549" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_7c96b981967141ebb" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_c75ee099d0a64c91b" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_1ffab36a2f5f479cb" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxc3d7722" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxfc9daad" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxc0a90c9" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox670628e" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox968e74d" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox6ded678" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox83d6781" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxfd87238" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxb01ac64" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox7108a4e" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox0659cc1" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="sebastien" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="lucinda" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="svc-alfresco" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="andy" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="mark" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="santi" |
 ```
 
 
