@@ -1192,28 +1192,9 @@ WQL> SELECT * FROM Win32_SystemProcesses
 ```
 #### Win32_SystemProgramGroups
 ```sh
-WQL> SELECT * FROM Win32_SystemProgramGroups
+WQL> SELECT * FROM Win32_SystemProgramGroups WHERE Setting = "Win32_LogicalProgramGroup.Name='Default:Start Menu\\Programs\\Windows PowerShell'"
 | Element | Setting | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Accessories" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Startup" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\System Tools" | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Windows PowerShell" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\Administrative Tools" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\StartUp" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\System Tools" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\VMware" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\VMware\\VMware Tools" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Accessories" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Administrative Tools" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Startup" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\System Tools" | 
-| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Windows PowerShell" |
 ```
 #### Win32_SystemResources
 省略
