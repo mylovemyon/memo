@@ -1685,42 +1685,17 @@ WQL> SELECT * FROM Win32_NTLogEventUser
 
 ## Performance Counter Classes
 ### Win32_Perf
-めっちゃおおいので割愛
 ```sh
-WQL> SELECT * FROM Win32_Perf
-| Name | Description | Caption | Frequency_PerfTime | Timestamp_PerfTime | Timestamp_Sys100NS | Frequency_Sys100NS | Frequency_Object | Timestamp_Object | ActiveWebServiceSessions | AllocatedConnections | ChangeOptionalFeatureOperationsPerSecond | ChangePasswordOperationsPerSecond | CreateOperationsPerSecond | CustomActionCacheSize | CustomActionDSRPCCacheConnectionCreationRate | CustomActionDSRPCCacheConnectionReuseRate | CustomActionDSRPCCacheMaximumPossibleSize | CustomActionLDAPCacheConnectionCreationRate | CustomActionLDAPCacheConnectionReuseRate | CustomActionLDAPCacheMaximumPossibleSize | DeleteOperationsPerSecond | EnumerateOperationsPerSecond | GetOperationsPerSecond | GetADDomainOperationsPerSecond | GetADDomainControllerOperationsPerSecond | GetADForestOperationsPerSecond | GetADGroupMemberOperationsPerSecond | GetADPrincipalAuthorizationGroupOperationsPerSecond | GetADPrincipalGroupMembershipOperationsPerSecond | GetVersionOperationsPerSecond | MoveADOperationMasterRoleOperationsPerSecond | NonreservedConnectionsInUse | NumberofDirectoryInstances | OpenEnumerationContexts | OpenWebServiceSessions | PossibleConnections | PullOperationsPerSecond | PutOperationsPerSecond | ReservedConnections | ReservedConnectionsInUse | SetPasswordOperationsPerSecond | TranslateNameOperationsPerSecond | WebServiceSessionsCreatedPerSecond | 
-| None | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 10 | 0 | 0 | 0 | 1 | 0 | 0 | 10 | 0 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 2 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 
-| None | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 0 | 0 | 0 | 
-| Default | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 0 | 0 | 0 | 0 | 0 | 
-| None | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 1138688 | 163840 | 15 | 463 | 125 | 209 | 
+WQL> SELECT * FROM Win32_Perf WHERE Name = "DefenderApiLogger"
+| Name | Description | Caption | Frequency_PerfTime | Timestamp_PerfTime | Timestamp_Sys100NS | Frequency_Sys100NS | Frequency_Object | Timestamp_Object | BufferMemoryUsageNonPagedPool | BufferMemoryUsagePagedPool | EventsLoggedpersec | EventsLost | NumberofRealTimeConsumers | 
 | DefenderApiLogger | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 0 | 
-| DefenderAuditLogger | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 0 | 
-| DiagLog | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 32768 | 0 | 0 | 0 | 1 | 
-| Diagtrack-Listener | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 262144 | 0 | 0 | 0 | 1 | 
-| EventLog-Application | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 131072 | 0 | 0 | 1 | 
-| Eventlog-Security | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 1 | 
-| EventLog-System | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 1 |
-
-~~~
+| DefenderApiLogger | None | None | 2534301 | 35633925097 | 134016248737972461 | 10000000 | 0 | 0 | 131072 | 0 | 0 | 0 | 0 |
 ```
 ### Win32_PerfFormattedData
-めっちゃおおいので割愛
 ```sh
-WQL> SELECT * FROM Win32_PerfFormattedData
-| Name | Description | Caption | Frequency_PerfTime | Timestamp_PerfTime | Timestamp_Sys100NS | Frequency_Sys100NS | Frequency_Object | Timestamp_Object | DroppedDatagrams | DroppedDatagramsPersec | RejectedConnections | RejectedConnectionsPersec | 
-| None | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 0 | 0 | 0 | 
-| None | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 10 | 0 | 0 | 0 | 1 | 0 | 0 | 10 | 0 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 2 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 
-| Default | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 0 | 0 | 0 | 0 | 0 | 
-| None | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 1138688 | 163840 | 15 | 463 | 125 | 209 | 
-| DefenderApiLogger | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 0 | 
-| DefenderAuditLogger | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 0 | 
-| DiagLog | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 32768 | 0 | 0 | 0 | 1 | 
-| Diagtrack-Listener | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 262144 | 0 | 0 | 0 | 1 | 
-| EventLog-Application | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 0 | 131072 | 0 | 0 | 1 | 
-| Eventlog-Security | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 1 | 
-| EventLog-System | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 1 | 
-
-~~~
+WQL> SELECT * FROM Win32_PerfFormattedData WHERE Name = "DefenderApiLogger"
+| Name | Description | Caption | Frequency_PerfTime | Timestamp_PerfTime | Timestamp_Sys100NS | Frequency_Sys100NS | Frequency_Object | Timestamp_Object | BufferMemoryUsageNonPagedPool | BufferMemoryUsagePagedPool | EventsLoggedpersec | EventsLost | NumberofRealTimeConsumers | 
+| DefenderApiLogger | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 0 |
 ```
 
 
