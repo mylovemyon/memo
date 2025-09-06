@@ -1526,372 +1526,41 @@ WQL> SELECT * FROM Win32_VolumeUserQuota
 ### Users
 #### Win32_Account
 ```sh
-WQL> SELECT * FROM Win32_Account
-| Caption | Description | InstallDate | Name | Status | Domain | SID | SIDType | LocalAccount | 
-| FOREST\Everyone | FOREST\Everyone | None | Everyone | OK | FOREST | S-1-1-0 | 5 | True | 
-| FOREST\LOCAL | FOREST\LOCAL | None | LOCAL | OK | FOREST | S-1-2-0 | 5 | True | 
-| FOREST\CREATOR OWNER | FOREST\CREATOR OWNER | None | CREATOR OWNER | OK | FOREST | S-1-3-0 | 5 | True | 
-| FOREST\CREATOR GROUP | FOREST\CREATOR GROUP | None | CREATOR GROUP | OK | FOREST | S-1-3-1 | 5 | True | 
-| FOREST\CREATOR OWNER SERVER | FOREST\CREATOR OWNER SERVER | None | CREATOR OWNER SERVER | OK | FOREST | S-1-3-2 | 5 | True | 
-| FOREST\CREATOR GROUP SERVER | FOREST\CREATOR GROUP SERVER | None | CREATOR GROUP SERVER | OK | FOREST | S-1-3-3 | 5 | True | 
-| FOREST\OWNER RIGHTS | FOREST\OWNER RIGHTS | None | OWNER RIGHTS | OK | FOREST | S-1-3-4 | 5 | True | 
-| FOREST\DIALUP | FOREST\DIALUP | None | DIALUP | OK | FOREST | S-1-5-1 | 5 | True | 
-| FOREST\NETWORK | FOREST\NETWORK | None | NETWORK | OK | FOREST | S-1-5-2 | 5 | True | 
-| FOREST\BATCH | FOREST\BATCH | None | BATCH | OK | FOREST | S-1-5-3 | 5 | True | 
-| FOREST\INTERACTIVE | FOREST\INTERACTIVE | None | INTERACTIVE | OK | FOREST | S-1-5-4 | 5 | True | 
-| FOREST\SERVICE | FOREST\SERVICE | None | SERVICE | OK | FOREST | S-1-5-6 | 5 | True | 
-| FOREST\ANONYMOUS LOGON | FOREST\ANONYMOUS LOGON | None | ANONYMOUS LOGON | OK | FOREST | S-1-5-7 | 5 | True | 
-| FOREST\PROXY | FOREST\PROXY | None | PROXY | OK | FOREST | S-1-5-8 | 5 | True | 
-| FOREST\SYSTEM | FOREST\SYSTEM | None | SYSTEM | OK | FOREST | S-1-5-18 | 5 | True | 
-| FOREST\ENTERPRISE DOMAIN CONTROLLERS | FOREST\ENTERPRISE DOMAIN CONTROLLERS | None | ENTERPRISE DOMAIN CONTROLLERS | OK | FOREST | S-1-5-9 | 5 | True | 
-| FOREST\SELF | FOREST\SELF | None | SELF | OK | FOREST | S-1-5-10 | 5 | True | 
-| FOREST\Authenticated Users | FOREST\Authenticated Users | None | Authenticated Users | OK | FOREST | S-1-5-11 | 5 | True | 
-| FOREST\RESTRICTED | FOREST\RESTRICTED | None | RESTRICTED | OK | FOREST | S-1-5-12 | 5 | True | 
-| FOREST\TERMINAL SERVER USER | FOREST\TERMINAL SERVER USER | None | TERMINAL SERVER USER | OK | FOREST | S-1-5-13 | 5 | True | 
-| FOREST\REMOTE INTERACTIVE LOGON | FOREST\REMOTE INTERACTIVE LOGON | None | REMOTE INTERACTIVE LOGON | OK | FOREST | S-1-5-14 | 5 | True | 
-| FOREST\IUSR | FOREST\IUSR | None | IUSR | OK | FOREST | S-1-5-17 | 5 | True | 
-| FOREST\LOCAL SERVICE | FOREST\LOCAL SERVICE | None | LOCAL SERVICE | OK | FOREST | S-1-5-19 | 5 | True | 
-| FOREST\NETWORK SERVICE | FOREST\NETWORK SERVICE | None | NETWORK SERVICE | OK | FOREST | S-1-5-20 | 5 | True | 
-| FOREST\BUILTIN | FOREST\BUILTIN | None | BUILTIN | OK | FOREST | S-1-5-32 | 3 | True | 
-| FOREST\Account Operators | Members can administer domain user and group accounts | None | Account Operators | OK | FOREST | S-1-5-32-548 | 4 | True | 
-| FOREST\Pre-Windows 2000 Compatible Access | A backward compatibility group which allows read access on all users and groups in the domain | None | Pre-Windows 2000 Compatible Access | OK | FOREST | S-1-5-32-554 | 4 | True | 
-| FOREST\Incoming Forest Trust Builders | Members of this group can create incoming, one-way trusts to this forest | None | Incoming Forest Trust Builders | OK | FOREST | S-1-5-32-557 | 4 | True | 
-| FOREST\Windows Authorization Access Group | Members of this group have access to the computed tokenGroupsGlobalAndUniversal attribute on User objects | None | Windows Authorization Access Group | OK | FOREST | S-1-5-32-560 | 4 | True | 
-| FOREST\Terminal Server License Servers | Members of this group can update user accounts in Active Directory with information about license issuance, for the purpose of tracking and reporting TS Per User CAL usage | None | Terminal Server License Servers | OK | FOREST | S-1-5-32-561 | 4 | True | 
-| FOREST\Administrators | Administrators have complete and unrestricted access to the computer/domain | None | Administrators | OK | FOREST | S-1-5-32-544 | 4 | True | 
-| FOREST\Users | Users are prevented from making accidental or intentional system-wide changes and can run most applications | None | Users | OK | FOREST | S-1-5-32-545 | 4 | True | 
-| FOREST\Guests | Guests have the same access as members of the Users group by default, except for the Guest account which is further restricted | None | Guests | OK | FOREST | S-1-5-32-546 | 4 | True | 
-| FOREST\Print Operators | Members can administer printers installed on domain controllers | None | Print Operators | OK | FOREST | S-1-5-32-550 | 4 | True | 
-| FOREST\Backup Operators | Backup Operators can override security restrictions for the sole purpose of backing up or restoring files | None | Backup Operators | OK | FOREST | S-1-5-32-551 | 4 | True | 
-| FOREST\Replicator | Supports file replication in a domain | None | Replicator | OK | FOREST | S-1-5-32-552 | 4 | True | 
-| FOREST\Remote Desktop Users | Members in this group are granted the right to logon remotely | None | Remote Desktop Users | OK | FOREST | S-1-5-32-555 | 4 | True | 
-| FOREST\Network Configuration Operators | Members in this group can have some administrative privileges to manage configuration of networking features | None | Network Configuration Operators | OK | FOREST | S-1-5-32-556 | 4 | True | 
-| FOREST\Performance Monitor Users | Members of this group can access performance counter data locally and remotely | None | Performance Monitor Users | OK | FOREST | S-1-5-32-558 | 4 | True | 
-| FOREST\Performance Log Users | Members of this group may schedule logging of performance counters, enable trace providers, and collect event traces both locally and via remote access to this computer | None | Performance Log Users | OK | FOREST | S-1-5-32-559 | 4 | True | 
-| FOREST\Distributed COM Users | Members are allowed to launch, activate and use Distributed COM objects on this machine. | None | Distributed COM Users | OK | FOREST | S-1-5-32-562 | 4 | True | 
-| FOREST\IIS_IUSRS | Built-in group used by Internet Information Services. | None | IIS_IUSRS | OK | FOREST | S-1-5-32-568 | 4 | True | 
-| FOREST\Cryptographic Operators | Members are authorized to perform cryptographic operations. | None | Cryptographic Operators | OK | FOREST | S-1-5-32-569 | 4 | True | 
-| FOREST\Event Log Readers | Members of this group can read event logs from local machine | None | Event Log Readers | OK | FOREST | S-1-5-32-573 | 4 | True | 
-| FOREST\Certificate Service DCOM Access | Members of this group are allowed to connect to Certification Authorities in the enterprise | None | Certificate Service DCOM Access | OK | FOREST | S-1-5-32-574 | 4 | True | 
-| FOREST\RDS Remote Access Servers | Servers in this group enable users of RemoteApp programs and personal virtual desktops access to these resources. In Internet-facing deployments, these servers are typically deployed in an edge network. This group needs to be populated on servers running RD Connection Broker. RD Gateway servers and RD Web Access servers used in the deployment need to be in this group. | None | RDS Remote Access Servers | OK | FOREST | S-1-5-32-575 | 4 | True | 
-[-] DCOM SessionError: unknown error code: 0x778
-| FOREST\RDS Endpoint Servers | Servers in this group run virtual machines and host sessions where users RemoteApp programs and personal virtual desktops run. This group needs to be populated on servers running RD Connection Broker. RD Session Host servers and RD Virtualization Host servers used in the deployment need to be in this group. | None | RDS Endpoint Servers | OK | FOREST | S-1-5-32-576 | 4 | True | 
-| FOREST\RDS Management Servers | Servers in this group can perform routine administrative actions on servers running Remote Desktop Services. This group needs to be populated on all servers in a Remote Desktop Services deployment. The servers running the RDS Central Management service must be included in this group. | None | RDS Management Servers | OK | FOREST | S-1-5-32-577 | 4 | True | 
-| FOREST\Hyper-V Administrators | Members of this group have complete and unrestricted access to all features of Hyper-V. | None | Hyper-V Administrators | OK | FOREST | S-1-5-32-578 | 4 | True | 
-| FOREST\Access Control Assistance Operators | Members of this group can remotely query authorization attributes and permissions for resources on this computer. | None | Access Control Assistance Operators | OK | FOREST | S-1-5-32-579 | 4 | True | 
-| FOREST\Remote Management Users | Members of this group can access WMI resources over management protocols (such as WS-Management via the Windows Remote Management service). This applies only to WMI namespaces that grant access to the user. | None | Remote Management Users | OK | FOREST | S-1-5-32-580 | 4 | True | 
-| FOREST\System Managed Accounts Group | Members of this group are managed by the system. | None | System Managed Accounts Group | OK | FOREST | S-1-5-32-581 | 4 | True | 
-| FOREST\Storage Replica Administrators | Members of this group have complete and unrestricted access to all features of Storage Replica. | None | Storage Replica Administrators | OK | FOREST | S-1-5-32-582 | 4 | True | 
-| FOREST\Server Operators | Members can administer domain servers | None | Server Operators | OK | FOREST | S-1-5-32-549 | 4 | True | 
-| FOREST\Cert Publishers | Members of this group are permitted to publish certificates to the directory | None | Cert Publishers | OK | FOREST | S-1-5-21-3072663084-364016917-1341370565-517 | 4 | True | 
-| FOREST\RAS and IAS Servers | Servers in this group can access remote access properties of users | None | RAS and IAS Servers | OK | FOREST | S-1-5-21-3072663084-364016917-1341370565-553 | 4 | True | 
-| FOREST\Allowed RODC Password Replication Group | Members in this group can have their passwords replicated to all read-only domain controllers in the domain | None | Allowed RODC Password Replication Group | OK | FOREST | S-1-5-21-3072663084-364016917-1341370565-571 | 4 | True | 
-| FOREST\Denied RODC Password Replication Group | Members in this group cannot have their passwords replicated to any read-only domain controllers in the domain | None | Denied RODC Password Replication Group | OK | FOREST | S-1-5-21-3072663084-364016917-1341370565-572 | 4 | True | 
-| FOREST\DnsAdmins | DNS Administrators Group | None | DnsAdmins | OK | FOREST | S-1-5-21-3072663084-364016917-1341370565-1101 | 4 | True | 
-| HTB\Cert Publishers | Members of this group are permitted to publish certificates to the directory | None | Cert Publishers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-517 | 4 | False | 
-| HTB\RAS and IAS Servers | Servers in this group can access remote access properties of users | None | RAS and IAS Servers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-553 | 4 | False | 
-| HTB\Allowed RODC Password Replication Group | Members in this group can have their passwords replicated to all read-only domain controllers in the domain | None | Allowed RODC Password Replication Group | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-571 | 4 | False | 
-| HTB\Denied RODC Password Replication Group | Members in this group cannot have their passwords replicated to any read-only domain controllers in the domain | None | Denied RODC Password Replication Group | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-572 | 4 | False | 
-| HTB\DnsAdmins | DNS Administrators Group | None | DnsAdmins | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1101 | 4 | False | 
-| HTB\$D31000-NSEL5BRJ63V7 | This group is used during Exchange setup and is not intended to be used for other purposes. | None | $D31000-NSEL5BRJ63V7 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1133 | 2 | False | 
-| HTB\Cloneable Domain Controllers | Members of this group that are domain controllers may be cloned. | None | Cloneable Domain Controllers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-522 | 2 | False | 
-| HTB\Compliance Management | This role group will allow a specified user, responsible for compliance, to properly configure and manage compliance settings within Exchange in accordance with their policy. | None | Compliance Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1115 | 2 | False | 
-| HTB\Delegated Setup | Members of this management role group have permissions to install and uninstall Exchange on provisioned servers. This role group shouldn't be deleted. | None | Delegated Setup | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1113 | 2 | False | 
-| HTB\Discovery Management | Members of this management role group can perform searches of mailboxes in the Exchange organization for data that meets specific criteria. | None | Discovery Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1111 | 2 | False | 
-| HTB\DnsUpdateProxy | DNS clients who are permitted to perform dynamic updates on behalf of some other clients (such as DHCP servers). | None | DnsUpdateProxy | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1102 | 2 | False | 
-| HTB\Domain Admins | Designated administrators of the domain | None | Domain Admins | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-512 | 2 | False | 
-| HTB\Domain Computers | All workstations and servers joined to the domain | None | Domain Computers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-515 | 2 | False | 
-| HTB\Domain Controllers | All domain controllers in the domain | None | Domain Controllers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-516 | 2 | False | 
-| HTB\Domain Guests | All domain guests | None | Domain Guests | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-514 | 2 | False | 
-| HTB\Domain Users | All domain users | None | Domain Users | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-513 | 2 | False | 
-| HTB\Enterprise Admins | Designated administrators of the enterprise | None | Enterprise Admins | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-519 | 2 | False | 
-| HTB\Enterprise Key Admins | Members of this group can perform administrative actions on key objects within the forest. | None | Enterprise Key Admins | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-527 | 2 | False | 
-| HTB\Enterprise Read-only Domain Controllers | Members of this group are Read-Only Domain Controllers in the enterprise | None | Enterprise Read-only Domain Controllers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-498 | 2 | False | 
-| HTB\Exchange Servers | This group contains all the Exchange servers. This group shouldn't be deleted. | None | Exchange Servers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1118 | 2 | False | 
-| HTB\Exchange Trusted Subsystem | This group contains Exchange servers that run Exchange cmdlets on behalf of users via the management service. Its members have permission to read and modify all Exchange configuration, as well as user accounts and groups. This group should not be deleted. | None | Exchange Trusted Subsystem | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1119 | 2 | False | 
-| HTB\Exchange Windows Permissions | This group contains Exchange servers that run Exchange cmdlets on behalf of users via the management service. Its members have permission to read and modify all Windows accounts and groups. This group should not be deleted. | None | Exchange Windows Permissions | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1121 | 2 | False | 
-| HTB\ExchangeLegacyInterop | This group is for interoperability with Exchange 2003 servers within the same forest. This group should not be deleted. | None | ExchangeLegacyInterop | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1122 | 2 | False | 
-| HTB\Group Policy Creator Owners | Members in this group can modify group policy for the domain | None | Group Policy Creator Owners | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-520 | 2 | False | 
-| HTB\Help Desk | Members of this management role group can view and manage the configuration for individual recipients and view recipients in an Exchange organization. Members of this role group can only manage the configuration each user can manage on his or her own mailbox. Additional  permissions can be added by assigning additional management roles to this role group. | None | Help Desk | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1109 | 2 | False | 
-| HTB\Hygiene Management | Members of this management role group can manage Exchange anti-spam features and grant permissions for antivirus products to integrate with Exchange. | None | Hygiene Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1114 | 2 | False | 
-| HTB\Key Admins | Members of this group can perform administrative actions on key objects within the domain. | None | Key Admins | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-526 | 2 | False | 
-| HTB\Managed Availability Servers | This group contains all the Managed Availability servers. This group shouldn't be deleted. | None | Managed Availability Servers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1120 | 2 | False | 
-| HTB\Organization Management | Members of this management role group have permissions to manage Exchange objects and their properties in the Exchange organization. Members can also delegate role groups and management roles in the organization. This role group shouldn't be deleted. | None | Organization Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1104 | 2 | False | 
-| HTB\Privileged IT Accounts |  | None | Privileged IT Accounts | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1149 | 2 | False | 
-| HTB\Protected Users | Members of this group are afforded additional protections against authentication security threats. See http://go.microsoft.com/fwlink/?LinkId=298939 for more information. | None | Protected Users | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-525 | 2 | False | 
-| HTB\Public Folder Management | Members of this management role group can manage public folders. Members can create and delete public folders and manage public folder settings such as replicas, quotas, age limits, and permissions as well as mail-enable and mail-disable public folders. | None | Public Folder Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1107 | 2 | False | 
-| HTB\Read-only Domain Controllers | Members of this group are Read-Only Domain Controllers in the domain | None | Read-only Domain Controllers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-521 | 2 | False | 
-| HTB\Recipient Management | Members of this management role group have rights to create, manage, and remove Exchange recipient objects in the Exchange organization. | None | Recipient Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1105 | 2 | False | 
-| HTB\Records Management | Members of this management role group can configure compliance features such as retention policy tags, message classifications, transport rules, and more. | None | Records Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1110 | 2 | False | 
-| HTB\Schema Admins | Designated administrators of the schema | None | Schema Admins | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-518 | 2 | False | 
-| HTB\Security Administrator | Membership in this role group is synchronized across services and managed centrally. This role group is not manageable through the administrator portals. Members of this role group may include cross-service administrators, as well as external partner groups and Microsoft Support. By default, this group may not be assigned any roles. However, it will be a member of the Security Administrators role groups and will inherit the capabilities of that role group. | None | Security Administrator | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1117 | 2 | False | 
-| HTB\Security Reader | Membership in this role group is synchronized across services and managed centrally. This role group is not manageable through the administrator portals. Members of this role group may include cross-service administrators, as well as external partner groups and Microsoft Support. By default, this group may not be assigned any roles. However, it will be a member of the Security Reader role groups and will inherit the capabilities of that role group. | None | Security Reader | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1116 | 2 | False | 
-| HTB\Server Management | Members of this management role group have permissions to manage all Exchange servers within the Exchange organization, but members don't have permissions to perform operations that have global impact in the Exchange organization. | None | Server Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1112 | 2 | False | 
-| HTB\Service Accounts |  | None | Service Accounts | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1148 | 2 | False | 
-| HTB\test |  | None | test | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-5101 | 2 | False | 
-| HTB\UM Management | Members of this management role group can manage Unified Messaging organization, server, and recipient configuration. | None | UM Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1108 | 2 | False | 
-| HTB\View-Only Organization Management | Members of this management role group can view recipient and configuration objects and their properties in the Exchange organization. | None | View-Only Organization Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1106 | 2 | False | 
-| HTB\Administrator | Built-in account for administering the computer/domain | None | Administrator | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-500 | 1 | False | 512 | False | Administrator | False | True | True | True | 
-| HTB\Guest | Built-in account for guest access to the computer/domain | None | Guest | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-501 | 1 | False | 512 | True |  | False | True | False | False | 
-| HTB\krbtgt | Key Distribution Center Service Account | None | krbtgt | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-502 | 1 | False | 512 | True |  | False | True | True | True | 
-| HTB\DefaultAccount | A user account managed by the system. | None | DefaultAccount | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-503 | 1 | False | 512 | True |  | False | True | False | False | 
-| HTB\$331000-VK4ADACQNUCA |  | None | $331000-VK4ADACQNUCA | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1123 | 1 | False | 512 | True |  | False | True | True | False | 
-| HTB\SM_2c8eef0a09b545acb |  | None | SM_2c8eef0a09b545acb | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1124 | 1 | False | 512 | True | Microsoft Exchange Approval Assistant | False | True | True | True | 
-| HTB\SM_ca8c2ed5bdab4dc9b |  | None | SM_ca8c2ed5bdab4dc9b | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1125 | 1 | False | 512 | True | Microsoft Exchange | False | True | True | True | 
-| HTB\SM_75a538d3025e4db9a |  | None | SM_75a538d3025e4db9a | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1126 | 1 | False | 512 | True | Microsoft Exchange | False | True | True | True | 
-| HTB\SM_681f53d4942840e18 |  | None | SM_681f53d4942840e18 | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1127 | 1 | False | 512 | True | Discovery Search Mailbox | False | True | True | True | 
-| HTB\SM_1b41c9286325456bb |  | None | SM_1b41c9286325456bb | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1128 | 1 | False | 512 | True | Microsoft Exchange Migration | False | True | True | True | 
-| HTB\SM_9b69f1b9d2cc45549 |  | None | SM_9b69f1b9d2cc45549 | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1129 | 1 | False | 512 | True | Microsoft Exchange Federation Mailbox | False | True | True | True | 
-| HTB\SM_7c96b981967141ebb |  | None | SM_7c96b981967141ebb | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1130 | 1 | False | 512 | True | E4E Encryption Store - Active | False | True | True | True | 
-| HTB\SM_c75ee099d0a64c91b |  | None | SM_c75ee099d0a64c91b | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1131 | 1 | False | 512 | True | Microsoft Exchange | False | True | True | True | 
-| HTB\SM_1ffab36a2f5f479cb |  | None | SM_1ffab36a2f5f479cb | Degraded | HTB | S-1-5-21-3072663084-364016917-1341370565-1132 | 1 | False | 512 | True | SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9} | False | True | True | True | 
-| HTB\HealthMailboxc3d7722 |  | None | HealthMailboxc3d7722 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1134 | 1 | False | 512 | False | HealthMailbox-EXCH01-Mailbox-Database-1118319013 | False | True | False | True | 
-| HTB\HealthMailboxfc9daad |  | None | HealthMailboxfc9daad | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1135 | 1 | False | 512 | False | HealthMailbox-EXCH01-001 | False | True | False | True | 
-| HTB\HealthMailboxc0a90c9 |  | None | HealthMailboxc0a90c9 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1136 | 1 | False | 512 | False | HealthMailbox-EXCH01-002 | False | True | False | True | 
-| HTB\HealthMailbox670628e |  | None | HealthMailbox670628e | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1137 | 1 | False | 512 | False | HealthMailbox-EXCH01-003 | False | True | False | True | 
-| HTB\HealthMailbox968e74d |  | None | HealthMailbox968e74d | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1138 | 1 | False | 512 | False | HealthMailbox-EXCH01-004 | False | True | False | True | 
-| HTB\HealthMailbox6ded678 |  | None | HealthMailbox6ded678 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1139 | 1 | False | 512 | False | HealthMailbox-EXCH01-005 | False | True | False | True | 
-| HTB\HealthMailbox83d6781 |  | None | HealthMailbox83d6781 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1140 | 1 | False | 512 | False | HealthMailbox-EXCH01-006 | False | True | False | True | 
-| HTB\HealthMailboxfd87238 |  | None | HealthMailboxfd87238 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1141 | 1 | False | 512 | False | HealthMailbox-EXCH01-007 | False | True | False | True | 
-| HTB\HealthMailboxb01ac64 |  | None | HealthMailboxb01ac64 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1142 | 1 | False | 512 | False | HealthMailbox-EXCH01-008 | False | True | False | True | 
-| HTB\HealthMailbox7108a4e |  | None | HealthMailbox7108a4e | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1143 | 1 | False | 512 | False | HealthMailbox-EXCH01-009 | False | True | False | True | 
-| HTB\HealthMailbox0659cc1 |  | None | HealthMailbox0659cc1 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1144 | 1 | False | 512 | False | HealthMailbox-EXCH01-010 | False | True | False | True | 
-| HTB\sebastien |  | None | sebastien | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1145 | 1 | False | 512 | False | Sebastien Caron | False | False | False | True | 
-| HTB\lucinda |  | None | lucinda | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1146 | 1 | False | 512 | False | Lucinda Berger | False | False | False | True | 
-| HTB\svc-alfresco |  | None | svc-alfresco | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1147 | 1 | False | 512 | False | svc-alfresco | False | True | False | True | 
-| HTB\andy |  | None | andy | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1150 | 1 | False | 512 | False | Andy Hislip | False | False | False | True | 
-| HTB\mark |  | None | mark | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1151 | 1 | False | 512 | False | Mark Brandt | False | False | False | True | 
-| HTB\santi |  | None | santi | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1152 | 1 | False | 512 | False | Santi Rodriguez | False | False | False | True | 
+WQL> SELECT * FROM Win32_Account WHERE Name = "administrator"
+| Caption | Description | InstallDate | Name | Status | Domain | SID | SIDType | LocalAccount | AccountType | Disabled | FullName | Lockout | PasswordChangeable | PasswordExpires | PasswordRequired | 
+| HTB\administrator | Built-in account for administering the computer/domain | None | administrator | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-500 | 1 | False | 512 | False | Administrator | False | True | True | True |
 ```
 #### Win32_Group
 ```sh
-WQL> SELECT * FROM Win32_Group
+WQL> SELECT * FROM Win32_Group WHERE Name = "administrators"
 | Caption | Description | InstallDate | Name | Status | Domain | SID | SIDType | LocalAccount | 
-| FOREST\Account Operators | Members can administer domain user and group accounts | None | Account Operators | OK | FOREST | S-1-5-32-548 | 4 | True | 
-| FOREST\Pre-Windows 2000 Compatible Access | A backward compatibility group which allows read access on all users and groups in the domain | None | Pre-Windows 2000 Compatible Access | OK | FOREST | S-1-5-32-554 | 4 | True | 
-| FOREST\Incoming Forest Trust Builders | Members of this group can create incoming, one-way trusts to this forest | None | Incoming Forest Trust Builders | OK | FOREST | S-1-5-32-557 | 4 | True | 
-| FOREST\Windows Authorization Access Group | Members of this group have access to the computed tokenGroupsGlobalAndUniversal attribute on User objects | None | Windows Authorization Access Group | OK | FOREST | S-1-5-32-560 | 4 | True | 
-| FOREST\Terminal Server License Servers | Members of this group can update user accounts in Active Directory with information about license issuance, for the purpose of tracking and reporting TS Per User CAL usage | None | Terminal Server License Servers | OK | FOREST | S-1-5-32-561 | 4 | True | 
-| FOREST\Administrators | Administrators have complete and unrestricted access to the computer/domain | None | Administrators | OK | FOREST | S-1-5-32-544 | 4 | True | 
-| FOREST\Users | Users are prevented from making accidental or intentional system-wide changes and can run most applications | None | Users | OK | FOREST | S-1-5-32-545 | 4 | True | 
-| FOREST\Guests | Guests have the same access as members of the Users group by default, except for the Guest account which is further restricted | None | Guests | OK | FOREST | S-1-5-32-546 | 4 | True | 
-| FOREST\Print Operators | Members can administer printers installed on domain controllers | None | Print Operators | OK | FOREST | S-1-5-32-550 | 4 | True | 
-| FOREST\Backup Operators | Backup Operators can override security restrictions for the sole purpose of backing up or restoring files | None | Backup Operators | OK | FOREST | S-1-5-32-551 | 4 | True | 
-| FOREST\Replicator | Supports file replication in a domain | None | Replicator | OK | FOREST | S-1-5-32-552 | 4 | True | 
-| FOREST\Remote Desktop Users | Members in this group are granted the right to logon remotely | None | Remote Desktop Users | OK | FOREST | S-1-5-32-555 | 4 | True | 
-| FOREST\Network Configuration Operators | Members in this group can have some administrative privileges to manage configuration of networking features | None | Network Configuration Operators | OK | FOREST | S-1-5-32-556 | 4 | True | 
-| FOREST\Performance Monitor Users | Members of this group can access performance counter data locally and remotely | None | Performance Monitor Users | OK | FOREST | S-1-5-32-558 | 4 | True | 
-| FOREST\Performance Log Users | Members of this group may schedule logging of performance counters, enable trace providers, and collect event traces both locally and via remote access to this computer | None | Performance Log Users | OK | FOREST | S-1-5-32-559 | 4 | True | 
-| FOREST\Distributed COM Users | Members are allowed to launch, activate and use Distributed COM objects on this machine. | None | Distributed COM Users | OK | FOREST | S-1-5-32-562 | 4 | True | 
-| FOREST\IIS_IUSRS | Built-in group used by Internet Information Services. | None | IIS_IUSRS | OK | FOREST | S-1-5-32-568 | 4 | True | 
-| FOREST\Cryptographic Operators | Members are authorized to perform cryptographic operations. | None | Cryptographic Operators | OK | FOREST | S-1-5-32-569 | 4 | True | 
-| FOREST\Event Log Readers | Members of this group can read event logs from local machine | None | Event Log Readers | OK | FOREST | S-1-5-32-573 | 4 | True | 
-| FOREST\Certificate Service DCOM Access | Members of this group are allowed to connect to Certification Authorities in the enterprise | None | Certificate Service DCOM Access | OK | FOREST | S-1-5-32-574 | 4 | True | 
-| FOREST\RDS Remote Access Servers | Servers in this group enable users of RemoteApp programs and personal virtual desktops access to these resources. In Internet-facing deployments, these servers are typically deployed in an edge network. This group needs to be populated on servers running RD Connection Broker. RD Gateway servers and RD Web Access servers used in the deployment need to be in this group. | None | RDS Remote Access Servers | OK | FOREST | S-1-5-32-575 | 4 | True | 
-| FOREST\RDS Endpoint Servers | Servers in this group run virtual machines and host sessions where users RemoteApp programs and personal virtual desktops run. This group needs to be populated on servers running RD Connection Broker. RD Session Host servers and RD Virtualization Host servers used in the deployment need to be in this group. | None | RDS Endpoint Servers | OK | FOREST | S-1-5-32-576 | 4 | True | 
-| FOREST\RDS Management Servers | Servers in this group can perform routine administrative actions on servers running Remote Desktop Services. This group needs to be populated on all servers in a Remote Desktop Services deployment. The servers running the RDS Central Management service must be included in this group. | None | RDS Management Servers | OK | FOREST | S-1-5-32-577 | 4 | True | 
-| FOREST\Hyper-V Administrators | Members of this group have complete and unrestricted access to all features of Hyper-V. | None | Hyper-V Administrators | OK | FOREST | S-1-5-32-578 | 4 | True | 
-| FOREST\Access Control Assistance Operators | Members of this group can remotely query authorization attributes and permissions for resources on this computer. | None | Access Control Assistance Operators | OK | FOREST | S-1-5-32-579 | 4 | True | 
-| FOREST\Remote Management Users | Members of this group can access WMI resources over management protocols (such as WS-Management via the Windows Remote Management service). This applies only to WMI namespaces that grant access to the user. | None | Remote Management Users | OK | FOREST | S-1-5-32-580 | 4 | True | 
-| FOREST\System Managed Accounts Group | Members of this group are managed by the system. | None | System Managed Accounts Group | OK | FOREST | S-1-5-32-581 | 4 | True | 
-| FOREST\Storage Replica Administrators | Members of this group have complete and unrestricted access to all features of Storage Replica. | None | Storage Replica Administrators | OK | FOREST | S-1-5-32-582 | 4 | True | 
-| FOREST\Server Operators | Members can administer domain servers | None | Server Operators | OK | FOREST | S-1-5-32-549 | 4 | True | 
-| FOREST\Cert Publishers | Members of this group are permitted to publish certificates to the directory | None | Cert Publishers | OK | FOREST | S-1-5-21-3072663084-364016917-1341370565-517 | 4 | True | 
-| FOREST\RAS and IAS Servers | Servers in this group can access remote access properties of users | None | RAS and IAS Servers | OK | FOREST | S-1-5-21-3072663084-364016917-1341370565-553 | 4 | True | 
-| FOREST\Allowed RODC Password Replication Group | Members in this group can have their passwords replicated to all read-only domain controllers in the domain | None | Allowed RODC Password Replication Group | OK | FOREST | S-1-5-21-3072663084-364016917-1341370565-571 | 4 | True | 
-| FOREST\Denied RODC Password Replication Group | Members in this group cannot have their passwords replicated to any read-only domain controllers in the domain | None | Denied RODC Password Replication Group | OK | FOREST | S-1-5-21-3072663084-364016917-1341370565-572 | 4 | True | 
-| FOREST\DnsAdmins | DNS Administrators Group | None | DnsAdmins | OK | FOREST | S-1-5-21-3072663084-364016917-1341370565-1101 | 4 | True | 
-| HTB\Cert Publishers | Members of this group are permitted to publish certificates to the directory | None | Cert Publishers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-517 | 4 | False | 
-| HTB\RAS and IAS Servers | Servers in this group can access remote access properties of users | None | RAS and IAS Servers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-553 | 4 | False | 
-| HTB\Allowed RODC Password Replication Group | Members in this group can have their passwords replicated to all read-only domain controllers in the domain | None | Allowed RODC Password Replication Group | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-571 | 4 | False | 
-| HTB\Denied RODC Password Replication Group | Members in this group cannot have their passwords replicated to any read-only domain controllers in the domain | None | Denied RODC Password Replication Group | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-572 | 4 | False | 
-| HTB\DnsAdmins | DNS Administrators Group | None | DnsAdmins | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1101 | 4 | False | 
-| HTB\$D31000-NSEL5BRJ63V7 | This group is used during Exchange setup and is not intended to be used for other purposes. | None | $D31000-NSEL5BRJ63V7 | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1133 | 2 | False | 
-| HTB\Cloneable Domain Controllers | Members of this group that are domain controllers may be cloned. | None | Cloneable Domain Controllers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-522 | 2 | False | 
-| HTB\Compliance Management | This role group will allow a specified user, responsible for compliance, to properly configure and manage compliance settings within Exchange in accordance with their policy. | None | Compliance Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1115 | 2 | False | 
-| HTB\Delegated Setup | Members of this management role group have permissions to install and uninstall Exchange on provisioned servers. This role group shouldn't be deleted. | None | Delegated Setup | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1113 | 2 | False | 
-| HTB\Discovery Management | Members of this management role group can perform searches of mailboxes in the Exchange organization for data that meets specific criteria. | None | Discovery Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1111 | 2 | False | 
-| HTB\DnsUpdateProxy | DNS clients who are permitted to perform dynamic updates on behalf of some other clients (such as DHCP servers). | None | DnsUpdateProxy | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1102 | 2 | False | 
-| HTB\Domain Admins | Designated administrators of the domain | None | Domain Admins | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-512 | 2 | False | 
-| HTB\Domain Computers | All workstations and servers joined to the domain | None | Domain Computers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-515 | 2 | False | 
-| HTB\Domain Controllers | All domain controllers in the domain | None | Domain Controllers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-516 | 2 | False | 
-| HTB\Domain Guests | All domain guests | None | Domain Guests | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-514 | 2 | False | 
-| HTB\Domain Users | All domain users | None | Domain Users | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-513 | 2 | False | 
-| HTB\Enterprise Admins | Designated administrators of the enterprise | None | Enterprise Admins | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-519 | 2 | False | 
-| HTB\Enterprise Key Admins | Members of this group can perform administrative actions on key objects within the forest. | None | Enterprise Key Admins | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-527 | 2 | False | 
-| HTB\Enterprise Read-only Domain Controllers | Members of this group are Read-Only Domain Controllers in the enterprise | None | Enterprise Read-only Domain Controllers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-498 | 2 | False | 
-| HTB\Exchange Servers | This group contains all the Exchange servers. This group shouldn't be deleted. | None | Exchange Servers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1118 | 2 | False | 
-| HTB\Exchange Trusted Subsystem | This group contains Exchange servers that run Exchange cmdlets on behalf of users via the management service. Its members have permission to read and modify all Exchange configuration, as well as user accounts and groups. This group should not be deleted. | None | Exchange Trusted Subsystem | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1119 | 2 | False | 
-| HTB\Exchange Windows Permissions | This group contains Exchange servers that run Exchange cmdlets on behalf of users via the management service. Its members have permission to read and modify all Windows accounts and groups. This group should not be deleted. | None | Exchange Windows Permissions | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1121 | 2 | False | 
-| HTB\ExchangeLegacyInterop | This group is for interoperability with Exchange 2003 servers within the same forest. This group should not be deleted. | None | ExchangeLegacyInterop | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1122 | 2 | False | 
-| HTB\Group Policy Creator Owners | Members in this group can modify group policy for the domain | None | Group Policy Creator Owners | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-520 | 2 | False | 
-| HTB\Help Desk | Members of this management role group can view and manage the configuration for individual recipients and view recipients in an Exchange organization. Members of this role group can only manage the configuration each user can manage on his or her own mailbox. Additional  permissions can be added by assigning additional management roles to this role group. | None | Help Desk | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1109 | 2 | False | 
-| HTB\Hygiene Management | Members of this management role group can manage Exchange anti-spam features and grant permissions for antivirus products to integrate with Exchange. | None | Hygiene Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1114 | 2 | False | 
-| HTB\Key Admins | Members of this group can perform administrative actions on key objects within the domain. | None | Key Admins | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-526 | 2 | False | 
-| HTB\Managed Availability Servers | This group contains all the Managed Availability servers. This group shouldn't be deleted. | None | Managed Availability Servers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1120 | 2 | False | 
-| HTB\Organization Management | Members of this management role group have permissions to manage Exchange objects and their properties in the Exchange organization. Members can also delegate role groups and management roles in the organization. This role group shouldn't be deleted. | None | Organization Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1104 | 2 | False | 
-| HTB\Privileged IT Accounts |  | None | Privileged IT Accounts | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1149 | 2 | False | 
-| HTB\Protected Users | Members of this group are afforded additional protections against authentication security threats. See http://go.microsoft.com/fwlink/?LinkId=298939 for more information. | None | Protected Users | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-525 | 2 | False | 
-| HTB\Public Folder Management | Members of this management role group can manage public folders. Members can create and delete public folders and manage public folder settings such as replicas, quotas, age limits, and permissions as well as mail-enable and mail-disable public folders. | None | Public Folder Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1107 | 2 | False | 
-| HTB\Read-only Domain Controllers | Members of this group are Read-Only Domain Controllers in the domain | None | Read-only Domain Controllers | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-521 | 2 | False | 
-| HTB\Recipient Management | Members of this management role group have rights to create, manage, and remove Exchange recipient objects in the Exchange organization. | None | Recipient Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1105 | 2 | False | 
-| HTB\Records Management | Members of this management role group can configure compliance features such as retention policy tags, message classifications, transport rules, and more. | None | Records Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1110 | 2 | False | 
-| HTB\Schema Admins | Designated administrators of the schema | None | Schema Admins | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-518 | 2 | False | 
-| HTB\Security Administrator | Membership in this role group is synchronized across services and managed centrally. This role group is not manageable through the administrator portals. Members of this role group may include cross-service administrators, as well as external partner groups and Microsoft Support. By default, this group may not be assigned any roles. However, it will be a member of the Security Administrators role groups and will inherit the capabilities of that role group. | None | Security Administrator | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1117 | 2 | False | 
-| HTB\Security Reader | Membership in this role group is synchronized across services and managed centrally. This role group is not manageable through the administrator portals. Members of this role group may include cross-service administrators, as well as external partner groups and Microsoft Support. By default, this group may not be assigned any roles. However, it will be a member of the Security Reader role groups and will inherit the capabilities of that role group. | None | Security Reader | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1116 | 2 | False | 
-| HTB\Server Management | Members of this management role group have permissions to manage all Exchange servers within the Exchange organization, but members don't have permissions to perform operations that have global impact in the Exchange organization. | None | Server Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1112 | 2 | False | 
-| HTB\Service Accounts |  | None | Service Accounts | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1148 | 2 | False | 
-| HTB\test |  | None | test | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-5101 | 2 | False | 
-| HTB\UM Management | Members of this management role group can manage Unified Messaging organization, server, and recipient configuration. | None | UM Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1108 | 2 | False | 
-| HTB\View-Only Organization Management | Members of this management role group can view recipient and configuration objects and their properties in the Exchange organization. | None | View-Only Organization Management | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-1106 | 2 | False |
+| FOREST\Administrators | Administrators have complete and unrestricted access to the computer/domain | None | Administrators | OK | FOREST | S-1-5-32-544 | 4 | True |
 ```
 #### Win32_GroupInDomain
 ```sh
-WQL> SELECT * FROM Win32_GroupInDomain
+WQL> SELECT * FROM Win32_GroupInDomain WHERE PartComponent = "Win32_Group.Domain=\"HTB\",Name=\"Domain Admins\""
 | GroupComponent | PartComponent | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Cert Publishers" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="RAS and IAS Servers" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Allowed RODC Password Replication Group" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Denied RODC Password Replication Group" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="DnsAdmins" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="$D31000-NSEL5BRJ63V7" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Cloneable Domain Controllers" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Compliance Management" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Delegated Setup" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Discovery Management" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="DnsUpdateProxy" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Admins" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Computers" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Controllers" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Guests" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Enterprise Admins" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Enterprise Key Admins" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Enterprise Read-only Domain Controllers" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Exchange Servers" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Exchange Trusted Subsystem" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Exchange Windows Permissions" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="ExchangeLegacyInterop" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Group Policy Creator Owners" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Help Desk" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Hygiene Management" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Key Admins" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Managed Availability Servers" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Organization Management" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Privileged IT Accounts" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Protected Users" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Public Folder Management" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Read-only Domain Controllers" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Recipient Management" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Records Management" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Schema Admins" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Security Administrator" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Security Reader" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Server Management" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Service Accounts" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="test" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="UM Management" | 
-| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="View-Only Organization Management" |
+| \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Admins" |
 ```
 #### Win32_GroupUser
 ```sh
-WQL> SELECT * FROM Win32_GroupUser
+WQL> SELECT * FROM Win32_GroupUser WHERE GroupComponent = 'Win32_Group.Domain="forest",Name="administrators"'
 | GroupComponent | PartComponent | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Account Operators" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Privileged IT Accounts" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Pre-Windows 2000 Compatible Access" | \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="ANONYMOUS LOGON" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Pre-Windows 2000 Compatible Access" | \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="Everyone" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Windows Authorization Access Group" | \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="ENTERPRISE DOMAIN CONTROLLERS" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Windows Authorization Access Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Exchange Servers" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Administrators" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Administrators" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Enterprise Admins" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Administrators" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Admins" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Users" | \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="INTERACTIVE" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Users" | \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="Authenticated Users" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Users" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Guests" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Guest" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Guests" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Guests" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="IIS_IUSRS" | \\FOREST\root\cimv2:Win32_SystemAccount.Domain="FOREST",Name="IUSR" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Remote Management Users" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Privileged IT Accounts" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="System Managed Accounts Group" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="DefaultAccount" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="krbtgt" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Controllers" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Schema Admins" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Enterprise Admins" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Cert Publishers" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Admins" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Group Policy Creator Owners" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Read-only Domain Controllers" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="krbtgt" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Controllers" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Schema Admins" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Enterprise Admins" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Cert Publishers" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Admins" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Group Policy Creator Owners" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Denied RODC Password Replication Group" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Read-only Domain Controllers" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="$D31000-NSEL5BRJ63V7" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="EXCH01$" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Admins" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Computers" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="EXCH01$" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Controllers" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="FOREST$" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Guests" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Guest" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="DefaultAccount" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="krbtgt" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="$331000-VK4ADACQNUCA" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_2c8eef0a09b545acb" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_ca8c2ed5bdab4dc9b" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_75a538d3025e4db9a" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_681f53d4942840e18" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_1b41c9286325456bb" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_9b69f1b9d2cc45549" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_7c96b981967141ebb" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_c75ee099d0a64c91b" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="SM_1ffab36a2f5f479cb" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxc3d7722" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxfc9daad" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxc0a90c9" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox670628e" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox968e74d" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox6ded678" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox83d6781" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxfd87238" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailboxb01ac64" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox7108a4e" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="HealthMailbox0659cc1" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="sebastien" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="lucinda" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="svc-alfresco" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="andy" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="mark" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Users" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="santi" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Enterprise Admins" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Exchange Servers" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="EXCH01$" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Exchange Trusted Subsystem" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="EXCH01$" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Group Policy Creator Owners" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Managed Availability Servers" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="EXCH01$" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Organization Management" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Schema Admins" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | 
-| \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Service Accounts" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="svc-alfresco" |
+| Win32_Group.Domain="forest",Name="administrators" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | 
+| Win32_Group.Domain="forest",Name="administrators" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Enterprise Admins" | 
+| Win32_Group.Domain="forest",Name="administrators" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Admins" | 
 ```
 #### Win32_LogonSession
+省略
 ```sh
 WQL> SELECT * FROM Win32_LogonSession
 | Caption | Description | InstallDate | Name | Status | StartTime | LogonId | AuthenticationPackage | LogonType | 
-| None | None | None | None | None | 20250905043531.797911-420 | 999 | Negotiate | 0 | 
+| None | None | None | None | None | 20250905043531.797911-420 | 999 | Negotiate | 0 |
+~~~
 | None | None | None | None | None | 20250905043716.048128-420 | 246059 | Kerberos | 3 | 
-| None | None | None | None | None | 20250905043716.001262-420 | 245830 | Kerberos | 3 | 
-| None | None | None | None | None | 20250905043623.204264-420 | 187433 | Kerberos | 3 | 
-| None | None | None | None | None | 20250905043623.032498-420 | 183172 | Kerberos | 3 | 
-| None | None | None | None | None | 20250905043622.876271-420 | 182473 | Kerberos | 3 | 
-| None | None | None | None | None | 20250905043658.923136-420 | 240879 | Kerberos | 3 | 
-| None | None | None | None | None | 20250905043543.672943-420 | 997 | Negotiate | 5 | 
-| None | None | None | None | None | 20250905043543.235424-420 | 996 | Negotiate | 5 | 
+~~~
 | None | None | None | None | None | 20250905043708.641892-420 | 245677 | NTLM | 3 | 
-| None | None | None | None | None | 20250905043706.079443-420 | 245213 | NTLM | 3 | 
-| None | None | None | None | None | 20250905043716.376294-420 | 246084 | NTLM | 3 | 
-| None | None | None | None | None | 20250905043709.610634-420 | 245702 | NTLM | 3 | 
-| None | None | None | None | None | 20250905043640.657430-420 | 208736 | NTLM | 2 | 
-| None | None | None | None | None | 20250905043559.047959-420 | 106735 | NTLM | 3 |
+~~~
 ```
 #### Win32_LogonSessionMappedDisk
 #### Win32_NetworkLoginProfile
