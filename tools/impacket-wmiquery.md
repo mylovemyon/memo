@@ -21,6 +21,7 @@ Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies
 
 # CIM WMI Provider
 ### CIM_Action
+省略
 ```sh
 WQL> SELECT * FROM CIM_Action
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | Registry | EntryName | EntryValue | Root | key | 
@@ -37,6 +38,7 @@ WQL> SELECT * FROM CIM_Action
 ### CIM_AggregatePSExtent
 ### CIM_AlarmDevice
 ### CIM_AllocatedResource
+省略
 ```sh
 WQL> SELECT * FROM CIM_AllocatedResource
 | Antecedent | Dependent | 
@@ -46,8 +48,68 @@ WQL> SELECT * FROM CIM_AllocatedResource
 
 ~~~
 ```
-
-
+### CIM_ApplicationSystem
+### CIM_ApplicationSystemSoftwareFeature
+### CIM_AssociatedAlarm
+### CIM_AssociatedBattery
+### CIM_AssociatedCooling
+### CIM_AssociatedMemory
+```sh
+WQL> SELECT * FROM CIM_AssociatedMemory
+| Antecedent | Dependent | BusSpeed | 
+| \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 0" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | None | 
+| \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 1" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | None | 
+| \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 2" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | None | 
+```
+### CIM_AssociatedProcessorMemory
+```sh
+WQL> SELECT * FROM CIM_AssociatedProcessorMemory
+| Antecedent | Dependent | BusSpeed | 
+| \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 0" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | None | 
+| \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 1" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | None | 
+| \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 2" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | None |
+```
+### CIM_AssociatedSensor
+### CIM_AssociatedSupplyCurrentSensor
+### CIM_AssociatedSupplyVoltageSensor
+### CIM_BasedOn
+```sh
+WQL> SELECT * FROM CIM_BasedOn
+| Antecedent | Dependent | StartingAddress | EndingAddress | 
+| \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #2" | \\FOREST\root\cimv2:Win32_LogicalDisk.DeviceID="C:" | 710934528 | 21473787903 |
+```
+### CIM_Battery
+### CIM_BinarySensor
+### CIM_BIOSElement
+```sh
+WQL> SELECT * FROM CIM_BIOSElement 
+| Caption | Description | InstallDate | Name | Status | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | OtherTargetOS | Manufacturer | BuildNumber | SerialNumber | CodeSet | IdentificationCode | LanguageEdition | PrimaryBIOS | ReleaseDate | BiosCharacteristics | InstallableLanguages | ListOfLanguages | CurrentLanguage | SMBIOSPresent | SMBIOSMajorVersion | SMBIOSMinorVersion | SMBIOSBIOSVersion | BIOSVersion | SystemBiosMajorVersion | SystemBiosMinorVersion | EmbeddedControllerMajorVersion | EmbeddedControllerMinorVersion | 
+| VMW71.00V.24504846.B64.2501180334 | VMW71.00V.24504846.B64.2501180334 | None | VMW71.00V.24504846.B64.2501180334 | OK | INTEL  - 6040000 | 3 | VMW71.00V.24504846.B64.2501180334 | 0 | None | VMware, Inc. | None | VMware-42 14 58 74 07 28 c6 fb-94 7c c9 f5 3e 1f 0f f6 | None | None | None | True | 20250118000000.000000+000 | 4 7 9 11 42 43  | None | None | None | True | 2 | 7 | VMW71.00V.24504846.B64.2501180334 | INTEL  - 6040000 VMW71.00V.24504846.B64.2501180334 VMware, Inc. - 10000  | 255 | 255 | 255 | 255 |
+```
+### CIM_BIOSFeature
+### CIM_BIOSFeatureBIOSElements
+### CIM_BIOSLoadedInNV
+### CIM_BootOSFromFS
+### CIM_BootSAP
+### CIM_BootService
+### CIM_BootServiceAccessBySAP
+### CIM_CacheMemory 
+```sh
+WQL> SELECT * FROM CIM_CacheMemory 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | StartingAddress | EndingAddress | ErrorInfo | OtherErrorDescription | CorrectableError | ErrorTime | ErrorAccess | ErrorTransferSize | ErrorData | ErrorDataOrder | ErrorAddress | SystemLevelAddress | ErrorResolution | AdditionalErrorData | Level | WritePolicy | CacheType | LineSize | ReplacementPolicy | ReadPolicy | FlushTimer | Associativity | Location | MaxCacheSize | InstalledSize | SupportedSRAM | CurrentSRAM | ErrorCorrectType | CacheSpeed | 
+| Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 0 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 1024 | None | 64 | L1 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 3 | 3 | 5 | None | 65535 | 65535 | None | 7 | 0 | 64 | 64 | 2 3 4 5 6  | 6  | 2 | None | 
+| Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 1 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 1024 | None | 512 | L2 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 4 | 3 | 5 | None | 65535 | 65535 | None | 7 | 1 | 512 | 512 | 2 3 4 5 6  | 6  | 2 | None | 
+| Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 2 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 65536 | None | 512 | L3 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 5 | 3 | 5 | None | 65535 | 65535 | None | 8 | 1 | 32768 | 32768 | 2 3 4 5 6  | 6  | 2 | None | 
+| Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 3 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 1024 | None | 64 | L1 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 3 | 3 | 5 | None | 65535 | 65535 | None | 7 | 0 | 64 | 64 | 2 3 4 5 6  | 6  | 2 | None | 
+| Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 4 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 1024 | None | 512 | L2 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 4 | 3 | 5 | None | 65535 | 65535 | None | 7 | 1 | 512 | 512 | 2 3 4 5 6  | 6  | 2 | None | 
+| Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 5 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 65536 | None | 512 | L3 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 5 | 3 | 5 | None | 65535 | 65535 | None | 8 | 1 | 32768 | 32768 | 2 3 4 5 6  | 6  | 2 | None |
+```
+### CIM_Card
+```sh
+WQL> SELECT * FROM CIM_Card
+| Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | HostingBoard | SlotLayout | RequiresDaughterBoard | SpecialRequirements | RequirementsDescription | Product | ConfigOptions | 
+| Base Board | Base Board | None | Base Board | OK | Win32_BaseBoard | Intel Corporation | None | None | None | Base Board | None | None | None | True | False | False | False | None | None | None | None | False | None | False | True | None | 440BX Desktop Reference Platform | None | 
+```
 
 
 
@@ -771,7 +833,7 @@ WQL> SELECT * FROM Win32_Directory WHERE caption = "C:\\"
 | C:\ | C:\ | None | c:\ | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | True | CIM_LogicalFile | None | True | Win32_FileSystem | NTFS | None | None | True | 18446744073709551615 | True | True | True | Local Disk |  | None | None | c: |  |  |  | 18809343 |
 ```
 #### Win32_DirectorySpecification
-めっちゃおおいので割愛
+省略
 ```sh
 WQL> SELECT * FROM Win32_DirectorySpecification
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | CheckID | Description | Caption | CheckMode | DirectoryType | DirectoryPath | DefaultDir | Directory | 
