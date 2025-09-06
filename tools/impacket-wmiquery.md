@@ -1417,38 +1417,15 @@ WQL> SELECT * FROM Win32_ServerSession
 #### Win32_PrinterShare
 #### Win32_SessionConnection	
 #### Win32_SessionProcess
+省略
 ```sh
 WQL> SELECT * FROM Win32_SessionProcess
 | Antecedent | Dependent | 
 | \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="500" | 
 | \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="588" | 
 | \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="752" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="996" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="1728" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="1952" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="1960" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="1984" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="1992" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="1116" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="1260" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="1456" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="1488" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="2212" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="2368" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="2776" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="2824" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="1908" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="452" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="999" | \\.\root\cimv2:Win32_Process.Handle="3032" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="997" | \\.\root\cimv2:Win32_Process.Handle="924" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="997" | \\.\root\cimv2:Win32_Process.Handle="932" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="997" | \\.\root\cimv2:Win32_Process.Handle="688" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="996" | \\.\root\cimv2:Win32_Process.Handle="808" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="996" | \\.\root\cimv2:Win32_Process.Handle="1008" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="996" | \\.\root\cimv2:Win32_Process.Handle="1076" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="996" | \\.\root\cimv2:Win32_Process.Handle="2540" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="996" | \\.\root\cimv2:Win32_Process.Handle="2564" | 
-| \\.\root\cimv2:Win32_LogonSession.LogonId="996" | \\.\root\cimv2:Win32_Process.Handle="1096" | 
+
+~~~
 ```
 #### Win32_ShareToDirectory
 ```sh
@@ -1474,147 +1451,27 @@ WQL> SELECT * FROM Win32_Share
 ### Start Menu
 #### Win32_LogicalProgramGroup
 ```sh
-WQL> SELECT * FROM Win32_LogicalProgramGroup
+WQL> SELECT * FROM Win32_LogicalProgramGroup WHERE Caption = 'Logical program group "Default:Start Menu\\Programs\\Windows PowerShell"'
 | Caption | Description | InstallDate | Name | Status | GroupName | UserName | 
-| Logical program group "Default:Start Menu" | Logical program group "Default:Start Menu" | 20160716061803.459804-420 | Default:Start Menu | None | Start Menu | Default | 
-| Logical program group "Default:Start Menu\Programs" | Logical program group "Default:Start Menu\Programs" | 20160716061803.459804-420 | Default:Start Menu\Programs | None | Start Menu\Programs | Default | 
-| Logical program group "Default:Start Menu\Programs\Accessories" | Logical program group "Default:Start Menu\Programs\Accessories" | 20160716061803.459804-420 | Default:Start Menu\Programs\Accessories | None | Start Menu\Programs\Accessories | Default | 
-| Logical program group "Default:Start Menu\Programs\Startup" | Logical program group "Default:Start Menu\Programs\Startup" | 20190920131824.168535-420 | Default:Start Menu\Programs\Startup | None | Start Menu\Programs\Startup | Default | 
-| Logical program group "Default:Start Menu\Programs\System Tools" | Logical program group "Default:Start Menu\Programs\System Tools" | 20160716061803.459804-420 | Default:Start Menu\Programs\System Tools | None | Start Menu\Programs\System Tools | Default | 
-| Logical program group "Default:Start Menu\Programs\Windows PowerShell" | Logical program group "Default:Start Menu\Programs\Windows PowerShell" | 20160716061803.459804-420 | Default:Start Menu\Programs\Windows PowerShell | None | Start Menu\Programs\Windows PowerShell | Default | 
-| Logical program group "Public:Start Menu" | Logical program group "Public:Start Menu" | 20160716061803.444179-420 | Public:Start Menu | None | Start Menu | Public | 
-| Logical program group "Public:Start Menu\Programs" | Logical program group "Public:Start Menu\Programs" | 20160716061803.444179-420 | Public:Start Menu\Programs | None | Start Menu\Programs | Public | 
-| Logical program group "Public:Start Menu\Programs\Administrative Tools" | Logical program group "Public:Start Menu\Programs\Administrative Tools" | 20160716061803.444179-420 | Public:Start Menu\Programs\Administrative Tools | None | Start Menu\Programs\Administrative Tools | Public | 
-| Logical program group "Public:Start Menu\Programs\StartUp" | Logical program group "Public:Start Menu\Programs\StartUp" | 20160716061803.444179-420 | Public:Start Menu\Programs\StartUp | None | Start Menu\Programs\StartUp | Public | 
-| Logical program group "Public:Start Menu\Programs\System Tools" | Logical program group "Public:Start Menu\Programs\System Tools" | 20160716061803.444179-420 | Public:Start Menu\Programs\System Tools | None | Start Menu\Programs\System Tools | Public | 
-| Logical program group "Public:Start Menu\Programs\VMware" | Logical program group "Public:Start Menu\Programs\VMware" | 20190922165619.352516-420 | Public:Start Menu\Programs\VMware | None | Start Menu\Programs\VMware | Public | 
-| Logical program group "Public:Start Menu\Programs\VMware\VMware Tools" | Logical program group "Public:Start Menu\Programs\VMware\VMware Tools" | 20190922165619.352516-420 | Public:Start Menu\Programs\VMware\VMware Tools | None | Start Menu\Programs\VMware\VMware Tools | Public | 
-| Logical program group "HTB\Administrator:Start Menu" | Logical program group "HTB\Administrator:Start Menu" | 20190918100908.358468-420 | HTB\Administrator:Start Menu | None | Start Menu | HTB\Administrator | 
-| Logical program group "HTB\Administrator:Start Menu\Programs" | Logical program group "HTB\Administrator:Start Menu\Programs" | 20190918100908.358468-420 | HTB\Administrator:Start Menu\Programs | None | Start Menu\Programs | HTB\Administrator | 
-| Logical program group "HTB\Administrator:Start Menu\Programs\Accessories" | Logical program group "HTB\Administrator:Start Menu\Programs\Accessories" | 20190918100908.358468-420 | HTB\Administrator:Start Menu\Programs\Accessories | None | Start Menu\Programs\Accessories | HTB\Administrator | 
-| Logical program group "HTB\Administrator:Start Menu\Programs\Administrative Tools" | Logical program group "HTB\Administrator:Start Menu\Programs\Administrative Tools" | 20190918100910.795976-420 | HTB\Administrator:Start Menu\Programs\Administrative Tools | None | Start Menu\Programs\Administrative Tools | HTB\Administrator | 
-| Logical program group "HTB\Administrator:Start Menu\Programs\Startup" | Logical program group "HTB\Administrator:Start Menu\Programs\Startup" | 20190918100910.795976-420 | HTB\Administrator:Start Menu\Programs\Startup | None | Start Menu\Programs\Startup | HTB\Administrator | 
-| Logical program group "HTB\Administrator:Start Menu\Programs\System Tools" | Logical program group "HTB\Administrator:Start Menu\Programs\System Tools" | 20190918100908.358468-420 | HTB\Administrator:Start Menu\Programs\System Tools | None | Start Menu\Programs\System Tools | HTB\Administrator | 
-| Logical program group "HTB\Administrator:Start Menu\Programs\Windows PowerShell" | Logical program group "HTB\Administrator:Start Menu\Programs\Windows PowerShell" | 20190918100908.358468-420 | HTB\Administrator:Start Menu\Programs\Windows PowerShell | None | Start Menu\Programs\Windows PowerShell | HTB\Administrator |
+| Logical program group "Default:Start Menu\Programs\Windows PowerShell" | Logical program group "Default:Start Menu\Programs\Windows PowerShell" | 20160716061803.459804-420 | Default:Start Menu\Programs\Windows PowerShell | None | Start Menu\Programs\Windows PowerShell | Default |
 ```
 #### Win32_LogicalProgramGroupDirectory
 ```sh
-WQL> SELECT * FROM Win32_LogicalProgramGroupDirectory
+WQL> SELECT * FROM Win32_LogicalProgramGroupDirectory WHERE Antecedent = "Win32_LogicalProgramGroup.Name='Default:Start Menu\\Programs\\Windows PowerShell'"
 | Antecedent | Dependent | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Accessories" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Accessories" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Startup" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\System Tools" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Windows PowerShell" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\Administrative Tools" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\StartUp" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\System Tools" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\VMware" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\VMware" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Public:Start Menu\\Programs\\VMware\\VMware Tools" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\VMware\\VMware Tools" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Accessories" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Accessories" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Administrative Tools" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Startup" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\System Tools" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="HTB\\Administrator:Start Menu\\Programs\\Windows PowerShell" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell" |
+| Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Windows PowerShell" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell" | 
 ```
 #### Win32_LogicalProgramGroupItem
 ```sh
-WQL> SELECT * FROM Win32_LogicalProgramGroupItem
+WQL> SELECT * FROM Win32_LogicalProgramGroupItem WHERE Caption = "Logical program group item 'Default:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk'" 
 | Caption | Description | InstallDate | Name | Status | 
-| Logical program group item 'Default:Start Menu\Programs\Accessories\desktop.ini' | Logical program group item 'Default:Start Menu\Programs\Accessories\desktop.ini' | 20160716061813.161954-420 | Default:Start Menu\Programs\Accessories\desktop.ini | None | 
-| Logical program group item 'Default:Start Menu\Programs\Accessories\Notepad.lnk' | Logical program group item 'Default:Start Menu\Programs\Accessories\Notepad.lnk' | 20160716061251.475984-420 | Default:Start Menu\Programs\Accessories\Notepad.lnk | None | 
-| Logical program group item 'Default:Start Menu\Programs\System Tools\Command Prompt.lnk' | Logical program group item 'Default:Start Menu\Programs\System Tools\Command Prompt.lnk' | 20160716060952.652329-420 | Default:Start Menu\Programs\System Tools\Command Prompt.lnk | None | 
-| Logical program group item 'Default:Start Menu\Programs\System Tools\computer.lnk' | Logical program group item 'Default:Start Menu\Programs\System Tools\computer.lnk' | 20160716061251.085360-420 | Default:Start Menu\Programs\System Tools\computer.lnk | None | 
-| Logical program group item 'Default:Start Menu\Programs\System Tools\Control Panel.lnk' | Logical program group item 'Default:Start Menu\Programs\System Tools\Control Panel.lnk' | 20160716061251.100985-420 | Default:Start Menu\Programs\System Tools\Control Panel.lnk | None | 
-| Logical program group item 'Default:Start Menu\Programs\System Tools\Default Apps.lnk' | Logical program group item 'Default:Start Menu\Programs\System Tools\Default Apps.lnk' | 20160716061251.038486-420 | Default:Start Menu\Programs\System Tools\Default Apps.lnk | None | 
-| Logical program group item 'Default:Start Menu\Programs\System Tools\desktop.ini' | Logical program group item 'Default:Start Menu\Programs\System Tools\desktop.ini' | 20160716061813.161954-420 | Default:Start Menu\Programs\System Tools\desktop.ini | None | 
-| Logical program group item 'Default:Start Menu\Programs\System Tools\Devices.lnk' | Logical program group item 'Default:Start Menu\Programs\System Tools\Devices.lnk' | 20160716061251.069735-420 | Default:Start Menu\Programs\System Tools\Devices.lnk | None | 
-| Logical program group item 'Default:Start Menu\Programs\System Tools\File Explorer.lnk' | Logical program group item 'Default:Start Menu\Programs\System Tools\File Explorer.lnk' | 20160716061251.147860-420 | Default:Start Menu\Programs\System Tools\File Explorer.lnk | None | 
-| Logical program group item 'Default:Start Menu\Programs\System Tools\Run.lnk' | Logical program group item 'Default:Start Menu\Programs\System Tools\Run.lnk' | 20160716061251.132236-420 | Default:Start Menu\Programs\System Tools\Run.lnk | None | 
-| Logical program group item 'Default:Start Menu\Programs\Windows PowerShell\Windows PowerShell (x86).lnk' | Logical program group item 'Default:Start Menu\Programs\Windows PowerShell\Windows PowerShell (x86).lnk' | 20160716061805.256664-420 | Default:Start Menu\Programs\Windows PowerShell\Windows PowerShell (x86).lnk | None | 
-| Logical program group item 'Default:Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk' | Logical program group item 'Default:Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk' | 20160716061805.256664-420 | Default:Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk | None | 
-| Logical program group item 'Public:Start Menu\desktop.ini' | Logical program group item 'Public:Start Menu\desktop.ini' | 20160716061805.225414-420 | Public:Start Menu\desktop.ini | None | 
-| Logical program group item 'Public:Start Menu\Programs\desktop.ini' | Logical program group item 'Public:Start Menu\Programs\desktop.ini' | 20160716061805.225414-420 | Public:Start Menu\Programs\desktop.ini | None | 
-| Logical program group item 'Public:Start Menu\Programs\Administrative Tools\Active Directory PowerShell Snap-In.lnk' | Logical program group item 'Public:Start Menu\Programs\Administrative Tools\Active Directory PowerShell Snap-In.lnk' | 20160716061130.319027-420 | Public:Start Menu\Programs\Administrative Tools\Active Directory PowerShell Snap-In.lnk | None | 
-| Logical program group item 'Public:Start Menu\Programs\Administrative Tools\desktop.ini' | Logical program group item 'Public:Start Menu\Programs\Administrative Tools\desktop.ini' | 20160716061805.225414-420 | Public:Start Menu\Programs\Administrative Tools\desktop.ini | None | 
-| Logical program group item 'Public:Start Menu\Programs\Administrative Tools\Group Policy Management.lnk' | Logical program group item 'Public:Start Menu\Programs\Administrative Tools\Group Policy Management.lnk' | 20160716061123.444041-420 | Public:Start Menu\Programs\Administrative Tools\Group Policy Management.lnk | None | 
-| Logical program group item 'Public:Start Menu\Programs\Administrative Tools\iSCSI Initiator.lnk' | Logical program group item 'Public:Start Menu\Programs\Administrative Tools\iSCSI Initiator.lnk' | 20160716061243.658754-420 | Public:Start Menu\Programs\Administrative Tools\iSCSI Initiator.lnk | None | 
-| Logical program group item 'Public:Start Menu\Programs\Administrative Tools\ODBC Data Sources (32-bit).lnk' | Logical program group item 'Public:Start Menu\Programs\Administrative Tools\ODBC Data Sources (32-bit).lnk' | 20160716061101.825936-420 | Public:Start Menu\Programs\Administrative Tools\ODBC Data Sources (32-bit).lnk | None | 
-| Logical program group item 'Public:Start Menu\Programs\Administrative Tools\ODBC Data Sources (64-bit).lnk' | Logical program group item 'Public:Start Menu\Programs\Administrative Tools\ODBC Data Sources (64-bit).lnk' | 20160716061243.877503-420 | Public:Start Menu\Programs\Administrative Tools\ODBC Data Sources (64-bit).lnk | None | 
-| Logical program group item 'Public:Start Menu\Programs\Administrative Tools\Security Configuration Management.lnk' | Logical program group item 'Public:Start Menu\Programs\Administrative Tools\Security Configuration Management.lnk' | 20160716061216.266480-420 | Public:Start Menu\Programs\Administrative Tools\Security Configuration Management.lnk | None | 
-| Logical program group item 'Public:Start Menu\Programs\Administrative Tools\Windows Firewall with Advanced Security.lnk' | Logical program group item 'Public:Start Menu\Programs\Administrative Tools\Windows Firewall with Advanced Security.lnk' | 20160716061005.242375-420 | Public:Start Menu\Programs\Administrative Tools\Windows Firewall with Advanced Security.lnk | None | 
-| Logical program group item 'Public:Start Menu\Programs\StartUp\desktop.ini' | Logical program group item 'Public:Start Menu\Programs\StartUp\desktop.ini' | 20160716061805.225414-420 | Public:Start Menu\Programs\StartUp\desktop.ini | None | 
-| Logical program group item 'Public:Start Menu\Programs\System Tools\desktop.ini' | Logical program group item 'Public:Start Menu\Programs\System Tools\desktop.ini' | 20160716061813.161954-420 | Public:Start Menu\Programs\System Tools\desktop.ini | None | 
-| Logical program group item 'Public:Start Menu\Programs\System Tools\Task Manager.lnk' | Logical program group item 'Public:Start Menu\Programs\System Tools\Task Manager.lnk' | 20160716061300.245438-420 | Public:Start Menu\Programs\System Tools\Task Manager.lnk | None | 
-| Logical program group item 'Public:Start Menu\Programs\VMware\VMware Tools\start VM Statistics Logging.lnk' | Logical program group item 'Public:Start Menu\Programs\VMware\VMware Tools\start VM Statistics Logging.lnk' | 20190922165619.352516-420 | Public:Start Menu\Programs\VMware\VMware Tools\start VM Statistics Logging.lnk | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\desktop.ini' | Logical program group item 'HTB\Administrator:Start Menu\desktop.ini' | 20190918100910.670989-420 | HTB\Administrator:Start Menu\desktop.ini | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\desktop.ini' | Logical program group item 'HTB\Administrator:Start Menu\Programs\desktop.ini' | 20190918100910.702241-420 | HTB\Administrator:Start Menu\Programs\desktop.ini | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\Accessories\desktop.ini' | Logical program group item 'HTB\Administrator:Start Menu\Programs\Accessories\desktop.ini' | 20190918100908.374093-420 | HTB\Administrator:Start Menu\Programs\Accessories\desktop.ini | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\Accessories\Notepad.lnk' | Logical program group item 'HTB\Administrator:Start Menu\Programs\Accessories\Notepad.lnk' | 20190918100908.374093-420 | HTB\Administrator:Start Menu\Programs\Accessories\Notepad.lnk | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\Administrative Tools\desktop.ini' | Logical program group item 'HTB\Administrator:Start Menu\Programs\Administrative Tools\desktop.ini' | 20190918100910.795976-420 | HTB\Administrator:Start Menu\Programs\Administrative Tools\desktop.ini | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\Startup\desktop.ini' | Logical program group item 'HTB\Administrator:Start Menu\Programs\Startup\desktop.ini' | 20190918100910.795976-420 | HTB\Administrator:Start Menu\Programs\Startup\desktop.ini | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\Command Prompt.lnk' | Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\Command Prompt.lnk' | 20190918100908.374093-420 | HTB\Administrator:Start Menu\Programs\System Tools\Command Prompt.lnk | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\computer.lnk' | Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\computer.lnk' | 20190918100908.374093-420 | HTB\Administrator:Start Menu\Programs\System Tools\computer.lnk | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\Control Panel.lnk' | Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\Control Panel.lnk' | 20190918100908.374093-420 | HTB\Administrator:Start Menu\Programs\System Tools\Control Panel.lnk | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\Default Apps.lnk' | Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\Default Apps.lnk' | 20190918100908.374093-420 | HTB\Administrator:Start Menu\Programs\System Tools\Default Apps.lnk | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\desktop.ini' | Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\desktop.ini' | 20190918100908.358468-420 | HTB\Administrator:Start Menu\Programs\System Tools\desktop.ini | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\Devices.lnk' | Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\Devices.lnk' | 20190918100908.374093-420 | HTB\Administrator:Start Menu\Programs\System Tools\Devices.lnk | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\File Explorer.lnk' | Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\File Explorer.lnk' | 20190918100908.374093-420 | HTB\Administrator:Start Menu\Programs\System Tools\File Explorer.lnk | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\Run.lnk' | Logical program group item 'HTB\Administrator:Start Menu\Programs\System Tools\Run.lnk' | 20190918100908.358468-420 | HTB\Administrator:Start Menu\Programs\System Tools\Run.lnk | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\Windows PowerShell\Windows PowerShell (x86).lnk' | Logical program group item 'HTB\Administrator:Start Menu\Programs\Windows PowerShell\Windows PowerShell (x86).lnk' | 20190918100908.358468-420 | HTB\Administrator:Start Menu\Programs\Windows PowerShell\Windows PowerShell (x86).lnk | None | 
-| Logical program group item 'HTB\Administrator:Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk' | Logical program group item 'HTB\Administrator:Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk' | 20190918100908.358468-420 | HTB\Administrator:Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk | None |
+| Logical program group item 'Default:Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk' | Logical program group item 'Default:Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk' | 20160716061805.256664-420 | Default:Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk | None |
 ```
 #### Win32_LogicalProgramGroupItemDataFile
 ```sh
-WQL> SELECT * FROM Win32_LogicalProgramGroupItemDataFile
+WQL> SELECT * FROM Win32_LogicalProgramGroupItemDataFile WHERE Antecedent = "Win32_LogicalProgramGroupItem.Name='Default:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk'"
 | Antecedent | Dependent | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\Accessories\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Accessories\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\Accessories\\Notepad.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Accessories\\Notepad.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\System Tools\\Command Prompt.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Command Prompt.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\System Tools\\computer.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\computer.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\System Tools\\Control Panel.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Control Panel.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\System Tools\\Default Apps.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Default Apps.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\System Tools\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\System Tools\\Devices.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Devices.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\System Tools\\File Explorer.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\File Explorer.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\System Tools\\Run.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Run.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell (x86).lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell (x86).lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\Administrative Tools\\Active Directory PowerShell Snap-In.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools\\Active Directory PowerShell Snap-In.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\Administrative Tools\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\Administrative Tools\\Group Policy Management.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools\\Group Policy Management.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\Administrative Tools\\iSCSI Initiator.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools\\iSCSI Initiator.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\Administrative Tools\\ODBC Data Sources (32-bit).lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools\\ODBC Data Sources (32-bit).lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\Administrative Tools\\ODBC Data Sources (64-bit).lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools\\ODBC Data Sources (64-bit).lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\Administrative Tools\\Security Configuration Management.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools\\Security Configuration Management.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\Administrative Tools\\Windows Firewall with Advanced Security.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools\\Windows Firewall with Advanced Security.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\StartUp\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\System Tools\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\System Tools\\Task Manager.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Task Manager.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Public:Start Menu\\Programs\\VMware\\VMware Tools\\start VM Statistics Logging.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\VMware\\VMware Tools\\start VM Statistics Logging.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\Accessories\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Accessories\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\Accessories\\Notepad.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Accessories\\Notepad.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\Administrative Tools\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\Startup\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\System Tools\\Command Prompt.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Command Prompt.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\System Tools\\computer.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\computer.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\System Tools\\Control Panel.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Control Panel.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\System Tools\\Default Apps.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Default Apps.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\System Tools\\desktop.ini" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\desktop.ini" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\System Tools\\Devices.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Devices.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\System Tools\\File Explorer.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\File Explorer.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\System Tools\\Run.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Run.lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell (x86).lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell (x86).lnk" | 
-| \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="HTB\\Administrator:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk" |
+| Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk" |
 ```
 #### Win32_ProgramGroupContents
 ```sh
