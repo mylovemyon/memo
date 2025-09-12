@@ -42,10 +42,13 @@ WQL> SELECT * FROM CIM_Action
 ```sh
 WQL> SELECT * FROM CIM_AllocatedResource
 | Antecedent | Dependent | 
-| \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="3758096384" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" | 
+| \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="3758096384" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" |
+~
 | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="1024" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" | 
-| \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4290772992" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" |
-
+~~~
+| \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967293 | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&A8" | 
+~~~
+| \\FOREST\root\cimv2:Win32_DMAChannel.DMAChannel=4 | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0200\\4&25EE97C0&0" | 
 ~~~
 ```
 ### CIM_ApplicationSystem
@@ -79,6 +82,7 @@ WQL> SELECT * FROM CIM_BasedOn
 | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #2" | \\FOREST\root\cimv2:Win32_LogicalDisk.DeviceID="C:" | 710934528 | 21473787903 |
 ```
 ### CIM_Battery
+rpc上では実行できない
 ### CIM_BinarySensor
 ### CIM_BIOSElement
 ```sh
@@ -127,7 +131,9 @@ WQL> SELECT * FROM CIM_Check
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | CheckID | Description | Caption | CheckMode | Level | Condition | Feature | 
 | BootCamp | None | 65535 | None | 65535 | BootCamp200{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | BootCamp | BootCamp | True | 200 | VM_TYPE<>"WS" | BootCamp | 
 | AppDefense | None | 65535 | None | 65535 | AppDefense0{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | AppDefense | AppDefense | True | 0 | (VM_TYPE="WS" OR MsiNTProductType=1) | AppDefense | 
-| Hgfs | None | 65535 | None | 65535 | Hgfs200{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | Hgfs | Hgfs | True | 200 | VM_TYPE="ESX" | Hgfs | 
+| Hgfs | None | 65535 | None | 65535 | Hgfs200{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | Hgfs | Hgfs | True | 200 | VM_TYPE="ESX" | Hgfs |
+
+~~~
 ```
 ### CIM_Chip
 ```sh
@@ -217,6 +223,7 @@ WQL> SELECT * FROM CIM_Container
 | \\FOREST\root\cimv2:Win32_PhysicalMemoryArray.Tag="Physical Memory Array 0" | \\FOREST\root\cimv2:Win32_PhysicalMemory.Tag="Physical Memory 0" | None |
 ```
 ### CIM_ControlledBy 
+rpc上では実行できない
 ### CIM_Controller
 ```sh
 WQL> SELECT * FROM CIM_Controller
@@ -252,6 +259,7 @@ WQL> SELECT * FROM CIM_CreateDirectoryAction
 ```
 ### CIM_CurrentSensor
 ### CIM_DataFile
+省略
 ```sh
 WQL> SELECT * FROM CIM_DataFile
 | Caption | Description | InstallDate | Name | Status | InUseCount | Archive | CSCreationClassName | CSName | Compressed | CreationClassName | CreationDate | Encrypted | FSCreationClassName | FSName | LastAccessed | LastModified | Readable | FileSize | Writeable | Hidden | System | FileType | EightDotThreeFileName | CompressionMethod | EncryptionMethod | Drive | Path | FileName | Extension | AccessMask | Version | Manufacturer | 
@@ -262,6 +270,7 @@ WQL> SELECT * FROM CIM_DataFile
 ~~~
 ```
 ### CIM_Dependency
+rpc上では実行できない
 ### CIM_DependencyContext
 ### CIM_DesktopMonitor
 ```sh
@@ -271,6 +280,7 @@ WQL> SELECT * FROM CIM_DesktopMonitor
 ```
 ### CIM_DeviceAccessedByFile
 ### CIM_DeviceConnection
+rpc上では実行できない
 ### CIM_DeviceErrorCounts
 ### CIM_DeviceFile
 ### CIM_DeviceSAPImplementation
@@ -302,12 +312,15 @@ WQL> SELECT * FROM CIM_DirectoryContainsFile WHERE GroupComponent = "Win32_Direc
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\pagefile.sys" |
 ```
 ### CIM_DirectorySpecification
+省略
 ```sh
 WQL> SELECT * FROM CIM_DirectorySpecification
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | CheckID | Description | Caption | CheckMode | DirectoryType | DirectoryPath | DefaultDir | Directory | 
 | C_x86_Runtime_Detection | 14.12.25810 | 2 | {E3819B64-3C56-3DD7-921D-00B011AD31DE} | 19 | TARGETDIR{E3819B64-3C56-3DD7-921D-00B011AD31DE}{7FED75A1-600C-394B-8376-712E2A8861F2} | SourceDir | SourceDir | True | 65535 | None | SourceDir | TARGETDIR | 
 | Servicing_Key_ProductFamily_x86 | 14.12.25810 | 2 | {C96DC6F1-894A-33E0-A8C1-3E9E7394FA28} | 19 | TARGETDIR{C96DC6F1-894A-33E0-A8C1-3E9E7394FA28}{7FED75A1-600C-394B-8376-712E2A8861F2} | SourceDir | SourceDir | True | 65535 | None | SourceDir | TARGETDIR | 
-| Servicing_Key_ProductEdition_x86 | 14.12.25810 | 2 | {1EA220DF-5B36-3289-B979-D06841E41888} | 19 | TARGETDIR{1EA220DF-5B36-3289-B979-D06841E41888}{7FED75A1-600C-394B-8376-712E2A8861F2} | SourceDir | SourceDir | True | 65535 | None | SourceDir | TARGETDIR | 
+| Servicing_Key_ProductEdition_x86 | 14.12.25810 | 2 | {1EA220DF-5B36-3289-B979-D06841E41888} | 19 | TARGETDIR{1EA220DF-5B36-3289-B979-D06841E41888}{7FED75A1-600C-394B-8376-712E2A8861F2} | SourceDir | SourceDir | True | 65535 | None | SourceDir | TARGETDIR |
+
+~~~
 ```
 ### CIM_DirectorySpecificationFile
 ### CIM_DiscreteSensor
@@ -341,7 +354,6 @@ WQL> SELECT * FROM CIM_DMA
 ```
 ### CIM_Docked
 ### CIM_ElementCapacity
-### CIM_ElementConfiguration
 ### CIM_ElementConfiguration
 ### CIM_ElementSetting 
 ```sh
