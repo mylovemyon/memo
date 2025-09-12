@@ -162,6 +162,207 @@ WQL> SELECT * FROM CIM_CollectionSetting
 | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\special\\host\\job" | 
 | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectSecLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\special\\host\\job" |
 ```
+### CIM_CompatibleProduct
+### CIM_Component
+```sh
+WQL> SELECT * FROM CIM_Component WHERE GroupComponent = "Win32_Directory.Name='C:\\'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\bootmgr" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\BOOTNXT" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\pagefile.sys" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="c:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\$RECYCLE.BIN" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Documents and Settings" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\PerfLogs" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Program Files" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Program Files (x86)" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\ProgramData" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Recovery" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\System Volume Information" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Windows" |
+```
+### CIM_ComputerSystem
+```sh
+WQL> SELECT * FROM CIM_ComputerSystem
+| Caption | Description | InstallDate | Name | Status | CreationClassName | NameFormat | PrimaryOwnerContact | PrimaryOwnerName | Roles | InitialLoadInfo | LastLoadInfo | PowerManagementSupported | PowerManagementCapabilities | PowerState | ResetCapability | AutomaticResetBootOption | AutomaticManagedPagefile | AutomaticResetCapability | BootROMSupported | BootupState | CurrentTimeZone | DNSHostName | Domain | InfraredSupported | Manufacturer | Model | NetworkServerModeEnabled | OEMLogoBitmap | SupportContactDescription | SystemStartupDelay | SystemStartupOptions | SystemStartupSetting | SystemType | UserName | DomainRole | WakeUpType | OEMStringArray | BootOptionOnLimit | BootOptionOnWatchDog | ResetCount | ResetLimit | PauseAfterReset | PowerOnPasswordStatus | KeyboardPasswordStatus | AdminPasswordStatus | FrontPanelResetStatus | ChassisBootupState | PowerSupplyState | ThermalState | DaylightInEffect | EnableDaylightSavingsTime | NumberOfProcessors | NumberOfLogicalProcessors | TotalPhysicalMemory | PartOfDomain | PCSystemType | PCSystemTypeEx | Workgroup | SystemSKUNumber | SystemFamily | ChassisSKUNumber | BootStatus | HypervisorPresent | 
+| FOREST | AT/AT COMPATIBLE | None | FOREST | OK | Win32_ComputerSystem | None | None | Windows User | 323 339 350 377 389 393  | None | None | True | None | 0 | 1 | True | True | True | True | Normal boot | -420 | FOREST | htb.local | False | VMware, Inc. | VMware7,1 | True | None | None | None | None | None | x64-based PC | None | 5 | 6 | [MS_VM_CERT/SHA1/27d66596a61c48dd3dc7216fd715126e33f59ae7] Welcome to the Virtual Machine  | 3 | 3 | -1 | -1 | 3932100000 | 0 | 3 | 1 | 3 | 3 | 3 | 3 | True | True | 1 | 2 | 2146447360 | True | 1 | 1 | None | None | None | None | 0 0 0 33 31 162 0 3 2 2  | True |
+```
+### CIM_ComputerSystemDMA
+### CIM_ComputerSystemIRQ
+### CIM_ComputerSystemMappedIO
+### CIM_ComputerSystemPackage
+### CIM_ComputerSystemResource
+```sh
+WQL> SELECT * FROM CIM_ComputerSystemResource
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DMAChannel.DMAChannel=4 |
+~~~
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967293 | 
+~~~
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="3758096384" |
+~~~
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="1024" |
+~~~
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="ComSpec",UserName="<SYSTEM>" | 
+~~~
+```
+### CIM_Configuration
+### CIM_ConnectedTo
+### CIM_ConnectorOnPackage
+### CIM_Container 
+```sh
+WQL> SELECT * FROM CIM_Container 
+| GroupComponent | PartComponent | LocationWithinContainer | 
+| \\FOREST\root\cimv2:Win32_PhysicalMemoryArray.Tag="Physical Memory Array 0" | \\FOREST\root\cimv2:Win32_PhysicalMemory.Tag="Physical Memory 0" | None |
+```
+### CIM_ControlledBy 
+### CIM_Controller
+```sh
+WQL> SELECT * FROM CIM_Controller
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | MaxNumberControlled | ProtocolSupported | TimeOfLastReset | Manufacturer | 
+| ATA Channel 0 | IDE Channel | None | ATA Channel 0 | OK | 65535 | Win32_IDEController | 0 | False | PCIIDE\IDECHANNEL\4&39EC5D8A&0&0 | None | PCIIDE\IDECHANNEL\4&39EC5D8A&0&0 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 37 | None | (Standard IDE ATA/ATAPI controllers) | 
+| ATA Channel 1 | IDE Channel | None | ATA Channel 1 | OK | 65535 | Win32_IDEController | 0 | False | PCIIDE\IDECHANNEL\4&39EC5D8A&0&1 | None | PCIIDE\IDECHANNEL\4&39EC5D8A&0&1 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 37 | None | (Standard IDE ATA/ATAPI controllers) | 
+| Standard SATA AHCI Controller | Standard SATA AHCI Controller | None | Standard SATA AHCI Controller | OK | 65535 | Win32_IDEController | 0 | False | PCI\VEN_15AD&DEV_07E0&SUBSYS_07E015AD&REV_00\4&B70F118&0&0888 | None | PCI\VEN_15AD&DEV_07E0&SUBSYS_07E015AD&REV_00\4&B70F118&0&0888 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 37 | None | Standard SATA AHCI Controller | 
+| Intel(R) 82371AB/EB PCI Bus Master IDE Controller | Intel(R) 82371AB/EB PCI Bus Master IDE Controller | None | Intel(R) 82371AB/EB PCI Bus Master IDE Controller | OK | 65535 | Win32_IDEController | 0 | False | PCI\VEN_8086&DEV_7111&SUBSYS_197615AD&REV_01\3&18D45AA6&0&39 | None | PCI\VEN_8086&DEV_7111&SUBSYS_197615AD&REV_01\3&18D45AA6&0&39 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 37 | None | Intel | 
+| Microsoft Storage Spaces Controller | Microsoft Storage Spaces Controller | None | Microsoft Storage Spaces Controller | OK | 3 | Win32_SCSIController | 0 | False | ROOT\SPACEPORT\0000 | None | ROOT\SPACEPORT\0000 | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | None | 2 | None | None | None | 18446744073709551615 | 65535 | None | spaceport | None | None | Microsoft | 
+| LSI Adapter, SAS 3000 series, 8-port with 1068 | LSI Adapter, SAS 3000 series, 8-port with 1068 | None | LSI Adapter, SAS 3000 series, 8-port with 1068 | OK | 3 | Win32_SCSIController | 0 | False | PCI\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\4&2732702B&0&00A8 | None | PCI\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\4&2732702B&0&00A8 | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | None | 2 | None | None | None | 18446744073709551615 | 65535 | None | LSI_SAS | None | None | LSI | 
+| VMware SVGA 3D | VMware SVGA 3D | None | VMware SVGA 3D | OK | 3 | Win32_VideoController | 0 | False | VideoController1 | None | PCI\VEN_15AD&DEV_0405&SUBSYS_040515AD&REV_00\3&18D45AA6&0&78 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 65535 | None | VMware Virtual SVGA 3D Graphics Adapter | 2 | None | None | None | None | 32 | 1440 | 621 | 64 | 64 | 1 | 4 | 4294967296 | 0 | 0 | 5 | 65535 | 65535 | VMware, Inc. | n/a | 0 | False | 0 | oem6.inf | VM3D_AMD64 | vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum_loader,vm3dum_loader,vm3dum_loader | 20180726000000.000000-000 | 8.16.1.1 | None | None | None | None | None | None | None | 1440 x 621 x 4294967296 colors | 
+```
+### CIM_CoolingDevice
+### CIM_CopyFileAction
+```sh
+WQL> SELECT * FROM CIM_CopyFileAction
+| Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | Source | Destination | DeleteAfterCopy | FileKey | 
+| None | None | 65535 | None | 65535 | vmGuestLib.dll_32.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | vmGuestLib.dll_32.869A7E00_8665_0000_83A8_EF0F76CF0001 | vmGuestLib.dll_32.869A7E00_8665_0000_83A8_EF0F76CF0001 | vmGuestLib.dll_32.869A7E00_8665_0000_83A8_EF0F76CF0001 | None | True | vmGuestLib.dll_32.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
+| None | None | 65535 | None | 65535 | vmGuestLibJava.dll_32.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | vmGuestLibJava.dll_32.869A7E00_8665_0000_83A8_EF0F76CF0001 | vmGuestLibJava.dll_32.869A7E00_8665_0000_83A8_EF0F76CF0001 | vmGuestLibJava.dll_32.869A7E00_8665_0000_83A8_EF0F76CF0001 | None | True | vmGuestLibJava.dll_32.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
+| None | None | 65535 | None | 65535 | vmGuestLib.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | vmGuestLib.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | vmGuestLib.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | vmGuestLib.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | None | True | vmGuestLib.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
+| None | None | 65535 | None | 65535 | vmGuestLibJava.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | vmGuestLibJava.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | vmGuestLibJava.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | vmGuestLibJava.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | None | True | vmGuestLibJava.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 |
+```
+### CIM_CreateDirectoryAction
+```sh
+WQL> SELECT * FROM CIM_CreateDirectoryAction
+| Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | DirectoryName | 
+| None | None | 65535 | None | 65535 | INSTALLDIR{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | INSTALLDIR | INSTALLDIR | INSTALLDIR | 
+| None | None | 65535 | None | 65535 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
+| None | None | 65535 | None | 65535 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
+| None | None | 65535 | None | 65535 | GUESTPROXYDATA.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | GUESTPROXYDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
+| None | None | 65535 | None | 65535 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
+| None | None | 65535 | None | 65535 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001 |
+```
+### CIM_CurrentSensor
+### CIM_DataFile
+```sh
+WQL> SELECT * FROM CIM_DataFile
+| Caption | Description | InstallDate | Name | Status | InUseCount | Archive | CSCreationClassName | CSName | Compressed | CreationClassName | CreationDate | Encrypted | FSCreationClassName | FSName | LastAccessed | LastModified | Readable | FileSize | Writeable | Hidden | System | FileType | EightDotThreeFileName | CompressionMethod | EncryptionMethod | Drive | Path | FileName | Extension | AccessMask | Version | Manufacturer | 
+| c:\$recycle.bin\s-1-5-21-3072663084-364016917-1341370565-500\desktop.ini | c:\$recycle.bin\s-1-5-21-3072663084-364016917-1341370565-500\desktop.ini | 20210830134828.482989-420 | c:\$recycle.bin\s-1-5-21-3072663084-364016917-1341370565-500\desktop.ini | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | False | CIM_LogicalFile | 20210830134828.482989-420 | False | Win32_FileSystem | NTFS | 20210830134828.482989-420 | 20210830134828.482989-420 | True | 129 | True | True | True | Configuration Settings | c:\$recycle.bin\s-1-5-21-3072663084-364016917-1341370565-500\desktop.ini | None | None | c: | \$recycle.bin\s-1-5-21-3072663084-364016917-1341370565-500\ | desktop | ini | 18809343 | None | None | 
+| c:\bootmgr | c:\bootmgr | 20160716063920.048752-420 | c:\bootmgr | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | False | CIM_LogicalFile | 20160716063920.048752-420 | False | Win32_FileSystem | NTFS | 20161120184715.012078-480 | 20161120175907.466506-480 | True | 389408 | False | True | True | File | c:\bootmgr | None | None | c: | \ | bootmgr |  | 0 | None | None | 
+| c:\bootnxt | c:\bootnxt | 20160716063920.111252-420 | c:\bootnxt | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | False | CIM_LogicalFile | 20160716063920.111252-420 | False | Win32_FileSystem | NTFS | 20161120184715.246456-480 | 20160716061017.401390-420 | True | 1 | True | True | True | File | c:\bootnxt | None | None | c: | \ | bootnxt |  | 18809343 | None | None |
+
+~~~
+```
+### CIM_Dependency
+### CIM_DependencyContext
+### CIM_DesktopMonitor
+```sh
+WQL> SELECT * FROM CIM_DesktopMonitor
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | DisplayType | Bandwidth | ScreenHeight | ScreenWidth | MonitorManufacturer | MonitorType | PixelsPerXLogicalInch | PixelsPerYLogicalInch | 
+| Generic Non-PnP Monitor | Generic Non-PnP Monitor | None | Generic Non-PnP Monitor | OK | 8 | Win32_DesktopMonitor | 0 | False | DesktopMonitor1 | None | DISPLAY\DEFAULT_MONITOR\4&31BE19FA&0&UID0 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | None | None | None | (Standard monitor types) | Generic Non-PnP Monitor | 96 | 96 |
+```
+### CIM_DeviceAccessedByFile
+### CIM_DeviceConnection
+### CIM_DeviceErrorCounts
+### CIM_DeviceFile
+### CIM_DeviceSAPImplementation
+### CIM_DeviceServiceImplementation
+### CIM_DeviceSoftware
+### CIM_Directory
+```sh
+WQL> SELECT * FROM CIM_Directory WHERE Caption = "C:\\"
+| Caption | Description | InstallDate | Name | Status | InUseCount | Archive | CSCreationClassName | CSName | Compressed | CreationClassName | CreationDate | Encrypted | FSCreationClassName | FSName | LastAccessed | LastModified | Readable | FileSize | Writeable | Hidden | System | FileType | EightDotThreeFileName | CompressionMethod | EncryptionMethod | Drive | Path | FileName | Extension | AccessMask | 
+| C:\ | C:\ | None | c:\ | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | True | CIM_LogicalFile | None | True | Win32_FileSystem | NTFS | None | None | True | 18446744073709551615 | True | True | True | Local Disk |  | None | None | c: |  |  |  | 18809343 |
+```
+### CIM_DirectoryAction
+```sh
+WQL> SELECT * FROM CIM_DirectoryAction
+| Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | DirectoryName | 
+| None | None | 65535 | None | 65535 | INSTALLDIR{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | INSTALLDIR | INSTALLDIR | INSTALLDIR | 
+| None | None | 65535 | None | 65535 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
+| None | None | 65535 | None | 65535 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
+| None | None | 65535 | None | 65535 | GUESTPROXYDATA.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | GUESTPROXYDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
+| None | None | 65535 | None | 65535 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
+| None | None | 65535 | None | 65535 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001 |
+```
+### CIM_DirectoryContainsFile
+```sh
+WQL> SELECT * FROM CIM_DirectoryContainsFile WHERE GroupComponent = "Win32_Directory.Name='C:\\'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\bootmgr" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\BOOTNXT" | 
+| \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\pagefile.sys" |
+```
+### CIM_DirectorySpecification
+```sh
+WQL> SELECT * FROM CIM_DirectorySpecification
+| Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | CheckID | Description | Caption | CheckMode | DirectoryType | DirectoryPath | DefaultDir | Directory | 
+| C_x86_Runtime_Detection | 14.12.25810 | 2 | {E3819B64-3C56-3DD7-921D-00B011AD31DE} | 19 | TARGETDIR{E3819B64-3C56-3DD7-921D-00B011AD31DE}{7FED75A1-600C-394B-8376-712E2A8861F2} | SourceDir | SourceDir | True | 65535 | None | SourceDir | TARGETDIR | 
+| Servicing_Key_ProductFamily_x86 | 14.12.25810 | 2 | {C96DC6F1-894A-33E0-A8C1-3E9E7394FA28} | 19 | TARGETDIR{C96DC6F1-894A-33E0-A8C1-3E9E7394FA28}{7FED75A1-600C-394B-8376-712E2A8861F2} | SourceDir | SourceDir | True | 65535 | None | SourceDir | TARGETDIR | 
+| Servicing_Key_ProductEdition_x86 | 14.12.25810 | 2 | {1EA220DF-5B36-3289-B979-D06841E41888} | 19 | TARGETDIR{1EA220DF-5B36-3289-B979-D06841E41888}{7FED75A1-600C-394B-8376-712E2A8861F2} | SourceDir | SourceDir | True | 65535 | None | SourceDir | TARGETDIR | 
+```
+### CIM_DirectorySpecificationFile
+### CIM_DiscreteSensor
+### CIM_DiskDrive 
+```sh
+WQL> SELECT * FROM CIM_DiskDrive 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Capabilities | CapabilityDescriptions | CompressionMethod | ErrorMethodology | MaxMediaSize | DefaultBlockSize | MaxBlockSize | MinBlockSize | NumberOfMediaSupported | NeedsCleaning | BytesPerSector | InterfaceType | Partitions | SectorsPerTrack | TotalCylinders | TotalHeads | TotalSectors | TotalTracks | TracksPerCylinder | Index | Manufacturer | MediaLoaded | MediaType | Model | SCSIBus | SCSILogicalUnit | SCSIPort | SCSITargetId | Size | Signature | SerialNumber | FirmwareRevision | 
+| VMware Virtual disk SCSI Disk Device | Disk drive | None | \\.\PHYSICALDRIVE0 | OK | 65535 | Win32_DiskDrive | 0 | False | \\.\PHYSICALDRIVE0 | None | SCSI\DISK&VEN_VMWARE&PROD_VIRTUAL_DISK\5&1982005&0&000100 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 3 4  | 396 411  | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | None | True | 512 | SCSI | 3 | 63 | 2610 | 255 | 41929650 | 665550 | 255 | 0 | (Standard disk drives) | True | Fixed hard disk media | VMware Virtual disk SCSI Disk Device | 0 | 0 | 0 | 1 | 21467980800 | None | 6000c29c9f4f2e0c794e36b137fda25f | 2.0  |
+```
+### CIM_DisketteDrive 
+### CIM_DiskPartition
+```sh
+WQL> SELECT * FROM CIM_DiskPartition
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | Bootable | PrimaryPartition | BootPartition | DiskIndex | HiddenSectors | Index | RewritePartition | Size | StartingOffset | Type | 
+| Disk #0, Partition #0 | GPT: Unknown | None | Disk #0, Partition #0 | None | 65535 | Win32_DiskPartition | None | True | Disk #0, Partition #0 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 512 | None | 921600 | None | False | False | False | 0 | None | 0 | None | 471859200 | 135266304 | GPT: Unknown | 
+| Disk #0, Partition #1 | GPT: System | None | Disk #0, Partition #1 | None | 65535 | Win32_DiskPartition | None | True | Disk #0, Partition #1 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 512 | None | 202752 | None | True | True | True | 0 | None | 1 | None | 103809024 | 607125504 | GPT: System | 
+| Disk #0, Partition #2 | GPT: Basic Data | None | Disk #0, Partition #2 | None | 65535 | Win32_DiskPartition | None | True | Disk #0, Partition #2 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 512 | None | 40552448 | None | False | True | False | 0 | None | 2 | None | 20762853376 | 710934528 | GPT: Basic Data | 
+```
+### CIM_DiskSpaceCheck
+### CIM_Display 
+```sh
+WQL> SELECT * FROM CIM_Display 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | DisplayType | Bandwidth | ScreenHeight | ScreenWidth | MonitorManufacturer | MonitorType | PixelsPerXLogicalInch | PixelsPerYLogicalInch | 
+| Generic Non-PnP Monitor | Generic Non-PnP Monitor | None | Generic Non-PnP Monitor | OK | 8 | Win32_DesktopMonitor | 0 | False | DesktopMonitor1 | None | DISPLAY\DEFAULT_MONITOR\4&31BE19FA&0&UID0 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | None | None | None | (Standard monitor types) | Generic Non-PnP Monitor | 96 | 96 |
+```
+### CIM_DMA
+```sh
+WQL> SELECT * FROM CIM_DMA
+| Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | DMAChannel | Availability | BurstMode | TransferWidths | AddressSize | MaxTransferSize | ByteMode | WordMode | ChannelTiming | TypeCTiming | Port | 
+| Channel 4 | Channel 4 | None | Channel 4 | OK | Win32_ComputerSystem | FOREST | Win32_DMAChannel | 4 | 4 | True | 0  | 0 | 0 | 2 | 2 | 2 | 2 | None |
+```
+### CIM_Docked
+### CIM_ElementCapacity
+### CIM_ElementConfiguration
+### CIM_ElementConfiguration
+### CIM_ElementSetting 
+```sh
+WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_DCOMApplication.AppID='{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}'"
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_DCOMApplicationSetting.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | 
+
+WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_Directory.Name='C:\\'"
+| Element | Setting | 
+| Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="C:\\" |
+
+WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_UserAccount.Domain='htb',Name='administrator'"
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\Administrator" |
+
+WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_Volume.DeviceID='\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\'"
+| Element | Setting | 
+| Win32_Volume.DeviceID="\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\" | Win32_QuotaSetting.VolumePath="C:\\" | 
+```
+
+
 
 
 
