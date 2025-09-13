@@ -673,7 +673,120 @@ WQL> SELECT * FROM CIM_PhysicalMedia
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Capacity | MediaType | MediaDescription | WriteProtectOn | CleanerMedia | 
 | None | None | None | None | None | None | None | None | None | 6000c29c9f4f2e0c794e36b137fda25f | \\.\PHYSICALDRIVE0 | None | None | None | True | True | True | True | 18446744073709551615 | 65535 | None | True | True |
 ```
+### CIM_PhysicalMemory
+```sh
+WQL> SELECT * FROM CIM_PhysicalMemory 
+| Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | FormFactor | MemoryType | TotalWidth | DataWidth | Speed | Capacity | BankLabel | PositionInRow | InterleavePosition | DeviceLocator | TypeDetail | InterleaveDataDepth | Attributes | ConfiguredClockSpeed | MinVoltage | MaxVoltage | ConfiguredVoltage | SMBIOSMemoryType | 
+| Physical Memory | Physical Memory | None | Physical Memory | None | Win32_PhysicalMemory | VMware Virtual RAM | None | None | 00000001 | Physical Memory 0 | None | VMW-2048MB | None | True | True | True | True | 8 | 2 | 64 | 64 | None | 2147483648 | RAM slot #0 | None | None | RAM slot #0 | 128 | None | 0 | 4800 | None | None | None | 3 | 
+```
+### CIM_PhysicalPackage
+```sh
+WQL> SELECT * FROM CIM_PhysicalPackage 
+| Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | Location | Use | MemoryErrorCorrection | MaxCapacity | MaxCapacityEx | MemoryDevices | 
+| Physical Memory Array | Physical Memory Array | None | Physical Memory Array | None | Win32_PhysicalMemoryArray | None | None | None | None | Physical Memory Array 0 | None | None | None | True | True | True | True | None | None | None | None | 3 | 3 | 3 | 2097152 | 2097152 | 64 | 
+| Base Board | Base Board | None | Base Board | OK | Win32_BaseBoard | Intel Corporation | None | None | None | Base Board | None | None | None | True | False | False | False | None | None | None | None | False | None | False | True | None | 440BX Desktop Reference Platform | None | 
+| System Enclosure | System Enclosure | None | System Enclosure | None | Win32_SystemEnclosure | No Enclosure | None | None | None | System Enclosure 0 | N/A | None | None | True | True | True | True | None | None | None | None | None | None | None | False | True | True | 65535 | None | 65535 | None | 65535 | 1  | None | No Asset Tag | 3 | 
+```
+### CIM_PointingDevice
+```sh
+WQL> SELECT * FROM CIM_PointingDevice 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Handedness | NumberOfButtons | PointingType | Resolution | HardwareType | InfFileName | InfSection | SampleRate | Synch | DoubleSpeedThreshold | QuadSpeedThreshold | DeviceInterface | Manufacturer | 
+| VMware Pointing Device | VMware Pointing Device | None | VMware Pointing Device | OK | 65535 | Win32_PointingDevice | 0 | False | ACPI\VMW0003\4&25EE97C0&0 | None | ACPI\VMW0003\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | 0 | 2 | None | VMware Pointing Device | oem5.inf | VMMouse | None | None | None | None | 1 | VMware, Inc. |
+```
+### CIM_POTSModem 
+### CIM_PowerSupply 
+### CIM_Printer 
+rpc上では実行できない
+### CIM_Process
+省略
+```sh
+WQL> SELECT * FROM CIM_Process 
+| Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | CreationDate | Handle | KernelModeTime | OSCreationClassName | OSName | Priority | ExecutionState | TerminationDate | UserModeTime | WorkingSetSize | ExecutablePath | MaximumWorkingSetSize | MinimumWorkingSetSize | PageFaults | PageFileUsage | PeakPageFileUsage | PeakWorkingSetSize | ProcessId | QuotaNonPagedPoolUsage | QuotaPagedPoolUsage | QuotaPeakNonPagedPoolUsage | QuotaPeakPagedPoolUsage | WindowsVersion | ThreadCount | HandleCount | ParentProcessId | SessionId | PrivatePageCount | PeakVirtualSize | VirtualSize | ReadOperationCount | WriteOperationCount | OtherOperationCount | ReadTransferCount | WriteTransferCount | OtherTransferCount | CommandLine | 
+| System Idle Process | System Idle Process | None | System Idle Process | None | Win32_ComputerSystem | FOREST | Win32_Process | 20250912213032.548051-420 | 0 | 653756093750 | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | 0 | 65535 | None | 0 | 4096 | None | None | None | 2 | 0 | 0 | 4 | 0 | 0 | 0 | 0 | 0 | 10.0.14393 | 2 | 0 | 0 | 0 | 0 | 65536 | 65536 | 0 | 0 | 0 | 0 | 0 | 0 | None | 
+| System | System | None | System | None | Win32_ComputerSystem | FOREST | Win32_Process | 20250912213032.548051-420 | 4 | 827031250 | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | 8 | 65535 | None | 0 | 139264 | None | None | None | 2679 | 128 | 136 | 5364 | 4 | 0 | 0 | 0 | 0 | 10.0.14393 | 94 | 711 | 0 | 0 | 131072 | 8912896 | 3567616 | 128 | 3955 | 153373 | 62475944 | 165896649 | 4945122 | None | 
+| smss.exe | smss.exe | None | smss.exe | None | Win32_ComputerSystem | FOREST | Win32_Process | 20250912213032.559973-420 | 268 | 781250 | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | 11 | 65535 | None | 0 | 1204224 | None | None | None | 772 | 368 | 432 | 1208 | 268 | 3 | 13 | 7 | 55 | 10.0.14393 | 2 | 51 | 4 | 0 | 376832 | 2199051902976 | 2199029862400 | 9 | 2 | 416 | 37425 | 33 | 9474 | None | 
 
+~~~
+```
+### CIM_ProcessExecutable
+省略
+```sh
+WQL> SELECT * FROM CIM_ProcessExecutable
+| Antecedent | Dependent | GlobalProcessCount | ProcessCount | ModuleInstance | BaseAddress | 
+| \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Windows\\system32\\winlogon.exe" | \\FOREST\root\cimv2:Win32_Process.Handle="508" | None | 0 | 3139371008 | 140697678053376 | 
+| \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Windows\\SYSTEM32\\ntdll.dll" | \\FOREST\root\cimv2:Win32_Process.Handle="508" | None | 0 | 2998665216 | 140736192053248 | 
+| \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Windows\\System32\\KERNEL32.DLL" | \\FOREST\root\cimv2:Win32_Process.Handle="508" | None | 0 | 2968649728 | 140736162037760 |
+
+~~~
+```
+### CIM_Processor
+```sh
+WQL> SELECT * FROM CIM_Processor 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | AddressWidth | CurrentClockSpeed | DataWidth | Family | OtherFamilyDescription | LoadPercentage | MaxClockSpeed | Role | UpgradeMethod | Stepping | UniqueId | Version | Manufacturer | L2CacheSize | L2CacheSpeed | L3CacheSize | L3CacheSpeed | Architecture | Level | Revision | CpuStatus | CurrentVoltage | ExtClock | ProcessorId | ProcessorType | NumberOfLogicalProcessors | NumberOfCores | SocketDesignation | VoltageCaps | VMMonitorModeExtensions | SecondLevelAddressTranslationExtensions | VirtualizationFirmwareEnabled | SerialNumber | AssetTag | PartNumber | NumberOfEnabledCore | ThreadCount | Characteristics | 
+| AMD64 Family 25 Model 1 Stepping 1 | AMD64 Family 25 Model 1 Stepping 1 | None | AMD EPYC 7513 32-Core Processor                 | OK | 3 | Win32_Processor | None | True | CPU0 | None | None | False | 3 | Win32_ComputerSystem | FOREST | None | None | True | 64 | 2595 | 64 | 2 | None | 1 | 2595 | CPU | 4 | 1 | None | Model 1, Stepping 1 | AuthenticAMD | 512 | None | 32768 | 0 | 9 | 25 | 257 | 1 | 33 | None | 178BFBFF00A00F11 | 3 | 2 | 2 | CPU 0 | 2 | False | False | True |  |  |  | 2 | 0 | 44 |
+```
+### CIM_ProcessThread 
+### CIM_Product
+```sh
+WQL> SELECT * FROM CIM_Product
+| Caption | Description | IdentifyingNumber | Name | SKUNumber | Vendor | Version | UUID | 
+| Computer System Product | Computer System Product | VMware-42 14 7c de 47 e4 1c c2-bf 11 9a 8d c3 92 54 71 | VMware7,1 | None | VMware, Inc. | None | DE7C1442-E447-C21C-BF11-9A8DC3925471 | 
+| Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810 | Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810 | {7FED75A1-600C-394B-8376-712E2A8861F2} | Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810 | None | Microsoft Corporation | 14.12.25810 | 5 | C:\Windows\Installer\393dd6.msi | 20190922 | None | 1033 | None | None | 1 | None | None | None | C:\ProgramData\Package Cache\{7FED75A1-600C-394B-8376-712E2A8861F2}v14.12.25810\packages\vcRuntimeAdditional_x86\ | http://go.microsoft.com/fwlink/?LinkId=133405 | None | None | None | {93D97CAA-B398-4F6A-8898-9AAA305C718C} | C:\Windows\Installer\393dd6.msi | vc_runtimeAdditional_x86.msi | 2 | 
+| VMware Tools | VMware Tools | {748D3A12-9B82-4B08-A0FF-CFDE83612E87} | VMware Tools | None | VMware, Inc. | 10.3.2.9925305 | 5 | C:\Windows\Installer\393de1.msi | 20190922 | None | 1033 | None | C:\Program Files\VMware\VMware Tools\ | 1 | None | None | None | C:\Program Files\Common Files\VMware\InstallerCache\ | None | None | None | None | {F8A2F64E-4E92-4740-A305-687ECF5B7653} | C:\Windows\Installer\393de1.msi | {748D3A12-9B82-4B08-A0FF-CFDE83612E87}.msi | 2 | 
+| Microsoft Visual C++ 2017 x64 Additional Runtime - 14.12.25810 | Microsoft Visual C++ 2017 x64 Additional Runtime - 14.12.25810 | {2CD849A7-86A1-34A6-B8F9-D72F5B21A9AE} | Microsoft Visual C++ 2017 x64 Additional Runtime - 14.12.25810 | None | Microsoft Corporation | 14.12.25810 | 5 | C:\Windows\Installer\393dde.msi | 20190922 | None | 1033 | None | None | 1 | None | None | None | C:\ProgramData\Package Cache\{2CD849A7-86A1-34A6-B8F9-D72F5B21A9AE}v14.12.25810\packages\vcRuntimeAdditional_amd64\ | http://go.microsoft.com/fwlink/?LinkId=133405 | None | None | None | {6D0A1ACD-F1C9-464F-8C70-F10295482CBE} | C:\Windows\Installer\393dde.msi | vc_runtimeAdditional_x64.msi | 2 | 
+| Microsoft Visual C++ 2017 x86 Minimum Runtime - 14.12.25810 | Microsoft Visual C++ 2017 x86 Minimum Runtime - 14.12.25810 | {828952EB-5572-3666-8CA9-000B6CE79350} | Microsoft Visual C++ 2017 x86 Minimum Runtime - 14.12.25810 | None | Microsoft Corporation | 14.12.25810 | 5 | C:\Windows\Installer\393dd2.msi | 20190922 | None | 1033 | None | None | 1 | None | None | None | C:\ProgramData\Package Cache\{828952EB-5572-3666-8CA9-000B6CE79350}v14.12.25810\packages\vcRuntimeMinimum_x86\ | http://go.microsoft.com/fwlink/?LinkId=133405 | None | None | None | {F194F15D-77FE-4813-9B85-C2FA80E6E984} | C:\Windows\Installer\393dd2.msi | vc_runtimeMinimum_x86.msi | 2 | 
+| Microsoft Visual C++ 2017 x64 Minimum Runtime - 14.12.25810 | Microsoft Visual C++ 2017 x64 Minimum Runtime - 14.12.25810 | {C99E2ADC-0347-336E-A603-F1992B09D582} | Microsoft Visual C++ 2017 x64 Minimum Runtime - 14.12.25810 | None | Microsoft Corporation | 14.12.25810 | 5 | C:\Windows\Installer\393dda.msi | 20190922 | None | 1033 | None | None | 1 | None | None | None | C:\ProgramData\Package Cache\{C99E2ADC-0347-336E-A603-F1992B09D582}v14.12.25810\packages\vcRuntimeMinimum_amd64\ | http://go.microsoft.com/fwlink/?LinkId=133405 | None | None | None | {1C423F21-E891-44F3-8FE9-E37D44470EF1} | C:\Windows\Installer\393dda.msi | vc_runtimeMinimum_x64.msi | 2 |
+```
+### CIM_ProductFRU 
+### CIM_ProductParentChild
+### CIM_ProductPhysicalElements
+### CIM_ProductProductDependency
+### CIM_ProductSoftwareFeatures
+省略
+```sh
+WQL> SELECT * FROM CIM_ProductSoftwareFeatures
+| Product | Component | 
+| Win32_Product.IdentifyingNumber="{7FED75A1-600C-394B-8376-712E2A8861F2}",Name="Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810",Version="14.12.25810" | Win32_SoftwareFeature.IdentifyingNumber="{7FED75A1-600C-394B-8376-712E2A8861F2}",Name="VC_Runtime_Additional",ProductName="Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810",Version="14.12.25810" | 
+| Win32_Product.IdentifyingNumber="{7FED75A1-600C-394B-8376-712E2A8861F2}",Name="Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810",Version="14.12.25810" | Win32_SoftwareFeature.IdentifyingNumber="{7FED75A1-600C-394B-8376-712E2A8861F2}",Name="Provider",ProductName="Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810",Version="14.12.25810" | 
+| Win32_Product.IdentifyingNumber="{7FED75A1-600C-394B-8376-712E2A8861F2}",Name="Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810",Version="14.12.25810" | Win32_SoftwareFeature.IdentifyingNumber="{7FED75A1-600C-394B-8376-712E2A8861F2}",Name="Servicing_Key",ProductName="Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810",Version="14.12.25810" |
+
+~~~
+```
+### CIM_ProductSupport 
+### CIM_ProtectedSpaceExtent 
+### CIM_PSExtentBasedOnPExtent 
+### CIM_Rack 
+### CIM_Realizes
+```sh
+WQL> SELECT * FROM CIM_Realizes 
+| Antecedent | Dependent | 
+| \\FOREST\root\cimv2:Win32_PhysicalMemoryArray.Tag="Physical Memory Array 0" | \\FOREST\root\cimv2:Win32_MemoryArray.DeviceID="Memory Array 0" | 
+| \\FOREST\root\cimv2:Win32_PhysicalMemoryArray.Tag="Physical Memory Array 0" | \\FOREST\root\cimv2:Win32_MemoryArray.DeviceID="Memory Array 1" | 
+| \\FOREST\root\cimv2:Win32_PhysicalMemory.Tag="Physical Memory 0" | \\FOREST\root\cimv2:Win32_MemoryDevice.DeviceID="Memory Device 0" | 
+| \\FOREST\root\cimv2:Win32_PhysicalMemory.Tag="Physical Memory 0" | \\FOREST\root\cimv2:Win32_MemoryDevice.DeviceID="Memory Device 1" | 
+| \\FOREST\root\cimv2:Win32_PhysicalMedia.Tag="\\\\.\\PHYSICALDRIVE0" | \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" |
+```
+### CIM_RealizesAggregatePExtent 
+### CIM_RealizesDiskPartition 
+### CIM_RealizesPExtent 
+### CIM_RebootAction 
+### CIM_RedundancyComponent 
+### CIM_RedundancyGroup
+### CIM_Refrigeration 
+### CIM_RelatedStatistics 
+### CIM_RemoteFileSystem 
+### CIM_RemoveDirectoryAction 
+### CIM_RemoveFileAction 
+省略
+```sh
+WQL> SELECT * FROM CIM_RemoveFileAction 
+| Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | File | FileName | DirProperty | FileKey | InstallMode | 
+| Driver_Audio.D549868E_41DC_43CB_8703_8CBB2211BAF6 | None | 65535 | None | 65535 | Driver_Audio.D549868E_41DC_43CB_8703_8CBB2211BAF6{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | Driver_Audio.D549868E_41DC_43CB_8703_8CBB2211BAF6 | Driver_Audio.D549868E_41DC_43CB_8703_8CBB2211BAF6 | None | *.* | DRIVER_AUDIO.D549868E_41DC_43CB_8703_8CBB2211BAF6 | Driver_Audio.D549868E_41DC_43CB_8703_8CBB2211BAF6 | 3 | 
+| Driver_Audio_Vista.D549868E_41DC_43CB_8703_8CBB2211BAF6 | None | 65535 | None | 65535 | Driver_Audio_Vista.D549868E_41DC_43CB_8703_8CBB2211BAF6{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | Driver_Audio_Vista.D549868E_41DC_43CB_8703_8CBB2211BAF6 | Driver_Audio_Vista.D549868E_41DC_43CB_8703_8CBB2211BAF6 | None | *.* | DRIVER_AUDIO_COMPONENT_DIR.D549868E_41DC_43CB_8703_8CBB2211BAF6 | Driver_Audio_Vista.D549868E_41DC_43CB_8703_8CBB2211BAF6 | 3 | 
+| Remove_vmacthlp.log.9BE26984_A19E_412C_B1FB_B6BA1C8D2BE2 | None | 65535 | None | 65535 | Remove_vmacthlp.log.9BE26984_A19E_412C_B1FB_B6BA1C8D2BE2{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | Remove_vmacthlp.log.9BE26984_A19E_412C_B1FB_B6BA1C8D2BE2 | Remove_vmacthlp.log.9BE26984_A19E_412C_B1FB_B6BA1C8D2BE2 | None | vmacthlp.log | INSTALLDIR.9BE26984_A19E_412C_B1FB_B6BA1C8D2BE2 | Remove_vmacthlp.log.9BE26984_A19E_412C_B1FB_B6BA1C8D2BE2 | 2 | 
+
+~~~
+```
 
 
 
