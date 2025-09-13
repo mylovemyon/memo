@@ -886,7 +886,29 @@ WQL> SELECT * FROM CIM_StatisticalInformation
 
 ~~~
 ```
+- CIM_Statistics
+- CIM_StorageDefect
+- CIM_StorageError
+- CIM_StorageExtent
+```sh
+WQL> SELECT * FROM CIM_StorageExtent 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | FreeSpace | Size | Compressed | DriveType | FileSystem | MaximumComponentLength | ProviderName | SupportsFileBasedCompression | VolumeName | VolumeSerialNumber | MediaType | SupportsDiskQuotas | QuotasDisabled | QuotasIncomplete | QuotasRebuilding | VolumeDirty | 
+| C: | Local Fixed Disk | None | C: | None | 65535 | Win32_LogicalDisk | None | True | C: | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 0 | 18446744073709551615 | None | 18446744073709551615 | None | 10056327168 | 20762849280 | False | 3 | NTFS | 255 | None | True |  | 61F2A88F | 12 | True | True | False | False | False | 
+| Disk #0, Partition #0 | GPT: Unknown | None | Disk #0, Partition #0 | None | 65535 | Win32_DiskPartition | None | True | Disk #0, Partition #0 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 512 | None | 921600 | None | False | False | False | 0 | None | 0 | None | 471859200 | 135266304 | GPT: Unknown | 
+| Disk #0, Partition #1 | GPT: System | None | Disk #0, Partition #1 | None | 65535 | Win32_DiskPartition | None | True | Disk #0, Partition #1 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 512 | None | 202752 | None | True | True | True | 0 | None | 1 | None | 103809024 | 607125504 | GPT: System | 
 
+~~~
+```
+- CIM_StorageRedundancyGroup
+- CIM_SupportAccess
+- CIM_SwapSpaceCheck
+- CIM_System
+```sh
+WQL> SELECT * FROM CIM_System 
+| Caption | Description | InstallDate | Name | Status | CreationClassName | NameFormat | PrimaryOwnerContact | PrimaryOwnerName | Roles | InitialLoadInfo | LastLoadInfo | PowerManagementSupported | PowerManagementCapabilities | PowerState | ResetCapability | AutomaticResetBootOption | AutomaticManagedPagefile | AutomaticResetCapability | BootROMSupported | BootupState | CurrentTimeZone | DNSHostName | Domain | InfraredSupported | Manufacturer | Model | NetworkServerModeEnabled | OEMLogoBitmap | SupportContactDescription | SystemStartupDelay | SystemStartupOptions | SystemStartupSetting | SystemType | UserName | DomainRole | WakeUpType | OEMStringArray | BootOptionOnLimit | BootOptionOnWatchDog | ResetCount | ResetLimit | PauseAfterReset | PowerOnPasswordStatus | KeyboardPasswordStatus | AdminPasswordStatus | FrontPanelResetStatus | ChassisBootupState | PowerSupplyState | ThermalState | DaylightInEffect | EnableDaylightSavingsTime | NumberOfProcessors | NumberOfLogicalProcessors | TotalPhysicalMemory | PartOfDomain | PCSystemType | PCSystemTypeEx | Workgroup | SystemSKUNumber | SystemFamily | ChassisSKUNumber | BootStatus | HypervisorPresent | 
+| FOREST | AT/AT COMPATIBLE | None | FOREST | OK | Win32_ComputerSystem | None | None | Windows User | 323 339 350 377 389 393  | None | None | True | None | 0 | 1 | True | True | True | True | Normal boot | -420 | FOREST | htb.local | False | VMware, Inc. | VMware7,1 | True | None | None | None | None | None | x64-based PC | None | 5 | 6 | [MS_VM_CERT/SHA1/27d66596a61c48dd3dc7216fd715126e33f59ae7] Welcome to the Virtual Machine  | 3 | 3 | -1 | -1 | 3932100000 | 0 | 3 | 1 | 3 | 3 | 3 | 3 | True | True | 1 | 2 | 2146447360 | True | 1 | 1 | None | None | None | None | 0 0 0 33 31 162 0 3 2 2  | True | 
+| HTB | HTB | None | Domain: HTB | OK | Win32_NTDomain | None | None | None | None | \\FOREST | \\dead:beef::d8bb:f9b6:fafb:2ed1 | 1 | {DFF0C71A-A949-4B26-8C7B-52E3E2CB6EAB} | HTB | htb.local | True | True | True | True | True | True | False | False | True | Default-First-Site-Name | Default-First-Site-Name | 
+```
 
 
 
