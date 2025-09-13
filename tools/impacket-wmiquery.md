@@ -500,6 +500,67 @@ WQL> SELECT * FROM CIM_LogicalDisk
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | FreeSpace | Size | Compressed | DriveType | FileSystem | MaximumComponentLength | ProviderName | SupportsFileBasedCompression | VolumeName | VolumeSerialNumber | MediaType | SupportsDiskQuotas | QuotasDisabled | QuotasIncomplete | QuotasRebuilding | VolumeDirty | 
 | C: | Local Fixed Disk | None | C: | None | 65535 | Win32_LogicalDisk | None | True | C: | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 0 | 18446744073709551615 | None | 18446744073709551615 | None | 10410131456 | 20762849280 | False | 3 | NTFS | 255 | None | True |  | 61F2A88F | 12 | True | True | False | False | False |
 ```
+### CIM_LogicalDiskBasedOnPartition
+```sh
+WQL> SELECT * FROM CIM_LogicalDiskBasedOnPartition
+| Antecedent | Dependent | StartingAddress | EndingAddress | 
+| \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #2" | \\FOREST\root\cimv2:Win32_LogicalDisk.DeviceID="C:" | 710934528 | 21473787903 |
+```
+### CIM_LogicalDiskBasedOnVolumeSet
+### CIM_LogicalElement 
+```sh
+WQL> SELECT * FROM CIM_LogicalFile WHERE Name = "C:\\"
+| Caption | Description | InstallDate | Name | Status | InUseCount | Archive | CSCreationClassName | CSName | Compressed | CreationClassName | CreationDate | Encrypted | FSCreationClassName | FSName | LastAccessed | LastModified | Readable | FileSize | Writeable | Hidden | System | FileType | EightDotThreeFileName | CompressionMethod | EncryptionMethod | Drive | Path | FileName | Extension | AccessMask | 
+| C:\ | C:\ | None | c:\ | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | True | CIM_LogicalFile | None | True | Win32_FileSystem | NTFS | None | None | True | 18446744073709551615 | True | True | True | Local Disk |  | None | None | c: |  |  |  | 18809343 |
+```
+### CIM_LogicalFile
+```sh
+WQL> SELECT * FROM CIM_LogicalFile WHERE Name = "C:\\"
+| Caption | Description | InstallDate | Name | Status | InUseCount | Archive | CSCreationClassName | CSName | Compressed | CreationClassName | CreationDate | Encrypted | FSCreationClassName | FSName | LastAccessed | LastModified | Readable | FileSize | Writeable | Hidden | System | FileType | EightDotThreeFileName | CompressionMethod | EncryptionMethod | Drive | Path | FileName | Extension | AccessMask | 
+| C:\ | C:\ | None | c:\ | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | True | CIM_LogicalFile | None | True | Win32_FileSystem | NTFS | None | None | True | 18446744073709551615 | True | True | True | Local Disk |  | None | None | c: |  |  |  | 18809343 |
+```
+### CIM_LogicalIdentity 
+### CIM_MagnetoOpticalDrive 
+### CIM_ManagedSystemElement  
+rpc上では実行できない
+### CIM_ManagementController 
+### CIM_MediaAccessDevice
+```sh
+WQL> SELECT * FROM CIM_MediaAccessDevice 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Capabilities | CapabilityDescriptions | CompressionMethod | ErrorMethodology | MaxMediaSize | DefaultBlockSize | MaxBlockSize | MinBlockSize | NumberOfMediaSupported | NeedsCleaning | BytesPerSector | InterfaceType | Partitions | SectorsPerTrack | TotalCylinders | TotalHeads | TotalSectors | TotalTracks | TracksPerCylinder | Index | Manufacturer | MediaLoaded | MediaType | Model | SCSIBus | SCSILogicalUnit | SCSIPort | SCSITargetId | Size | Signature | SerialNumber | FirmwareRevision | 
+| VMware Virtual disk SCSI Disk Device | Disk drive | None | \\.\PHYSICALDRIVE0 | OK | 65535 | Win32_DiskDrive | 0 | False | \\.\PHYSICALDRIVE0 | None | SCSI\DISK&VEN_VMWARE&PROD_VIRTUAL_DISK\5&1982005&0&000100 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 3 4  | 396 411  | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | None | True | 512 | SCSI | 3 | 63 | 2610 | 255 | 41929650 | 665550 | 255 | 0 | (Standard disk drives) | True | Fixed hard disk media | VMware Virtual disk SCSI Disk Device | 0 | 0 | 0 | 1 | 21467980800 | None | 6000c29c9f4f2e0c794e36b137fda25f | 2.0  |
+```
+### CIM_MediaPresent
+```sh
+WQL> SELECT * FROM CIM_MediaPresent 
+| Antecedent | Dependent | 
+| \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #0" | 
+| \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #1" | 
+| \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #2" | 
+```
+### CIM_Memory
+```sh
+WQL> SELECT * FROM CIM_Memory 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | StartingAddress | EndingAddress | ErrorInfo | OtherErrorDescription | CorrectableError | ErrorTime | ErrorAccess | ErrorTransferSize | ErrorData | ErrorDataOrder | ErrorAddress | SystemLevelAddress | ErrorResolution | AdditionalErrorData | Level | WritePolicy | CacheType | LineSize | ReplacementPolicy | ReadPolicy | FlushTimer | Associativity | Location | MaxCacheSize | InstalledSize | SupportedSRAM | CurrentSRAM | ErrorCorrectType | CacheSpeed | 
+| Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 0 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 1024 | None | 64 | L1 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 3 | 3 | 5 | None | 65535 | 65535 | None | 7 | 0 | 64 | 64 | 2 3 4 5 6  | 6  | 2 | None | 
+| Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 1 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 1024 | None | 512 | L2 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 4 | 3 | 5 | None | 65535 | 65535 | None | 7 | 1 | 512 | 512 | 2 3 4 5 6  | 6  | 2 | None | 
+| Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 2 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 65536 | None | 512 | L3 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 5 | 3 | 5 | None | 65535 | 65535 | None | 8 | 1 | 32768 | 32768 | 2 3 4 5 6  | 6  | 2 | None | 
+| Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 3 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 1024 | None | 64 | L1 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 3 | 3 | 5 | None | 65535 | 65535 | None | 7 | 0 | 64 | 64 | 2 3 4 5 6  | 6  | 2 | None | 
+| Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 4 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 1024 | None | 512 | L2 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 4 | 3 | 5 | None | 65535 | 65535 | None | 7 | 1 | 512 | 512 | 2 3 4 5 6  | 6  | 2 | None | 
+| Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 5 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 65536 | None | 512 | L3 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 5 | 3 | 5 | None | 65535 | 65535 | None | 8 | 1 | 32768 | 32768 | 2 3 4 5 6  | 6  | 2 | None |
+```
+### CIM_MemoryCapacity 
+### CIM_MemoryCheck 
+### CIM_MemoryMappedIO
+省略
+```sh
+WQL> SELECT * FROM CIM_MemoryMappedIO 
+| Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | StartingAddress | EndingAddress | MemoryType | 
+| 0xE0000000-0xE7FFFFFF | 0xE0000000-0xE7FFFFFF | None | 0xE0000000-0xE7FFFFFF | OK | Win32_ComputerSystem | FOREST | Win32_DeviceMemoryAddress | 3758096384 | 3892314111 | None | 
+~~~
+| 0x00000400-0x0000041F | 0x00000400-0x0000041F | None | 0x00000400-0x0000041F | OK | Win32_ComputerSystem | FOREST | Win32_PortResource | 1024 | 1055 | False | 
+~~~
+```
 
 
 
