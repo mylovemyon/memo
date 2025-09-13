@@ -79,7 +79,7 @@ WQL> SELECT * FROM CIM_BasedOn
 | Antecedent | Dependent | StartingAddress | EndingAddress | 
 | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #2" | \\FOREST\root\cimv2:Win32_LogicalDisk.DeviceID="C:" | 710934528 | 21473787903 |
 ```
-- CIM_Battery
+- CIM_Battery  
 rpc上では実行できない
 - CIM_BinarySensor
 - CIM_BIOSElement
@@ -185,17 +185,17 @@ WQL> SELECT * FROM CIM_Component WHERE GroupComponent = "Win32_Directory.Name='C
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users" | 
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Windows" |
 ```
-### CIM_ComputerSystem
+- CIM_ComputerSystem
 ```sh
 WQL> SELECT * FROM CIM_ComputerSystem
 | Caption | Description | InstallDate | Name | Status | CreationClassName | NameFormat | PrimaryOwnerContact | PrimaryOwnerName | Roles | InitialLoadInfo | LastLoadInfo | PowerManagementSupported | PowerManagementCapabilities | PowerState | ResetCapability | AutomaticResetBootOption | AutomaticManagedPagefile | AutomaticResetCapability | BootROMSupported | BootupState | CurrentTimeZone | DNSHostName | Domain | InfraredSupported | Manufacturer | Model | NetworkServerModeEnabled | OEMLogoBitmap | SupportContactDescription | SystemStartupDelay | SystemStartupOptions | SystemStartupSetting | SystemType | UserName | DomainRole | WakeUpType | OEMStringArray | BootOptionOnLimit | BootOptionOnWatchDog | ResetCount | ResetLimit | PauseAfterReset | PowerOnPasswordStatus | KeyboardPasswordStatus | AdminPasswordStatus | FrontPanelResetStatus | ChassisBootupState | PowerSupplyState | ThermalState | DaylightInEffect | EnableDaylightSavingsTime | NumberOfProcessors | NumberOfLogicalProcessors | TotalPhysicalMemory | PartOfDomain | PCSystemType | PCSystemTypeEx | Workgroup | SystemSKUNumber | SystemFamily | ChassisSKUNumber | BootStatus | HypervisorPresent | 
 | FOREST | AT/AT COMPATIBLE | None | FOREST | OK | Win32_ComputerSystem | None | None | Windows User | 323 339 350 377 389 393  | None | None | True | None | 0 | 1 | True | True | True | True | Normal boot | -420 | FOREST | htb.local | False | VMware, Inc. | VMware7,1 | True | None | None | None | None | None | x64-based PC | None | 5 | 6 | [MS_VM_CERT/SHA1/27d66596a61c48dd3dc7216fd715126e33f59ae7] Welcome to the Virtual Machine  | 3 | 3 | -1 | -1 | 3932100000 | 0 | 3 | 1 | 3 | 3 | 3 | 3 | True | True | 1 | 2 | 2146447360 | True | 1 | 1 | None | None | None | None | 0 0 0 33 31 162 0 3 2 2  | True |
 ```
-### CIM_ComputerSystemDMA
-### CIM_ComputerSystemIRQ
-### CIM_ComputerSystemMappedIO
-### CIM_ComputerSystemPackage
-### CIM_ComputerSystemResource
+- CIM_ComputerSystemDMA
+- CIM_ComputerSystemIRQ
+- CIM_ComputerSystemMappedIO
+- CIM_ComputerSystemPackage
+- CIM_ComputerSystemResource
 ```sh
 WQL> SELECT * FROM CIM_ComputerSystemResource
 | GroupComponent | PartComponent | 
@@ -210,18 +210,18 @@ WQL> SELECT * FROM CIM_ComputerSystemResource
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="ComSpec",UserName="<SYSTEM>" | 
 ~~~
 ```
-### CIM_Configuration
-### CIM_ConnectedTo
-### CIM_ConnectorOnPackage
-### CIM_Container 
+- CIM_Configuration
+- CIM_ConnectedTo
+- CIM_ConnectorOnPackage
+- CIM_Container 
 ```sh
 WQL> SELECT * FROM CIM_Container 
 | GroupComponent | PartComponent | LocationWithinContainer | 
 | \\FOREST\root\cimv2:Win32_PhysicalMemoryArray.Tag="Physical Memory Array 0" | \\FOREST\root\cimv2:Win32_PhysicalMemory.Tag="Physical Memory 0" | None |
 ```
-### CIM_ControlledBy 
+- CIM_ControlledBy   
 rpc上では実行できない
-### CIM_Controller
+- CIM_Controller
 ```sh
 WQL> SELECT * FROM CIM_Controller
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | MaxNumberControlled | ProtocolSupported | TimeOfLastReset | Manufacturer | 
@@ -233,8 +233,8 @@ WQL> SELECT * FROM CIM_Controller
 | LSI Adapter, SAS 3000 series, 8-port with 1068 | LSI Adapter, SAS 3000 series, 8-port with 1068 | None | LSI Adapter, SAS 3000 series, 8-port with 1068 | OK | 3 | Win32_SCSIController | 0 | False | PCI\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\4&2732702B&0&00A8 | None | PCI\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\4&2732702B&0&00A8 | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | None | 2 | None | None | None | 18446744073709551615 | 65535 | None | LSI_SAS | None | None | LSI | 
 | VMware SVGA 3D | VMware SVGA 3D | None | VMware SVGA 3D | OK | 3 | Win32_VideoController | 0 | False | VideoController1 | None | PCI\VEN_15AD&DEV_0405&SUBSYS_040515AD&REV_00\3&18D45AA6&0&78 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 65535 | None | VMware Virtual SVGA 3D Graphics Adapter | 2 | None | None | None | None | 32 | 1440 | 621 | 64 | 64 | 1 | 4 | 4294967296 | 0 | 0 | 5 | 65535 | 65535 | VMware, Inc. | n/a | 0 | False | 0 | oem6.inf | VM3D_AMD64 | vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum_loader,vm3dum_loader,vm3dum_loader | 20180726000000.000000-000 | 8.16.1.1 | None | None | None | None | None | None | None | 1440 x 621 x 4294967296 colors | 
 ```
-### CIM_CoolingDevice
-### CIM_CopyFileAction
+- CIM_CoolingDevice
+- CIM_CopyFileAction
 ```sh
 WQL> SELECT * FROM CIM_CopyFileAction
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | Source | Destination | DeleteAfterCopy | FileKey | 
@@ -243,7 +243,7 @@ WQL> SELECT * FROM CIM_CopyFileAction
 | None | None | 65535 | None | 65535 | vmGuestLib.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | vmGuestLib.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | vmGuestLib.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | vmGuestLib.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | None | True | vmGuestLib.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
 | None | None | 65535 | None | 65535 | vmGuestLibJava.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | vmGuestLibJava.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | vmGuestLibJava.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | vmGuestLibJava.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 | None | True | vmGuestLibJava.dll_64.869A7E00_8665_0000_83A8_EF0F76CF0001 |
 ```
-### CIM_CreateDirectoryAction
+- CIM_CreateDirectoryAction
 ```sh
 WQL> SELECT * FROM CIM_CreateDirectoryAction
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | DirectoryName | 
@@ -254,9 +254,8 @@ WQL> SELECT * FROM CIM_CreateDirectoryAction
 | None | None | 65535 | None | 65535 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
 | None | None | 65535 | None | 65535 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001 |
 ```
-### CIM_CurrentSensor
-### CIM_DataFile
-省略
+- CIM_CurrentSensor
+- CIM_DataFile
 ```sh
 WQL> SELECT * FROM CIM_DataFile
 | Caption | Description | InstallDate | Name | Status | InUseCount | Archive | CSCreationClassName | CSName | Compressed | CreationClassName | CreationDate | Encrypted | FSCreationClassName | FSName | LastAccessed | LastModified | Readable | FileSize | Writeable | Hidden | System | FileType | EightDotThreeFileName | CompressionMethod | EncryptionMethod | Drive | Path | FileName | Extension | AccessMask | Version | Manufacturer | 
@@ -266,30 +265,30 @@ WQL> SELECT * FROM CIM_DataFile
 
 ~~~
 ```
-### CIM_Dependency
+- CIM_Dependency  
 rpc上では実行できない
-### CIM_DependencyContext
-### CIM_DesktopMonitor
+- CIM_DependencyContext
+- CIM_DesktopMonitor
 ```sh
 WQL> SELECT * FROM CIM_DesktopMonitor
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | DisplayType | Bandwidth | ScreenHeight | ScreenWidth | MonitorManufacturer | MonitorType | PixelsPerXLogicalInch | PixelsPerYLogicalInch | 
 | Generic Non-PnP Monitor | Generic Non-PnP Monitor | None | Generic Non-PnP Monitor | OK | 8 | Win32_DesktopMonitor | 0 | False | DesktopMonitor1 | None | DISPLAY\DEFAULT_MONITOR\4&31BE19FA&0&UID0 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | None | None | None | (Standard monitor types) | Generic Non-PnP Monitor | 96 | 96 |
 ```
-### CIM_DeviceAccessedByFile
-### CIM_DeviceConnection
+- CIM_DeviceAccessedByFile
+- CIM_DeviceConnection  
 rpc上では実行できない
-### CIM_DeviceErrorCounts
-### CIM_DeviceFile
-### CIM_DeviceSAPImplementation
-### CIM_DeviceServiceImplementation
-### CIM_DeviceSoftware
-### CIM_Directory
+- CIM_DeviceErrorCounts
+- CIM_DeviceFile
+- CIM_DeviceSAPImplementation
+- CIM_DeviceServiceImplementation
+- CIM_DeviceSoftware
+- CIM_Directory
 ```sh
 WQL> SELECT * FROM CIM_Directory WHERE Caption = "C:\\"
 | Caption | Description | InstallDate | Name | Status | InUseCount | Archive | CSCreationClassName | CSName | Compressed | CreationClassName | CreationDate | Encrypted | FSCreationClassName | FSName | LastAccessed | LastModified | Readable | FileSize | Writeable | Hidden | System | FileType | EightDotThreeFileName | CompressionMethod | EncryptionMethod | Drive | Path | FileName | Extension | AccessMask | 
 | C:\ | C:\ | None | c:\ | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | True | CIM_LogicalFile | None | True | Win32_FileSystem | NTFS | None | None | True | 18446744073709551615 | True | True | True | Local Disk |  | None | None | c: |  |  |  | 18809343 |
 ```
-### CIM_DirectoryAction
+- CIM_DirectoryAction
 ```sh
 WQL> SELECT * FROM CIM_DirectoryAction
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | DirectoryName | 
@@ -300,7 +299,7 @@ WQL> SELECT * FROM CIM_DirectoryAction
 | None | None | 65535 | None | 65535 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_SERVER.869A7E00_8665_0000_83A8_EF0F76CF0001 | 
 | None | None | 65535 | None | 65535 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001 | GUESTPROXYDATA_TRUSTED.869A7E00_8665_0000_83A8_EF0F76CF0001 |
 ```
-### CIM_DirectoryContainsFile
+- CIM_DirectoryContainsFile
 ```sh
 WQL> SELECT * FROM CIM_DirectoryContainsFile WHERE GroupComponent = "Win32_Directory.Name='C:\\'"
 | GroupComponent | PartComponent | 
@@ -308,8 +307,7 @@ WQL> SELECT * FROM CIM_DirectoryContainsFile WHERE GroupComponent = "Win32_Direc
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\BOOTNXT" | 
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\pagefile.sys" |
 ```
-### CIM_DirectorySpecification
-省略
+- CIM_DirectorySpecification
 ```sh
 WQL> SELECT * FROM CIM_DirectorySpecification
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | CheckID | Description | Caption | CheckMode | DirectoryType | DirectoryPath | DefaultDir | Directory | 
@@ -319,16 +317,16 @@ WQL> SELECT * FROM CIM_DirectorySpecification
 
 ~~~
 ```
-### CIM_DirectorySpecificationFile
-### CIM_DiscreteSensor
-### CIM_DiskDrive 
+- CIM_DirectorySpecificationFile
+- CIM_DiscreteSensor
+- CIM_DiskDrive 
 ```sh
 WQL> SELECT * FROM CIM_DiskDrive 
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Capabilities | CapabilityDescriptions | CompressionMethod | ErrorMethodology | MaxMediaSize | DefaultBlockSize | MaxBlockSize | MinBlockSize | NumberOfMediaSupported | NeedsCleaning | BytesPerSector | InterfaceType | Partitions | SectorsPerTrack | TotalCylinders | TotalHeads | TotalSectors | TotalTracks | TracksPerCylinder | Index | Manufacturer | MediaLoaded | MediaType | Model | SCSIBus | SCSILogicalUnit | SCSIPort | SCSITargetId | Size | Signature | SerialNumber | FirmwareRevision | 
 | VMware Virtual disk SCSI Disk Device | Disk drive | None | \\.\PHYSICALDRIVE0 | OK | 65535 | Win32_DiskDrive | 0 | False | \\.\PHYSICALDRIVE0 | None | SCSI\DISK&VEN_VMWARE&PROD_VIRTUAL_DISK\5&1982005&0&000100 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 3 4  | 396 411  | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | None | True | 512 | SCSI | 3 | 63 | 2610 | 255 | 41929650 | 665550 | 255 | 0 | (Standard disk drives) | True | Fixed hard disk media | VMware Virtual disk SCSI Disk Device | 0 | 0 | 0 | 1 | 21467980800 | None | 6000c29c9f4f2e0c794e36b137fda25f | 2.0  |
 ```
-### CIM_DisketteDrive 
-### CIM_DiskPartition
+- CIM_DisketteDrive
+- CIM_DiskPartition
 ```sh
 WQL> SELECT * FROM CIM_DiskPartition
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | Bootable | PrimaryPartition | BootPartition | DiskIndex | HiddenSectors | Index | RewritePartition | Size | StartingOffset | Type | 
@@ -336,23 +334,23 @@ WQL> SELECT * FROM CIM_DiskPartition
 | Disk #0, Partition #1 | GPT: System | None | Disk #0, Partition #1 | None | 65535 | Win32_DiskPartition | None | True | Disk #0, Partition #1 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 512 | None | 202752 | None | True | True | True | 0 | None | 1 | None | 103809024 | 607125504 | GPT: System | 
 | Disk #0, Partition #2 | GPT: Basic Data | None | Disk #0, Partition #2 | None | 65535 | Win32_DiskPartition | None | True | Disk #0, Partition #2 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 512 | None | 40552448 | None | False | True | False | 0 | None | 2 | None | 20762853376 | 710934528 | GPT: Basic Data | 
 ```
-### CIM_DiskSpaceCheck
-### CIM_Display 
+- CIM_DiskSpaceCheck
+- CIM_Display 
 ```sh
 WQL> SELECT * FROM CIM_Display 
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | DisplayType | Bandwidth | ScreenHeight | ScreenWidth | MonitorManufacturer | MonitorType | PixelsPerXLogicalInch | PixelsPerYLogicalInch | 
 | Generic Non-PnP Monitor | Generic Non-PnP Monitor | None | Generic Non-PnP Monitor | OK | 8 | Win32_DesktopMonitor | 0 | False | DesktopMonitor1 | None | DISPLAY\DEFAULT_MONITOR\4&31BE19FA&0&UID0 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | None | None | None | (Standard monitor types) | Generic Non-PnP Monitor | 96 | 96 |
 ```
-### CIM_DMA
+- CIM_DMA
 ```sh
 WQL> SELECT * FROM CIM_DMA
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | DMAChannel | Availability | BurstMode | TransferWidths | AddressSize | MaxTransferSize | ByteMode | WordMode | ChannelTiming | TypeCTiming | Port | 
 | Channel 4 | Channel 4 | None | Channel 4 | OK | Win32_ComputerSystem | FOREST | Win32_DMAChannel | 4 | 4 | True | 0  | 0 | 0 | 2 | 2 | 2 | 2 | None |
 ```
-### CIM_Docked
-### CIM_ElementCapacity
-### CIM_ElementConfiguration
-### CIM_ElementSetting 
+- CIM_Docked
+- CIM_ElementCapacity
+- CIM_ElementConfiguration
+- CIM_ElementSetting 
 ```sh
 WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "CIM_DataFile.Name='C:\\bootmgr'"
 | Element | Setting | 
@@ -413,14 +411,13 @@ WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_Volume.DeviceID='\\
 | Element | Setting | 
 | Win32_Volume.DeviceID="\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\" | Win32_QuotaSetting.VolumePath="C:\\" | 
 ```
-### CIM_ElementsLinked
-### CIM_ErrorCountersForDevice
-### CIM_ExecuteProgram 
-### CIM_Export 
-### CIM_ExtraCapacityGroup 
-### CIM_Fan 
-### CIM_FileAction
-省略　　　
+- CIM_ElementsLinked
+- CIM_ErrorCountersForDevice
+- CIM_ExecuteProgram
+- CIM_Export
+- CIM_ExtraCapacityGroup
+- CIM_Fan
+- CIM_FileAction　　　
 ```sh
 WQL> SELECT * FROM CIM_FileAction 
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | Source | Destination | DeleteAfterCopy | FileKey | 
@@ -430,8 +427,7 @@ WQL> SELECT * FROM CIM_FileAction
 
 ~~~
 ```
-### CIM_FileSpecification
-省略
+- CIM_FileSpecification
 ```sh
 WQL> SELECT * FROM CIM_FileSpecification  
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | CheckID | Description | Caption | CheckMode | CreateTimeStamp | FileSize | CheckSum | CRC1 | CRC2 | MD5Checksum | Language | Attributes | Sequence | FileID | 
@@ -441,21 +437,21 @@ WQL> SELECT * FROM CIM_FileSpecification
 
 ~~~
 ```
-### CIM_FileStorage 
-### CIM_FileSystem 
-### CIM_FlatPanel 
-### CIM_FromDirectoryAction 
-### CIM_HostedFileSystem 
-### CIM_HostedJobDestination 
-### CIM_HostedService 
-### CIM_InfraredController 
-### CIM_InstalledOS 
+- CIM_FileStorage
+- CIM_FileSystem
+- CIM_FlatPanel
+- CIM_FromDirectoryAction 
+- CIM_HostedFileSystem 
+- CIM_HostedJobDestination 
+- CIM_HostedService 
+- CIM_InfraredController 
+- CIM_InstalledOS 
 ```sh
 WQL> SELECT * FROM CIM_InstalledOS 
 | GroupComponent | PartComponent | PrimaryOS | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_OperatingSystem=@ | True |
 ```
-### CIM_InstalledSoftwareElement
+- CIM_InstalledSoftwareElement
 省略
 ```sh
 WQL> SELECT * FROM CIM_InstalledSoftwareElement 
@@ -466,7 +462,7 @@ WQL> SELECT * FROM CIM_InstalledSoftwareElement
 
 ~~~
 ```
-### CIM_IRQ
+- CIM_IRQ
 省略
 ```sh
 WQL> SELECT * FROM CIM_IRQ
@@ -477,57 +473,57 @@ WQL> SELECT * FROM CIM_IRQ
 
 ~~~
 ```
-### CIM_Job 
-### CIM_JobDestination 
-### CIM_JobDestinationJobs 
-### CIM_Keyboard
+- CIM_Job 
+- CIM_JobDestination 
+- CIM_JobDestinationJobs 
+- CIM_Keyboard
 ```sh
 WQL> SELECT * FROM CIM_Keyboard 
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Layout | NumberOfFunctionKeys | Password | 
 | Enhanced (101- or 102-key) | Standard PS/2 Keyboard | None | Enhanced (101- or 102-key) | OK | 65535 | Win32_Keyboard | 0 | False | ACPI\PNP0303\4&25EE97C0&0 | None | ACPI\PNP0303\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 00000409 | 12 | 65535 |
 ```
-### CIM_LinkHasConnector
-### CIM_LocalFileSystem 
-### CIM_Location 
-### CIM_LogicalDevice
+- CIM_LinkHasConnector
+- CIM_LocalFileSystem 
+- CIM_Location 
+- CIM_LogicalDevice
 rpc上では実行できない
-### CIM_LogicalDisk
+- CIM_LogicalDisk
 ```sh
 WQL> SELECT * FROM CIM_LogicalDisk
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | FreeSpace | Size | Compressed | DriveType | FileSystem | MaximumComponentLength | ProviderName | SupportsFileBasedCompression | VolumeName | VolumeSerialNumber | MediaType | SupportsDiskQuotas | QuotasDisabled | QuotasIncomplete | QuotasRebuilding | VolumeDirty | 
 | C: | Local Fixed Disk | None | C: | None | 65535 | Win32_LogicalDisk | None | True | C: | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 0 | 18446744073709551615 | None | 18446744073709551615 | None | 10410131456 | 20762849280 | False | 3 | NTFS | 255 | None | True |  | 61F2A88F | 12 | True | True | False | False | False |
 ```
-### CIM_LogicalDiskBasedOnPartition
+- CIM_LogicalDiskBasedOnPartition
 ```sh
 WQL> SELECT * FROM CIM_LogicalDiskBasedOnPartition
 | Antecedent | Dependent | StartingAddress | EndingAddress | 
 | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #2" | \\FOREST\root\cimv2:Win32_LogicalDisk.DeviceID="C:" | 710934528 | 21473787903 |
 ```
-### CIM_LogicalDiskBasedOnVolumeSet
-### CIM_LogicalElement 
+- CIM_LogicalDiskBasedOnVolumeSet
+- CIM_LogicalElement 
 ```sh
 WQL> SELECT * FROM CIM_LogicalFile WHERE Name = "C:\\"
 | Caption | Description | InstallDate | Name | Status | InUseCount | Archive | CSCreationClassName | CSName | Compressed | CreationClassName | CreationDate | Encrypted | FSCreationClassName | FSName | LastAccessed | LastModified | Readable | FileSize | Writeable | Hidden | System | FileType | EightDotThreeFileName | CompressionMethod | EncryptionMethod | Drive | Path | FileName | Extension | AccessMask | 
 | C:\ | C:\ | None | c:\ | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | True | CIM_LogicalFile | None | True | Win32_FileSystem | NTFS | None | None | True | 18446744073709551615 | True | True | True | Local Disk |  | None | None | c: |  |  |  | 18809343 |
 ```
-### CIM_LogicalFile
+- CIM_LogicalFile
 ```sh
 WQL> SELECT * FROM CIM_LogicalFile WHERE Name = "C:\\"
 | Caption | Description | InstallDate | Name | Status | InUseCount | Archive | CSCreationClassName | CSName | Compressed | CreationClassName | CreationDate | Encrypted | FSCreationClassName | FSName | LastAccessed | LastModified | Readable | FileSize | Writeable | Hidden | System | FileType | EightDotThreeFileName | CompressionMethod | EncryptionMethod | Drive | Path | FileName | Extension | AccessMask | 
 | C:\ | C:\ | None | c:\ | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | True | CIM_LogicalFile | None | True | Win32_FileSystem | NTFS | None | None | True | 18446744073709551615 | True | True | True | Local Disk |  | None | None | c: |  |  |  | 18809343 |
 ```
-### CIM_LogicalIdentity 
-### CIM_MagnetoOpticalDrive 
-### CIM_ManagedSystemElement  
+- CIM_LogicalIdentity 
+- CIM_MagnetoOpticalDrive 
+- CIM_ManagedSystemElement  
 rpc上では実行できない
-### CIM_ManagementController 
-### CIM_MediaAccessDevice
+- CIM_ManagementController 
+- CIM_MediaAccessDevice
 ```sh
 WQL> SELECT * FROM CIM_MediaAccessDevice 
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Capabilities | CapabilityDescriptions | CompressionMethod | ErrorMethodology | MaxMediaSize | DefaultBlockSize | MaxBlockSize | MinBlockSize | NumberOfMediaSupported | NeedsCleaning | BytesPerSector | InterfaceType | Partitions | SectorsPerTrack | TotalCylinders | TotalHeads | TotalSectors | TotalTracks | TracksPerCylinder | Index | Manufacturer | MediaLoaded | MediaType | Model | SCSIBus | SCSILogicalUnit | SCSIPort | SCSITargetId | Size | Signature | SerialNumber | FirmwareRevision | 
 | VMware Virtual disk SCSI Disk Device | Disk drive | None | \\.\PHYSICALDRIVE0 | OK | 65535 | Win32_DiskDrive | 0 | False | \\.\PHYSICALDRIVE0 | None | SCSI\DISK&VEN_VMWARE&PROD_VIRTUAL_DISK\5&1982005&0&000100 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 3 4  | 396 411  | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | None | True | 512 | SCSI | 3 | 63 | 2610 | 255 | 41929650 | 665550 | 255 | 0 | (Standard disk drives) | True | Fixed hard disk media | VMware Virtual disk SCSI Disk Device | 0 | 0 | 0 | 1 | 21467980800 | None | 6000c29c9f4f2e0c794e36b137fda25f | 2.0  |
 ```
-### CIM_MediaPresent
+- CIM_MediaPresent
 ```sh
 WQL> SELECT * FROM CIM_MediaPresent 
 | Antecedent | Dependent | 
@@ -535,7 +531,7 @@ WQL> SELECT * FROM CIM_MediaPresent
 | \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #1" | 
 | \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #2" | 
 ```
-### CIM_Memory
+- CIM_Memory
 ```sh
 WQL> SELECT * FROM CIM_Memory 
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | StartingAddress | EndingAddress | ErrorInfo | OtherErrorDescription | CorrectableError | ErrorTime | ErrorAccess | ErrorTransferSize | ErrorData | ErrorDataOrder | ErrorAddress | SystemLevelAddress | ErrorResolution | AdditionalErrorData | Level | WritePolicy | CacheType | LineSize | ReplacementPolicy | ReadPolicy | FlushTimer | Associativity | Location | MaxCacheSize | InstalledSize | SupportedSRAM | CurrentSRAM | ErrorCorrectType | CacheSpeed | 
@@ -546,9 +542,9 @@ WQL> SELECT * FROM CIM_Memory
 | Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 4 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 1024 | None | 512 | L2 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 4 | 3 | 5 | None | 65535 | 65535 | None | 7 | 1 | 512 | 512 | 2 3 4 5 6  | 6  | 2 | None | 
 | Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 5 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 65536 | None | 512 | L3 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 5 | 3 | 5 | None | 65535 | 65535 | None | 8 | 1 | 32768 | 32768 | 2 3 4 5 6  | 6  | 2 | None |
 ```
-### CIM_MemoryCapacity 
-### CIM_MemoryCheck 
-### CIM_MemoryMappedIO
+- CIM_MemoryCapacity 
+- CIM_MemoryCheck 
+- CIM_MemoryMappedIO
 省略
 ```sh
 WQL> SELECT * FROM CIM_MemoryMappedIO 
@@ -558,14 +554,14 @@ WQL> SELECT * FROM CIM_MemoryMappedIO
 | 0x00000400-0x0000041F | 0x00000400-0x0000041F | None | 0x00000400-0x0000041F | OK | Win32_ComputerSystem | FOREST | Win32_PortResource | 1024 | 1055 | False | 
 ~~~
 ```
-### CIM_MemoryOnCard 
-### CIM_MemoryWithMedia 
-### CIM_ModifySettingAction 
-### CIM_MonitorResolution 
-### CIM_MonitorSetting 
-### CIM_Mount 
-### CIM_MultiStateSensor 
-### CIM_NetworkAdapter
+- CIM_MemoryOnCard 
+- CIM_MemoryWithMedia 
+- CIM_ModifySettingAction 
+- CIM_MonitorResolution 
+- CIM_MonitorSetting 
+- CIM_Mount 
+- CIM_MultiStateSensor 
+- CIM_NetworkAdapter
 ```sh
 WQL> SELECT * FROM CIM_NetworkAdapter 
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | PermanentAddress | NetworkAddresses | Speed | MaxSpeed | AutoSense | ProductName | AdapterType | AdapterTypeId | MACAddress | ServiceName | Manufacturer | Installed | Index | InterfaceIndex | MaxNumberControlled | TimeOfLastReset | NetConnectionID | NetConnectionStatus | NetEnabled | GUID | PhysicalAdapter | 
@@ -574,42 +570,42 @@ WQL> SELECT * FROM CIM_NetworkAdapter
 | [00000002] Microsoft ISATAP Adapter | Microsoft ISATAP Adapter | None | Microsoft ISATAP Adapter | None | 3 | Win32_NetworkAdapter | 0 | False | 2 | None | SWD\IP_TUNNEL_VBUS\ISATAP_0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | None | 100000 | 18446744073709551615 | True | Microsoft ISATAP Adapter | Tunnel | 15 | None | tunnel | Microsoft | True | 2 | 2 | 0 | 20250912213028.494265-420 | None | None | None | None | False | 
 | [00000003] Microsoft Teredo Tunneling Adapter | Microsoft Teredo Tunneling Adapter | None | Microsoft Teredo Tunneling Adapter | None | 3 | Win32_NetworkAdapter | None | True | 3 | None | None | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | None | 18446744073709551615 | 18446744073709551615 | True | Microsoft Teredo Tunneling Adapter | None | None | None | None | None | True | 3 | 4 | 0 | 20250912213028.494265-420 | None | None | None | None | False |
 ```
-### CIM_NFS 
-### CIM_NonVolatileStorage 
-### CIM_NumericSensor 
-### CIM_OperatingSystem
+- CIM_NFS 
+- CIM_NonVolatileStorage 
+- CIM_NumericSensor 
+- CIM_OperatingSystem
 ```sh
 WQL> SELECT * FROM CIM_OperatingSystem 
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | Distributed | FreePhysicalMemory | FreeVirtualMemory | MaxProcessMemorySize | OSType | OtherTypeDescription | Version | LocalDateTime | CurrentTimeZone | SizeStoredInPagingFiles | FreeSpaceInPagingFiles | LastBootUpTime | MaxNumberOfProcesses | NumberOfLicensedUsers | NumberOfProcesses | NumberOfUsers | TotalSwapSpaceSize | TotalVirtualMemorySize | TotalVisibleMemorySize | BootDevice | MUILanguages | BuildNumber | OSArchitecture | BuildType | CodeSet | CountryCode | CSDVersion | DataExecutionPrevention_Available | DataExecutionPrevention_32BitApplications | DataExecutionPrevention_Drivers | DataExecutionPrevention_SupportPolicy | Debug | ForegroundApplicationBoost | Locale | Manufacturer | Organization | OSLanguage | OSProductSuite | OperatingSystemSKU | PlusProductID | PlusVersionNumber | Primary | RegisteredUser | SerialNumber | ServicePackMajorVersion | ServicePackMinorVersion | SystemDevice | SystemDirectory | SystemDrive | WindowsDirectory | EncryptionLevel | LargeSystemCache | SuiteMask | ProductType | PAEEnabled | PortableOperatingSystem | 
 | Microsoft Windows Server 2016 Standard |  | 20190918100759.000000-420 | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | OK | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | False | 388108 | 1085288 | 137438953344 | 18 | None | 10.0.14393 | 20250913063103.260000-420 | -420 | 755248 | 602532 | 20250912213028.494265-420 | None | 0 | 36 | 2 | 18446744073709551615 | 2851388 | 2096140 | \Device\HarddiskVolume3 | en-US  | 14393 | 64-bit | Multiprocessor Free | 1252 | 1 | None | True | True | True | 3 | False | 2 | 0409 | Microsoft Corporation |  | 1033 | 272 | 7 | None | None | True | Windows User | 00376-30821-30176-AA930 | 0 | 0 | \Device\HarddiskVolume4 | C:\Windows\system32 | C: | C:\Windows | 256 | None | 272 | 2 | None | False |
 ```
-### CIM_OperatingSystemSoftwareFeature 
-### CIM_OSProcess 
-### CIM_OSVersionCheck 
-### CIM_PackageAlarm 
-### CIM_PackageCooling 
-### CIM_PackagedComponent
+- CIM_OperatingSystemSoftwareFeature 
+- CIM_OSProcess 
+- CIM_OSVersionCheck 
+- CIM_PackageAlarm 
+- CIM_PackageCooling 
+- CIM_PackagedComponent
 ```sh
 WQL> SELECT * FROM CIM_PackagedComponent 
 | GroupComponent | PartComponent | LocationWithinContainer | 
 | \\FOREST\root\cimv2:Win32_PhysicalMemoryArray.Tag="Physical Memory Array 0" | \\FOREST\root\cimv2:Win32_PhysicalMemory.Tag="Physical Memory 0" | None |
 ```
-### CIM_PackageInChassis 
-### CIM_PackageInSlot 
-### CIM_PackageTempSensor 
-### CIM_ParallelController 
-### CIM_ParticipatesInSet 
-### CIM_PCIController 
-### CIM_PCMCIAController 
-### CIM_PCVideoController
+- CIM_PackageInChassis 
+- CIM_PackageInSlot 
+- CIM_PackageTempSensor 
+- CIM_ParallelController 
+- CIM_ParticipatesInSet 
+- CIM_PCIController 
+- CIM_PCMCIAController 
+- CIM_PCVideoController
 ```sh
 WQL> SELECT * FROM CIM_PCVideoController 
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | MaxNumberControlled | ProtocolSupported | TimeOfLastReset | VideoProcessor | VideoMemoryType | NumberOfVideoPages | MaxMemorySupported | AcceleratorCapabilities | CapabilityDescriptions | CurrentBitsPerPixel | CurrentHorizontalResolution | CurrentVerticalResolution | MaxRefreshRate | MinRefreshRate | CurrentRefreshRate | CurrentScanMode | CurrentNumberOfColors | CurrentNumberOfRows | CurrentNumberOfColumns | VideoArchitecture | VideoMode | NumberOfColorPlanes | AdapterCompatibility | AdapterDACType | AdapterRAM | Monochrome | DitherType | InfFilename | InfSection | InstalledDisplayDrivers | DriverDate | DriverVersion | ICMIntent | ICMMethod | SpecificationVersion | ColorTableEntries | DeviceSpecificPens | ReservedSystemPaletteEntries | SystemPaletteEntries | VideoModeDescription | 
 | VMware SVGA 3D | VMware SVGA 3D | None | VMware SVGA 3D | OK | 3 | Win32_VideoController | 0 | False | VideoController1 | None | PCI\VEN_15AD&DEV_0405&SUBSYS_040515AD&REV_00\3&18D45AA6&0&78 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 65535 | None | VMware Virtual SVGA 3D Graphics Adapter | 2 | None | None | None | None | 32 | 1440 | 621 | 64 | 64 | 1 | 4 | 4294967296 | 0 | 0 | 5 | 65535 | 65535 | VMware, Inc. | n/a | 0 | False | 0 | oem6.inf | VM3D_AMD64 | vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum_loader,vm3dum_loader,vm3dum_loader | 20180726000000.000000-000 | 8.16.1.1 | None | None | None | None | None | None | None | 1440 x 621 x 4294967296 colors |
 ```
-### CIM_PExtentRedundancyComponent 
-### CIM_PhysicalCapacity 
-### CIM_PhysicalComponent
+- CIM_PExtentRedundancyComponent 
+- CIM_PhysicalCapacity 
+- CIM_PhysicalComponent
 ```sh
 WQL> SELECT * FROM CIM_PhysicalComponent 
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | DeviceType | Enabled | 
@@ -618,7 +614,7 @@ WQL> SELECT * FROM CIM_PhysicalComponent
 | Physical Memory | Physical Memory | None | Physical Memory | None | Win32_PhysicalMemory | VMware Virtual RAM | None | None | 00000001 | Physical Memory 0 | None | VMW-2048MB | None | True | True | True | True | 8 | 2 | 64 | 64 | None | 2147483648 | RAM slot #0 | None | None | RAM slot #0 | 128 | None | 0 | 4800 | None | None | None | 3 | 
 | None | None | None | None | None | None | None | None | None | 6000c29c9f4f2e0c794e36b137fda25f | \\.\PHYSICALDRIVE0 | None | None | None | True | True | True | True | 18446744073709551615 | 65535 | None | True | True |
 ```
-### CIM_PhysicalConnector
+- CIM_PhysicalConnector
 ```sh
 WQL> SELECT * FROM CIM_PhysicalConnector 
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | ConnectorPinout | ConnectorType | InternalReferenceDesignator | ExternalReferenceDesignator | PortType | 
@@ -633,7 +629,7 @@ WQL> SELECT * FROM CIM_PhysicalConnector
 | Port Connector | Port Connector | None | Port Connector | None | Win32_PortConnector | None | None | None | None | Port Connector 2 | None | None | None | True | None | 59 2  | J11 | Keyboard | 13 | 
 | Port Connector | Port Connector | None | Port Connector | None | Win32_PortConnector | None | None | None | None | Port Connector 3 | None | None | None | True | None | 59 2  | J12 | PS/2 Mouse | 13 |
 ```
-### CIM_PhysicalElement
+- CIM_PhysicalElement
 ```sh
 WQL> SELECT * FROM CIM_PhysicalElement 
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | Location | Use | MemoryErrorCorrection | MaxCapacity | MaxCapacityEx | MemoryDevices | 
@@ -655,28 +651,28 @@ WQL> SELECT * FROM CIM_PhysicalElement
 | System Enclosure | System Enclosure | None | System Enclosure | None | Win32_SystemEnclosure | No Enclosure | None | None | None | System Enclosure 0 | N/A | None | None | True | True | True | True | None | None | None | None | None | None | None | False | True | True | 65535 | None | 65535 | None | 65535 | 1  | None | No Asset Tag | 3 | 
 | None | None | None | None | None | None | None | None | None | 6000c29c9f4f2e0c794e36b137fda25f | \\.\PHYSICALDRIVE0 | None | None | None | True | True | True | True | 18446744073709551615 | 65535 | None | True | True |
 ```
-### CIM_PhysicalElementLocation 
-### CIM_PhysicalExtent 
-### CIM_PhysicalFrame
+- CIM_PhysicalElementLocation 
+- CIM_PhysicalExtent 
+- CIM_PhysicalFrame
 ```sh
 WQL> SELECT * FROM CIM_PhysicalFrame 
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | CableManagementStrategy | ServicePhilosophy | ServiceDescriptions | LockPresent | AudibleAlarm | VisibleAlarm | SecurityBreach | BreachDescription | NumberOfPowerCords | CurrentRequiredOrProduced | HeatGeneration | ChassisTypes | TypeDescriptions | SMBIOSAssetTag | SecurityStatus | 
 | System Enclosure | System Enclosure | None | System Enclosure | None | Win32_SystemEnclosure | No Enclosure | None | None | None | System Enclosure 0 | N/A | None | None | True | True | True | True | None | None | None | None | None | None | None | False | True | True | 65535 | None | 65535 | None | 65535 | 1  | None | No Asset Tag | 3 |
 ```
-### CIM_PhysicalLink 
-### CIM_PhysicalMedia
+- CIM_PhysicalLink 
+- CIM_PhysicalMedia
 ```sh
 WQL> SELECT * FROM CIM_PhysicalMedia 
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Capacity | MediaType | MediaDescription | WriteProtectOn | CleanerMedia | 
 | None | None | None | None | None | None | None | None | None | 6000c29c9f4f2e0c794e36b137fda25f | \\.\PHYSICALDRIVE0 | None | None | None | True | True | True | True | 18446744073709551615 | 65535 | None | True | True |
 ```
-### CIM_PhysicalMemory
+- CIM_PhysicalMemory
 ```sh
 WQL> SELECT * FROM CIM_PhysicalMemory 
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | FormFactor | MemoryType | TotalWidth | DataWidth | Speed | Capacity | BankLabel | PositionInRow | InterleavePosition | DeviceLocator | TypeDetail | InterleaveDataDepth | Attributes | ConfiguredClockSpeed | MinVoltage | MaxVoltage | ConfiguredVoltage | SMBIOSMemoryType | 
 | Physical Memory | Physical Memory | None | Physical Memory | None | Win32_PhysicalMemory | VMware Virtual RAM | None | None | 00000001 | Physical Memory 0 | None | VMW-2048MB | None | True | True | True | True | 8 | 2 | 64 | 64 | None | 2147483648 | RAM slot #0 | None | None | RAM slot #0 | 128 | None | 0 | 4800 | None | None | None | 3 | 
 ```
-### CIM_PhysicalPackage
+- CIM_PhysicalPackage
 ```sh
 WQL> SELECT * FROM CIM_PhysicalPackage 
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | Location | Use | MemoryErrorCorrection | MaxCapacity | MaxCapacityEx | MemoryDevices | 
@@ -684,17 +680,17 @@ WQL> SELECT * FROM CIM_PhysicalPackage
 | Base Board | Base Board | None | Base Board | OK | Win32_BaseBoard | Intel Corporation | None | None | None | Base Board | None | None | None | True | False | False | False | None | None | None | None | False | None | False | True | None | 440BX Desktop Reference Platform | None | 
 | System Enclosure | System Enclosure | None | System Enclosure | None | Win32_SystemEnclosure | No Enclosure | None | None | None | System Enclosure 0 | N/A | None | None | True | True | True | True | None | None | None | None | None | None | None | False | True | True | 65535 | None | 65535 | None | 65535 | 1  | None | No Asset Tag | 3 | 
 ```
-### CIM_PointingDevice
+- CIM_PointingDevice
 ```sh
 WQL> SELECT * FROM CIM_PointingDevice 
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Handedness | NumberOfButtons | PointingType | Resolution | HardwareType | InfFileName | InfSection | SampleRate | Synch | DoubleSpeedThreshold | QuadSpeedThreshold | DeviceInterface | Manufacturer | 
 | VMware Pointing Device | VMware Pointing Device | None | VMware Pointing Device | OK | 65535 | Win32_PointingDevice | 0 | False | ACPI\VMW0003\4&25EE97C0&0 | None | ACPI\VMW0003\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | 0 | 2 | None | VMware Pointing Device | oem5.inf | VMMouse | None | None | None | None | 1 | VMware, Inc. |
 ```
-### CIM_POTSModem 
-### CIM_PowerSupply 
-### CIM_Printer 
+- CIM_POTSModem 
+- CIM_PowerSupply 
+- CIM_Printer 
 rpc上では実行できない
-### CIM_Process
+- CIM_Process
 省略
 ```sh
 WQL> SELECT * FROM CIM_Process 
@@ -705,7 +701,7 @@ WQL> SELECT * FROM CIM_Process
 
 ~~~
 ```
-### CIM_ProcessExecutable
+- CIM_ProcessExecutable
 省略
 ```sh
 WQL> SELECT * FROM CIM_ProcessExecutable
@@ -716,14 +712,14 @@ WQL> SELECT * FROM CIM_ProcessExecutable
 
 ~~~
 ```
-### CIM_Processor
+- CIM_Processor
 ```sh
 WQL> SELECT * FROM CIM_Processor 
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | AddressWidth | CurrentClockSpeed | DataWidth | Family | OtherFamilyDescription | LoadPercentage | MaxClockSpeed | Role | UpgradeMethod | Stepping | UniqueId | Version | Manufacturer | L2CacheSize | L2CacheSpeed | L3CacheSize | L3CacheSpeed | Architecture | Level | Revision | CpuStatus | CurrentVoltage | ExtClock | ProcessorId | ProcessorType | NumberOfLogicalProcessors | NumberOfCores | SocketDesignation | VoltageCaps | VMMonitorModeExtensions | SecondLevelAddressTranslationExtensions | VirtualizationFirmwareEnabled | SerialNumber | AssetTag | PartNumber | NumberOfEnabledCore | ThreadCount | Characteristics | 
 | AMD64 Family 25 Model 1 Stepping 1 | AMD64 Family 25 Model 1 Stepping 1 | None | AMD EPYC 7513 32-Core Processor                 | OK | 3 | Win32_Processor | None | True | CPU0 | None | None | False | 3 | Win32_ComputerSystem | FOREST | None | None | True | 64 | 2595 | 64 | 2 | None | 1 | 2595 | CPU | 4 | 1 | None | Model 1, Stepping 1 | AuthenticAMD | 512 | None | 32768 | 0 | 9 | 25 | 257 | 1 | 33 | None | 178BFBFF00A00F11 | 3 | 2 | 2 | CPU 0 | 2 | False | False | True |  |  |  | 2 | 0 | 44 |
 ```
-### CIM_ProcessThread 
-### CIM_Product
+- CIM_ProcessThread 
+- CIM_Product
 ```sh
 WQL> SELECT * FROM CIM_Product
 | Caption | Description | IdentifyingNumber | Name | SKUNumber | Vendor | Version | UUID | 
@@ -734,11 +730,11 @@ WQL> SELECT * FROM CIM_Product
 | Microsoft Visual C++ 2017 x86 Minimum Runtime - 14.12.25810 | Microsoft Visual C++ 2017 x86 Minimum Runtime - 14.12.25810 | {828952EB-5572-3666-8CA9-000B6CE79350} | Microsoft Visual C++ 2017 x86 Minimum Runtime - 14.12.25810 | None | Microsoft Corporation | 14.12.25810 | 5 | C:\Windows\Installer\393dd2.msi | 20190922 | None | 1033 | None | None | 1 | None | None | None | C:\ProgramData\Package Cache\{828952EB-5572-3666-8CA9-000B6CE79350}v14.12.25810\packages\vcRuntimeMinimum_x86\ | http://go.microsoft.com/fwlink/?LinkId=133405 | None | None | None | {F194F15D-77FE-4813-9B85-C2FA80E6E984} | C:\Windows\Installer\393dd2.msi | vc_runtimeMinimum_x86.msi | 2 | 
 | Microsoft Visual C++ 2017 x64 Minimum Runtime - 14.12.25810 | Microsoft Visual C++ 2017 x64 Minimum Runtime - 14.12.25810 | {C99E2ADC-0347-336E-A603-F1992B09D582} | Microsoft Visual C++ 2017 x64 Minimum Runtime - 14.12.25810 | None | Microsoft Corporation | 14.12.25810 | 5 | C:\Windows\Installer\393dda.msi | 20190922 | None | 1033 | None | None | 1 | None | None | None | C:\ProgramData\Package Cache\{C99E2ADC-0347-336E-A603-F1992B09D582}v14.12.25810\packages\vcRuntimeMinimum_amd64\ | http://go.microsoft.com/fwlink/?LinkId=133405 | None | None | None | {1C423F21-E891-44F3-8FE9-E37D44470EF1} | C:\Windows\Installer\393dda.msi | vc_runtimeMinimum_x64.msi | 2 |
 ```
-### CIM_ProductFRU 
-### CIM_ProductParentChild
-### CIM_ProductPhysicalElements
-### CIM_ProductProductDependency
-### CIM_ProductSoftwareFeatures
+- CIM_ProductFRU 
+- CIM_ProductParentChild
+- CIM_ProductPhysicalElements
+- CIM_ProductProductDependency
+- CIM_ProductSoftwareFeatures
 省略
 ```sh
 WQL> SELECT * FROM CIM_ProductSoftwareFeatures
@@ -749,11 +745,11 @@ WQL> SELECT * FROM CIM_ProductSoftwareFeatures
 
 ~~~
 ```
-### CIM_ProductSupport 
-### CIM_ProtectedSpaceExtent 
-### CIM_PSExtentBasedOnPExtent 
-### CIM_Rack 
-### CIM_Realizes
+- CIM_ProductSupport 
+- CIM_ProtectedSpaceExtent 
+- CIM_PSExtentBasedOnPExtent 
+- CIM_Rack 
+- CIM_Realizes
 ```sh
 WQL> SELECT * FROM CIM_Realizes 
 | Antecedent | Dependent | 
@@ -763,17 +759,17 @@ WQL> SELECT * FROM CIM_Realizes
 | \\FOREST\root\cimv2:Win32_PhysicalMemory.Tag="Physical Memory 0" | \\FOREST\root\cimv2:Win32_MemoryDevice.DeviceID="Memory Device 1" | 
 | \\FOREST\root\cimv2:Win32_PhysicalMedia.Tag="\\\\.\\PHYSICALDRIVE0" | \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" |
 ```
-### CIM_RealizesAggregatePExtent 
-### CIM_RealizesDiskPartition 
-### CIM_RealizesPExtent 
-### CIM_RebootAction 
-### CIM_RedundancyComponent 
-### CIM_RedundancyGroup
-### CIM_Refrigeration 
-### CIM_RelatedStatistics 
-### CIM_RemoteFileSystem 
-### CIM_RemoveDirectoryAction 
-### CIM_RemoveFileAction 
+- CIM_RealizesAggregatePExtent 
+- CIM_RealizesDiskPartition 
+- CIM_RealizesPExtent 
+- CIM_RebootAction 
+- CIM_RedundancyComponent 
+- CIM_RedundancyGroup
+- CIM_Refrigeration 
+- CIM_RelatedStatistics 
+- CIM_RemoteFileSystem 
+- CIM_RemoveDirectoryAction 
+- CIM_RemoveFileAction 
 省略
 ```sh
 WQL> SELECT * FROM CIM_RemoveFileAction 
@@ -784,34 +780,34 @@ WQL> SELECT * FROM CIM_RemoveFileAction
 
 ~~~
 ```
-### CIM_ReplacementSet 
-### CIM_ResidesOnExtent 
-### CIM_RunningOS 
-### CIM_SAPSAPDependency 
-### CIM_Scanner 
-### CIM_SCSIController
+- CIM_ReplacementSet 
+- CIM_ResidesOnExtent 
+- CIM_RunningOS 
+- CIM_SAPSAPDependency 
+- CIM_Scanner 
+- CIM_SCSIController
 ```sh
 WQL> SELECT * FROM CIM_SCSIController 
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | MaxNumberControlled | ProtocolSupported | TimeOfLastReset | ControllerTimeouts | MaxDataWidth | MaxTransferRate | ProtectionManagement | Index | DriverName | DeviceMap | HardwareVersion | Manufacturer | 
 | Microsoft Storage Spaces Controller | Microsoft Storage Spaces Controller | None | Microsoft Storage Spaces Controller | OK | 3 | Win32_SCSIController | 0 | False | ROOT\SPACEPORT\0000 | None | ROOT\SPACEPORT\0000 | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | None | 2 | None | None | None | 18446744073709551615 | 65535 | None | spaceport | None | None | Microsoft | 
 | LSI Adapter, SAS 3000 series, 8-port with 1068 | LSI Adapter, SAS 3000 series, 8-port with 1068 | None | LSI Adapter, SAS 3000 series, 8-port with 1068 | OK | 3 | Win32_SCSIController | 0 | False | PCI\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\4&2732702B&0&00A8 | None | PCI\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\4&2732702B&0&00A8 | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | None | 2 | None | None | None | 18446744073709551615 | 65535 | None | LSI_SAS | None | None | LSI |
 ```
-### CIM_SCSIInterface 
-### CIM_Sensor
-### CIM_SerialController 
-### CIM_SerialInterface
-### CIM_Service 
+- CIM_SCSIInterface 
+- CIM_Sensor
+- CIM_SerialController 
+- CIM_SerialInterface
+- CIM_Service 
 rpc上では実行できない
-### CIM_ServiceAccessBySAP 
+- CIM_ServiceAccessBySAP 
 ```sh
 WQL> SELECT * FROM CIM_ServiceAccessBySAP 
 | Antecedent | Dependent | 
 | Win32_ApplicationService.Name="StatsProviderLauncher.869A7E00_7E7F_0000_83A8_EF0F76CF0001" | Win32_CommandLineAccess.Name="C:\\Program Files\\VMware\\VMware Tools\\vmStatsProvider\\win32\\vmStatsProvider.dll" |
 ```
-### CIM_ServiceAccessPoint 
+- CIM_ServiceAccessPoint 
 rpc上では実行できない
-### CIM_ServiceSAPDependency 
-### CIM_ServiceServiceDependency 
+- CIM_ServiceSAPDependency 
+- CIM_ServiceServiceDependency 
 省略
 ```sh
 WQL> SELECT * FROM CIM_ServiceServiceDependency 
@@ -821,10 +817,10 @@ WQL> SELECT * FROM CIM_ServiceServiceDependency
 | \\FOREST\root\cimv2:Win32_Service.Name="AppIDSvc" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="applockerfltr" | 65535 | 
 ~~~
 ```
-### CIM_Setting
+- CIM_Setting
 rpc上では実行できない
-### CIM_SettingCheck 
-### CIM_Slot
+- CIM_SettingCheck 
+- CIM_Slot
 ```sh
 WQL> SELECT * FROM CIM_Slot
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | ConnectorPinout | ConnectorType | SupportsHotPlug | HeightAllowed | LengthAllowed | MaxDataWidth | VccMixedVoltageSupport | VppMixedVoltageSupport | ThermalRating | SpecialPurpose | PurposeDescription | Number | SlotDesignation | CurrentUsage | PMESignal | Shared | SegmentGroupNumber | BusNumber | DeviceNumber | FunctionNumber | 
@@ -835,8 +831,8 @@ WQL> SELECT * FROM CIM_Slot
 | System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 4 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 5 | PCI Slot J15 | 3 | False | False | 0 | 38912 | 80 | 0 | 
 | System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 5 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 6 | PCI Slot J16 | 3 | False | False | 0 | 40960 | 80 | 0 | 
 ```
-### CIM_SlotInSlot 
-### CIM_SoftwareElement
+- CIM_SlotInSlot 
+- CIM_SoftwareElement
 省略
 ```sh
 WQL> SELECT * FROM CIM_SoftwareElement 
@@ -847,7 +843,7 @@ WQL> SELECT * FROM CIM_SoftwareElement
 
 ~~~
 ```
-### CIM_SoftwareElementActions 
+- CIM_SoftwareElementActions 
 省略
 ```sh
 WQL> SELECT * FROM CIM_SoftwareElementActions
@@ -858,7 +854,7 @@ WQL> SELECT * FROM CIM_SoftwareElementActions
 
 ~~~
 ```
-### CIM_SoftwareElementChecks
+- CIM_SoftwareElementChecks
 省略
 ```sh
 WQL> SELECT * FROM CIM_SoftwareElementChecks
@@ -869,7 +865,7 @@ WQL> SELECT * FROM CIM_SoftwareElementChecks
 
 ~~~
 ```
-### CIM_SoftwareElementVersionCheck 
+- CIM_SoftwareElementVersionCheck 
 省略
 ```sh
 WQL> SELECT * FROM CIM_SoftwareFeature 
@@ -880,9 +876,9 @@ WQL> SELECT * FROM CIM_SoftwareFeature
 
 ~~~
 ```
-### CIM_SoftwareFeatureSAPImplementation 
-### CIM_SoftwareFeatureServiceImplementation 
-### CIM_SoftwareFeatureSoftwareElements
+- CIM_SoftwareFeatureSAPImplementation 
+- CIM_SoftwareFeatureServiceImplementation 
+- CIM_SoftwareFeatureSoftwareElements
 省略
 ```sh
 WQL> SELECT * FROM CIM_SoftwareFeatureSoftwareElements 
@@ -893,8 +889,8 @@ WQL> SELECT * FROM CIM_SoftwareFeatureSoftwareElements
 
 ~~~
 ```
-### CIM_SpareGroup 
-### CIM_StatisticalInformation
+- CIM_SpareGroup 
+- CIM_StatisticalInformation
 省略
 ```sh
 WQL> SELECT * FROM CIM_StatisticalInformation 
