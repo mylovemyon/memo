@@ -416,7 +416,90 @@ WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_Volume.DeviceID='\\
 | Element | Setting | 
 | Win32_Volume.DeviceID="\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\" | Win32_QuotaSetting.VolumePath="C:\\" | 
 ```
+### CIM_ElementsLinked
+### CIM_ErrorCountersForDevice
+### CIM_ExecuteProgram 
+### CIM_Export 
+### CIM_ExtraCapacityGroup 
+### CIM_Fan 
+### CIM_FileAction
+省略　　　
+```sh
+WQL> SELECT * FROM CIM_FileAction 
+| Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | Source | Destination | DeleteAfterCopy | FileKey | 
+| Driver_Audio.D549868E_41DC_43CB_8703_8CBB2211BAF6 | None | 65535 | None | 65535 | Driver_Audio.D549868E_41DC_43CB_8703_8CBB2211BAF6{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | Driver_Audio.D549868E_41DC_43CB_8703_8CBB2211BAF6 | Driver_Audio.D549868E_41DC_43CB_8703_8CBB2211BAF6 | None | *.* | DRIVER_AUDIO.D549868E_41DC_43CB_8703_8CBB2211BAF6 | Driver_Audio.D549868E_41DC_43CB_8703_8CBB2211BAF6 | 3 | 
+| Driver_Audio_Vista.D549868E_41DC_43CB_8703_8CBB2211BAF6 | None | 65535 | None | 65535 | Driver_Audio_Vista.D549868E_41DC_43CB_8703_8CBB2211BAF6{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | Driver_Audio_Vista.D549868E_41DC_43CB_8703_8CBB2211BAF6 | Driver_Audio_Vista.D549868E_41DC_43CB_8703_8CBB2211BAF6 | None | *.* | DRIVER_AUDIO_COMPONENT_DIR.D549868E_41DC_43CB_8703_8CBB2211BAF6 | Driver_Audio_Vista.D549868E_41DC_43CB_8703_8CBB2211BAF6 | 3 | 
+| Remove_vmacthlp.log.9BE26984_A19E_412C_B1FB_B6BA1C8D2BE2 | None | 65535 | None | 65535 | Remove_vmacthlp.log.9BE26984_A19E_412C_B1FB_B6BA1C8D2BE2{748D3A12-9B82-4B08-A0FF-CFDE83612E87} | 65535 | Remove_vmacthlp.log.9BE26984_A19E_412C_B1FB_B6BA1C8D2BE2 | Remove_vmacthlp.log.9BE26984_A19E_412C_B1FB_B6BA1C8D2BE2 | None | vmacthlp.log | INSTALLDIR.9BE26984_A19E_412C_B1FB_B6BA1C8D2BE2 | Remove_vmacthlp.log.9BE26984_A19E_412C_B1FB_B6BA1C8D2BE2 | 2 |
 
+~~~
+```
+### CIM_FileSpecification
+省略
+```sh
+WQL> SELECT * FROM CIM_FileSpecification  
+| Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | CheckID | Description | Caption | CheckMode | CreateTimeStamp | FileSize | CheckSum | CRC1 | CRC2 | MD5Checksum | Language | Attributes | Sequence | FileID | 
+| mfc140.dll_system_x86 | 14.12.25810 | 2 | {4FD4AB8C-C57F-3782-9230-9CCA22153AD3} | 19 | mfc140.dll{7FED75A1-600C-394B-8376-712E2A8861F2} | mfc140.dll | mfc140.dll | True | None | 4821632 | None | None | None | None | 1033 | 512 | 1 | None | 
+| mfc140u.dll_system_x86 | 14.12.25810 | 2 | {46A1EA6B-3D81-3399-8991-127F7F7AE76A} | 19 | mfc140u.dll{7FED75A1-600C-394B-8376-712E2A8861F2} | mfc140u.dll | mfc140u.dll | True | None | 5124744 | None | None | None | None | 1033 | 512 | 12 | None | 
+| mfcm140.dll_system_x86 | 14.12.25810 | 2 | {C94DDE19-CC70-3B9A-A6AF-5CA7340B9B9A} | 19 | mfcm140.dll{7FED75A1-600C-394B-8376-712E2A8861F2} | mfcm140.dll | mfcm140.dll | True | None | 92296 | None | None | None | None | 1033 | 512 | 13 | None |
+
+~~~
+```
+### CIM_FileStorage 
+### CIM_FileSystem 
+### CIM_FlatPanel 
+### CIM_FromDirectoryAction 
+### CIM_HostedFileSystem 
+### CIM_HostedJobDestination 
+### CIM_HostedService 
+### CIM_InfraredController 
+### CIM_InstalledOS 
+```sh
+WQL> SELECT * FROM CIM_InstalledOS 
+| GroupComponent | PartComponent | PrimaryOS | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_OperatingSystem=@ | True |
+```
+### CIM_InstalledSoftwareElement
+省略
+```sh
+WQL> SELECT * FROM CIM_InstalledSoftwareElement 
+| Software | System | 
+| Win32_SoftwareElement.Name="C_x86_Runtime_Detection",SoftwareElementID="{E3819B64-3C56-3DD7-921D-00B011AD31DE}",SoftwareElementState=2,TargetOperatingSystem=19,Version="14.12.25810" | Win32_ComputerSystem.Name="FOREST" | 
+| Win32_SoftwareElement.Name="mfc140.dll_system_x86",SoftwareElementID="{4FD4AB8C-C57F-3782-9230-9CCA22153AD3}",SoftwareElementState=2,TargetOperatingSystem=19,Version="14.12.25810" | Win32_ComputerSystem.Name="FOREST" | 
+| Win32_SoftwareElement.Name="mfc140u.dll_system_x86",SoftwareElementID="{46A1EA6B-3D81-3399-8991-127F7F7AE76A}",SoftwareElementState=2,TargetOperatingSystem=19,Version="14.12.25810" | Win32_ComputerSystem.Name="FOREST" |
+
+~~~
+```
+### CIM_IRQ
+省略
+```sh
+WQL> SELECT * FROM CIM_IRQ
+| Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | IRQNumber | Availability | TriggerType | TriggerLevel | Shareable | Vector | Hardware | 
+| IRQ 4294967293 | IRQ 4294967293 | None | IRQ4294967293 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967293 | 2 | 2 | 2 | True | None | True | 
+| IRQ 4294967292 | IRQ 4294967292 | None | IRQ4294967292 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967292 | 2 | 2 | 2 | True | None | True | 
+| IRQ 4294967291 | IRQ 4294967291 | None | IRQ4294967291 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967291 | 2 | 2 | 2 | True | None | True |
+
+~~~
+```
+### CIM_Job 
+### CIM_JobDestination 
+### CIM_JobDestinationJobs 
+### CIM_Keyboard
+```sh
+WQL> SELECT * FROM CIM_Keyboard 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Layout | NumberOfFunctionKeys | Password | 
+| Enhanced (101- or 102-key) | Standard PS/2 Keyboard | None | Enhanced (101- or 102-key) | OK | 65535 | Win32_Keyboard | 0 | False | ACPI\PNP0303\4&25EE97C0&0 | None | ACPI\PNP0303\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 00000409 | 12 | 65535 |
+```
+### CIM_LinkHasConnector
+### CIM_LocalFileSystem 
+### CIM_Location 
+### CIM_LogicalDevice
+rpc上では実行できない
+### CIM_LogicalDisk
+```sh
+WQL> SELECT * FROM CIM_LogicalDisk
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | FreeSpace | Size | Compressed | DriveType | FileSystem | MaximumComponentLength | ProviderName | SupportsFileBasedCompression | VolumeName | VolumeSerialNumber | MediaType | SupportsDiskQuotas | QuotasDisabled | QuotasIncomplete | QuotasRebuilding | VolumeDirty | 
+| C: | Local Fixed Disk | None | C: | None | 65535 | Win32_LogicalDisk | None | True | C: | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 0 | 18446744073709551615 | None | 18446744073709551615 | None | 10410131456 | 20762849280 | False | 3 | NTFS | 255 | None | True |  | 61F2A88F | 12 | True | True | False | False | False |
+```
 
 
 
