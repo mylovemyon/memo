@@ -20,8 +20,7 @@ Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies
 
 
 # CIM WMI Provider
-### CIM_Action
-省略
+- CIM_Action
 ```sh
 WQL> SELECT * FROM CIM_Action
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | Registry | EntryName | EntryValue | Root | key | 
@@ -31,14 +30,13 @@ WQL> SELECT * FROM CIM_Action
 
 ~~~
 ```
-### CIM_ActionSequence
-### CIM_ActsAsSpare
-### CIM_AdjacentSlots
-### CIM_AggregatePExtent
-### CIM_AggregatePSExtent
-### CIM_AlarmDevice
-### CIM_AllocatedResource
-省略
+- CIM_ActionSequence
+- CIM_ActsAsSpare
+- CIM_AdjacentSlots
+- CIM_AggregatePExtent
+- CIM_AggregatePSExtent
+- CIM_AlarmDevice
+- CIM_AllocatedResource
 ```sh
 WQL> SELECT * FROM CIM_AllocatedResource
 | Antecedent | Dependent | 
@@ -51,12 +49,12 @@ WQL> SELECT * FROM CIM_AllocatedResource
 | \\FOREST\root\cimv2:Win32_DMAChannel.DMAChannel=4 | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0200\\4&25EE97C0&0" | 
 ~~~
 ```
-### CIM_ApplicationSystem
-### CIM_ApplicationSystemSoftwareFeature
-### CIM_AssociatedAlarm
-### CIM_AssociatedBattery
-### CIM_AssociatedCooling
-### CIM_AssociatedMemory
+- CIM_ApplicationSystem
+- CIM_ApplicationSystemSoftwareFeature
+- CIM_AssociatedAlarm
+- CIM_AssociatedBattery
+- CIM_AssociatedCooling
+- CIM_AssociatedMemory
 ```sh
 WQL> SELECT * FROM CIM_AssociatedMemory
 | Antecedent | Dependent | BusSpeed | 
@@ -64,7 +62,7 @@ WQL> SELECT * FROM CIM_AssociatedMemory
 | \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 1" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | None | 
 | \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 2" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | None | 
 ```
-### CIM_AssociatedProcessorMemory
+- CIM_AssociatedProcessorMemory
 ```sh
 WQL> SELECT * FROM CIM_AssociatedProcessorMemory
 | Antecedent | Dependent | BusSpeed | 
@@ -72,32 +70,32 @@ WQL> SELECT * FROM CIM_AssociatedProcessorMemory
 | \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 1" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | None | 
 | \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 2" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | None |
 ```
-### CIM_AssociatedSensor
-### CIM_AssociatedSupplyCurrentSensor
-### CIM_AssociatedSupplyVoltageSensor
-### CIM_BasedOn
+- CIM_AssociatedSensor
+- CIM_AssociatedSupplyCurrentSensor
+- CIM_AssociatedSupplyVoltageSensor
+- CIM_BasedOn
 ```sh
 WQL> SELECT * FROM CIM_BasedOn
 | Antecedent | Dependent | StartingAddress | EndingAddress | 
 | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #2" | \\FOREST\root\cimv2:Win32_LogicalDisk.DeviceID="C:" | 710934528 | 21473787903 |
 ```
-### CIM_Battery
+- CIM_Battery
 rpc上では実行できない
-### CIM_BinarySensor
-### CIM_BIOSElement
+- CIM_BinarySensor
+- CIM_BIOSElement
 ```sh
 WQL> SELECT * FROM CIM_BIOSElement 
 | Caption | Description | InstallDate | Name | Status | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | OtherTargetOS | Manufacturer | BuildNumber | SerialNumber | CodeSet | IdentificationCode | LanguageEdition | PrimaryBIOS | ReleaseDate | BiosCharacteristics | InstallableLanguages | ListOfLanguages | CurrentLanguage | SMBIOSPresent | SMBIOSMajorVersion | SMBIOSMinorVersion | SMBIOSBIOSVersion | BIOSVersion | SystemBiosMajorVersion | SystemBiosMinorVersion | EmbeddedControllerMajorVersion | EmbeddedControllerMinorVersion | 
 | VMW71.00V.24504846.B64.2501180334 | VMW71.00V.24504846.B64.2501180334 | None | VMW71.00V.24504846.B64.2501180334 | OK | INTEL  - 6040000 | 3 | VMW71.00V.24504846.B64.2501180334 | 0 | None | VMware, Inc. | None | VMware-42 14 58 74 07 28 c6 fb-94 7c c9 f5 3e 1f 0f f6 | None | None | None | True | 20250118000000.000000+000 | 4 7 9 11 42 43  | None | None | None | True | 2 | 7 | VMW71.00V.24504846.B64.2501180334 | INTEL  - 6040000 VMW71.00V.24504846.B64.2501180334 VMware, Inc. - 10000  | 255 | 255 | 255 | 255 |
 ```
-### CIM_BIOSFeature
-### CIM_BIOSFeatureBIOSElements
-### CIM_BIOSLoadedInNV
-### CIM_BootOSFromFS
-### CIM_BootSAP
-### CIM_BootService
-### CIM_BootServiceAccessBySAP
-### CIM_CacheMemory 
+- CIM_BIOSFeature
+- CIM_BIOSFeatureBIOSElements
+- CIM_BIOSLoadedInNV
+- CIM_BootOSFromFS
+- CIM_BootSAP
+- CIM_BootService
+- CIM_BootServiceAccessBySAP
+- CIM_CacheMemory 
 ```sh
 WQL> SELECT * FROM CIM_CacheMemory 
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | StartingAddress | EndingAddress | ErrorInfo | OtherErrorDescription | CorrectableError | ErrorTime | ErrorAccess | ErrorTransferSize | ErrorData | ErrorDataOrder | ErrorAddress | SystemLevelAddress | ErrorResolution | AdditionalErrorData | Level | WritePolicy | CacheType | LineSize | ReplacementPolicy | ReadPolicy | FlushTimer | Associativity | Location | MaxCacheSize | InstalledSize | SupportedSRAM | CurrentSRAM | ErrorCorrectType | CacheSpeed | 
@@ -108,24 +106,23 @@ WQL> SELECT * FROM CIM_CacheMemory
 | Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 4 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 1024 | None | 512 | L2 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 4 | 3 | 5 | None | 65535 | 65535 | None | 7 | 1 | 512 | 512 | 2 3 4 5 6  | 6  | 2 | None | 
 | Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 5 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 65536 | None | 512 | L3 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 5 | 3 | 5 | None | 65535 | 65535 | None | 8 | 1 | 32768 | 32768 | 2 3 4 5 6  | 6  | 2 | None |
 ```
-### CIM_Card
+- CIM_Card
 ```sh
 WQL> SELECT * FROM CIM_Card
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | HostingBoard | SlotLayout | RequiresDaughterBoard | SpecialRequirements | RequirementsDescription | Product | ConfigOptions | 
 | Base Board | Base Board | None | Base Board | OK | Win32_BaseBoard | Intel Corporation | None | None | None | Base Board | None | None | None | True | False | False | False | None | None | None | None | False | None | False | True | None | 440BX Desktop Reference Platform | None | 
 ```
-### CIM_CardInSlot
-### CIM_CardOnCard
-### CIM_CDROMDrive 
-### CIM_Chassis
+- CIM_CardInSlot
+- CIM_CardOnCard
+- CIM_CDROMDrive
+- CIM_Chassis
 ```sh
 WQL> SELECT * FROM CIM_Chassis
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | CableManagementStrategy | ServicePhilosophy | ServiceDescriptions | LockPresent | AudibleAlarm | VisibleAlarm | SecurityBreach | BreachDescription | NumberOfPowerCords | CurrentRequiredOrProduced | HeatGeneration | ChassisTypes | TypeDescriptions | SMBIOSAssetTag | SecurityStatus | 
 | System Enclosure | System Enclosure | None | System Enclosure | None | Win32_SystemEnclosure | No Enclosure | None | None | None | System Enclosure 0 | N/A | None | None | True | True | True | True | None | None | None | None | None | None | None | False | True | True | 65535 | None | 65535 | None | 65535 | 1  | None | No Asset Tag | 3 | 
 ```
-### CIM_ChassisInRack
-### CIM_Check
-省略
+- CIM_ChassisInRack
+- CIM_Check
 ```sh
 WQL> SELECT * FROM CIM_Check
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | CheckID | Description | Caption | CheckMode | Level | Condition | Feature | 
@@ -135,31 +132,31 @@ WQL> SELECT * FROM CIM_Check
 
 ~~~
 ```
-### CIM_Chip
+- CIM_Chip
 ```sh
 WQL> SELECT * FROM CIM_Chip
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | FormFactor | MemoryType | TotalWidth | DataWidth | Speed | Capacity | BankLabel | PositionInRow | InterleavePosition | DeviceLocator | TypeDetail | InterleaveDataDepth | Attributes | ConfiguredClockSpeed | MinVoltage | MaxVoltage | ConfiguredVoltage | SMBIOSMemoryType | 
 | Physical Memory | Physical Memory | None | Physical Memory | None | Win32_PhysicalMemory | VMware Virtual RAM | None | None | 00000001 | Physical Memory 0 | None | VMW-2048MB | None | True | True | True | True | 8 | 2 | 64 | 64 | None | 2147483648 | RAM slot #0 | None | None | RAM slot #0 | 128 | None | 0 | 4800 | None | None | None | 3 |
 ```
-### CIM_ClusteringSAP 
-### CIM_ClusteringService
-### CIM_ClusterServiceAccessBySAP
-### CIM_CollectedCollections
-### CIM_CollectedMSEs
+- CIM_ClusteringSAP
+- CIM_ClusteringService
+- CIM_ClusterServiceAccessBySAP
+- CIM_CollectedCollections
+- CIM_CollectedMSEs
 ```sh
 WQL> SELECT * FROM CIM_CollectedMSEs
 | Collection | Member | 
 | \\.\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | \\.\root\cimv2:Win32_Process.Handle="2480" |
 ```
-### CIM_CollectionOfMSEs
+- CIM_CollectionOfMSEs
 ```sh
 WQL> SELECT * FROM CIM_CollectionOfMSEs
 | CollectionID | Caption | Description | BasicUIRestrictions | 
 | \wmi\provider\sub\system\host\job | None | None | 0 | 
 | \wmi\provider\sub\system\special\host\job | None | None | 0 |
 ```
-### CIM_CollectionOfSensors
-### CIM_CollectionSetting
+- CIM_CollectionOfSensors
+- CIM_CollectionSetting
 ```sh
 WQL> SELECT * FROM CIM_CollectionSetting
 | Collection | Setting | 
@@ -168,8 +165,8 @@ WQL> SELECT * FROM CIM_CollectionSetting
 | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\special\\host\\job" | 
 | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectSecLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\special\\host\\job" |
 ```
-### CIM_CompatibleProduct
-### CIM_Component
+- CIM_CompatibleProduct
+- CIM_Component
 ```sh
 WQL> SELECT * FROM CIM_Component WHERE GroupComponent = "Win32_Directory.Name='C:\\'"
 | GroupComponent | PartComponent | 
