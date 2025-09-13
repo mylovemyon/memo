@@ -561,6 +561,119 @@ WQL> SELECT * FROM CIM_MemoryMappedIO
 | 0x00000400-0x0000041F | 0x00000400-0x0000041F | None | 0x00000400-0x0000041F | OK | Win32_ComputerSystem | FOREST | Win32_PortResource | 1024 | 1055 | False | 
 ~~~
 ```
+### CIM_MemoryOnCard 
+### CIM_MemoryWithMedia 
+### CIM_ModifySettingAction 
+### CIM_MonitorResolution 
+### CIM_MonitorSetting 
+### CIM_Mount 
+### CIM_MultiStateSensor 
+### CIM_NetworkAdapter
+```sh
+WQL> SELECT * FROM CIM_NetworkAdapter 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | PermanentAddress | NetworkAddresses | Speed | MaxSpeed | AutoSense | ProductName | AdapterType | AdapterTypeId | MACAddress | ServiceName | Manufacturer | Installed | Index | InterfaceIndex | MaxNumberControlled | TimeOfLastReset | NetConnectionID | NetConnectionStatus | NetEnabled | GUID | PhysicalAdapter | 
+| [00000000] Microsoft Kernel Debug Network Adapter | Microsoft Kernel Debug Network Adapter | None | Microsoft Kernel Debug Network Adapter | None | 3 | Win32_NetworkAdapter | 0 | False | 0 | None | ROOT\KDNIC\0000 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | None | 18446744073709551615 | 18446744073709551615 | True | Microsoft Kernel Debug Network Adapter | None | None | None | kdnic | Microsoft | True | 0 | 3 | 0 | 20250912213028.494265-420 | None | None | None | None | False | 
+| [00000001] Intel(R) 82574L Gigabit Network Connection | Intel(R) 82574L Gigabit Network Connection | None | Intel(R) 82574L Gigabit Network Connection | None | 3 | Win32_NetworkAdapter | 0 | False | 1 | None | PCI\VEN_8086&DEV_10D3&SUBSYS_07D015AD&REV_00\005056FFFFB441AF00 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | None | 1000000000 | 18446744073709551615 | True | Intel(R) 82574L Gigabit Network Connection | Ethernet 802.3 | 0 | 00:50:56:94:B7:77 | e1iexpress | Intel Corporation | True | 1 | 5 | 0 | 20250912213028.494265-420 | Ethernet0 | 2 | True | {E00B7E21-EE8E-4210-8C23-A108EFC92167} | True | 
+| [00000002] Microsoft ISATAP Adapter | Microsoft ISATAP Adapter | None | Microsoft ISATAP Adapter | None | 3 | Win32_NetworkAdapter | 0 | False | 2 | None | SWD\IP_TUNNEL_VBUS\ISATAP_0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | None | 100000 | 18446744073709551615 | True | Microsoft ISATAP Adapter | Tunnel | 15 | None | tunnel | Microsoft | True | 2 | 2 | 0 | 20250912213028.494265-420 | None | None | None | None | False | 
+| [00000003] Microsoft Teredo Tunneling Adapter | Microsoft Teredo Tunneling Adapter | None | Microsoft Teredo Tunneling Adapter | None | 3 | Win32_NetworkAdapter | None | True | 3 | None | None | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | None | 18446744073709551615 | 18446744073709551615 | True | Microsoft Teredo Tunneling Adapter | None | None | None | None | None | True | 3 | 4 | 0 | 20250912213028.494265-420 | None | None | None | None | False |
+```
+### CIM_NFS 
+### CIM_NonVolatileStorage 
+### CIM_NumericSensor 
+### CIM_OperatingSystem
+```sh
+WQL> SELECT * FROM CIM_OperatingSystem 
+| Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | Distributed | FreePhysicalMemory | FreeVirtualMemory | MaxProcessMemorySize | OSType | OtherTypeDescription | Version | LocalDateTime | CurrentTimeZone | SizeStoredInPagingFiles | FreeSpaceInPagingFiles | LastBootUpTime | MaxNumberOfProcesses | NumberOfLicensedUsers | NumberOfProcesses | NumberOfUsers | TotalSwapSpaceSize | TotalVirtualMemorySize | TotalVisibleMemorySize | BootDevice | MUILanguages | BuildNumber | OSArchitecture | BuildType | CodeSet | CountryCode | CSDVersion | DataExecutionPrevention_Available | DataExecutionPrevention_32BitApplications | DataExecutionPrevention_Drivers | DataExecutionPrevention_SupportPolicy | Debug | ForegroundApplicationBoost | Locale | Manufacturer | Organization | OSLanguage | OSProductSuite | OperatingSystemSKU | PlusProductID | PlusVersionNumber | Primary | RegisteredUser | SerialNumber | ServicePackMajorVersion | ServicePackMinorVersion | SystemDevice | SystemDirectory | SystemDrive | WindowsDirectory | EncryptionLevel | LargeSystemCache | SuiteMask | ProductType | PAEEnabled | PortableOperatingSystem | 
+| Microsoft Windows Server 2016 Standard |  | 20190918100759.000000-420 | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | OK | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | False | 388108 | 1085288 | 137438953344 | 18 | None | 10.0.14393 | 20250913063103.260000-420 | -420 | 755248 | 602532 | 20250912213028.494265-420 | None | 0 | 36 | 2 | 18446744073709551615 | 2851388 | 2096140 | \Device\HarddiskVolume3 | en-US  | 14393 | 64-bit | Multiprocessor Free | 1252 | 1 | None | True | True | True | 3 | False | 2 | 0409 | Microsoft Corporation |  | 1033 | 272 | 7 | None | None | True | Windows User | 00376-30821-30176-AA930 | 0 | 0 | \Device\HarddiskVolume4 | C:\Windows\system32 | C: | C:\Windows | 256 | None | 272 | 2 | None | False |
+```
+### CIM_OperatingSystemSoftwareFeature 
+### CIM_OSProcess 
+### CIM_OSVersionCheck 
+### CIM_PackageAlarm 
+### CIM_PackageCooling 
+### CIM_PackagedComponent
+```sh
+WQL> SELECT * FROM CIM_PackagedComponent 
+| GroupComponent | PartComponent | LocationWithinContainer | 
+| \\FOREST\root\cimv2:Win32_PhysicalMemoryArray.Tag="Physical Memory Array 0" | \\FOREST\root\cimv2:Win32_PhysicalMemory.Tag="Physical Memory 0" | None |
+```
+### CIM_PackageInChassis 
+### CIM_PackageInSlot 
+### CIM_PackageTempSensor 
+### CIM_ParallelController 
+### CIM_ParticipatesInSet 
+### CIM_PCIController 
+### CIM_PCMCIAController 
+### CIM_PCVideoController
+```sh
+WQL> SELECT * FROM CIM_PCVideoController 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | MaxNumberControlled | ProtocolSupported | TimeOfLastReset | VideoProcessor | VideoMemoryType | NumberOfVideoPages | MaxMemorySupported | AcceleratorCapabilities | CapabilityDescriptions | CurrentBitsPerPixel | CurrentHorizontalResolution | CurrentVerticalResolution | MaxRefreshRate | MinRefreshRate | CurrentRefreshRate | CurrentScanMode | CurrentNumberOfColors | CurrentNumberOfRows | CurrentNumberOfColumns | VideoArchitecture | VideoMode | NumberOfColorPlanes | AdapterCompatibility | AdapterDACType | AdapterRAM | Monochrome | DitherType | InfFilename | InfSection | InstalledDisplayDrivers | DriverDate | DriverVersion | ICMIntent | ICMMethod | SpecificationVersion | ColorTableEntries | DeviceSpecificPens | ReservedSystemPaletteEntries | SystemPaletteEntries | VideoModeDescription | 
+| VMware SVGA 3D | VMware SVGA 3D | None | VMware SVGA 3D | OK | 3 | Win32_VideoController | 0 | False | VideoController1 | None | PCI\VEN_15AD&DEV_0405&SUBSYS_040515AD&REV_00\3&18D45AA6&0&78 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 65535 | None | VMware Virtual SVGA 3D Graphics Adapter | 2 | None | None | None | None | 32 | 1440 | 621 | 64 | 64 | 1 | 4 | 4294967296 | 0 | 0 | 5 | 65535 | 65535 | VMware, Inc. | n/a | 0 | False | 0 | oem6.inf | VM3D_AMD64 | vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum_loader,vm3dum_loader,vm3dum_loader | 20180726000000.000000-000 | 8.16.1.1 | None | None | None | None | None | None | None | 1440 x 621 x 4294967296 colors |
+```
+### CIM_PExtentRedundancyComponent 
+### CIM_PhysicalCapacity 
+### CIM_PhysicalComponent
+```sh
+WQL> SELECT * FROM CIM_PhysicalComponent 
+| Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | DeviceType | Enabled | 
+| On Board Device | VMware SVGA II | None | On Board Device | None | Win32_OnBoardDevice | None | None | None | None | On Board Device 0 | None | None | None | True | True | True | True | 3 | False | 
+| On Board Device | ES1371 | None | On Board Device | None | Win32_OnBoardDevice | None | None | None | None | On Board Device 1 | None | None | None | True | True | True | True | 7 | False | 
+| Physical Memory | Physical Memory | None | Physical Memory | None | Win32_PhysicalMemory | VMware Virtual RAM | None | None | 00000001 | Physical Memory 0 | None | VMW-2048MB | None | True | True | True | True | 8 | 2 | 64 | 64 | None | 2147483648 | RAM slot #0 | None | None | RAM slot #0 | 128 | None | 0 | 4800 | None | None | None | 3 | 
+| None | None | None | None | None | None | None | None | None | 6000c29c9f4f2e0c794e36b137fda25f | \\.\PHYSICALDRIVE0 | None | None | None | True | True | True | True | 18446744073709551615 | 65535 | None | True | True |
+```
+### CIM_PhysicalConnector
+```sh
+WQL> SELECT * FROM CIM_PhysicalConnector 
+| Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | ConnectorPinout | ConnectorType | InternalReferenceDesignator | ExternalReferenceDesignator | PortType | 
+| Port Connector | Port Connector | None | Port Connector | None | Win32_PortConnector | None | None | None | None | Port Connector 0 | None | None | None | True | None | 21 2 90  | J19 | COM 1 | 9 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 0 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 1 | PCI Slot J11 | 4 | False | False | 0 | 30720 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 1 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 2 | PCI Slot J12 | 3 | False | False | 0 | 32768 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 2 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 3 | PCI Slot J13 | 4 | False | False | 0 | 34816 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 3 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 4 | PCI Slot J14 | 3 | False | False | 0 | 36864 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 4 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 5 | PCI Slot J15 | 3 | False | False | 0 | 38912 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 5 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 6 | PCI Slot J16 | 3 | False | False | 0 | 40960 | 80 | 0 | 
+| Port Connector | Port Connector | None | Port Connector | None | Win32_PortConnector | None | None | None | None | Port Connector 1 | None | None | None | True | None | 23 3 91  | J23 | Parallel | 5 | 
+| Port Connector | Port Connector | None | Port Connector | None | Win32_PortConnector | None | None | None | None | Port Connector 2 | None | None | None | True | None | 59 2  | J11 | Keyboard | 13 | 
+| Port Connector | Port Connector | None | Port Connector | None | Win32_PortConnector | None | None | None | None | Port Connector 3 | None | None | None | True | None | 59 2  | J12 | PS/2 Mouse | 13 |
+```
+### CIM_PhysicalElement
+```sh
+WQL> SELECT * FROM CIM_PhysicalElement 
+| Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | Location | Use | MemoryErrorCorrection | MaxCapacity | MaxCapacityEx | MemoryDevices | 
+| Physical Memory Array | Physical Memory Array | None | Physical Memory Array | None | Win32_PhysicalMemoryArray | None | None | None | None | Physical Memory Array 0 | None | None | None | True | True | True | True | None | None | None | None | 3 | 3 | 3 | 2097152 | 2097152 | 64 | 
+| On Board Device | VMware SVGA II | None | On Board Device | None | Win32_OnBoardDevice | None | None | None | None | On Board Device 0 | None | None | None | True | True | True | True | 3 | False | 
+| On Board Device | ES1371 | None | On Board Device | None | Win32_OnBoardDevice | None | None | None | None | On Board Device 1 | None | None | None | True | True | True | True | 7 | False | 
+| Port Connector | Port Connector | None | Port Connector | None | Win32_PortConnector | None | None | None | None | Port Connector 0 | None | None | None | True | None | 21 2 90  | J19 | COM 1 | 9 | 
+| Port Connector | Port Connector | None | Port Connector | None | Win32_PortConnector | None | None | None | None | Port Connector 1 | None | None | None | True | None | 23 3 91  | J23 | Parallel | 5 | 
+| Port Connector | Port Connector | None | Port Connector | None | Win32_PortConnector | None | None | None | None | Port Connector 2 | None | None | None | True | None | 59 2  | J11 | Keyboard | 13 | 
+| Port Connector | Port Connector | None | Port Connector | None | Win32_PortConnector | None | None | None | None | Port Connector 3 | None | None | None | True | None | 59 2  | J12 | PS/2 Mouse | 13 | 
+| Base Board | Base Board | None | Base Board | OK | Win32_BaseBoard | Intel Corporation | None | None | None | Base Board | None | None | None | True | False | False | False | None | None | None | None | False | None | False | True | None | 440BX Desktop Reference Platform | None | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 0 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 1 | PCI Slot J11 | 4 | False | False | 0 | 30720 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 1 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 2 | PCI Slot J12 | 3 | False | False | 0 | 32768 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 2 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 3 | PCI Slot J13 | 4 | False | False | 0 | 34816 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 3 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 4 | PCI Slot J14 | 3 | False | False | 0 | 36864 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 4 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 5 | PCI Slot J15 | 3 | False | False | 0 | 38912 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 5 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 6 | PCI Slot J16 | 3 | False | False | 0 | 40960 | 80 | 0 | 
+| Physical Memory | Physical Memory | None | Physical Memory | None | Win32_PhysicalMemory | VMware Virtual RAM | None | None | 00000001 | Physical Memory 0 | None | VMW-2048MB | None | True | True | True | True | 8 | 2 | 64 | 64 | None | 2147483648 | RAM slot #0 | None | None | RAM slot #0 | 128 | None | 0 | 4800 | None | None | None | 3 | 
+| System Enclosure | System Enclosure | None | System Enclosure | None | Win32_SystemEnclosure | No Enclosure | None | None | None | System Enclosure 0 | N/A | None | None | True | True | True | True | None | None | None | None | None | None | None | False | True | True | 65535 | None | 65535 | None | 65535 | 1  | None | No Asset Tag | 3 | 
+| None | None | None | None | None | None | None | None | None | 6000c29c9f4f2e0c794e36b137fda25f | \\.\PHYSICALDRIVE0 | None | None | None | True | True | True | True | 18446744073709551615 | 65535 | None | True | True |
+```
+### CIM_PhysicalElementLocation 
+### CIM_PhysicalExtent 
+### CIM_PhysicalFrame
+```sh
+WQL> SELECT * FROM CIM_PhysicalFrame 
+| Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | CableManagementStrategy | ServicePhilosophy | ServiceDescriptions | LockPresent | AudibleAlarm | VisibleAlarm | SecurityBreach | BreachDescription | NumberOfPowerCords | CurrentRequiredOrProduced | HeatGeneration | ChassisTypes | TypeDescriptions | SMBIOSAssetTag | SecurityStatus | 
+| System Enclosure | System Enclosure | None | System Enclosure | None | Win32_SystemEnclosure | No Enclosure | None | None | None | System Enclosure 0 | N/A | None | None | True | True | True | True | None | None | None | None | None | None | None | False | True | True | 65535 | None | 65535 | None | 65535 | 1  | None | No Asset Tag | 3 |
+```
+### CIM_PhysicalLink 
+### CIM_PhysicalMedia
+```sh
+WQL> SELECT * FROM CIM_PhysicalMedia 
+| Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Capacity | MediaType | MediaDescription | WriteProtectOn | CleanerMedia | 
+| None | None | None | None | None | None | None | None | None | 6000c29c9f4f2e0c794e36b137fda25f | \\.\PHYSICALDRIVE0 | None | None | None | True | True | True | True | 18446744073709551615 | 65535 | None | True | True |
+```
+
 
 
 
