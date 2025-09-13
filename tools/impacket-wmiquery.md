@@ -452,7 +452,6 @@ WQL> SELECT * FROM CIM_InstalledOS
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_OperatingSystem=@ | True |
 ```
 - CIM_InstalledSoftwareElement
-省略
 ```sh
 WQL> SELECT * FROM CIM_InstalledSoftwareElement 
 | Software | System | 
@@ -463,7 +462,6 @@ WQL> SELECT * FROM CIM_InstalledSoftwareElement
 ~~~
 ```
 - CIM_IRQ
-省略
 ```sh
 WQL> SELECT * FROM CIM_IRQ
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | IRQNumber | Availability | TriggerType | TriggerLevel | Shareable | Vector | Hardware | 
@@ -485,7 +483,7 @@ WQL> SELECT * FROM CIM_Keyboard
 - CIM_LinkHasConnector
 - CIM_LocalFileSystem 
 - CIM_Location 
-- CIM_LogicalDevice
+- CIM_LogicalDevice  
 rpc上では実行できない
 - CIM_LogicalDisk
 ```sh
@@ -545,7 +543,6 @@ WQL> SELECT * FROM CIM_Memory
 - CIM_MemoryCapacity 
 - CIM_MemoryCheck 
 - CIM_MemoryMappedIO
-省略
 ```sh
 WQL> SELECT * FROM CIM_MemoryMappedIO 
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | StartingAddress | EndingAddress | MemoryType | 
@@ -688,10 +685,9 @@ WQL> SELECT * FROM CIM_PointingDevice
 ```
 - CIM_POTSModem 
 - CIM_PowerSupply 
-- CIM_Printer 
+- CIM_Printer  
 rpc上では実行できない
 - CIM_Process
-省略
 ```sh
 WQL> SELECT * FROM CIM_Process 
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | CreationDate | Handle | KernelModeTime | OSCreationClassName | OSName | Priority | ExecutionState | TerminationDate | UserModeTime | WorkingSetSize | ExecutablePath | MaximumWorkingSetSize | MinimumWorkingSetSize | PageFaults | PageFileUsage | PeakPageFileUsage | PeakWorkingSetSize | ProcessId | QuotaNonPagedPoolUsage | QuotaPagedPoolUsage | QuotaPeakNonPagedPoolUsage | QuotaPeakPagedPoolUsage | WindowsVersion | ThreadCount | HandleCount | ParentProcessId | SessionId | PrivatePageCount | PeakVirtualSize | VirtualSize | ReadOperationCount | WriteOperationCount | OtherOperationCount | ReadTransferCount | WriteTransferCount | OtherTransferCount | CommandLine | 
@@ -702,7 +698,6 @@ WQL> SELECT * FROM CIM_Process
 ~~~
 ```
 - CIM_ProcessExecutable
-省略
 ```sh
 WQL> SELECT * FROM CIM_ProcessExecutable
 | Antecedent | Dependent | GlobalProcessCount | ProcessCount | ModuleInstance | BaseAddress | 
@@ -735,7 +730,6 @@ WQL> SELECT * FROM CIM_Product
 - CIM_ProductPhysicalElements
 - CIM_ProductProductDependency
 - CIM_ProductSoftwareFeatures
-省略
 ```sh
 WQL> SELECT * FROM CIM_ProductSoftwareFeatures
 | Product | Component | 
@@ -770,7 +764,6 @@ WQL> SELECT * FROM CIM_Realizes
 - CIM_RemoteFileSystem 
 - CIM_RemoveDirectoryAction 
 - CIM_RemoveFileAction 
-省略
 ```sh
 WQL> SELECT * FROM CIM_RemoveFileAction 
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | ActionID | Direction | Caption | Description | File | FileName | DirProperty | FileKey | InstallMode | 
@@ -796,7 +789,7 @@ WQL> SELECT * FROM CIM_SCSIController
 - CIM_Sensor
 - CIM_SerialController 
 - CIM_SerialInterface
-- CIM_Service 
+- CIM_Service  
 rpc上では実行できない
 - CIM_ServiceAccessBySAP 
 ```sh
@@ -804,11 +797,10 @@ WQL> SELECT * FROM CIM_ServiceAccessBySAP
 | Antecedent | Dependent | 
 | Win32_ApplicationService.Name="StatsProviderLauncher.869A7E00_7E7F_0000_83A8_EF0F76CF0001" | Win32_CommandLineAccess.Name="C:\\Program Files\\VMware\\VMware Tools\\vmStatsProvider\\win32\\vmStatsProvider.dll" |
 ```
-- CIM_ServiceAccessPoint 
+- CIM_ServiceAccessPoint  
 rpc上では実行できない
 - CIM_ServiceSAPDependency 
 - CIM_ServiceServiceDependency 
-省略
 ```sh
 WQL> SELECT * FROM CIM_ServiceServiceDependency 
 | Antecedent | Dependent | TypeOfDependency | 
@@ -817,7 +809,7 @@ WQL> SELECT * FROM CIM_ServiceServiceDependency
 | \\FOREST\root\cimv2:Win32_Service.Name="AppIDSvc" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="applockerfltr" | 65535 | 
 ~~~
 ```
-- CIM_Setting
+- CIM_Setting  
 rpc上では実行できない
 - CIM_SettingCheck 
 - CIM_Slot
@@ -833,7 +825,6 @@ WQL> SELECT * FROM CIM_Slot
 ```
 - CIM_SlotInSlot 
 - CIM_SoftwareElement
-省略
 ```sh
 WQL> SELECT * FROM CIM_SoftwareElement 
 | Caption | Description | InstallDate | Name | Status | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | OtherTargetOS | Manufacturer | BuildNumber | SerialNumber | CodeSet | IdentificationCode | LanguageEdition | PrimaryBIOS | ReleaseDate | BiosCharacteristics | InstallableLanguages | ListOfLanguages | CurrentLanguage | SMBIOSPresent | SMBIOSMajorVersion | SMBIOSMinorVersion | SMBIOSBIOSVersion | BIOSVersion | SystemBiosMajorVersion | SystemBiosMinorVersion | EmbeddedControllerMajorVersion | EmbeddedControllerMinorVersion | 
@@ -844,7 +835,6 @@ WQL> SELECT * FROM CIM_SoftwareElement
 ~~~
 ```
 - CIM_SoftwareElementActions 
-省略
 ```sh
 WQL> SELECT * FROM CIM_SoftwareElementActions
 | Element | Action | 
@@ -855,7 +845,6 @@ WQL> SELECT * FROM CIM_SoftwareElementActions
 ~~~
 ```
 - CIM_SoftwareElementChecks
-省略
 ```sh
 WQL> SELECT * FROM CIM_SoftwareElementChecks
 | Element | Check | Phase | 
@@ -866,7 +855,6 @@ WQL> SELECT * FROM CIM_SoftwareElementChecks
 ~~~
 ```
 - CIM_SoftwareElementVersionCheck 
-省略
 ```sh
 WQL> SELECT * FROM CIM_SoftwareFeature 
 | Caption | Description | InstallDate | Name | Status | IdentifyingNumber | ProductName | Vendor | Version | Attributes | InstallState | Accesses | LastUse | 
@@ -879,7 +867,6 @@ WQL> SELECT * FROM CIM_SoftwareFeature
 - CIM_SoftwareFeatureSAPImplementation 
 - CIM_SoftwareFeatureServiceImplementation 
 - CIM_SoftwareFeatureSoftwareElements
-省略
 ```sh
 WQL> SELECT * FROM CIM_SoftwareFeatureSoftwareElements 
 | GroupComponent | PartComponent | 
@@ -891,7 +878,6 @@ WQL> SELECT * FROM CIM_SoftwareFeatureSoftwareElements
 ```
 - CIM_SpareGroup 
 - CIM_StatisticalInformation
-省略
 ```sh
 WQL> SELECT * FROM CIM_StatisticalInformation 
 | Name | Description | Caption | TotalUserTime | TotalKernelTime | ThisPeriodTotalUserTime | ThisPeriodTotalKernelTime | TotalPageFaultCount | TotalProcesses | ActiveProcesses | TotalTerminatedProcesses | ReadOperationCount | WriteOperationCount | OtherOperationCount | ReadTransferCount | WriteTransferCount | OtherTransferCount | PeakProcessMemoryUsed | PeakJobMemoryUsed | 
