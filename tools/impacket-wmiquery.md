@@ -357,6 +357,23 @@ WQL> SELECT * FROM CIM_DMA
 ### CIM_ElementConfiguration
 ### CIM_ElementSetting 
 ```sh
+WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "CIM_DataFile.Name='C:\\bootmgr'"
+| Element | Setting | 
+| CIM_DataFile.Name="C:\\bootmgr" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="C:\\bootmgr" |
+
+WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_ClassicCOMClass.ComponentId='{A2D75874-6750-4931-94C1-C99D3BC9D0C7}'"
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A2D75874-6750-4931-94C1-C99D3BC9D0C7}" | \\FOREST\root\cimv2:Win32_ClassicCOMClassSetting.ComponentId="{A2D75874-6750-4931-94C1-C99D3BC9D0C7}" |
+
+WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_ComputerSystem.Name='FOREST'"
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_BootConfiguration.Name="BootConfiguration" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="NT AUTHORITY\\SYSTEM" | 
+~~~
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_TimeZone.StandardName="Pacific Standard Time" | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu" | 
+~~~
+
 WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_DCOMApplication.AppID='{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}'"
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_DCOMApplicationSetting.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | 
@@ -365,9 +382,35 @@ WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_Directory.Name='C:\
 | Element | Setting | 
 | Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="C:\\" |
 
+WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_NetworkAdapter.DeviceID='0'"
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="0" | \\FOREST\root\cimv2:Win32_NetworkAdapterConfiguration.Index=0 |
+
+WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_OperatingSystem=@"
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_OperatingSystem=@ | \\FOREST\root\cimv2:Win32_AutochkSetting.SettingID="Microsoft Windows Server 2016 Standard|C:\\Windows|\\Device\\Harddisk0\\Partition4" |
+
+WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_Service='winmgmt'"
+| Element | Setting | 
+| Win32_Service="winmgmt" | Win32_WMISetting=@ |
+
 WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_UserAccount.Domain='htb',Name='administrator'"
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\Administrator" |
+
+WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_VideoController.DeviceID='*'"
+| Element | Setting | 
+| Win32_VideoController.DeviceID="*" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="*" | 
+| Win32_VideoController.DeviceID="*" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="*" | 
+| Win32_VideoController.DeviceID="*" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="*" | 
+| Win32_VideoController.DeviceID="*" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="*" | 
+| Win32_VideoController.DeviceID="*" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="*" | 
+| Win32_VideoController.DeviceID="*" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="*" | 
+| Win32_VideoController.DeviceID="*" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="*" | 
+| Win32_VideoController.DeviceID="*" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="*" | 
+| Win32_VideoController.DeviceID="*" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="*" | 
+| Win32_VideoController.DeviceID="*" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="*" | 
+| Win32_VideoController.DeviceID="*" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="*" |
 
 WQL> SELECT * FROM CIM_ElementSetting WHERE Element = "Win32_Volume.DeviceID='\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\'"
 | Element | Setting | 
