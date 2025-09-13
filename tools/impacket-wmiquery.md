@@ -787,6 +787,126 @@ WQL> SELECT * FROM CIM_RemoveFileAction
 
 ~~~
 ```
+### CIM_ReplacementSet 
+### CIM_ResidesOnExtent 
+### CIM_RunningOS 
+### CIM_SAPSAPDependency 
+### CIM_Scanner 
+### CIM_SCSIController
+```sh
+WQL> SELECT * FROM CIM_SCSIController 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | MaxNumberControlled | ProtocolSupported | TimeOfLastReset | ControllerTimeouts | MaxDataWidth | MaxTransferRate | ProtectionManagement | Index | DriverName | DeviceMap | HardwareVersion | Manufacturer | 
+| Microsoft Storage Spaces Controller | Microsoft Storage Spaces Controller | None | Microsoft Storage Spaces Controller | OK | 3 | Win32_SCSIController | 0 | False | ROOT\SPACEPORT\0000 | None | ROOT\SPACEPORT\0000 | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | None | 2 | None | None | None | 18446744073709551615 | 65535 | None | spaceport | None | None | Microsoft | 
+| LSI Adapter, SAS 3000 series, 8-port with 1068 | LSI Adapter, SAS 3000 series, 8-port with 1068 | None | LSI Adapter, SAS 3000 series, 8-port with 1068 | OK | 3 | Win32_SCSIController | 0 | False | PCI\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\4&2732702B&0&00A8 | None | PCI\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\4&2732702B&0&00A8 | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | None | 2 | None | None | None | 18446744073709551615 | 65535 | None | LSI_SAS | None | None | LSI |
+```
+### CIM_SCSIInterface 
+### CIM_Sensor
+### CIM_SerialController 
+### CIM_SerialInterface
+### CIM_Service 
+rpc上では実行できない
+### CIM_ServiceAccessBySAP 
+```sh
+WQL> SELECT * FROM CIM_ServiceAccessBySAP 
+| Antecedent | Dependent | 
+| Win32_ApplicationService.Name="StatsProviderLauncher.869A7E00_7E7F_0000_83A8_EF0F76CF0001" | Win32_CommandLineAccess.Name="C:\\Program Files\\VMware\\VMware Tools\\vmStatsProvider\\win32\\vmStatsProvider.dll" |
+```
+### CIM_ServiceAccessPoint 
+rpc上では実行できない
+### CIM_ServiceSAPDependency 
+### CIM_ServiceServiceDependency 
+省略
+```sh
+WQL> SELECT * FROM CIM_ServiceServiceDependency 
+| Antecedent | Dependent | TypeOfDependency | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="FltMgr" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="AppID" | 65535 | 
+~~~
+| \\FOREST\root\cimv2:Win32_Service.Name="AppIDSvc" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="applockerfltr" | 65535 | 
+~~~
+```
+### CIM_Setting
+rpc上では実行できない
+### CIM_SettingCheck 
+### CIM_Slot
+```sh
+WQL> SELECT * FROM CIM_Slot
+| Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | ConnectorPinout | ConnectorType | SupportsHotPlug | HeightAllowed | LengthAllowed | MaxDataWidth | VccMixedVoltageSupport | VppMixedVoltageSupport | ThermalRating | SpecialPurpose | PurposeDescription | Number | SlotDesignation | CurrentUsage | PMESignal | Shared | SegmentGroupNumber | BusNumber | DeviceNumber | FunctionNumber | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 0 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 1 | PCI Slot J11 | 4 | False | False | 0 | 30720 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 1 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 2 | PCI Slot J12 | 3 | False | False | 0 | 32768 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 2 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 3 | PCI Slot J13 | 4 | False | False | 0 | 34816 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 3 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 4 | PCI Slot J14 | 3 | False | False | 0 | 36864 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 4 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 5 | PCI Slot J15 | 3 | False | False | 0 | 38912 | 80 | 0 | 
+| System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 5 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 6 | PCI Slot J16 | 3 | False | False | 0 | 40960 | 80 | 0 | 
+```
+### CIM_SlotInSlot 
+### CIM_SoftwareElement
+省略
+```sh
+WQL> SELECT * FROM CIM_SoftwareElement 
+| Caption | Description | InstallDate | Name | Status | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | OtherTargetOS | Manufacturer | BuildNumber | SerialNumber | CodeSet | IdentificationCode | LanguageEdition | PrimaryBIOS | ReleaseDate | BiosCharacteristics | InstallableLanguages | ListOfLanguages | CurrentLanguage | SMBIOSPresent | SMBIOSMajorVersion | SMBIOSMinorVersion | SMBIOSBIOSVersion | BIOSVersion | SystemBiosMajorVersion | SystemBiosMinorVersion | EmbeddedControllerMajorVersion | EmbeddedControllerMinorVersion | 
+| VMW71.00V.24504846.B64.2501180334 | VMW71.00V.24504846.B64.2501180334 | None | VMW71.00V.24504846.B64.2501180334 | OK | INTEL  - 6040000 | 3 | VMW71.00V.24504846.B64.2501180334 | 0 | None | VMware, Inc. | None | VMware-42 14 7c de 47 e4 1c c2-bf 11 9a 8d c3 92 54 71 | None | None | None | True | 20250118000000.000000+000 | 4 7 9 11 42 43  | None | None | None | True | 2 | 7 | VMW71.00V.24504846.B64.2501180334 | INTEL  - 6040000 VMW71.00V.24504846.B64.2501180334 VMware, Inc. - 10000  | 255 | 255 | 255 | 255 | 
+| C_x86_Runtime_Detection | C_x86_Runtime_Detection | 20190922000000.000000-000 | C_x86_Runtime_Detection | None | 14.12.25810 | 2 | {E3819B64-3C56-3DD7-921D-00B011AD31DE} | 19 | None | Microsoft Corporation | None | None | None | {E3819B64-3C56-3DD7-921D-00B011AD31DE} | None | 4 | 02:\SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x86\Version | 3 | 
+| mfc140.dll_system_x86 | mfc140.dll_system_x86 | 20190922000000.000000-000 | mfc140.dll_system_x86 | None | 14.12.25810 | 2 | {4FD4AB8C-C57F-3782-9230-9CCA22153AD3} | 19 | None | Microsoft Corporation | None | None | None | {4FD4AB8C-C57F-3782-9230-9CCA22153AD3} | None | 0 | C:\Windows\SysWOW64\mfc140.dll | 3 | 
+
+~~~
+```
+### CIM_SoftwareElementActions 
+省略
+```sh
+WQL> SELECT * FROM CIM_SoftwareElementActions
+| Element | Action | 
+| Win32_SoftwareElement.Name="_create_INSTALLDIR",SoftwareElementID="{B5115352-2722-4150-A0F2-3BFDCE9659E7}",SoftwareElementState=2,TargetOperatingSystem=19,Version="10.3.2.9925305" | Win32_CreateFolderAction.ActionID="INSTALLDIR{748D3A12-9B82-4B08-A0FF-CFDE83612E87}" | 
+| Win32_SoftwareElement.Name="_VMwareService.869A7E00_8665_0000_83A8_EF0F76CF0001",SoftwareElementID="{F3C2BE17-26DD-46B8-93D8-299422CD2467}",SoftwareElementState=2,TargetOperatingSystem=19,Version="10.3.2.9925305" | Win32_CreateFolderAction.ActionID="VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87}" | 
+| Win32_SoftwareElement.Name="_guestproxy_directories.869A7E00_8665_0000_83A8_EF0F76CF0001",SoftwareElementID="{3373A3AC-B14B-459B-AEB6-79EE5FD7B4AE}",SoftwareElementState=2,TargetOperatingSystem=19,Version="10.3.2.9925305" | Win32_CreateFolderAction.ActionID="VMWARETOOLS_CMNAPPDATA.869A7E00_8665_0000_83A8_EF0F76CF0001{748D3A12-9B82-4B08-A0FF-CFDE83612E87}" |
+
+~~~
+```
+### CIM_SoftwareElementChecks
+省略
+```sh
+WQL> SELECT * FROM CIM_SoftwareElementChecks
+| Element | Check | Phase | 
+| Win32_SoftwareElement.Name="mfc140.dll_system_x86",SoftwareElementID="{4FD4AB8C-C57F-3782-9230-9CCA22153AD3}",SoftwareElementState=2,TargetOperatingSystem=19,Version="14.12.25810" | Win32_FileSpecification.CheckID="mfc140.dll{7FED75A1-600C-394B-8376-712E2A8861F2}" | 65535 | 
+| Win32_SoftwareElement.Name="mfc140u.dll_system_x86",SoftwareElementID="{46A1EA6B-3D81-3399-8991-127F7F7AE76A}",SoftwareElementState=2,TargetOperatingSystem=19,Version="14.12.25810" | Win32_FileSpecification.CheckID="mfc140u.dll{7FED75A1-600C-394B-8376-712E2A8861F2}" | 65535 | 
+| Win32_SoftwareElement.Name="mfcm140.dll_system_x86",SoftwareElementID="{C94DDE19-CC70-3B9A-A6AF-5CA7340B9B9A}",SoftwareElementState=2,TargetOperatingSystem=19,Version="14.12.25810" | Win32_FileSpecification.CheckID="mfcm140.dll{7FED75A1-600C-394B-8376-712E2A8861F2}" | 65535 |
+
+~~~
+```
+### CIM_SoftwareElementVersionCheck 
+省略
+```sh
+WQL> SELECT * FROM CIM_SoftwareFeature 
+| Caption | Description | InstallDate | Name | Status | IdentifyingNumber | ProductName | Vendor | Version | Attributes | InstallState | Accesses | LastUse | 
+| No Title | No Description | None | VC_Runtime_Additional | None | {7FED75A1-600C-394B-8376-712E2A8861F2} | Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810 | Microsoft Corporation | 14.12.25810 | 17 | 3 | 0 | 19800000******.000000+*** | 
+| RefCounting | Used for Ref Counting | None | Provider | None | {7FED75A1-600C-394B-8376-712E2A8861F2} | Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810 | Microsoft Corporation | 14.12.25810 | 17 | 3 | 0 | 19800000******.000000+*** | 
+| Servicing | Used to help service the product | None | Servicing_Key | None | {7FED75A1-600C-394B-8376-712E2A8861F2} | Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810 | Microsoft Corporation | 14.12.25810 | 17 | 3 | 0 | 19800000******.000000+*** | 
+
+~~~
+```
+### CIM_SoftwareFeatureSAPImplementation 
+### CIM_SoftwareFeatureServiceImplementation 
+### CIM_SoftwareFeatureSoftwareElements
+省略
+```sh
+WQL> SELECT * FROM CIM_SoftwareFeatureSoftwareElements 
+| GroupComponent | PartComponent | 
+| Win32_SoftwareFeature.IdentifyingNumber="{7FED75A1-600C-394B-8376-712E2A8861F2}",Name="VC_Runtime_Additional",ProductName="Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810",Version="14.12.25810" | Win32_SoftwareElement.Name="C_x86_Runtime_Detection",SoftwareElementID="{E3819B64-3C56-3DD7-921D-00B011AD31DE}",SoftwareElementState=2,TargetOperatingSystem=19,Version="14.12.25810" | 
+| Win32_SoftwareFeature.IdentifyingNumber="{7FED75A1-600C-394B-8376-712E2A8861F2}",Name="VC_Runtime_Additional",ProductName="Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810",Version="14.12.25810" | Win32_SoftwareElement.Name="mfc140.dll_system_x86",SoftwareElementID="{4FD4AB8C-C57F-3782-9230-9CCA22153AD3}",SoftwareElementState=2,TargetOperatingSystem=19,Version="14.12.25810" | 
+| Win32_SoftwareFeature.IdentifyingNumber="{7FED75A1-600C-394B-8376-712E2A8861F2}",Name="VC_Runtime_Additional",ProductName="Microsoft Visual C++ 2017 x86 Additional Runtime - 14.12.25810",Version="14.12.25810" | Win32_SoftwareElement.Name="mfc140u.dll_system_x86",SoftwareElementID="{46A1EA6B-3D81-3399-8991-127F7F7AE76A}",SoftwareElementState=2,TargetOperatingSystem=19,Version="14.12.25810" |
+
+~~~
+```
+### CIM_SpareGroup 
+### CIM_StatisticalInformation
+省略
+```sh
+WQL> SELECT * FROM CIM_StatisticalInformation 
+| Name | Description | Caption | TotalUserTime | TotalKernelTime | ThisPeriodTotalUserTime | ThisPeriodTotalKernelTime | TotalPageFaultCount | TotalProcesses | ActiveProcesses | TotalTerminatedProcesses | ReadOperationCount | WriteOperationCount | OtherOperationCount | ReadTransferCount | WriteTransferCount | OtherTransferCount | PeakProcessMemoryUsed | PeakJobMemoryUsed | 
+| \wmi\provider\sub\system\host\job | None | None | 1832343750 | 5865937500 | 1832343750 | 5865937500 | 39031720 | 24 | 2 | 0 | 343930 | 14411 | 27719098 | 159070854 | 1798928 | 697224295 | 28127232 | 48111616 | 
+| \wmi\provider\sub\system\special\host\job | None | None | 1093750 | 937500 | 1093750 | 937500 | 6990 | 2 | 0 | 0 | 0 | 74 | 328 | 0 | 10470 | 2056 | 5726208 | 5726208 | 
+
+~~~
+```
 
 
 
