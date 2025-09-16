@@ -917,6 +917,38 @@ WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_Bus.DeviceID='A
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" |
 
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_CacheMemory.DeviceID='Cache Memory 0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 0" |
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_DesktopMonitor.DeviceID='DesktopMonitor1'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DesktopMonitor.DeviceID="DesktopMonitor1" |
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = ":Win32_DiskDrive.DeviceID='\\\\.\\PHYSICALDRIVE0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" | 
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_DiskPartition.DeviceID='Disk #0, Partition #0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #0" |
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_Keyboard.DeviceID='ACPI\\PNP0303\\4&25EE97C0&0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Keyboard.DeviceID="ACPI\\PNP0303\\4&25EE97C0&0" | 
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_LogicalDisk.DeviceID='C:'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalDisk.DeviceID="C:" |
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_MemoryArray.DeviceID='Memory Array 0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_MemoryArray.DeviceID="Memory Array 0" |
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_MemoryDevice.DeviceID='Memory Device 0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_MemoryDevice.DeviceID="Memory Device 0" |
+
 WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_MotherboardDevice.DeviceID='Motherboard'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_MotherboardDevice.DeviceID="Motherboard" |
@@ -932,6 +964,18 @@ WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_PnPEntity.Devic
 WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_PointingDevice.DeviceID='ACPI\\VMW0003\\4&25EE97C0&0'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PointingDevice.DeviceID="ACPI\\VMW0003\\4&25EE97C0&0" | 
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_Processor.DeviceID='CPU0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | 
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_SCSIController.DeviceID='PCI\\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\\4&2732702B&0&00A8'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SCSIController.DeviceID="PCI\\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\\4&2732702B&0&00A8"
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_VideoController.DeviceID='VideoController1'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_VideoController.DeviceID="VideoController1" |
 
 WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_Volume.DeviceID='\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\'"
 | GroupComponent | PartComponent | 
