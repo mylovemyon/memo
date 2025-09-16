@@ -911,6 +911,10 @@ WQL> SELECT * FROM CIM_System
 ```
 - CIM_SystemComponent
 ```sh
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_BIOS.Name='VMW71.00V.24504846.B64.2501180334',SoftwareElementID='VMW71.00V.24504846.B64.2501180334',SoftwareElementState=3,TargetOperatingSystem=0,Version='INTEL  - 6040000'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_BIOS.Name="VMW71.00V.24504846.B64.2501180334",SoftwareElementID="VMW71.00V.24504846.B64.2501180334",SoftwareElementState=3,TargetOperatingSystem=0,Version="INTEL  - 6040000" |
+
 WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_Bus.DeviceID='ACPIBus_BUS_0'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" | 
@@ -919,9 +923,17 @@ WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_CacheMemory.
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 0" |
 
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_DesktopMonitor.DeviceID='DesktopMonitor1'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DesktopMonitor.DeviceID="DesktopMonitor1" | 
+
 WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_DeviceMemoryAddress.StartingAddress='655360'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="655360" |
+
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_DiskDrive.DeviceID='\\\\.\\PHYSICALDRIVE0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" |
 
 WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_DiskPartition.DeviceID='Disk #0, Partition #0'"
 | GroupComponent | PartComponent | 
@@ -935,6 +947,26 @@ WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_IRQResource.
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=1 |
 
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_Keyboard.DeviceID='ACPI\\PNP0303\\4&25EE97C0&0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Keyboard.DeviceID="ACPI\\PNP0303\\4&25EE97C0&0" | 
+
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_LoadOrderGroup.Name='System Reserved'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Reserved" |
+
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_LogicalDisk.DeviceID='C:'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalDisk.DeviceID="C:" | 
+
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_MemoryArray.DeviceID='Memory Array 0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_MemoryArray.DeviceID="Memory Array 0" |
+
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_MemoryDevice.DeviceID='Memory Device 0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_MemoryDevice.DeviceID="Memory Device 0" | 
+
 WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_MotherboardDevice.DeviceID='Motherboard'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_MotherboardDevice.DeviceID="Motherboard" |
@@ -942,6 +974,10 @@ WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_MotherboardD
 WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_NetworkAdapter.DeviceID='0'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="0" |
+
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_OperatingSystem=@"
+| GroupComponent | PartComponent | PrimaryOS | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_OperatingSystem=@ | True |
 
 WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_PnPEntity.DeviceID='ACPI\\PNP0C02\\4'"
 | GroupComponent | PartComponent | 
@@ -959,6 +995,14 @@ WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_Process.Hand
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Process.Handle="0" |
 
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_Processor.DeviceID='CPU0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" |
+
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_SCSIController.DeviceID='PCI\\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\\4&2732702B&0&00A8'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SCSIController.DeviceID="PCI\\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\\4&2732702B&0&00A8" |
+
 WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_Service.Name='WinDefend'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="WinDefend" |
@@ -967,9 +1011,17 @@ WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_SystemDriver
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="pcw" |
 
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_UserAccount.Domain='htb',Name='administrator'" 
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="Administrator",Domain="HTB" |
+
 WQL> SELECT * FROM CIM_SystemComponent WHERE PartComponent = "Win32_VideoController.DeviceID='VideoController1'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_VideoController.DeviceID="VideoController1" |
+
+WQL> SELECT * FROM CIM_SystemComponent WHERE PartComPonent = "Win32_Volume.DeviceID='\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Volume.DeviceID="\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\" | 
 ```
 - CIM_SystemDevice  
 ```sh
@@ -985,7 +1037,7 @@ WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_DesktopMonitor.
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DesktopMonitor.DeviceID="DesktopMonitor1" |
 
-WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = ":Win32_DiskDrive.DeviceID='\\\\.\\PHYSICALDRIVE0'"
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_DiskDrive.DeviceID='\\\\.\\PHYSICALDRIVE0'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" | 
 
