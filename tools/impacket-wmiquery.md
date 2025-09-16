@@ -909,6 +909,35 @@ WQL> SELECT * FROM CIM_System
 | FOREST | AT/AT COMPATIBLE | None | FOREST | OK | Win32_ComputerSystem | None | None | Windows User | 323 339 350 377 389 393  | None | None | True | None | 0 | 1 | True | True | True | True | Normal boot | -420 | FOREST | htb.local | False | VMware, Inc. | VMware7,1 | True | None | None | None | None | None | x64-based PC | None | 5 | 6 | [MS_VM_CERT/SHA1/27d66596a61c48dd3dc7216fd715126e33f59ae7] Welcome to the Virtual Machine  | 3 | 3 | -1 | -1 | 3932100000 | 0 | 3 | 1 | 3 | 3 | 3 | 3 | True | True | 1 | 2 | 2146447360 | True | 1 | 1 | None | None | None | None | 0 0 0 33 31 162 0 3 2 2  | True | 
 | HTB | HTB | None | Domain: HTB | OK | Win32_NTDomain | None | None | None | None | \\FOREST | \\dead:beef::d8bb:f9b6:fafb:2ed1 | 1 | {DFF0C71A-A949-4B26-8C7B-52E3E2CB6EAB} | HTB | htb.local | True | True | True | True | True | True | False | False | True | Default-First-Site-Name | Default-First-Site-Name | 
 ```
+- CIM_SystemComponent  
+rpc上では実行できない
+- CIM_SystemDevice  
+```sh
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_Bus.DeviceID='ACPIBus_BUS_0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" |
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_MotherboardDevice.DeviceID='Motherboard'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_MotherboardDevice.DeviceID="Motherboard" |
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_NetworkAdapter.DeviceID='0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="0" |
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_PnPEntity.DeviceID='ACPI\\PNP0C02\\4'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" |
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_PointingDevice.DeviceID='ACPI\\VMW0003\\4&25EE97C0&0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_PointingDevice.DeviceID="ACPI\\VMW0003\\4&25EE97C0&0" | 
+
+WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_Volume.DeviceID='\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Volume.DeviceID="\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\" | 
+```
+
 
 
 
