@@ -1,7 +1,7 @@
 - https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/cimwin32-wmi-providers
 - https://learn.microsoft.com/en-us/windows/win32/wmisdk/wql-sql-for-wmi
 
-# COMMAND
+## COMMAND
 ```sh
 └─$ impacket-wmiquery -debug 'htb.local/administrator@10.129.138.203' -hashes 'aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6'                          
 Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
@@ -19,7 +19,7 @@ Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies
 
 
 
-# CIM WMI Provider
+## CIM WMI Provider
 - CIM_Action
 ```sh
 WQL> SELECT * FROM CIM_Action
@@ -35,6 +35,7 @@ WQL> SELECT * FROM CIM_Action
 - CIM_AdjacentSlots
 - CIM_AggregatePExtent
 - CIM_AggregatePSExtent
+- CIM_AggregateRedundancyComponent
 - CIM_AlarmDevice
 - CIM_AllocatedResource
 ```sh
@@ -440,7 +441,15 @@ WQL> SELECT * FROM CIM_FileSpecification
 - CIM_FileStorage
 - CIM_FileSystem
 - CIM_FlatPanel
-- CIM_FromDirectoryAction 
+- CIM_FromDirectoryAction
+- CIM_FromDirectorySpecification
+- CIM_FRU
+- CIM_FRUIncludesProduct
+- CIM_FRUPhysicalElements
+- CIM_HeatPipe
+- CIM_HostedAccessPoint
+- CIM_HostedBootSAP
+- CIM_HostedBootService
 - CIM_HostedFileSystem 
 - CIM_HostedJobDestination 
 - CIM_HostedService 
@@ -1164,31 +1173,33 @@ rpc上では実行できない
 
 
 
+## Power Management Event Provider
+- Win32_PowerManagementEvent
 
 
 
-# Win32 Provider
-## Computer System Hardware Classes
-### Cooling Device Classes
-#### Win32_Fan
-#### Win32_HeatPipe
-#### Win32_Refrigeration
-#### Win32_TemperatureProbe
 
 
-### Input Device Classes
-#### Win32_Keyboard
-```sh
-WQL> SELECT * FROM Win32_Keyboard
-| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Layout | NumberOfFunctionKeys | Password | 
-| Enhanced (101- or 102-key) | Standard PS/2 Keyboard | None | Enhanced (101- or 102-key) | OK | 65535 | Win32_Keyboard | 0 | False | ACPI\PNP0303\4&25EE97C0&0 | None | ACPI\PNP0303\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 00000409 | 12 | 65535 |
-```
-#### Win32_PointingDevice
-```sh 
-WQL> SELECT * FROM Win32_PointingDevice
-| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Handedness | NumberOfButtons | PointingType | Resolution | HardwareType | InfFileName | InfSection | SampleRate | Synch | DoubleSpeedThreshold | QuadSpeedThreshold | DeviceInterface | Manufacturer | 
-| VMware Pointing Device | VMware Pointing Device | None | VMware Pointing Device | OK | 65535 | Win32_PointingDevice | 0 | False | ACPI\VMW0003\4&25EE97C0&0 | None | ACPI\VMW0003\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | 0 | 2 | None | VMware Pointing Device | oem5.inf | VMMouse | None | None | None | None | 1 | VMware, Inc. |
-```
+## Win32 Provider
+### Computer System Hardware Classes
+- Cooling Device Classes
+  - Win32_Fan
+  - Win32_HeatPipe
+  - Win32_Refrigeration
+  - Win32_TemperatureProbe
+- Input Device Classes
+  - Win32_Keyboard
+	```sh
+	WQL> SELECT * FROM Win32_Keyboard
+	| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Layout | NumberOfFunctionKeys | Password | 
+	| Enhanced (101- or 102-key) | Standard PS/2 Keyboard | None | Enhanced (101- or 102-key) | OK | 65535 | Win32_Keyboard | 0 | False | ACPI\PNP0303\4&25EE97C0&0 | None | ACPI\PNP0303\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 00000409 | 12 | 65535 |
+	```
+  - Win32_PointingDevice
+	```sh 
+	WQL> SELECT * FROM Win32_PointingDevice
+	| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Handedness | NumberOfButtons | PointingType | Resolution | HardwareType | InfFileName | InfSection | SampleRate | Synch | DoubleSpeedThreshold | QuadSpeedThreshold | DeviceInterface | Manufacturer | 
+	| VMware Pointing Device | VMware Pointing Device | None | VMware Pointing Device | OK | 65535 | Win32_PointingDevice | 0 | False | ACPI\VMW0003\4&25EE97C0&0 | None | ACPI\VMW0003\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | 0 | 2 | None | VMware Pointing Device | oem5.inf | VMMouse | None | None | None | None | 1 | VMware, Inc. |
+	```
 
 
 ### Mass Storage Classes
