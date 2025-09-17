@@ -2176,22 +2176,21 @@ WQL> SELECT * FROM Win32_ProtocolBinding
 | \\FOREST\root\cimv2:Win32_NetworkProtocol.Name="MSAFD Tcpip [UDP/IPv6]" | \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="1" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="e1iexpress" |
 ```
 
-
-### Operating System Events
-#### Win32_ComputerShutdownEvent
-#### Win32_ComputerSystemEvent
-#### Win32_DeviceChangeEvent
-#### Win32_ModuleLoadTrace
-#### Win32_ModuleTrace
-#### Win32_ProcessStartTrace
-#### Win32_ProcessStopTrace
-#### Win32_ProcessTrace
-#### Win32_SystemConfigurationChangeEvent
-#### Win32_SystemTrace
-#### Win32_ThreadStartTrace
-#### Win32_ThreadStopTrace
-#### Win32_ThreadTrace
-#### Win32_VolumeChangeEvent
+#### Operating System Events
+- Win32_ComputerShutdownEvent
+- Win32_ComputerSystemEvent
+- Win32_DeviceChangeEvent
+- Win32_ModuleLoadTrace
+- Win32_ModuleTrace
+- Win32_ProcessStartTrace
+- Win32_ProcessStopTrace
+- Win32_ProcessTrace
+- Win32_SystemConfigurationChangeEvent
+- Win32_SystemTrace
+- Win32_ThreadStartTrace
+- Win32_ThreadStopTrace
+- Win32_ThreadTrace
+- Win32_VolumeChangeEvent
 
 
 ### Operating System Settings
