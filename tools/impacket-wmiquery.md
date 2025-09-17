@@ -1093,6 +1093,72 @@ WQL> SELECT * FROM CIM_SystemDevice WHERE PartComponent = "Win32_Volume.DeviceID
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Volume.DeviceID="\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\" | 
 ```
+- CIM_SystemResource
+```sh
+WQL> SELECT * FROM CIM_SystemResource 
+| Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | DMAChannel | Availability | BurstMode | TransferWidths | AddressSize | MaxTransferSize | ByteMode | WordMode | ChannelTiming | TypeCTiming | Port | 
+| Channel 4 | Channel 4 | None | Channel 4 | OK | Win32_ComputerSystem | FOREST | Win32_DMAChannel | 4 | 4 | True | 0  | 0 | 0 | 2 | 2 | 2 | 2 | None | 
+| IRQ 4294967293 | IRQ 4294967293 | None | IRQ4294967293 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967293 | 2 | 2 | 2 | True | None | True | 
+| IRQ 4294967292 | IRQ 4294967292 | None | IRQ4294967292 | OK | Win32_ComputerSystem | FOREST | Win32_IRQResource | 4294967292 | 2 | 2 | 2 | True | None | True | 
+
+~~~
+```
+- CIM_Tachometer
+- CIM_TapeDrive
+- CIM_TemperatureSensor 
+- CIM_Thread
+```sh
+WQL> SELECT * FROM CIM_Thread  
+| Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | OSCreationClassName | OSName | ProcessCreationClassName | ProcessHandle | CreationClassName | Handle | Priority | ExecutionState | UserModeTime | KernelModeTime | ElapsedTime | PriorityBase | StartAddress | ThreadState | ThreadWaitReason | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 0 | Win32_Thread | 0 | 0 | 65535 | 0 | 73804375 | 13402579241000 | 0 | 2333955040 | 2 | 0 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 0 | Win32_Thread | 1 | 0 | 65535 | 0 | 77876718 | 13402579241000 | 0 | 2333955040 | 2 | 0 | 
+| None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 4 | Win32_Thread | 12 | 13 | 65535 | 0 | 0 | 13402579241000 | 13 | 2333871092 | 5 | 0 |
+
+~~~
+```
+- CIM_ToDirectoryAction
+- CIM_ToDirectorySpecification
+- CIM_UninterruptiblePowerSupply
+- CIM_UnitaryComputerSystem
+```sh
+WQL> SELECT * FROM CIM_UnitaryComputerSystem 
+| Caption | Description | InstallDate | Name | Status | CreationClassName | NameFormat | PrimaryOwnerContact | PrimaryOwnerName | Roles | InitialLoadInfo | LastLoadInfo | PowerManagementSupported | PowerManagementCapabilities | PowerState | ResetCapability | AutomaticResetBootOption | AutomaticManagedPagefile | AutomaticResetCapability | BootROMSupported | BootupState | CurrentTimeZone | DNSHostName | Domain | InfraredSupported | Manufacturer | Model | NetworkServerModeEnabled | OEMLogoBitmap | SupportContactDescription | SystemStartupDelay | SystemStartupOptions | SystemStartupSetting | SystemType | UserName | DomainRole | WakeUpType | OEMStringArray | BootOptionOnLimit | BootOptionOnWatchDog | ResetCount | ResetLimit | PauseAfterReset | PowerOnPasswordStatus | KeyboardPasswordStatus | AdminPasswordStatus | FrontPanelResetStatus | ChassisBootupState | PowerSupplyState | ThermalState | DaylightInEffect | EnableDaylightSavingsTime | NumberOfProcessors | NumberOfLogicalProcessors | TotalPhysicalMemory | PartOfDomain | PCSystemType | PCSystemTypeEx | Workgroup | SystemSKUNumber | SystemFamily | ChassisSKUNumber | BootStatus | HypervisorPresent | 
+| FOREST | AT/AT COMPATIBLE | None | FOREST | OK | Win32_ComputerSystem | None | None | Windows User | 323 339 350 377 389 393  | None | None | True | None | 0 | 1 | True | True | True | True | Normal boot | -420 | FOREST | htb.local | False | VMware, Inc. | VMware7,1 | True | None | None | None | None | None | x64-based PC | None | 5 | 6 | [MS_VM_CERT/SHA1/27d66596a61c48dd3dc7216fd715126e33f59ae7] Welcome to the Virtual Machine  | 3 | 3 | -1 | -1 | 3932100000 | 0 | 3 | 1 | 3 | 3 | 3 | 3 | True | True | 1 | 2 | 2146447360 | True | 1 | 1 | None | None | None | None | 0 0 0 33 31 162 0 3 2 2  | True |
+```
+- CIM_USBController  
+rpc上では実行できない
+- CIM_USBControllerHasHub  
+rpc上では実行できない
+- CIM_USBDevice  
+rpc上では実行できない
+- CIM_USBHub  
+rpc上では実行できない
+- CIM_UserDevice
+```sh
+WQL> SELECT * FROM CIM_UserDevice 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Handedness | NumberOfButtons | PointingType | Resolution | HardwareType | InfFileName | InfSection | SampleRate | Synch | DoubleSpeedThreshold | QuadSpeedThreshold | DeviceInterface | Manufacturer | 
+| VMware Pointing Device | VMware Pointing Device | None | VMware Pointing Device | OK | 65535 | Win32_PointingDevice | 0 | False | ACPI\VMW0003\4&25EE97C0&0 | None | ACPI\VMW0003\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | 0 | 2 | None | VMware Pointing Device | oem5.inf | VMMouse | None | None | None | None | 1 | VMware, Inc. | 
+| Enhanced (101- or 102-key) | Standard PS/2 Keyboard | None | Enhanced (101- or 102-key) | OK | 65535 | Win32_Keyboard | 0 | False | ACPI\PNP0303\4&25EE97C0&0 | None | ACPI\PNP0303\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 00000409 | 12 | 65535 | 
+| Generic Non-PnP Monitor | Generic Non-PnP Monitor | None | Generic Non-PnP Monitor | OK | 8 | Win32_DesktopMonitor | 0 | False | DesktopMonitor1 | None | DISPLAY\DEFAULT_MONITOR\4&31BE19FA&0&UID0 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | None | None | None | (Standard monitor types) | Generic Non-PnP Monitor | 96 | 96 |
+```
+- CIM_VersionCompatibilityCheck
+- CIM_VideoBIOSElement
+- CIM_VideoBIOSFeature
+- CIM_VideoBIOSFeatureVideoBIOSElements
+- CIM_VideoController
+```sh
+WQL> SELECT * FROM CIM_VideoController 
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | MaxNumberControlled | ProtocolSupported | TimeOfLastReset | VideoProcessor | VideoMemoryType | NumberOfVideoPages | MaxMemorySupported | AcceleratorCapabilities | CapabilityDescriptions | CurrentBitsPerPixel | CurrentHorizontalResolution | CurrentVerticalResolution | MaxRefreshRate | MinRefreshRate | CurrentRefreshRate | CurrentScanMode | CurrentNumberOfColors | CurrentNumberOfRows | CurrentNumberOfColumns | VideoArchitecture | VideoMode | NumberOfColorPlanes | AdapterCompatibility | AdapterDACType | AdapterRAM | Monochrome | DitherType | InfFilename | InfSection | InstalledDisplayDrivers | DriverDate | DriverVersion | ICMIntent | ICMMethod | SpecificationVersion | ColorTableEntries | DeviceSpecificPens | ReservedSystemPaletteEntries | SystemPaletteEntries | VideoModeDescription | 
+| VMware SVGA 3D | VMware SVGA 3D | None | VMware SVGA 3D | OK | 3 | Win32_VideoController | 0 | False | VideoController1 | None | PCI\VEN_15AD&DEV_0405&SUBSYS_040515AD&REV_00\3&18D45AA6&0&78 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 65535 | None | VMware Virtual SVGA 3D Graphics Adapter | 2 | None | None | None | None | 32 | 1440 | 621 | 64 | 64 | 1 | 4 | 4294967296 | 0 | 0 | 5 | 65535 | 65535 | VMware, Inc. | n/a | 0 | False | 0 | oem6.inf | VM3D_AMD64 | vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum_loader,vm3dum_loader,vm3dum_loader | 20180726000000.000000-000 | 8.16.1.1 | None | None | None | None | None | None | None | 1440 x 621 x 4294967296 colors |
+```
+- CIM_VideoControllerResolution  
+rpc上では実行できない
+- CIM_VideoSetting  
+rpc上では実行できない
+- CIM_VolatileStorage
+- CIM_VoltageSensor
+- CIM_VolumeSet
+- CIM_WORMDrive 
 
 
 
