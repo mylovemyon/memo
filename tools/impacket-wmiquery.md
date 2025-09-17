@@ -1182,55 +1182,52 @@ rpc上では実行できない
 
 ## Win32 Provider
 ### Computer System Hardware Classes
-- Cooling Device Classes
-  - Win32_Fan
-  - Win32_HeatPipe
-  - Win32_Refrigeration
-  - Win32_TemperatureProbe
-- Input Device Classes
-  - Win32_Keyboard
-	```sh
-	WQL> SELECT * FROM Win32_Keyboard
-	| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Layout | NumberOfFunctionKeys | Password | 
-	| Enhanced (101- or 102-key) | Standard PS/2 Keyboard | None | Enhanced (101- or 102-key) | OK | 65535 | Win32_Keyboard | 0 | False | ACPI\PNP0303\4&25EE97C0&0 | None | ACPI\PNP0303\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 00000409 | 12 | 65535 |
-	```
-  - Win32_PointingDevice
-	```sh 
-	WQL> SELECT * FROM Win32_PointingDevice
-	| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Handedness | NumberOfButtons | PointingType | Resolution | HardwareType | InfFileName | InfSection | SampleRate | Synch | DoubleSpeedThreshold | QuadSpeedThreshold | DeviceInterface | Manufacturer | 
-	| VMware Pointing Device | VMware Pointing Device | None | VMware Pointing Device | OK | 65535 | Win32_PointingDevice | 0 | False | ACPI\VMW0003\4&25EE97C0&0 | None | ACPI\VMW0003\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | 0 | 2 | None | VMware Pointing Device | oem5.inf | VMMouse | None | None | None | None | 1 | VMware, Inc. |
-	```
-
-
-### Mass Storage Classes
-#### Win32_AutochkSetting
+#### Cooling Device Classes
+- Win32_Fan
+- Win32_HeatPipe
+- Win32_Refrigeration
+- Win32_TemperatureProbe
+#### Input Device Classes
+- Win32_Keyboard
+```sh
+WQL> SELECT * FROM Win32_Keyboard
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Layout | NumberOfFunctionKeys | Password | 
+| Enhanced (101- or 102-key) | Standard PS/2 Keyboard | None | Enhanced (101- or 102-key) | OK | 65535 | Win32_Keyboard | 0 | False | ACPI\PNP0303\4&25EE97C0&0 | None | ACPI\PNP0303\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 00000409 | 12 | 65535 |
+```
+- Win32_PointingDevice
+```sh 
+WQL> SELECT * FROM Win32_PointingDevice
+| Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Handedness | NumberOfButtons | PointingType | Resolution | HardwareType | InfFileName | InfSection | SampleRate | Synch | DoubleSpeedThreshold | QuadSpeedThreshold | DeviceInterface | Manufacturer | 
+| VMware Pointing Device | VMware Pointing Device | None | VMware Pointing Device | OK | 65535 | Win32_PointingDevice | 0 | False | ACPI\VMW0003\4&25EE97C0&0 | None | ACPI\VMW0003\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | 0 | 2 | None | VMware Pointing Device | oem5.inf | VMMouse | None | None | None | None | 1 | VMware, Inc. |
+```
+#### Mass Storage Classes
+- Win32_AutochkSetting
 ```sh
 WQL> SELECT * FROM Win32_AutochkSetting
 | SettingID | Caption | Description | UserInputDelay | 
 | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | None | None | 10 |
 ```
-#### Win32_CDROMDrive
-#### Win32_DiskDrive
+- Win32_CDROMDrive
+- Win32_DiskDrive
 ```sh
 WQL> SELECT * FROM Win32_DiskDrive
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Capabilities | CapabilityDescriptions | CompressionMethod | ErrorMethodology | MaxMediaSize | DefaultBlockSize | MaxBlockSize | MinBlockSize | NumberOfMediaSupported | NeedsCleaning | BytesPerSector | InterfaceType | Partitions | SectorsPerTrack | TotalCylinders | TotalHeads | TotalSectors | TotalTracks | TracksPerCylinder | Index | Manufacturer | MediaLoaded | MediaType | Model | SCSIBus | SCSILogicalUnit | SCSIPort | SCSITargetId | Size | Signature | SerialNumber | FirmwareRevision | 
 | VMware Virtual disk SCSI Disk Device | Disk drive | None | \\.\PHYSICALDRIVE0 | OK | 65535 | Win32_DiskDrive | 0 | False | \\.\PHYSICALDRIVE0 | None | SCSI\DISK&VEN_VMWARE&PROD_VIRTUAL_DISK\5&1982005&0&000100 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 3 4  | 396 411  | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | None | True | 512 | SCSI | 3 | 63 | 2610 | 255 | 41929650 | 665550 | 255 | 0 | (Standard disk drives) | True | Fixed hard disk media | VMware Virtual disk SCSI Disk Device | 0 | 0 | 0 | 1 | 21467980800 | None | 6000c29c9f4f2e0c794e36b137fda25f | 2.0  |
 ```
-#### Win32_FloppyDrive
-#### Win32_PhysicalMedia
+- Win32_FloppyDrive
+- Win32_PhysicalMedia
 ```sh
 WQL> SELECT * FROM Win32_PhysicalMedia
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Capacity | MediaType | MediaDescription | WriteProtectOn | CleanerMedia | 
 | None | None | None | None | None | None | None | None | None | 6000c29c9f4f2e0c794e36b137fda25f | \\.\PHYSICALDRIVE0 | None | None | None | True | True | True | True | 18446744073709551615 | 65535 | None | True | True |
 ```
-#### Win32_TapeDrive
-
-
-### Motherboard, Controller, and Port Classes
-#### Win32_1394Controller
-#### Win32_1394ControllerDevice
-#### Win32_AllocatedResource
-#### Win32_AssociatedProcessorMemory
+- Win32_TapeDrive
+#### Motherboard, Controller, and Port Classes
+- Win32_1394Controller
+- Win32_1394ControllerDevice
+- Win32_AllocatedResource
+rpc上では実行できない
+- Win32_AssociatedProcessorMemory
 ```sh
 WQL> SELECT * FROM Win32_AssociatedProcessorMemory
 | Antecedent | Dependent | BusSpeed | 
@@ -1238,19 +1235,19 @@ WQL> SELECT * FROM Win32_AssociatedProcessorMemory
 | \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 1" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | None | 
 | \\FOREST\root\cimv2:Win32_CacheMemory.DeviceID="Cache Memory 2" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" | None |
 ```
-#### Win32_BaseBoard
+- Win32_BaseBoard
 ```sh
 WQL> SELECT * FROM Win32_BaseBoard
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | HostingBoard | SlotLayout | RequiresDaughterBoard | SpecialRequirements | RequirementsDescription | Product | ConfigOptions | 
 | Base Board | Base Board | None | Base Board | OK | Win32_BaseBoard | Intel Corporation | None | None | None | Base Board | None | None | None | True | False | False | False | None | None | None | None | False | None | False | True | None | 440BX Desktop Reference Platform | None |
 ```
-#### Win32_BIOS
+- Win32_BIOS
 ```sh
 WQL> SELECT * FROM Win32_BIOS
 | Caption | Description | InstallDate | Name | Status | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | OtherTargetOS | Manufacturer | BuildNumber | SerialNumber | CodeSet | IdentificationCode | LanguageEdition | PrimaryBIOS | ReleaseDate | BiosCharacteristics | InstallableLanguages | ListOfLanguages | CurrentLanguage | SMBIOSPresent | SMBIOSMajorVersion | SMBIOSMinorVersion | SMBIOSBIOSVersion | BIOSVersion | SystemBiosMajorVersion | SystemBiosMinorVersion | EmbeddedControllerMajorVersion | EmbeddedControllerMinorVersion | 
 | VMW71.00V.24504846.B64.2501180334 | VMW71.00V.24504846.B64.2501180334 | None | VMW71.00V.24504846.B64.2501180334 | OK | INTEL  - 6040000 | 3 | VMW71.00V.24504846.B64.2501180334 | 0 | None | VMware, Inc. | None | VMware-42 14 dd 01 77 df ed 36-48 41 b0 f9 f7 10 45 bd | None | None | None | True | 20250118000000.000000+000 | 4 7 9 11 42 43  | None | None | None | True | 2 | 7 | VMW71.00V.24504846.B64.2501180334 | INTEL  - 6040000 VMW71.00V.24504846.B64.2501180334 VMware, Inc. - 10000  | 255 | 255 | 255 | 255 |
 ```
-#### Win32_Bus
+- Win32_Bus
 ```sh
 WQL> SELECT * FROM Win32_Bus
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | BusNum | BusType | 
@@ -1262,7 +1259,7 @@ WQL> SELECT * FROM Win32_Bus
 | Bus | Bus | None | Bus | None | 65535 | Win32_Bus | None | True | PCI_BUS_3 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 3 | 5 | 
 | Bus | Bus | None | Bus | None | 65535 | Win32_Bus | None | True | PCI_BUS_2 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 2 | 5 |
 ```
-#### Win32_CacheMemory
+- Win32_CacheMemory
 ```sh
 WQL> SELECT * FROM Win32_CacheMemory
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | StartingAddress | EndingAddress | ErrorInfo | OtherErrorDescription | CorrectableError | ErrorTime | ErrorAccess | ErrorTransferSize | ErrorData | ErrorDataOrder | ErrorAddress | SystemLevelAddress | ErrorResolution | AdditionalErrorData | Level | WritePolicy | CacheType | LineSize | ReplacementPolicy | ReadPolicy | FlushTimer | Associativity | Location | MaxCacheSize | InstalledSize | SupportedSRAM | CurrentSRAM | ErrorCorrectType | CacheSpeed | 
@@ -1273,8 +1270,9 @@ WQL> SELECT * FROM Win32_CacheMemory
 | Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 4 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 1024 | None | 512 | L2 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 4 | 3 | 5 | None | 65535 | 65535 | None | 7 | 1 | 512 | 512 | 2 3 4 5 6  | 6  | 2 | None | 
 | Cache Memory | Cache Memory | None | Cache Memory | OK | 3 | Win32_CacheMemory | None | True | Cache Memory 5 | None | None | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 65536 | None | 512 | L3 CACHE | 18446744073709551615 | 18446744073709551615 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | 5 | 3 | 5 | None | 65535 | 65535 | None | 8 | 1 | 32768 | 32768 | 2 3 4 5 6  | 6  | 2 | None |
 ```
-#### Win32_ControllerHasHub
-#### Win32_DeviceBus
+- Win32_ControllerHasHub  
+rpc上では実行できない
+- Win32_DeviceBus
 ```sh
 WQL> SELECT * FROM Win32_DeviceBus
 | Antecedent | Dependent | 
@@ -1284,7 +1282,7 @@ WQL> SELECT * FROM Win32_DeviceBus
 
 ~~~
 ```
-#### Win32_DeviceMemoryAddress
+- Win32_DeviceMemoryAddress
 ```sh
 WQL> SELECT * FROM Win32_DeviceMemoryAddress
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | StartingAddress | EndingAddress | MemoryType | 
@@ -1294,15 +1292,20 @@ WQL> SELECT * FROM Win32_DeviceMemoryAddress
 
 ~~~
 ```
-#### Win32_DeviceSettings
-#### Win32_DMAChannel
+- Win32_DeviceSettings
+```sh
+WQL> SELECT * FROM Win32_DeviceSettings WHERE Element = "Win32_NetworkAdapter.DeviceID='0'"
+| Element | Setting | 
+| \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="0" | \\FOREST\root\cimv2:Win32_NetworkAdapterConfiguration.Index=0 |
+```
+- Win32_DMAChannel
 ```sh
 WQL> SELECT * FROM Win32_DMAChannel
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | DMAChannel | Availability | BurstMode | TransferWidths | AddressSize | MaxTransferSize | ByteMode | WordMode | ChannelTiming | TypeCTiming | Port | 
 | Channel 4 | Channel 4 | None | Channel 4 | OK | Win32_ComputerSystem | FOREST | Win32_DMAChannel | 4 | 4 | True | 0  | 0 | 0 | 2 | 2 | 2 | 2 | None |
 ```
-#### Win32_FloppyController
-#### Win32_IDEController
+- Win32_FloppyController
+- Win32_IDEController
 ```sh
 WQL> SELECT * FROM Win32_IDEController
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | MaxNumberControlled | ProtocolSupported | TimeOfLastReset | Manufacturer | 
@@ -1311,15 +1314,15 @@ WQL> SELECT * FROM Win32_IDEController
 | Standard SATA AHCI Controller | Standard SATA AHCI Controller | None | Standard SATA AHCI Controller | OK | 65535 | Win32_IDEController | 0 | False | PCI\VEN_15AD&DEV_07E0&SUBSYS_07E015AD&REV_00\4&B70F118&0&0888 | None | PCI\VEN_15AD&DEV_07E0&SUBSYS_07E015AD&REV_00\4&B70F118&0&0888 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 37 | None | Standard SATA AHCI Controller | 
 | Intel(R) 82371AB/EB PCI Bus Master IDE Controller | Intel(R) 82371AB/EB PCI Bus Master IDE Controller | None | Intel(R) 82371AB/EB PCI Bus Master IDE Controller | OK | 65535 | Win32_IDEController | 0 | False | PCI\VEN_8086&DEV_7111&SUBSYS_197615AD&REV_01\3&18D45AA6&0&39 | None | PCI\VEN_8086&DEV_7111&SUBSYS_197615AD&REV_01\3&18D45AA6&0&39 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 37 | None | Intel |
 ```
-#### Win32_IDEControllerDevice
+- Win32_IDEControllerDevice
 ```sh
 WQL> SELECT * FROM Win32_IDEControllerDevice
 | Antecedent | Dependent | NegotiatedSpeed | NegotiatedDataWidth | AccessState | NumberOfHardResets | NumberOfSoftResets | 
 | \\FOREST\root\cimv2:Win32_IDEController.DeviceID="PCI\\VEN_8086&DEV_7111&SUBSYS_197615AD&REV_01\\3&18D45AA6&0&39" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCIIDE\\IDECHANNEL\\4&39EC5D8A&0&0" | 18446744073709551615 | None | 65535 | None | None | 
 | \\FOREST\root\cimv2:Win32_IDEController.DeviceID="PCI\\VEN_8086&DEV_7111&SUBSYS_197615AD&REV_01\\3&18D45AA6&0&39" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCIIDE\\IDECHANNEL\\4&39EC5D8A&0&1" | 18446744073709551615 | None | 65535 | None | None |
 ```
-#### Win32_InfraredDevice
-#### Win32_IRQResource
+- Win32_InfraredDevice
+- Win32_IRQResource
 ```sh
 WQL> SELECT * FROM Win32_IRQResource
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | IRQNumber | Availability | TriggerType | TriggerLevel | Shareable | Vector | Hardware | 
@@ -1329,75 +1332,75 @@ WQL> SELECT * FROM Win32_IRQResource
 
 ~~~
 ```
-#### Win32_MemoryArray
+- Win32_MemoryArray
 ```sh
 WQL> SELECT * FROM Win32_MemoryArray 
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | StartingAddress | EndingAddress | ErrorInfo | OtherErrorDescription | CorrectableError | ErrorTime | ErrorAccess | ErrorTransferSize | ErrorData | ErrorDataOrder | ErrorAddress | SystemLevelAddress | ErrorResolution | AdditionalErrorData | ErrorGranularity | 
 | Memory Array | Memory Array | None | Memory Array | None | 65535 | Win32_MemoryArray | None | True | Memory Array 0 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 18446744073709551615 | None | 18446744073709551615 | None | 0 | 639 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | None | 
 | Memory Array | Memory Array | None | Memory Array | None | 65535 | Win32_MemoryArray | None | True | Memory Array 1 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 18446744073709551615 | None | 18446744073709551615 | None | 1024 | 262143 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | None |
 ```
-#### Win32_MemoryArrayLocation
+- Win32_MemoryArrayLocation
 ```sh
 WQL> SELECT * FROM Win32_MemoryArrayLocation
 | Antecedent | Dependent | 
 | \\FOREST\root\cimv2:Win32_PhysicalMemoryArray.Tag="Physical Memory Array 0" | \\FOREST\root\cimv2:Win32_MemoryArray.DeviceID="Memory Array 0" | 
 | \\FOREST\root\cimv2:Win32_PhysicalMemoryArray.Tag="Physical Memory Array 0" | \\FOREST\root\cimv2:Win32_MemoryArray.DeviceID="Memory Array 1" |
 ```
-#### Win32_MemoryDevice
+- Win32_MemoryDevice
 ```sh
 WQL> SELECT * FROM Win32_MemoryDevice
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | StartingAddress | EndingAddress | ErrorInfo | OtherErrorDescription | CorrectableError | ErrorTime | ErrorAccess | ErrorTransferSize | ErrorData | ErrorDataOrder | ErrorAddress | SystemLevelAddress | ErrorResolution | AdditionalErrorData | ErrorGranularity | 
 | Memory Device | Memory Device | None | Memory Device | None | 65535 | Win32_MemoryDevice | None | True | Memory Device 0 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 18446744073709551615 | None | 18446744073709551615 | None | 0 | 639 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | None | 
 | Memory Device | Memory Device | None | Memory Device | None | 65535 | Win32_MemoryDevice | None | True | Memory Device 1 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 18446744073709551615 | None | 18446744073709551615 | None | 1024 | 262143 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | None |
 ```
-#### Win32_MemoryDeviceArray
+- Win32_MemoryDeviceArray
 ```sh
 WQL> SELECT * FROM Win32_MemoryDeviceArray
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_MemoryArray.DeviceID="Memory Array 0" | \\FOREST\root\cimv2:Win32_MemoryDevice.DeviceID="Memory Device 0" | 
 | \\FOREST\root\cimv2:Win32_MemoryArray.DeviceID="Memory Array 1" | \\FOREST\root\cimv2:Win32_MemoryDevice.DeviceID="Memory Device 1" |
 ```
-#### Win32_MemoryDeviceLocation
+- Win32_MemoryDeviceLocation
 ```sh
 WQL> SELECT * FROM Win32_MemoryDeviceLocation
 | Antecedent | Dependent | 
 | \\FOREST\root\cimv2:Win32_PhysicalMemory.Tag="Physical Memory 0" | \\FOREST\root\cimv2:Win32_MemoryDevice.DeviceID="Memory Device 0" | 
 | \\FOREST\root\cimv2:Win32_PhysicalMemory.Tag="Physical Memory 0" | \\FOREST\root\cimv2:Win32_MemoryDevice.DeviceID="Memory Device 1" |
 ```
-#### Win32_MotherboardDevice
+- Win32_MotherboardDevice
 ```sh
 WQL> SELECT * FROM Win32_MotherboardDevice
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | PrimaryBusType | RevisionNumber | SecondaryBusType | 
 | Motherboard | Motherboard | None | Motherboard | OK | 3 | Win32_MotherBoardDevice | None | True | Motherboard | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | PCI | None | ISA |
 ```
-#### Win32_OnBoardDevice
+- Win32_OnBoardDevice
 ```sh
 WQL> SELECT * FROM Win32_OnBoardDevice
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | DeviceType | Enabled | 
 | On Board Device | VMware SVGA II | None | On Board Device | None | Win32_OnBoardDevice | None | None | None | None | On Board Device 0 | None | None | None | True | True | True | True | 3 | False | 
 | On Board Device | ES1371 | None | On Board Device | None | Win32_OnBoardDevice | None | None | None | None | On Board Device 1 | None | None | None | True | True | True | True | 7 | False |
 ```
-#### Win32_ParallelPort
-#### Win32_PCMCIAController
-#### Win32_PhysicalMemory
+- Win32_ParallelPort
+- Win32_PCMCIAController
+- Win32_PhysicalMemory
 ```sh
 WQL> SELECT * FROM Win32_PhysicalMemory 
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | FormFactor | MemoryType | TotalWidth | DataWidth | Speed | Capacity | BankLabel | PositionInRow | InterleavePosition | DeviceLocator | TypeDetail | InterleaveDataDepth | Attributes | ConfiguredClockSpeed | MinVoltage | MaxVoltage | ConfiguredVoltage | SMBIOSMemoryType | 
 | Physical Memory | Physical Memory | None | Physical Memory | None | Win32_PhysicalMemory | VMware Virtual RAM | None | None | 00000001 | Physical Memory 0 | None | VMW-2048MB | None | True | True | True | True | 8 | 2 | 64 | 64 | None | 2147483648 | RAM slot #0 | None | None | RAM slot #0 | 128 | None | 0 | 4800 | None | None | None | 3 |
 ```
-#### Win32_PhysicalMemoryArray
+- Win32_PhysicalMemoryArray
 ```sh
 WQL> SELECT * FROM Win32_PhysicalMemoryArray
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | Location | Use | MemoryErrorCorrection | MaxCapacity | MaxCapacityEx | MemoryDevices | 
 | Physical Memory Array | Physical Memory Array | None | Physical Memory Array | None | Win32_PhysicalMemoryArray | None | None | None | None | Physical Memory Array 0 | None | None | None | True | True | True | True | None | None | None | None | 3 | 3 | 3 | 2097152 | 2097152 | 64 |
 ```
-#### Win32_PhysicalMemoryLocation
+- Win32_PhysicalMemoryLocation
 ```sh
 WQL> SELECT * FROM Win32_PhysicalMemoryLocation
 | GroupComponent | PartComponent | LocationWithinContainer | 
 | \\FOREST\root\cimv2:Win32_PhysicalMemoryArray.Tag="Physical Memory Array 0" | \\FOREST\root\cimv2:Win32_PhysicalMemory.Tag="Physical Memory 0" | None |
 ```
-#### Win32_PnPAllocatedResource
+- Win32_PnPAllocatedResource
 ```sh
 WQL> SELECT * FROM Win32_PnPAllocatedResource
 | Antecedent | Dependent | 
@@ -1407,8 +1410,13 @@ WQL> SELECT * FROM Win32_PnPAllocatedResource
 
 ~~~
 ```
-#### Win32_PNPDevice
-#### Win32_PnPEntity
+- Win32_PNPDevice
+```sh
+WQL> SELECT * FROM Win32_PNPDevice WHERE SameElement = "Win32_PnPEntity.DeviceID='ACPI\\PNP0C02\\4'"
+| SystemElement | SameElement | 
+| \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" | 
+```
+- Win32_PnPEntity
 ```sh
 WQL> SELECT * FROM Win32_PnPEntity
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | HardwareID | CompatibleID | Manufacturer | Service | PNPClass | ClassGuid | Present | 
@@ -1418,7 +1426,7 @@ WQL> SELECT * FROM Win32_PnPEntity
 
 ~~~
 ```
-#### Win32_PortConnector
+- Win32_PortConnector
 ```sh
 WQL> SELECT * FROM Win32_PortConnector
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | ConnectorPinout | ConnectorType | InternalReferenceDesignator | ExternalReferenceDesignator | PortType | 
@@ -1427,7 +1435,7 @@ WQL> SELECT * FROM Win32_PortConnector
 | Port Connector | Port Connector | None | Port Connector | None | Win32_PortConnector | None | None | None | None | Port Connector 2 | None | None | None | True | None | 59 2  | J11 | Keyboard | 13 | 
 | Port Connector | Port Connector | None | Port Connector | None | Win32_PortConnector | None | None | None | None | Port Connector 3 | None | None | None | True | None | 59 2  | J12 | PS/2 Mouse | 13 |
 ```
-#### Win32_PortResource
+- Win32_PortResource
 ```sh
 WQL> SELECT * FROM Win32_PortResource
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | StartingAddress | EndingAddress | Alias | 
@@ -1437,29 +1445,29 @@ WQL> SELECT * FROM Win32_PortResource
 
 ~~~
 ```
-#### Win32_Processor
+- Win32_Processor
 ```sh
 WQL> SELECT * FROM Win32_Processor
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | AddressWidth | CurrentClockSpeed | DataWidth | Family | OtherFamilyDescription | LoadPercentage | MaxClockSpeed | Role | UpgradeMethod | Stepping | UniqueId | Version | Manufacturer | L2CacheSize | L2CacheSpeed | L3CacheSize | L3CacheSpeed | Architecture | Level | Revision | CpuStatus | CurrentVoltage | ExtClock | ProcessorId | ProcessorType | NumberOfLogicalProcessors | NumberOfCores | SocketDesignation | VoltageCaps | VMMonitorModeExtensions | SecondLevelAddressTranslationExtensions | VirtualizationFirmwareEnabled | SerialNumber | AssetTag | PartNumber | NumberOfEnabledCore | ThreadCount | Characteristics | 
 | AMD64 Family 25 Model 1 Stepping 1 | AMD64 Family 25 Model 1 Stepping 1 | None | AMD EPYC 7513 32-Core Processor                 | OK | 3 | Win32_Processor | None | True | CPU0 | None | None | False | 3 | Win32_ComputerSystem | FOREST | None | None | True | 64 | 2595 | 64 | 2 | None | 34 | 2595 | CPU | 4 | 1 | None | Model 1, Stepping 1 | AuthenticAMD | 512 | None | 32768 | 0 | 9 | 25 | 257 | 1 | 33 | None | 178BFBFF00A00F11 | 3 | 2 | 2 | CPU 0 | 2 | False | False | True |  |  |  | 2 | 0 | 44 |
 ```
-#### Win32_SCSIController
+- Win32_SCSIController
 ```sh
 WQL> SELECT * FROM Win32_SCSIController
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | MaxNumberControlled | ProtocolSupported | TimeOfLastReset | ControllerTimeouts | MaxDataWidth | MaxTransferRate | ProtectionManagement | Index | DriverName | DeviceMap | HardwareVersion | Manufacturer | 
 | Microsoft Storage Spaces Controller | Microsoft Storage Spaces Controller | None | Microsoft Storage Spaces Controller | OK | 3 | Win32_SCSIController | 0 | False | ROOT\SPACEPORT\0000 | None | ROOT\SPACEPORT\0000 | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | None | 2 | None | None | None | 18446744073709551615 | 65535 | None | spaceport | None | None | Microsoft | 
 | LSI Adapter, SAS 3000 series, 8-port with 1068 | LSI Adapter, SAS 3000 series, 8-port with 1068 | None | LSI Adapter, SAS 3000 series, 8-port with 1068 | OK | 3 | Win32_SCSIController | 0 | False | PCI\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\4&2732702B&0&00A8 | None | PCI\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\4&2732702B&0&00A8 | True | 3 | Win32_ComputerSystem | FOREST | None | None | True | None | 2 | None | None | None | 18446744073709551615 | 65535 | None | LSI_SAS | None | None | LSI |
 ```
-#### Win32_SCSIControllerDevice
+- Win32_SCSIControllerDevice
 ```sh
 WQL> SELECT * FROM Win32_SCSIControllerDevice
 | Antecedent | Dependent | NegotiatedSpeed | NegotiatedDataWidth | AccessState | NumberOfHardResets | NumberOfSoftResets | 
 | \\FOREST\root\cimv2:Win32_SCSIController.DeviceID="PCI\\VEN_1000&DEV_0054&SUBSYS_197615AD&REV_01\\4&2732702B&0&00A8" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="SCSI\\DISK&VEN_VMWARE&PROD_VIRTUAL_DISK\\5&1982005&0&000100" | 18446744073709551615 | None | 65535 | None | None |
 ```
-#### Win32_SerialPort
-#### Win32_SerialPortConfiguration
-#### Win32_SerialPortSetting
-#### Win32_SMBIOSMemory
+- Win32_SerialPort
+- Win32_SerialPortConfiguration
+- Win32_SerialPortSetting
+- Win32_SMBIOSMemory
 ```sh
 WQL> SELECT * FROM Win32_SMBIOSMemory
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | StartingAddress | EndingAddress | ErrorInfo | OtherErrorDescription | CorrectableError | ErrorTime | ErrorAccess | ErrorTransferSize | ErrorData | ErrorDataOrder | ErrorAddress | SystemLevelAddress | ErrorResolution | AdditionalErrorData | ErrorGranularity | 
@@ -1468,14 +1476,15 @@ WQL> SELECT * FROM Win32_SMBIOSMemory
 | Memory Array | Memory Array | None | Memory Array | None | 65535 | Win32_MemoryArray | None | True | Memory Array 0 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 18446744073709551615 | None | 18446744073709551615 | None | 0 | 639 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | None | 
 | Memory Array | Memory Array | None | Memory Array | None | 65535 | Win32_MemoryArray | None | True | Memory Array 1 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 18446744073709551615 | None | 18446744073709551615 | None | 1024 | 262143 | 65535 | None | True | None | 65535 | None | None | 65535 | 18446744073709551615 | True | 18446744073709551615 | None | None |
 ```
-#### Win32_SoundDevice
-#### Win32_SystemBIOS
+- Win32_SoundDevice  
+rpc上では実行できない
+- Win32_SystemBIOS
 ```sh
 WQL> SELECT * FROM Win32_SystemBIOS
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_BIOS.Name="VMW71.00V.24504846.B64.2501180334",SoftwareElementID="VMW71.00V.24504846.B64.2501180334",SoftwareElementState=3,TargetOperatingSystem=0,Version="INTEL  - 6040000" |
 ```
-#### Win32_SystemDriverPNPEntity
+- Win32_SystemDriverPNPEntity
 ```sh
 WQL> SELECT * FROM Win32_SystemDriverPNPEntity
 | Antecedent | Dependent | 
@@ -1485,13 +1494,13 @@ WQL> SELECT * FROM Win32_SystemDriverPNPEntity
 
 ~~~
 ```
-#### Win32_SystemEnclosure
+- Win32_SystemEnclosure
 ```sh
 WQL> SELECT * FROM Win32_SystemEnclosure
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | Removable | Replaceable | HotSwappable | Height | Depth | Width | Weight | CableManagementStrategy | ServicePhilosophy | ServiceDescriptions | LockPresent | AudibleAlarm | VisibleAlarm | SecurityBreach | BreachDescription | NumberOfPowerCords | CurrentRequiredOrProduced | HeatGeneration | ChassisTypes | TypeDescriptions | SMBIOSAssetTag | SecurityStatus | 
 | System Enclosure | System Enclosure | None | System Enclosure | None | Win32_SystemEnclosure | No Enclosure | None | None | None | System Enclosure 0 | N/A | None | None | True | True | True | True | None | None | None | None | None | None | None | False | True | True | 65535 | None | 65535 | None | 65535 | 1  | None | No Asset Tag | 3 |
 ```
-#### Win32_SystemMemoryResource
+- Win32_SystemMemoryResource
 ```sh
 WQL> SELECT * FROM Win32_SystemMemoryResource
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | StartingAddress | EndingAddress | Alias | 
@@ -1501,7 +1510,7 @@ WQL> SELECT * FROM Win32_SystemMemoryResource
 
 ~~~
 ```
-#### Win32_SystemSlot
+- Win32_SystemSlot
 ```sh
 WQL> SELECT * FROM Win32_SystemSlot
 | Caption | Description | InstallDate | Name | Status | CreationClassName | Manufacturer | Model | SKU | SerialNumber | Tag | Version | PartNumber | OtherIdentifyingInfo | PoweredOn | ConnectorPinout | ConnectorType | SupportsHotPlug | HeightAllowed | LengthAllowed | MaxDataWidth | VccMixedVoltageSupport | VppMixedVoltageSupport | ThermalRating | SpecialPurpose | PurposeDescription | Number | SlotDesignation | CurrentUsage | PMESignal | Shared | SegmentGroupNumber | BusNumber | DeviceNumber | FunctionNumber | 
@@ -1512,9 +1521,10 @@ WQL> SELECT * FROM Win32_SystemSlot
 | System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 4 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 5 | PCI Slot J15 | 3 | False | False | 0 | 38912 | 80 | 0 | 
 | System Slot | System Slot | None | System Slot | OK | Win32_SystemSlot | None | None | None | None | System Slot 5 | None | None | None | True | None | 43  | False | None | None | 2 | 3 2  | None | None | True | None | 6 | PCI Slot J16 | 3 | False | False | 0 | 40960 | 80 | 0 |
 ```
-#### Win32_USBController
-#### Win32_USBControllerDevice
-#### Win32_USBHub
+- Win32_USBController  
+rpc上では実行できない
+- Win32_USBControllerDevice
+- Win32_USBHub
 
 
 ### Networking Device Classes
