@@ -1885,31 +1885,28 @@ WQL> SELECT * FROM Win32_UserDesktop WHERE Element = "Win32_UserAccount.Domain='
 | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\Administrator" | 
 ```
 
-
-### Drivers
-#### Win32_SystemDriver
+#### Drivers
+- Win32_SystemDriver
 ```sh
 WQL> SELECT * FROM Win32_SystemDriver WHERE Caption = "TPM"
 | Caption | Description | InstallDate | Name | Status | CreationClassName | StartMode | Started | SystemCreationClassName | SystemName | AcceptPause | AcceptStop | DesktopInteract | DisplayName | ErrorControl | PathName | ServiceType | StartName | State | TagId | ExitCode | ServiceSpecificExitCode | 
 | TPM | TPM | None | TPM | OK | Win32_SystemDriver | Manual | False | Win32_ComputerSystem | FOREST | False | False | False | TPM | Normal | C:\Windows\system32\drivers\tpm.sys | Kernel Driver |  | Stopped | 5 | 1077 | 0 |
 ```
 
-
-### File System
-#### Win32_CIMLogicalDeviceCIMDataFile
+#### File System
+- Win32_CIMLogicalDeviceCIMDataFile
 ```sh
 WQL> SELECT * FROM Win32_CIMLogicalDeviceCIMDataFile WHERE PurposeDescription = "System Management BIOS Driver"
 | Antecedent | Dependent | Purpose | PurposeDescription | 
 | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ROOT\\MSSMBIOS\\0000" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\WINDOWS\\SYSTEM32\\DRIVERS\\MSSMBIOS.SYS" | 2 | System Management BIOS Driver |
 ```
-#### Win32_Directory
+- Win32_Directory
 ```sh
 WQL> SELECT * FROM Win32_Directory WHERE caption = "C:\\"
 | Caption | Description | InstallDate | Name | Status | InUseCount | Archive | CSCreationClassName | CSName | Compressed | CreationClassName | CreationDate | Encrypted | FSCreationClassName | FSName | LastAccessed | LastModified | Readable | FileSize | Writeable | Hidden | System | FileType | EightDotThreeFileName | CompressionMethod | EncryptionMethod | Drive | Path | FileName | Extension | AccessMask | 
 | C:\ | C:\ | None | c:\ | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | True | CIM_LogicalFile | None | True | Win32_FileSystem | NTFS | None | None | True | 18446744073709551615 | True | True | True | Local Disk |  | None | None | c: |  |  |  | 18809343 |
 ```
-#### Win32_DirectorySpecification
-省略
+- Win32_DirectorySpecification
 ```sh
 WQL> SELECT * FROM Win32_DirectorySpecification
 | Name | Version | SoftwareElementState | SoftwareElementID | TargetOperatingSystem | CheckID | Description | Caption | CheckMode | DirectoryType | DirectoryPath | DefaultDir | Directory | 
@@ -1919,7 +1916,7 @@ WQL> SELECT * FROM Win32_DirectorySpecification
 
 ~~~
 ```
-#### Win32_DiskDriveToDiskPartition
+- Win32_DiskDriveToDiskPartition
 ```sh
 WQL> SELECT * FROM Win32_DiskDriveToDiskPartition
 | Antecedent | Dependent | 
@@ -1927,7 +1924,7 @@ WQL> SELECT * FROM Win32_DiskDriveToDiskPartition
 | \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #1" | 
 | \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #2" |
 ```
-#### Win32_DiskPartition
+- Win32_DiskPartition
 ```sh
 WQL> SELECT * FROM Win32_DiskPartition
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | Bootable | PrimaryPartition | BootPartition | DiskIndex | HiddenSectors | Index | RewritePartition | Size | StartingOffset | Type | 
@@ -1935,51 +1932,51 @@ WQL> SELECT * FROM Win32_DiskPartition
 | Disk #0, Partition #1 | GPT: System | None | Disk #0, Partition #1 | None | 65535 | Win32_DiskPartition | None | True | Disk #0, Partition #1 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 512 | None | 202752 | None | True | True | True | 0 | None | 1 | None | 103809024 | 607125504 | GPT: System | 
 | Disk #0, Partition #2 | GPT: Basic Data | None | Disk #0, Partition #2 | None | 65535 | Win32_DiskPartition | None | True | Disk #0, Partition #2 | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 65535 | 512 | None | 40552448 | None | False | True | False | 0 | None | 2 | None | 20762853376 | 710934528 | GPT: Basic Data |
 ```
-#### Win32_DiskQuota
+- Win32_DiskQuota
 ```sh
 WQL> SELECT * FROM Win32_DiskQuota
 | QuotaVolume | User | Status | Limit | WarningLimit | DiskSpaceUsed | 
 | Win32_LogicalDisk.DeviceID="C:" | Win32_Account.Domain="FOREST",Name="Administrators" | 0 | 0 | 0 | 0 | 
 | Win32_LogicalDisk.DeviceID="C:" | Win32_Account.Domain="FOREST",Name="Administrators" | 0 | 0 | 0 | 0 |
 ```
-#### Win32_LogicalDisk
+- Win32_LogicalDisk
 ```sh
 WQL> SELECT * FROM Win32_LogicalDisk
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | FreeSpace | Size | Compressed | DriveType | FileSystem | MaximumComponentLength | ProviderName | SupportsFileBasedCompression | VolumeName | VolumeSerialNumber | MediaType | SupportsDiskQuotas | QuotasDisabled | QuotasIncomplete | QuotasRebuilding | VolumeDirty | 
 | C: | Local Fixed Disk | None | C: | None | 65535 | Win32_LogicalDisk | None | True | C: | None | None | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | 0 | 18446744073709551615 | None | 18446744073709551615 | None | 10267963392 | 20762849280 | False | 3 | NTFS | 255 | None | True |  | 61F2A88F | 12 | True | True | False | False | False |
 ```
-#### Win32_LogicalDiskRootDirectory
+- Win32_LogicalDiskRootDirectory
 ```sh
 WQL> SELECT * FROM Win32_LogicalDiskRootDirectory
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_LogicalDisk.DeviceID="C:" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" |
 ```
-#### Win32_LogicalDiskToPartition
+- Win32_LogicalDiskToPartition
 ```sh
 WQL> SELECT * FROM Win32_LogicalDiskToPartition
 | Antecedent | Dependent | StartingAddress | EndingAddress | 
 | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #2" | \\FOREST\root\cimv2:Win32_LogicalDisk.DeviceID="C:" | 710934528 | 21473787903 |
 ```
-#### Win32_MappedLogicalDisk
-#### Win32_OperatingSystemAutochkSetting
+- Win32_MappedLogicalDisk
+- Win32_OperatingSystemAutochkSetting
 ```sh
 WQL> SELECT * FROM Win32_OperatingSystemAutochkSetting
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_OperatingSystem=@ | \\FOREST\root\cimv2:Win32_AutochkSetting.SettingID="Microsoft Windows Server 2016 Standard|C:\\Windows|\\Device\\Harddisk0\\Partition4" |
 ```
-#### Win32_QuotaSetting
+- Win32_QuotaSetting
 ```sh
 WQL> SELECT * FROM Win32_QuotaSetting
 | SettingID | Caption | Description | VolumePath | State | DefaultLimit | DefaultWarningLimit | ExceededNotification | WarningExceededNotification | 
 | None | C: | C: | C:\ | 0 | -1 | -1 | False | False |
 ```
-#### Win32_ShortcutFile
+- Win32_ShortcutFile
 ```sh
 WQL> SELECT * FROM Win32_ShortcutFile WHERE target LIKE "%perfmon.msc%"
 | Caption | Description | InstallDate | Name | Status | InUseCount | Archive | CSCreationClassName | CSName | Compressed | CreationClassName | CreationDate | Encrypted | FSCreationClassName | FSName | LastAccessed | LastModified | Readable | FileSize | Writeable | Hidden | System | FileType | EightDotThreeFileName | CompressionMethod | EncryptionMethod | Drive | Path | FileName | Extension | AccessMask | Version | Manufacturer | Target | 
 | c:\programdata\microsoft\windows\start menu\programs\vmware\vmware tools\start vm statistics logging.lnk | c:\programdata\microsoft\windows\start menu\programs\vmware\vmware tools\start vm statistics logging.lnk | 20190922165619.352516-420 | c:\programdata\microsoft\windows\start menu\programs\vmware\vmware tools\start vm statistics logging.lnk | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | False | CIM_LogicalFile | 20190922165619.352516-420 | False | Win32_FileSystem | NTFS | 20190922165619.352516-420 | 20190922165619.352516-420 | True | 690 | True | False | False | Shortcut | c:\programdata\microsoft\windows\start menu\programs\vmware\vmware tools\startv~1.lnk | None | None | c: | \programdata\microsoft\windows\start menu\programs\vmware\vmware tools\ | start VM Statistics Logging | lnk | 18809343 | None | None | C:\Windows\system32\perfmon.msc |
 ```
-#### Win32_SubDirectory
+- Win32_SubDirectory
 ```sh
 WQL> SELECT * FROM Win32_SubDirectory WHERE GroupComponent = "Win32_Directory.Name='C:\\'"
 | GroupComponent | PartComponent | 
@@ -1994,7 +1991,7 @@ WQL> SELECT * FROM Win32_SubDirectory WHERE GroupComponent = "Win32_Directory.Na
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users" | 
 | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Windows" |
 ```
-#### Win32_SystemPartitions
+- Win32_SystemPartitions
 ```sh
 WQL> SELECT * FROM Win32_SystemPartitions
 | GroupComponent | PartComponent | 
@@ -2002,27 +1999,27 @@ WQL> SELECT * FROM Win32_SystemPartitions
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #1" | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #2" |
 ```
-#### Win32_Volume
+- Win32_Volume
 ```sh
 WQL> SELECT * FROM Win32_Volume
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | Capacity | Compressed | DriveLetter | DriveType | FileSystem | FreeSpace | IndexingEnabled | DirtyBitSet | Label | MaximumFileNameLength | Automount | QuotasEnabled | QuotasIncomplete | QuotasRebuilding | SerialNumber | SupportsDiskQuotas | SupportsFileBasedCompression | PageFilePresent | SystemVolume | BootVolume | 
 | C:\ | None | None | C:\ | None | 65535 | None | None | True | \\?\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\ | None | None | True | 65535 | None | FOREST | None | None | True | 65535 | 4096 | None | 18446744073709551615 | None | 20762849280 | False | C: | 3 | NTFS | 10419834880 | True | False | None | 255 | True | False | False | False | 1643292815 | True | True | True | False | True | 
 | \\?\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\ | None | None | \\?\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\ | None | 65535 | None | None | True | \\?\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\ | None | None | True | 65535 | None | FOREST | None | None | True | 65535 | 4096 | None | 18446744073709551615 | None | 471855104 | False | None | 3 | NTFS | 130310144 | True | False | Recovery | 255 | True | False | False | False | 3077485790 | True | True | False | False | False |
 ```
-#### Win32_VolumeQuota
+- Win32_VolumeQuota
 ```sh
 WQL> SELECT * FROM Win32_VolumeQuota
 | Element | Setting | 
 | Win32_Volume.DeviceID="\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\" | Win32_QuotaSetting.VolumePath="C:\\" | 
 | Win32_Volume.DeviceID="\\\\?\\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\\" | Win32_QuotaSetting.VolumePath="\\\\?\\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\\" |
 ```
-#### Win32_VolumeQuotaSetting
+- Win32_VolumeQuotaSetting
 ```sh
 WQL> SELECT * FROM Win32_VolumeQuotaSetting
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_LogicalDisk.DeviceID="C:" | \\FOREST\root\cimv2:Win32_QuotaSetting.VolumePath="C:\\" |
 ```
-#### Win32_VolumeUserQuota
+- Win32_VolumeUserQuota
 ```sh
 WQL> SELECT * FROM Win32_VolumeUserQuota
 | Volume | Account | Status | Limit | WarningLimit | DiskSpaceUsed | 
