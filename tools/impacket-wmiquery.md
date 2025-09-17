@@ -2027,98 +2027,95 @@ WQL> SELECT * FROM Win32_VolumeUserQuota
 | Win32_Volume.DeviceID="\\\\?\\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\\" | Win32_Account.Domain="FOREST",Name="Administrators" | 0 | 18446744073709551615 | 18446744073709551615 | 0 |
 ```
 
-
-### Job Objects
-#### Win32_CollectionStatistics
+#### Job Objects
+- Win32_CollectionStatistics
 ```sh
 WQL> SELECT * FROM Win32_CollectionStatistics
 | Stats | Collection | 
 | \\FOREST\root\cimv2:Win32_NamedJobObjectActgInfo.Name="\\wmi\\provider\\sub\\system\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | 
 | \\FOREST\root\cimv2:Win32_NamedJobObjectActgInfo.Name="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" |
 ```
-#### Win32_LUID
-#### Win32_LUIDandAttributes
-#### Win32_NamedJobObject
+- Win32_LUID
+- Win32_LUIDandAttributes
+- Win32_NamedJobObject
 ```sh
 WQL> SELECT * FROM Win32_NamedJobObject
 | CollectionID | Caption | Description | BasicUIRestrictions | 
 | \wmi\provider\sub\system\host\job | None | None | 0 | 
 | \wmi\provider\sub\system\special\host\job | None | None | 0 |
 ```
-#### Win32_NamedJobObjectActgInfo
+- Win32_NamedJobObjectActgInfo
 ```sh
 WQL> SELECT * FROM Win32_NamedJobObjectActgInfo
 | Name | Description | Caption | TotalUserTime | TotalKernelTime | ThisPeriodTotalUserTime | ThisPeriodTotalKernelTime | TotalPageFaultCount | TotalProcesses | ActiveProcesses | TotalTerminatedProcesses | ReadOperationCount | WriteOperationCount | OtherOperationCount | ReadTransferCount | WriteTransferCount | OtherTransferCount | PeakProcessMemoryUsed | PeakJobMemoryUsed | 
 | \wmi\provider\sub\system\host\job | None | None | 172031250 | 467343750 | 172031250 | 467343750 | 3167363 | 7 | 2 | 0 | 10001 | 9120 | 2223009 | 8742902 | 991528 | 119208014 | 24891392 | 32108544 | 
 | \wmi\provider\sub\system\special\host\job | None | None | 2656250 | 468750 | 2656250 | 468750 | 7025 | 2 | 0 | 0 | 0 | 74 | 330 | 0 | 10515 | 2056 | 5730304 | 5730304 |
 ```
-#### Win32_NamedJobObjectLimit
+- Win32_NamedJobObjectLimit
 ```sh
 WQL> SELECT * FROM Win32_NamedJobObjectLimit
 | Collection | Setting | 
 | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\host\\job" | 
 | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\special\\host\\job" |
 ```
-#### Win32_NamedJobObjectLimitSetting
+- Win32_NamedJobObjectLimitSetting
 ```sh
 WQL> SELECT * FROM Win32_NamedJobObjectLimitSetting
 | SettingID | Caption | Description | ProcessMemoryLimit | JobMemoryLimit | PerProcessUserTimeLimit | PerJobUserTimeLimit | LimitFlags | MinimumWorkingSetSize | MaximumWorkingSetSize | ActiveProcessLimit | Affinity | PriorityClass | SchedulingClass | 
 | \wmi\provider\sub\system\host\job | None | None | 568868864 | 1073741824 | 0 | 0 | 11016 | 0 | 0 | 32 | 0 | 32 | 5 | 
 | \wmi\provider\sub\system\special\host\job | None | None | 0 | 0 | 0 | 0 | 11016 | 0 | 0 | 32 | 0 | 32 | 5 |
 ```
-#### Win32_NamedJobObjectProcess
+- Win32_NamedJobObjectProcess
 ```sh
 WQL> SELECT * FROM Win32_NamedJobObjectProcess
 | Collection | Member | 
 | \\.\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | \\.\root\cimv2:Win32_Process.Handle="2456" | 
 | \\.\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | \\.\root\cimv2:Win32_Process.Handle="2836" |
 ```
-#### Win32_NamedJobObjectSecLimit
+- Win32_NamedJobObjectSecLimit
 ```sh
 WQL> SELECT * FROM Win32_NamedJobObjectSecLimit
 | Collection | Setting | 
 | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectSecLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\host\\job" | 
 | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObjectSecLimitSetting.SettingID="\\wmi\\provider\\sub\\system\\special\\host\\job" |
 ```
-#### Win32_NamedJobObjectSecLimitSetting
+- Win32_NamedJobObjectSecLimitSetting
 ```sh
 WQL> SELECT * FROM Win32_NamedJobObjectSecLimitSetting
 | SettingID | Caption | Description | SecurityLimitFlags | SIDsToDisable | RestrictedSIDs | PrivilegesToDelete | 
 | \wmi\provider\sub\system\host\job | None | None | 0 | None | None | None | 
 | \wmi\provider\sub\system\special\host\job | None | None | 0 | None | None | None |
 ```
-#### Win32_NamedJobObjectStatistics
+- Win32_NamedJobObjectStatistics
 ```sh
 WQL> SELECT * FROM Win32_NamedJobObjectStatistics
 | Stats | Collection | 
 | \\FOREST\root\cimv2:Win32_NamedJobObjectActgInfo.Name="\\wmi\\provider\\sub\\system\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\host\\job" | 
 | \\FOREST\root\cimv2:Win32_NamedJobObjectActgInfo.Name="\\wmi\\provider\\sub\\system\\special\\host\\job" | \\FOREST\root\cimv2:Win32_NamedJobObject.CollectionID="\\wmi\\provider\\sub\\system\\special\\host\\job" |
 ```
-#### Win32_SIDandAttributes
-#### Win32_TokenGroups
-#### Win32_TokenPrivileges
+- Win32_SIDandAttributes
+- Win32_TokenGroups
+- Win32_TokenPrivileges
 
-
-### Memory and Page Files
-#### Win32_PageFile
-#### Win32_PageFileElementSetting	
-#### Win32_PageFileSetting
-#### Win32_PageFileUsage
+#### Memory and Page Files
+- Win32_PageFile
+- Win32_PageFileElementSetting	
+- Win32_PageFileSetting
+- Win32_PageFileUsage
 ```sh
 WQL> SELECT * FROM Win32_PageFileUsage
 | Caption | Description | InstallDate | Name | Status | AllocatedBaseSize | CurrentUsage | PeakUsage | TempPageFile | 
 | C:\pagefile.sys | C:\pagefile.sys | 20190918100723.678412-420 | C:\pagefile.sys | None | 448 | 106 | 401 | False |
 ```
 
+#### Multimedia Audio or Visual
+- Win32_CodecFile  
+rpc上では実行できない
 
-### Multimedia Audio or Visual
-#### Win32_CodecFile
-
-
-### Networking
-#### Win32_ActiveRoute
-#### Win32_IP4PersistedRouteTable
-#### Win32_IP4RouteTable
+#### Networking
+- Win32_ActiveRoute
+- Win32_IP4PersistedRouteTable
+- Win32_IP4RouteTable
 ```sh
 WQL> SELECT * FROM Win32_IP4RouteTable
 | Caption | Description | InstallDate | Name | Status | Destination | Mask | InterfaceIndex | NextHop | Type | Protocol | Age | Metric1 | Metric2 | Metric3 | Metric4 | Metric5 | Information | 
@@ -2134,15 +2131,15 @@ WQL> SELECT * FROM Win32_IP4RouteTable
 | 255.255.255.255 | 255.255.255.255 - 255.255.255.255 - 0.0.0.0 | None | 255.255.255.255 | None | 255.255.255.255 | 255.255.255.255 | 1 | 0.0.0.0 | 3 | 2 | 31012 | 331 | -1 | -1 | -1 | -1 | 0.0 | 
 | 255.255.255.255 | 255.255.255.255 - 255.255.255.255 - 0.0.0.0 | None | 255.255.255.255 | None | 255.255.255.255 | 255.255.255.255 | 5 | 0.0.0.0 | 3 | 2 | 31011 | 281 | -1 | -1 | -1 | -1 | 0.0 | 
 ```
-#### Win32_IP4RouteTableEvent
-#### Win32_NetworkClient
+- Win32_IP4RouteTableEvent
+- Win32_NetworkClient
 ```sh
 WQL> SELECT * FROM Win32_NetworkClient
 | Caption | Description | InstallDate | Name | Status | Manufacturer | 
 | Workstation | LanmanWorkstation | None | Microsoft Windows Network | OK | Microsoft Corporation |
 ```
-#### Win32_NetworkConnection
-#### Win32_NetworkProtocol
+- Win32_NetworkConnection
+- Win32_NetworkProtocol
 ```sh
 WQL> SELECT * FROM Win32_NetworkProtocol
 | Caption | Description | InstallDate | Name | Status | ConnectionlessService | GuaranteesDelivery | GuaranteesSequencing | MaximumAddressSize | MaximumMessageSize | MessageOriented | MinimumAddressSize | PseudoStreamOriented | SupportsBroadcasting | SupportsConnectData | SupportsDisconnectData | SupportsEncryption | SupportsExpeditedData | SupportsFragmentation | SupportsGracefulClosing | SupportsGuaranteedBandwidth | SupportsMulticasting | SupportsQualityofService | 
@@ -2158,14 +2155,14 @@ WQL> SELECT * FROM Win32_NetworkProtocol
 | vSockets | vSockets DGRAM | None | vSockets DGRAM | None | True | False | False | 16 | 0 | True | 16 | False | False | False | False | False | False | None | False | False | False | False | 
 | vSockets | vSockets STREAM | None | vSockets STREAM | None | False | True | True | 16 | 0 | False | 16 | False | False | False | False | False | False | None | True | False | False | False |
 ```
-#### Win32_NTDomain
+- Win32_NTDomain
 ```sh
 WQL> SELECT * FROM Win32_NTDomain
 | Caption | Description | InstallDate | Name | Status | CreationClassName | NameFormat | PrimaryOwnerContact | PrimaryOwnerName | Roles | DomainControllerName | DomainControllerAddress | DomainControllerAddressType | DomainGuid | DomainName | DnsForestName | DSPrimaryDomainControllerFlag | DSWritableFlag | DSGlobalCatalogFlag | DSDirectoryServiceFlag | DSKerberosDistributionCenterFlag | DSTimeServiceFlag | DSDnsControllerFlag | DSDnsDomainFlag | DSDnsForestFlag | DcSiteName | ClientSiteName | 
 | HTB | HTB | None | Domain: HTB | OK | Win32_NTDomain | None | None | None | None | \\FOREST | \\dead:beef::4039:28df:14a7:eb85 | 1 | {DFF0C71A-A949-4B26-8C7B-52E3E2CB6EAB} | HTB | htb.local | True | True | True | True | True | True | False | False | True | Default-First-Site-Name | Default-First-Site-Name |
 ```
-#### Win32_PingStatus
-#### Win32_ProtocolBinding
+- Win32_PingStatus
+- Win32_ProtocolBinding
 ```sh
 WQL> SELECT * FROM Win32_ProtocolBinding
 | Antecedent | Device | Dependent | 
