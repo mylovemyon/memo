@@ -1407,10 +1407,11 @@ WQL> SELECT * FROM Win32_PhysicalMemoryLocation
 ```sh
 WQL> SELECT * FROM Win32_PnPAllocatedResource
 | Antecedent | Dependent | 
-| \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="3758096384" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" | 
+| \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="3758096384" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" |
+~~~
 | \\FOREST\root\cimv2:Win32_PortResource.StartingAddress="1024" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" | 
-| \\FOREST\root\cimv2:Win32_DeviceMemoryAddress.StartingAddress="4290772992" | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="ACPI\\PNP0C02\\4" | 
-
+~~~
+| \\FOREST\root\cimv2:Win32_IRQResource.IRQNumber=4294967293 | \\FOREST\root\cimv2:Win32_PnPEntity.DeviceID="PCI\\VEN_15AD&DEV_07A0&SUBSYS_07A015AD&REV_01\\3&18D45AA6&0&A8" | 
 ~~~
 ```
 - Win32_PNPDevice
@@ -1609,6 +1610,7 @@ WQL> SELECT * FROM Win32_VideoController
 - Win32_VideoSettings  
 rpc上では実行できない
 
+
 ### Operating System Classes
 #### COM
 - Win32_ClassicCOMClass
@@ -1619,13 +1621,13 @@ WQL> SELECT * FROM Win32_ClassicCOMClass WHERE Caption = "Microsoft Windows Defe
 ```
 - Win32_ClassicCOMClassSettings
 ```sh
-WQL> SELECT * FROM Win32_ClassicCOMClassSettings WHERE Element = "Win32_ClassicCOMClass.ComponentId=\"{A2D75874-6750-4931-94C1-C99D3BC9D0C7}\""
+WQL> SELECT * FROM Win32_ClassicCOMClassSettings WHERE Element = "Win32_ClassicCOMClass.ComponentId='{A2D75874-6750-4931-94C1-C99D3BC9D0C7}'"
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A2D75874-6750-4931-94C1-C99D3BC9D0C7}" | \\FOREST\root\cimv2:Win32_ClassicCOMClassSetting.ComponentId="{A2D75874-6750-4931-94C1-C99D3BC9D0C7}" | 
 ```
 - Win32_ClassicCOMApplicationClasses
 ```sh
-WQL> SELECT * FROM Win32_ClassicCOMApplicationClasses WHERE PartComponent = "Win32_ClassicCOMClass.ComponentId=\"{A2D75874-6750-4931-94C1-C99D3BC9D0C7}\""
+WQL> SELECT * FROM Win32_ClassicCOMApplicationClasses WHERE PartComponent = "Win32_ClassicCOMClass.ComponentId='{A2D75874-6750-4931-94C1-C99D3BC9D0C7}'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_ClassicComClass.ComponentId="{A2D75874-6750-4931-94C1-C99D3BC9D0C7}" | 
 ```
@@ -1793,13 +1795,13 @@ WQL> SELECT * FROM Win32_COMApplication
 ```
 - Win32_COMApplicationClasses
 ```sh
-WQL> SELECT * FROM Win32_COMApplicationClasses WHERE GroupComponent = "Win32_DCOMApplication.AppID=\"{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}\""
+WQL> SELECT * FROM Win32_COMApplicationClasses WHERE GroupComponent = "Win32_DCOMApplication.AppID='{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_ClassicComClass.ComponentId="{A2D75874-6750-4931-94C1-C99D3BC9D0C7}" | 
 ```
 - Win32_COMApplicationSettings
 ```sh
-WQL> SELECT * FROM Win32_COMApplicationSettings WHERE Element = "Win32_DCOMApplication.AppID=\"{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}\""
+WQL> SELECT * FROM Win32_COMApplicationSettings WHERE Element = "Win32_DCOMApplication.AppID='{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}'"
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_DCOMApplicationSetting.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" |
 ```
@@ -1832,7 +1834,7 @@ WQL> SELECT * FROM Win32_DCOMApplicationSetting WHERE Caption = "Microsoft Windo
 ```
 - Win32_DCOMApplicationAccessAllowedSetting
 ```sh
-WQL> SELECT * FROM Win32_DCOMApplicationAccessAllowedSetting WHERE Element = "Win32_DCOMApplication.AppID=\"{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}\""
+WQL> SELECT * FROM Win32_DCOMApplicationAccessAllowedSetting WHERE Element = "Win32_DCOMApplication.AppID='{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}'"
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-18" | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
@@ -1840,7 +1842,7 @@ WQL> SELECT * FROM Win32_DCOMApplicationAccessAllowedSetting WHERE Element = "Wi
 ```
 - Win32_DCOMApplicationLaunchAllowedSetting	
 ```sh
-WQL> SELECT * FROM Win32_DCOMApplicationLaunchAllowedSetting WHERE Element = "Win32_DCOMApplication.AppID=\"{A79DB36D-6218-weffw48e6-9EC9-DCBA9A39BF0F}\""
+WQL> SELECT * FROM Win32_DCOMApplicationLaunchAllowedSetting WHERE Element = "Win32_DCOMApplication.AppID='{A79DB36D-6218-weffw48e6-9EC9-DCBA9A39BF0F}'"
 WQL> 
 ```
 - Win32_ComponentCategory
@@ -1851,34 +1853,34 @@ WQL> SELECT * FROM Win32_ComponentCategory WHERE Caption = "Active Scripting Eng
 ```
 - Win32_ImplementedCategory
 ```sh
-WQL> SELECT * FROM Win32_ImplementedCategory WHERE Category = "Win32_ComponentCategory.CategoryId=\"{0AEE2A92-BCBB-11D0-8C72-00C04FC2B085}\""
+WQL> SELECT * FROM Win32_ImplementedCategory WHERE Category = "Win32_ComponentCategory.CategoryId='{0AEE2A92-BCBB-11D0-8C72-00C04FC2B085}'"
 | Category | Component | 
 | \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{0AEE2A92-BCBB-11D0-8C72-00C04FC2B085}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B54F3742-5B07-11CF-A4B0-00AA004A55E8}" | 
 | \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{0AEE2A92-BCBB-11D0-8C72-00C04FC2B085}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F414C261-6AC0-11CF-B6D1-00AA00BBBB58}" | 
 ```
 
-### Desktop
-#### Win32_Desktop
+#### Desktop
+- Win32_Desktop
 ```sh
 WQL> SELECT * FROM Win32_Desktop WHERE Name LIKE "%administrator%"
 | SettingID | Caption | Description | BorderWidth | CoolSwitch | CursorBlinkRate | DragFullWindows | GridGranularity | IconSpacing | IconTitleFaceName | IconTitleSize | IconTitleWrap | Name | Pattern | ScreenSaverActive | ScreenSaverExecutable | ScreenSaverSecure | ScreenSaverTimeout | Wallpaper | WallpaperTiled | WallpaperStretched | 
 | None | None | None | 1 | None | 530 | False | None | None | Segoe UI | 9 | True | HTB\Administrator | 0 | False | None | None | None | None | False | True |
 ```
-#### Win32_Environment
+- Win32_Environment
 ```sh
 WQL> SELECT * FROM Win32_Environment WHERE Caption = "<SYSTEM>\\Path"
 | Caption | Description | InstallDate | Name | Status | SystemVariable | UserName | VariableValue | 
 | <SYSTEM>\Path | <SYSTEM>\Path | None | Path | OK | True | <SYSTEM> | %SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\ |
 ```
-#### Win32_TimeZone
+- Win32_TimeZone
 ```sh
 WQL> SELECT * FROM Win32_TimeZone
 | SettingID | Caption | Description | Bias | DaylightBias | DaylightDay | DaylightDayOfWeek | DaylightHour | DaylightMillisecond | DaylightMinute | DaylightMonth | DaylightName | DaylightSecond | DaylightYear | StandardBias | StandardDay | StandardDayOfWeek | StandardHour | StandardMillisecond | StandardMinute | StandardMonth | StandardName | StandardSecond | StandardYear | 
 | None | (UTC-08:00) Pacific Time (US & Canada) | (UTC-08:00) Pacific Time (US & Canada) | -480 | -60 | 2 | 0 | 2 | 0 | 0 | 3 | Pacific Daylight Time | 0 | 0 | 0 | 1 | 0 | 2 | 0 | 0 | 11 | Pacific Standard Time | 0 | 0 |
 ```
-#### Win32_UserDesktop
+- Win32_UserDesktop
 ```sh
-WQL> SELECT * FROM Win32_UserDesktop WHERE Element = "Win32_UserAccount.Domain=\"htb\",Name=\"administrator\"" 
+WQL> SELECT * FROM Win32_UserDesktop WHERE Element = "Win32_UserAccount.Domain='htb',Name='administrator'"
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\Administrator" | 
 ```
