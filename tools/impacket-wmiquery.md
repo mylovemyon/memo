@@ -1187,6 +1187,7 @@ rpc上では実行できない
 - Win32_HeatPipe
 - Win32_Refrigeration
 - Win32_TemperatureProbe
+
 #### Input Device Classes
 - Win32_Keyboard
 ```sh
@@ -1200,6 +1201,7 @@ WQL> SELECT * FROM Win32_PointingDevice
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | Handedness | NumberOfButtons | PointingType | Resolution | HardwareType | InfFileName | InfSection | SampleRate | Synch | DoubleSpeedThreshold | QuadSpeedThreshold | DeviceInterface | Manufacturer | 
 | VMware Pointing Device | VMware Pointing Device | None | VMware Pointing Device | OK | 65535 | Win32_PointingDevice | 0 | False | ACPI\VMW0003\4&25EE97C0&0 | None | ACPI\VMW0003\4&25EE97C0&0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | 0 | 2 | None | VMware Pointing Device | oem5.inf | VMMouse | None | None | None | None | 1 | VMware, Inc. |
 ```
+
 #### Mass Storage Classes
 - Win32_AutochkSetting
 ```sh
@@ -1222,10 +1224,11 @@ WQL> SELECT * FROM Win32_PhysicalMedia
 | None | None | None | None | None | None | None | None | None | 6000c29c9f4f2e0c794e36b137fda25f | \\.\PHYSICALDRIVE0 | None | None | None | True | True | True | True | 18446744073709551615 | 65535 | None | True | True |
 ```
 - Win32_TapeDrive
+
 #### Motherboard, Controller, and Port Classes
 - Win32_1394Controller
 - Win32_1394ControllerDevice
-- Win32_AllocatedResource
+- Win32_AllocatedResource  
 rpc上では実行できない
 - Win32_AssociatedProcessorMemory
 ```sh
@@ -1526,9 +1529,8 @@ rpc上では実行できない
 - Win32_USBControllerDevice
 - Win32_USBHub
 
-
-### Networking Device Classes
-#### Win32_NetworkAdapter
+#### Networking Device Classes
+- Win32_NetworkAdapter
 ```sh
 WQL> SELECT * FROM Win32_NetworkAdapter
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | PermanentAddress | NetworkAddresses | Speed | MaxSpeed | AutoSense | ProductName | AdapterType | AdapterTypeId | MACAddress | ServiceName | Manufacturer | Installed | Index | InterfaceIndex | MaxNumberControlled | TimeOfLastReset | NetConnectionID | NetConnectionStatus | NetEnabled | GUID | PhysicalAdapter | 
@@ -1537,7 +1539,7 @@ WQL> SELECT * FROM Win32_NetworkAdapter
 | [00000002] Microsoft ISATAP Adapter | Microsoft ISATAP Adapter | None | Microsoft ISATAP Adapter | None | 3 | Win32_NetworkAdapter | 0 | False | 2 | None | SWD\IP_TUNNEL_VBUS\ISATAP_0 | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | None | 100000 | 18446744073709551615 | True | Microsoft ISATAP Adapter | Tunnel | 15 | None | tunnel | Microsoft | True | 2 | 2 | 0 | 20250901054812.493853-420 | None | None | None | None | False | 
 | [00000003] Microsoft Teredo Tunneling Adapter | Microsoft Teredo Tunneling Adapter | None | Microsoft Teredo Tunneling Adapter | None | 3 | Win32_NetworkAdapter | None | True | 3 | None | None | False | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | None | 18446744073709551615 | 18446744073709551615 | True | Microsoft Teredo Tunneling Adapter | None | None | None | None | None | True | 3 | 4 | 0 | 20250901054812.493853-420 | None | None | None | None | False |
 ```
-#### Win32_NetworkAdapterConfiguration
+- Win32_NetworkAdapterConfiguration
 ```sh
 WQL> SELECT * FROM Win32_NetworkAdapterConfiguration
 | SettingID | Caption | Description | GatewayCostMetric | DefaultIPGateway | DHCPEnabled | DHCPLeaseExpires | DHCPLeaseObtained | DHCPServer | Index | InterfaceIndex | IPAddress | IPSubnet | IPXAddress | MACAddress | ServiceName | IPEnabled | IPXEnabled | FullDNSRegistrationEnabled | DomainDNSRegistrationEnabled | IPConnectionMetric | DatabasePath | IPUseZeroBroadcast | ArpAlwaysSourceRoute | ArpUseEtherSNAP | DefaultTOS | DefaultTTL | DeadGWDetectEnabled | PMTUBHDetectEnabled | PMTUDiscoveryEnabled | ForwardBufferMemory | IGMPLevel | KeepAliveInterval | KeepAliveTime | MTU | NumForwardPackets | TcpMaxConnectRetransmissions | TcpMaxDataRetransmissions | TcpNumConnections | TcpUseRFC1122UrgentPointer | TcpWindowSize | IPPortSecurityEnabled | IPFilterSecurityEnabled | IPSecPermitTCPPorts | IPSecPermitUDPPorts | IPSecPermitIPProtocols | DNSHostName | DNSDomain | DNSServerSearchOrder | DNSDomainSuffixSearchOrder | DNSEnabledForWINSResolution | WINSEnableLMHostsLookup | WINSPrimaryServer | WINSSecondaryServer | WINSHostLookupFile | WINSScopeID | TcpipNetbiosOptions | IPXVirtualNetNumber | IPXNetworkNumber | IPXFrameType | IPXMediaType | 
@@ -1556,25 +1558,30 @@ WQL> SELECT * FROM Win32_NetworkAdapterSetting
 | \\FOREST\root\cimv2:Win32_NetworkAdapter.DeviceID="3" | \\FOREST\root\cimv2:Win32_NetworkAdapterConfiguration.Index=3 |
 ```
 
+#### Power Classes
+- Win32_Battery  
+rpc上では実行できない
+- Win32_CurrentProbe
+- Win32_PortableBattery
+- Win32_PowerManagementEvent
+- Win32_VoltageProbe
 
-### Power Classes
-#### Win32_Battery
-#### Win32_CurrentProbe
-#### Win32_PortableBattery
-#### Win32_PowerManagementEvent
-#### Win32_VoltageProbe
-
-
-### Printing Classes
-#### Win32_DriverForDevice
-#### Win32_Printer
-#### Win32_PrinterConfiguration
-#### Win32_PrinterController
-#### Win32_PrinterDriver
-#### Win32_PrinterDriverDll
-#### Win32_PrinterSetting
-#### Win32_PrintJob
-#### Win32_TCPIPPrinterPort
+#### Printing Classes
+- Win32_DriverForDevice  
+rpc上では実行できない
+- Win32_Printer  
+rpc上では実行できない
+- Win32_PrinterConfiguration  
+rpc上では実行できない
+- Win32_PrinterController
+- Win32_PrinterDriver  
+rpc上では実行できない
+- Win32_PrinterDriverDll  
+rpc上では実行できない
+- Win32_PrinterSetting  
+rpc上では実行できない
+- Win32_PrintJob
+- Win32_TCPIPPrinterPort
 
 
 ### Telephony Classes
