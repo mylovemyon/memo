@@ -1583,59 +1583,54 @@ rpc上では実行できない
 - Win32_PrintJob
 - Win32_TCPIPPrinterPort
 
+#### Telephony Classes
+- Win32_POTSModem
+- Win32_POTSModemToSerialPort	
 
-### Telephony Classes
-#### Win32_POTSModem
-#### Win32_POTSModemToSerialPort	
-
-
-### Video and Monitor Classes
-#### Win32_DesktopMonitor
+#### Video and Monitor Classes
+- Win32_DesktopMonitor
 ```sh
 WQL> SELECT * FROM Win32_DesktopMonitor
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | IsLocked | DisplayType | Bandwidth | ScreenHeight | ScreenWidth | MonitorManufacturer | MonitorType | PixelsPerXLogicalInch | PixelsPerYLogicalInch | 
 | Generic Non-PnP Monitor | Generic Non-PnP Monitor | None | Generic Non-PnP Monitor | OK | 8 | Win32_DesktopMonitor | 0 | False | DesktopMonitor1 | None | DISPLAY\DEFAULT_MONITOR\4&31BE19FA&0&UID0 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | True | 65535 | None | None | None | (Standard monitor types) | Generic Non-PnP Monitor | 96 | 96 |
 ```
-#### Win32_DisplayControllerConfiguration
+- Win32_DisplayControllerConfiguration
 ```sh
 WQL> SELECT * FROM Win32_DisplayControllerConfiguration
 | SettingID | Caption | Description | BitsPerPixel | ColorPlanes | DeviceEntriesInAColorTable | DeviceSpecificPens | HorizontalResolution | Name | RefreshRate | ReservedSystemPaletteEntries | SystemPaletteEntries | VerticalResolution | VideoMode | 
 | VMware SVGA 3D | VMware SVGA 3D | VMware SVGA 3D | 32 | 1 | None | None | 1024 | VMware SVGA 3D | 60 | None | None | 768 | 1024 by 768 pixels, True Color, 60 Hertz |
 ```
-#### Win32_VideoController
+- Win32_VideoController
 ```sh
 WQL> SELECT * FROM Win32_VideoController
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | MaxNumberControlled | ProtocolSupported | TimeOfLastReset | VideoProcessor | VideoMemoryType | NumberOfVideoPages | MaxMemorySupported | AcceleratorCapabilities | CapabilityDescriptions | CurrentBitsPerPixel | CurrentHorizontalResolution | CurrentVerticalResolution | MaxRefreshRate | MinRefreshRate | CurrentRefreshRate | CurrentScanMode | CurrentNumberOfColors | CurrentNumberOfRows | CurrentNumberOfColumns | VideoArchitecture | VideoMode | NumberOfColorPlanes | AdapterCompatibility | AdapterDACType | AdapterRAM | Monochrome | DitherType | InfFilename | InfSection | InstalledDisplayDrivers | DriverDate | DriverVersion | ICMIntent | ICMMethod | SpecificationVersion | ColorTableEntries | DeviceSpecificPens | ReservedSystemPaletteEntries | SystemPaletteEntries | VideoModeDescription | 
 | VMware SVGA 3D | VMware SVGA 3D | None | VMware SVGA 3D | OK | 3 | Win32_VideoController | 0 | False | VideoController1 | None | PCI\VEN_15AD&DEV_0405&SUBSYS_040515AD&REV_00\3&18D45AA6&0&78 | True | 65535 | Win32_ComputerSystem | FOREST | None | None | True | None | 65535 | None | VMware Virtual SVGA 3D Graphics Adapter | 2 | None | None | None | None | 32 | 1440 | 621 | 64 | 64 | 1 | 4 | 4294967296 | 0 | 0 | 5 | 65535 | 65535 | VMware, Inc. | n/a | 0 | False | 0 | oem6.inf | VM3D_AMD64 | vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum64_loader.dll,vm3dum_loader,vm3dum_loader,vm3dum_loader | 20180726000000.000000-000 | 8.16.1.1 | None | None | None | None | None | None | None | 1440 x 621 x 4294967296 colors | 
 ```
-#### Win32_VideoSettings
+- Win32_VideoSettings  
+rpc上では実行できない
 
-
-
-
-
-## Operating System Classes
-### COM
-#### Win32_ClassicCOMClass
+### Operating System Classes
+#### COM
+- Win32_ClassicCOMClass
 ```sh
 WQL> SELECT * FROM Win32_ClassicCOMClass WHERE Caption = "Microsoft Windows Defender"
 | Caption | Description | InstallDate | Name | Status | ComponentId | 
 | Microsoft Windows Defender | Microsoft Windows Defender | None | Microsoft Windows Defender | None | {A2D75874-6750-4931-94C1-C99D3BC9D0C7} | 
 ```
-#### Win32_ClassicCOMClassSettings
+- Win32_ClassicCOMClassSettings
 ```sh
 WQL> SELECT * FROM Win32_ClassicCOMClassSettings WHERE Element = "Win32_ClassicCOMClass.ComponentId=\"{A2D75874-6750-4931-94C1-C99D3BC9D0C7}\""
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{A2D75874-6750-4931-94C1-C99D3BC9D0C7}" | \\FOREST\root\cimv2:Win32_ClassicCOMClassSetting.ComponentId="{A2D75874-6750-4931-94C1-C99D3BC9D0C7}" | 
 ```
-#### Win32_ClassicCOMApplicationClasses
+- Win32_ClassicCOMApplicationClasses
 ```sh
 WQL> SELECT * FROM Win32_ClassicCOMApplicationClasses WHERE PartComponent = "Win32_ClassicCOMClass.ComponentId=\"{A2D75874-6750-4931-94C1-C99D3BC9D0C7}\""
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_ClassicComClass.ComponentId="{A2D75874-6750-4931-94C1-C99D3BC9D0C7}" | 
 ```
-#### Win32_ClientApplicationSetting
-#### Win32_COMApplication
+- Win32_ClientApplicationSetting
+- Win32_COMApplication
 ```sh
 WQL> SELECT * FROM Win32_COMApplication
 | Caption | Description | InstallDate | Name | Status | AppID | 
@@ -1796,46 +1791,46 @@ WQL> SELECT * FROM Win32_COMApplication
 | None | None | None | None | None | {ff9e6131-a8c1-4188-aa03-82e9f10a05a8} | 
 | Shell Execute Hardware Event Handler | Shell Execute Hardware Event Handler | None | Shell Execute Hardware Event Handler | None | {FFB8655F-81B9-4fce-B89C-9A6BA76D13E7} |
 ```
-#### Win32_COMApplicationClasses
+- Win32_COMApplicationClasses
 ```sh
 WQL> SELECT * FROM Win32_COMApplicationClasses WHERE GroupComponent = "Win32_DCOMApplication.AppID=\"{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}\""
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_ClassicComClass.ComponentId="{A2D75874-6750-4931-94C1-C99D3BC9D0C7}" | 
 ```
-#### Win32_COMApplicationSettings
+- Win32_COMApplicationSettings
 ```sh
 WQL> SELECT * FROM Win32_COMApplicationSettings WHERE Element = "Win32_DCOMApplication.AppID=\"{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}\""
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_DCOMApplicationSetting.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" |
 ```
-#### Win32_COMClass
+- Win32_COMClass
 ```sh
 WQL> SELECT * FROM Win32_COMClass WHERE Caption = "Microsoft Windows Defender"
 | Caption | Description | InstallDate | Name | Status | ComponentId | 
 | Microsoft Windows Defender | Microsoft Windows Defender | None | Microsoft Windows Defender | None | {A2D75874-6750-4931-94C1-C99D3BC9D0C7} | 
 ```
-#### Win32_ComClassAutoEmulator
-#### Win32_ComClassEmulator
-#### Win32_COMSetting
+- Win32_ComClassAutoEmulator
+- Win32_ComClassEmulator
+- Win32_COMSetting
 ```sh
 WQL> SELECT * FROM Win32_COMSetting WHERE Caption = "Microsoft Windows Defender"
 | SettingID | Caption | Description | AppID | AuthenticationLevel | RemoteServerName | RunAsUser | EnableAtStorageActivation | UseSurrogate | CustomSurrogate | LocalService | ServiceParameters | 
 | None | Microsoft Windows Defender | Microsoft Windows Defender | {A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F} | None | None | None | False | True | None | None | None | 
 | None | Microsoft Windows Defender | Microsoft Windows Defender | {A2D75874-6750-4931-94C1-C99D3BC9D0C7} | None | {A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F} | Both | None | False | False | None | False | None | None | C:\Program Files\Windows Defender\MsMpCom.dll | None | None | None | None | None | None | None | None | None | None | None | 
 ```
-#### Win32_DCOMApplication
+- Win32_DCOMApplication
 ```sh
 WQL> SELECT * FROM Win32_DCOMApplication WHERE Caption = "Microsoft Windows Defender"
 | Caption | Description | InstallDate | Name | Status | AppID | 
 | Microsoft Windows Defender | Microsoft Windows Defender | None | Microsoft Windows Defender | None | {A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F} |
 ```
-#### Win32_DCOMApplicationSetting
+- Win32_DCOMApplicationSetting
 ```sh
 WQL> SELECT * FROM Win32_DCOMApplicationSetting WHERE Caption = "Microsoft Windows Defender"
 | SettingID | Caption | Description | AppID | AuthenticationLevel | RemoteServerName | RunAsUser | EnableAtStorageActivation | UseSurrogate | CustomSurrogate | LocalService | ServiceParameters | 
 | None | Microsoft Windows Defender | Microsoft Windows Defender | {A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F} | None | None | None | False | True | None | None | None |
 ```
-#### Win32_DCOMApplicationAccessAllowedSetting
+- Win32_DCOMApplicationAccessAllowedSetting
 ```sh
 WQL> SELECT * FROM Win32_DCOMApplicationAccessAllowedSetting WHERE Element = "Win32_DCOMApplication.AppID=\"{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}\""
 | Element | Setting | 
@@ -1843,25 +1838,24 @@ WQL> SELECT * FROM Win32_DCOMApplicationAccessAllowedSetting WHERE Element = "Wi
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-10" | 
 | \\FOREST\root\cimv2:Win32_DCOMApplication.AppID="{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-4" |
 ```
-#### Win32_DCOMApplicationLaunchAllowedSetting	
+- Win32_DCOMApplicationLaunchAllowedSetting	
 ```sh
 WQL> SELECT * FROM Win32_DCOMApplicationLaunchAllowedSetting WHERE Element = "Win32_DCOMApplication.AppID=\"{A79DB36D-6218-weffw48e6-9EC9-DCBA9A39BF0F}\""
 WQL> 
 ```
-#### Win32_ComponentCategory
+- Win32_ComponentCategory
 ```sh
 WQL> SELECT * FROM Win32_ComponentCategory WHERE Caption = "Active Scripting Engine with Authoring"
 | Caption | Description | InstallDate | Name | Status | CategoryId | 
 | Active Scripting Engine with Authoring | Active Scripting Engine with Authoring | None | Active Scripting Engine with Authoring | None | {0AEE2A92-BCBB-11D0-8C72-00C04FC2B085} | 
 ```
-#### Win32_ImplementedCategory
+- Win32_ImplementedCategory
 ```sh
 WQL> SELECT * FROM Win32_ImplementedCategory WHERE Category = "Win32_ComponentCategory.CategoryId=\"{0AEE2A92-BCBB-11D0-8C72-00C04FC2B085}\""
 | Category | Component | 
 | \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{0AEE2A92-BCBB-11D0-8C72-00C04FC2B085}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{B54F3742-5B07-11CF-A4B0-00AA004A55E8}" | 
 | \\FOREST\root\cimv2:Win32_ComponentCategory.CategoryId="{0AEE2A92-BCBB-11D0-8C72-00C04FC2B085}" | \\FOREST\root\cimv2:Win32_ClassicCOMClass.ComponentId="{F414C261-6AC0-11CF-B6D1-00AA00BBBB58}" | 
 ```
-
 
 ### Desktop
 #### Win32_Desktop
