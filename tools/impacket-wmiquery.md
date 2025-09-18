@@ -2746,7 +2746,7 @@ WQL> SELECT * FROM Win32_Group WHERE Name = "administrators"
 ```
 - Win32_GroupInDomain
 ```sh
-WQL> SELECT * FROM Win32_GroupInDomain WHERE PartComponent = "Win32_Group.Domain=\"HTB\",Name=\"Domain Admins\""
+WQL> SELECT * FROM Win32_GroupInDomain WHERE PartComponent = "Win32_Group.Domain='HTB',Name='Domain Admins'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Admins" |
 ```
