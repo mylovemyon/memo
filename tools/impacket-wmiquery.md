@@ -2374,7 +2374,7 @@ WQL> SELECT * FROM Win32_SystemDevices WHERE PartComponent = "Win32_Volume.Devic
 ```
 - Win32_SystemLoadOrderGroups
 ```sh
-WQL> SELECT * FROM Win32_SystemLoadOrderGroups WHERE PartComponent = "Win32_LoadOrderGroup.Name=\"System Reserved\""
+WQL> SELECT * FROM Win32_SystemLoadOrderGroups WHERE PartComponent = "Win32_LoadOrderGroup.Name='System Reserved'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Reserved" |
 ```
@@ -2418,7 +2418,7 @@ WQL> SELECT * FROM Win32_SystemResources
 ```
 - Win32_SystemServices
 ```sh
-WQL> SELECT * FROM Win32_SystemServices WHERE PartComponent = "Win32_Service.Name=\"WinDefend\""
+WQL> SELECT * FROM Win32_SystemServices WHERE PartComponent = "Win32_Service.Name='WinDefend'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="WinDefend" | 
 ```
@@ -2437,7 +2437,7 @@ WQL> SELECT * FROM Win32_SystemSetting
 ```
 - Win32_SystemSystemDriver
 ```sh
-WQL> SELECT * FROM Win32_SystemSystemDriver WHERE PartComponent = "Win32_SystemDriver.Name=\"pcw\""
+WQL> SELECT * FROM Win32_SystemSystemDriver WHERE PartComponent = "Win32_SystemDriver.Name='pcw'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="pcw" |
 ```
@@ -2449,20 +2449,20 @@ WQL> SELECT * FROM Win32_SystemTimeZone
 ```
 - Win32_SystemUsers
 ```sh
-WQL> SELECT * FROM Win32_SystemUsers WHERE PartComponent = "Win32_UserAccount.Domain=\"htb\",Name=\"administrator\"" 
+WQL> SELECT * FROM Win32_SystemUsers WHERE PartComponent = "Win32_UserAccount.Domain='htb',Name='administrator'" 
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="Administrator",Domain="HTB" |
 ```
 
 #### Processes
-#### Win32_Process
+- Win32_Process
 ```sh
 WQL> SELECT * FROM Win32_Process WHERE caption = "powershell.exe"
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | CreationDate | Handle | KernelModeTime | OSCreationClassName | OSName | Priority | ExecutionState | TerminationDate | UserModeTime | WorkingSetSize | ExecutablePath | MaximumWorkingSetSize | MinimumWorkingSetSize | PageFaults | PageFileUsage | PeakPageFileUsage | PeakWorkingSetSize | ProcessId | QuotaNonPagedPoolUsage | QuotaPagedPoolUsage | QuotaPeakNonPagedPoolUsage | QuotaPeakPagedPoolUsage | WindowsVersion | ThreadCount | HandleCount | ParentProcessId | SessionId | PrivatePageCount | PeakVirtualSize | VirtualSize | ReadOperationCount | WriteOperationCount | OtherOperationCount | ReadTransferCount | WriteTransferCount | OtherTransferCount | CommandLine | 
 | powershell.exe | powershell.exe | None | powershell.exe | None | Win32_ComputerSystem | FOREST | Win32_Process | 20250903233527.352261-420 | 3036 | 7413437500 | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | 6 | 65535 | None | 46128750000 | 504143872 | C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe | 1380 | 200 | 31700113 | 543464 | 671480 | 627732 | 3036 | 44 | 522 | 139 | 530 | 10.0.14393 | 12 | 410 | 988 | 0 | 556507136 | 2200181616640 | 2200169426944 | 353 | 2 | 38498979 | 4783486 | 160 | 709873028 | powershell.exe -ep bypass C:\Users\Administrator\Documents\revert.ps1 | 
 ```
-#### Win32_ProcessStartup
-#### Win32_Thread
+- Win32_ProcessStartup
+- Win32_Thread
 ```sh
 WQL> SELECT * FROM Win32_Thread WHERE processhandle = "3036"
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | OSCreationClassName | OSName | ProcessCreationClassName | ProcessHandle | CreationClassName | Handle | Priority | ExecutionState | UserModeTime | KernelModeTime | ElapsedTime | PriorityBase | StartAddress | ThreadState | ThreadWaitReason | 
