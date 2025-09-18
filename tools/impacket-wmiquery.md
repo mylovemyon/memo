@@ -2800,9 +2800,8 @@ WQL> SELECT * FROM Win32_UserInDomain WHERE PartComponent= "Win32_UserAccount.Do
 | \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | 
 ```
 
-
-### Windows Event Log
-#### Win32_NTEventlogFile
+#### Windows Event Log
+- Win32_NTEventlogFile
 ```sh
 WQL> SELECT * FROM Win32_NTEventlogFile
 | Caption | Description | InstallDate | Name | Status | InUseCount | Archive | CSCreationClassName | CSName | Compressed | CreationClassName | CreationDate | Encrypted | FSCreationClassName | FSName | LastAccessed | LastModified | Readable | FileSize | Writeable | Hidden | System | FileType | EightDotThreeFileName | CompressionMethod | EncryptionMethod | Drive | Path | FileName | Extension | AccessMask | Version | Manufacturer | LogfileName | MaxFileSize | NumberOfRecords | OverWritePolicy | OverwriteOutDated | Sources | 
@@ -2818,7 +2817,7 @@ WQL> SELECT * FROM Win32_NTEventlogFile
 | c:\windows\system32\winevt\logs\system.evtx | c:\windows\system32\winevt\logs\system.evtx | 20190918100732.787811-420 | C:\Windows\System32\Winevt\Logs\System.evtx | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | False | Win32_NTEventlogFile | 20190918100732.787811-420 | False | Win32_FileSystem | NTFS | 20190918100732.787811-420 | 20250905043544.563618-420 | True | 3215360 | True | False | False | evtx File | c:\windows\system32\winevt\logs\system~1.evt | None | None | c: | \windows\system32\winevt\logs\ | System | evtx | None | None | None | System | 20971520 | 5870 | WhenNeeded | 0 | System 3ware ACPI ADP80XX AFD AmdK8 AmdPPM amdsata amdsbs amdxata Application Management Group Policy Application Popup arcsas AsyncMac atapi b06bdrv BasicRender bfadfcoei bfadi Bowser Browser BugCheck bxfcoe bxois cdrom cht4iscsi cht4vbd DCOM DfsSvc Dhcp Dhcpv6 disk Display Dnsapi Dnscache e1iexpress ebdrv elxfcoe elxstor eventlog exFAT FltMgr HpSAMD Http i8042prt iaStorAV iaStorV ibbus intelppm IPMGM IPMIDRV IPNATHLP IPRouterManager isapnp iScsiPrt kbdclass kbdhid KDC kdnic Kerberos lltdio LmHosts LsaSrv LSI_SAS LSI_SAS2i LSI_SAS3i LSI_SSS LSM megasas megasr Microsoft-Pef-WFP-MessageProvider Microsoft-Windows-Audit-CVE Microsoft-Windows-Bits-Client Microsoft-Windows-CoreSystem-NetProvision-JoinProviderOnline Microsoft-Windows-DFSN-Server Microsoft-Windows-DFSN-ServerFilter Microsoft-Windows-DfsSvc Microsoft-Windows-Dhcp-Client Microsoft-Windows-DHCPv6-Client Microsoft-Windows-Diagnostics-Networking Microsoft-Windows-Directory-Services-SAM Microsoft-Windows-DistributedCOM Microsoft-Windows-DNS-Client Microsoft-Windows-DriverFrameworks-UserMode Microsoft-Windows-EventCollector Microsoft-Windows-Eventlog Microsoft-Windows-exFAT-SQM Microsoft-Windows-Fat-SQM Microsoft-Windows-FilterManager Microsoft-Windows-Firewall Microsoft-Windows-FMS Microsoft-Windows-FunctionDiscoveryHost Microsoft-Windows-GPIO-ClassExtension Microsoft-Windows-GroupPolicy Microsoft-Windows-HAL Microsoft-Windows-HttpEvent Microsoft-Windows-Iphlpsvc Microsoft-Windows-IsolatedUserMode Microsoft-Windows-Kernel-Boot Microsoft-Windows-Kernel-General Microsoft-Windows-Kernel-Interrupt-Steering Microsoft-Windows-Kernel-IO Microsoft-Windows-Kernel-PnP Microsoft-Windows-Kernel-Power Microsoft-Windows-Kernel-Processor-Power Microsoft-Windows-Kernel-WHEA Microsoft-Windows-Kernel-XDV Microsoft-Windows-LanguagePackSetup Microsoft-Windows-MountMgr Microsoft-Windows-MsLbfoSysEvtProvider Microsoft-Windows-NDIS Microsoft-Windows-NdisImPlatformSysEvtProvider Microsoft-Windows-Ntfs Microsoft-Windows-Ntfs-UBPM Microsoft-Windows-OverlayFilter Microsoft-Windows-Power-Meter-Polling Microsoft-Windows-ReFS Microsoft-Windows-ReFS-v1 Microsoft-Windows-Resource-Exhaustion-Detector Microsoft-Windows-ScmDisk0101 Microsoft-Windows-SDDC-Management Microsoft-Windows-Serial-ClassExtension Microsoft-Windows-ServerManager-ConfigureSMRemoting Microsoft-Windows-Servicing Microsoft-Windows-Setup Microsoft-Windows-SetupPlatform Microsoft-Windows-SPB-ClassExtension Microsoft-Windows-Subsys-SMSS Microsoft-Windows-TaskScheduler Microsoft-Windows-TerminalServices-LocalSessionManager Microsoft-Windows-TerminalServices-RemoteConnectionManager Microsoft-Windows-TerminalServices-SessionBroker-Client Microsoft-Windows-Time-Service Microsoft-Windows-TPM-WMI Microsoft-Windows-UserModePowerService Microsoft-Windows-UserPnp Microsoft-Windows-WindowsUpdateClient Microsoft-Windows-Wininit Microsoft-Windows-Winlogon mlx4_bus mouclass mouhid mrxsmb MSiSCSI MsLbfoProvider MTConfig Mup mvumis NdisImPlatform NdisImPlatformSysEvtProvider NdisWan ndiswanlegacy NetBIOS NetBT NetJoin Netlogon netvscvfpp Ntfs nvstor Parport partmgr percsas2i percsas3i Power PptpMiniport Print PrintFilterPipelineSvc Processor ql2300i ql40xx2i qlfcoei RasCfg Rasman RasSstp rdbss RemoteAccess rspndr SAM sbp2port SCardSvr Schannel scmbus scmdisk0101 sercx Serial sermouse Server Service Control Manager SiSRaid2 SiSRaid4 SMSvcHost 4.0.0.0 SNMPTRAP spaceport spbcx Srv stexstor storahci stornvme Tcpip Tcpip6 TCPMon TermService TermServJet TPM tsusbhub tunnel UASPStor UEFI UmRdpService usbehci usbser User32 VDS Basic Provider VDS Dynamic Provider VDS Virtual Disk Provider Virtual Disk Service vmci volmgr Volsnap vpci vsmraid VSTXRAID W32Time WacomPen wdf01000 wecsvc Win32k WinDefend WinHttpAutoProxySvc WinNat WinRM WMIxWDM Workstation  | 
 | c:\windows\system32\winevt\logs\windows powershell.evtx | c:\windows\system32\winevt\logs\windows powershell.evtx | 20190918100732.787811-420 | C:\Windows\System32\Winevt\Logs\Windows PowerShell.evtx | OK | 18446744073709551615 | True | Win32_ComputerSystem | FOREST | False | Win32_NTEventlogFile | 20190918100732.787811-420 | False | Win32_FileSystem | NTFS | 20190918100732.787811-420 | 20250905043742.423198-420 | True | 1118208 | True | False | False | evtx File | c:\windows\system32\winevt\logs\window~1.evt | None | None | c: | \windows\system32\winevt\logs\ | Windows PowerShell | evtx | None | None | None | Windows PowerShell | 15728640 | 253 | WhenNeeded | 0 | Windows PowerShell PowerShell  |
 ```
-#### Win32_NTLogEvent
+- Win32_NTLogEvent
 ```sh
 WQL> SELECT * FROM Win32_NTLogEvent WHERE LogFile = "windows powershell" AND RecordNumber = 1
 | RecordNumber | Logfile | EventIdentifier | EventCode | SourceName | Type | Category | CategoryString | TimeGenerated | TimeWritten | ComputerName | User | Message | InsertionStrings | Data | EventType | 
@@ -2859,19 +2858,19 @@ Details:
         CommandPath=
         CommandLine=  | None | 3 |
 ```
-#### Win32_NTLogEventComputer
+- Win32_NTLogEventComputer
 ```sh
 WQL> SELECT * FROM Win32_NTLogEventComputer WHERE Record = 'Win32_NTLogEvent.Logfile="Application",RecordNumber=2117'
 | Computer | Record | 
 | Win32_ComputerSystem.Name="FOREST" | Win32_NTLogEvent.Logfile="Application",RecordNumber=2117 |
 ```
-#### Win32_NTLogEventLog
+- Win32_NTLogEventLog
 ```sh
 WQL> SELECT * FROM Win32_NTLogEventLog WHERE Record = 'Win32_NTLogEvent.Logfile="Windows Powershell",RecordNumber=1'
 | Log | Record | 
 | Win32_NTEventlogFile.Name="C:\\Windows\\System32\\Winevt\\Logs\\Windows PowerShell.evtx" | Win32_NTLogEvent.Logfile="Windows Powershell",RecordNumber=1 | 
 ```
-#### Win32_NTLogEventUser
+- Win32_NTLogEventUser
 ```sh
 WQL> SELECT * FROM Win32_NTLogEventUser
 | User | Record | 
@@ -2880,25 +2879,21 @@ WQL> SELECT * FROM Win32_NTLogEventUser
 | Win32_UserAccount.Domain="HTB",Name="Administrator" | Win32_NTLogEvent.Logfile="Application",RecordNumber=620 |
 ```
 
-
-### Windows Product Activation
-#### Win32_ComputerSystemWindowsProductActivationSetting
-#### Win32_Proxy
-#### Win32_WindowsProductActivation
-
+#### Windows Product Activation
+- Win32_ComputerSystemWindowsProductActivationSetting
+- Win32_Proxy
+- Win32_WindowsProductActivation
 
 
-
-
-## Performance Counter Classes
-### Win32_Perf
+### Performance Counter Classes
+- Win32_Perf
 ```sh
 WQL> SELECT * FROM Win32_Perf WHERE Name = "DefenderApiLogger"
 | Name | Description | Caption | Frequency_PerfTime | Timestamp_PerfTime | Timestamp_Sys100NS | Frequency_Sys100NS | Frequency_Object | Timestamp_Object | BufferMemoryUsageNonPagedPool | BufferMemoryUsagePagedPool | EventsLoggedpersec | EventsLost | NumberofRealTimeConsumers | 
 | DefenderApiLogger | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 0 | 
 | DefenderApiLogger | None | None | 2534301 | 35633925097 | 134016248737972461 | 10000000 | 0 | 0 | 131072 | 0 | 0 | 0 | 0 |
 ```
-### Win32_PerfFormattedData
+- Win32_PerfFormattedData
 ```sh
 WQL> SELECT * FROM Win32_PerfFormattedData WHERE Name = "DefenderApiLogger"
 | Name | Description | Caption | Frequency_PerfTime | Timestamp_PerfTime | Timestamp_Sys100NS | Frequency_Sys100NS | Frequency_Object | Timestamp_Object | BufferMemoryUsageNonPagedPool | BufferMemoryUsagePagedPool | EventsLoggedpersec | EventsLost | NumberofRealTimeConsumers | 
