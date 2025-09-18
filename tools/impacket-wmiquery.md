@@ -2481,7 +2481,7 @@ WQL> SELECT * FROM Win32_Thread WHERE processhandle = "3036"
 ```
 
 
-### Registry
+#### Registry
 #### Win32_Registry
 ```sh
 WQL> SELECT * FROM Win32_Registry
