@@ -2886,14 +2886,14 @@ WQL> SELECT * FROM Win32_NTLogEventUser
 
 
 ### Performance Counter Classes
-- Win32_Perf
+#### Win32_Perf
 ```sh
 WQL> SELECT * FROM Win32_Perf WHERE Name = "DefenderApiLogger"
 | Name | Description | Caption | Frequency_PerfTime | Timestamp_PerfTime | Timestamp_Sys100NS | Frequency_Sys100NS | Frequency_Object | Timestamp_Object | BufferMemoryUsageNonPagedPool | BufferMemoryUsagePagedPool | EventsLoggedpersec | EventsLost | NumberofRealTimeConsumers | 
 | DefenderApiLogger | None | None | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 18446744073709551615 | 131072 | 0 | 0 | 0 | 0 | 
 | DefenderApiLogger | None | None | 2534301 | 35633925097 | 134016248737972461 | 10000000 | 0 | 0 | 131072 | 0 | 0 | 0 | 0 |
 ```
-- Win32_PerfFormattedData
+#### Win32_PerfFormattedData
 ```sh
 WQL> SELECT * FROM Win32_PerfFormattedData WHERE Name = "DefenderApiLogger"
 | Name | Description | Caption | Frequency_PerfTime | Timestamp_PerfTime | Timestamp_Sys100NS | Frequency_Sys100NS | Frequency_Object | Timestamp_Object | BufferMemoryUsageNonPagedPool | BufferMemoryUsagePagedPool | EventsLoggedpersec | EventsLost | NumberofRealTimeConsumers | 
@@ -2929,7 +2929,7 @@ WQL> SELECT * FROM Win32_WMIElementSetting
 
 
 
-# Win32_OptionalFeature class
+## Win32_OptionalFeature class
 ```sh
 WQL> SELECT * FROM Win32_OptionalFeature
 | Caption | Description | InstallDate | Name | Status | InstallState | 
@@ -3175,4 +3175,4 @@ WQL> SELECT * FROM Win32_OptionalFeature
 
 
 
-# Win32_PnPDeviceProperty
+## Win32_PnPDeviceProperty
