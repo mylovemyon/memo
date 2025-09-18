@@ -2480,26 +2480,24 @@ WQL> SELECT * FROM Win32_Thread WHERE processhandle = "3036"
 | None | None | None | None | None | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | Win32_Process | 3036 | Win32_Thread | 3428 | 8 | 65535 | 0 | 0 | 34000 | 6 | 1461809264 | 5 | 15 |
 ```
 
-
 #### Registry
-#### Win32_Registry
+- Win32_Registry
 ```sh
 WQL> SELECT * FROM Win32_Registry
 | Caption | Description | InstallDate | Name | Status | CurrentSize | ProposedSize | MaximumSize | 
 | Registry | Registry | 20190918100759.000000-420 | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | OK | 52 | 4095 | 4095 |
 ```
 
-
-### Scheduler Jobs
-#### Win32_CurrentTime
+#### Scheduler Jobs
+- Win32_CurrentTime
 ```sh
 WQL> SELECT * FROM Win32_CurrentTime
 | Year | Month | Day | DayOfWeek | WeekInMonth | Quarter | Hour | Minute | Second | Milliseconds | 
 | 2025 | 9 | 4 | 4 | 1 | 3 | 9 | 50 | 19 | None | 
 | 2025 | 9 | 4 | 4 | 1 | 3 | 16 | 50 | 19 | None |
 ```
-#### Win32_ScheduledJob
-#### Win32_LocalTime
+- Win32_ScheduledJob
+- Win32_LocalTime
 ```sh
 WQL> SELECT * FROM Win32_LocalTime
 | Year | Month | Day | DayOfWeek | WeekInMonth | Quarter | Hour | Minute | Second | Milliseconds | 
@@ -2512,9 +2510,8 @@ WQL> SELECT * FROM Win32_UTCTime
 | 2025 | 9 | 4 | 4 | 1 | 3 | 16 | 51 | 52 | None |
 ```
 
-
-### Security
-#### Win32_AccountSID
+#### Security
+- Win32_AccountSID
 省略
 ```sh
 WQL> SELECT * FROM Win32_AccountSID
@@ -2526,13 +2523,13 @@ WQL> SELECT * FROM Win32_AccountSID
 | \\FOREST\root\cimv2:Win32_Group.Domain="FOREST",Name="Account Operators" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-548" | 
 ~~~
 ```
-#### Win32_ACE
-#### Win32_LogicalFileAccess
-#### Win32_LogicalFileAuditing
-#### Win32_LogicalFileGroup
-#### Win32_LogicalFileOwner
-#### Win32_LogicalFileSecuritySetting
-#### Win32_LogicalShareAccess
+- Win32_ACE
+- Win32_LogicalFileAccess
+- Win32_LogicalFileAuditing
+- Win32_LogicalFileGroup
+- Win32_LogicalFileOwner
+- Win32_LogicalFileSecuritySetting
+- Win32_LogicalShareAccess
 ```sh
 WQL> SELECT * FROM Win32_LogicalShareAccess
 | SecuritySetting | Trustee | Type | Inheritance | AccessMask | GuidObjectType | GuidInheritedObjectType | 
@@ -2542,32 +2539,37 @@ WQL> SELECT * FROM Win32_LogicalShareAccess
 | \\FOREST\root\cimv2:Win32_LogicalShareSecuritySetting.Name="SYSVOL" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-32-544" | 0 | 0 | 2032127 | None | None | 
 | \\FOREST\root\cimv2:Win32_LogicalShareSecuritySetting.Name="SYSVOL" | \\FOREST\root\cimv2:Win32_SID.SID="S-1-5-11" | 0 | 0 | 2032127 | None | None |
 ```
-#### Win32_LogicalShareAuditing
-#### Win32_LogicalShareSecuritySetting
+- Win32_LogicalShareAuditing
+- Win32_LogicalShareSecuritySetting
 ```sh
 WQL> SELECT * FROM Win32_LogicalShareSecuritySetting
 | SettingID | Caption | Description | ControlFlags | Name | 
 | None | Security settings of NETLOGON | Security settings of NETLOGON | 32772 | NETLOGON | 
 | None | Security settings of SYSVOL | Security settings of SYSVOL | 32772 | SYSVOL |
 ```
-#### Win32_PrivilegesStatus
-#### Win32_SecurityDescriptor
-#### Win32_SecuritySetting
-#### Win32_SecuritySettingAccess
-#### Win32_SecuritySettingAuditing
-#### Win32_SecuritySettingGroup
-#### Win32_SecuritySettingOfLogicalFile
-#### Win32_SecuritySettingOfLogicalShare
+- Win32_PrivilegesStatus
+- Win32_SecurityDescriptor
+- Win32_SecuritySetting
+- Win32_SecuritySettingAccess
+- Win32_SecuritySettingAuditing
+- Win32_SecuritySettingGroup
+- Win32_SecuritySettingOfLogicalFile
+```sh
+WQL> SELECT * FROM Win32_SecuritySettingOfLogicalFile WHERE Element = "Win32_Directory.Name='C:\\'"
+| Element | Setting | 
+| Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="C:\\" |
+```
+- Win32_SecuritySettingOfLogicalShare
 ```sh
 WQL> SELECT * FROM Win32_SecuritySettingOfLogicalShare
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_Share.Name="NETLOGON" | \\FOREST\root\cimv2:Win32_LogicalShareSecuritySetting.Name="NETLOGON" | 
 | \\FOREST\root\cimv2:Win32_Share.Name="SYSVOL" | \\FOREST\root\cimv2:Win32_LogicalShareSecuritySetting.Name="SYSVOL" |
 ```
-#### Win32_SecuritySettingOfObject
-#### Win32_SecuritySettingOwner
-#### Win32_SID
-#### Win32_Trustee
+- Win32_SecuritySettingOfObject
+- Win32_SecuritySettingOwner
+- Win32_SID
+- Win32_Trustee
 
 
 ### Services
