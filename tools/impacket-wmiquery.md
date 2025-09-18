@@ -2731,35 +2731,34 @@ WQL> SELECT * FROM Win32_VolumeUserQuota
 | Win32_Volume.DeviceID="\\\\?\\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\\" | Win32_Account.Domain="FOREST",Name="Administrators" | 0 | 18446744073709551615 | 18446744073709551615 | 0 |
 ```
 
-### Users
-#### Win32_Account
+#### Users
+- Win32_Account
 ```sh
 WQL> SELECT * FROM Win32_Account WHERE Name = "administrator"
 | Caption | Description | InstallDate | Name | Status | Domain | SID | SIDType | LocalAccount | AccountType | Disabled | FullName | Lockout | PasswordChangeable | PasswordExpires | PasswordRequired | 
 | HTB\administrator | Built-in account for administering the computer/domain | None | administrator | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-500 | 1 | False | 512 | False | Administrator | False | True | True | True |
 ```
-#### Win32_Group
+- Win32_Group
 ```sh
 WQL> SELECT * FROM Win32_Group WHERE Name = "administrators"
 | Caption | Description | InstallDate | Name | Status | Domain | SID | SIDType | LocalAccount | 
 | FOREST\Administrators | Administrators have complete and unrestricted access to the computer/domain | None | Administrators | OK | FOREST | S-1-5-32-544 | 4 | True |
 ```
-#### Win32_GroupInDomain
+- Win32_GroupInDomain
 ```sh
 WQL> SELECT * FROM Win32_GroupInDomain WHERE PartComponent = "Win32_Group.Domain=\"HTB\",Name=\"Domain Admins\""
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Admins" |
 ```
-#### Win32_GroupUser
+- Win32_GroupUser
 ```sh
-WQL> SELECT * FROM Win32_GroupUser WHERE GroupComponent = 'Win32_Group.Domain="forest",Name="administrators"'
+WQL> SELECT * FROM Win32_GroupUser WHERE GroupComponent = "Win32_Group.Domain='forest',Name='administrators'"
 | GroupComponent | PartComponent | 
 | Win32_Group.Domain="forest",Name="administrators" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | 
 | Win32_Group.Domain="forest",Name="administrators" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Enterprise Admins" | 
 | Win32_Group.Domain="forest",Name="administrators" | \\FOREST\root\cimv2:Win32_Group.Domain="HTB",Name="Domain Admins" | 
 ```
-#### Win32_LogonSession
-省略
+- Win32_LogonSession
 ```sh
 WQL> SELECT * FROM Win32_LogonSession
 | Caption | Description | InstallDate | Name | Status | StartTime | LogonId | AuthenticationPackage | LogonType | 
@@ -2770,8 +2769,8 @@ WQL> SELECT * FROM Win32_LogonSession
 | None | None | None | None | None | 20250905043708.641892-420 | 245677 | NTLM | 3 | 
 ~~~
 ```
-#### Win32_LogonSessionMappedDisk
-#### Win32_NetworkLoginProfile
+- Win32_LogonSessionMappedDisk
+- Win32_NetworkLoginProfile
 ```sh
 WQL> SELECT * FROM Win32_NetworkLoginProfile
 | SettingID | Caption | Description | AccountExpires | AuthorizationFlags | BadPasswordCount | CodePage | Comment | CountryCode | Flags | FullName | HomeDirectory | HomeDirectoryDrive | LastLogoff | LastLogon | LogonHours | LogonServer | MaximumStorage | Name | NumberOfLogons | Parameters | PasswordAge | PasswordExpires | PrimaryGroupId | Privileges | Profile | ScriptPath | UnitsPerWeek | UserComment | UserId | UserType | Workstations | 
@@ -2782,21 +2781,21 @@ WQL> SELECT * FROM Win32_NetworkLoginProfile
 | None | svc-alfresco | Network login profile settings for svc-alfresco on HTB | None | 0 | 0 | 0 |  | 0 | 4260353 | svc-alfresco |  |  | **************.******+*** | 20250902073300.000000-420 | Sunday: No Limit -- Monday: No Limit -- Tuesday: No Limit -- Wednesday: No Limit -- Thursday: No Limit -- Friday: No Limit -- Saturday: No Limit | \\* | None | HTB\svc-alfresco | 6 |  | 00000000000130.000000:000 | None | 513 | 1 |  |  | 168 |  | 1147 | Normal Account |  | 
 | None | Administrator | Network login profile settings for Administrator on HTB | None | 0 | 0 | 0 | Built-in account for administering the computer/domain | 0 | 513 | Administrator |  |  | **************.******+*** | 20250901054943.000000-420 | Sunday: No Limit -- Monday: No Limit -- Tuesday: No Limit -- Wednesday: No Limit -- Thursday: No Limit -- Friday: No Limit -- Saturday: No Limit | \\* | None | HTB\Administrator | 143 |  | 00001463151633.000000:000 | None | 513 | 2 |  |  | 168 |  | 500 | Normal Account |  |
 ```
-#### Win32_SystemAccount
+- Win32_SystemAccount
 ```sh
 WQL> SELECT * FROM Win32_SystemAccount WHERE Name = "system"
 | Caption | Description | InstallDate | Name | Status | Domain | SID | SIDType | LocalAccount | 
 | FOREST\SYSTEM | FOREST\SYSTEM | None | SYSTEM | OK | FOREST | S-1-5-18 | 5 | True |
 ```
-#### Win32_UserAccount
+- Win32_UserAccount
 ```sh
 WQL> SELECT * FROM Win32_UserAccount WHERE Name = "administrator"
 | Caption | Description | InstallDate | Name | Status | Domain | SID | SIDType | LocalAccount | AccountType | Disabled | FullName | Lockout | PasswordChangeable | PasswordExpires | PasswordRequired | 
 | HTB\administrator | Built-in account for administering the computer/domain | None | administrator | OK | HTB | S-1-5-21-3072663084-364016917-1341370565-500 | 1 | False | 512 | False | Administrator | False | True | True | True |
 ```
-#### Win32_UserInDomain
+- Win32_UserInDomain
 ```sh
-WQL> SELECT * FROM Win32_UserInDomain WHERE PartComponent= 'Win32_UserAccount.Domain="HTB",Name="Administrator"'
+WQL> SELECT * FROM Win32_UserInDomain WHERE PartComponent= "Win32_UserAccount.Domain='HTB',Name='Administrator'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_NTDomain.Name="Domain: HTB" | \\FOREST\root\cimv2:Win32_UserAccount.Domain="HTB",Name="Administrator" | 
 ```
