@@ -2220,9 +2220,15 @@ WQL> SELECT * FROM Win32_ComputerSystemProduct
 ```
 - Win32_DependentService
 ```sh
-WQL> SELECT * FROM Win32_DependentService WHERE Antecedent = "Win32_Service.Name=\"RemoteRegistry\""
+WQL> SELECT * FROM Win32_DependentService WHERE Antecedent = "Win32_Service.Name='RemoteRegistry'"
 | Antecedent | Dependent | TypeOfDependency | 
-| \\FOREST\root\cimv2:Win32_Service.Name="RemoteRegistry" | \\FOREST\root\cimv2:Win32_Service.Name="Dfs" | 65535 | 
+| \\FOREST\root\cimv2:Win32_Service.Name="RemoteRegistry" | \\FOREST\root\cimv2:Win32_Service.Name="Dfs" | 65535 |
+
+WQL> SELECT * FROM Win32_DependentService WHERE Antecedent = "Win32_SystemDriver.Name='acpiex'"
+| Antecedent | Dependent | TypeOfDependency | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="acpiex" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="GPIOClx0101" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="acpiex" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="SerCx" | 65535 | 
+| \\FOREST\root\cimv2:Win32_SystemDriver.Name="acpiex" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="SpbCx" | 65535 | 
 ```
 - Win32_LoadOrderGroup
 ```sh
@@ -2297,6 +2303,23 @@ WQL> SELECT * FROM Win32_SystemDesktop
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" |
 ```
 - Win32_SystemDevices
+```sh
+WQL> SELECT * FROM Win32_SystemDevices WHERE PartComponent = "Win32_Bus.DeviceID='ACPIBus_BUS_0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Bus.DeviceID="ACPIBus_BUS_0" |
+
+WQL> SELECT * FROM Win32_SystemDevices WHERE PartComponent = "Win32_DesktopMonitor.DeviceID='DesktopMonitor1'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DesktopMonitor.DeviceID="DesktopMonitor1" |
+
+WQL> SELECT * FROM Win32_SystemDevices WHERE PartComponent = "Win32_DiskDrive.DeviceID='\\\\.\\PHYSICALDRIVE0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0" |
+
+WQL> SELECT * FROM Win32_SystemDevices WHERE PartComponent = "Win32_DiskPartition.DeviceID='Disk #0, Partition #0'"
+| GroupComponent | PartComponent | 
+| \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_DiskPartition.DeviceID="Disk #0, Partition #0" | 
+```
 - Win32_SystemLoadOrderGroups
 ```sh
 WQL> SELECT * FROM Win32_SystemLoadOrderGroups WHERE PartComponent = "Win32_LoadOrderGroup.Name=\"System Reserved\""
