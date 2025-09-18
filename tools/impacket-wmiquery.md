@@ -2512,7 +2512,6 @@ WQL> SELECT * FROM Win32_UTCTime
 
 #### Security
 - Win32_AccountSID
-省略
 ```sh
 WQL> SELECT * FROM Win32_AccountSID
 | Element | Setting | 
@@ -2567,42 +2566,49 @@ WQL> SELECT * FROM Win32_SecuritySettingOfLogicalShare
 | \\FOREST\root\cimv2:Win32_Share.Name="SYSVOL" | \\FOREST\root\cimv2:Win32_LogicalShareSecuritySetting.Name="SYSVOL" |
 ```
 - Win32_SecuritySettingOfObject
+```sh
+WQL> SELECT * FROM Win32_SecuritySettingOfObject WHERE Element = "Win32_Directory.Name='C:\\'"
+| Element | Setting | 
+| Win32_Directory.Name="C:\\" | \\FOREST\root\cimv2:Win32_LogicalFileSecuritySetting.Path="C:\\" |
+```
 - Win32_SecuritySettingOwner
 - Win32_SID
 - Win32_Trustee
 
-
-### Services
-#### Win32_BaseService
+#### Services
+- Win32_BaseService
 ```sh
 WQL> SELECT * FROM Win32_BaseService WHERE Name = "WinDefend"
 | Caption | Description | InstallDate | Name | Status | CreationClassName | StartMode | Started | SystemCreationClassName | SystemName | AcceptPause | AcceptStop | DesktopInteract | DisplayName | ErrorControl | PathName | ServiceType | StartName | State | TagId | ExitCode | ServiceSpecificExitCode | CheckPoint | WaitHint | ProcessId | DelayedAutoStart | 
 | Windows Defender Service | Helps protect users from malware and other potentially unwanted software | None | WinDefend | OK | Win32_Service | Auto | True | Win32_ComputerSystem | FOREST | False | True | False | Windows Defender Service | Normal | "C:\Program Files\Windows Defender\MsMpEng.exe" | Own Process | LocalSystem | Running | 0 | 0 | 0 | 0 | 0 | 1512 | False | 
 ```
-#### Win32_Service
+- Win32_Service
 ```sh
 WQL> SELECT * FROM Win32_Service WHERE Name = "WinDefend"
 | Caption | Description | InstallDate | Name | Status | CreationClassName | StartMode | Started | SystemCreationClassName | SystemName | AcceptPause | AcceptStop | DesktopInteract | DisplayName | ErrorControl | PathName | ServiceType | StartName | State | TagId | ExitCode | ServiceSpecificExitCode | CheckPoint | WaitHint | ProcessId | DelayedAutoStart | 
 | Windows Defender Service | Helps protect users from malware and other potentially unwanted software | None | WinDefend | OK | Win32_Service | Auto | True | Win32_ComputerSystem | FOREST | False | True | False | Windows Defender Service | Normal | "C:\Program Files\Windows Defender\MsMpEng.exe" | Own Process | LocalSystem | Running | 0 | 0 | 0 | 0 | 0 | 1512 | False |
 ```
 
-
-### Shares
-#### Win32_DFSNode
-#### Win32_DFSNodeTarget
-#### Win32_DFSTarget
-#### Win32_ServerConnection
-#### Win32_ServerSession
+#### Shares
+- Win32_DFSNode
+- Win32_DFSNodeTarget
+- Win32_DFSTarget
+- Win32_ServerConnection
+- Win32_ServerSession
 ```sh
 WQL> SELECT * FROM Win32_ServerSession
 | Caption | Description | InstallDate | Name | Status | ComputerName | UserName | ActiveTime | IdleTime | ResourcesOpened | SessionType | ClientType | TransportName | 
 | None | None | None | None | None | [fe80::d4b3:e70e:967c:bf96] | FOREST$ | 7 | 2 | 0 | 2 |  |  |
 ```
-#### Win32_ConnectionShare	
-#### Win32_PrinterShare
-#### Win32_SessionConnection	
-#### Win32_SessionProcess
-省略
+- Win32_ConnectionShare	
+- Win32_PrinterShare
+- Win32_SessionConnection
+```sh
+WQL> SELECT * FROM Win32_SessionConnection
+| Antecedent | Dependent | 
+| Win32_ServerSession.computername="[fe80::8ac:ee0f:f73e:1363]",UserName="FOREST$" | Win32_ServerConnection.computername="[fe80::8ac:ee0f:f73e:1363]",sharename="SYSVOL",UserName="FOREST$" |
+```
+- Win32_SessionProcess
 ```sh
 WQL> SELECT * FROM Win32_SessionProcess
 | Antecedent | Dependent | 
@@ -2612,7 +2618,7 @@ WQL> SELECT * FROM Win32_SessionProcess
 
 ~~~
 ```
-#### Win32_ShareToDirectory
+- Win32_ShareToDirectory
 ```sh
 WQL> SELECT * FROM Win32_ShareToDirectory
 | Share | SharedElement | 
@@ -2621,7 +2627,7 @@ WQL> SELECT * FROM Win32_ShareToDirectory
 | \\FOREST\root\cimv2:Win32_Share.Name="NETLOGON" | \\FOREST\root\cimv2:Win32_Directory.Name="c:\\windows\\sysvol\\sysvol\\htb.local\\scripts" | 
 | \\FOREST\root\cimv2:Win32_Share.Name="SYSVOL" | \\FOREST\root\cimv2:Win32_Directory.Name="c:\\windows\\sysvol\\sysvol" |
 ```
-#### Win32_Share
+- Win32_Share
 ```sh
 WQL> SELECT * FROM Win32_Share
 | Caption | Description | InstallDate | Name | Status | AllowMaximum | MaximumAllowed | Path | Type | AccessMask | 
@@ -2631,7 +2637,6 @@ WQL> SELECT * FROM Win32_Share
 | Logon server share  | Logon server share  | None | NETLOGON | OK | True | None | C:\Windows\SYSVOL\sysvol\htb.local\SCRIPTS | 0 | None | 
 | Logon server share  | Logon server share  | None | SYSVOL | OK | True | None | C:\Windows\SYSVOL\sysvol | 0 | None | 
 ```
-
 
 ### Start Menu
 #### Win32_LogicalProgramGroup
