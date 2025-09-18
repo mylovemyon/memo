@@ -2193,64 +2193,64 @@ WQL> SELECT * FROM Win32_ProtocolBinding
 - Win32_VolumeChangeEvent
 
 
-### Operating System Settings
-#### Win32_BootConfiguration
+#### Operating System Settings
+- Win32_BootConfiguration
 ```sh
 WQL> SELECT * FROM Win32_BootConfiguration
 | SettingID | Caption | Description | BootDirectory | ConfigurationPath | LastDrive | Name | ScratchDirectory | TempDirectory | 
 | None | \Device\Harddisk0\Partition2 | \Device\Harddisk0\Partition2 | C:\Windows | C:\Windows | C: | BootConfiguration | C:\Windows\system32\config\systemprofile\AppData\Local\Temp | C:\Windows\system32\config\systemprofile\AppData\Local\Temp |
 ```
-#### Win32_ComputerSystem
+- Win32_ComputerSystem
 ```sh
 WQL> SELECT * FROM Win32_ComputerSystem
 | Caption | Description | InstallDate | Name | Status | CreationClassName | NameFormat | PrimaryOwnerContact | PrimaryOwnerName | Roles | InitialLoadInfo | LastLoadInfo | PowerManagementSupported | PowerManagementCapabilities | PowerState | ResetCapability | AutomaticResetBootOption | AutomaticManagedPagefile | AutomaticResetCapability | BootROMSupported | BootupState | CurrentTimeZone | DNSHostName | Domain | InfraredSupported | Manufacturer | Model | NetworkServerModeEnabled | OEMLogoBitmap | SupportContactDescription | SystemStartupDelay | SystemStartupOptions | SystemStartupSetting | SystemType | UserName | DomainRole | WakeUpType | OEMStringArray | BootOptionOnLimit | BootOptionOnWatchDog | ResetCount | ResetLimit | PauseAfterReset | PowerOnPasswordStatus | KeyboardPasswordStatus | AdminPasswordStatus | FrontPanelResetStatus | ChassisBootupState | PowerSupplyState | ThermalState | DaylightInEffect | EnableDaylightSavingsTime | NumberOfProcessors | NumberOfLogicalProcessors | TotalPhysicalMemory | PartOfDomain | PCSystemType | PCSystemTypeEx | Workgroup | SystemSKUNumber | SystemFamily | ChassisSKUNumber | BootStatus | HypervisorPresent | 
 | FOREST | AT/AT COMPATIBLE | None | FOREST | OK | Win32_ComputerSystem | None | None | Windows User | 323 339 350 377 389 393  | None | None | True | None | 0 | 1 | True | True | True | True | Normal boot | -420 | FOREST | htb.local | False | VMware, Inc. | VMware7,1 | True | None | None | None | None | None | x64-based PC | None | 5 | 6 | [MS_VM_CERT/SHA1/27d66596a61c48dd3dc7216fd715126e33f59ae7] Welcome to the Virtual Machine  | 3 | 3 | -1 | -1 | 3932100000 | 0 | 3 | 1 | 3 | 3 | 3 | 3 | True | True | 1 | 2 | 2146447360 | True | 1 | 1 | None | None | None | None | 0 0 0 33 31 162 0 3 2 2  | True |
 ```
-#### Win32_ComputerSystemProcessor
+- Win32_ComputerSystemProcessor
 ```sh
 WQL> SELECT * FROM Win32_ComputerSystemProcessor
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Processor.DeviceID="CPU0" |
 ```
-#### Win32_ComputerSystemProduct
+- Win32_ComputerSystemProduct
 ```sh
 WQL> SELECT * FROM Win32_ComputerSystemProduct
 | Caption | Description | IdentifyingNumber | Name | SKUNumber | Vendor | Version | UUID | 
 | Computer System Product | Computer System Product | VMware-42 14 e6 d4 ac b6 44 b0-7a a2 11 4c d5 f0 d2 d7 | VMware7,1 | None | VMware, Inc. | None | D4E61442-B6AC-B044-7AA2-114CD5F0D2D7 |
 ```
-#### Win32_DependentService
+- Win32_DependentService
 ```sh
 WQL> SELECT * FROM Win32_DependentService WHERE Antecedent = "Win32_Service.Name=\"RemoteRegistry\""
 | Antecedent | Dependent | TypeOfDependency | 
 | \\FOREST\root\cimv2:Win32_Service.Name="RemoteRegistry" | \\FOREST\root\cimv2:Win32_Service.Name="Dfs" | 65535 | 
 ```
-#### Win32_LoadOrderGroup
+- Win32_LoadOrderGroup
 ```sh
 WQL> SELECT * FROM Win32_LoadOrderGroup WHERE GroupOrder = 1 OR GroupOrder = 74
 | Caption | Description | InstallDate | Name | Status | GroupOrder | DriverEnabled | 
 | System Reserved | System Reserved | None | System Reserved | OK | 1 | True | 
 | Early-Launch | Early-Launch | None | Early-Launch | OK | 74 | False |
 ```
-#### Win32_LoadOrderGroupServiceDependencies
+- Win32_LoadOrderGroupServiceDependencies
 ```sh
 WQL> SELECT * FROM Win32_LoadOrderGroupServiceDependencies
 | Antecedent | Dependent | 
 | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="NetBIOSGroup" | \\FOREST\root\cimv2:Win32_Service.Name="RemoteAccess" | 
 | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="SCSI CDROM Class" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="cdfs" |
 ```
-#### Win32_LoadOrderGroupServiceMembers
+- Win32_LoadOrderGroupServiceMembers
 ```sh
 WQL> SELECT * FROM Win32_LoadOrderGroupServiceMembers WHERE GroupComponent = "Win32_LoadOrderGroup.Name=\"System Reserved\""
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Reserved" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="pcw" | 
 ```
-#### Win32_OperatingSystem
+- Win32_OperatingSystem
 ```sh
 WQL> SELECT * FROM Win32_OperatingSystem
 | Caption | Description | InstallDate | Name | Status | CSCreationClassName | CSName | CreationClassName | Distributed | FreePhysicalMemory | FreeVirtualMemory | MaxProcessMemorySize | OSType | OtherTypeDescription | Version | LocalDateTime | CurrentTimeZone | SizeStoredInPagingFiles | FreeSpaceInPagingFiles | LastBootUpTime | MaxNumberOfProcesses | NumberOfLicensedUsers | NumberOfProcesses | NumberOfUsers | TotalSwapSpaceSize | TotalVirtualMemorySize | TotalVisibleMemorySize | BootDevice | MUILanguages | BuildNumber | OSArchitecture | BuildType | CodeSet | CountryCode | CSDVersion | DataExecutionPrevention_Available | DataExecutionPrevention_32BitApplications | DataExecutionPrevention_Drivers | DataExecutionPrevention_SupportPolicy | Debug | ForegroundApplicationBoost | Locale | Manufacturer | Organization | OSLanguage | OSProductSuite | OperatingSystemSKU | PlusProductID | PlusVersionNumber | Primary | RegisteredUser | SerialNumber | ServicePackMajorVersion | ServicePackMinorVersion | SystemDevice | SystemDirectory | SystemDrive | WindowsDirectory | EncryptionLevel | LargeSystemCache | SuiteMask | ProductType | PAEEnabled | PortableOperatingSystem | 
 | Microsoft Windows Server 2016 Standard |  | 20190918100759.000000-420 | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | OK | Win32_ComputerSystem | FOREST | Win32_OperatingSystem | False | 540748 | 956616 | 137438953344 | 18 | None | 10.0.14393 | 20250904084031.571000-420 | -420 | 458592 | 346660 | 20250903233416.493515-420 | None | 0 | 36 | 2 | 18446744073709551615 | 2554732 | 2096140 | \Device\HarddiskVolume3 | en-US  | 14393 | 64-bit | Multiprocessor Free | 1252 | 1 | None | True | True | True | 3 | False | 2 | 0409 | Microsoft Corporation |  | 1033 | 272 | 7 | None | None | True | Windows User | 00376-30821-30176-AA930 | 0 | 0 | \Device\HarddiskVolume4 | C:\Windows\system32 | C: | C:\Windows | 256 | None | 272 | 2 | None | False | 
 ```
-#### Win32_OperatingSystemQFE
+- Win32_OperatingSystemQFE
 ```sh
 WQL> SELECT * FROM Win32_OperatingSystemQFE
 | Antecedent | Dependent | 
@@ -2258,13 +2258,13 @@ WQL> SELECT * FROM Win32_OperatingSystemQFE
 | \\FOREST\root\cimv2:Win32_OperatingSystem=@ | \\FOREST\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4512574",ServicePackInEffect="" | 
 | \\FOREST\root\cimv2:Win32_OperatingSystem=@ | \\FOREST\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4103720",ServicePackInEffect="" | 
 ```
-#### Win32_OSRecoveryConfiguration
+- Win32_OSRecoveryConfiguration
 ```sh
 WQL> SELECT * FROM Win32_OSRecoveryConfiguration
 | SettingID | Caption | Description | AutoReboot | DebugFilePath | ExpandedDebugFilePath | MiniDumpDirectory | ExpandedMiniDumpDirectory | Name | OverwriteExistingDebugFile | SendAdminAlert | WriteDebugInfo | DebugInfoType | WriteToSystemLog | KernelDumpOnly | 
 | None | None | None | True | %SystemRoot%\MEMORY.DMP | C:\Windows\MEMORY.DMP | %SystemRoot%\Minidump | C:\Windows\Minidump | Microsoft Windows Server 2016 Standard|C:\Windows|\Device\Harddisk0\Partition4 | True | False | True | 7 | True | False |
 ```
-#### Win32_QuickFixEngineering
+- Win32_QuickFixEngineering
 ```sh
 WQL> SELECT * FROM Win32_QuickFixEngineering
 | Caption | Description | InstallDate | Name | Status | HotFixID | ServicePackInEffect | CSName | FixComments | InstalledBy | InstalledOn | 
@@ -2272,19 +2272,19 @@ WQL> SELECT * FROM Win32_QuickFixEngineering
 | http://support.microsoft.com/?kbid=4512574 | Security Update | None | None | None | KB4512574 |  | FOREST |  | HTB\Administrator | 9/18/2019 | 
 | http://support.microsoft.com/?kbid=4103720 | Update | None | None | None | KB4103720 |  | FOREST |  | NT AUTHORITY\SYSTEM | 9/20/2019 |
 ```
-#### Win32_StartupCommand
+- Win32_StartupCommand
 ```sh
 WQL> SELECT * FROM Win32_StartupCommand
 | SettingID | Caption | Description | User | UserSID | Name | Location | Command | 
 | None | VMware User Process | VMware User Process | Public | None | VMware User Process | HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run | "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr |
 ```
-#### Win32_SystemBootConfiguration
+- Win32_SystemBootConfiguration
 ```sh
 WQL> SELECT * FROM Win32_SystemBootConfiguration
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_BootConfiguration.Name="BootConfiguration" |
 ```
-#### Win32_SystemDesktop
+- Win32_SystemDesktop
 ```sh
 WQL> SELECT * FROM Win32_SystemDesktop 
 | Element | Setting | 
@@ -2296,22 +2296,21 @@ WQL> SELECT * FROM Win32_SystemDesktop
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name="HTB\\Administrator" | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Desktop.Name=".DEFAULT" |
 ```
-#### Win32_SystemDevices
-#### Win32_SystemLoadOrderGroups
+- Win32_SystemDevices
+- Win32_SystemLoadOrderGroups
 ```sh
 WQL> SELECT * FROM Win32_SystemLoadOrderGroups WHERE PartComponent = "Win32_LoadOrderGroup.Name=\"System Reserved\""
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LoadOrderGroup.Name="System Reserved" |
 ```
-#### Win32_SystemNetworkConnections
-#### Win32_SystemOperatingSystem
+- Win32_SystemNetworkConnections
+- Win32_SystemOperatingSystem
 ```sh
 WQL> SELECT * FROM Win32_SystemOperatingSystem
 | GroupComponent | PartComponent | PrimaryOS | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_OperatingSystem=@ | True |
 ```
-#### Win32_SystemProcesses
-省略
+- Win32_SystemProcesses
 ```sh
 WQL> SELECT * FROM Win32_SystemProcesses
 | GroupComponent | PartComponent | 
@@ -2321,14 +2320,13 @@ WQL> SELECT * FROM Win32_SystemProcesses
 
 ~~~
 ```
-#### Win32_SystemProgramGroups
+- Win32_SystemProgramGroups
 ```sh
 WQL> SELECT * FROM Win32_SystemProgramGroups WHERE Setting = "Win32_LogicalProgramGroup.Name='Default:Start Menu\\Programs\\Windows PowerShell'"
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Windows PowerShell" | 
 ```
-#### Win32_SystemResources
-省略
+- Win32_SystemResources
 ```sh
 WQL> SELECT * FROM Win32_SystemResources
 | GroupComponent | PartComponent | 
@@ -2343,14 +2341,13 @@ WQL> SELECT * FROM Win32_SystemResources
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Environment.Name="ComSpec",UserName="<SYSTEM>" | 
 ~~~
 ```
-#### Win32_SystemServices
+- Win32_SystemServices
 ```sh
 WQL> SELECT * FROM Win32_SystemServices WHERE PartComponent = "Win32_Service.Name=\"WinDefend\""
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_Service.Name="WinDefend" | 
 ```
-#### Win32_SystemSetting
-省略
+- Win32_SystemSetting
 ```sh
 WQL> SELECT * FROM Win32_SystemSetting
 | Element | Setting | 
@@ -2363,27 +2360,26 @@ WQL> SELECT * FROM Win32_SystemSetting
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu" | 
 ~~~
 ```
-#### Win32_SystemSystemDriver
+- Win32_SystemSystemDriver
 ```sh
 WQL> SELECT * FROM Win32_SystemSystemDriver WHERE PartComponent = "Win32_SystemDriver.Name=\"pcw\""
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_SystemDriver.Name="pcw" |
 ```
-#### Win32_SystemTimeZone
+- Win32_SystemTimeZone
 ```sh
 WQL> SELECT * FROM Win32_SystemTimeZone
 | Element | Setting | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_TimeZone.StandardName="Pacific Standard Time" |
 ```
-#### Win32_SystemUsers
+- Win32_SystemUsers
 ```sh
 WQL> SELECT * FROM Win32_SystemUsers WHERE PartComponent = "Win32_UserAccount.Domain=\"htb\",Name=\"administrator\"" 
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_ComputerSystem.Name="FOREST" | \\FOREST\root\cimv2:Win32_UserAccount.Name="Administrator",Domain="HTB" |
 ```
 
-
-### Processes
+#### Processes
 #### Win32_Process
 ```sh
 WQL> SELECT * FROM Win32_Process WHERE caption = "powershell.exe"
