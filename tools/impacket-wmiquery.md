@@ -2638,39 +2638,39 @@ WQL> SELECT * FROM Win32_Share
 | Logon server share  | Logon server share  | None | SYSVOL | OK | True | None | C:\Windows\SYSVOL\sysvol | 0 | None | 
 ```
 
-### Start Menu
-#### Win32_LogicalProgramGroup
+#### Start Menu
+- Win32_LogicalProgramGroup
 ```sh
 WQL> SELECT * FROM Win32_LogicalProgramGroup WHERE Caption = 'Logical program group "Default:Start Menu\\Programs\\Windows PowerShell"'
 | Caption | Description | InstallDate | Name | Status | GroupName | UserName | 
 | Logical program group "Default:Start Menu\Programs\Windows PowerShell" | Logical program group "Default:Start Menu\Programs\Windows PowerShell" | 20160716061803.459804-420 | Default:Start Menu\Programs\Windows PowerShell | None | Start Menu\Programs\Windows PowerShell | Default |
 ```
-#### Win32_LogicalProgramGroupDirectory
+- Win32_LogicalProgramGroupDirectory
 ```sh
 WQL> SELECT * FROM Win32_LogicalProgramGroupDirectory WHERE Antecedent = "Win32_LogicalProgramGroup.Name='Default:Start Menu\\Programs\\Windows PowerShell'"
 | Antecedent | Dependent | 
 | Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Windows PowerShell" | \\FOREST\root\cimv2:Win32_Directory.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell" | 
 ```
-#### Win32_LogicalProgramGroupItem
+- Win32_LogicalProgramGroupItem
 ```sh
 WQL> SELECT * FROM Win32_LogicalProgramGroupItem WHERE Caption = "Logical program group item 'Default:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk'" 
 | Caption | Description | InstallDate | Name | Status | 
 | Logical program group item 'Default:Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk' | Logical program group item 'Default:Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk' | 20160716061805.256664-420 | Default:Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk | None |
 ```
-#### Win32_LogicalProgramGroupItemDataFile
+- Win32_LogicalProgramGroupItemDataFile
 ```sh
 WQL> SELECT * FROM Win32_LogicalProgramGroupItemDataFile WHERE Antecedent = "Win32_LogicalProgramGroupItem.Name='Default:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk'"
 | Antecedent | Dependent | 
 | Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk" | \\FOREST\root\cimv2:CIM_DataFile.Name="C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk" |
 ```
-#### Win32_ProgramGroupContents
+- Win32_ProgramGroupContents
 ```sh
 WQL> SELECT * FROM Win32_ProgramGroupContents WHERE GroupComponent = "Win32_LogicalProgramGroup.Name='Default:Start Menu\\Programs\\Windows PowerShell'"
 | GroupComponent | PartComponent | 
 | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Windows PowerShell" | \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell (x86).lnk" | 
 | \\FOREST\root\cimv2:Win32_LogicalProgramGroup.Name="Default:Start Menu\\Programs\\Windows PowerShell" | \\FOREST\root\cimv2:Win32_LogicalProgramGroupItem.Name="Default:Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk" | 
 ```
-#### Win32_ProgramGroupOrItem
+- Win32_ProgramGroupOrItem
 ```sh
 WQL> SELECT * FROM Win32_ProgramGroupOrItem WHERE Caption = 'Logical program group "Default:Start Menu\\Programs\\Windows PowerShell"'
 | Caption | Description | InstallDate | Name | Status | GroupName | UserName | 
@@ -2678,9 +2678,9 @@ WQL> SELECT * FROM Win32_ProgramGroupOrItem WHERE Caption = 'Logical program gro
 ```
 
 
-### Storage
-#### Win32_ShadowBy
-#### Win32_ShadowContext
+#### Storage
+- Win32_ShadowBy
+- Win32_ShadowContext
 ```sh
 WQL> SELECT * FROM Win32_ShadowContext
 | SettingID | Caption | Description | Name | Persistent | ClientAccessible | NoAutoRelease | NoWriters | Transportable | NotSurfaced | HardwareAssisted | Differential | Plex | Imported | ExposedRemotely | ExposedLocally | 
@@ -2691,46 +2691,45 @@ WQL> SELECT * FROM Win32_ShadowContext
 | None | None | The All Win32_ShadowContext specifies all types of shadow copies. This context is used for shadow queries | All | True | True | True | True | True | True | True | True | True | True | True | True | 
 | None | None | The NASRollback Win32_ShadowContext specifies a persistent, and non auto-release shadow copy without writer involvement. | NASRollback | True | False | True | True | False | False | False | False | False | False | False | False |
 ```
-#### Win32_ShadowCopy
-#### Win32_ShadowDiffVolumeSupport	
+- Win32_ShadowCopy
+- Win32_ShadowDiffVolumeSupport	
 ```sh
 WQL> SELECT * FROM Win32_ShadowDiffVolumeSupport
 | Antecedent | Dependent | 
 | Win32_ShadowProvider.ID="{B5946137-7B9F-4925-AF80-51ABD60B20D5}" | Win32_Volume.DeviceID="\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\" | 
 | Win32_ShadowProvider.ID="{B5946137-7B9F-4925-AF80-51ABD60B20D5}" | Win32_Volume.DeviceID="\\\\?\\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\\" |
 ```
-#### Win32_ShadowFor
-#### Win32_ShadowOn
-#### Win32_ShadowProvider
+- Win32_ShadowFor
+- Win32_ShadowOn
+- Win32_ShadowProvider
 ```sh
 WQL> SELECT * FROM Win32_ShadowProvider
 | Caption | Description | InstallDate | Name | Status | ID | CLSID | Type | Version | VersionID | 
 | None | None | None | Microsoft File Share Shadow Copy provider | None | {89300202-3CEC-4981-9171-19F59559E0F2} | {FCE59DA7-7BAC-40DA-8D21-3E7311BA51CD} | 4 | 1.0.0.1 | {00000001-0000-0000-0001-000000000001} | 
 | None | None | None | Microsoft Software Shadow Copy provider 1.0 | None | {B5946137-7B9F-4925-AF80-51ABD60B20D5} | {65EE1DBA-8FF4-4A58-AC1C-3470EE2F376A} | 1 | 1.0.0.7 | {00000001-0000-0000-0007-000000000001} |
 ```
-#### Win32_ShadowStorage
-#### Win32_ShadowVolumeSupport
+- Win32_ShadowStorage
+- Win32_ShadowVolumeSupport
 ```sh
 WQL> SELECT * FROM Win32_ShadowVolumeSupport
 | Antecedent | Dependent | 
 | Win32_ShadowProvider.ID="{B5946137-7B9F-4925-AF80-51ABD60B20D5}" | Win32_Volume.DeviceID="\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\" | 
 | Win32_ShadowProvider.ID="{B5946137-7B9F-4925-AF80-51ABD60B20D5}" | Win32_Volume.DeviceID="\\\\?\\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\\" |
 ```
-#### Win32_Volume
+- Win32_Volume
 ```sh
 WQL> SELECT * FROM Win32_Volume
 | Caption | Description | InstallDate | Name | Status | Availability | CreationClassName | ConfigManagerErrorCode | ConfigManagerUserConfig | DeviceID | PowerManagementCapabilities | PNPDeviceID | PowerManagementSupported | StatusInfo | SystemCreationClassName | SystemName | LastErrorCode | ErrorDescription | ErrorCleared | Access | BlockSize | ErrorMethodology | NumberOfBlocks | Purpose | Capacity | Compressed | DriveLetter | DriveType | FileSystem | FreeSpace | IndexingEnabled | DirtyBitSet | Label | MaximumFileNameLength | Automount | QuotasEnabled | QuotasIncomplete | QuotasRebuilding | SerialNumber | SupportsDiskQuotas | SupportsFileBasedCompression | PageFilePresent | SystemVolume | BootVolume | 
 | C:\ | None | None | C:\ | None | 65535 | None | None | True | \\?\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\ | None | None | True | 65535 | None | FOREST | None | None | True | 65535 | 4096 | None | 18446744073709551615 | None | 20762849280 | False | C: | 3 | NTFS | 10262810624 | True | False | None | 255 | True | False | False | False | 1643292815 | True | True | True | False | True | 
 | \\?\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\ | None | None | \\?\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\ | None | 65535 | None | None | True | \\?\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\ | None | None | True | 65535 | None | FOREST | None | None | True | 65535 | 4096 | None | 18446744073709551615 | None | 471855104 | False | None | 3 | NTFS | 130310144 | True | False | Recovery | 255 | True | False | False | False | 3077485790 | True | True | False | False | False | 
 ```
-#### Win32_VolumeUserQuota
+- Win32_VolumeUserQuota
 ```sh
 WQL> SELECT * FROM Win32_VolumeUserQuota
 | Volume | Account | Status | Limit | WarningLimit | DiskSpaceUsed | 
 | Win32_Volume.DeviceID="\\\\?\\Volume{322d5750-0b70-481a-9f25-de96bb3e8e16}\\" | Win32_Account.Domain="FOREST",Name="Administrators" | 0 | 18446744073709551615 | 18446744073709551615 | 0 | 
 | Win32_Volume.DeviceID="\\\\?\\Volume{d4ee34c8-9b77-4fe1-9439-107039a4e95f}\\" | Win32_Account.Domain="FOREST",Name="Administrators" | 0 | 18446744073709551615 | 18446744073709551615 | 0 |
 ```
-
 
 ### Users
 #### Win32_Account
