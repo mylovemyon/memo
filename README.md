@@ -340,13 +340,13 @@ impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME
 - impacket-services
 ```sh
 impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' list
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' status -name 'SERVICE'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' start -name 'SERVICE'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' stop -name 'SERVICE'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' config -name 'SERVICE'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' create -name -display 'NAME' -path 'FILEPATH'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' change -name 'SERVICE' -display 'NAME' -service_type 'NUM' -start_type 'NUM'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP delete -name 'SERVICE'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' status -name 'SERVICENAME'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' start -name 'SERVICENAME'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' stop -name 'SERVICENAME'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' config -name 'SERVICENAME'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' create -name 'SERVICENAME' -display 'DISPLAYNAME' -path 'FILEPATH'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' change -name 'SERVICENAME' -display 'DISPLAYNAME' -service_type '1 OR 2 OR 4 OR 8 OR 16 OR 32 OR 256' -start_type '0 ~ 5'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP delete -name 'SERVICENAME'
 ```
 - impacket-smbclient
 ```
