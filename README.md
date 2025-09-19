@@ -331,6 +331,10 @@ impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group -name 'GROUPNAME' -unjoin 'USER
 # track of who logged in or 
 impacket-netview -target 'IP' -delay 'SECOND' -ts 'DOMAIN/USERNAME:PASSWORD'
 ```
+- impacket-samrdump
+```sh
+impacket-samrdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
+```
 - impacket-secretsdump
 ```sh
 # dumping NTLM hashs and Kerberos Keys
