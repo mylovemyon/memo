@@ -1,3 +1,4 @@
+https://omomuki-tech.com/archives/1266
 ```sh
 └─$ impacket-rpcmap ncacn_ip_tcp:10.129.95.210
 Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
