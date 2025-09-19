@@ -337,6 +337,17 @@ impacket-netview -target 'IP' -delay 'SECOND' -ts 'DOMAIN/USERNAME:PASSWORD'
 impacket-secretsdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME:PASSWORD@IP'
 ```
+- impacket-services
+```sh
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' list
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' status -name 'SERVICE'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' start -name 'SERVICE'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' stop -name 'SERVICE'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' config -name 'SERVICE'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' create -name -display 'NAME' -path 'FILEPATH'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' change -name 'SERVICE' -display 'NAME' -service_type 'NUM' -start_type 'NUM'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP delete -name 'SERVICE'
+```
 - impacket-smbclient
 ```
 impacket-smbclient 'DOMAIN/USERNAME:PASSWORD@IP'
