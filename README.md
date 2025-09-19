@@ -339,8 +339,15 @@ impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME
 ```
 - impacket-smbclient
 ```
-# smb
 impacket-smbclient 'DOMAIN/USERNAME:PASSWORD@IP'
+# shares
+# use 'SHARE
+# tree
+# cd 'REMOTEPATH'
+# cat 'REMOTEPATH'
+# get 'REMOTEPATH'
+# info
+# who'
 ```
 - impacket-wmipersist
 ```sh
@@ -349,6 +356,7 @@ impacket-wmipersist 'DOMAIN/USERNAME:PASSWORD@IP' install -name 'NAME' -command 
 - impacket-wmiquery
 ```sh
 impacket-wmiquery 'DOMAIN/USERNAME:PASSWORD@IP'
+WQL>
 ```
 - impacket-psexec
 ```sh
