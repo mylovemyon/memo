@@ -346,19 +346,19 @@ impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' stop -name 'SERVICENAME'
 impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' config -name 'SERVICENAME'
 impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' create -name 'SERVICENAME' -display 'DISPLAYNAME' -path 'FILEPATH'
 impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' change -name 'SERVICENAME' -display 'DISPLAYNAME' -service_type '1 OR 2 OR 4 OR 8 OR 16 OR 32 OR 256' -start_type '0 ~ 5'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP delete -name 'SERVICENAME'
+impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' delete -name 'SERVICENAME'
 ```
 - impacket-smbclient
 ```
 impacket-smbclient 'DOMAIN/USERNAME:PASSWORD@IP'
 # shares
-# use 'SHARE
+# use 'SHARE'
 # tree
 # cd 'REMOTEPATH'
 # cat 'REMOTEPATH'
 # get 'REMOTEPATH'
 # info
-# who'
+# who
 ```
 - impacket-wmipersist
 ```sh
