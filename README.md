@@ -331,6 +331,17 @@ impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group -name 'GROUPNAME' -unjoin 'USER
 # track of who logged in or 
 impacket-netview -target 'IP' -delay 'SECOND' -ts 'DOMAIN/USERNAME:PASSWORD'
 ```
+- impacket-reg
+```sh
+impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP query -keyName KEYNAME
+impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP query -keyName KEYNAME -v VALUENAME
+impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP query -keyName KEYNAME -s
+# VALUETYPE are: REG_NONE, REG_SZ, REG_EXPAND_SZ, REG_BINARY, REG_DWORD, REG_DWORD_BIG_ENDIAN, REG_LINK, REG_MULTI_SZ, REG_QWORD
+impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP add -keyName KEYNAME -v VALUENAME -vt VALUETYPE -vd VALUEDATA
+impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP delete -keyName KEYNAME -v VALUENAME
+impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP save -keyName KEYNAME -o '\\IP\SHARE'
+impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP bakcup -keyName KEYNAME -o '\\IP\SHARE'
+```
 - impacket-rpcmap
 ```sh
 impacket-rpcmap ncacn_ip_tcp:'IP'
