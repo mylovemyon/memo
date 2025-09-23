@@ -1,8 +1,9 @@
 https://omomuki-tech.com/archives/1266
 ```sh
-└─$ impacket-rpcmap ncacn_ip_tcp:10.129.95.210
+└─$ impacket-rpcmap -debug ncacn_ip_tcp:10.129.25.235
 Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
 
+[+] Impacket Library Installation Path: /usr/lib/python3/dist-packages/impacket
 Procotol: N/A
 Provider: rpcss.dll
 UUID: 00000136-0000-0000-C000-000000000046 v0.0
@@ -54,4 +55,5 @@ UUID: E1AF8308-5D1F-11C9-91A4-08002B14A0FA v3.0
 Procotol: N/A
 Provider: rpcss.dll
 UUID: E60C73E6-88F9-11CF-9AF1-0020AF6E72F4 v2.0
+
 ```
