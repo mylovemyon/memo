@@ -1,5 +1,5 @@
 ## -action read
-```
+```sh
 └─$ impacket-owneredit -debug -dc-ip 10.129.25.235 -target 'EXCHANGE WINDOWS PERMISSIONS' -action read 'htb.local/svc-alfresco:s3rvice'
 Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
 
