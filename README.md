@@ -342,6 +342,10 @@ impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP' delete -keyName 'KEYNAME' -v 'VALUENA
 impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP' save -keyName 'KEYNAME' -o '\\IP\SHARE'
 impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP' bakcup -keyName 'KEYNAME' -o '\\IP\SHARE'
 ```
+- impacket-rpcdump
+```sh
+impacket-rpcdump 'DOMAIN/USERNAME:PASSWORD@IP'
+```
 - impacket-rpcmap
 ```sh
 impacket-rpcmap ncacn_ip_tcp:'IP'
