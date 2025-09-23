@@ -331,6 +331,11 @@ impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group -name 'GROUPNAME' -unjoin 'USER
 # track of who logged in or 
 impacket-netview -target 'IP' -delay 'SECOND' -ts 'DOMAIN/USERNAME:PASSWORD'
 ```
+- impacket-rpcmap
+```sh
+impacket-rpcmap ncacn_ip_tcp:'IP'
+impacket-rpcmap ncacn_http:'IP'
+```
 - impacket-samrdump
 ```sh
 impacket-samrdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
