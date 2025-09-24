@@ -530,6 +530,26 @@ net rpc registry export 'KEYPATH' 'LOCALPATH' -U 'DOMAIN/USERNAME%PASSWORD' -S '
 net rpc registry save 'KEYPATH' 'REMOTEPATH' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
 # shell
 net rpc shell -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
+net rpc> info
+net rpc> share list
+net rpc> share info 'SHARE'
+net rpc> user list
+net rpc> user info 'USERNAME'
+net rpc> user show 'USERNAME'
+net rpc> user edit fullname 'USERNAME' 'FULLNAME'
+net rpc> user edit disabled 'USERNAME' 'YES or NO'
+net rpc> user edit autolock 'USERNAME' 'YES or NO'
+net rpc> user edit pwnotreq 'USERNAME' 'YES or NO'
+net rpc> user edit pwnoexp 'USERNAME' 'YES or NO'
+net rpc> user edit pwnoexp 'USERNAME' 'YES or NO'
+net rpc> account show
+net rpc> account badpw 'NUM'
+net rpc> account resetduration 'NUM'
+net rpc> account lockduration 'SECOND'
+net rpc> account minpwage 'SECOND'
+net rpc> account maxpwage 'SECOND'
+net rpc> account minpwlen 'NUM'
+net rpc> account pwhistlen 'NUM'
 ```
 - rpcclient
 ```sh
