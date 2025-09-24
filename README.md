@@ -312,6 +312,11 @@ enum4linux -a -d -u 'USERNAME' -p 'PASSWORD' -w 'DOMAIN' -v 'IP'
 ```sh
 enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
+- impacket-Get-GPPPassword
+```sh
+impacket-Get-GPPPassword -share 'SHARENAME' -ts 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-Get-GPPPassword -share 'SHARENAME' -base-dir 'PATH' -ts 'DOMAIN/USERNAME:PASSWORD@IP'
+```
 - impacket-lookupsid
 ```sh
 impacket-lookupsid -ts 'DOMAIN/USERNAME:PASSWORD@IP'
