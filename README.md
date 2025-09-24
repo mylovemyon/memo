@@ -312,6 +312,10 @@ enum4linux -a -d -u 'USERNAME' -p 'PASSWORD' -w 'DOMAIN' -v 'IP'
 ```sh
 enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
+- impacket-machine_role
+```sh
+impacket-machine_role -ts 'DOMAIN/USERNAME:PASSWORD@IP'
+```
 - impacket-net
 ```sh
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' user
