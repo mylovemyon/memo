@@ -118,6 +118,10 @@ impacket-getArch -target 'IP'
 ```sh
 ./godap 'IP' -u 'USERNAME' -p 'PASSWORD'
 ```
+- impacket-findDelegation
+```sh
+impacket-findDelegation -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
+```
 - impacket-GetADComputers
 ```sh
 impacket-GetADComputers -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
