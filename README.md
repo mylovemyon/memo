@@ -116,11 +116,11 @@ impacket-getArch -target 'IP'
 ## 389
 - godap
 ```sh
-./godap 'IP' -u 'USERNAME' -p 'PASSWORD' 'DOMAIN/USERNAME:PASSWORD'
+./godap 'IP' -u 'USERNAME' -p 'PASSWORD'
 ```
 - impacket-GetADUssers
 ```sh
-impacket-GetADUssers -all -ts -dc-ip 'IP'
+impacket-GetADUssers -all -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
 ```
 - impacket-dacledit
 ```sh
