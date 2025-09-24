@@ -328,6 +328,10 @@ enum4linux -a -d -u 'USERNAME' -p 'PASSWORD' -w 'DOMAIN' -v 'IP'
 ```sh
 enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
+- impacket-DumpNTLMInfo
+```sh
+impacket-DumpNTLMInfo 'IP'
+```
 - impacket-Get-GPPPassword
 ```sh
 # MS14-025
