@@ -107,6 +107,10 @@ sudo ntpdate 'IP'
 
 ## 135
 https://github.com/XiaoliChan/wmiexec-Pro
+- impacket-getArch
+```sh
+impacket-getArch -target 'IP'
+```
 
 
 ## 389
