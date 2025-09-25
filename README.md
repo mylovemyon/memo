@@ -709,7 +709,7 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 ```
 - hashcat
 ```sh
-hashcat -a 0 -m 'NUM' kerberoast.txt /usr/share/wordlists/rockyou.txt --quiet
+hashcat -a 0 -m 'NUM' 'INPUT.txt' /usr/share/wordlists/rockyou.txt --quiet
 ```
 - impacket-smbserver
 ```sh
