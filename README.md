@@ -118,6 +118,7 @@ impacket-getArch -target 'IP'
 ```sh
 ./godap 'IP' -u 'USERNAME' -p 'PASSWORD'
 ```
+- impacket-changepasswd
 - impacket-findDelegation
 ```sh
 impacket-findDelegation -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
