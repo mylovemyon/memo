@@ -13,7 +13,11 @@ curl -s -T 'FILE' --user 'USERNAME:PASSWORD' ftp://'IP'
 - nmap
 ```sh
 # anonymous login
-nmap -n -Pn -p21 --script=ftp-anon 'IP'
+nmap -n -Pn -p21 -sV --script=ftp-anon 'IP'
+```
+- tnftp
+```sh
+tnftp -a 'IP'
 ```
 
 
@@ -62,7 +66,7 @@ ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
 ```
 - nmap
 ```sh
-nmap -n -Pn -p80 --script=http-methods 'IP'
+nmap -n -Pn -p80 -sV --script=http-methods 'IP'
 nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
 ```
 - exploit
@@ -73,8 +77,9 @@ nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
     ```
     https://github.com/mubix/shellshocker-pocs?tab=readme-ov-file#command-line-linux-osx-and-windows-via-cygwin
   - [PHP 8.1.0-dev](https://www.exploit-db.com/exploits/49933)
-  - CVE-2012-4869 - FreePBX = 2.9/2.10
+  - CVE-2012-4869 - FreePBX
   - [CVE-2017-7269](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/) - Windows Server 2003 R2 IIS6.0 webdav
+  - [CVE-2018-9276](https://github.com/A1vinSmith/CVE-2018-9276) - PRTG Network Monito
 
 
 ## 88
