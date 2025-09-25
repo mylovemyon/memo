@@ -707,6 +707,10 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 # MS14-025
  gpp-decrypt "Groups.xmlのcpassword"
 ```
+- hashcat
+```sh
+hashcat -a 0 -m 'NUM' kerberoast.txt /usr/share/wordlists/rockyou.txt --quiet
+```
 - impacket-smbserver
 ```sh
 impacket-smbserver 'SHARENAME' 'PATH'
