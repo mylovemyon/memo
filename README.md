@@ -18,6 +18,11 @@ nmap -n -Pn -p21 --script=ftp-anon 'IP'
 
 
 ## 22
+- scp
+```sh
+# download
+scp 'USERNAME'@'IP':'FILEPATH' 'LOCALPATH'
+```
 - ssh
 ```sh
 chmod 600 'SECRETKEY'
@@ -689,7 +694,7 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 
 
 ## local
-- AdSyncDecrypt(Azure)  
+- AdSyncDecrypt  
 [AdSyncDecrypt](https://github.com/VbScrub/AdSyncDecrypt)
 - gpp-decrypt
 ```sh
@@ -725,6 +730,10 @@ openssl rsa -in 'INPUT.txt' -out 'OUTPUT.txt'
 ```sh
 ./pspy64
 ```
+- puttygen
+```sh
+puttygen 'PUTTY_PRIVATEKEY' -O private-openssh -o 'OUTPUT_PRIVATEKEY'
+```
 - username-anarchy
 ```sh
 ./username-anarchy -i userlist.txt > user.txt
@@ -735,6 +744,7 @@ openssl rsa -in 'INPUT.txt' -out 'OUTPUT.txt'
 .\winPEASx64.exe userinfo quiet
 ```
 ### exploit
+#### windows
 - [MS08-066](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS08-066)
 - [CVE-2009-0079](https://github.com/Re4son/Churrasco/)
 - [MS10-059](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059)
@@ -742,6 +752,8 @@ openssl rsa -in 'INPUT.txt' -out 'OUTPUT.txt'
 - `https://github.com/abatchy17/WindowsExploits`
 - https://github.com/SecWiki/windows-kernel-exploits
 - https://kakyouim.hatenablog.com/entry/2020/05/27/010807
+#### other
+- [CVE-2023-32784](https://github.com/z-jxy/keepass_dump)
 
 
 
