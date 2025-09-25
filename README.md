@@ -675,6 +675,10 @@ smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursiv
     nmap -n -Pn -p445 --script=smb-vuln-ms17-010 'IP'
     ```
   - [CVE-2007-2447](https://github.com/amriunix/CVE-2007-2447)
+  - [ms08-067](https://github.com/andyacer/ms08_067)
+    ```sh
+    nmap -n -Pn -p445 --script=smb-vuln-ms08-067
+    ```
 
 
 ## 5060 (UDP)
