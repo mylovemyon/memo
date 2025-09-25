@@ -17,6 +17,7 @@ nmap -n -Pn -p21 -sV --script=ftp-anon 'IP'
 ```
 - tnftp
 ```sh
+# anonymous login
 tnftp -a 'IP'
 ```
 
