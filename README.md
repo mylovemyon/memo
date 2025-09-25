@@ -58,6 +58,7 @@ ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
 - nmap
 ```sh
 nmap -n -Pn -p80 --script=http-methods 'IP'
+nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
 ```
 - CVE
   - shellshock
