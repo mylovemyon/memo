@@ -688,38 +688,12 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 ```
 
 
-## escalation
-### windows
-#### CVE
-- [MS08-066](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS08-066)
-- [CVE-2009-0079](https://github.com/Re4son/Churrasco/)
-- [MS10-059](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059)
-- https://github.com/evets007/OSCP-Prep-cheatsheet/blob/master/windows-exploits.md
-- `https://github.com/abatchy17/WindowsExploits`
-- https://github.com/SecWiki/windows-kernel-exploits
-- https://kakyouim.hatenablog.com/entry/2020/05/27/010807
-#### winpeas
-32bit or 64bit のバージョンに注意
-```bat
-.\winPEASx64.exe userinfo quiet
-```
-#### Azure
+## local
+- AdSyncDecrypt(Azure)  
 [AdSyncDecrypt](https://github.com/VbScrub/AdSyncDecrypt)
-### Linux
-### command
-```sh
-history
-```
-#### pspy
-```sh
-./pspy64
-```
-
-
-
-## kali
 - gpp-decrypt
 ```sh
+# MS14-025
  gpp-decrypt "Groups.xmlのcpassword"
 ```
 - impacket-smbserver
@@ -727,6 +701,11 @@ history
 impacket-smbserver 'SHARENAME' 'PATH'
 # smbv1が無効の場合は
 impacket-smbserver -smb2support 'SHARENAME' 'PATH'
+```
+- john
+```sh
+keepass2john passcodes.kdbx > keepas.txt
+john --wordlist /usr/share/wordlists/rockyou.txt --format=keepass keepass.txt
 ```
 - msfvenom
 ```sh
@@ -740,12 +719,31 @@ name-that-hash -f 'hash.txt' --no-banner --no-john
 ```sh
 openssl rsa -in 'INPUT.txt' -out 'OUTPUT.txt'
 ```
+- phpbash  
+[phpbash](https://github.com/Arrexel/phpbash)
+- pspy
+```sh
+./pspy64
+```
 - username-anarchy
 ```sh
 ./username-anarchy -i userlist.txt > user.txt
 ```
-- phpbash  
-[phpbash](https://github.com/Arrexel/phpbash)
+- winpeas
+```bat
+# 32bit or 64bit のバージョンに注意
+.\winPEASx64.exe userinfo quiet
+```
+### exploit
+- [MS08-066](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS08-066)
+- [CVE-2009-0079](https://github.com/Re4son/Churrasco/)
+- [MS10-059](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059)
+- https://github.com/evets007/OSCP-Prep-cheatsheet/blob/master/windows-exploits.md
+- `https://github.com/abatchy17/WindowsExploits`
+- https://github.com/SecWiki/windows-kernel-exploits
+- https://kakyouim.hatenablog.com/entry/2020/05/27/010807
+
+
 
 
 
