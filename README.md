@@ -700,6 +700,10 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 
 
 ## local
+- 2to3-2.7
+```sh
+2to3-2.7 --no-diffs -w 'FILENAME'
+```
 - AdSyncDecrypt  
 [AdSyncDecrypt](https://github.com/VbScrub/AdSyncDecrypt)
 - gpp-decrypt
