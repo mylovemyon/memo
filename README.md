@@ -81,6 +81,7 @@ nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
     https://github.com/mubix/shellshocker-pocs?tab=readme-ov-file#command-line-linux-osx-and-windows-via-cygwin
   - [PHP 8.1.0-dev](https://www.exploit-db.com/exploits/49933)
   - CVE-2012-4869 - FreePBX
+  - [CVE-2014-6287](https://www.exploit-db.com/exploits/49584) - Http File Server
   - [CVE-2015-6967](https://github.com/dix0nym/CVE-2015-6967) - NibbleBlog
   - [CVE-2017-7269](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/) - Windows Server 2003 R2 IIS6.0 webdav
   - [CVE-2018-9276](https://github.com/A1vinSmith/CVE-2018-9276) - PRTG Network Monito
@@ -774,9 +775,11 @@ puttygen 'PUTTY_PRIVATEKEY' -O private-openssh -o 'OUTPUT_PRIVATEKEY'
 - [MS08-066](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS08-066)
 - [CVE-2009-0079](https://github.com/Re4son/Churrasco/)
 - [MS10-059](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS10-059)
+- [MS16-032](https://github.com/EmpireProject/Empire/blob/master/data/module_source/privesc/Invoke-MS16032.ps1)
 - https://github.com/evets007/OSCP-Prep-cheatsheet/blob/master/windows-exploits.md
 - `https://github.com/abatchy17/WindowsExploits`
 - https://github.com/SecWiki/windows-kernel-exploits
+- https://github.com/rasta-mouse/Sherlock
 - https://kakyouim.hatenablog.com/entry/2020/05/27/010807
 #### other
 - [CVE-2023-32784](https://github.com/z-jxy/keepass_dump)
