@@ -710,13 +710,11 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 ```
 
 
-## local
+## Kali
 - 2to3-2.7
 ```sh
 2to3-2.7 --no-diffs -w 'FILENAME'
 ```
-- AdSyncDecrypt  
-[AdSyncDecrypt](https://github.com/VbScrub/AdSyncDecrypt)
 - gpp-decrypt
 ```sh
 # MS14-025
@@ -765,11 +763,16 @@ puttygen 'PUTTY_PRIVATEKEY' -O private-openssh -o 'OUTPUT_PRIVATEKEY'
 ```sh
 ./username-anarchy -i userlist.txt > user.txt
 ```
+
+
+## windows
 - winpeas
 ```bat
 # 32bit or 64bit のバージョンに注意
 .\winPEASx64.exe userinfo quiet
 ```
+- AdSyncDecrypt  
+[AdSyncDecrypt](https://github.com/VbScrub/AdSyncDecrypt)
 ### exploit
 #### windows
 - [MS08-066](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS08-066)
@@ -783,9 +786,6 @@ puttygen 'PUTTY_PRIVATEKEY' -O private-openssh -o 'OUTPUT_PRIVATEKEY'
 - https://kakyouim.hatenablog.com/entry/2020/05/27/010807
 #### other
 - [CVE-2023-32784](https://github.com/z-jxy/keepass_dump)
-
-
-
 
 
 ## link
