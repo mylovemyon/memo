@@ -80,13 +80,15 @@ nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
     ```
     https://github.com/mubix/shellshocker-pocs?tab=readme-ov-file#command-line-linux-osx-and-windows-via-cygwin
   - [PHP 8.1.0-dev](https://www.exploit-db.com/exploits/49933)
+  - [Maltrail](https://github.com/spookier/Maltrail-v0.53-Exploit?tab=readme-ov-file)
   - CVE-2012-4869 - FreePBX
   - [CVE-2014-6287](https://www.exploit-db.com/exploits/49584) - Http File Server
   - [CVE-2015-6967](https://github.com/dix0nym/CVE-2015-6967) - NibbleBlog
   - [CVE-2017-7269](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/) - Windows Server 2003 R2 IIS6.0 webdav
   - [CVE-2018-9276](https://github.com/A1vinSmith/CVE-2018-9276) - PRTG Network Monito
   - [CVE-2019-25065](https://www.exploit-db.com/exploits/47691) - OpenNetAdmin
-  - [CVE-2022-25765](https://github.com/nikn0laty/PDFkit-CMD-Injection-CVE-2022-25765)- PDFkit
+  - [CVE-2022-25765](https://github.com/nikn0laty/PDFkit-CMD-Injection-CVE-2022-25765) - PDFkit
+  - [CVE-2023-27163](https://github.com/entr0pie/CVE-2023-27163) - request-baskets
 
 
 ## 88
