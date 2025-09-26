@@ -32,6 +32,8 @@ scp 'USERNAME'@'IP':'FILEPATH' 'LOCALPATH'
 ```sh
 chmod 600 'SECRETKEY'
 ssh -i 'SECRETKEY' 'USERNAME@IP'
+# Local Port Forwarding
+ssh -L 'LISTENPORT':'FORARD_IP':'FORWARD_PORT' 'USERNAME'@'SSH_SERVER_IP'
 ```
 
 
@@ -82,6 +84,7 @@ nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
   - [CVE-2015-6967](https://github.com/dix0nym/CVE-2015-6967) - NibbleBlog
   - [CVE-2017-7269](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/) - Windows Server 2003 R2 IIS6.0 webdav
   - [CVE-2018-9276](https://github.com/A1vinSmith/CVE-2018-9276) - PRTG Network Monito
+  - [CVE-2019-25065](https://www.exploit-db.com/exploits/47691) - OpenNetAdmin
 
 
 ## 88
@@ -730,8 +733,10 @@ impacket-smbserver -smb2support 'SHARENAME' 'PATH'
 ```
 - john
 ```sh
-keepass2john passcodes.kdbx > keepas.txt
-john --wordlist /usr/share/wordlists/rockyou.txt --format=keepass keepass.txt
+keepass2john passcodes.kdbx > 'OUTPUT.txt'
+ssh2john 'PRIVATEKEY' > 'OUTPUT.txt'
+
+john --wordlist /usr/share/wordlists/rockyou.txt --format='FORMAT' 'HASH'
 ```
 - msfvenom
 ```sh
