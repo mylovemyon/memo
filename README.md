@@ -745,7 +745,7 @@ impacket-smbserver -smb2support 'SHARENAME' 'PATH'
 keepass2john passcodes.kdbx > 'OUTPUT.txt'
 ssh2john 'PRIVATEKEY' > 'OUTPUT.txt'
 
-john --wordlist /usr/share/wordlists/rockyou.txt --format='FORMAT' 'HASH'
+john --wordlist=/usr/share/wordlists/rockyou.txt --format='FORMAT' 'HASH'
 ```
 - msfvenom
 ```sh
