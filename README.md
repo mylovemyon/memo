@@ -689,7 +689,7 @@ smbclient -U 'DOMAIN/USERNAME%NT HASH' --pw-nt-hash -c 'COMMAND' '//IP/SHARE'
 - smbmap
 ```sh
 smbmap -H 'IP' -u ' ' -p ''  --no-banner
-smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN  --no-banner
+smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' --no-banner
 smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursively FILE' --depth 'DEPTH'  --no-banner
 ```
 - CVE
