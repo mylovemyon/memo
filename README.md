@@ -443,8 +443,7 @@ impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' delete -name 'SERVICENAME'
 ```
 - impacket-smbclient
 ```
-# anonymous
-impacket-smbclient -no-pass ' '@'IP'
+impacket-smbclient -no-pass ' '@'IP' # guest
 impacket-smbclient 'DOMAIN/USERNAME:PASSWORD@IP'
 # shares
 # use 'SHARE'
@@ -475,7 +474,7 @@ impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
 ```
 - netexec
 ```sh
-# anonymous
+# guest
 netexec smb 'IP' -u ' ' -p ''
 # Password Spraying
 netexec smb 'IP' -u 'USERNAMELIST' -p 'PASSWORDLIST'
