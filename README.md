@@ -152,20 +152,20 @@ impacket-owneredit -ts -dc-ip 'IP' -new-owner 'SAMACCOUNTNAME' -target 'SAMACCOU
 impacket-owneredit -ts -dc-ip 'IP' -target-dn 'DN' -action read 'DOMAIN/USERNAME:PASSWORD'
 ```
 - ldapdomaindump ![GitHub Repo stars](https://img.shields.io/github/stars/dirkjanm/ldapdomaindump?style=social)
-- ldapnomnom
+- ldapnomnom ![GitHub Repo stars](https://img.shields.io/github/stars/lkarlslund/ldapnomnom?style=social)
 ```sh
 # LDAP Ping
 ./ldapnomnom -input 'USERLIST' -parallel 'THREAD NUMBER' -server 'IP'
 # rootDSE
 ./ldapnomnom -server 'IP' -dump
 ```
-- LdapRelayScan
+- LdapRelayScan ![GitHub Repo stars](https://img.shields.io/github/stars/zyn3rgy/LdapRelayScan?style=social)
 - ldapsearch
 ```sh
 ldapsearch -b 'DN' -LLL -s 'sub' -D 'USERNAME@DOMAIN' -H ldap://'IP' -w 'PASSWORD' 'FILTER' 'ATTRIBUTES'
 ```
-- ldeep
-- msldap(yet)
+- ldeep ![GitHub Repo stars](https://img.shields.io/github/stars/franc-pentest/ldeep?style=social)
+- msldap(yet) ![GitHub Repo stars](https://img.shields.io/github/stars/skelsec/msldap?style=social)
 - net ads
 - netexec
 ```sh
@@ -191,8 +191,8 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dc-list
 # Bloodhound Ingestor
 netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection All
 ```
-- silenthound
-- windapsearch
+- silenthound ![GitHub Repo stars](https://img.shields.io/github/stars/layer8secure/SilentHound?style=social)
+- windapsearch ![GitHub Repo stars](https://img.shields.io/github/stars/ropnop/windapsearch?style=social)
 
 
 ## 443
