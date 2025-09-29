@@ -227,6 +227,15 @@ enum4linux -a -d -u 'USERNAME' -p 'PASSWORD' -w 'DOMAIN' -v 'IP'
 ```sh
 enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
+- impacket
+```sh
+# exec
+impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-dcomexec -share 'SHARENAME' -ts -object 'ShellWindows or ShellBrowserWindow or MMC20' -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
+```
 - impacket-Get-GPPPassword
 ```sh
 # MS14-025
@@ -271,36 +280,11 @@ impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME
 ```
 - impacket-services
 - impacket-smbclient
-```
-impacket-smbclient -no-pass ' '@'IP' # guest
-impacket-smbclient 'DOMAIN/USERNAME:PASSWORD@IP'
-# shares
-# use 'SHARE'
-# tree
-# cd 'REMOTEPATH'
-# cat 'REMOTEPATH'
-# get 'REMOTEPATH'
-# info
-# who
-```
 - impacket-wmipersist
 ```sh
 impacket-wmipersist 'DOMAIN/USERNAME:PASSWORD@IP' install -name 'NAME' -command "COMMAND"
 ```
 - impacket-wmiquery
-```sh
-impacket-wmiquery 'DOMAIN/USERNAME:PASSWORD@IP'
-WQL>
-```
-- impacket-psexec
-```sh
-# exec
-impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-dcomexec -share 'SHARENAME' -ts -object 'ShellWindows or ShellBrowserWindow or MMC20' -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
-```
 - netexec
 ```sh
 # guest
@@ -409,105 +393,6 @@ net rpc> account minpwlen 'NUM'
 net rpc> account pwhistlen 'NUM'
 ```
 - rpcclient
-```sh
-# WINREG
-rpcclient $> winreg_enumkey 'KEYPATH'
-rpcclient $> winreg_enumval 'KEYPATH'
-rpcclient $> querymultiplevalues 'KEYPATH' 'VALUENAME' 'VALUENAME' ...
-# EVENTLOG
-rpcclient $> eventlog_numrecord 'LOGNAME'
-rpcclient $> eventlog_oldestrecord 'LOGNAME'
-rpcclient $> eventlog_reportevent 'LOGNAME'
-rpcclient $> eventlog_loginfo 'LOGNAME'
-# DRSUAPI
-
-# WKSSVC
-rpcclient $> wkssvc_wkstagetinfo
-rpcclient $> wkssvc_getjoininformation
-rpcclient $> wkssvc_enumeratecomputernames
-rpcclient $> wkssvc_enumerateusers
-# DFS
-rpcclient $> dfsversion
-rpcclient $> dfsenum
-# SRVSVC
-rpcclient $> srvinfo
-rpcclient $> netshareenum
-rpcclient $> netshareenumall
-rpcclient $> netsharegetinfo 'SHARENAME'
-rpcclient $> netfileenum
-rpcclient $> netsessenum
-rpcclient $> netdiskenum
-rpcclient $> netconnenum
-# NETLOGON
-rpcclient $> getanydcname 'DOMAIN'
-rpcclient $> getdcname 'DOMAIN'
-rpcclient $> dsr_getdcname 'DOMAIN'
-rpcclient $> dsr_getsitename 'COMPUTERNAME'
-rpcclient $> dsr_getforesttrustinfo
-rpcclient $> logonctrl 'COMPUTERNAME'
-rpcclient $> samlogon
-rpcclient $> gettrustrid
-rpcclient $> dsr_enumtrustdom
-rpcclient $> dsenumdomtrusts
-rpcclient $> netrenumtrusteddomains
-rpcclient $> getdcsitecoverage 'COMPUTERNAME'
-rpcclient $> capabilities
-rpcclient $> logongetdomaininfo
-# SAMR
-rpcclient $> enumdomusers
-rpcclient $> enumdomgroups
-rpcclient $> enumalsgroups builtin
-rpcclient $> enumalsgroups domain
-rpcclient $> enumdomains
-rpcclient $> querydispinfo
-rpcclient $> querydominfo
-rpcclient $> queryuser 'RID'
-rpcclient $> queryusergroups 'RID'
-rpcclient $> queryuseraliases builtin 'SID'
-rpcclient $> queryuseraliases domain 'SID'
-rpcclient $> querygroup 'RID'
-rpcclient $> querygroupmem 'RID'
-rpcclient $> queryaliasmem builtin 'RID'
-rpcclient $> queryaliasmem domain 'RID'
-rpcclient $> samlookupnames builtin 'GROUPNAME'
-rpcclient $> samlookupnames domain 'GROUPNAME'
-rpcclient $> samlookuprids builtin 'RID'
-rpcclient $> samlookuprids domain 'RID'
-rpcclient $> samquerysecobj
-rpcclient $> lookupdomain 'DOMAIN'
-rpcclient $> getusrdompwinfo 'RID'
-rpcclient $> getdompwinfo
-rpcclient $> createdomuser 'USERNAME'
-rpcclient $> deletedomuser 'USERNAME'
-rpcclient $> createdomgroup 'GROUPNAME'
-rpcclient $> deletedomgroup 'GROUPNAME'
-rpcclient $> createdomalias 'GROUPNAME'
-rpcclient $> deletealias domain 'RID'
-# LSARPC-DS
-rpcclient $> dsroledominfo
-# LSARPC
-rpcclient $> lsaquery
-rpcclient $> lookupsids 'SID'
-rpcclient $> lookupsids_level 1 'SID'
-rpcclient $> lookupnames 'NAME'
-rpcclient $> lookupnames_level 1 'NAME'
-rpcclient $> lsaenumsid
-rpcclient $> lsaquerysecobj
-rpcclient $> enumprivs
-rpcclient $> enumtrust
-rpcclient $> lsalookupprivvalue 'PRIVILEGE NAME'
-rpcclient $> lsaenumprivsaccount 'SID'
-rpcclient $> lsaenumacctrights 'SID'
-rpcclient $> lsaaddpriv 'SID' 'PRIVILEGE NAME'
-rpcclient $> lsadelpriv 'SID' 'PRIVILEGE NAME'
-rpcclient $> lsaaddacctrights 'SID' 'PRIVILEGE NAME'
-rpcclient $> lsaremoveacctrights 'SID' 'PRIVILEGE NAME'
-rpcclient $> lsacreateaccount 'SID'
-rpcclient $> getusername
-# EPMAPPER
-rpcclient $> epmmap
-rpcclient $> epmlookup
-```
 - smbclient
 ```sh
 smbclient -L 'IP' -N  
