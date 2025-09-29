@@ -119,13 +119,11 @@ sudo ntpdate 'IP'
 ## 135
 https://github.com/XiaoliChan/wmiexec-Pro
 - impacket-getArch
-```sh
-impacket-getArch -target 'IP'
-```
+
 
 
 ## 389
-- godap
+- godap ![GitHub Repo stars](https://img.shields.io/github/stars/Macmod/godap?style=social)
 ```sh
 ./godap 'IP' -u 'USERNAME' -p 'PASSWORD'
 ```
@@ -153,7 +151,7 @@ impacket-owneredit -ts -dc-ip 'IP' -new-owner 'SAMACCOUNTNAME' -target 'SAMACCOU
 # read
 impacket-owneredit -ts -dc-ip 'IP' -target-dn 'DN' -action read 'DOMAIN/USERNAME:PASSWORD'
 ```
-- ldapdomaindump
+- ldapdomaindump ![GitHub Repo stars](https://img.shields.io/github/stars/dirkjanm/ldapdomaindump?style=social)
 - ldapnomnom
 ```sh
 # LDAP Ping
