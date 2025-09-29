@@ -1,4 +1,60 @@
 ## ldap
+```sh
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users all
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users spn
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users enabled
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users disabled
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users locked
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users nopasswordexpire
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users passwordexpired
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users passwordnotrequired
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users nokrbpreauth
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users reversible
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' whoami
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' enum_users 'USERLIST'
+# https://learn.microsoft.com/ja-jp/troubleshoot/windows-server/active-directory/useraccountcontrol-manipulate-account-properties#list-of-property-flags
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' change_uac 'USERNAME(DN format)' 'VALUE'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' groups
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' memberships 'USERNAME'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' membersof 'GROUPNAME'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' add_to_group 'USERNAME(DN format)' 'GROUPNAME(DN format)'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' remove_to_group 'USERNAME(DN format)' 'GROUPNAME(DN format)'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' create_user 'USERNAME' 'PASSWORD'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' modify_password 'USERNAME' 'PASSWORD'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' create_computer 'COMPUTERNAME' 'PASSWORD'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' search '(FILTER)' ['ATTRIBUTES']
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' conf
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' schema
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' server_info
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' dns_records
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' zones
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' zone 'DNS'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' trusts
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' pkis
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' gpo
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' domain_policy
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' object 'OBJECT'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' sddl 'OBJECT'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' from_guid 'GUID'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' from_sid 'SID'
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' ou
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' machines
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' computers
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' delegations all
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' laps
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' auth_policies
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' bitlockerkeys
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' fsmo
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' gmsa
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' pso
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' sccm
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' shadow_principals
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' silos
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' silo all
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' smsa
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' subnets
+ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' tempaltes
+```
 ### auth_policis
 ```sh
 └─$ ldeep ldap -d htb.local -s 10.129.143.161 -t ntlm -u svc-alfresco -p s3rvice auth_policies
