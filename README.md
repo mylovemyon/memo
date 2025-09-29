@@ -201,7 +201,7 @@ netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodho
 # heartbleed
 nmap -n -Pn -p443 --script=ssl-heartbleed 'IP'
 ```
-- sslscan
+- sslscan ![GitHub Repo stars](https://img.shields.io/github/stars/rbsec/sslscan?style=social)
 ```sh
 sslscan --no-check-certificate --no-ciphersuites --no-compression --no-fallback --no-groups --no-heartbleed --no-renegotiation 'IP'
 ```
@@ -216,12 +216,12 @@ sslscan --no-check-certificate --no-ciphersuites --no-compression --no-fallback 
 # DPAPI blob (TCP53番とTCP389番も使用)
 hekatomb 'DOMAIN/USERNAME:PASSWORD@IP'
 ```
-- enum4linux
+- enum4linux ![GitHub Repo stars](https://img.shields.io/github/stars/CiscoCXSecurity/enum4linux?style=social)
 ```sh
 # enum4linux-ng のほうが２倍はやい
 enum4linux -a -d -u 'USERNAME' -p 'PASSWORD' -w 'DOMAIN' -v 'IP'
 ```
-- enum4linux-ng
+- enum4linux-ng ![GitHub Repo stars](https://img.shields.io/github/stars/cddmp/enum4linux-ng?style=social)
 ```sh
 enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
@@ -334,7 +334,7 @@ smbclient -L 'IP' -N
 smbclient -L 'IP' -U 'DOMAIN/USERNAME%PASSWORD'
 smbclient -U 'DOMAIN/USERNAME%NT HASH' --pw-nt-hash -c 'COMMAND' '//IP/SHARE'
 ```
-- smbmap
+- smbmap ![GitHub Repo stars](https://img.shields.io/github/stars/ShawnDEvans/smbmap?style=social)
 ```sh
 smbmap -H 'IP' -u ' ' -p ''  --no-banner
 smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' --no-banner
@@ -353,7 +353,7 @@ smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursiv
 
 
 ## 5060 (UDP)
-- svwar
+- svwar ![GitHub Repo stars](https://img.shields.io/github/stars/EnableSecurity/sipvicious?style=social)
 ```sh
 svwar -t 'Duration' -e 'EXTENSION RANGE' -m INVITE 'IP'
 ```
