@@ -127,7 +127,7 @@ https://github.com/XiaoliChan/wmiexec-Pro
 ```sh
 ./godap 'IP' -u 'USERNAME' -p 'PASSWORD'
 ```
-- impacket-changepasswd
+- impacket-changepasswd ![GitHub Repo stars](https://img.shields.io/github/stars/fortra/impacket?style=social)
 - impacket-findDelegation
 - impacket-GetADComputers
 - impacket-GetADUssers
@@ -167,7 +167,7 @@ ldapsearch -b 'DN' -LLL -s 'sub' -D 'USERNAME@DOMAIN' -H ldap://'IP' -w 'PASSWOR
 - ldeep ![GitHub Repo stars](https://img.shields.io/github/stars/franc-pentest/ldeep?style=social)
 - msldap(yet) ![GitHub Repo stars](https://img.shields.io/github/stars/skelsec/msldap?style=social)
 - net ads
-- netexec
+- netexec ![GitHub Repo stars](https://img.shields.io/github/stars/Pennyw0rth/NetExec?style=social)
 ```sh
 # Authentication
 netexec ldap 'IP' -u 'USERNAMELIST' -p '' -k
@@ -225,7 +225,7 @@ enum4linux -a -d -u 'USERNAME' -p 'PASSWORD' -w 'DOMAIN' -v 'IP'
 ```sh
 enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
-- impacket
+- impacket ![GitHub Repo stars](https://img.shields.io/github/stars/fortra/impacket?style=social)
 ```sh
 # exec
 impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
@@ -283,7 +283,7 @@ impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME
 impacket-wmipersist 'DOMAIN/USERNAME:PASSWORD@IP' install -name 'NAME' -command "COMMAND"
 ```
 - impacket-wmiquery
-- netexec
+- netexec ![GitHub Repo stars](https://img.shields.io/github/stars/Pennyw0rth/NetExec?style=social)
 ```sh
 # guest
 netexec smb 'IP' -u ' ' -p ''
