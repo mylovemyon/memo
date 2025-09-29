@@ -194,26 +194,7 @@ netexec ldap 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --dc-list
 netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodhound --collection All
 ```
 - silenthound
-```sh
-python3.13 silenthound.py -u 'USERNAME' -p 'PASSWORD' -g -n -k --kerberoast 'IP' 'DOMAIN'
-```
 - windapsearch
-```sh
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m metadata
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m gpos
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m computers
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m admin-objects
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m groups
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m members -g 'GROUPNAME(DN)' -r
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m members -s 'KEYWORD'
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m users
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m domain-admins
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m privileged-users
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m unconstrained
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m user-spns
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m search -s 'KEYWORD' --attrs 'ATTRIBUTES'
-./windapsearch-linux-amd64 --dc 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD' -m custom --filter 'FILTER' --attrs 'ATTRIBUTES'
-```
 
 
 ## 443
