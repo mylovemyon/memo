@@ -131,17 +131,8 @@ impacket-getArch -target 'IP'
 ```
 - impacket-changepasswd
 - impacket-findDelegation
-```sh
-impacket-findDelegation -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
-```
 - impacket-GetADComputers
-```sh
-impacket-GetADComputers -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
-```
 - impacket-GetADUssers
-```sh
-impacket-GetADUssers -all -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
-```
 - impacket-dacledit
 ```sh
 # write
@@ -163,9 +154,6 @@ impacket-owneredit -ts -dc-ip 'IP' -new-owner 'SAMACCOUNTNAME' -target 'SAMACCOU
 impacket-owneredit -ts -dc-ip 'IP' -target-dn 'DN' -action read 'DOMAIN/USERNAME:PASSWORD'
 ```
 - ldapdomaindump
-```sh
-ldapdomaindump -u 'DOMAIN\USERNAME' -p 'PASSWORD' -at NTLM --no-json --no-grep ldap://'IP'
-```
 - ldapnomnom
 ```sh
 # LDAP Ping
@@ -179,86 +167,8 @@ ldapdomaindump -u 'DOMAIN\USERNAME' -p 'PASSWORD' -at NTLM --no-json --no-grep l
 ldapsearch -b 'DN' -LLL -s 'sub' -D 'USERNAME@DOMAIN' -H ldap://'IP' -w 'PASSWORD' 'FILTER' 'ATTRIBUTES'
 ```
 - ldeep
-```sh
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users all
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users spn
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users enabled
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users disabled
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users locked
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users nopasswordexpire
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users passwordexpired
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users passwordnotrequired
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users nokrbpreauth
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' users reversible
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' whoami
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' enum_users 'USERLIST'
-# https://learn.microsoft.com/ja-jp/troubleshoot/windows-server/active-directory/useraccountcontrol-manipulate-account-properties#list-of-property-flags
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' change_uac 'USERNAME(DN format)' 'VALUE'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' groups
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' memberships 'USERNAME'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' membersof 'GROUPNAME'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' add_to_group 'USERNAME(DN format)' 'GROUPNAME(DN format)'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' remove_to_group 'USERNAME(DN format)' 'GROUPNAME(DN format)'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' create_user 'USERNAME' 'PASSWORD'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' modify_password 'USERNAME' 'PASSWORD'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' create_computer 'COMPUTERNAME' 'PASSWORD'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' search '(FILTER)' ['ATTRIBUTES']
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' conf
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' schema
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' server_info
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' dns_records
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' zones
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' zone 'DNS'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' trusts
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' pkis
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' gpo
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' domain_policy
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' object 'OBJECT'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' sddl 'OBJECT'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' from_guid 'GUID'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' from_sid 'SID'
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' ou
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' machines
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' computers
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' delegations all
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' laps
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' auth_policies
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' bitlockerkeys
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' fsmo
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' gmsa
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' pso
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' sccm
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' shadow_principals
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' silos
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' silo all
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' smsa
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' subnets
-ldeep ldap -d 'DOMAIN' -s 'IP' -t ntlm -u 'USERNAME' -p 'PASSWORD' tempaltes
-```
-- msldap
+- msldap(yet)
 - net ads
-```sh
-net ads info -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
-# user
-net ads user -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
-net ads user add 'USERNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
-net ads user delete 'USERNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
-# group
-net ads group add 'GROUPNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
-net ads group delete 'GROUPNAME' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
-# printer
-net ads printer search -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
-# search
-net ads search 'EXPRESSION' 'ATTRIBUTES' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
-# dn
-net ads search 'DISTINGUISHEDNAME' 'ATTRIBUTES' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
-# sid
-net ads search 'SID' -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
-# workgroup
-net ads workgroup -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
-# lookup
-net ads lookup -U 'DOMAIN/USERNAME%PASSWORD' -S 'IP'
-```
 - netexec
 ```sh
 # Authentication
