@@ -6,6 +6,13 @@
 - https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet
 - https://github.com/WADComs/WADComs.github.io
 - https://www.thehacker.recipes/
+- a
+- ADCSKiller - python ![GitHub Repo stars](https://img.shields.io/github/stars/grimlockx/ADCSKiller?style=social)
+- ADReconr - powershell ![GitHub Repo stars](https://img.shields.io/github/stars/adrecon/ADRecon?style=social)
+- bloodyAD - python ![GitHub Repo stars](https://img.shields.io/github/stars/CravateRouge/bloodyAD?style=social)
+- Certipy - python ![GitHub Repo stars](https://img.shields.io/github/stars/ly4k/Certipy?style=social)
+- certsync - python ![GitHub Repo stars](https://img.shields.io/github/stars/zblurx/certsync?style=social)
+- Coercer - python ![GitHub Repo stars](https://img.shields.io/github/stars/p0dalirius/Coercer?style=social)
 
 ### web列挙
 ```
