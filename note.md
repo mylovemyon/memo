@@ -13,6 +13,11 @@
 - Certipy - python ![GitHub Repo stars](https://img.shields.io/github/stars/ly4k/Certipy?style=social)
 - certsync - python ![GitHub Repo stars](https://img.shields.io/github/stars/zblurx/certsync?style=social)
 - Coercer - python ![GitHub Repo stars](https://img.shields.io/github/stars/p0dalirius/Coercer?style=social)
+- go-secdump - go ![GitHub Repo stars](https://img.shields.io/github/stars/jfjallid/go-secdump?style=social)
+- Group3r - C# ![GitHub Repo stars](https://img.shields.io/github/stars/jfjallid/go-secdump?style=social)
+- HEKATOMB - python ![GitHub Repo stars](https://img.shields.io/github/stars/ProcessusT/HEKATOMB?style=social)
+- hoaxshell - python ![GitHub Repo stars](https://img.shields.io/github/stars/t3l3machus/hoaxshell?style=social)
+- krbrelayx - python ![GitHub Repo stars](https://img.shields.io/github/stars/dirkjanm/krbrelayx?style=social)
 
 ### web列挙
 ```
