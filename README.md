@@ -124,6 +124,7 @@ https://github.com/XiaoliChan/wmiexec-Pro
 - impacket-findDelegation
 - impacket-GetADComputers
 - impacket-GetADUssers
+- impacket-GetLAPSPassword
 - impacket-dacledit
 ```sh
 # write
