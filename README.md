@@ -434,7 +434,7 @@ puttygen 'PUTTY_PRIVATEKEY' -O private-openssh -o 'OUTPUT_PRIVATEKEY'
 # execute 64bit process on 32bit process
 C:\Windows\sysnative\WindowsPowerShell\v1.0\powershell.exe
 ```
-- [LAPSToolkit](https://github.com/leoloobeek/LAPSToolkit)
+- [LAPSToolkit](https://github.com/leoloobeek/LAPSToolkit) ![GitHub Repo stars](https://img.shields.io/github/stars/leoloobeek/LAPSToolkit?style=social)
 ```powershell
 Find-AdmPwdExtendedRights
 Find-LAPSDelegatedGroups
