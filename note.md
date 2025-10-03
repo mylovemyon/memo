@@ -8,7 +8,7 @@
 - https://www.thehacker.recipes/
 - a
 - ADCSKiller - python ![GitHub Repo stars](https://img.shields.io/github/stars/grimlockx/ADCSKiller?style=social)
-- ADReconr - powershell ![GitHub Repo stars](https://img.shields.io/github/stars/adrecon/ADRecon?style=social)
+- ADRecon - powershell ![GitHub Repo stars](https://img.shields.io/github/stars/adrecon/ADRecon?style=social)
 - bloodyAD - python ![GitHub Repo stars](https://img.shields.io/github/stars/CravateRouge/bloodyAD?style=social)
 - Certipy - python ![GitHub Repo stars](https://img.shields.io/github/stars/ly4k/Certipy?style=social)
 - certsync - python ![GitHub Repo stars](https://img.shields.io/github/stars/zblurx/certsync?style=social)
@@ -32,6 +32,8 @@
 - Rubeus- C# ![GitHub Repo stars](https://img.shields.io/github/stars/GhostPack/Rubeus?style=social)
 - RustHound - Rust ![GitHub Repo stars](https://img.shields.io/github/stars/NH-RED-TEAM/RustHound?style=social)
 - sccmhunter - python ![GitHub Repo stars](https://img.shields.io/github/stars/garrettfoster13/sccmhunter?style=social)
+- Snaffler - C# ![GitHub Repo stars](https://img.shields.io/github/stars/SnaffCon/Snaffler?style=social)
+- Whisker - C# ![GitHub Repo stars](https://img.shields.io/github/stars/eladshamir/Whisker?style=social)
 
 
 ### web列挙
