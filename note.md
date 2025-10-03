@@ -18,6 +18,21 @@
 - HEKATOMB - python ![GitHub Repo stars](https://img.shields.io/github/stars/ProcessusT/HEKATOMB?style=social)
 - hoaxshell - python ![GitHub Repo stars](https://img.shields.io/github/stars/t3l3machus/hoaxshell?style=social)
 - krbrelayx - python ![GitHub Repo stars](https://img.shields.io/github/stars/dirkjanm/krbrelayx?style=social)
+- LDAPmonitor - python/C# ![GitHub Repo stars](https://img.shields.io/github/stars/p0dalirius/LDAPmonitor?style=social)
+- linWinPwn - shellscript ![GitHub Repo stars](https://img.shields.io/github/stars/lefayjey/linWinPwn?style=social)
+- Locksmith - powershell ![GitHub Repo stars](https://img.shields.io/github/stars/jakehildreth/Locksmith?style=social)
+- lsassy - python ![GitHub Repo stars](https://img.shields.io/github/stars/login-securite/lsassy?style=social)
+- MANSPIDER - python ![GitHub Repo stars](https://img.shields.io/github/stars/blacklanternsecurity/MANSPIDER?style=social)
+- ntlm_theft - python ![GitHub Repo stars](https://img.shields.io/github/stars/Greenwolf/ntlm_theft?style=social)
+- PKINITtools - python ![GitHub Repo stars](https://img.shields.io/github/stars/dirkjanm/PKINITtools?style=social)
+- PowerHuntShares - powershell ![GitHub Repo stars](https://img.shields.io/github/stars/NetSPI/PowerHuntShares?style=social)
+- PSPKIAudit - powershell ![GitHub Repo stars](https://img.shields.io/github/stars/GhostPack/PSPKIAudit?style=social)
+- pywerview - python ![GitHub Repo stars](https://img.shields.io/github/stars/the-useless-one/pywerview?style=social)
+- pywhisker - python ![GitHub Repo stars](https://img.shields.io/github/stars/ShutdownRepo/pywhisker?style=social)
+- Rubeus- C# ![GitHub Repo stars](https://img.shields.io/github/stars/GhostPack/Rubeus?style=social)
+- RustHound - Rust ![GitHub Repo stars](https://img.shields.io/github/stars/NH-RED-TEAM/RustHound?style=social)
+- sccmhunter - python ![GitHub Repo stars](https://img.shields.io/github/stars/garrettfoster13/sccmhunter?style=social)
+
 
 ### web列挙
 ```
