@@ -461,7 +461,7 @@ robocopy 'SOURCE DIRECTORY' 'DEST DIRECTORY' 'SOURCE FILE' /B /NFL /NDL /NJH /NJ
 sc.exe query 'SERVICENAME'
 sc.exe start 'SERVICENAME'
 sc.exe stop 'SERVICENAME'
-sc.exe config 'SERVICENAME' binPath='COMMAND'
+sc.exe config 'SERVICENAME' binPath="C:\WIndows\system32\cmd.exe /c 'COMMAND'"
 ```
 - winpeas ![GitHub Repo stars](https://img.shields.io/github/stars/peass-ng/PEASS-ng?style=social)
 ```powershell
