@@ -119,6 +119,7 @@ https://github.com/XiaoliChan/wmiexec-Pro
 - godap ![GitHub Repo stars](https://img.shields.io/github/stars/Macmod/godap?style=social)
 ```sh
 ./godap 'IP' -u 'USERNAME' -p 'PASSWORD'
+./godap 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD'
 ```
 - impacket-changepasswd
 - impacket-findDelegation
