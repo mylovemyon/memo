@@ -142,22 +142,8 @@ impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -a
 impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action remove -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD'
 ```
 - impacket-owneredit
-```sh
-# write
-impacket-owneredit -ts -dc-ip 'IP' -new-owner-dn 'DN' -target-dn 'DN' -action write 'DOMAIN/USERNAME:PASSWORD'
-impacket-owneredit -ts -dc-ip 'IP' -new-owner-sid 'SID' -target-sid 'SID' -action write 'DOMAIN/USERNAME:PASSWORD'
-impacket-owneredit -ts -dc-ip 'IP' -new-owner 'SAMACCOUNTNAME' -target 'SAMACCOUNTNAME' -action write 'DOMAIN/USERNAME:PASSWORD'
-# read
-impacket-owneredit -ts -dc-ip 'IP' -target-dn 'DN' -action read 'DOMAIN/USERNAME:PASSWORD'
-```
 - ldapdomaindump ![GitHub Repo stars](https://img.shields.io/github/stars/dirkjanm/ldapdomaindump?style=social)
 - ldapnomnom ![GitHub Repo stars](https://img.shields.io/github/stars/lkarlslund/ldapnomnom?style=social)
-```sh
-# LDAP Ping
-./ldapnomnom -input 'USERLIST' -parallel 'THREAD NUMBER' -server 'IP'
-# rootDSE
-./ldapnomnom -server 'IP' -dump
-```
 - LdapRelayScan ![GitHub Repo stars](https://img.shields.io/github/stars/zyn3rgy/LdapRelayScan?style=social)
 - ldapsearch
 ```sh
