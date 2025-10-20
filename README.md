@@ -450,6 +450,10 @@ sqlite> SELECT * FROM 'TABLE_NAME';
 # execute 64bit process on 32bit process
 C:\Windows\sysnative\WindowsPowerShell\v1.0\powershell.exe
 ```
+- diskshadow
+```powershell
+diskshadow.exe /s 'FILENAME'
+```
 - LAPSToolkit ![GitHub Repo stars](https://img.shields.io/github/stars/leoloobeek/LAPSToolkit?style=social)
 ```powershell
 Find-AdmPwdExtendedRights
