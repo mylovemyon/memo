@@ -428,12 +428,17 @@ echo 'BASE64' | openssl enc -aes-128-cbc -d -base64 -K 'KEY' -iv 'IV'
 # decrypt TightVNC password
 echo -n 'HEX_PASSWORD' | xxd -r -p | openssl enc -des-cbc --nopad --nosalt -K e84ad660c4721ae0 -iv 0000000000000000 -d | hexdump -Cv
 
-# remove passphrase
-openssl rsa -in 'INPUT.txt' -out 'OUTPUT.txt'
+# pkcs12
+openssl pkcs12 -in 'PFX' -passin pass:'' -info -nodes
+openssl pkcs12 -in 'PFX' -out cert.crt -passin pass:'' -nokeys -clcerts
+openssl pkcs12 -in 'PFX' -out privkey.pem -passin pass:'' -nocerts -nodes
 
-# ad cs
-openssl pkcs12 -in 'PFX' -clcerts -nokeys -out cert.crt
-openssl pkcs12 -in 'PFX' -nocerts -out privkey.pem -nodes 
+# rsa
+openssl rsa -in 'INPUT.txt' -out 'OUTPUT.txt'
+openssl rsa -in 'FILENAME' -noout -text
+
+# x509
+openssl x509 -in 'FILENAME' -nocert -text
 ```
 - pentestmonkey ![GitHub Repo stars](https://img.shields.io/github/stars/pentestmonkey/php-reverse-shell?style=social)
 - phpbash ![GitHub Repo stars](https://img.shields.io/github/stars/Arrexel/phpbash?style=social)
