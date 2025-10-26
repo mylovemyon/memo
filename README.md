@@ -529,6 +529,7 @@ sc.exe config 'SERVICENAME' binPath="C:\WIndows\system32\cmd.exe /c 'COMMAND'"
 - `https://github.com/abatchy17/WindowsExploits`
 - https://github.com/SecWiki/windows-kernel-exploits
 - https://github.com/rasta-mouse/Sherlock
+- https://swisskyrepo.github.io/InternalAllTheThings/redteam/escalation/windows-privilege-escalation/
 - https://kakyouim.hatenablog.com/entry/2020/05/27/010807
 #### other
 - [CVE-2023-32784](https://github.com/z-jxy/keepass_dump)
