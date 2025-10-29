@@ -574,8 +574,13 @@ sc.exe config 'SERVICENAME' binPath="C:\WIndows\system32\cmd.exe /c 'COMMAND'"
 
 
 ## link
+### cve
+- https://app.opencve.io/cve/
+- https://www.cve.org/
+- https://sploitus.com/
+- https://www.cvedetails.com/
+### まとめ集
 - https://book.hacktricks.wiki/en/index.html
-- https://cwe.mitre.org/data/published/cwe_latest.pdf
 - https://exploit-notes.hdks.org/
 - https://github.com/swisskyrepo/InternalAllTheThings
 - https://github.com/swisskyrepo/PayloadsAllTheThings
@@ -590,7 +595,6 @@ sc.exe config 'SERVICENAME' binPath="C:\WIndows\system32\cmd.exe /c 'COMMAND'"
 - https://www.revshells.com/
 - a
 - https://github.com/kavika13/RemCom
-- https://www.hyhforever.top/
 
 
 
