@@ -27,6 +27,8 @@ tnftp -a 'IP'
 ```sh
 # download
 scp 'USERNAME'@'IP':'FILEPATH' 'LOCALPATH'
+# upload
+scp 'LOCALPATH' 'USERNAME'@'IP':'FILEPATH'
 ```
 - ssh
 ```sh
@@ -53,6 +55,7 @@ cadaver 'URL'
 curl -I 'URL'
 curl -X OPTIONS -I 'URL'
 curl -ks 'URL'
+curl --path-as-is 'URL'
 ```
 - davtest ![GitHub Repo stars](https://img.shields.io/github/stars/cldrn/davtest?style=social)
 - ffuf ![GitHub Repo stars](https://img.shields.io/github/stars/ffuf/ffuf?style=social)
