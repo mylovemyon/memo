@@ -135,6 +135,10 @@ https://github.com/XiaoliChan/wmiexec-Pro
 
 
 ## 389
+- adidnsdump ![GitHub Repo stars](https://img.shields.io/github/stars/dirkjanm/adidnsdump?style=social)
+```sh
+python3.13 adidnsdump/dnsdump.py -u 'DOMAIN\USERNAME' -p 'PASSWORD' 'IP'
+```
 - certipy-ad
 ```sh
 certipy-ad account -user 'USERNAME'-dc-ip 'IP' -u 'USERNAME'@'DOMAIN' -p 'PASSWORD' read 
@@ -169,6 +173,11 @@ impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -a
 ```
 - impacket-owneredit
 - impacket-rbcd
+- krbrelayx ![GitHub Repo stars](https://img.shields.io/github/stars/dirkjanm/krbrelayx?style=social)
+```sh
+python3.13 krbrelayx/dnstool.py -u 'DOMAIN\USERNAME' -p 'PASSWORD' -a query -r 'RECORD_NAME' 'IP'
+python3.13 krbrelayx/dnstool.py -u 'DOMAIN\USERNAME' -p 'PASSWORD' -a add -r 'RECORD_NAME' -d 'A_IP' 'IP'
+```
 - ldapdomaindump ![GitHub Repo stars](https://img.shields.io/github/stars/dirkjanm/ldapdomaindump?style=social)
 - ldapnomnom ![GitHub Repo stars](https://img.shields.io/github/stars/lkarlslund/ldapnomnom?style=social)
 - LdapRelayScan ![GitHub Repo stars](https://img.shields.io/github/stars/zyn3rgy/LdapRelayScan?style=social)
@@ -397,6 +406,7 @@ chisel client --max-retry-count 'NUM' 'IP_SERVER':'PORT_SERVER' R:'PORT':socks
 - exiftool
 ```sh
 exiftool 'FILENAME'
+exiftool -'TAG' 'FILENAME'
 ```
 - firepwd
 ```sh
@@ -472,6 +482,7 @@ openssl rsa -in 'FILENAME' -noout -text
 # x509
 openssl x509 -in 'FILENAME' -nocert -text
 ```
+- pdfgrep
 - pentestmonkey ![GitHub Repo stars](https://img.shields.io/github/stars/pentestmonkey/php-reverse-shell?style=social)
 - phpbash ![GitHub Repo stars](https://img.shields.io/github/stars/Arrexel/phpbash?style=social)
 - pspy ![GitHub Repo stars](https://img.shields.io/github/stars/DominicBreuker/pspy?style=social)
