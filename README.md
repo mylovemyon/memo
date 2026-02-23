@@ -63,9 +63,9 @@ data://text/plain;base64,'BASE64'
 - ffuf ![GitHub Repo stars](https://img.shields.io/github/stars/ffuf/ffuf?style=social)
 ```sh
 ffuf -u http://'URL'/FUZZ -c -e .sh -w /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt
-ffuf -u http://'URL'/FUZZ -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt
-ffuf -u http://'URL'/FUZZ -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
-ffuf -u http://'URL'/FUZZ/ -c -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
+ffuf -u http://'URL'/FUZZ/ -c -w /usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt
+ffuf -u http://'URL'/FUZZ/ -c -w /usr/share/seclists/Discovery/Web-Content/raft-large-files.txt
+ffuf -u http://'URL'/FUZZ/ -c -w /usr/share/seclists/Discovery/Web-Content/raft-large-words.txt 
 # lfi
 ffuf -u http://'URL'=FUZZ -c -fs 'SIZE' -w /usr/share/seclists/Fuzzing/LFI/LFI-gracefulsecurity-windows.txt
 # login brute force
