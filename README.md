@@ -88,6 +88,7 @@ nmap -n -Pn -p80 -sV --script=http-default-account 'IP'
     curl -A "() { :;}; COMMAND" 'URL'
     ```
     https://github.com/mubix/shellshocker-pocs?tab=readme-ov-file#command-line-linux-osx-and-windows-via-cygwin
+  - [nvms-1000](https://www.exploit-db.com/exploits/47774)
   - [PHP 8.1.0-dev](https://www.exploit-db.com/exploits/49933)
   - [Maltrail](https://github.com/spookier/Maltrail-v0.53-Exploit?tab=readme-ov-file)
   - CVE-2012-4869 - FreePBX
