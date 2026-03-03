@@ -360,7 +360,9 @@ smbclient -U 'DOMAIN'/'USERNAME'%'NT HASH' --pw-nt-hash -c 'COMMAND' //'IP'/'SHA
 ```
 - smbget
 ```sh
-smbget --recursive -U 'DOMAIN'/'USERNAME'%'PASSWORD' smb://'IP'/'SHARENAME'
+smbget -N smb://'IP'/'FILEPATH'
+smbget -U 'DOMAIN'/'USERNAME'%'PASSWORD' smb://'IP'/'FILEPATH'
+smbget --recursive -U 'DOMAIN'/'USERNAME'%'PASSWORD' smb://'IP'/'FILEPATH'
 ```
 - smbmap ![GitHub Repo stars](https://img.shields.io/github/stars/ShawnDEvans/smbmap?style=social)
 ```sh
