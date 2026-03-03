@@ -385,6 +385,9 @@ smbmap -H 'IP' -u 'USERNAME' -p 'PASSWORD or NTLM HASH' -d 'DOMAIN' -r 'Recursiv
 
 ## 1433
 - impacket-mssqlclient
+```sh
+impacket-mssqlclient 'DOMAIN'/'USERNAME':'PASSWORD'@'IP'
+```
 - sqlcmd
 ```powershell
 sqlcmd -d 'DATABASE' -P 'PASSWORD' -U 'USERNAME' -Q 'SQL'
