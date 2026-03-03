@@ -174,6 +174,9 @@ impacket-changepasswd -ts -newpass 'PASSWORD_TARGET' -no-pass -altuser 'USERNAME
 - impacket-GetADComputers
 - impacket-GetADUssers
 - impacket-GetLAPSPassword
+```sh
+impacket-GetLAPSPassword -ts -dc-ip 'IP' 'DOMAIN'/'USERNAME':'PASSWORD'
+```
 - impacket-dacledit
 ```sh
 # write
